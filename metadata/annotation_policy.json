@@ -1,0 +1,40 @@
+{
+  "generated_at": "2026-08-04T04:35:47.866308+00:00",
+  "scope": "Rule-based label policy for GridInstruct v1.2 release snapshot",
+  "active_issue_definition": {
+    "thermal_overload": "scenario.overloaded_branches is non-empty or max_branch_loading_percent > 100.0",
+    "low_voltage": "at least one voltage violation entry has vm_pu < 0.95",
+    "high_voltage": "at least one voltage violation entry has vm_pu > 1.05"
+  },
+  "compliance_label_policy": {
+    "non_compliant": "Active issue exists and the proposed action either increases constrained-flow loading, skips required checks, or restores equipment prematurely.",
+    "compliant_with_monitoring": "Action is directionally corrective but still requires post-action review, continued monitoring, or staged execution checks.",
+    "compliant": "No active issue exists and the proposed action is a non-escalating corrective or risk-reducing action."
+  },
+  "action_templates": {
+    "continue_increasing_flow": {
+      "text": "继续增加受限断面潮流",
+      "label_if_active_issue": "non_compliant",
+      "label_if_no_active_issue": "compliant_with_monitoring"
+    },
+    "maintain_and_monitor": {
+      "text": "维持当前潮流并启动监视",
+      "label_if_active_issue": "non_compliant",
+      "label_if_no_active_issue": "compliant_with_monitoring"
+    },
+    "reactive_support_then_review": {
+      "text": "先执行无功支撑后复核潮流",
+      "label_if_active_issue": "compliant_with_monitoring",
+      "label_if_no_active_issue": "compliant"
+    },
+    "redispatch_reduce_loading": {
+      "text": "调整邻近机组出力降低断面负载",
+      "label_if_active_issue": "compliant_with_monitoring",
+      "label_if_no_active_issue": "compliant"
+    }
+  },
+  "limitations": [
+    "This policy is task-oriented and summarizes label behavior at the dataset level rather than reproducing full operational rulebooks.",
+    "validate_dataset.py checks explicit semantic contradictions, but it does not yet formalize every expert judgment nuance."
+  ]
+}

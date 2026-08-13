@@ -1,0 +1,13 @@
+{
+  "generated_at": "2026-08-05T19:10:00+00:00",
+  "status": "scoped_pass_with_external_gates_pending",
+  "input": null,
+  "output": "data/gridinstruct_v1.2_sd_core_en.jsonl",
+  "records": 95479,
+  "input_sha256": null,
+  "output_sha256": "75ffc5c5386e331eed6c7f4092d186e042be8a020a936993f5220a78c1fd058e",
+  "upstream_gate": "reports/current_release_integrity_audit_v1.2_sd_core.json",
+  "upstream_gate_sha256": "a2928dcbba5b92184608c3f0792255dd19e39d6d27ecbe97243378a7096d6756",
+  "atomic_promotion": null,
+  "note": "The historical intermediate promotion input is not shipped in the compact local package. The current English-derived canonical table is the only promoted release artifact; its current hash and gate are bound in metadata/current_revision_manifest_v1.2_sd_core.json."
+}

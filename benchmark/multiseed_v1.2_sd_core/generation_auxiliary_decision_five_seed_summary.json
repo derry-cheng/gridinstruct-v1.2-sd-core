@@ -1,0 +1,163 @@
+{
+  "generated_at": "2026-07-31T14:52:42.213200+00:00",
+  "status": "pass",
+  "family": "generation",
+  "task": "auxiliary_decision",
+  "seeds": [
+    13,
+    29,
+    42,
+    57,
+    71
+  ],
+  "split_paths": {
+    "train": "data/v1.2_sd_core_train_en.jsonl",
+    "validation": "data/v1.2_sd_core_validation_en.jsonl",
+    "test": "data/v1.2_sd_core_test_en.jsonl"
+  },
+  "input_sha256": {
+    "train": "ff09925aacb7767dc303eebd4d4089c69f7216977bd9c0e76198788660c9ed3a",
+    "validation": "bbb8fab5478b7a4cc8b0b729180d3225cafc081ea56c5e30938f021b28b1e4a5",
+    "test": "982e6bef11f3cbc8fa8e3e280c447aadbb22bd26e708fd070957042f436755c0"
+  },
+  "model_revision": {
+    "model_name": "t5-small",
+    "snapshot": "/root/.cache/huggingface/hub/models--t5-small/snapshots/df1b051c49625cf57a3d0d8d3863ed4d13564fe4",
+    "member_count": 6,
+    "sha256": "3782bdbb960d5a5a2ab1940a892f6a6a0a0ed31091f0a471f2e594912ab366cd"
+  },
+  "suite_script_sha256": "bcb74d685df49a922f4ef0c670794578da1a456b2e79a48b60dd4038313e7652",
+  "runs": [
+    {
+      "seed": 13,
+      "report": "benchmark/multiseed_v1.2_sd_core/generation_auxiliary_decision_seed13_report.json",
+      "test_predictions": "benchmark/multiseed_v1.2_sd_core/generation_auxiliary_decision_seed13_test_predictions.jsonl",
+      "prediction_sha256": "c730dfb2a8f3bb2221f6b0fbdf7fe1e8f551311091f5a92751e5661a79a1213c",
+      "run_state": "benchmark/multiseed_v1.2_sd_core/generation_auxiliary_decision_seed13_run_state.json",
+      "run_spec_sha256": "39d1f9761d75ae28bd817d9fe77c173da8476613a198ab32973c8b01186e5a70",
+      "metrics": {
+        "exact_match": 0.0,
+        "char_f1": 0.9259333875545444,
+        "selection_f1": 0.9259333875545444,
+        "n": 448,
+        "prediction_is_json": 0.0
+      },
+      "input_sha256": {
+        "train": "ff09925aacb7767dc303eebd4d4089c69f7216977bd9c0e76198788660c9ed3a",
+        "validation": "bbb8fab5478b7a4cc8b0b729180d3225cafc081ea56c5e30938f021b28b1e4a5",
+        "test": "982e6bef11f3cbc8fa8e3e280c447aadbb22bd26e708fd070957042f436755c0"
+      }
+    },
+    {
+      "seed": 29,
+      "report": "benchmark/multiseed_v1.2_sd_core/generation_auxiliary_decision_seed29_report.json",
+      "test_predictions": "benchmark/multiseed_v1.2_sd_core/generation_auxiliary_decision_seed29_test_predictions.jsonl",
+      "prediction_sha256": "fdbf8c18892912289ee656e49b61147b255d9a1f8c6d7dccb5df8eb285225220",
+      "run_state": "benchmark/multiseed_v1.2_sd_core/generation_auxiliary_decision_seed29_run_state.json",
+      "run_spec_sha256": "f0d71c6c01f6eb31dd7b0119eac591a2f4d63a459c380eef1a35c40a4ff973af",
+      "metrics": {
+        "exact_match": 0.0,
+        "char_f1": 0.9271312645843448,
+        "selection_f1": 0.9271312645843448,
+        "n": 448,
+        "prediction_is_json": 0.0
+      },
+      "input_sha256": {
+        "train": "ff09925aacb7767dc303eebd4d4089c69f7216977bd9c0e76198788660c9ed3a",
+        "validation": "bbb8fab5478b7a4cc8b0b729180d3225cafc081ea56c5e30938f021b28b1e4a5",
+        "test": "982e6bef11f3cbc8fa8e3e280c447aadbb22bd26e708fd070957042f436755c0"
+      }
+    },
+    {
+      "seed": 42,
+      "report": "benchmark/multiseed_v1.2_sd_core/generation_auxiliary_decision_seed42_report.json",
+      "test_predictions": "benchmark/multiseed_v1.2_sd_core/generation_auxiliary_decision_seed42_test_predictions.jsonl",
+      "prediction_sha256": "e863e552fd6b68d6dbc50d888b79dec7403550bd14da889232c40317e34f7ae7",
+      "run_state": "benchmark/multiseed_v1.2_sd_core/generation_auxiliary_decision_seed42_run_state.json",
+      "run_spec_sha256": "32df33ae86eae545a192efa011020e208cfdeb6c8a305b303a5fb9dd0b909ad1",
+      "metrics": {
+        "exact_match": 0.0,
+        "char_f1": 0.9257949289956089,
+        "selection_f1": 0.9257949289956089,
+        "n": 448,
+        "prediction_is_json": 0.0
+      },
+      "input_sha256": {
+        "train": "ff09925aacb7767dc303eebd4d4089c69f7216977bd9c0e76198788660c9ed3a",
+        "validation": "bbb8fab5478b7a4cc8b0b729180d3225cafc081ea56c5e30938f021b28b1e4a5",
+        "test": "982e6bef11f3cbc8fa8e3e280c447aadbb22bd26e708fd070957042f436755c0"
+      }
+    },
+    {
+      "seed": 57,
+      "report": "benchmark/multiseed_v1.2_sd_core/generation_auxiliary_decision_seed57_report.json",
+      "test_predictions": "benchmark/multiseed_v1.2_sd_core/generation_auxiliary_decision_seed57_test_predictions.jsonl",
+      "prediction_sha256": "1021137acd60bdae42a833701a83feb6d13b60a0701485c091293aa1e0d0e6ee",
+      "run_state": "benchmark/multiseed_v1.2_sd_core/generation_auxiliary_decision_seed57_run_state.json",
+      "run_spec_sha256": "eea0729a28f78934b019bfc4d1d9c6bf2543966bc406727dec263667750f52e7",
+      "metrics": {
+        "exact_match": 0.0,
+        "char_f1": 0.9285787969794825,
+        "selection_f1": 0.9285787969794825,
+        "n": 448,
+        "prediction_is_json": 0.0
+      },
+      "input_sha256": {
+        "train": "ff09925aacb7767dc303eebd4d4089c69f7216977bd9c0e76198788660c9ed3a",
+        "validation": "bbb8fab5478b7a4cc8b0b729180d3225cafc081ea56c5e30938f021b28b1e4a5",
+        "test": "982e6bef11f3cbc8fa8e3e280c447aadbb22bd26e708fd070957042f436755c0"
+      }
+    },
+    {
+      "seed": 71,
+      "report": "benchmark/multiseed_v1.2_sd_core/generation_auxiliary_decision_seed71_report.json",
+      "test_predictions": "benchmark/multiseed_v1.2_sd_core/generation_auxiliary_decision_seed71_test_predictions.jsonl",
+      "prediction_sha256": "547f74561d4aa2e2f7758905594caa9ce73e65c01ea4c76aef34d70de13fb0e8",
+      "run_state": "benchmark/multiseed_v1.2_sd_core/generation_auxiliary_decision_seed71_run_state.json",
+      "run_spec_sha256": "69fd1f7e234b93f1ba947ddc757a4a7cca8934598b01a62f9fd1d16d3504832b",
+      "metrics": {
+        "exact_match": 0.0,
+        "char_f1": 0.9254962271990301,
+        "selection_f1": 0.9254962271990301,
+        "n": 448,
+        "prediction_is_json": 0.0
+      },
+      "input_sha256": {
+        "train": "ff09925aacb7767dc303eebd4d4089c69f7216977bd9c0e76198788660c9ed3a",
+        "validation": "bbb8fab5478b7a4cc8b0b729180d3225cafc081ea56c5e30938f021b28b1e4a5",
+        "test": "982e6bef11f3cbc8fa8e3e280c447aadbb22bd26e708fd070957042f436755c0"
+      }
+    }
+  ],
+  "aggregate": {
+    "char_f1": {
+      "n": 5,
+      "mean": 0.9265869210626021,
+      "sample_std": 0.0012755244139450563,
+      "min": 0.9254962271990301,
+      "max": 0.9285787969794825
+    },
+    "exact_match": {
+      "n": 5,
+      "mean": 0.0,
+      "sample_std": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    },
+    "prediction_is_json": {
+      "n": 5,
+      "mean": 0.0,
+      "sample_std": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    },
+    "selection_f1": {
+      "n": 5,
+      "mean": 0.9265869210626021,
+      "sample_std": 0.0012755244139450563,
+      "min": 0.9254962271990301,
+      "max": 0.9285787969794825
+    }
+  },
+  "selection_policy": "all prespecified seeds retained; no best-seed selection"
+}

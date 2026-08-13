@@ -1,0 +1,40 @@
+{
+  "generated_at": "2026-07-31T09:42:49.582696+00:00",
+  "status": "pass",
+  "implementation_independence": "separate parser and query executor that do not import generator/repair functions; electrical recomputation still uses the same pandapower case family and is an implementation-branch check",
+  "dataset": "data/stages/v1.2_sd_core/06_query_repaired.jsonl",
+  "scenarios": "simulation_outputs/contingency/scenarios_converged.json",
+  "query_records": 17766,
+  "checked_query_records": 17766,
+  "unique_query_scenarios": 2453,
+  "recomputed_scenarios": 2453,
+  "simulation_error_count": 0,
+  "simulation_errors": [],
+  "answer_mismatch_count": 0,
+  "answer_mismatch_examples": [],
+  "records_by_filter": {
+    "loading_percent > 100": 6952,
+    "vm_pu < 0.95": 5408,
+    "violation_type != none": 5406
+  },
+  "overload_records_by_equipment_scope": {
+    "all": 3249,
+    "line": 2132,
+    "transformer": 1571
+  },
+  "required_filter_coverage": [
+    "loading_percent > 100",
+    "violation_type != none",
+    "vm_pu < 0.95"
+  ],
+  "required_overload_equipment_scope_coverage": [
+    "all",
+    "line",
+    "transformer"
+  ],
+  "comparison": "complete-set equality with device IDs and values rounded to 1e-5",
+  "contract_schema_version": "query-contract-v3",
+  "dataset_sha256": "5dc0e7b29f8eb70ce1a64e2bdf6cbf3aa761891fdf707e647ab6dbfee09497a9",
+  "scenario_truth_sha256": "1f23e2a868635d32aacc53269346030842a45465918f92c4ccc759a5482c99bf",
+  "query_projection_sha256": "7feaa8e7253c4fbf57a5b058ec13efe6e40eb02e9b00f42ba227e0a1e0873e40"
+}

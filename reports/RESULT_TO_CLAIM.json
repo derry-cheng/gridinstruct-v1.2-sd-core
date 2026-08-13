@@ -1,0 +1,54 @@
+{
+  "generated_at": "2026-08-09",
+  "claim_supported": "partial",
+  "integrity_status": "warn",
+  "what_results_support": [
+    "95,479 records, six task families, 17 rule cards, 11 benchmark network families, and unique record identifiers are supported by the current row-level audit.",
+    "Explicit-severity, structured-query, source-stage, schema, rule-link, and provenance-key checks pass on the released table.",
+    "The 320-record/160-scenario OPF subset passes the released-field sequence, control, N-1, stress-summary, and fixed-control replay checks within its registered scope.",
+    "TF-IDF, structured contract, target-hidden, challenge, and five-seed DistilBERT reference metrics are reproducible from hash-bound local artifacts.",
+    "The task-balanced split has a hash-bound logistic TF-IDF calibration reference with finite, non-negative, unit-sum probabilities and test/OOD ECE and multiclass Brier outputs.",
+    "The 44-variant field-removal and keyword-mask audit has nonzero replacement counts and records shortcut sensitivity for compliance, ticket, and dispatcher-intent labels.",
+    "A deterministic task-balanced instruction-surface split supplies 14,257/4,735/4,696 train/validation/test records and 71,791 OOD records with all six task families represented in the test partition.",
+    "Exact normalized user-instruction collisions are zero across the new split; exact character-Jaccard sampling remains a lexical residual diagnostic and is not promoted as semantic independence."
+  ],
+  "scope_boundaries": [
+    "Use the data as a traceable benchmark-construction and model-evaluation resource under expert oversight.",
+    "Interpret classification and structured scores as trainability or contract-predictability diagnostics; deterministic JSON serialization is not model-generated validity and tool-sequence exactness is not executable-control validity.",
+    "Treat MinHash component isolation and instruction-surface grouping as lexical leakage controls. They do not establish semantic independence, expert target validity, or physical-label correctness.",
+    "Treat the OPF evidence as released-field and registered fixed-control replay evidence; it does not cover the full candidate denominator, full scenario ledger, or field deployment."
+  ],
+  "missing_evidence": [
+    "Raw scenario registry, full AC arrays, convergence/islanding denominators, and a second implementation for the 42,577 numeric summaries and 11,810 diagnostic differences.",
+    "Full 35,200-candidate/8,508-eligible OPF ledger, arrays, solver logs, and broader network and line-pair coverage.",
+    "The 1,600-row double-blind expert review, agreement statistics, bilingual semantic adjudication, and independently authored challenge text.",
+    "Public repository, persistent DOI, code archive, real author/CRediT/funding metadata, and a fresh reconstruction from the public package.",
+    "A converged neural training curve on the task-balanced split; the balanced MPS rerun was stopped after a measured multi-minute-per-batch bottleneck and is not evidence."
+  ],
+  "split_search_receipts": [
+    {
+      "configuration": "64-permutation MinHash-LSH threshold 0.85",
+      "result": "historical detected-component proxy; exact sampled cross-split Jaccard can exceed 0.85",
+      "report": "reports/near_neighbor_free_split_v1.2_sd_core.json"
+    },
+    {
+      "configuration": "128-permutation MinHash-LSH threshold 0.70",
+      "result": "allocation infeasible because 394 components merged task families",
+      "report": "reports/near_neighbor_balanced_split_v1.2_sd_core.json"
+    },
+    {
+      "configuration": "128-permutation MinHash-LSH threshold 0.80",
+      "result": "task-balanced proxy passes; exact sampled Jaccard residual remains",
+      "report": "reports/near_neighbor_balanced_split_v1.2_sd_core.json"
+    },
+    {
+      "configuration": "task type plus normalized user-instruction groups",
+      "result": "task-balanced split with zero exact normalized-instruction collisions; residual character similarity is explicitly reported",
+      "report": "reports/instruction_surface_balanced_split_v1.2_sd_core.json"
+    }
+  ],
+  "suggested_claim_revision": "Frame GridInstruct as a traceable Scientific Data candidate with typed dispatch-assistance tasks, registered physical evidence, lexical leakage controls, reproducible local baselines, and explicit external gates. Do not label local row checks as full-population physical validation or semantic de-duplication.",
+  "confidence": "high for local hashes and metric replay; low-to-medium for physical truth, human validity, and public reproducibility",
+  "score_quality_verdict": "warn_scoped_local_partial_external_gates_pending",
+  "current_evidence_map": "reports/claim_evidence_map_2026-08-06.json"
+}

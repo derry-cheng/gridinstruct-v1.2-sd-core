@@ -1,0 +1,19 @@
+# Direct runtime requirements used by the formal pipeline
+datasketch==2.0.0
+jsonschema==4.22.0
+matplotlib==3.8.4
+numpy==1.26.4
+openai==1.55.0
+pandas==2.2.2
+pandapower==2.14.11
+pypower==5.1.17
+pytest==9.1.0
+PyYAML==6.0.1
+requests==2.31.0
+scikit-learn==1.4.2
+scipy==1.13.0
+sentence-transformers==2.7.0
+sentencepiece==0.2.1
+torch==2.3.0
+tqdm==4.65.0
+transformers==4.40.1

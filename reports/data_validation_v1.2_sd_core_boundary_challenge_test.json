@@ -1,0 +1,28 @@
+{
+  "generated_at": "2026-07-08T10:49:02.398169+00:00",
+  "input": "/data/gaiav2/data/v1.2_sd_core_boundary_challenge_test.jsonl",
+  "total_records": 4800,
+  "schema_errors": [],
+  "schema_pass_rate": 1.0,
+  "duplicate_ids": [],
+  "id_unique_rate": 1.0,
+  "near_duplicate_count": 0,
+  "near_duplicate_rate": 0.0,
+  "near_duplicate_threshold": 0.02,
+  "invalid_rule_links": [],
+  "invalid_scenario_links": [],
+  "topology_record_count": 1800,
+  "topology_link_valid_rate": 1.0,
+  "tool_plan_errors": [],
+  "task_field_errors": [],
+  "semantic_errors": [],
+  "task_counts": {
+    "operation_ticket_check": 3000,
+    "dispatcher_intent_tool_call": 1800
+  },
+  "stage_counts": {
+    "pre-event": 3000,
+    "real-time": 1800
+  },
+  "passed": true
+}

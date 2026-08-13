@@ -1,0 +1,40 @@
+{
+  "generated_at": "2026-08-13T04:17:46.355764+00:00",
+  "dataset": "data/gridinstruct_v1.2_sd_core_en.jsonl",
+  "record_count": 95479,
+  "natural_language_fields": {
+    "instruction": {
+      "total": 95479,
+      "rows_with_cjk": 0,
+      "rows_with_latin": 95479,
+      "empty": 0,
+      "cjk_row_rate": 0.0,
+      "latin_row_rate": 1.0
+    },
+    "output": {
+      "total": 95479,
+      "rows_with_cjk": 0,
+      "rows_with_latin": 95479,
+      "empty": 0,
+      "cjk_row_rate": 0.0,
+      "latin_row_rate": 1.0
+    },
+    "rationale": {
+      "total": 95479,
+      "rows_with_cjk": 0,
+      "rows_with_latin": 95479,
+      "empty": 0,
+      "cjk_row_rate": 0.0,
+      "latin_row_rate": 1.0
+    }
+  },
+  "task_counts": {
+    "auxiliary_decision": 18087,
+    "regulation_compliance_check": 24767,
+    "dispatcher_intent_tool_call": 19773,
+    "intelligent_data_query": 17766,
+    "regulation_qa": 4205,
+    "operation_ticket_check": 10881
+  },
+  "language_position": "Natural-language fields are audited separately from stable schema identifiers. Any translated release must pass the same schema, split, grounding, and label-consistency checks."
+}

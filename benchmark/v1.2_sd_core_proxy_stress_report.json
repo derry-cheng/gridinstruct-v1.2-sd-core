@@ -1,0 +1,700 @@
+{
+  "generated_at": "2026-07-31T10:43:00.982154+00:00",
+  "status": "pass",
+  "dataset": "data/gridinstruct_v1.2_sd_core_en.jsonl",
+  "objective": "fixed_hash_bound_proxy_group_holdout_tfidf_stress_test",
+  "standard_tfidf_macro_f1": {
+    "dispatcher_intent_tool_call": 1.0,
+    "regulation_compliance_check": 0.8563615669730873,
+    "auxiliary_decision": 0.5842173402767395,
+    "regulation_qa": 0.6039872519400801,
+    "intelligent_data_query": 0.7806118906275104,
+    "operation_ticket_check": 1.0
+  },
+  "standard_tfidf_report": "benchmark/v1.2_sd_core_tfidf_report.json",
+  "standard_tfidf_report_sha256": "748efa519ec917f0dc769652b6596d658c39c2f6cb471720d6aabd5ee1d8df7c",
+  "split_contract": {
+    "manifest": "reports/proxy_stress_split_manifest_v1.2_sd_core.json",
+    "manifest_sha256": "6599ed9f5b9f6e38abc496e745fe9e17f22c887f8c976405d739472b3e07be37",
+    "manifest_status": "pass",
+    "canonical_dataset": "data/gridinstruct_v1.2_sd_core.jsonl",
+    "canonical_dataset_sha256": "425449c0feaba3dfde0f3b79cd2304c10f499b7ace7d345be7c23de12cf4ea7c",
+    "english_dataset": "data/gridinstruct_v1.2_sd_core_en.jsonl",
+    "english_dataset_sha256": "75ffc5c5386e331eed6c7f4092d186e042be8a020a936993f5220a78c1fd058e",
+    "split_language": "en",
+    "builder_config": {
+      "builder": "scripts/create_proxy_stress_splits.py",
+      "builder_sha256": "3ce916b79fb6dd63532895d760f3256eef1ee059ce2155f7f60a41d032ec64db",
+      "seed": 2041,
+      "test_ratio": 0.2,
+      "validation_ratio": 0.12
+    },
+    "splits": {
+      "operation_ticket_check": {
+        "train": {
+          "source_path": "data/proxy_stress/operation_ticket_check/train.jsonl",
+          "source_sha256": "4e79207dda613e94a72dde92bfad83a521600d5198730ca62a69320fc447ccd4",
+          "selected_path": "data/proxy_stress/operation_ticket_check/train_en.jsonl",
+          "selected_sha256": "d2c4c139b5ad35279ea179158c97d5eb554ca2a8c48f94fedcfde9445673b65f"
+        },
+        "validation": {
+          "source_path": "data/proxy_stress/operation_ticket_check/validation.jsonl",
+          "source_sha256": "d197bb86e6c1158bb6f93443c6f99bf097043332de051acfc0a23291e1ea19b4",
+          "selected_path": "data/proxy_stress/operation_ticket_check/validation_en.jsonl",
+          "selected_sha256": "a863af182e7688ed5c04d8cafec948b89fee7fa967563b6200e95de689701b7f"
+        },
+        "test": {
+          "source_path": "data/proxy_stress/operation_ticket_check/test.jsonl",
+          "source_sha256": "d28c4c4ed986da8c1b79e252b4af8edb7390e74168383e961eb8d7b3ea9d63df",
+          "selected_path": "data/proxy_stress/operation_ticket_check/test_en.jsonl",
+          "selected_sha256": "a093e676aa97949b3478accbdd1124ab10a336a4bcb6afa6e0c8fb88c7e87c69"
+        }
+      },
+      "regulation_compliance_check": {
+        "train": {
+          "source_path": "data/proxy_stress/regulation_compliance_check/train.jsonl",
+          "source_sha256": "c153fcdaea11a1f289e6a2814bffc41e490a17a5f75ff6606980688f9c5e4b92",
+          "selected_path": "data/proxy_stress/regulation_compliance_check/train_en.jsonl",
+          "selected_sha256": "1a952e7413667375e85620ed1403fdb67bc134ac1a97a67438be71d1d07572d5"
+        },
+        "validation": {
+          "source_path": "data/proxy_stress/regulation_compliance_check/validation.jsonl",
+          "source_sha256": "918ad8faf8d4308740eb8ea1ea3f08f3cdfeb25703ab8633c01bc5c01335ad43",
+          "selected_path": "data/proxy_stress/regulation_compliance_check/validation_en.jsonl",
+          "selected_sha256": "207e451c2d727b470baa8d55cabf91c8e4cf813ab8cda04fa21d2368489f9ee9"
+        },
+        "test": {
+          "source_path": "data/proxy_stress/regulation_compliance_check/test.jsonl",
+          "source_sha256": "6913cdf0a57a8da16c292c4acc76b4159516562e8a3fdbe050a2ed81194bc3af",
+          "selected_path": "data/proxy_stress/regulation_compliance_check/test_en.jsonl",
+          "selected_sha256": "58649ca2dd55040cf3cc526b59a860c22446416153e89f297892c079d1dc44b7"
+        }
+      },
+      "dispatcher_intent_tool_call": {
+        "train": {
+          "source_path": "data/proxy_stress/dispatcher_intent_tool_call/train.jsonl",
+          "source_sha256": "3b650a94a3f1b3db221357a96333ab445276eb17199f25c893bfc672e43a0d12",
+          "selected_path": "data/proxy_stress/dispatcher_intent_tool_call/train_en.jsonl",
+          "selected_sha256": "fa1128bd8160fa0168a3f81c489ea252d846684eb01999b3e2ed5a998e504cbc"
+        },
+        "validation": {
+          "source_path": "data/proxy_stress/dispatcher_intent_tool_call/validation.jsonl",
+          "source_sha256": "1fb9b94611b6dc53cb25907030f9ca5c688ca6a4110278f5770e796247c972f3",
+          "selected_path": "data/proxy_stress/dispatcher_intent_tool_call/validation_en.jsonl",
+          "selected_sha256": "4270fd019b847b1a4b4733f45b1b7c2bb1b0ac8e2b1b409ce06a3930d8237255"
+        },
+        "test": {
+          "source_path": "data/proxy_stress/dispatcher_intent_tool_call/test.jsonl",
+          "source_sha256": "3bf7a817cf120bad0f8b9ca94dc211258528200a1ec579b16c1b596895ae063f",
+          "selected_path": "data/proxy_stress/dispatcher_intent_tool_call/test_en.jsonl",
+          "selected_sha256": "735d4987258cf5368e7863546570b699910c77c3f0d03cc2fbd531432d3ee3fa"
+        }
+      }
+    }
+  },
+  "task_results": {
+    "operation_ticket_check": {
+      "metrics": {
+        "task_type": "operation_ticket_check",
+        "model_family": "tfidf_linear_svc",
+        "n": 2178,
+        "accuracy": 1.0,
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "label_space": [
+          "compliant",
+          "compliant_with_monitoring",
+          "non_compliant"
+        ]
+      },
+      "validation_metrics": {
+        "task_type": "operation_ticket_check",
+        "model_family": "tfidf_linear_svc",
+        "n": 1056,
+        "accuracy": 0.9990530303030303,
+        "macro_f1": 0.9985589995759173,
+        "balanced_accuracy": 0.9989071038251366,
+        "label_space": [
+          "compliant",
+          "compliant_with_monitoring",
+          "non_compliant"
+        ]
+      },
+      "split_summary": {
+        "train_records": 7647,
+        "validation_records": 1056,
+        "test_records": 2178,
+        "train_groups": 1693,
+        "validation_groups": 217,
+        "test_groups": 177,
+        "group_overlap": 0,
+        "group_overlap_all": {
+          "train_validation": 0,
+          "train_test": 0,
+          "validation_test": 0
+        },
+        "train_label_counts": {
+          "compliant": 409,
+          "compliant_with_monitoring": 4383,
+          "non_compliant": 2855
+        },
+        "validation_label_counts": {
+          "compliant_with_monitoring": 565,
+          "non_compliant": 305,
+          "compliant": 186
+        },
+        "test_label_counts": {
+          "compliant": 2176,
+          "compliant_with_monitoring": 1,
+          "non_compliant": 1
+        },
+        "mean_test_group_purity": 1.0
+      },
+      "error_count": 0,
+      "prediction_examples": [
+        {
+          "id": "gridinstruct_v01_ticket_00126",
+          "task_type": "operation_ticket_check",
+          "gold": "compliant",
+          "prediction": "compliant",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_ticket_00128",
+          "task_type": "operation_ticket_check",
+          "gold": "compliant",
+          "prediction": "compliant",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_ticket_00129",
+          "task_type": "operation_ticket_check",
+          "gold": "compliant",
+          "prediction": "compliant",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_ticket_00131",
+          "task_type": "operation_ticket_check",
+          "gold": "compliant",
+          "prediction": "compliant",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_ticket_00414",
+          "task_type": "operation_ticket_check",
+          "gold": "compliant",
+          "prediction": "compliant",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_ticket_00416",
+          "task_type": "operation_ticket_check",
+          "gold": "compliant",
+          "prediction": "compliant",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_ticket_00418",
+          "task_type": "operation_ticket_check",
+          "gold": "compliant",
+          "prediction": "compliant",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_ticket_00419",
+          "task_type": "operation_ticket_check",
+          "gold": "compliant",
+          "prediction": "compliant",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_ticket_00703",
+          "task_type": "operation_ticket_check",
+          "gold": "compliant",
+          "prediction": "compliant",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_ticket_00704",
+          "task_type": "operation_ticket_check",
+          "gold": "compliant",
+          "prediction": "compliant",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_ticket_00706",
+          "task_type": "operation_ticket_check",
+          "gold": "compliant",
+          "prediction": "compliant",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_ticket_00991",
+          "task_type": "operation_ticket_check",
+          "gold": "compliant",
+          "prediction": "compliant",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_ticket_00993",
+          "task_type": "operation_ticket_check",
+          "gold": "compliant",
+          "prediction": "compliant",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_ticket_00994",
+          "task_type": "operation_ticket_check",
+          "gold": "compliant",
+          "prediction": "compliant",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_ticket_01278",
+          "task_type": "operation_ticket_check",
+          "gold": "compliant",
+          "prediction": "compliant",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_ticket_01279",
+          "task_type": "operation_ticket_check",
+          "gold": "compliant",
+          "prediction": "compliant",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_ticket_01281",
+          "task_type": "operation_ticket_check",
+          "gold": "compliant",
+          "prediction": "compliant",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_ticket_01283",
+          "task_type": "operation_ticket_check",
+          "gold": "compliant",
+          "prediction": "compliant",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_ticket_01566",
+          "task_type": "operation_ticket_check",
+          "gold": "compliant",
+          "prediction": "compliant",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_ticket_01568",
+          "task_type": "operation_ticket_check",
+          "gold": "compliant",
+          "prediction": "compliant",
+          "correct": true
+        }
+      ]
+    },
+    "regulation_compliance_check": {
+      "metrics": {
+        "task_type": "regulation_compliance_check",
+        "model_family": "tfidf_linear_svc",
+        "n": 5992,
+        "accuracy": 0.9536048064085447,
+        "macro_f1": 0.6536603987428037,
+        "balanced_accuracy": 0.978414473173383,
+        "label_space": [
+          "compliant",
+          "compliant_with_monitoring",
+          "non_compliant"
+        ]
+      },
+      "validation_metrics": {
+        "task_type": "regulation_compliance_check",
+        "model_family": "tfidf_linear_svc",
+        "n": 2953,
+        "accuracy": 0.9478496444293938,
+        "macro_f1": 0.8909381182004426,
+        "balanced_accuracy": 0.9376895538406341,
+        "label_space": [
+          "compliant",
+          "compliant_with_monitoring",
+          "non_compliant"
+        ]
+      },
+      "split_summary": {
+        "train_records": 15822,
+        "validation_records": 2953,
+        "test_records": 5992,
+        "train_groups": 159,
+        "validation_groups": 7,
+        "test_groups": 9,
+        "group_overlap": 0,
+        "group_overlap_all": {
+          "train_validation": 0,
+          "train_test": 0,
+          "validation_test": 0
+        },
+        "train_label_counts": {
+          "non_compliant": 9850,
+          "compliant_with_monitoring": 4981,
+          "compliant": 991
+        },
+        "validation_label_counts": {
+          "compliant_with_monitoring": 1423,
+          "non_compliant": 1493,
+          "compliant": 37
+        },
+        "test_label_counts": {
+          "non_compliant": 1698,
+          "compliant_with_monitoring": 4293,
+          "compliant": 1
+        },
+        "mean_test_group_purity": 1.0
+      },
+      "error_count": 278,
+      "prediction_examples": [
+        {
+          "id": "gridinstruct_v01_compliance_00000",
+          "task_type": "regulation_compliance_check",
+          "gold": "non_compliant",
+          "prediction": "non_compliant",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_compliance_00008",
+          "task_type": "regulation_compliance_check",
+          "gold": "non_compliant",
+          "prediction": "non_compliant",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_compliance_00024",
+          "task_type": "regulation_compliance_check",
+          "gold": "non_compliant",
+          "prediction": "non_compliant",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_compliance_00032",
+          "task_type": "regulation_compliance_check",
+          "gold": "non_compliant",
+          "prediction": "non_compliant",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_compliance_00040",
+          "task_type": "regulation_compliance_check",
+          "gold": "non_compliant",
+          "prediction": "non_compliant",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_compliance_00056",
+          "task_type": "regulation_compliance_check",
+          "gold": "non_compliant",
+          "prediction": "non_compliant",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_compliance_00064",
+          "task_type": "regulation_compliance_check",
+          "gold": "non_compliant",
+          "prediction": "non_compliant",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_compliance_00072",
+          "task_type": "regulation_compliance_check",
+          "gold": "non_compliant",
+          "prediction": "non_compliant",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_compliance_00096",
+          "task_type": "regulation_compliance_check",
+          "gold": "non_compliant",
+          "prediction": "non_compliant",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_compliance_00104",
+          "task_type": "regulation_compliance_check",
+          "gold": "non_compliant",
+          "prediction": "non_compliant",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_compliance_00112",
+          "task_type": "regulation_compliance_check",
+          "gold": "non_compliant",
+          "prediction": "non_compliant",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_compliance_00120",
+          "task_type": "regulation_compliance_check",
+          "gold": "non_compliant",
+          "prediction": "non_compliant",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_compliance_00128",
+          "task_type": "regulation_compliance_check",
+          "gold": "non_compliant",
+          "prediction": "non_compliant",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_compliance_00136",
+          "task_type": "regulation_compliance_check",
+          "gold": "non_compliant",
+          "prediction": "non_compliant",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_compliance_00144",
+          "task_type": "regulation_compliance_check",
+          "gold": "non_compliant",
+          "prediction": "non_compliant",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_compliance_00184",
+          "task_type": "regulation_compliance_check",
+          "gold": "non_compliant",
+          "prediction": "non_compliant",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_compliance_00208",
+          "task_type": "regulation_compliance_check",
+          "gold": "non_compliant",
+          "prediction": "non_compliant",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_compliance_00216",
+          "task_type": "regulation_compliance_check",
+          "gold": "non_compliant",
+          "prediction": "non_compliant",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_compliance_00224",
+          "task_type": "regulation_compliance_check",
+          "gold": "non_compliant",
+          "prediction": "non_compliant",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_compliance_00264",
+          "task_type": "regulation_compliance_check",
+          "gold": "non_compliant",
+          "prediction": "non_compliant",
+          "correct": true
+        }
+      ]
+    },
+    "dispatcher_intent_tool_call": {
+      "metrics": {
+        "task_type": "dispatcher_intent_tool_call",
+        "model_family": "tfidf_linear_svc",
+        "n": 4106,
+        "accuracy": 1.0,
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "label_space": [
+          "diagnose_and_dispatch",
+          "mitigate_violations",
+          "security_check_and_redispatch"
+        ]
+      },
+      "validation_metrics": {
+        "task_type": "dispatcher_intent_tool_call",
+        "model_family": "tfidf_linear_svc",
+        "n": 1905,
+        "accuracy": 1.0,
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "label_space": [
+          "diagnose_and_dispatch",
+          "mitigate_violations",
+          "security_check_and_redispatch"
+        ]
+      },
+      "split_summary": {
+        "train_records": 13762,
+        "validation_records": 1905,
+        "test_records": 4106,
+        "train_groups": 3140,
+        "validation_groups": 320,
+        "test_groups": 878,
+        "group_overlap": 0,
+        "group_overlap_all": {
+          "train_validation": 0,
+          "train_test": 0,
+          "validation_test": 0
+        },
+        "train_label_counts": {
+          "mitigate_violations": 4533,
+          "diagnose_and_dispatch": 4523,
+          "security_check_and_redispatch": 4706
+        },
+        "validation_label_counts": {
+          "diagnose_and_dispatch": 618,
+          "mitigate_violations": 738,
+          "security_check_and_redispatch": 549
+        },
+        "test_label_counts": {
+          "mitigate_violations": 1318,
+          "diagnose_and_dispatch": 1472,
+          "security_check_and_redispatch": 1316
+        },
+        "mean_test_group_purity": 1.0
+      },
+      "error_count": 0,
+      "prediction_examples": [
+        {
+          "id": "gridinstruct_v01_intent_00001__plus12_dispatcher_cf_1_mitigate_violations",
+          "task_type": "dispatcher_intent_tool_call",
+          "gold": "mitigate_violations",
+          "prediction": "mitigate_violations",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_intent_00002__plus12_dispatcher_cf_2_mitigate_violations",
+          "task_type": "dispatcher_intent_tool_call",
+          "gold": "mitigate_violations",
+          "prediction": "mitigate_violations",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_intent_00003__plus12_dispatcher_cf_3_mitigate_violations",
+          "task_type": "dispatcher_intent_tool_call",
+          "gold": "mitigate_violations",
+          "prediction": "mitigate_violations",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_intent_00005__plus12_dispatcher_cf_5_mitigate_violations",
+          "task_type": "dispatcher_intent_tool_call",
+          "gold": "mitigate_violations",
+          "prediction": "mitigate_violations",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_intent_00007__plus12_dispatcher_cf_7_mitigate_violations",
+          "task_type": "dispatcher_intent_tool_call",
+          "gold": "mitigate_violations",
+          "prediction": "mitigate_violations",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_intent_00009__plus12_dispatcher_cf_9_mitigate_violations",
+          "task_type": "dispatcher_intent_tool_call",
+          "gold": "mitigate_violations",
+          "prediction": "mitigate_violations",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_intent_00013__plus12_dispatcher_cf_13_mitigate_violations",
+          "task_type": "dispatcher_intent_tool_call",
+          "gold": "mitigate_violations",
+          "prediction": "mitigate_violations",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_intent_00020__plus12_dispatcher_cf_20_mitigate_violations",
+          "task_type": "dispatcher_intent_tool_call",
+          "gold": "mitigate_violations",
+          "prediction": "mitigate_violations",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_intent_00022__plus12_dispatcher_cf_22_mitigate_violations",
+          "task_type": "dispatcher_intent_tool_call",
+          "gold": "mitigate_violations",
+          "prediction": "mitigate_violations",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_intent_00024__plus12_dispatcher_cf_24_mitigate_violations",
+          "task_type": "dispatcher_intent_tool_call",
+          "gold": "mitigate_violations",
+          "prediction": "mitigate_violations",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_intent_00026__plus12_dispatcher_cf_26_mitigate_violations",
+          "task_type": "dispatcher_intent_tool_call",
+          "gold": "mitigate_violations",
+          "prediction": "mitigate_violations",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_intent_00027__plus12_dispatcher_cf_27_mitigate_violations",
+          "task_type": "dispatcher_intent_tool_call",
+          "gold": "mitigate_violations",
+          "prediction": "mitigate_violations",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_intent_00028__plus12_dispatcher_cf_28_mitigate_violations",
+          "task_type": "dispatcher_intent_tool_call",
+          "gold": "mitigate_violations",
+          "prediction": "mitigate_violations",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_intent_00036__plus12_dispatcher_cf_36_mitigate_violations",
+          "task_type": "dispatcher_intent_tool_call",
+          "gold": "mitigate_violations",
+          "prediction": "mitigate_violations",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_intent_00037__plus12_dispatcher_cf_37_mitigate_violations",
+          "task_type": "dispatcher_intent_tool_call",
+          "gold": "mitigate_violations",
+          "prediction": "mitigate_violations",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_intent_00044__plus12_dispatcher_cf_44_mitigate_violations",
+          "task_type": "dispatcher_intent_tool_call",
+          "gold": "mitigate_violations",
+          "prediction": "mitigate_violations",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_intent_00046__plus12_dispatcher_cf_46_mitigate_violations",
+          "task_type": "dispatcher_intent_tool_call",
+          "gold": "mitigate_violations",
+          "prediction": "mitigate_violations",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_intent_00049__plus12_dispatcher_cf_49_mitigate_violations",
+          "task_type": "dispatcher_intent_tool_call",
+          "gold": "mitigate_violations",
+          "prediction": "mitigate_violations",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_intent_00050__plus12_dispatcher_cf_50_mitigate_violations",
+          "task_type": "dispatcher_intent_tool_call",
+          "gold": "mitigate_violations",
+          "prediction": "mitigate_violations",
+          "correct": true
+        },
+        {
+          "id": "gridinstruct_v01_intent_00052__plus12_dispatcher_cf_52_mitigate_violations",
+          "task_type": "dispatcher_intent_tool_call",
+          "gold": "mitigate_violations",
+          "prediction": "mitigate_violations",
+          "correct": true
+        }
+      ]
+    }
+  }
+}

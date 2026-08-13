@@ -1,0 +1,156 @@
+{
+  "schema_version": "2.0",
+  "python": {
+    "version": "3.12.2",
+    "implementation": "CPython",
+    "executable_name": "python"
+  },
+  "platform": {
+    "system": "Darwin",
+    "release": "25.6.0",
+    "machine": "arm64",
+    "platform_string": "macOS-26.6-arm64-arm-64bit"
+  },
+  "packages": {
+    "chardet": null,
+    "datasketch": "2.0.0",
+    "jsonschema": "4.22.0",
+    "lightsim2grid": null,
+    "lm-format-enforcer": null,
+    "matplotlib": "3.8.4",
+    "numpy": "1.26.4",
+    "openai": "1.55.0",
+    "pandas": "2.2.2",
+    "pandapower": "2.14.11",
+    "power-grid-model": null,
+    "pypower": "5.1.17",
+    "pytest": "9.1.0",
+    "PyYAML": "6.0.1",
+    "requests": "2.31.0",
+    "scikit-learn": "1.4.2",
+    "scipy": "1.13.0",
+    "sentence-transformers": "2.7.0",
+    "sentencepiece": "0.2.1",
+    "torch": "2.3.0",
+    "tqdm": "4.65.0",
+    "transformers": "4.40.1"
+  },
+  "expected_direct_package_versions": {
+    "chardet": "7.4.3",
+    "datasketch": "1.10.0",
+    "jsonschema": "4.26.0",
+    "lightsim2grid": "0.10.3",
+    "lm-format-enforcer": "0.11.3",
+    "matplotlib": "3.10.8",
+    "numpy": "2.3.5",
+    "openai": "2.30.0",
+    "pandas": "2.3.3",
+    "pandapower": "3.3.2",
+    "power-grid-model": "1.12.110",
+    "pypower": "5.1.19",
+    "pytest": "9.0.2",
+    "PyYAML": "6.0.2",
+    "requests": "2.34.2",
+    "scikit-learn": "1.8.0",
+    "scipy": "1.16.3",
+    "sentence-transformers": "5.4.1",
+    "sentencepiece": "0.2.1",
+    "torch": "2.10.0",
+    "tqdm": "4.67.1",
+    "transformers": "5.5.3"
+  },
+  "direct_package_version_mismatches": {
+    "chardet": {
+      "expected": "7.4.3",
+      "actual": null
+    },
+    "datasketch": {
+      "expected": "1.10.0",
+      "actual": "2.0.0"
+    },
+    "jsonschema": {
+      "expected": "4.26.0",
+      "actual": "4.22.0"
+    },
+    "lightsim2grid": {
+      "expected": "0.10.3",
+      "actual": null
+    },
+    "lm-format-enforcer": {
+      "expected": "0.11.3",
+      "actual": null
+    },
+    "matplotlib": {
+      "expected": "3.10.8",
+      "actual": "3.8.4"
+    },
+    "numpy": {
+      "expected": "2.3.5",
+      "actual": "1.26.4"
+    },
+    "openai": {
+      "expected": "2.30.0",
+      "actual": "1.55.0"
+    },
+    "pandas": {
+      "expected": "2.3.3",
+      "actual": "2.2.2"
+    },
+    "pandapower": {
+      "expected": "3.3.2",
+      "actual": "2.14.11"
+    },
+    "power-grid-model": {
+      "expected": "1.12.110",
+      "actual": null
+    },
+    "pypower": {
+      "expected": "5.1.19",
+      "actual": "5.1.17"
+    },
+    "pytest": {
+      "expected": "9.0.2",
+      "actual": "9.1.0"
+    },
+    "PyYAML": {
+      "expected": "6.0.2",
+      "actual": "6.0.1"
+    },
+    "requests": {
+      "expected": "2.34.2",
+      "actual": "2.31.0"
+    },
+    "scikit-learn": {
+      "expected": "1.8.0",
+      "actual": "1.4.2"
+    },
+    "scipy": {
+      "expected": "1.16.3",
+      "actual": "1.13.0"
+    },
+    "sentence-transformers": {
+      "expected": "5.4.1",
+      "actual": "2.7.0"
+    },
+    "torch": {
+      "expected": "2.10.0",
+      "actual": "2.3.0"
+    },
+    "tqdm": {
+      "expected": "4.67.1",
+      "actual": "4.65.0"
+    },
+    "transformers": {
+      "expected": "5.5.3",
+      "actual": "4.40.1"
+    }
+  },
+  "environment": {
+    "CUDA_VISIBLE_DEVICES": null,
+    "TRANSFORMERS_OFFLINE": null,
+    "HF_HUB_OFFLINE": null,
+    "CUBLAS_WORKSPACE_CONFIG": null,
+    "PYTHONHASHSEED": null
+  },
+  "determinism_policy": "This lock is generated deterministically from the formal pipeline runtime; volatile timestamps and host paths are excluded."
+}

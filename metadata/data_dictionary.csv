@@ -1,0 +1,28 @@
+field,type,required,task_scope,generation_source,model_input_role,gold_label_or_target,leakage_note,description
+id,string,yes,all,record writer,identifier,no,none,Stable instruction record identifier.
+task_stage,string,yes,all,task taxonomy,metadata/no,no,low,Pre-event real-time or post-event stage.
+task_type,string,yes,all,task taxonomy,metadata/no,no,low,Task category among six released tasks.
+network_model,string_or_null,no,scenario-grounded tasks,simulation metadata,context,context,medium if used for OOD analysis,IEEE network name when a simulation scenario is used.
+scenario_id,string_or_null,no,scenario-grounded tasks,simulation metadata,context,context,high if directly memorized,Scenario identifier linked to simulation outputs.
+instruction,string,yes,all,task template,input,no,can expose task family,Natural-language task instruction.
+input,object,yes,all,task generator,input,no,field-specific risk,Task context such as ticket text grid summary proposed action or query request.
+output,string_or_object,yes,all,label/query/response generator,target,yes,do not use as input,Reference answer or structured target.
+rationale,string,no,all,rule and scenario generator,target/explanation,no,can leak gold reasoning if used as classifier input,Construction rationale or explanation.
+source_regulation_ids,array,yes,all,rule mapper,provenance,no,low,Rule-card identifiers used for construction.
+source_simulation_case_id,string_or_null,no,scenario-grounded tasks,simulation metadata,provenance,no,medium,Simulation case identifier for traceability.
+tool_plan,array,no,dispatcher and scenario tasks,tool planner,target/context,task-dependent,can mirror intent labels,Ordered tool-use plan where applicable.
+compliance_label,string,no,operation_ticket_check;regulation_compliance_check,label function,target,yes,do not use as input,Compliance classification label.
+intent,string,no,dispatcher_intent_tool_call,intent template,target,yes,do not use as input,Dispatcher intent label.
+slots,object,no,dispatcher_intent_tool_call,intent template,target,yes,can mirror utterance templates,Structured slots for routing.
+structured_query,object,no,intelligent_data_query,query generator,target,yes,do not use as input for query generation,Executable structured query.
+query_result,array_or_object,no,intelligent_data_query,query execution,target,yes,derived from simulation output,Reference result returned by the structured query.
+chosen_response,string_or_object,no,auxiliary_decision,preference generator,target,yes,do not use as input,Preferred dispatch response.
+rejected_response,string_or_object,no,auxiliary_decision,preference generator,target,yes,do not use as input,Rejected response paired with chosen_response.
+preference_rationale,object,no,auxiliary_decision,preference generator,target,no,can reveal preference criterion,Structured preference explanation.
+metadata,object,yes,all,generation and audit scripts,analysis/no,no,contains potential proxy fields,Difficulty severity template family augmentation validation and provenance metadata.
+metadata.validation_status,string,no,all,review pipeline,analysis/no,no,do not use for model input,Generation or review status marker.
+metadata.augmentation_type,string,no,augmented records,augmentation scripts,analysis/no,no,can expose template group,Augmentation family when a record is derived from a source record.
+metadata.template_family,string,no,all,task generator,analysis/no,no,can expose task template,Template family used for construction.
+metadata.variant_index,integer,no,all,task generator,analysis/no,no,template proxy risk,Template variant identifier.
+metadata.issue_profile,string,no,scenario-grounded tasks,simulation summarizer,context,no,can correlate with labels,Issue category such as thermal voltage or combined.
+metadata.action_category,string,no,regulation_compliance_check,action generator,analysis/no,no,can correlate with compliance label,Proposed-action category used for audits and sampling.

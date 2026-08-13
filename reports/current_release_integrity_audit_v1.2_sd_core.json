@@ -1,0 +1,317 @@
+{
+  "generated_at": "2026-08-08T17:26:30.464108+00:00",
+  "dataset": "data/gridinstruct_v1.2_sd_core_en.jsonl",
+  "dataset_sha256": "75ffc5c5386e331eed6c7f4092d186e042be8a020a936993f5220a78c1fd058e",
+  "records": 95479,
+  "by_task": {
+    "auxiliary_decision": 18087,
+    "regulation_compliance_check": 24767,
+    "dispatcher_intent_tool_call": 19773,
+    "intelligent_data_query": 17766,
+    "regulation_qa": 4205,
+    "operation_ticket_check": 10881
+  },
+  "unique_ids": 95479,
+  "duplicate_id_count": 0,
+  "malformed_examples": [],
+  "scenario_link_missing_count": 0,
+  "scenario_id_mismatch_count": 0,
+  "network_missing_count": 0,
+  "tool_scenario_error_count": 0,
+  "severity_checked": 51804,
+  "severity_mismatch_count": 0,
+  "severity_mismatch_examples": [],
+  "numeric_severity_diagnostic": {
+    "checked": 42577,
+    "mismatch_count": 11810,
+    "mismatch_examples": [
+      {
+        "id": "gridinstruct_v01_aux_00007",
+        "numeric": "emergency",
+        "explicit": "alert"
+      },
+      {
+        "id": "gridinstruct_v01_aux_00019",
+        "numeric": "emergency",
+        "explicit": "alert"
+      },
+      {
+        "id": "gridinstruct_v01_aux_00026",
+        "numeric": "emergency",
+        "explicit": "alert"
+      },
+      {
+        "id": "gridinstruct_v01_aux_00027",
+        "numeric": "emergency",
+        "explicit": "alert"
+      },
+      {
+        "id": "gridinstruct_v01_aux_00034",
+        "numeric": "emergency",
+        "explicit": "alert"
+      },
+      {
+        "id": "gridinstruct_v01_aux_00038",
+        "numeric": "emergency",
+        "explicit": "alert"
+      },
+      {
+        "id": "gridinstruct_v01_aux_00039",
+        "numeric": "normal",
+        "explicit": "emergency"
+      },
+      {
+        "id": "gridinstruct_v01_aux_00044",
+        "numeric": "emergency",
+        "explicit": "alert"
+      },
+      {
+        "id": "gridinstruct_v01_aux_00046",
+        "numeric": "emergency",
+        "explicit": "alert"
+      },
+      {
+        "id": "gridinstruct_v01_aux_00047",
+        "numeric": "emergency",
+        "explicit": "alert"
+      },
+      {
+        "id": "gridinstruct_v01_aux_00048",
+        "numeric": "emergency",
+        "explicit": "alert"
+      },
+      {
+        "id": "gridinstruct_v01_aux_00049",
+        "numeric": "emergency",
+        "explicit": "alert"
+      },
+      {
+        "id": "gridinstruct_v01_aux_00052",
+        "numeric": "emergency",
+        "explicit": "alert"
+      },
+      {
+        "id": "gridinstruct_v01_aux_00056",
+        "numeric": "emergency",
+        "explicit": "alert"
+      },
+      {
+        "id": "gridinstruct_v01_aux_00056_llmaug_001",
+        "numeric": "emergency",
+        "explicit": "alert"
+      },
+      {
+        "id": "gridinstruct_v01_aux_00062",
+        "numeric": "emergency",
+        "explicit": "alert"
+      },
+      {
+        "id": "gridinstruct_v01_aux_00064",
+        "numeric": "emergency",
+        "explicit": "alert"
+      },
+      {
+        "id": "gridinstruct_v01_aux_00066",
+        "numeric": "emergency",
+        "explicit": "alert"
+      },
+      {
+        "id": "gridinstruct_v01_aux_00068",
+        "numeric": "emergency",
+        "explicit": "alert"
+      },
+      {
+        "id": "gridinstruct_v01_aux_00076",
+        "numeric": "emergency",
+        "explicit": "alert"
+      }
+    ],
+    "complete_numeric_state_rows": 0,
+    "incomplete_numeric_state_rows": 42577,
+    "missing_field_counts": {
+      "max_vm": 42577,
+      "loading": 704,
+      "min_vm": 18246
+    },
+    "status": "inconclusive_due_to_missing_numeric_state_fields",
+    "interpretation": "The explicit severity string is audited independently. Numeric severity is not promoted because a complete decision requires loading, minimum voltage, and maximum voltage; compact release rows currently omit maximum voltage whenever a numeric state is present."
+  },
+  "query_contract_error_count": 0,
+  "query_error_examples": [],
+  "opf_closed_loop_rows": 320,
+  "opf_closed_loop_unique_scenarios": 160,
+  "opf_status": {
+    "converged": 320
+  },
+  "opf_variant_counts": {
+    "scenario_count": 160,
+    "variant_count_distribution": {
+      "2": 160
+    },
+    "all_scenarios_have_two_variants": true
+  },
+  "source_stage": {
+    "path": "data/gridinstruct_v1.2_sd_core_en.jsonl",
+    "exists": true,
+    "rows_compared": 95479,
+    "alignment_error_count": 0,
+    "alignment_error_examples": []
+  },
+  "split_integrity": {
+    "counts": {
+      "train": 28684,
+      "validation": 3598,
+      "test": 3609,
+      "ood_test": 59588
+    },
+    "id_overlap": {
+      "train__validation": 0,
+      "train__test": 0,
+      "train__ood_test": 0,
+      "validation__test": 0,
+      "validation__ood_test": 0,
+      "test__ood_test": 0
+    },
+    "source_group_overlap": {
+      "train__test": 0,
+      "train__ood_test": 0
+    },
+    "provenance_overlap": {
+      "train__validation": {
+        "source_group": 0,
+        "source_record_id": 0,
+        "scenario_id": 0,
+        "source_simulation_case_id": 0,
+        "operation_group": 0
+      },
+      "train__test": {
+        "source_group": 0,
+        "source_record_id": 0,
+        "scenario_id": 0,
+        "source_simulation_case_id": 0,
+        "operation_group": 0
+      },
+      "train__ood_test": {
+        "source_group": 0,
+        "source_record_id": 0,
+        "scenario_id": 0,
+        "source_simulation_case_id": 0,
+        "operation_group": 0
+      },
+      "validation__test": {
+        "source_group": 0,
+        "source_record_id": 0,
+        "scenario_id": 0,
+        "source_simulation_case_id": 0,
+        "operation_group": 0
+      },
+      "validation__ood_test": {
+        "source_group": 0,
+        "source_record_id": 0,
+        "scenario_id": 0,
+        "source_simulation_case_id": 0,
+        "operation_group": 0
+      },
+      "test__ood_test": {
+        "source_group": 0,
+        "source_record_id": 0,
+        "scenario_id": 0,
+        "source_simulation_case_id": 0,
+        "operation_group": 0
+      }
+    },
+    "provenance_keys": [
+      "source_group",
+      "source_record_id",
+      "scenario_id",
+      "source_simulation_case_id",
+      "operation_group"
+    ],
+    "network_counts": {
+      "train": {
+        "IEEE57": 8028,
+        "IEEE14": 2494,
+        "IEEE30": 6121
+      },
+      "validation": {
+        "IEEE57": 860,
+        "IEEE30": 811,
+        "IEEE14": 411
+      },
+      "test": {
+        "IEEE30": 1043,
+        "IEEE57": 808,
+        "IEEE14": 229
+      },
+      "ood_test": {
+        "IEEE14": 3567,
+        "IEEE118": 38159,
+        "ILLINOIS200": 2912,
+        "PEGASE1354": 1056,
+        "IEEE300": 560,
+        "IEEE57": 5640,
+        "PEGASE89": 1472,
+        "IEEE30": 4430,
+        "RTE2848": 624,
+        "PEGASE2869": 624,
+        "RTE1888": 544
+      }
+    }
+  },
+  "template_holdout_integrity": {
+    "counts": {
+      "train": 38623,
+      "validation": 5682,
+      "test": 11116
+    },
+    "surface_counts": {
+      "train": 15237,
+      "validation": 203,
+      "test": 521
+    },
+    "surface_overlap": {
+      "train_validation": 0,
+      "train_test": 0,
+      "validation_test": 0
+    }
+  },
+  "raw_replay_artifacts_present": {
+    "scenario_registry": false,
+    "n1_attempt_manifest": false,
+    "independent_solver_case_manifest": true,
+    "expert_review_assignments": false
+  },
+  "gates": {
+    "jsonl_schema_and_unique_ids": {
+      "status": "pass"
+    },
+    "scenario_links_present_and_equal": {
+      "status": "pass"
+    },
+    "network_and_tool_links_consistent": {
+      "status": "pass"
+    },
+    "severity_explicit_consistency": {
+      "status": "pass"
+    },
+    "query_contract_complete": {
+      "status": "pass"
+    },
+    "source_stage_row_alignment": {
+      "status": "pass"
+    },
+    "split_ids_disjoint": {
+      "status": "pass"
+    },
+    "split_provenance_keys_disjoint": {
+      "status": "pass"
+    },
+    "opf_two_variants_per_scenario": {
+      "status": "pass"
+    }
+  },
+  "status": "pass",
+  "local_integrity_status": "pass",
+  "release_readiness_status": "blocked_external_gates",
+  "interpretation": "Row-level integrity and split checks are independent of the missing raw replay ledgers. Missing replay or expert-review artifacts remain explicit failures; summary reports are not promoted to evidence."
+}

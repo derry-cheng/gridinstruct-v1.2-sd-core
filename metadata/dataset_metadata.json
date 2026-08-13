@@ -1,0 +1,2447 @@
+{
+  "generated_at": "2026-08-05T19:00:00+00:00",
+  "dataset": {
+    "title": "GridInstruct v1.2",
+    "description": "Topology-grounded instruction dataset for power dispatch assistance and benchmark evaluation.",
+    "version": "1.2",
+    "record_count": 95479,
+    "language": "English-derived natural-language fields with stable structured identifiers",
+    "source_language": "mixed bilingual construction sources; English release validated separately",
+    "source_dataset_path": "data/gridinstruct_v1.2_sd_core.jsonl",
+    "language_audit": "reports/english_translation_audit_v1.2_sd_core.json",
+    "release_status": "internal paper-grade snapshot; public archival identifiers pending",
+    "dataset_path": "data/gridinstruct_v1.2_sd_core_en.jsonl",
+    "split_paths": {
+      "train": "data/v1.2_sd_core_train_en.jsonl",
+      "validation": "data/v1.2_sd_core_validation_en.jsonl",
+      "test": "data/v1.2_sd_core_test_en.jsonl",
+      "ood_test": "data/v1.2_sd_core_ood_test_en.jsonl"
+    }
+  },
+  "record_summary": {
+    "total_records": 95479,
+    "by_stage": {
+      "real-time": 66832,
+      "post-event": 17766,
+      "pre-event": 10881
+    },
+    "by_task": {
+      "auxiliary_decision": 18087,
+      "regulation_compliance_check": 24767,
+      "dispatcher_intent_tool_call": 19773,
+      "intelligent_data_query": 17766,
+      "regulation_qa": 4205,
+      "operation_ticket_check": 10881
+    },
+    "by_network": {
+      "IEEE14": 6701,
+      "IEEE30": 12405,
+      "IEEE118": 38159,
+      "IEEE57": 15336,
+      "null": 15086,
+      "IEEE300": 560,
+      "PEGASE1354": 1056,
+      "PEGASE89": 1472,
+      "RTE1888": 544,
+      "ILLINOIS200": 2912,
+      "PEGASE2869": 624,
+      "RTE2848": 624
+    },
+    "with_rationale": 95479,
+    "with_preference": 18087
+  },
+  "source_traceability": {
+    "auxiliary_decision": {
+      "records": 18087,
+      "with_rules": 18087,
+      "with_simulation": 18087,
+      "with_rationale": 18087
+    },
+    "dispatcher_intent_tool_call": {
+      "records": 19773,
+      "with_rules": 19773,
+      "with_simulation": 19773,
+      "with_rationale": 19773
+    },
+    "intelligent_data_query": {
+      "records": 17766,
+      "with_rules": 17766,
+      "with_simulation": 17766,
+      "with_rationale": 17766
+    },
+    "operation_ticket_check": {
+      "records": 10881,
+      "with_rules": 10881,
+      "with_simulation": 0,
+      "with_rationale": 10881
+    },
+    "regulation_compliance_check": {
+      "records": 24767,
+      "with_rules": 24767,
+      "with_simulation": 24767,
+      "with_rationale": 24767
+    },
+    "regulation_qa": {
+      "records": 4205,
+      "with_rules": 4205,
+      "with_simulation": 0,
+      "with_rationale": 4205
+    }
+  },
+  "split_integrity": {
+    "splits": {
+      "train": {
+        "total_records": 28684,
+        "by_stage": {
+          "real-time": 16533,
+          "pre-event": 8675,
+          "post-event": 3476
+        },
+        "by_task": {
+          "regulation_qa": 3366,
+          "operation_ticket_check": 8675,
+          "dispatcher_intent_tool_call": 3910,
+          "intelligent_data_query": 3476,
+          "regulation_compliance_check": 5655,
+          "auxiliary_decision": 3602
+        },
+        "by_network": {
+          "null": 12041,
+          "IEEE57": 8028,
+          "IEEE14": 2494,
+          "IEEE30": 6121
+        },
+        "with_rationale": 28684,
+        "with_preference": 3602
+      },
+      "validation": {
+        "total_records": 3598,
+        "by_stage": {
+          "real-time": 2068,
+          "pre-event": 1096,
+          "post-event": 434
+        },
+        "by_task": {
+          "regulation_compliance_check": 707,
+          "regulation_qa": 420,
+          "dispatcher_intent_tool_call": 490,
+          "operation_ticket_check": 1096,
+          "auxiliary_decision": 451,
+          "intelligent_data_query": 434
+        },
+        "by_network": {
+          "IEEE57": 860,
+          "IEEE30": 811,
+          "null": 1516,
+          "IEEE14": 411
+        },
+        "with_rationale": 3598,
+        "with_preference": 451
+      },
+      "test": {
+        "total_records": 3609,
+        "by_stage": {
+          "real-time": 2062,
+          "post-event": 437,
+          "pre-event": 1110
+        },
+        "by_task": {
+          "dispatcher_intent_tool_call": 494,
+          "regulation_compliance_check": 701,
+          "auxiliary_decision": 448,
+          "regulation_qa": 419,
+          "intelligent_data_query": 437,
+          "operation_ticket_check": 1110
+        },
+        "by_network": {
+          "IEEE30": 1043,
+          "null": 1529,
+          "IEEE57": 808,
+          "IEEE14": 229
+        },
+        "with_rationale": 3609,
+        "with_preference": 448
+      },
+      "ood_test": {
+        "total_records": 59588,
+        "by_stage": {
+          "real-time": 46169,
+          "post-event": 13419
+        },
+        "by_task": {
+          "dispatcher_intent_tool_call": 14879,
+          "regulation_compliance_check": 17704,
+          "intelligent_data_query": 13419,
+          "auxiliary_decision": 13586
+        },
+        "by_network": {
+          "IEEE14": 3567,
+          "IEEE118": 38159,
+          "ILLINOIS200": 2912,
+          "PEGASE1354": 1056,
+          "IEEE300": 560,
+          "IEEE57": 5640,
+          "PEGASE89": 1472,
+          "IEEE30": 4430,
+          "RTE2848": 624,
+          "PEGASE2869": 624,
+          "RTE1888": 544
+        },
+        "with_rationale": 59588,
+        "with_preference": 13586
+      }
+    },
+    "overlaps": {
+      "train__validation": {
+        "record_id_overlap": [],
+        "scenario_id_overlap": []
+      },
+      "train__test": {
+        "record_id_overlap": [],
+        "scenario_id_overlap": []
+      },
+      "train__ood_test": {
+        "record_id_overlap": [],
+        "scenario_id_overlap": []
+      },
+      "validation__test": {
+        "record_id_overlap": [],
+        "scenario_id_overlap": []
+      },
+      "validation__ood_test": {
+        "record_id_overlap": [],
+        "scenario_id_overlap": []
+      },
+      "test__ood_test": {
+        "record_id_overlap": [],
+        "scenario_id_overlap": []
+      }
+    }
+  },
+  "validation": {
+    "path": "reports/data_validation_v1.2_sd_core.json",
+    "passed": true,
+    "near_duplicate_rate": 0.0036028864986017866,
+    "schema_errors": 0,
+    "duplicate_ids": 0,
+    "invalid_rule_links": 0,
+    "invalid_scenario_links": 0,
+    "semantic_errors": 0
+  },
+  "simulation": {
+    "generated_at": "2026-07-31T08:02:32.850912+00:00",
+    "status": "pass",
+    "systems": [
+      "ieee14",
+      "ieee30",
+      "ieee57",
+      "ieee118"
+    ],
+    "config": {
+      "seed": 42,
+      "load_levels": [
+        0.7,
+        0.8,
+        0.9,
+        1.0,
+        1.1,
+        1.2,
+        1.3
+      ],
+      "system_load_levels": {
+        "ieee14": [
+          0.7,
+          0.8,
+          0.9,
+          1.0,
+          1.1,
+          1.2,
+          1.3
+        ],
+        "ieee30": [
+          0.7,
+          0.75,
+          0.8,
+          0.9,
+          1.0,
+          1.1,
+          1.2,
+          1.3
+        ],
+        "ieee57": [
+          0.7,
+          0.8,
+          0.9,
+          1.0,
+          1.1,
+          1.2,
+          1.3
+        ],
+        "ieee118": [
+          0.7,
+          0.8,
+          0.9,
+          1.0,
+          1.1,
+          1.2
+        ]
+      },
+      "scale_generation_with_load": true,
+      "generator_factors": [
+        0.85,
+        0.9,
+        0.95,
+        1.05
+      ],
+      "n2_load_levels": [
+        1.0,
+        1.2,
+        1.3
+      ],
+      "max_branches_per_system": 9999,
+      "max_n2_per_system": 72,
+      "equipment_outage_load_levels": [
+        1.0,
+        1.2
+      ],
+      "max_transformers_per_system": 12,
+      "max_generators_per_system": 12,
+      "max_buses_per_system": 12
+    },
+    "total_scenarios": 3034,
+    "converged_scenarios": 2630,
+    "convergence_rate": 0.8668424522083059,
+    "stratum_coverage": {
+      "ieee14|base_power_flow|load=70": {
+        "generated": 1,
+        "converged": 1
+      },
+      "ieee14|generator_perturbation|load=70": {
+        "generated": 4,
+        "converged": 4
+      },
+      "ieee14|base_power_flow|load=80": {
+        "generated": 1,
+        "converged": 1
+      },
+      "ieee14|generator_perturbation|load=80": {
+        "generated": 4,
+        "converged": 4
+      },
+      "ieee14|base_power_flow|load=90": {
+        "generated": 1,
+        "converged": 1
+      },
+      "ieee14|generator_perturbation|load=90": {
+        "generated": 4,
+        "converged": 4
+      },
+      "ieee14|base_power_flow|load=100": {
+        "generated": 1,
+        "converged": 1
+      },
+      "ieee14|generator_perturbation|load=100": {
+        "generated": 4,
+        "converged": 4
+      },
+      "ieee14|base_power_flow|load=110": {
+        "generated": 1,
+        "converged": 1
+      },
+      "ieee14|generator_perturbation|load=110": {
+        "generated": 4,
+        "converged": 4
+      },
+      "ieee14|base_power_flow|load=120": {
+        "generated": 1,
+        "converged": 1
+      },
+      "ieee14|generator_perturbation|load=120": {
+        "generated": 4,
+        "converged": 4
+      },
+      "ieee14|base_power_flow|load=130": {
+        "generated": 1,
+        "converged": 1
+      },
+      "ieee14|generator_perturbation|load=130": {
+        "generated": 4,
+        "converged": 4
+      },
+      "ieee14|n1_branch_outage|load=70": {
+        "generated": 17,
+        "converged": 16
+      },
+      "ieee14|n1_branch_outage|load=80": {
+        "generated": 17,
+        "converged": 16
+      },
+      "ieee14|n1_branch_outage|load=90": {
+        "generated": 17,
+        "converged": 15
+      },
+      "ieee14|n1_branch_outage|load=100": {
+        "generated": 17,
+        "converged": 15
+      },
+      "ieee14|n1_branch_outage|load=110": {
+        "generated": 17,
+        "converged": 15
+      },
+      "ieee14|n1_branch_outage|load=120": {
+        "generated": 17,
+        "converged": 14
+      },
+      "ieee14|n1_branch_outage|load=130": {
+        "generated": 17,
+        "converged": 13
+      },
+      "ieee14|n2_branch_outage|load=100": {
+        "generated": 72,
+        "converged": 48
+      },
+      "ieee14|n2_branch_outage|load=120": {
+        "generated": 72,
+        "converged": 39
+      },
+      "ieee14|n2_branch_outage|load=130": {
+        "generated": 72,
+        "converged": 27
+      },
+      "ieee14|n1_transformer_outage|load=100": {
+        "generated": 3,
+        "converged": 3
+      },
+      "ieee14|n1_generator_outage|load=100": {
+        "generated": 4,
+        "converged": 4
+      },
+      "ieee14|n1_bus_outage|load=100": {
+        "generated": 12,
+        "converged": 9
+      },
+      "ieee14|n1_transformer_outage|load=120": {
+        "generated": 3,
+        "converged": 2
+      },
+      "ieee14|n1_generator_outage|load=120": {
+        "generated": 4,
+        "converged": 4
+      },
+      "ieee14|n1_bus_outage|load=120": {
+        "generated": 12,
+        "converged": 7
+      },
+      "ieee30|base_power_flow|load=70": {
+        "generated": 1,
+        "converged": 1
+      },
+      "ieee30|generator_perturbation|load=70": {
+        "generated": 4,
+        "converged": 4
+      },
+      "ieee30|base_power_flow|load=75": {
+        "generated": 1,
+        "converged": 1
+      },
+      "ieee30|generator_perturbation|load=75": {
+        "generated": 4,
+        "converged": 4
+      },
+      "ieee30|base_power_flow|load=80": {
+        "generated": 1,
+        "converged": 1
+      },
+      "ieee30|generator_perturbation|load=80": {
+        "generated": 4,
+        "converged": 4
+      },
+      "ieee30|base_power_flow|load=90": {
+        "generated": 1,
+        "converged": 1
+      },
+      "ieee30|generator_perturbation|load=90": {
+        "generated": 4,
+        "converged": 4
+      },
+      "ieee30|base_power_flow|load=100": {
+        "generated": 1,
+        "converged": 1
+      },
+      "ieee30|generator_perturbation|load=100": {
+        "generated": 4,
+        "converged": 4
+      },
+      "ieee30|base_power_flow|load=110": {
+        "generated": 1,
+        "converged": 1
+      },
+      "ieee30|generator_perturbation|load=110": {
+        "generated": 4,
+        "converged": 4
+      },
+      "ieee30|base_power_flow|load=120": {
+        "generated": 1,
+        "converged": 1
+      },
+      "ieee30|generator_perturbation|load=120": {
+        "generated": 4,
+        "converged": 4
+      },
+      "ieee30|base_power_flow|load=130": {
+        "generated": 1,
+        "converged": 1
+      },
+      "ieee30|generator_perturbation|load=130": {
+        "generated": 4,
+        "converged": 4
+      },
+      "ieee30|n1_branch_outage|load=70": {
+        "generated": 34,
+        "converged": 33
+      },
+      "ieee30|n1_branch_outage|load=75": {
+        "generated": 34,
+        "converged": 33
+      },
+      "ieee30|n1_branch_outage|load=80": {
+        "generated": 34,
+        "converged": 33
+      },
+      "ieee30|n1_branch_outage|load=90": {
+        "generated": 34,
+        "converged": 32
+      },
+      "ieee30|n1_branch_outage|load=100": {
+        "generated": 34,
+        "converged": 32
+      },
+      "ieee30|n1_branch_outage|load=110": {
+        "generated": 34,
+        "converged": 31
+      },
+      "ieee30|n1_branch_outage|load=120": {
+        "generated": 34,
+        "converged": 29
+      },
+      "ieee30|n1_branch_outage|load=130": {
+        "generated": 34,
+        "converged": 26
+      },
+      "ieee30|n2_branch_outage|load=100": {
+        "generated": 72,
+        "converged": 63
+      },
+      "ieee30|n2_branch_outage|load=120": {
+        "generated": 72,
+        "converged": 53
+      },
+      "ieee30|n2_branch_outage|load=130": {
+        "generated": 72,
+        "converged": 47
+      },
+      "ieee30|n1_transformer_outage|load=100": {
+        "generated": 4,
+        "converged": 4
+      },
+      "ieee30|n1_generator_outage|load=100": {
+        "generated": 5,
+        "converged": 5
+      },
+      "ieee30|n1_bus_outage|load=100": {
+        "generated": 12,
+        "converged": 7
+      },
+      "ieee30|n1_transformer_outage|load=120": {
+        "generated": 4,
+        "converged": 2
+      },
+      "ieee30|n1_generator_outage|load=120": {
+        "generated": 5,
+        "converged": 5
+      },
+      "ieee30|n1_bus_outage|load=120": {
+        "generated": 12,
+        "converged": 5
+      },
+      "ieee57|base_power_flow|load=70": {
+        "generated": 1,
+        "converged": 1
+      },
+      "ieee57|generator_perturbation|load=70": {
+        "generated": 4,
+        "converged": 4
+      },
+      "ieee57|base_power_flow|load=80": {
+        "generated": 1,
+        "converged": 1
+      },
+      "ieee57|generator_perturbation|load=80": {
+        "generated": 4,
+        "converged": 4
+      },
+      "ieee57|base_power_flow|load=90": {
+        "generated": 1,
+        "converged": 1
+      },
+      "ieee57|generator_perturbation|load=90": {
+        "generated": 4,
+        "converged": 4
+      },
+      "ieee57|base_power_flow|load=100": {
+        "generated": 1,
+        "converged": 1
+      },
+      "ieee57|generator_perturbation|load=100": {
+        "generated": 4,
+        "converged": 4
+      },
+      "ieee57|base_power_flow|load=110": {
+        "generated": 1,
+        "converged": 1
+      },
+      "ieee57|generator_perturbation|load=110": {
+        "generated": 4,
+        "converged": 4
+      },
+      "ieee57|base_power_flow|load=120": {
+        "generated": 1,
+        "converged": 1
+      },
+      "ieee57|generator_perturbation|load=120": {
+        "generated": 4,
+        "converged": 4
+      },
+      "ieee57|base_power_flow|load=130": {
+        "generated": 1,
+        "converged": 1
+      },
+      "ieee57|generator_perturbation|load=130": {
+        "generated": 4,
+        "converged": 4
+      },
+      "ieee57|n1_branch_outage|load=70": {
+        "generated": 65,
+        "converged": 63
+      },
+      "ieee57|n1_branch_outage|load=80": {
+        "generated": 65,
+        "converged": 63
+      },
+      "ieee57|n1_branch_outage|load=90": {
+        "generated": 65,
+        "converged": 63
+      },
+      "ieee57|n1_branch_outage|load=100": {
+        "generated": 65,
+        "converged": 62
+      },
+      "ieee57|n1_branch_outage|load=110": {
+        "generated": 65,
+        "converged": 61
+      },
+      "ieee57|n1_branch_outage|load=120": {
+        "generated": 65,
+        "converged": 59
+      },
+      "ieee57|n1_branch_outage|load=130": {
+        "generated": 65,
+        "converged": 53
+      },
+      "ieee57|n2_branch_outage|load=100": {
+        "generated": 72,
+        "converged": 62
+      },
+      "ieee57|n2_branch_outage|load=120": {
+        "generated": 72,
+        "converged": 57
+      },
+      "ieee57|n2_branch_outage|load=130": {
+        "generated": 72,
+        "converged": 51
+      },
+      "ieee57|n1_transformer_outage|load=100": {
+        "generated": 12,
+        "converged": 12
+      },
+      "ieee57|n1_generator_outage|load=100": {
+        "generated": 6,
+        "converged": 5
+      },
+      "ieee57|n1_bus_outage|load=100": {
+        "generated": 12,
+        "converged": 9
+      },
+      "ieee57|n1_transformer_outage|load=120": {
+        "generated": 12,
+        "converged": 10
+      },
+      "ieee57|n1_generator_outage|load=120": {
+        "generated": 6,
+        "converged": 4
+      },
+      "ieee57|n1_bus_outage|load=120": {
+        "generated": 12,
+        "converged": 7
+      },
+      "ieee118|base_power_flow|load=70": {
+        "generated": 1,
+        "converged": 1
+      },
+      "ieee118|generator_perturbation|load=70": {
+        "generated": 4,
+        "converged": 4
+      },
+      "ieee118|base_power_flow|load=80": {
+        "generated": 1,
+        "converged": 1
+      },
+      "ieee118|generator_perturbation|load=80": {
+        "generated": 4,
+        "converged": 4
+      },
+      "ieee118|base_power_flow|load=90": {
+        "generated": 1,
+        "converged": 1
+      },
+      "ieee118|generator_perturbation|load=90": {
+        "generated": 4,
+        "converged": 4
+      },
+      "ieee118|base_power_flow|load=100": {
+        "generated": 1,
+        "converged": 1
+      },
+      "ieee118|generator_perturbation|load=100": {
+        "generated": 4,
+        "converged": 4
+      },
+      "ieee118|base_power_flow|load=110": {
+        "generated": 1,
+        "converged": 1
+      },
+      "ieee118|generator_perturbation|load=110": {
+        "generated": 4,
+        "converged": 4
+      },
+      "ieee118|base_power_flow|load=120": {
+        "generated": 1,
+        "converged": 1
+      },
+      "ieee118|generator_perturbation|load=120": {
+        "generated": 4,
+        "converged": 3
+      },
+      "ieee118|n1_branch_outage|load=70": {
+        "generated": 175,
+        "converged": 168
+      },
+      "ieee118|n1_branch_outage|load=80": {
+        "generated": 175,
+        "converged": 167
+      },
+      "ieee118|n1_branch_outage|load=90": {
+        "generated": 175,
+        "converged": 167
+      },
+      "ieee118|n1_branch_outage|load=100": {
+        "generated": 175,
+        "converged": 166
+      },
+      "ieee118|n1_branch_outage|load=110": {
+        "generated": 175,
+        "converged": 165
+      },
+      "ieee118|n1_branch_outage|load=120": {
+        "generated": 175,
+        "converged": 162
+      },
+      "ieee118|n2_branch_outage|load=100": {
+        "generated": 72,
+        "converged": 60
+      },
+      "ieee118|n2_branch_outage|load=120": {
+        "generated": 72,
+        "converged": 57
+      },
+      "ieee118|n1_transformer_outage|load=100": {
+        "generated": 9,
+        "converged": 8
+      },
+      "ieee118|n1_generator_outage|load=100": {
+        "generated": 12,
+        "converged": 12
+      },
+      "ieee118|n1_bus_outage|load=100": {
+        "generated": 12,
+        "converged": 9
+      },
+      "ieee118|n1_transformer_outage|load=120": {
+        "generated": 9,
+        "converged": 5
+      },
+      "ieee118|n1_generator_outage|load=120": {
+        "generated": 12,
+        "converged": 10
+      },
+      "ieee118|n1_bus_outage|load=120": {
+        "generated": 12,
+        "converged": 7
+      }
+    },
+    "hard_gates": {
+      "nonempty": true,
+      "scenario_ids_unique": true,
+      "every_generated_stratum_has_convergence": true,
+      "overall_convergence_at_least_half": true,
+      "every_system_has_convergence": true,
+      "all_converged_states_complete_and_finite": true,
+      "all_converged_power_balance_residuals_within_1e_minus_3_mw": true,
+      "all_failed_scenarios_classified": true
+    },
+    "by_system": {
+      "ieee14": 408,
+      "ieee30": 570,
+      "ieee57": 766,
+      "ieee118": 1290
+    },
+    "by_contingency_type": {
+      "base_power_flow": 28,
+      "generator_perturbation": 112,
+      "n1_branch_outage": 1896,
+      "n1_bus_outage": 96,
+      "n1_generator_outage": 54,
+      "n1_transformer_outage": 56,
+      "n2_branch_outage": 792
+    },
+    "failure_class_counts": {
+      "unsupplied_island": 170,
+      "numerical_nonconvergence": 234
+    },
+    "state_gate_failure_count": 0,
+    "state_gate_failures": []
+  },
+  "review_pipeline": {
+    "machine_screen_report_path": null,
+    "machine_screened_records": 0,
+    "machine_accepted_augmentations": 0,
+    "machine_decision_agreement_rate": 0.0,
+    "human_execution_report_path": "reports/expert_review_execution_check_v1.2_sd_core.json",
+    "human_execution_status": "external_human_review_pending",
+    "human_complete_assignments": 0
+  },
+  "model_evidence": {
+    "tfidf": {
+      "generated_at": "2026-08-03T04:51:18.512864+00:00",
+      "train": "data/v1.2_sd_core_train_en.jsonl",
+      "objective": "task_specific_tfidf_baselines"
+    },
+    "transformer_reports": [
+      {
+        "generated_at": "2026-07-31T10:54:06.863696+00:00",
+        "train": "data/v1.2_sd_core_train_en.jsonl",
+        "objective": "transformer_sequence_classification",
+        "task_type": "dispatcher_intent_tool_call",
+        "best_validation": {
+          "accuracy": 1.0,
+          "macro_f1": 1.0,
+          "balanced_accuracy": 1.0,
+          "n": 490
+        },
+        "test_evaluation": {
+          "accuracy": 1.0,
+          "macro_f1": 1.0,
+          "balanced_accuracy": 1.0,
+          "n": 494
+        }
+      },
+      {
+        "generated_at": "2026-07-31T10:48:26.598383+00:00",
+        "train": "data/v1.2_sd_core_train_en.jsonl",
+        "objective": "transformer_sequence_classification",
+        "task_type": "operation_ticket_check",
+        "best_validation": {
+          "accuracy": 1.0,
+          "macro_f1": 1.0,
+          "balanced_accuracy": 1.0,
+          "n": 1096
+        },
+        "test_evaluation": {
+          "accuracy": 1.0,
+          "macro_f1": 1.0,
+          "balanced_accuracy": 1.0,
+          "n": 1110
+        }
+      },
+      {
+        "generated_at": "2026-07-31T12:42:28.168916+00:00",
+        "train": "data/proxy_stress/regulation_compliance_check/train_en.jsonl",
+        "objective": "transformer_sequence_classification",
+        "task_type": "regulation_compliance_check",
+        "best_validation": {
+          "accuracy": 0.9928885878767355,
+          "macro_f1": 0.9951968006908776,
+          "balanced_accuracy": 0.9952455568007931,
+          "n": 2953
+        },
+        "test_evaluation": {
+          "accuracy": 0.7560080106809078,
+          "macro_f1": 0.4980109492414864,
+          "balanced_accuracy": 0.5532261821569998,
+          "n": 5992
+        }
+      },
+      {
+        "generated_at": "2026-07-31T12:49:31.214281+00:00",
+        "train": "data/proxy_stress/regulation_compliance_check/train_en.jsonl",
+        "objective": "transformer_sequence_classification",
+        "task_type": "regulation_compliance_check",
+        "best_validation": {
+          "accuracy": 0.9989840839823908,
+          "macro_f1": 0.9993136988279336,
+          "balanced_accuracy": 0.9992972593113141,
+          "n": 2953
+        },
+        "test_evaluation": {
+          "accuracy": 0.9853137516688919,
+          "macro_f1": 0.9881287661660919,
+          "balanced_accuracy": 0.9931671713642363,
+          "n": 5992
+        }
+      },
+      {
+        "generated_at": "2026-07-31T12:32:03.364582+00:00",
+        "train": "data/proxy_stress/regulation_compliance_check/train_en.jsonl",
+        "objective": "transformer_sequence_classification",
+        "task_type": "regulation_compliance_check",
+        "best_validation": {
+          "accuracy": 0.9986454453098544,
+          "macro_f1": 0.9990849159407738,
+          "balanced_accuracy": 0.9990630124150854,
+          "n": 2953
+        },
+        "test_evaluation": {
+          "accuracy": 0.972630173564753,
+          "macro_f1": 0.6449108106721044,
+          "balanced_accuracy": 0.6540104045345135,
+          "n": 5992
+        }
+      },
+      {
+        "generated_at": "2026-07-31T10:52:07.404683+00:00",
+        "train": "data/v1.2_sd_core_train_en.jsonl",
+        "objective": "transformer_sequence_classification",
+        "task_type": "regulation_compliance_check",
+        "best_validation": {
+          "accuracy": 0.9745403111739745,
+          "macro_f1": 0.9807660994870959,
+          "balanced_accuracy": 0.9797058257052783,
+          "n": 707
+        },
+        "test_evaluation": {
+          "accuracy": 0.920114122681883,
+          "macro_f1": 0.920374867245268,
+          "balanced_accuracy": 0.9354094579008074,
+          "n": 701
+        }
+      }
+    ],
+    "generative_latest": {
+      "generated_at": "2026-07-31T13:03:33.483862+00:00",
+      "train": "data/v1.2_sd_core_train_en.jsonl",
+      "objective": "pretrained_seq2seq_generation",
+      "task_types": [
+        "auxiliary_decision"
+      ],
+      "best_validation": {
+        "exact_match": 0.0,
+        "char_f1": 0.9293742568945643,
+        "selection_f1": 0.9293742568945643,
+        "n": 451,
+        "prediction_is_json": 0.0
+      },
+      "test_evaluation": {
+        "exact_match": 0.0,
+        "char_f1": 0.9255203565884278,
+        "selection_f1": 0.9255203565884278,
+        "n": 448,
+        "prediction_is_json": 0.0
+      }
+    },
+    "generative_reports": [
+      {
+        "generated_at": "2026-07-31T13:03:33.483862+00:00",
+        "train": "data/v1.2_sd_core_train_en.jsonl",
+        "objective": "pretrained_seq2seq_generation",
+        "task_types": [
+          "auxiliary_decision"
+        ],
+        "best_validation": {
+          "exact_match": 0.0,
+          "char_f1": 0.9293742568945643,
+          "selection_f1": 0.9293742568945643,
+          "n": 451,
+          "prediction_is_json": 0.0
+        },
+        "test_evaluation": {
+          "exact_match": 0.0,
+          "char_f1": 0.9255203565884278,
+          "selection_f1": 0.9255203565884278,
+          "n": 448,
+          "prediction_is_json": 0.0
+        }
+      },
+      {
+        "generated_at": "2026-07-31T12:55:25.694691+00:00",
+        "train": "data/v1.2_sd_core_train_en.jsonl",
+        "objective": "pretrained_seq2seq_generation",
+        "task_types": [
+          "intelligent_data_query"
+        ],
+        "best_validation": {
+          "exact_match": 0.0,
+          "char_f1": 0.9870053340177178,
+          "selection_f1": 0.9870053340177178,
+          "n": 434,
+          "prediction_is_json": 0.0
+        },
+        "test_evaluation": {
+          "exact_match": 0.0,
+          "char_f1": 0.9870428247973714,
+          "selection_f1": 0.9870428247973714,
+          "n": 437,
+          "prediction_is_json": 0.0
+        }
+      },
+      {
+        "generated_at": "2026-07-31T12:53:18.542485+00:00",
+        "train": "data/v1.2_sd_core_train_en.jsonl",
+        "objective": "pretrained_seq2seq_generation",
+        "task_types": [
+          "regulation_qa"
+        ],
+        "best_validation": {
+          "exact_match": 0.002380952380952381,
+          "token_f1": 0.8089169933658947,
+          "selection_f1": 0.8089169933658947,
+          "n": 420
+        },
+        "test_evaluation": {
+          "exact_match": 0.0,
+          "token_f1": 0.8072746532282353,
+          "selection_f1": 0.8072746532282353,
+          "n": 419
+        }
+      }
+    ],
+    "hard_boundary_benchmark": {
+      "generated_at": "2026-07-09T17:09:42.955576+00:00",
+      "status": "pass",
+      "dataset": "data/gridinstruct_v1.2_sd_core_en.jsonl",
+      "output_dir": null,
+      "artifact_scope": "historical_diagnostic_report_retained_in_reports",
+      "model": "char_tfidf_logistic_regression_with_masked_scenarios_and_numbers",
+      "tasks": {
+        "operation_ticket_check": {
+          "train_records": 1620,
+          "test_records": 1080,
+          "labels": [
+            "compliant",
+            "compliant_with_monitoring",
+            "non_compliant"
+          ],
+          "train_label_counts": {
+            "compliant": 540,
+            "compliant_with_monitoring": 540,
+            "non_compliant": 540
+          },
+          "test_label_counts": {
+            "compliant": 360,
+            "compliant_with_monitoring": 360,
+            "non_compliant": 360
+          },
+          "accuracy": 1.0,
+          "balanced_accuracy": 1.0,
+          "macro_f1": 1.0,
+          "surface_purity": {
+            "surface_groups": 2700,
+            "weighted_surface_label_purity": 1.0,
+            "repeated_surface_groups": 0
+          }
+        },
+        "dispatcher_intent_tool_call": {
+          "train_records": 1620,
+          "test_records": 1080,
+          "labels": [
+            "diagnose_and_dispatch",
+            "mitigate_violations",
+            "security_check_and_redispatch"
+          ],
+          "train_label_counts": {
+            "diagnose_and_dispatch": 540,
+            "mitigate_violations": 540,
+            "security_check_and_redispatch": 540
+          },
+          "test_label_counts": {
+            "diagnose_and_dispatch": 360,
+            "mitigate_violations": 360,
+            "security_check_and_redispatch": 360
+          },
+          "accuracy": 1.0,
+          "balanced_accuracy": 1.0,
+          "macro_f1": 1.0,
+          "surface_purity": {
+            "surface_groups": 2495,
+            "weighted_surface_label_purity": 1.0,
+            "repeated_surface_groups": 110
+          }
+        },
+        "regulation_compliance_check": {
+          "train_records": 1362,
+          "test_records": 906,
+          "labels": [
+            "compliant",
+            "compliant_with_monitoring",
+            "non_compliant"
+          ],
+          "train_label_counts": {
+            "compliant": 454,
+            "compliant_with_monitoring": 454,
+            "non_compliant": 454
+          },
+          "test_label_counts": {
+            "compliant": 302,
+            "compliant_with_monitoring": 302,
+            "non_compliant": 302
+          },
+          "accuracy": 0.9415011037527594,
+          "balanced_accuracy": 0.9415011037527594,
+          "macro_f1": 0.9418138166334309,
+          "surface_purity": {
+            "surface_groups": 2212,
+            "weighted_surface_label_purity": 1.0,
+            "repeated_surface_groups": 51
+          }
+        }
+      },
+      "prediction_count": 3066,
+      "interpretation": "The hard-boundary benchmark is a diagnostic stress set for tasks with high standard-split scores. It is derived from released records, masks exact scenario identifiers and numeric values, and reports task-specific lightweight baseline scores beside label-support and surface-purity diagnostics."
+    }
+  },
+  "availability": {
+    "data_doi": "pending",
+    "code_repository_url": "pending",
+    "archived_code_release_doi": "pending",
+    "data_license": "CC-BY-4.0",
+    "code_license": "MIT"
+  },
+  "rule_dictionary": [
+    {
+      "rule_id": "REG_OVERLOAD_001",
+      "rule_type": "threshold",
+      "standard_id": "GRIDINSTRUCT-V1.2-RULEBOOK",
+      "standard_title": "GridInstruct v1.2 internal rulebook",
+      "clause_id": "3.1",
+      "source_title": "电网调度管理条例第十八条：电压、设备负载和稳定限额超过规定范围时可采取调度措施",
+      "source_url": "https://www.nea.gov.cn/2011-08/19/c_131060575.htm",
+      "source_kind": "dataset_policy_with_formal_regulatory_principle",
+      "issuing_body": "State Council of the People's Republic of China; Standardization Administration of China",
+      "document_id": "国务院令第115号; GB/T 31464-2022; GB 38755-2019",
+      "document_version": "official current registry entries accessed 2026-07-10",
+      "external_clause_locator": "第十八条第（二）至（四）项",
+      "access_date": "2026-07-10",
+      "source_metadata_sha256": "e8734a27b62e77c36f35a315f6f1a0d922f539ce47b42cf357bb87bd97f36a44",
+      "summary": "线路负载率超过 100% 进入告警，超过 110% 判定为严重越限。",
+      "evidence_fields": "instruction, input",
+      "applicable_tasks": "regulation_compliance_check, auxiliary_decision, regulation_qa, intelligent_data_query"
+    },
+    {
+      "rule_id": "REG_VOLTAGE_001",
+      "rule_type": "threshold",
+      "standard_id": "GRIDINSTRUCT-V1.2-RULEBOOK",
+      "standard_title": "GridInstruct v1.2 internal rulebook",
+      "clause_id": "3.2",
+      "source_title": "电网调度管理条例第十八条：电压、设备负载和稳定限额超过规定范围时可采取调度措施",
+      "source_url": "https://www.nea.gov.cn/2011-08/19/c_131060575.htm",
+      "source_kind": "dataset_policy_with_formal_regulatory_principle",
+      "issuing_body": "State Council of the People's Republic of China; Standardization Administration of China",
+      "document_id": "国务院令第115号; GB/T 31464-2022; GB 38755-2019",
+      "document_version": "official current registry entries accessed 2026-07-10",
+      "external_clause_locator": "第十八条第（二）至（四）项",
+      "access_date": "2026-07-10",
+      "source_metadata_sha256": "049090bcc93d0024bd6f01f2cef0beb07e25896642ec31189686a5b461300497",
+      "summary": "母线电压低于 0.95 p.u. 或高于 1.05 p.u. 需触发电压控制校核。",
+      "evidence_fields": "instruction, input",
+      "applicable_tasks": "regulation_compliance_check, auxiliary_decision, regulation_qa, intelligent_data_query"
+    },
+    {
+      "rule_id": "REG_SWITCHING_001",
+      "rule_type": "procedural",
+      "standard_id": "GRIDINSTRUCT-V1.2-RULEBOOK",
+      "standard_title": "GridInstruct v1.2 internal rulebook",
+      "clause_id": "4.1",
+      "source_title": "电网调度管理条例第二十条：调度管辖设备操作须经值班调度人员许可",
+      "source_url": "https://www.nea.gov.cn/2011-08/19/c_131060575.htm",
+      "source_kind": "formal_clause_plus_dataset_procedure",
+      "issuing_body": "State Council of the People's Republic of China; National Energy Administration",
+      "document_id": "国务院令第115号; 国能发监管规〔2021〕60号",
+      "document_version": "2021 current grid-connection operation regulation",
+      "external_clause_locator": "第二十条",
+      "access_date": "2026-07-10",
+      "source_metadata_sha256": "ec3f9ea6fce4c2d1bc01d408e504912c182d5100899e654f90fd5fa2127477be",
+      "summary": "倒闸操作前应核对设备状态、操作对象和安全措施。",
+      "evidence_fields": "instruction, input",
+      "applicable_tasks": "operation_ticket_check, regulation_qa"
+    },
+    {
+      "rule_id": "REG_TOOL_001",
+      "rule_type": "procedural",
+      "standard_id": "GRIDINSTRUCT-V1.2-RULEBOOK",
+      "standard_title": "GridInstruct v1.2 internal rulebook",
+      "clause_id": "5.1",
+      "source_title": "电网调度管理条例第十八、二十一、二十二条：安全处置与调度指令执行",
+      "source_url": "https://www.nea.gov.cn/2011-08/19/c_131060575.htm",
+      "source_kind": "formal_clause_plus_internal_tool_contract",
+      "issuing_body": "State Council of the People's Republic of China",
+      "document_id": "国务院令第115号",
+      "document_version": "official source page accessed 2026-07-10",
+      "external_clause_locator": "第十八条、第二十一条、第二十二条",
+      "access_date": "2026-07-10",
+      "source_metadata_sha256": "916a25cac54c552634414e58fa418369d705cdf154017395b024436781bf6ac5",
+      "summary": "执行调度操作前应先进行状态查询、约束校核和必要的潮流计算。",
+      "evidence_fields": "instruction, input",
+      "applicable_tasks": "dispatcher_intent_tool_call, regulation_qa"
+    },
+    {
+      "rule_id": "REG_QUERY_001",
+      "rule_type": "data_query",
+      "standard_id": "GRIDINSTRUCT-V1.2-RULEBOOK",
+      "standard_title": "GridInstruct v1.2 internal rulebook",
+      "clause_id": "6.1",
+      "source_title": "GridInstruct structured-query data contract",
+      "source_url": "https://std.samr.gov.cn/gb/search/gbDetailed?id=F159DFC2A89547EFE05397BE0A0AF334",
+      "source_kind": "internal_data_contract",
+      "issuing_body": "GridInstruct dataset maintainers; Standardization Administration of China for context only",
+      "document_id": "GRIDINSTRUCT-QUERY-CONTRACT-V3; GB/T 31464-2022",
+      "document_version": "query-contract-v3",
+      "external_clause_locator": "not statutory; internal structured-data contract",
+      "access_date": "2026-07-10",
+      "source_metadata_sha256": "75515d81807259dce001b6b29a319d7c1dc25213b40a628c55f45e729a2c98cd",
+      "summary": "事后问数应明确时间范围、对象类型、筛选条件和聚合方式。",
+      "evidence_fields": "instruction, input",
+      "applicable_tasks": "intelligent_data_query, regulation_qa"
+    },
+    {
+      "rule_id": "REG_OVERLOAD_ALERT_002",
+      "rule_type": "threshold_detail",
+      "standard_id": "GRIDINSTRUCT-V1.2-RULEBOOK",
+      "standard_title": "GridInstruct v1.2 internal rulebook",
+      "clause_id": "3.1.1",
+      "source_title": "电网调度管理条例第十八条：电压、设备负载和稳定限额超过规定范围时可采取调度措施",
+      "source_url": "https://www.nea.gov.cn/2011-08/19/c_131060575.htm",
+      "source_kind": "dataset_policy_with_formal_regulatory_principle",
+      "issuing_body": "State Council of the People's Republic of China; Standardization Administration of China",
+      "document_id": "国务院令第115号; GB/T 31464-2022; GB 38755-2019",
+      "document_version": "official current registry entries accessed 2026-07-10",
+      "external_clause_locator": "第十八条第（二）至（四）项",
+      "access_date": "2026-07-10",
+      "source_metadata_sha256": "60e2b1721de62a10900d7bff49f02af4048ea802bd2230d3889da079c041a3cc",
+      "summary": "Branch loading above the alarm threshold requires monitoring, limit verification, and review before further transfer increase.",
+      "evidence_fields": "input.observed_issues, input.grid_state_summary",
+      "applicable_tasks": "regulation_compliance_check, auxiliary_decision, intelligent_data_query"
+    },
+    {
+      "rule_id": "REG_OVERLOAD_EMERGENCY_003",
+      "rule_type": "threshold_detail",
+      "standard_id": "GRIDINSTRUCT-V1.2-RULEBOOK",
+      "standard_title": "GridInstruct v1.2 internal rulebook",
+      "clause_id": "3.1.2",
+      "source_title": "电网调度管理条例第十八条：电压、设备负载和稳定限额超过规定范围时可采取调度措施",
+      "source_url": "https://www.nea.gov.cn/2011-08/19/c_131060575.htm",
+      "source_kind": "dataset_policy_with_formal_regulatory_principle",
+      "issuing_body": "State Council of the People's Republic of China; Standardization Administration of China",
+      "document_id": "国务院令第115号; GB/T 31464-2022; GB 38755-2019",
+      "document_version": "official current registry entries accessed 2026-07-10",
+      "external_clause_locator": "第十八条第（二）至（四）项",
+      "access_date": "2026-07-10",
+      "source_metadata_sha256": "4b754b81d80c94af20b53b6971662dac30937145f3d15aa2add103b589526964",
+      "summary": "Severe overload states require corrective dispatch or redispatch before accepting actions that increase constrained flow.",
+      "evidence_fields": "input.observed_issues, input.grid_state_summary",
+      "applicable_tasks": "regulation_compliance_check, auxiliary_decision"
+    },
+    {
+      "rule_id": "REG_VOLTAGE_LOW_002",
+      "rule_type": "threshold_detail",
+      "standard_id": "GRIDINSTRUCT-V1.2-RULEBOOK",
+      "standard_title": "GridInstruct v1.2 internal rulebook",
+      "clause_id": "3.2.1",
+      "source_title": "电网调度管理条例第十八条：电压、设备负载和稳定限额超过规定范围时可采取调度措施",
+      "source_url": "https://www.nea.gov.cn/2011-08/19/c_131060575.htm",
+      "source_kind": "dataset_policy_with_formal_regulatory_principle",
+      "issuing_body": "State Council of the People's Republic of China; Standardization Administration of China",
+      "document_id": "国务院令第115号; GB/T 31464-2022; GB 38755-2019",
+      "document_version": "official current registry entries accessed 2026-07-10",
+      "external_clause_locator": "第十八条第（二）至（四）项",
+      "access_date": "2026-07-10",
+      "source_metadata_sha256": "bde99a2e96b971ae928082cbddd7152b990de8687e988b82f2a554c1fbf6cd23",
+      "summary": "Low-voltage states require voltage-control review before actions that may further reduce voltage margin.",
+      "evidence_fields": "input.observed_issues, input.grid_state_summary",
+      "applicable_tasks": "regulation_compliance_check, auxiliary_decision"
+    },
+    {
+      "rule_id": "REG_VOLTAGE_HIGH_003",
+      "rule_type": "threshold_detail",
+      "standard_id": "GRIDINSTRUCT-V1.2-RULEBOOK",
+      "standard_title": "GridInstruct v1.2 internal rulebook",
+      "clause_id": "3.2.2",
+      "source_title": "电网调度管理条例第十八条：电压、设备负载和稳定限额超过规定范围时可采取调度措施",
+      "source_url": "https://www.nea.gov.cn/2011-08/19/c_131060575.htm",
+      "source_kind": "dataset_policy_with_formal_regulatory_principle",
+      "issuing_body": "State Council of the People's Republic of China; Standardization Administration of China",
+      "document_id": "国务院令第115号; GB/T 31464-2022; GB 38755-2019",
+      "document_version": "official current registry entries accessed 2026-07-10",
+      "external_clause_locator": "第十八条第（二）至（四）项",
+      "access_date": "2026-07-10",
+      "source_metadata_sha256": "e1899e499462abbf5d13f19be59467d5992cbf20927a43d370f44cd8fbc4fada",
+      "summary": "High-voltage states require reactive-power or voltage-setpoint review before action approval.",
+      "evidence_fields": "input.observed_issues, input.grid_state_summary",
+      "applicable_tasks": "regulation_compliance_check, auxiliary_decision"
+    },
+    {
+      "rule_id": "REG_SECURITY_REDISPATCH_004",
+      "rule_type": "closed_loop_validation",
+      "standard_id": "GRIDINSTRUCT-V1.2-RULEBOOK",
+      "standard_title": "GridInstruct v1.2 internal rulebook",
+      "clause_id": "3.3",
+      "source_title": "电网调度管理条例第十八、二十一、二十二条：安全处置与调度指令执行",
+      "source_url": "https://www.nea.gov.cn/2011-08/19/c_131060575.htm",
+      "source_kind": "formal_clause_plus_internal_tool_contract",
+      "issuing_body": "State Council of the People's Republic of China",
+      "document_id": "国务院令第115号",
+      "document_version": "official source page accessed 2026-07-10",
+      "external_clause_locator": "第十八条、第二十一条、第二十二条",
+      "access_date": "2026-07-10",
+      "source_metadata_sha256": "4486b88d3dedd7109186a6668bffea9348ac1e49064130651123a249ef069bb9",
+      "summary": "Corrective redispatch suggestions must include post-action power-flow validation and constraint review.",
+      "evidence_fields": "input.available_actions, input.utterance",
+      "applicable_tasks": "auxiliary_decision, dispatcher_intent_tool_call"
+    },
+    {
+      "rule_id": "REG_SWITCHING_PERMISSION_002",
+      "rule_type": "procedural_detail",
+      "standard_id": "GRIDINSTRUCT-V1.2-RULEBOOK",
+      "standard_title": "GridInstruct v1.2 internal rulebook",
+      "clause_id": "4.2",
+      "source_title": "电网调度管理条例第二十条：调度管辖设备操作须经值班调度人员许可",
+      "source_url": "https://www.nea.gov.cn/2011-08/19/c_131060575.htm",
+      "source_kind": "formal_clause_plus_dataset_procedure",
+      "issuing_body": "State Council of the People's Republic of China; National Energy Administration",
+      "document_id": "国务院令第115号; 国能发监管规〔2021〕60号",
+      "document_version": "2021 current grid-connection operation regulation",
+      "external_clause_locator": "第二十条",
+      "access_date": "2026-07-10",
+      "source_metadata_sha256": "28ad1a30a36524ba8edebdab52502fba45b158fad2418e879b3aa06eeb976197",
+      "summary": "Operation-ticket execution requires explicit dispatch permission or a documented permit status before execution.",
+      "evidence_fields": "input.dispatch_permit_status",
+      "applicable_tasks": "operation_ticket_check"
+    },
+    {
+      "rule_id": "REG_SWITCHING_MONITORING_003",
+      "rule_type": "procedural_detail",
+      "standard_id": "GRIDINSTRUCT-V1.2-RULEBOOK",
+      "standard_title": "GridInstruct v1.2 internal rulebook",
+      "clause_id": "4.3",
+      "source_title": "电网调度管理条例第二十条：调度管辖设备操作须经值班调度人员许可",
+      "source_url": "https://www.nea.gov.cn/2011-08/19/c_131060575.htm",
+      "source_kind": "formal_clause_plus_dataset_procedure",
+      "issuing_body": "State Council of the People's Republic of China; National Energy Administration",
+      "document_id": "国务院令第115号; 国能发监管规〔2021〕60号",
+      "document_version": "2021 current grid-connection operation regulation",
+      "external_clause_locator": "第二十条",
+      "access_date": "2026-07-10",
+      "source_metadata_sha256": "740f0cd85cf868562142d76373ca33d3bfe51e5b8d45547db685c6d5a9c95f94",
+      "summary": "Monitoring arrangement and supervisory presence must be checked when a switching ticket is conditionally acceptable.",
+      "evidence_fields": "input.monitoring_arrangement",
+      "applicable_tasks": "operation_ticket_check"
+    },
+    {
+      "rule_id": "REG_TOOL_DIAGNOSIS_002",
+      "rule_type": "tool_routing_detail",
+      "standard_id": "GRIDINSTRUCT-V1.2-RULEBOOK",
+      "standard_title": "GridInstruct v1.2 internal rulebook",
+      "clause_id": "5.2",
+      "source_title": "电网调度管理条例第十八、二十一、二十二条：安全处置与调度指令执行",
+      "source_url": "https://www.nea.gov.cn/2011-08/19/c_131060575.htm",
+      "source_kind": "formal_clause_plus_internal_tool_contract",
+      "issuing_body": "State Council of the People's Republic of China",
+      "document_id": "国务院令第115号",
+      "document_version": "official source page accessed 2026-07-10",
+      "external_clause_locator": "第十八条、第二十一条、第二十二条",
+      "access_date": "2026-07-10",
+      "source_metadata_sha256": "3a0c1217e9360fbd5a58f2f5e5dc115ce280af5836574d4fd7e4ed85ac21bd71",
+      "summary": "Diagnostic dispatch requests should first query violations and relevant state records before suggesting corrective actions.",
+      "evidence_fields": "input.utterance",
+      "applicable_tasks": "dispatcher_intent_tool_call"
+    },
+    {
+      "rule_id": "REG_TOOL_MITIGATION_003",
+      "rule_type": "tool_routing_detail",
+      "standard_id": "GRIDINSTRUCT-V1.2-RULEBOOK",
+      "standard_title": "GridInstruct v1.2 internal rulebook",
+      "clause_id": "5.3",
+      "source_title": "电网调度管理条例第十八、二十一、二十二条：安全处置与调度指令执行",
+      "source_url": "https://www.nea.gov.cn/2011-08/19/c_131060575.htm",
+      "source_kind": "formal_clause_plus_internal_tool_contract",
+      "issuing_body": "State Council of the People's Republic of China",
+      "document_id": "国务院令第115号",
+      "document_version": "official source page accessed 2026-07-10",
+      "external_clause_locator": "第十八条、第二十一条、第二十二条",
+      "access_date": "2026-07-10",
+      "source_metadata_sha256": "894cf19479c6e3bc2bf55588e41141534c080c75b2d3cd66c9a57357aeadc416",
+      "summary": "Mitigation requests should bind violation retrieval to corrective-action suggestion and follow-up validation tools.",
+      "evidence_fields": "input.utterance",
+      "applicable_tasks": "dispatcher_intent_tool_call"
+    },
+    {
+      "rule_id": "REG_TOOL_POSTCHECK_004",
+      "rule_type": "tool_routing_detail",
+      "standard_id": "GRIDINSTRUCT-V1.2-RULEBOOK",
+      "standard_title": "GridInstruct v1.2 internal rulebook",
+      "clause_id": "5.4",
+      "source_title": "电网调度管理条例第十八、二十一、二十二条：安全处置与调度指令执行",
+      "source_url": "https://www.nea.gov.cn/2011-08/19/c_131060575.htm",
+      "source_kind": "formal_clause_plus_internal_tool_contract",
+      "issuing_body": "State Council of the People's Republic of China",
+      "document_id": "国务院令第115号",
+      "document_version": "official source page accessed 2026-07-10",
+      "external_clause_locator": "第十八条、第二十一条、第二十二条",
+      "access_date": "2026-07-10",
+      "source_metadata_sha256": "d346ca47a2e926a56abb42bc08a13e63d300e0f93f99bd25cf009d4c5de2844e",
+      "summary": "Post-action dispatch confirmation should include a power-flow recalculation or equivalent state validation step.",
+      "evidence_fields": "input.decision_window, input.utterance, instruction",
+      "applicable_tasks": "dispatcher_intent_tool_call, auxiliary_decision, regulation_compliance_check"
+    },
+    {
+      "rule_id": "REG_QUERY_FILTER_002",
+      "rule_type": "data_query_detail",
+      "standard_id": "GRIDINSTRUCT-V1.2-RULEBOOK",
+      "standard_title": "GridInstruct v1.2 internal rulebook",
+      "clause_id": "6.2",
+      "source_title": "GridInstruct structured-query data contract",
+      "source_url": "https://std.samr.gov.cn/gb/search/gbDetailed?id=F159DFC2A89547EFE05397BE0A0AF334",
+      "source_kind": "internal_data_contract",
+      "issuing_body": "GridInstruct dataset maintainers; Standardization Administration of China for context only",
+      "document_id": "GRIDINSTRUCT-QUERY-CONTRACT-V3; GB/T 31464-2022",
+      "document_version": "query-contract-v3",
+      "external_clause_locator": "not statutory; internal structured-data contract",
+      "access_date": "2026-07-10",
+      "source_metadata_sha256": "960631c1205162a34efbda601435f01dcf383915726f005ea11dbb5582dd3986",
+      "summary": "Post-event data queries must state the simulation source and filter condition used to retrieve records.",
+      "evidence_fields": "input.scenario_id, input.question, instruction",
+      "applicable_tasks": "intelligent_data_query"
+    },
+    {
+      "rule_id": "REG_QUERY_AGGREGATION_003",
+      "rule_type": "data_query_detail",
+      "standard_id": "GRIDINSTRUCT-V1.2-RULEBOOK",
+      "standard_title": "GridInstruct v1.2 internal rulebook",
+      "clause_id": "6.3",
+      "source_title": "GridInstruct structured-query data contract",
+      "source_url": "https://std.samr.gov.cn/gb/search/gbDetailed?id=F159DFC2A89547EFE05397BE0A0AF334",
+      "source_kind": "internal_data_contract",
+      "issuing_body": "GridInstruct dataset maintainers; Standardization Administration of China for context only",
+      "document_id": "GRIDINSTRUCT-QUERY-CONTRACT-V3; GB/T 31464-2022",
+      "document_version": "query-contract-v3",
+      "external_clause_locator": "not statutory; internal structured-data contract",
+      "access_date": "2026-07-10",
+      "source_metadata_sha256": "e7c1a0d689bb033c2be61f64fc28069cebe413f0326c4c2d882e1d2c7b2b113b",
+      "summary": "Queries asking for overload lists or maxima must preserve line, transformer, or all-equipment scope and return the complete typed list, count, and maximum in the structured target.",
+      "evidence_fields": "input.question, instruction",
+      "applicable_tasks": "intelligent_data_query"
+    }
+  ],
+  "rule_taxonomy_expansion": {
+    "generated_at": "2026-07-31T09:43:35.122962+00:00",
+    "status": "pass",
+    "canonical_dataset": "data/gridinstruct_v1.2_sd_core_en.jsonl",
+    "output_canonical_dataset": "data/gridinstruct_v1.2_sd_core_en.jsonl",
+    "rule_count_before": 17,
+    "rule_count_after": 17,
+    "new_rule_count": 0,
+    "canonical_record_count": 95479,
+    "canonical_changed_records": 95479,
+    "new_rule_link_counts": {
+      "REG_OVERLOAD_ALERT_002": 30508,
+      "REG_OVERLOAD_EMERGENCY_003": 17993,
+      "REG_QUERY_AGGREGATION_003": 13122,
+      "REG_QUERY_FILTER_002": 17765,
+      "REG_SECURITY_REDISPATCH_004": 29646,
+      "REG_SWITCHING_MONITORING_003": 10880,
+      "REG_SWITCHING_PERMISSION_002": 10880,
+      "REG_TOOL_DIAGNOSIS_002": 10295,
+      "REG_TOOL_MITIGATION_003": 11879,
+      "REG_TOOL_POSTCHECK_004": 34442,
+      "REG_VOLTAGE_HIGH_003": 8662,
+      "REG_VOLTAGE_LOW_002": 39298
+    },
+    "task_rule_matrix_for_new_rules": {
+      "auxiliary_decision": {
+        "REG_OVERLOAD_ALERT_002": 18087,
+        "REG_OVERLOAD_EMERGENCY_003": 16629,
+        "REG_VOLTAGE_HIGH_003": 3788,
+        "REG_SECURITY_REDISPATCH_004": 17767,
+        "REG_TOOL_POSTCHECK_004": 18087,
+        "REG_VOLTAGE_LOW_002": 17031
+      },
+      "dispatcher_intent_tool_call": {
+        "REG_TOOL_POSTCHECK_004": 3444,
+        "REG_TOOL_DIAGNOSIS_002": 10295,
+        "REG_TOOL_MITIGATION_003": 11879,
+        "REG_SECURITY_REDISPATCH_004": 11879
+      },
+      "intelligent_data_query": {
+        "REG_QUERY_FILTER_002": 17765,
+        "REG_QUERY_AGGREGATION_003": 13122
+      },
+      "operation_ticket_check": {
+        "REG_SWITCHING_PERMISSION_002": 10880,
+        "REG_SWITCHING_MONITORING_003": 10880
+      },
+      "regulation_compliance_check": {
+        "REG_VOLTAGE_LOW_002": 22267,
+        "REG_VOLTAGE_HIGH_003": 4874,
+        "REG_OVERLOAD_ALERT_002": 12421,
+        "REG_TOOL_POSTCHECK_004": 12911,
+        "REG_OVERLOAD_EMERGENCY_003": 1364
+      }
+    },
+    "unlinked_new_rules": [],
+    "link_validation": {
+      "status": "pass",
+      "link_count": 386484,
+      "error_count": 0,
+      "errors": []
+    },
+    "clause_matrix_status": "pass",
+    "transaction": {
+      "committed": true,
+      "artifacts": {
+        "data/gridinstruct_v1.2_sd_core_en.jsonl": "75ffc5c5386e331eed6c7f4092d186e042be8a020a936993f5220a78c1fd058e",
+        "rules/regulation_rules.json": "0c834cdf81dc0b10e76d525845111dc5e845ac8a559ef9c21bc02aeb0b4c1a83",
+        "metadata/rule_clause_matrix.csv": "6bd53ffe7850cca9b44bd7532c91e859ad338c7566eaba0e2482f5b1082f26e8",
+        "metadata/rule_clause_matrix.json": "1fb3ddaf511cb43c1013cbdceae412d7bd9fff45d48fd0d342672060fe481a2d"
+      }
+    },
+    "updated_files": [
+      {
+        "path": "data/gridinstruct_v1.2_sd_core_en.jsonl",
+        "records": 95479,
+        "changed_records": 95479,
+        "records_with_rule_links": 95479
+      }
+    ],
+    "clause_matrix_csv": "metadata/rule_clause_matrix.csv",
+    "clause_matrix_json": "metadata/rule_clause_matrix.json"
+  },
+  "audit_reference": {
+    "generated_at": "2026-08-05T19:00:00+00:00",
+    "dataset": "data/gridinstruct_v1.2_sd_core_en.jsonl",
+    "expected_version": "v1.2-sd-core",
+    "thresholds": {
+      "min_total_records": 60000,
+      "min_flat_task_records": 4000,
+      "min_scenario_task_records": 15000,
+      "max_near_duplicate_rate": 0.02,
+      "min_finalized_review_per_task": 50,
+      "min_review_agreement_rate": 0.75,
+      "min_transformer_macro_f1": 0.5,
+      "min_generative_token_f1": 0.6
+    },
+    "data_scale": {
+      "status": "pass",
+      "total_records": 95479,
+      "per_task": {
+        "auxiliary_decision": 18087,
+        "regulation_compliance_check": 24767,
+        "dispatcher_intent_tool_call": 19773,
+        "intelligent_data_query": 17766,
+        "regulation_qa": 4205,
+        "operation_ticket_check": 10881
+      },
+      "flat_tasks_meet_target": true,
+      "scenario_tasks_meet_target": true
+    },
+    "data_quality": {
+      "status": "pass",
+      "validation_passed": true,
+      "near_duplicate_rate": 0.0036028864986017866,
+      "scenario_overlap": {
+        "train_test": 0,
+        "train_validation": 0,
+        "validation_test": 0
+      },
+      "scenario_overlap_scope": "diagnostic for standard train/validation/test scenario reuse; hard split gates are read from split_independence_report when present",
+      "split_independence_report": {
+        "path": "reports/split_independence_audit_v1.2_sd_core.json",
+        "status": "pass",
+        "hard_gates": {
+          "standard_record_id_disjoint": true,
+          "challenge_record_id_disjoint": true,
+          "ood_scenario_disjoint_from_standard": true,
+          "all_released_splits_nonempty": true
+        },
+        "ood_scenario_overlap_with_standard": 0
+      },
+      "data_quality_optimization": {
+        "path": "reports/data_quality_optimization_v1.2_sd_core.json",
+        "status": "pass",
+        "required_missing_total": 0,
+        "split_id_overlap_total": 0,
+        "split_prompt_input_overlap_total": 0
+      },
+      "validation_summary": {
+        "schema_errors": 0,
+        "duplicate_ids": 0,
+        "invalid_rule_links": 0,
+        "invalid_scenario_links": 0,
+        "semantic_errors": 0
+      }
+    },
+    "llm_review_and_augmentation": {
+      "status": "recorded_machine_assisted_only",
+      "reviewed_records": 548,
+      "accepted_augmentations": 37,
+      "agreement_rate": 0.7645985401459854,
+      "finalized_review_by_task": {
+        "auxiliary_decision": 87,
+        "regulation_compliance_check": 227,
+        "dispatcher_intent_tool_call": 159,
+        "intelligent_data_query": 103,
+        "regulation_qa": 108,
+        "operation_ticket_check": 352
+      },
+      "review_status_counts": {
+        "generated_pending_expert_review": 94048,
+        "llm_dual_review_accepted": 877,
+        "llm_augmented_pending_expert_review": 75,
+        "llm_adjudicated_revised": 159,
+        "opf_closed_loop_validated": 320
+      },
+      "paper_grade_review_depth": "external_human_review_pending",
+      "paper_grade_review_agreement": "machine_assisted_agreement_recorded_not_human"
+    },
+    "model_evidence": {
+      "status": "pass",
+      "tfidf": {
+        "objective": "task_specific_tfidf_baselines",
+        "train": "data/v1.2_sd_core_train_en.jsonl",
+        "generated_at": "2026-07-09T15:26:01.255255+00:00",
+        "test_macro_score": 0.8397518800928808,
+        "ood_macro_score": 0.7705552852171769
+      },
+      "transformer_latest": {
+        "objective": "transformer_sequence_classification",
+        "train": "data/v1.2_sd_core_train_en.jsonl",
+        "generated_at": "2026-07-09T08:52:02.095695+00:00",
+        "test_evaluation": {
+          "accuracy": 1.0,
+          "macro_f1": 1.0,
+          "balanced_accuracy": 1.0,
+          "n": 471
+        },
+        "best_validation": {
+          "accuracy": 1.0,
+          "macro_f1": 1.0,
+          "balanced_accuracy": 1.0,
+          "n": 458
+        },
+        "task_type": "dispatcher_intent_tool_call"
+      },
+      "transformer_reports": [
+        {
+          "path": "benchmark/v1.2_sd_core_transformer_dispatcher_intent_tool_call_report.json",
+          "task_type": "dispatcher_intent_tool_call",
+          "train": "data/v1.2_sd_core_train_en.jsonl",
+          "generated_at": "2026-07-09T15:41:57.360703+00:00",
+          "best_validation": {
+            "accuracy": 1.0,
+            "macro_f1": 1.0,
+            "balanced_accuracy": 1.0,
+            "n": 458
+          },
+          "test_evaluation": {
+            "accuracy": 1.0,
+            "macro_f1": 1.0,
+            "balanced_accuracy": 1.0,
+            "n": 471
+          }
+        },
+        {
+          "path": "benchmark/v1.2_sd_core_transformer_operation_ticket_check_report.json",
+          "task_type": "operation_ticket_check",
+          "train": "data/v1.2_sd_core_train_en.jsonl",
+          "generated_at": "2026-07-09T15:40:06.168238+00:00",
+          "best_validation": {
+            "accuracy": 1.0,
+            "macro_f1": 1.0,
+            "balanced_accuracy": 1.0,
+            "n": 1088
+          },
+          "test_evaluation": {
+            "accuracy": 1.0,
+            "macro_f1": 1.0,
+            "balanced_accuracy": 1.0,
+            "n": 1089
+          }
+        },
+        {
+          "path": "benchmark/v1.2_sd_core_transformer_regulation_compliance_check_report.json",
+          "task_type": "regulation_compliance_check",
+          "train": "data/v1.2_sd_core_train_en.jsonl",
+          "generated_at": "2026-07-09T15:41:08.698937+00:00",
+          "best_validation": {
+            "accuracy": 0.9805194805194806,
+            "macro_f1": 0.970150030120052,
+            "balanced_accuracy": 0.9798933057606648,
+            "n": 770
+          },
+          "test_evaluation": {
+            "accuracy": 0.9902234636871509,
+            "macro_f1": 0.9850267379679144,
+            "balanced_accuracy": 0.9920816771880602,
+            "n": 716
+          }
+        }
+      ],
+      "generative_latest": null,
+      "generative_reports": [
+        {
+          "path": "benchmark/v1.2_sd_core_seq2seq_auxiliary_decision_report.json",
+          "task_types": [
+            "auxiliary_decision"
+          ],
+          "train": "data/v1.2_sd_core_train_en.jsonl",
+          "model_name": "t5-small",
+          "target_mode": "full",
+          "generated_at": "2026-07-09T13:10:17.215819+00:00",
+          "best_validation": {
+            "exact_match": 0.0,
+            "token_f1": 0.9244853918210575,
+            "n": 410,
+            "prediction_is_json": 0.0
+          },
+          "test_evaluation": {
+            "exact_match": 0.06435643564356436,
+            "token_f1": 0.927589772606495,
+            "n": 404,
+            "prediction_is_json": 1.0,
+            "tool_set_exact": 1.0,
+            "tool_set_jaccard": 1.0,
+            "response_token_f1": 0.9120823107220133
+          },
+          "structured_metrics": {
+            "prediction_is_json": 1.0,
+            "tool_set_exact": 1.0,
+            "tool_set_jaccard": 1.0
+          }
+        },
+        {
+          "path": "benchmark/v1.2_sd_core_seq2seq_intelligent_data_query_report.json",
+          "task_types": [
+            "intelligent_data_query"
+          ],
+          "train": "data/v1.2_sd_core_train_en.jsonl",
+          "model_name": "t5-small",
+          "target_mode": "actionable",
+          "generated_at": "2026-07-09T13:07:00.061284+00:00",
+          "best_validation": {
+            "exact_match": 0.0,
+            "token_f1": 0.9846505697247119,
+            "n": 409,
+            "prediction_is_json": 0.0
+          },
+          "test_evaluation": {
+            "exact_match": 0.6529126213592233,
+            "token_f1": 0.9987428575910424,
+            "n": 412,
+            "prediction_is_json": 1.0,
+            "structured_query_exact": 0.6529126213592233,
+            "structured_query_field_accuracy": 0.8843042071197423
+          },
+          "structured_metrics": {
+            "prediction_is_json": 1.0,
+            "structured_query_exact": 0.6529126213592233,
+            "structured_query_field_accuracy": 0.8843042071197423
+          }
+        },
+        {
+          "path": "benchmark/v1.2_sd_core_seq2seq_regqa_report.json",
+          "task_types": [
+            "regulation_qa"
+          ],
+          "train": "data/v1.2_sd_core_train_en.jsonl",
+          "model_name": "t5-small",
+          "target_mode": "full",
+          "generated_at": "2026-07-09T12:59:21.186040+00:00",
+          "best_validation": {
+            "exact_match": 0.004761904761904762,
+            "token_f1": 0.9558129583992145,
+            "n": 420
+          },
+          "test_evaluation": {
+            "exact_match": 0.0023752969121140144,
+            "token_f1": 0.9598270134283783,
+            "n": 421
+          },
+          "structured_metrics": {}
+        }
+      ],
+      "has_v1.2_tfidf": true,
+      "has_v1.2_transformer": true,
+      "transformer_covered_tasks": [
+        "dispatcher_intent_tool_call",
+        "operation_ticket_check",
+        "regulation_compliance_check"
+      ],
+      "transformer_quality_by_task": {
+        "dispatcher_intent_tool_call": {
+          "test_macro_f1": 1.0,
+          "path": "benchmark/v1.2_sd_core_transformer_dispatcher_intent_tool_call_report.json",
+          "model_name": "distilbert-base-uncased"
+        },
+        "operation_ticket_check": {
+          "test_macro_f1": 1.0,
+          "path": "benchmark/v1.2_sd_core_transformer_operation_ticket_check_report.json",
+          "model_name": "distilbert-base-uncased"
+        },
+        "regulation_compliance_check": {
+          "test_macro_f1": 0.9850267379679144,
+          "path": "benchmark/v1.2_sd_core_transformer_regulation_compliance_check_report.json",
+          "model_name": "distilbert-base-uncased"
+        }
+      },
+      "transformer_quality_passed": true,
+      "generative_covered_tasks": [
+        "auxiliary_decision",
+        "intelligent_data_query",
+        "regulation_qa"
+      ],
+      "formal_generative_covered_tasks": [
+        "auxiliary_decision",
+        "intelligent_data_query",
+        "regulation_qa"
+      ],
+      "formal_generative_objectives": [
+        "pretrained_seq2seq_generation"
+      ],
+      "formal_generative_token_f1": {
+        "auxiliary_decision": 0.927589772606495,
+        "intelligent_data_query": 0.9987428575910424,
+        "regulation_qa": 0.9598270134283783
+      },
+      "formal_generative_structured_quality": {
+        "auxiliary_decision": {
+          "prediction_is_json": 1.0,
+          "tool_set_exact": 1.0,
+          "tool_set_jaccard": 1.0
+        },
+        "intelligent_data_query": {
+          "prediction_is_json": 1.0,
+          "structured_query_exact": 0.6529126213592233,
+          "structured_query_field_accuracy": 0.8843042071197423
+        }
+      },
+      "formal_generative_quality_passed": true,
+      "has_v1.2_generative": true,
+      "structured_normalization_report": "reports/structured_prediction_normalization_v1.2_sd_core.json",
+      "structured_generation_gate": "pass",
+      "structured_generation_tasks": {
+        "intelligent_data_query": {
+          "records": 412,
+          "raw_prediction_is_json": 1.0,
+          "normalized_prediction_is_json": 1.0,
+          "prediction_trailing_garbage_rate": 0.0,
+          "normalized_exact": 1.0,
+          "structured_query_exact": 1.0,
+          "structured_query_field_accuracy": 1.0,
+          "scenario_id_exact": 1.0,
+          "filter_exact": 1.0,
+          "source_exact": 1.0,
+          "tool_set_exact": 0.0,
+          "tool_set_jaccard": 0.0,
+          "examples": [
+            {
+              "id": "gridinstruct_v01_query_12846",
+              "task_type": "intelligent_data_query",
+              "raw_prediction": "{\"structured_query\": {\"filter\": \"vm_pu < 0.95\", \"scenario_id\": \"ieee57_n1_branch_outage_load90_branchidx_26_17_18\", \"source\": \"simulation_outputs\"}}",
+              "normalized_prediction": "{\"structured_query\":{\"filter\":\"vm_pu < 0.95\",\"scenario_id\":\"ieee57_n1_branch_outage_load90_branchidx_26_17_18\",\"source\":\"simulation_outputs\"}}",
+              "canonical_prediction_preview": "{\"structured_query\": {\"filter\": \"vm_pu < 0.95\", \"scenario_id\": \"ieee57_n1_branch_outage_load90_branchidx_26_17_18\", \"source\": \"simulation_outputs\"}}"
+            },
+            {
+              "id": "gridinstruct_v01_query_07448",
+              "task_type": "intelligent_data_query",
+              "raw_prediction": "{\"structured_query\": {\"filter\": \"violation_type != none\", \"scenario_id\": \"ieee30_generator_perturbation_load70_gen90\", \"source\": \"simulation_outputs\"}}",
+              "normalized_prediction": "{\"structured_query\":{\"filter\":\"violation_type != none\",\"scenario_id\":\"ieee30_generator_perturbation_load70_gen90\",\"source\":\"simulation_outputs\"}}",
+              "canonical_prediction_preview": "{\"structured_query\": {\"filter\": \"violation_type != none\", \"scenario_id\": \"ieee30_generator_perturbation_load70_gen90\", \"source\": \"simulation_outputs\"}}"
+            },
+            {
+              "id": "gridinstruct_v01_query_09488",
+              "task_type": "intelligent_data_query",
+              "raw_prediction": "{\"structured_query\": {\"filter\": \"violation_type != none\", \"scenario_id\": \"ieee57_n1_branch_outage_load80_branchidx_46_40_42\", \"source\": \"simulation_outputs\"}}",
+              "normalized_prediction": "{\"structured_query\":{\"filter\":\"violation_type != none\",\"scenario_id\":\"ieee57_n1_branch_outage_load80_branchidx_46_40_42\",\"source\":\"simulation_outputs\"}}",
+              "canonical_prediction_preview": "{\"structured_query\": {\"filter\": \"violation_type != none\", \"scenario_id\": \"ieee57_n1_branch_outage_load80_branchidx_46_40_42\", \"source\": \"simulation_outputs\"}}"
+            },
+            {
+              "id": "gridinstruct_v01_query_10866",
+              "task_type": "intelligent_data_query",
+              "raw_prediction": "{\"structured_query\": {\"filter\": \"violation_type != none\", \"scenario_id\": \"ieee57_n1_branch_outage_load90_branchidx_16_0_16\", \"source\": \"simulation_outputs\"}}",
+              "normalized_prediction": "{\"structured_query\":{\"filter\":\"violation_type != none\",\"scenario_id\":\"ieee57_n1_branch_outage_load90_branchidx_16_0_16\",\"source\":\"simulation_outputs\"}}",
+              "canonical_prediction_preview": "{\"structured_query\": {\"filter\": \"violation_type != none\", \"scenario_id\": \"ieee57_n1_branch_outage_load90_branchidx_16_0_16\", \"source\": \"simulation_outputs\"}}"
+            },
+            {
+              "id": "gridinstruct_v01_query_08209",
+              "task_type": "intelligent_data_query",
+              "raw_prediction": "{\"structured_query\": {\"filter\": \"vm_pu < 0.95\", \"scenario_id\": \"ieee57_n1_branch_outage_load90_branchidx_17_2_14\", \"source\": \"simulation_outputs\"}}",
+              "normalized_prediction": "{\"structured_query\":{\"filter\":\"vm_pu < 0.95\",\"scenario_id\":\"ieee57_n1_branch_outage_load90_branchidx_17_2_14\",\"source\":\"simulation_outputs\"}}",
+              "canonical_prediction_preview": "{\"structured_query\": {\"filter\": \"vm_pu < 0.95\", \"scenario_id\": \"ieee57_n1_branch_outage_load90_branchidx_17_2_14\", \"source\": \"simulation_outputs\"}}"
+            },
+            {
+              "id": "gridinstruct_v01_query_03828",
+              "task_type": "intelligent_data_query",
+              "raw_prediction": "{\"structured_query\": {\"filter\": \"violation_type != none\", \"scenario_id\": \"ieee57_n1_branch_outage_load100_branchidx_33_27_28\", \"source\": \"simulation_outputs\"}}",
+              "normalized_prediction": "{\"structured_query\":{\"filter\":\"violation_type != none\",\"scenario_id\":\"ieee57_n1_branch_outage_load100_branchidx_33_27_28\",\"source\":\"simulation_outputs\"}}",
+              "canonical_prediction_preview": "{\"structured_query\": {\"filter\": \"violation_type != none\", \"scenario_id\": \"ieee57_n1_branch_outage_load100_branchidx_33_27_28\", \"source\": \"simulation_outputs\"}}"
+            },
+            {
+              "id": "gridinstruct_v01_query_03968",
+              "task_type": "intelligent_data_query",
+              "raw_prediction": "{\"structured_query\": {\"filter\": \"vm_pu < 0.95\", \"scenario_id\": \"ieee57_n1_branch_outage_load110_branchidx_12_12_13\", \"source\": \"simulation_outputs\"}}",
+              "normalized_prediction": "{\"structured_query\":{\"filter\":\"vm_pu < 0.95\",\"scenario_id\":\"ieee57_n1_branch_outage_load110_branchidx_12_12_13\",\"source\":\"simulation_outputs\"}}",
+              "canonical_prediction_preview": "{\"structured_query\": {\"filter\": \"vm_pu < 0.95\", \"scenario_id\": \"ieee57_n1_branch_outage_load110_branchidx_12_12_13\", \"source\": \"simulation_outputs\"}}"
+            },
+            {
+              "id": "gridinstruct_v01_query_04270",
+              "task_type": "intelligent_data_query",
+              "raw_prediction": "{\"structured_query\": {\"filter\": \"loading_percent > 100\", \"scenario_id\": \"ieee30_n1_branch_outage_load70_branchidx_12_8_10\", \"source\": \"simulation_outputs\"}}",
+              "normalized_prediction": "{\"structured_query\":{\"filter\":\"loading_percent > 100\",\"scenario_id\":\"ieee30_n1_branch_outage_load70_branchidx_12_8_10\",\"source\":\"simulation_outputs\"}}",
+              "canonical_prediction_preview": "{\"structured_query\": {\"filter\": \"loading_percent > 100\", \"scenario_id\": \"ieee30_n1_branch_outage_load70_branchidx_12_8_10\", \"source\": \"simulation_outputs\"}}"
+            },
+            {
+              "id": "gridinstruct_v01_query_05658",
+              "task_type": "intelligent_data_query",
+              "raw_prediction": "{\"structured_query\": {\"filter\": \"vm_pu < 0.95\", \"scenario_id\": \"ieee30_n1_branch_outage_load100_branchidx_19_13_14\", \"source\": \"simulation_outputs\"}}",
+              "normalized_prediction": "{\"structured_query\":{\"filter\":\"vm_pu < 0.95\",\"scenario_id\":\"ieee30_n1_branch_outage_load100_branchidx_19_13_14\",\"source\":\"simulation_outputs\"}}",
+              "canonical_prediction_preview": "{\"structured_query\": {\"filter\": \"vm_pu < 0.95\", \"scenario_id\": \"ieee30_n1_branch_outage_load100_branchidx_19_13_14\", \"source\": \"simulation_outputs\"}}"
+            },
+            {
+              "id": "gridinstruct_v01_query_15374",
+              "task_type": "intelligent_data_query",
+              "raw_prediction": "{\"structured_query\": {\"filter\": \"violation_type != none\", \"scenario_id\": \"ieee14_n1_branch_outage_load110_branchidx_13_11_12\", \"source\": \"simulation_outputs\"}}",
+              "normalized_prediction": "{\"structured_query\":{\"filter\":\"violation_type != none\",\"scenario_id\":\"ieee14_n1_branch_outage_load110_branchidx_13_11_12\",\"source\":\"simulation_outputs\"}}",
+              "canonical_prediction_preview": "{\"structured_query\": {\"filter\": \"violation_type != none\", \"scenario_id\": \"ieee14_n1_branch_outage_load110_branchidx_13_11_12\", \"source\": \"simulation_outputs\"}}"
+            },
+            {
+              "id": "gridinstruct_v01_query_02242",
+              "task_type": "intelligent_data_query",
+              "raw_prediction": "{\"structured_query\": {\"filter\": \"vm_pu < 0.95\", \"scenario_id\": \"ieee57_n1_branch_outage_load80_branchidx_38_33_34\", \"source\": \"simulation_outputs\"}}",
+              "normalized_prediction": "{\"structured_query\":{\"filter\":\"vm_pu < 0.95\",\"scenario_id\":\"ieee57_n1_branch_outage_load80_branchidx_38_33_34\",\"source\":\"simulation_outputs\"}}",
+              "canonical_prediction_preview": "{\"structured_query\": {\"filter\": \"vm_pu < 0.95\", \"scenario_id\": \"ieee57_n1_branch_outage_load80_branchidx_38_33_34\", \"source\": \"simulation_outputs\"}}"
+            },
+            {
+              "id": "gridinstruct_v01_query_01026",
+              "task_type": "intelligent_data_query",
+              "raw_prediction": "{\"structured_query\": {\"filter\": \"loading_percent > 100\", \"scenario_id\": \"ieee57_n1_branch_outage_load110_branchidx_14_0_14\", \"source\": \"simulation_outputs\"}}",
+              "normalized_prediction": "{\"structured_query\":{\"filter\":\"loading_percent > 100\",\"scenario_id\":\"ieee57_n1_branch_outage_load110_branchidx_14_0_14\",\"source\":\"simulation_outputs\"}}",
+              "canonical_prediction_preview": "{\"structured_query\": {\"filter\": \"loading_percent > 100\", \"scenario_id\": \"ieee57_n1_branch_outage_load110_branchidx_14_0_14\", \"source\": \"simulation_outputs\"}}"
+            },
+            {
+              "id": "gridinstruct_v01_query_15335",
+              "task_type": "intelligent_data_query",
+              "raw_prediction": "{\"structured_query\": {\"filter\": \"violation_type != none\", \"scenario_id\": \"ieee14_base_power_flow_load100\", \"source\": \"simulation_outputs\"}}",
+              "normalized_prediction": "{\"structured_query\":{\"filter\":\"violation_type != none\",\"scenario_id\":\"ieee14_base_power_flow_load100\",\"source\":\"simulation_outputs\"}}",
+              "canonical_prediction_preview": "{\"structured_query\": {\"filter\": \"violation_type != none\", \"scenario_id\": \"ieee14_base_power_flow_load100\", \"source\": \"simulation_outputs\"}}"
+            },
+            {
+              "id": "gridinstruct_v01_query_15243",
+              "task_type": "intelligent_data_query",
+              "raw_prediction": "{\"structured_query\": {\"filter\": \"loading_percent > 100\", \"scenario_id\": \"ieee30_generator_perturbation_load110_gen85\", \"source\": \"simulation_outputs\"}}",
+              "normalized_prediction": "{\"structured_query\":{\"filter\":\"loading_percent > 100\",\"scenario_id\":\"ieee30_generator_perturbation_load110_gen85\",\"source\":\"simulation_outputs\"}}",
+              "canonical_prediction_preview": "{\"structured_query\": {\"filter\": \"loading_percent > 100\", \"scenario_id\": \"ieee30_generator_perturbation_load110_gen85\", \"source\": \"simulation_outputs\"}}"
+            },
+            {
+              "id": "gridinstruct_v01_query_04342",
+              "task_type": "intelligent_data_query",
+              "raw_prediction": "{\"structured_query\": {\"filter\": \"loading_percent > 100\", \"scenario_id\": \"ieee30_n1_branch_outage_load80_branchidx_26_9_20\", \"source\": \"simulation_outputs\"}}",
+              "normalized_prediction": "{\"structured_query\":{\"filter\":\"loading_percent > 100\",\"scenario_id\":\"ieee30_n1_branch_outage_load80_branchidx_26_9_20\",\"source\":\"simulation_outputs\"}}",
+              "canonical_prediction_preview": "{\"structured_query\": {\"filter\": \"loading_percent > 100\", \"scenario_id\": \"ieee30_n1_branch_outage_load80_branchidx_26_9_20\", \"source\": \"simulation_outputs\"}}"
+            },
+            {
+              "id": "gridinstruct_v01_query_03320",
+              "task_type": "intelligent_data_query",
+              "raw_prediction": "{\"structured_query\": {\"filter\": \"vm_pu < 0.95\", \"scenario_id\": \"ieee57_n1_branch_outage_load110_branchidx_10_8_11\", \"source\": \"simulation_outputs\"}}",
+              "normalized_prediction": "{\"structured_query\":{\"filter\":\"vm_pu < 0.95\",\"scenario_id\":\"ieee57_n1_branch_outage_load110_branchidx_10_8_11\",\"source\":\"simulation_outputs\"}}",
+              "canonical_prediction_preview": "{\"structured_query\": {\"filter\": \"vm_pu < 0.95\", \"scenario_id\": \"ieee57_n1_branch_outage_load110_branchidx_10_8_11\", \"source\": \"simulation_outputs\"}}"
+            },
+            {
+              "id": "gridinstruct_v01_query_06685",
+              "task_type": "intelligent_data_query",
+              "raw_prediction": "{\"structured_query\": {\"filter\": \"violation_type != none\", \"scenario_id\": \"ieee30_n1_branch_outage_load70_branchidx_12_8_10\", \"source\": \"simulation_outputs\"}}",
+              "normalized_prediction": "{\"structured_query\":{\"filter\":\"violation_type != none\",\"scenario_id\":\"ieee30_n1_branch_outage_load70_branchidx_12_8_10\",\"source\":\"simulation_outputs\"}}",
+              "canonical_prediction_preview": "{\"structured_query\": {\"filter\": \"violation_type != none\", \"scenario_id\": \"ieee30_n1_branch_outage_load70_branchidx_12_8_10\", \"source\": \"simulation_outputs\"}}"
+            },
+            {
+              "id": "gridinstruct_v01_query_05275",
+              "task_type": "intelligent_data_query",
+              "raw_prediction": "{\"structured_query\": {\"filter\": \"violation_type != none\", \"scenario_id\": \"ieee57_n1_branch_outage_load100_branchidx_55_52_53\", \"source\": \"simulation_outputs\"}}",
+              "normalized_prediction": "{\"structured_query\":{\"filter\":\"violation_type != none\",\"scenario_id\":\"ieee57_n1_branch_outage_load100_branchidx_55_52_53\",\"source\":\"simulation_outputs\"}}",
+              "canonical_prediction_preview": "{\"structured_query\": {\"filter\": \"violation_type != none\", \"scenario_id\": \"ieee57_n1_branch_outage_load100_branchidx_55_52_53\", \"source\": \"simulation_outputs\"}}"
+            },
+            {
+              "id": "gridinstruct_v01_query_05033",
+              "task_type": "intelligent_data_query",
+              "raw_prediction": "{\"structured_query\": {\"filter\": \"loading_percent > 100\", \"scenario_id\": \"ieee30_generator_perturbation_load70_gen90\", \"source\": \"simulation_outputs\"}}",
+              "normalized_prediction": "{\"structured_query\":{\"filter\":\"loading_percent > 100\",\"scenario_id\":\"ieee30_generator_perturbation_load70_gen90\",\"source\":\"simulation_outputs\"}}",
+              "canonical_prediction_preview": "{\"structured_query\": {\"filter\": \"loading_percent > 100\", \"scenario_id\": \"ieee30_generator_perturbation_load70_gen90\", \"source\": \"simulation_outputs\"}}"
+            },
+            {
+              "id": "gridinstruct_v01_query_05675",
+              "task_type": "intelligent_data_query",
+              "raw_prediction": "{\"structured_query\": {\"filter\": \"loading_percent > 100\", \"scenario_id\": \"ieee14_base_power_flow_load100\", \"source\": \"simulation_outputs\"}}",
+              "normalized_prediction": "{\"structured_query\":{\"filter\":\"loading_percent > 100\",\"scenario_id\":\"ieee14_base_power_flow_load100\",\"source\":\"simulation_outputs\"}}",
+              "canonical_prediction_preview": "{\"structured_query\": {\"filter\": \"loading_percent > 100\", \"scenario_id\": \"ieee14_base_power_flow_load100\", \"source\": \"simulation_outputs\"}}"
+            }
+          ],
+          "gate": {
+            "status": "pass",
+            "checks": {
+              "normalized_json_rate_min_0_99": true,
+              "field_accuracy_min_0_85": true,
+              "scenario_id_exact_min_0_85": true,
+              "filter_exact_min_0_60": true
+            },
+            "failed_checks": []
+          }
+        },
+        "auxiliary_decision": {
+          "records": 416,
+          "raw_prediction_is_json": 1.0,
+          "normalized_prediction_is_json": 1.0,
+          "prediction_trailing_garbage_rate": 0.0,
+          "normalized_exact": 0.78125,
+          "structured_query_exact": 0.0,
+          "structured_query_field_accuracy": 0.0,
+          "scenario_id_exact": 0.0,
+          "filter_exact": 0.0,
+          "source_exact": 0.0,
+          "tool_set_exact": 1.0,
+          "tool_set_jaccard": 1.0,
+          "examples": [
+            {
+              "id": "gridinstruct_v01_aux_09488",
+              "task_type": "auxiliary_decision",
+              "raw_prediction": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}",
+              "normalized_prediction": "{\"tools\":[\"run_power_flow\",\"run_opf_redispatch\"]}",
+              "canonical_prediction_preview": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}"
+            },
+            {
+              "id": "gridinstruct_v01_aux_05642",
+              "task_type": "auxiliary_decision",
+              "raw_prediction": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}",
+              "normalized_prediction": "{\"tools\":[\"run_power_flow\",\"run_opf_redispatch\"]}",
+              "canonical_prediction_preview": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}"
+            },
+            {
+              "id": "gridinstruct_v01_aux_13264",
+              "task_type": "auxiliary_decision",
+              "raw_prediction": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}",
+              "normalized_prediction": "{\"tools\":[\"run_power_flow\",\"run_opf_redispatch\"]}",
+              "canonical_prediction_preview": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}"
+            },
+            {
+              "id": "gridinstruct_v01_aux_06046",
+              "task_type": "auxiliary_decision",
+              "raw_prediction": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}",
+              "normalized_prediction": "{\"tools\":[\"run_power_flow\",\"run_opf_redispatch\"]}",
+              "canonical_prediction_preview": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}"
+            },
+            {
+              "id": "gridinstruct_v01_aux_00973",
+              "task_type": "auxiliary_decision",
+              "raw_prediction": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}",
+              "normalized_prediction": "{\"tools\":[\"run_power_flow\",\"run_opf_redispatch\"]}",
+              "canonical_prediction_preview": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}"
+            },
+            {
+              "id": "gridinstruct_v01_aux_10867",
+              "task_type": "auxiliary_decision",
+              "raw_prediction": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}",
+              "normalized_prediction": "{\"tools\":[\"run_power_flow\",\"run_opf_redispatch\"]}",
+              "canonical_prediction_preview": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}"
+            },
+            {
+              "id": "gridinstruct_v01_aux_11440",
+              "task_type": "auxiliary_decision",
+              "raw_prediction": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}",
+              "normalized_prediction": "{\"tools\":[\"run_power_flow\",\"run_opf_redispatch\"]}",
+              "canonical_prediction_preview": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}"
+            },
+            {
+              "id": "gridinstruct_v01_aux_07791",
+              "task_type": "auxiliary_decision",
+              "raw_prediction": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}",
+              "normalized_prediction": "{\"tools\":[\"run_power_flow\",\"run_opf_redispatch\"]}",
+              "canonical_prediction_preview": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}"
+            },
+            {
+              "id": "gridinstruct_v01_aux_10747",
+              "task_type": "auxiliary_decision",
+              "raw_prediction": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}",
+              "normalized_prediction": "{\"tools\":[\"run_power_flow\",\"run_opf_redispatch\"]}",
+              "canonical_prediction_preview": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}"
+            },
+            {
+              "id": "gridinstruct_v01_aux_09758",
+              "task_type": "auxiliary_decision",
+              "raw_prediction": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}",
+              "normalized_prediction": "{\"tools\":[\"run_power_flow\",\"run_opf_redispatch\"]}",
+              "canonical_prediction_preview": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}"
+            },
+            {
+              "id": "gridinstruct_v12_opf_aux_ieee14_base_power_flow_load100_fe930a3190d5_v01",
+              "task_type": "auxiliary_decision",
+              "raw_prediction": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\", \"run_power_flow\"]}",
+              "normalized_prediction": "{\"tools\":[\"run_power_flow\",\"run_opf_redispatch\",\"run_power_flow\"]}",
+              "canonical_prediction_preview": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\", \"run_power_flow\"]}"
+            },
+            {
+              "id": "gridinstruct_v01_aux_13746",
+              "task_type": "auxiliary_decision",
+              "raw_prediction": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}",
+              "normalized_prediction": "{\"tools\":[\"run_power_flow\",\"run_opf_redispatch\"]}",
+              "canonical_prediction_preview": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}"
+            },
+            {
+              "id": "gridinstruct_v01_aux_08621",
+              "task_type": "auxiliary_decision",
+              "raw_prediction": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}",
+              "normalized_prediction": "{\"tools\":[\"run_power_flow\",\"run_opf_redispatch\"]}",
+              "canonical_prediction_preview": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}"
+            },
+            {
+              "id": "gridinstruct_v12_opf_aux_ieee14_base_power_flow_load110_7171ab4c0e69_v01",
+              "task_type": "auxiliary_decision",
+              "raw_prediction": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\", \"run_power_flow\"]}",
+              "normalized_prediction": "{\"tools\":[\"run_power_flow\",\"run_opf_redispatch\",\"run_power_flow\"]}",
+              "canonical_prediction_preview": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\", \"run_power_flow\"]}"
+            },
+            {
+              "id": "gridinstruct_v01_aux_03109",
+              "task_type": "auxiliary_decision",
+              "raw_prediction": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\", \"run_power_flow\"]}",
+              "normalized_prediction": "{\"tools\":[\"run_power_flow\",\"run_opf_redispatch\",\"run_power_flow\"]}",
+              "canonical_prediction_preview": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\", \"run_power_flow\"]}"
+            },
+            {
+              "id": "gridinstruct_v01_aux_05543",
+              "task_type": "auxiliary_decision",
+              "raw_prediction": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}",
+              "normalized_prediction": "{\"tools\":[\"run_power_flow\",\"run_opf_redispatch\"]}",
+              "canonical_prediction_preview": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}"
+            },
+            {
+              "id": "gridinstruct_v01_aux_08553",
+              "task_type": "auxiliary_decision",
+              "raw_prediction": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}",
+              "normalized_prediction": "{\"tools\":[\"run_power_flow\",\"run_opf_redispatch\"]}",
+              "canonical_prediction_preview": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}"
+            },
+            {
+              "id": "gridinstruct_v01_aux_07073",
+              "task_type": "auxiliary_decision",
+              "raw_prediction": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}",
+              "normalized_prediction": "{\"tools\":[\"run_power_flow\",\"run_opf_redispatch\"]}",
+              "canonical_prediction_preview": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}"
+            },
+            {
+              "id": "gridinstruct_v01_aux_07924",
+              "task_type": "auxiliary_decision",
+              "raw_prediction": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}",
+              "normalized_prediction": "{\"tools\":[\"run_power_flow\",\"run_opf_redispatch\"]}",
+              "canonical_prediction_preview": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}"
+            },
+            {
+              "id": "gridinstruct_v01_aux_15491",
+              "task_type": "auxiliary_decision",
+              "raw_prediction": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}",
+              "normalized_prediction": "{\"tools\":[\"run_power_flow\",\"run_opf_redispatch\"]}",
+              "canonical_prediction_preview": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}"
+            }
+          ],
+          "gate": {
+            "status": "pass",
+            "checks": {
+              "normalized_json_rate_min_0_99": true,
+              "tool_set_exact_min_0_95": true,
+              "tool_set_jaccard_min_0_95": true
+            },
+            "failed_checks": []
+          }
+        }
+      },
+      "structured_generation_passed": true
+    },
+    "paper_readiness": {
+      "status": "fail",
+      "dataset_metadata_consistent": true,
+      "stale_release_files": [],
+      "doi_ready": false,
+      "rule_traceability_ready": true,
+      "rules_with_public_source_links": 5,
+      "rule_count": 5
+    },
+    "overall_status": "not_ready_for_submission",
+    "next_actions": [
+      "补齐公开仓库、版本存档和 DOI。"
+    ]
+  },
+  "file_manifest": [
+    {
+      "path": "data/gridinstruct_v1.2_sd_core_en.jsonl",
+      "exists": true,
+      "bytes": 534958426,
+      "records": 95479,
+      "sha256": "75ffc5c5386e331eed6c7f4092d186e042be8a020a936993f5220a78c1fd058e"
+    },
+    {
+      "path": "data/v1.2_sd_core_train_en.jsonl",
+      "exists": true,
+      "bytes": 140766902,
+      "records": 28684,
+      "sha256": "ff09925aacb7767dc303eebd4d4089c69f7216977bd9c0e76198788660c9ed3a"
+    },
+    {
+      "path": "data/v1.2_sd_core_validation_en.jsonl",
+      "exists": true,
+      "bytes": 17473764,
+      "records": 3598,
+      "sha256": "bbb8fab5478b7a4cc8b0b729180d3225cafc081ea56c5e30938f021b28b1e4a5"
+    },
+    {
+      "path": "data/v1.2_sd_core_test_en.jsonl",
+      "exists": true,
+      "bytes": 17785811,
+      "records": 3609,
+      "sha256": "982e6bef11f3cbc8fa8e3e280c447aadbb22bd26e708fd070957042f436755c0"
+    },
+    {
+      "path": "data/v1.2_sd_core_ood_test_en.jsonl",
+      "exists": true,
+      "bytes": 363341461,
+      "records": 59588,
+      "sha256": "b8fa701e9661e92d5df92328e9c1ece60d5440081c54cd509ad502008608fa8a"
+    },
+    {
+      "path": "metadata/schema.json",
+      "exists": true,
+      "bytes": 3677,
+      "records": null,
+      "sha256": "b1304984822f104af78f3055f4ae0af995f8da441bc69b0f9d09d2ddfa77b070"
+    },
+    {
+      "path": "metadata/task_taxonomy.json",
+      "exists": true,
+      "bytes": 243,
+      "records": null,
+      "sha256": "6dc8399ae3491756bf088f72eb58cbdcb7a95e4673f59d8b8f5f60a0acde0afa"
+    },
+    {
+      "path": "metadata/data_dictionary.csv",
+      "exists": true,
+      "bytes": 3982,
+      "records": null,
+      "sha256": "30e75d55c6d39e6dc1bbab47cd62e85734b81a21b638def81734a95685c6c5c5"
+    },
+    {
+      "path": "metadata/annotation_policy.json",
+      "exists": true,
+      "bytes": 2043,
+      "records": null,
+      "sha256": "6526b8d0e3dbb2572e76b5f0923ca41b232ba8537297a9debc516c888235a17b"
+    },
+    {
+      "path": "metadata/runtime_environment.json",
+      "exists": true,
+      "bytes": 796,
+      "records": null,
+      "sha256": "59a8439d8c772c9e3f72476957f3791ef90ec0d3172021685bffd37619c770b4"
+    },
+    {
+      "path": "metadata/expert_review_protocol.json",
+      "exists": true,
+      "bytes": 1856,
+      "records": null,
+      "sha256": "927fa9877794a923a259a4b091a336cca5a60049490f438586b349a52be66349"
+    },
+    {
+      "path": "metadata/paper_outline_alignment.json",
+      "exists": true,
+      "bytes": 1178,
+      "records": null,
+      "sha256": "dca80cadad6d0a0d8110f8acf43cf9ea907042f9f8e2a918f3ccfcb873ad28de"
+    },
+    {
+      "path": "metadata/data_descriptor_audit.json",
+      "exists": true,
+      "bytes": 1455,
+      "records": null,
+      "sha256": "33e94019162e870fea9ccfdbd1a0f957a2ee3feacf8d01bc9169f3679a80c36d"
+    },
+    {
+      "path": "metadata/split_integrity_report.json",
+      "exists": true,
+      "bytes": 3138,
+      "records": null,
+      "sha256": "00f6ef5459883d02d8df6e098eee7c4125696eb275061d4589baff0c897e2dfe"
+    },
+    {
+      "path": "metadata/release_licenses.json",
+      "exists": true,
+      "bytes": 2692,
+      "records": null,
+      "sha256": "166b8618fc16f16479c6cbccde73e0dab7f598c68559c0d0c4c3045cf223535a"
+    },
+    {
+      "path": "rules/regulation_rules.json",
+      "exists": true,
+      "bytes": 37019,
+      "records": 17,
+      "sha256": "0c834cdf81dc0b10e76d525845111dc5e845ac8a559ef9c21bc02aeb0b4c1a83"
+    },
+    {
+      "path": "examples/sample_records.jsonl",
+      "exists": true,
+      "bytes": 31728,
+      "records": 6,
+      "sha256": "bf6a75af33b8edcc7b5553741c980b402f8c7e2db95701d2eeade89b2ab579fa"
+    },
+    {
+      "path": "benchmark/v1.2_evaluation_tasks.json",
+      "exists": true,
+      "bytes": 2440,
+      "records": null,
+      "sha256": "69fe1495e9859c5eff74ae1afe72a9105678e50c280da65e5e3c730285ec8d8f"
+    },
+    {
+      "path": "benchmark/v1.2_sd_core_tfidf_report.json",
+      "exists": true,
+      "bytes": 7483,
+      "records": null,
+      "sha256": "e468f7f16e85caeb97f0be971511018820450b785f0dac88ea60bc70acde3c1a"
+    },
+    {
+      "path": "reports/simulation_report.json",
+      "exists": true,
+      "bytes": 13457,
+      "records": null,
+      "sha256": "c3a8237935f44ecf392fa941e9f28a4c3b848dd2955f763be3de41e03438cdca"
+    },
+    {
+      "path": "reports/data_validation_v1.2_sd_core.json",
+      "exists": true,
+      "bytes": 948,
+      "records": null,
+      "sha256": "31e9d147647596f161e71885c6df486fbe30f58d8faac5cdc50ce96604de0e09"
+    },
+    {
+      "path": "reports/external_topology_physical_envelope_v1.2_sd_core.json",
+      "exists": true,
+      "bytes": 2927,
+      "records": null,
+      "sha256": "23541d2ae1e1ab87e5147050aa27a816f03a0cefaa45af9df0fd8aa095897066"
+    },
+    {
+      "path": "reports/opf_closed_loop_assumption_audit_v1.2_sd_core.json",
+      "exists": true,
+      "bytes": 1821,
+      "records": null,
+      "sha256": "a69cd8fa961c181141d5a1c3227fd26ccfb970899bebbb83e51255c30f7bb5b2"
+    },
+    {
+      "path": "reports/hard_boundary_benchmark_v1.2_sd_core.json",
+      "exists": true,
+      "bytes": 2901,
+      "records": null,
+      "sha256": "e01e8569c972c58438f31643412308943603f43619244dfc820b03a52d10810c"
+    },
+    {
+      "path": "figures/sd_core/fig_hard_boundary_benchmark.png",
+      "exists": true,
+      "bytes": 57949,
+      "records": null,
+      "sha256": "cbd7a3fd66dc48da288eabc1c1594f6252893c2b92f7fbdef660ba836209ff26"
+    },
+    {
+      "path": "benchmark/v1.2_sd_core_transformer_dispatcher_intent_tool_call_report.json",
+      "exists": true,
+      "bytes": 8164,
+      "records": null,
+      "sha256": "c89fe6de720e0c877c61870c8d8888a392724d8feffeacb656880014a6c08899"
+    },
+    {
+      "path": "benchmark/v1.2_sd_core_transformer_operation_ticket_check_report.json",
+      "exists": true,
+      "bytes": 7752,
+      "records": null,
+      "sha256": "2fab85bf2a61adf2d35209bab32cddeba7963fbc250a8462b6838c035f88cff2"
+    },
+    {
+      "path": "benchmark/v1.2_sd_core_transformer_proxy_stress_full_no_w_regulation_compliance_check_report.json",
+      "exists": true,
+      "bytes": 9204,
+      "records": null,
+      "sha256": "f0a5f0555b249bf1eac85b53646ae8887a6409e70c337658d129799070231930"
+    },
+    {
+      "path": "benchmark/v1.2_sd_core_transformer_proxy_stress_full_w_regulation_compliance_check_report.json",
+      "exists": true,
+      "bytes": 8398,
+      "records": null,
+      "sha256": "57bdb1e63c88a8856ac36a83b79e6ff5079fab5976bf998cac9cae4e7a161404"
+    },
+    {
+      "path": "benchmark/v1.2_sd_core_transformer_proxy_stress_natural_no_w_regulation_compliance_check_report.json",
+      "exists": true,
+      "bytes": 9177,
+      "records": null,
+      "sha256": "136f414ec9738d258bcdb68421b077bd5ef056e8b2d9277acd34a45663f59b6d"
+    },
+    {
+      "path": "benchmark/v1.2_sd_core_transformer_regulation_compliance_check_report.json",
+      "exists": true,
+      "bytes": 9141,
+      "records": null,
+      "sha256": "6832880c0620be4e9d17e0cbe9a278245e2809dbea4c3c26a2afe1689453c4e5"
+    },
+    {
+      "path": "benchmark/v1.2_sd_core_seq2seq_auxiliary_decision_report.json",
+      "exists": true,
+      "bytes": 5764,
+      "records": null,
+      "sha256": "cab95078e44f10872187560606fb9f922fdd596ef52bccbfc7bdbad31cb60f00"
+    },
+    {
+      "path": "benchmark/v1.2_sd_core_seq2seq_intelligent_data_query_report.json",
+      "exists": true,
+      "bytes": 4565,
+      "records": null,
+      "sha256": "7eb671aae6dd7ecb8067ca5960f2525ba5a223d02e91861f19f30a9032de512e"
+    },
+    {
+      "path": "benchmark/v1.2_sd_core_seq2seq_regqa_report.json",
+      "exists": true,
+      "bytes": 4591,
+      "records": null,
+      "sha256": "2f66ddbd71e98dfd1850e8b864c82f2df0c5e1be0f2e6533ae95928d9f2aa55f"
+    }
+  ]
+}

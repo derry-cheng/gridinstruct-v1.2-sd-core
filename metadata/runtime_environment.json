@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-05-18T09:03:51.270285+00:00",
+  "python": {
+    "version": "3.12.2 | packaged by conda-forge | (main, Feb 16 2024, 20:54:21) [Clang 16.0.6 ]",
+    "implementation": "CPython",
+    "executable": "/opt/homebrew/Caskroom/miniconda/base/bin/python"
+  },
+  "platform": {
+    "system": "Darwin",
+    "release": "25.5.0",
+    "machine": "arm64",
+    "platform_string": "macOS-26.5-arm64-arm-64bit"
+  },
+  "package_versions": {
+    "jsonschema": "4.22.0",
+    "openai": "1.55.0",
+    "pandapower": "2.14.11",
+    "torch": "2.3.0"
+  },
+  "notes": [
+    "This file records the local runtime used to assemble the readiness package; it is not a lockfile or container image.",
+    "API zero-shot evaluation additionally requires a local SENSENOVA_API_KEY environment variable."
+  ]
+}

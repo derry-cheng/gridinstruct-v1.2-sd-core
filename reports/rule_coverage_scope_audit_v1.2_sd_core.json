@@ -1,0 +1,332 @@
+{
+  "generated_at": "2026-08-04T04:11:18.326278+00:00",
+  "status": "pass",
+  "dataset": "data/gridinstruct_v1.2_sd_core_en.jsonl",
+  "rule_count": 17,
+  "total_records": 95479,
+  "records_with_rule_links": 95479,
+  "invalid_rule_link_count": 0,
+  "invalid_rule_links": [],
+  "missing_required_rule_fields": [],
+  "unlinked_rules": [],
+  "rules": [
+    {
+      "rule_id": "REG_OVERLOAD_001",
+      "rule_type": "threshold",
+      "standard_id": "GRIDINSTRUCT-V1.2-RULEBOOK",
+      "source_title": "电网调度管理条例第十八条：电压、设备负载和稳定限额超过规定范围时可采取调度措施",
+      "has_source_url": true,
+      "evidence_fields": [
+        "instruction",
+        "input"
+      ],
+      "applicable_tasks": [
+        "regulation_compliance_check",
+        "auxiliary_decision",
+        "regulation_qa",
+        "intelligent_data_query"
+      ],
+      "record_link_count": 50752
+    },
+    {
+      "rule_id": "REG_VOLTAGE_001",
+      "rule_type": "threshold",
+      "standard_id": "GRIDINSTRUCT-V1.2-RULEBOOK",
+      "source_title": "电网调度管理条例第十八条：电压、设备负载和稳定限额超过规定范围时可采取调度措施",
+      "has_source_url": true,
+      "evidence_fields": [
+        "instruction",
+        "input"
+      ],
+      "applicable_tasks": [
+        "regulation_compliance_check",
+        "auxiliary_decision",
+        "regulation_qa",
+        "intelligent_data_query"
+      ],
+      "record_link_count": 49207
+    },
+    {
+      "rule_id": "REG_SWITCHING_001",
+      "rule_type": "procedural",
+      "standard_id": "GRIDINSTRUCT-V1.2-RULEBOOK",
+      "source_title": "电网调度管理条例第二十条：调度管辖设备操作须经值班调度人员许可",
+      "has_source_url": true,
+      "evidence_fields": [
+        "instruction",
+        "input"
+      ],
+      "applicable_tasks": [
+        "operation_ticket_check",
+        "regulation_qa"
+      ],
+      "record_link_count": 11722
+    },
+    {
+      "rule_id": "REG_TOOL_001",
+      "rule_type": "procedural",
+      "standard_id": "GRIDINSTRUCT-V1.2-RULEBOOK",
+      "source_title": "电网调度管理条例第十八、二十一、二十二条：安全处置与调度指令执行",
+      "has_source_url": true,
+      "evidence_fields": [
+        "instruction",
+        "input"
+      ],
+      "applicable_tasks": [
+        "dispatcher_intent_tool_call",
+        "regulation_qa"
+      ],
+      "record_link_count": 20721
+    },
+    {
+      "rule_id": "REG_QUERY_001",
+      "rule_type": "data_query",
+      "standard_id": "GRIDINSTRUCT-V1.2-RULEBOOK",
+      "source_title": "GridInstruct structured-query data contract",
+      "has_source_url": true,
+      "evidence_fields": [
+        "instruction",
+        "input"
+      ],
+      "applicable_tasks": [
+        "intelligent_data_query",
+        "regulation_qa"
+      ],
+      "record_link_count": 18712
+    },
+    {
+      "rule_id": "REG_OVERLOAD_ALERT_002",
+      "rule_type": "threshold_detail",
+      "standard_id": "GRIDINSTRUCT-V1.2-RULEBOOK",
+      "source_title": "电网调度管理条例第十八条：电压、设备负载和稳定限额超过规定范围时可采取调度措施",
+      "has_source_url": true,
+      "evidence_fields": [
+        "input.observed_issues",
+        "input.grid_state_summary"
+      ],
+      "applicable_tasks": [
+        "regulation_compliance_check",
+        "auxiliary_decision",
+        "intelligent_data_query"
+      ],
+      "record_link_count": 30508
+    },
+    {
+      "rule_id": "REG_OVERLOAD_EMERGENCY_003",
+      "rule_type": "threshold_detail",
+      "standard_id": "GRIDINSTRUCT-V1.2-RULEBOOK",
+      "source_title": "电网调度管理条例第十八条：电压、设备负载和稳定限额超过规定范围时可采取调度措施",
+      "has_source_url": true,
+      "evidence_fields": [
+        "input.observed_issues",
+        "input.grid_state_summary"
+      ],
+      "applicable_tasks": [
+        "regulation_compliance_check",
+        "auxiliary_decision"
+      ],
+      "record_link_count": 17993
+    },
+    {
+      "rule_id": "REG_VOLTAGE_LOW_002",
+      "rule_type": "threshold_detail",
+      "standard_id": "GRIDINSTRUCT-V1.2-RULEBOOK",
+      "source_title": "电网调度管理条例第十八条：电压、设备负载和稳定限额超过规定范围时可采取调度措施",
+      "has_source_url": true,
+      "evidence_fields": [
+        "input.observed_issues",
+        "input.grid_state_summary"
+      ],
+      "applicable_tasks": [
+        "regulation_compliance_check",
+        "auxiliary_decision"
+      ],
+      "record_link_count": 39298
+    },
+    {
+      "rule_id": "REG_VOLTAGE_HIGH_003",
+      "rule_type": "threshold_detail",
+      "standard_id": "GRIDINSTRUCT-V1.2-RULEBOOK",
+      "source_title": "电网调度管理条例第十八条：电压、设备负载和稳定限额超过规定范围时可采取调度措施",
+      "has_source_url": true,
+      "evidence_fields": [
+        "input.observed_issues",
+        "input.grid_state_summary"
+      ],
+      "applicable_tasks": [
+        "regulation_compliance_check",
+        "auxiliary_decision"
+      ],
+      "record_link_count": 8662
+    },
+    {
+      "rule_id": "REG_SECURITY_REDISPATCH_004",
+      "rule_type": "closed_loop_validation",
+      "standard_id": "GRIDINSTRUCT-V1.2-RULEBOOK",
+      "source_title": "电网调度管理条例第十八、二十一、二十二条：安全处置与调度指令执行",
+      "has_source_url": true,
+      "evidence_fields": [
+        "input.available_actions",
+        "input.utterance"
+      ],
+      "applicable_tasks": [
+        "auxiliary_decision",
+        "dispatcher_intent_tool_call"
+      ],
+      "record_link_count": 29646
+    },
+    {
+      "rule_id": "REG_SWITCHING_PERMISSION_002",
+      "rule_type": "procedural_detail",
+      "standard_id": "GRIDINSTRUCT-V1.2-RULEBOOK",
+      "source_title": "电网调度管理条例第二十条：调度管辖设备操作须经值班调度人员许可",
+      "has_source_url": true,
+      "evidence_fields": [
+        "input.dispatch_permit_status"
+      ],
+      "applicable_tasks": [
+        "operation_ticket_check"
+      ],
+      "record_link_count": 10880
+    },
+    {
+      "rule_id": "REG_SWITCHING_MONITORING_003",
+      "rule_type": "procedural_detail",
+      "standard_id": "GRIDINSTRUCT-V1.2-RULEBOOK",
+      "source_title": "电网调度管理条例第二十条：调度管辖设备操作须经值班调度人员许可",
+      "has_source_url": true,
+      "evidence_fields": [
+        "input.monitoring_arrangement"
+      ],
+      "applicable_tasks": [
+        "operation_ticket_check"
+      ],
+      "record_link_count": 10880
+    },
+    {
+      "rule_id": "REG_TOOL_DIAGNOSIS_002",
+      "rule_type": "tool_routing_detail",
+      "standard_id": "GRIDINSTRUCT-V1.2-RULEBOOK",
+      "source_title": "电网调度管理条例第十八、二十一、二十二条：安全处置与调度指令执行",
+      "has_source_url": true,
+      "evidence_fields": [
+        "input.utterance"
+      ],
+      "applicable_tasks": [
+        "dispatcher_intent_tool_call"
+      ],
+      "record_link_count": 10295
+    },
+    {
+      "rule_id": "REG_TOOL_MITIGATION_003",
+      "rule_type": "tool_routing_detail",
+      "standard_id": "GRIDINSTRUCT-V1.2-RULEBOOK",
+      "source_title": "电网调度管理条例第十八、二十一、二十二条：安全处置与调度指令执行",
+      "has_source_url": true,
+      "evidence_fields": [
+        "input.utterance"
+      ],
+      "applicable_tasks": [
+        "dispatcher_intent_tool_call"
+      ],
+      "record_link_count": 11879
+    },
+    {
+      "rule_id": "REG_TOOL_POSTCHECK_004",
+      "rule_type": "tool_routing_detail",
+      "standard_id": "GRIDINSTRUCT-V1.2-RULEBOOK",
+      "source_title": "电网调度管理条例第十八、二十一、二十二条：安全处置与调度指令执行",
+      "has_source_url": true,
+      "evidence_fields": [
+        "input.decision_window",
+        "input.utterance",
+        "instruction"
+      ],
+      "applicable_tasks": [
+        "dispatcher_intent_tool_call",
+        "auxiliary_decision",
+        "regulation_compliance_check"
+      ],
+      "record_link_count": 34442
+    },
+    {
+      "rule_id": "REG_QUERY_FILTER_002",
+      "rule_type": "data_query_detail",
+      "standard_id": "GRIDINSTRUCT-V1.2-RULEBOOK",
+      "source_title": "GridInstruct structured-query data contract",
+      "has_source_url": true,
+      "evidence_fields": [
+        "input.scenario_id",
+        "input.question",
+        "instruction"
+      ],
+      "applicable_tasks": [
+        "intelligent_data_query"
+      ],
+      "record_link_count": 17765
+    },
+    {
+      "rule_id": "REG_QUERY_AGGREGATION_003",
+      "rule_type": "data_query_detail",
+      "standard_id": "GRIDINSTRUCT-V1.2-RULEBOOK",
+      "source_title": "GridInstruct structured-query data contract",
+      "has_source_url": true,
+      "evidence_fields": [
+        "input.question",
+        "instruction"
+      ],
+      "applicable_tasks": [
+        "intelligent_data_query"
+      ],
+      "record_link_count": 13122
+    }
+  ],
+  "task_rule_matrix": {
+    "auxiliary_decision": {
+      "REG_OVERLOAD_001": 18087,
+      "REG_VOLTAGE_001": 18087,
+      "REG_OVERLOAD_ALERT_002": 18087,
+      "REG_OVERLOAD_EMERGENCY_003": 16629,
+      "REG_VOLTAGE_HIGH_003": 3788,
+      "REG_SECURITY_REDISPATCH_004": 17767,
+      "REG_TOOL_POSTCHECK_004": 18087,
+      "REG_VOLTAGE_LOW_002": 17031
+    },
+    "dispatcher_intent_tool_call": {
+      "REG_TOOL_001": 19773,
+      "REG_TOOL_POSTCHECK_004": 3444,
+      "REG_TOOL_DIAGNOSIS_002": 10295,
+      "REG_TOOL_MITIGATION_003": 11879,
+      "REG_SECURITY_REDISPATCH_004": 11879
+    },
+    "intelligent_data_query": {
+      "REG_QUERY_001": 17766,
+      "REG_OVERLOAD_001": 6952,
+      "REG_QUERY_FILTER_002": 17765,
+      "REG_QUERY_AGGREGATION_003": 13122,
+      "REG_VOLTAGE_001": 5408
+    },
+    "operation_ticket_check": {
+      "REG_SWITCHING_001": 10881,
+      "REG_SWITCHING_PERMISSION_002": 10880,
+      "REG_SWITCHING_MONITORING_003": 10880
+    },
+    "regulation_compliance_check": {
+      "REG_OVERLOAD_001": 24767,
+      "REG_VOLTAGE_001": 24767,
+      "REG_VOLTAGE_LOW_002": 22267,
+      "REG_VOLTAGE_HIGH_003": 4874,
+      "REG_OVERLOAD_ALERT_002": 12421,
+      "REG_TOOL_POSTCHECK_004": 12911,
+      "REG_OVERLOAD_EMERGENCY_003": 1364
+    },
+    "regulation_qa": {
+      "REG_OVERLOAD_001": 946,
+      "REG_VOLTAGE_001": 945,
+      "REG_SWITCHING_001": 841,
+      "REG_TOOL_001": 948,
+      "REG_QUERY_001": 946
+    }
+  },
+  "scope_statement": "The release uses 17 traceable rule cards as modeling abstractions over public power-grid operating documents. This audit verifies link integrity and record-level coverage of those rule cards; it does not claim that GridInstruct is a complete regulatory corpus."
+}

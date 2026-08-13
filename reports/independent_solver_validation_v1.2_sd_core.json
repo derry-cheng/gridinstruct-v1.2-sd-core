@@ -1,0 +1,22 @@
+{
+  "contract_version": "gridinstruct-independent-solver-evidence-v1",
+  "generated_at": "2026-07-31T09:27:37.085050+00:00",
+  "input": {
+    "path": "reports/independent_solver_raw_evidence_v1.2_sd_core.json",
+    "sha256": "9861a60d6d3bc8d072df5f5c604bbf86f398d4bd140035a9d930dbccf8e4658c"
+  },
+  "case_manifest_binding": {
+    "path": "simulation_outputs/independent_solver/case_manifest_v1.json",
+    "actual_sha256": "ac51aa974f0f1c2002feb4d28d67f670bfce5e7da4abe4053b865180126d62b3",
+    "claimed_sha256": "ac51aa974f0f1c2002feb4d28d67f670bfce5e7da4abe4053b865180126d62b3",
+    "match": true,
+    "case_ids_match": true
+  },
+  "status": "pass",
+  "solver_evidence_class": "independent_solver",
+  "case_count": 160,
+  "passed_case_count": 160,
+  "errors": [],
+  "case_errors": [],
+  "interpretation": "pandapower to ppc to PYPOWER is classified as exported replay. Only a native-source or independent-data-model run by a separately implemented solver can satisfy this gate."
+}

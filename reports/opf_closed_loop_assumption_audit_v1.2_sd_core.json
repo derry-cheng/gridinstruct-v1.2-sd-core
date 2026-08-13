@@ -1,0 +1,57 @@
+{
+  "generated_at": "2026-08-05T11:08:51.314631+00:00",
+  "status": "pass",
+  "dataset": "data/gridinstruct_v1.2_sd_core_en.jsonl",
+  "opf_record_count": 320,
+  "unique_scenarios": 160,
+  "by_network": {
+    "IEEE118": {
+      "records": 160,
+      "scenarios": 80,
+      "mean_pre_violation_score": 0.326881728125,
+      "mean_post_violation_score": 0.0,
+      "mean_relative_violation_reduction": 1.0
+    },
+    "IEEE14": {
+      "records": 160,
+      "scenarios": 80,
+      "mean_pre_violation_score": 0.005049799625,
+      "mean_post_violation_score": 0.0,
+      "mean_relative_violation_reduction": 1.0
+    }
+  },
+  "tool_sequence_expected": [
+    "run_power_flow",
+    "run_opf_redispatch",
+    "run_power_flow"
+  ],
+  "tool_sequence_pass_count": 320,
+  "tool_sequence_pass_rate": 1.0,
+  "closed_loop_field_pass_count": 320,
+  "closed_loop_field_pass_rate": 1.0,
+  "control_evidence_pass_count": 320,
+  "control_evidence_pass_rate": 1.0,
+  "executable_target_replay_pass_count": 320,
+  "executable_target_replay_pass_rate": 1.0,
+  "post_action_n1_pass_count": 320,
+  "post_action_n1_pass_rate": 1.0,
+  "post_action_n1_detail_pass_count": 320,
+  "post_action_n1_detail_pass_rate": 1.0,
+  "embedded_uncertainty_pass_count": 320,
+  "embedded_uncertainty_pass_rate": 1.0,
+  "embedded_uncertainty_detail_pass_count": 320,
+  "embedded_uncertainty_detail_pass_rate": 1.0,
+  "relative_reduction_recomputed_pass_count": 320,
+  "relative_reduction_recomputed_pass_rate": 1.0,
+  "relative_reduction_max_abs_error": 0.0,
+  "minimum_required_embedded_uncertainty_voltage_margin_pu": 0.001,
+  "minimum_embedded_uncertainty_voltage_margin_pu": 0.008671000000000095,
+  "mean_pre_violation_score": 0.165965763875,
+  "mean_post_violation_score": 0.0,
+  "mean_relative_violation_reduction": 1.0,
+  "min_relative_violation_reduction": 1.0,
+  "max_relative_violation_reduction": 1.0,
+  "issue_counts": {},
+  "figure": "figures/sd_core_publication/fig_opf_closed_loop_assumption_audit.png",
+  "claim_use": "Use this audit as computational closed-loop evidence for OPF-derived auxiliary-decision records and as an explicit statement of OPF modeling assumptions."
+}

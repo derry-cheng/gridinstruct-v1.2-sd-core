@@ -1,0 +1,57 @@
+{
+  "generated_at": "2026-08-13T08:42:53.913872+00:00",
+  "status": "package_ready_external_identifiers_pending",
+  "bundle": "release/GridInstruct_v1.2_sd_core_release_candidate.tar.gz",
+  "bundle_sha256": "d066a313d1820e5b0df4cebb7d3d41a67e1cfc42eef13dcb7e3748365fb3485e",
+  "file_count": 939,
+  "payload_file_count": 937,
+  "companion_file_count": 2,
+  "payload_size_bytes": 3590549209,
+  "manifest": "release/archive_manifest_v1.2_sd_core.csv",
+  "checksums": "release/checksums_sha256.txt",
+  "manifest_scope": "payload files only; manifest and checksum files are included in the archive but are not self-hashed",
+  "validation_reports_stored_outside_bundle": true,
+  "required_missing": [],
+  "tar_payload_hash_mismatches": [],
+  "tar_payload_hashes_verified": true,
+  "reproducibility_manifests_pass": true,
+  "evidence_binding_manifest_status": "pass",
+  "evidence_binding_errors": [],
+  "power_evidence_gates": {
+    "opf_robust_candidate_register": {
+      "passed": true,
+      "path": "reports/ieee14_opf_secure_candidate_augmentation_v1.2_sd_core.json",
+      "errors": []
+    },
+    "core_n1_denominator": {
+      "passed": true,
+      "path": "reports/core_n1_denominator_v1.2_sd_core.json",
+      "errors": []
+    },
+    "native_independent_solver": {
+      "passed": true,
+      "path": "reports/independent_solver_validation_v1.2_sd_core_rebound.json",
+      "errors": []
+    },
+    "opf_action_uncertainty_stress": {
+      "passed": true,
+      "path": "reports/opf_action_uncertainty_stress_v1.2_sd_core.json",
+      "errors": []
+    },
+    "opf_action_constant_power_factor_stress": {
+      "passed": true,
+      "path": "reports/opf_action_constant_power_factor_stress_v1.2_sd_core.json",
+      "errors": []
+    }
+  },
+  "bound_archive_file_count": 94,
+  "pglib_license_in_archive": true,
+  "deterministic_archive_headers": true,
+  "public_identifiers_pending": [
+    "public_repository_url",
+    "data_doi",
+    "archived_code_release_doi"
+  ],
+  "excludes_experiments_directory": true,
+  "exclusion_reason": "Training checkpoints/log-heavy experiment folders remain local reproducibility evidence; release archive contains data, metadata, code, reports, figures, and review package."
+}

@@ -1,0 +1,60 @@
+{
+  "audit_date": "2026-08-06",
+  "verdict": "SCOPED_PASS_EXTERNAL_GATES_PENDING",
+  "scope": "GridInstruct v1.2-sd-core local remediation snapshot",
+  "checks": {
+    "ground_truth_provenance": {
+      "status": "pass",
+      "basis": "Checked scripts read released targets; no model-generated reference labels or hidden-gold fallback were found."
+    },
+    "metric_denominators": {
+      "status": "pass",
+      "basis": "Explicit test denominators and fixed five-seed aggregation are used; no self-normalization or best-seed selection was found."
+    },
+    "structured_serialization": {
+      "status": "repaired_with_scope",
+      "basis": "Reports now expose deterministic_serialization_validity and exclude it from model-performance interpretation."
+    },
+    "auxiliary_label_support": {
+      "status": "diagnostic_bound",
+      "basis": "Clean test support is one label across 145 records; OOD support is 16096/305; majority accuracy is recorded."
+    },
+    "result_existence_and_claim_binding": {
+      "status": "pass_scoped",
+      "basis": "The claim-evidence map binds official, strict, template, proxy-reduced, challenge, near-neighbour-free, target-hidden, structured, OPF, rule, translation, and native-replay reports to real nested JSON paths."
+    },
+    "metric_invocation": {
+      "status": "pass",
+      "basis": "Declared TF-IDF, structured, Transformer, target-hidden, and bootstrap metrics are called in the checked scripts."
+    },
+    "scope_and_evaluation_type": {
+      "status": "warn",
+      "basis": "Five seeds are fixed; neural budgets are warm-start references; MinHash is an approximate self-supervised proxy; human review is uncompleted."
+    }
+  },
+  "directly_bound_evidence": [
+    "reports/near_neighbor_free_split_v1.2_sd_core.json",
+    "benchmark/near_neighbor_free_v1.2_sd_core/tfidf_report.json",
+    "benchmark/near_neighbor_free_v1.2_sd_core/structured_query_report.json",
+    "benchmark/near_neighbor_free_v1.2_sd_core/structured_auxiliary_report.json",
+    "benchmark/near_neighbor_free_multiseed_v1.2_sd_core/classification_operation_ticket_check_five_seed_summary.json",
+    "benchmark/near_neighbor_free_multiseed_v1.2_sd_core/classification_regulation_compliance_check_five_seed_summary.json",
+    "benchmark/near_neighbor_free_multiseed_v1.2_sd_core/classification_dispatcher_intent_tool_call_five_seed_summary.json",
+    "reports/current_release_integrity_audit_v1.2_sd_core.json",
+    "reports/opf_candidate_register_v1.2_sd_core.json"
+  ],
+  "code_entrypoints": {
+    "tfidf": "scripts/run_tfidf_task_baselines.py",
+    "structured_query": "scripts/run_structured_query_filter_baseline.py",
+    "structured_auxiliary": "scripts/run_structured_auxiliary_tool_baseline.py"
+  },
+  "pending_claim_bindings": [],
+  "external_gates": [
+    "raw scenario and candidate ledgers",
+    "full solver case package",
+    "completed 1600-row double review",
+    "public repository and DOI",
+    "final author, credit, and funding metadata"
+  ],
+  "submission_ready": false
+}

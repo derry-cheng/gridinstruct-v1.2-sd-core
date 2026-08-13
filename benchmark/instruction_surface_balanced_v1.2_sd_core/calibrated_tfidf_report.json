@@ -1,0 +1,114 @@
+{
+  "generated_at": "2026-08-08T17:02:46.993509+00:00",
+  "status": "pass",
+  "objective": "calibrated_probability_tfidf_classification",
+  "train": "data/v1.2_sd_core_instruction_surface_balanced_train_en.jsonl",
+  "test": "data/v1.2_sd_core_instruction_surface_balanced_test_en.jsonl",
+  "ood": "data/v1.2_sd_core_instruction_surface_balanced_ood_test_en.jsonl",
+  "train_records": 14257,
+  "test_records": 4696,
+  "ood_records": 71791,
+  "code_sha256": "be95b67b0a9f0d0b6b96e5883aa555a597aedee21561343d6f66a4bcad4e0a2e",
+  "input_sha256": {
+    "train": "ae0ce77d81aae353506b8e2a6d0f921eb22ebe82977a3536dc9505cbbc4d65da",
+    "test": "3bb67987c49d8b96f30f4020d5bd403da4638a677631bc2c92cb5bf2ba696c24",
+    "ood": "3163e274b1b704eaa4e6127e29759daaeeefb57261b25747333981e841558861"
+  },
+  "prediction_sha256": {
+    "operation_ticket_check_test": "c4a68e8b80f376399c62ece27e7e417253bd4f90901baaff13e400fe857f2b99",
+    "operation_ticket_check_ood": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "regulation_compliance_check_test": "682acc56995ae52fa1a08375cfcc00569389b5575d9771594099e0607f5099e5",
+    "regulation_compliance_check_ood": "97d46b5425bf9b608c463c4a6aded0fa8284af22f30fcb8b59aeb150a6bbc33e",
+    "dispatcher_intent_tool_call_test": "5494535161dfb94152532c5eca766584685fb9a524eef600a83c6031c2a77434",
+    "dispatcher_intent_tool_call_ood": "986245a43ec4e57241f448be94ff523185830c428566bd5da1e214deb6a26c83"
+  },
+  "metrics": {
+    "operation_ticket_check": {
+      "test": {
+        "n": 2161,
+        "labels": [
+          "compliant",
+          "compliant_with_monitoring",
+          "non_compliant"
+        ],
+        "macro_f1": 0.992474786812039,
+        "ece_10bin": 0.0681283293066787,
+        "brier_multiclass": 0.020181541902232245,
+        "probability_finite": true,
+        "probability_nonnegative": true,
+        "probability_rows_sum_to_one": true
+      },
+      "ood": {
+        "n": 0,
+        "labels": [],
+        "macro_f1": null,
+        "ece_10bin": null,
+        "brier_multiclass": null,
+        "probability_finite": true,
+        "probability_nonnegative": true,
+        "probability_rows_sum_to_one": true
+      }
+    },
+    "regulation_compliance_check": {
+      "test": {
+        "n": 367,
+        "labels": [
+          "compliant",
+          "compliant_with_monitoring",
+          "non_compliant"
+        ],
+        "macro_f1": 0.6757407407407409,
+        "ece_10bin": 0.06485592236509502,
+        "brier_multiclass": 0.4226094343861652,
+        "probability_finite": true,
+        "probability_nonnegative": true,
+        "probability_rows_sum_to_one": true
+      },
+      "ood": {
+        "n": 22913,
+        "labels": [
+          "compliant",
+          "compliant_with_monitoring",
+          "non_compliant"
+        ],
+        "macro_f1": 0.7614624129090682,
+        "ece_10bin": 0.11518535145376912,
+        "brier_multiclass": 0.2869604340366516,
+        "probability_finite": true,
+        "probability_nonnegative": true,
+        "probability_rows_sum_to_one": true
+      }
+    },
+    "dispatcher_intent_tool_call": {
+      "test": {
+        "n": 672,
+        "labels": [
+          "diagnose_and_dispatch",
+          "mitigate_violations",
+          "security_check_and_redispatch"
+        ],
+        "macro_f1": 1.0,
+        "ece_10bin": 0.07736705885055409,
+        "brier_multiclass": 0.012091058110297526,
+        "probability_finite": true,
+        "probability_nonnegative": true,
+        "probability_rows_sum_to_one": true
+      },
+      "ood": {
+        "n": 16379,
+        "labels": [
+          "diagnose_and_dispatch",
+          "mitigate_violations",
+          "security_check_and_redispatch"
+        ],
+        "macro_f1": 1.0,
+        "ece_10bin": 0.07604409384187691,
+        "brier_multiclass": 0.01246124779169043,
+        "probability_finite": true,
+        "probability_nonnegative": true,
+        "probability_rows_sum_to_one": true
+      }
+    }
+  },
+  "interpretation": "ECE and multiclass Brier scores quantify probability calibration for a CPU logistic TF-IDF reference; they do not imply physical-label correctness or dispatch competence."
+}

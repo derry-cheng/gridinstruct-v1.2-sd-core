@@ -1,0 +1,380 @@
+{
+  "schema_version": "2.0",
+  "generated_at": "2026-07-23T18:13:50.252879+00:00",
+  "status": "pass",
+  "local_inventory_complete": true,
+  "audit_scope": {
+    "method": "Hash verification of the pinned checkout plus LICENSE, README, and individual case-header review",
+    "review_report": "review-stage/SD_V16_PGLIB_LICENSE_ATTRIBUTION_AUDIT_20260724.md",
+    "scope_limit": "Only the fixed PGLib-OPF v23.07 commit and eleven registered case hashes are confirmed. Any source revision or case substitution requires re-audit."
+  },
+  "formal_network_source": {
+    "provider": "PGLib-OPF",
+    "repository": "https://github.com/power-grid-lib/pglib-opf",
+    "release": "v23.07",
+    "commit": "dc6be4b2f85ca0e776952ec22cbd4c22396ea5a3",
+    "license": "CC-BY-4.0 for data; MIT for software",
+    "license_sha256": "95b1cd9fee1676221d74f7c0cbba622d98ac098e9b317b3848113ef4356ab4fd",
+    "case_count": 11
+  },
+  "licensing_and_attribution_contract": {
+    "data_license": "CC-BY-4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "requirements_verified_from_upstream_readme": [
+      "give appropriate credit to the original author",
+      "provide a link to the license",
+      "indicate whether changes were made",
+      "identify the repository version in scholarly references",
+      "cite source documents named in each case header and the PGLib archive report"
+    ],
+    "pglib_archive_report": {
+      "title": "The Power Grid Library for Benchmarking AC Optimal Power Flow Algorithms",
+      "identifier": "arXiv:1908.02788",
+      "url": "https://arxiv.org/abs/1908.02788"
+    },
+    "header_attribution_records": {
+      "uw_ieee_archive": {
+        "copyright": "Copyright (c) 1999 Richard D. Christie, University of Washington Electrical Engineering",
+        "source": "University of Washington Power Systems Test Case Archive IEEE Common Data Format",
+        "source_citation_requirement": "Retain the file-header source and copyright attribution.",
+        "applies_to": [
+          "ieee14",
+          "ieee30",
+          "ieee57",
+          "ieee118",
+          "ieee300"
+        ]
+      },
+      "activsg200": {
+        "copyright": "Copyright (c) 2017 A. B. Birchfield, T. Xu, K. M. Gegner, K. S. Shetye, and T. J. Overbye",
+        "source": "Synthetic Illinois 200-bus system developed under the US ARPA-E GRID DATA project",
+        "source_citation_requirement": "Cite Birchfield et al., Grid Structural Characteristics as Validation Criteria for Synthetic Networks, IEEE Transactions on Power Systems (2017), DOI 10.1109/TPWRS.2016.2616385.",
+        "applies_to": [
+          "illinois200"
+        ]
+      },
+      "pegase": {
+        "copyright": "Copyright (c) 2015 Cedric Josz, Stephane Fliscounakis, Jean Maeght, and Patrick Panciatici",
+        "source": "Pan European Grid Advanced Simulation and State Estimation project",
+        "source_citation_requirement": "Cite Fliscounakis et al., IEEE Transactions on Power Systems 28(4), 4909-4917 (2013), DOI 10.1109/TPWRS.2013.2251015.",
+        "applies_to": [
+          "pegase89",
+          "pegase1354",
+          "pegase2869"
+        ]
+      },
+      "rte": {
+        "copyright": "Copyright (c) 2016 Cedric Josz, Stephane Fliscounakis, Jean Maeght, and Patrick Panciatici",
+        "source": "RTE and iTesla French-system snapshots",
+        "source_citation_requirement": "Cite Josz et al., AC Power Flow Data in MATPOWER and QCQP Format: iTesla, RTE Snapshots, and PEGASE, arXiv:1603.01533.",
+        "applies_to": [
+          "rte1888",
+          "rte2848"
+        ]
+      }
+    }
+  },
+  "software_dependencies": [
+    {
+      "name": "pandapower",
+      "version": "3.3.2",
+      "role": "MATPOWER conversion, AC power flow, AC OPF, and IEEE300 convergent operating-point bridge",
+      "license": "BSD-3-Clause",
+      "official_license_url": "https://pandapower.readthedocs.io/en/stable/about/license.html",
+      "package_source_redistributed": false
+    },
+    {
+      "name": "lightsim2grid",
+      "version": "0.10.3",
+      "role": "native C++ independent fixed-control AC replay",
+      "license": "MPL-2.0",
+      "official_license_url": "https://github.com/Grid2Op/lightsim2grid/blob/master/LICENSE",
+      "package_source_redistributed": false
+    },
+    {
+      "name": "power-grid-model",
+      "version": "1.12.110",
+      "role": "installed alternative independent power-system model; not used for the formal replay metric",
+      "license": "MPL-2.0",
+      "official_license_url": "https://github.com/PowerGridModel/power-grid-model/blob/main/LICENSE",
+      "package_source_redistributed": false
+    }
+  ],
+  "network_case_inputs": [
+    {
+      "constructor": "pglib-opf/ieee14",
+      "system": "ieee14",
+      "repository": "https://github.com/power-grid-lib/pglib-opf",
+      "release": "v23.07",
+      "commit": "dc6be4b2f85ca0e776952ec22cbd4c22396ea5a3",
+      "case_file": "pglib_opf_case14_ieee.m",
+      "case_file_sha256": "bd5c568621de65e4b0922317010868bc7fa94173807faa10ea8fdbbe77c28106",
+      "registered_case_sha256": "bd5c568621de65e4b0922317010868bc7fa94173807faa10ea8fdbbe77c28106",
+      "license": "CC-BY-4.0 for data; MIT for software",
+      "license_sha256": "95b1cd9fee1676221d74f7c0cbba622d98ac098e9b317b3848113ef4356ab4fd",
+      "header_attribution_record": "uw_ieee_archive",
+      "required_source_citation": "Retain the Richard D. Christie and University of Washington Power Systems Test Case Archive attribution from the case header.",
+      "case_header_change_notice": "Converted from IEEE Common Data Format on 20 September 2004; GridInstruct further generates scaled and contingency-derived numerical states.",
+      "header_attribution": "Copyright (c) 1999 Richard D. Christie, University of Washington Electrical Engineering",
+      "raw_case_file_in_release_archive": false,
+      "derived_synthetic_states_in_release_archive": true,
+      "derived_state_redistribution_status": "confirmed",
+      "required_attribution_status": "confirmed",
+      "confirmation_basis": "Pinned LICENSE, README attribution conditions, individual case header, exact SHA-256, required source citation, and explicit change notice."
+    },
+    {
+      "constructor": "pglib-opf/ieee30",
+      "system": "ieee30",
+      "repository": "https://github.com/power-grid-lib/pglib-opf",
+      "release": "v23.07",
+      "commit": "dc6be4b2f85ca0e776952ec22cbd4c22396ea5a3",
+      "case_file": "pglib_opf_case30_ieee.m",
+      "case_file_sha256": "cae3290639d989731d32428aacf30c0b918bc91db73bc54791f3aa62d3f76c70",
+      "registered_case_sha256": "cae3290639d989731d32428aacf30c0b918bc91db73bc54791f3aa62d3f76c70",
+      "license": "CC-BY-4.0 for data; MIT for software",
+      "license_sha256": "95b1cd9fee1676221d74f7c0cbba622d98ac098e9b317b3848113ef4356ab4fd",
+      "header_attribution_record": "uw_ieee_archive",
+      "required_source_citation": "Retain the Richard D. Christie and University of Washington Power Systems Test Case Archive attribution from the case header.",
+      "case_header_change_notice": "Converted from IEEE Common Data Format on 20 September 2004; GridInstruct further generates scaled and contingency-derived numerical states.",
+      "header_attribution": "Copyright (c) 1999 Richard D. Christie, University of Washington Electrical Engineering",
+      "raw_case_file_in_release_archive": false,
+      "derived_synthetic_states_in_release_archive": true,
+      "derived_state_redistribution_status": "confirmed",
+      "required_attribution_status": "confirmed",
+      "confirmation_basis": "Pinned LICENSE, README attribution conditions, individual case header, exact SHA-256, required source citation, and explicit change notice."
+    },
+    {
+      "constructor": "pglib-opf/ieee57",
+      "system": "ieee57",
+      "repository": "https://github.com/power-grid-lib/pglib-opf",
+      "release": "v23.07",
+      "commit": "dc6be4b2f85ca0e776952ec22cbd4c22396ea5a3",
+      "case_file": "pglib_opf_case57_ieee.m",
+      "case_file_sha256": "aa3b48f7cbaade2afd69cb3790ef72be981db8494dcef9277bee460f754bdb22",
+      "registered_case_sha256": "aa3b48f7cbaade2afd69cb3790ef72be981db8494dcef9277bee460f754bdb22",
+      "license": "CC-BY-4.0 for data; MIT for software",
+      "license_sha256": "95b1cd9fee1676221d74f7c0cbba622d98ac098e9b317b3848113ef4356ab4fd",
+      "header_attribution_record": "uw_ieee_archive",
+      "required_source_citation": "Retain the Richard D. Christie and University of Washington Power Systems Test Case Archive attribution from the case header.",
+      "case_header_change_notice": "Converted from IEEE Common Data Format; generator 1 Qmax and Qmin were manually changed to 200 and -140; GridInstruct further generates scaled and contingency-derived numerical states.",
+      "header_attribution": "Copyright (c) 1999 Richard D. Christie, University of Washington Electrical Engineering",
+      "raw_case_file_in_release_archive": false,
+      "derived_synthetic_states_in_release_archive": true,
+      "derived_state_redistribution_status": "confirmed",
+      "required_attribution_status": "confirmed",
+      "confirmation_basis": "Pinned LICENSE, README attribution conditions, individual case header, exact SHA-256, required source citation, and explicit change notice."
+    },
+    {
+      "constructor": "pglib-opf/ieee118",
+      "system": "ieee118",
+      "repository": "https://github.com/power-grid-lib/pglib-opf",
+      "release": "v23.07",
+      "commit": "dc6be4b2f85ca0e776952ec22cbd4c22396ea5a3",
+      "case_file": "pglib_opf_case118_ieee.m",
+      "case_file_sha256": "b1af0833849040c04babc3700631cff0d9afa66b79c5d3e13ae79bdf516cec78",
+      "registered_case_sha256": "b1af0833849040c04babc3700631cff0d9afa66b79c5d3e13ae79bdf516cec78",
+      "license": "CC-BY-4.0 for data; MIT for software",
+      "license_sha256": "95b1cd9fee1676221d74f7c0cbba622d98ac098e9b317b3848113ef4356ab4fd",
+      "header_attribution_record": "uw_ieee_archive",
+      "required_source_citation": "Retain the Richard D. Christie and University of Washington Power Systems Test Case Archive attribution from the case header.",
+      "case_header_change_notice": "Converted from IEEE Common Data Format; base-kV values were manually added from the PSAP-format file on 10 March 2006; GridInstruct further generates scaled and contingency-derived numerical states.",
+      "header_attribution": "Copyright (c) 1999 Richard D. Christie, University of Washington Electrical Engineering",
+      "raw_case_file_in_release_archive": false,
+      "derived_synthetic_states_in_release_archive": true,
+      "derived_state_redistribution_status": "confirmed",
+      "required_attribution_status": "confirmed",
+      "confirmation_basis": "Pinned LICENSE, README attribution conditions, individual case header, exact SHA-256, required source citation, and explicit change notice."
+    },
+    {
+      "constructor": "pglib-opf/ieee300",
+      "system": "ieee300",
+      "repository": "https://github.com/power-grid-lib/pglib-opf",
+      "release": "v23.07",
+      "commit": "dc6be4b2f85ca0e776952ec22cbd4c22396ea5a3",
+      "case_file": "pglib_opf_case300_ieee.m",
+      "case_file_sha256": "7ecf056d5942135765200ad7ae8791c28f0d35fb1dc888ba2c32dfc950f3c2f5",
+      "registered_case_sha256": "7ecf056d5942135765200ad7ae8791c28f0d35fb1dc888ba2c32dfc950f3c2f5",
+      "license": "CC-BY-4.0 for data; MIT for software",
+      "license_sha256": "95b1cd9fee1676221d74f7c0cbba622d98ac098e9b317b3848113ef4356ab4fd",
+      "header_attribution_record": "uw_ieee_archive",
+      "required_source_citation": "Retain the Richard D. Christie and University of Washington Power Systems Test Case Archive attribution from the case header.",
+      "case_header_change_notice": "Converted from IEEE Common Data Format on 20 September 2004; GridInstruct uses the pandapower case300 operating point only while retaining PGLib topology and RATE_A values, then generates derived states.",
+      "header_attribution": "Copyright (c) 1999 Richard D. Christie, University of Washington Electrical Engineering",
+      "raw_case_file_in_release_archive": false,
+      "derived_synthetic_states_in_release_archive": true,
+      "derived_state_redistribution_status": "confirmed",
+      "required_attribution_status": "confirmed",
+      "confirmation_basis": "Pinned LICENSE, README attribution conditions, individual case header, exact SHA-256, required source citation, and explicit change notice.",
+      "operating_point_bridge": {
+        "provider": "pandapower.networks.case300",
+        "role": "convergent operating point only; PGLib topology and RATE_A take precedence",
+        "installed_source_module_package_relative": "networks/power_system_test_cases.py",
+        "installed_source_module_sha256": "6cef0ca1053ddbbf68823b19baf914a32a23991acde86119411a59cab161235b",
+        "installed_case_file_package_relative": "networks/power_system_test_case_jsons/case300.json",
+        "installed_case_file_sha256": "c4aaa812e36e20a3545d2069fd9c0dcac3c6841d5b53e4ec538d7affad4066c9",
+        "raw_case_file_in_release_archive": false
+      }
+    },
+    {
+      "constructor": "pglib-opf/illinois200",
+      "system": "illinois200",
+      "repository": "https://github.com/power-grid-lib/pglib-opf",
+      "release": "v23.07",
+      "commit": "dc6be4b2f85ca0e776952ec22cbd4c22396ea5a3",
+      "case_file": "pglib_opf_case200_activ.m",
+      "case_file_sha256": "676e6f54a3b6726b199b531e7758ad8bf75ba2b076ea3fee86dc3f5cf5846f6b",
+      "registered_case_sha256": "676e6f54a3b6726b199b531e7758ad8bf75ba2b076ea3fee86dc3f5cf5846f6b",
+      "license": "CC-BY-4.0 for data; MIT for software",
+      "license_sha256": "95b1cd9fee1676221d74f7c0cbba622d98ac098e9b317b3848113ef4356ab4fd",
+      "header_attribution_record": "activsg200",
+      "required_source_citation": "Cite Birchfield et al., Grid Structural Characteristics as Validation Criteria for Synthetic Networks, IEEE Transactions on Power Systems (2017), DOI 10.1109/TPWRS.2016.2616385.",
+      "case_header_change_notice": "Converted from ACTIV_SG_200.pwb through PowerWorld Simulator and MATPOWER 6; GridInstruct further generates scaled and contingency-derived numerical states.",
+      "usage_restriction": "Synthetic system with no CEII; it does not represent the actual grid.",
+      "header_attribution": "Copyright (c) 2017 A. B. Birchfield, T. Xu, K. M. Gegner, K. S. Shetye, and T. J. Overbye",
+      "raw_case_file_in_release_archive": false,
+      "derived_synthetic_states_in_release_archive": true,
+      "derived_state_redistribution_status": "confirmed",
+      "required_attribution_status": "confirmed",
+      "confirmation_basis": "Pinned LICENSE, README attribution conditions, individual case header, exact SHA-256, required source citation, and explicit change notice."
+    },
+    {
+      "constructor": "pglib-opf/pegase89",
+      "system": "pegase89",
+      "repository": "https://github.com/power-grid-lib/pglib-opf",
+      "release": "v23.07",
+      "commit": "dc6be4b2f85ca0e776952ec22cbd4c22396ea5a3",
+      "case_file": "pglib_opf_case89_pegase.m",
+      "case_file_sha256": "0c2ca484db566e587df8565141dbbf053c275e9246968391cc2f560fb4e995ca",
+      "registered_case_sha256": "0c2ca484db566e587df8565141dbbf053c275e9246968391cc2f560fb4e995ca",
+      "license": "CC-BY-4.0 for data; MIT for software",
+      "license_sha256": "95b1cd9fee1676221d74f7c0cbba622d98ac098e9b317b3848113ef4356ab4fd",
+      "header_attribution_record": "pegase",
+      "required_source_citation": "Cite Fliscounakis et al., IEEE Transactions on Power Systems 28(4), 4909-4917 (2013), DOI 10.1109/TPWRS.2013.2251015.",
+      "case_header_change_notice": "Line-flow limits are 20 MVA above the original PEGASE current-flow limits; asymmetric branch shunts are represented nodally; line-flow constraints and the loss-minimizing objective are modified; GridInstruct further generates derived states.",
+      "usage_restriction": "Validation-only fictitious data; do not use for operation or planning of the European grid.",
+      "header_attribution": "Copyright (c) 2015 Cedric Josz, Stephane Fliscounakis, Jean Maeght, and Patrick Panciatici",
+      "raw_case_file_in_release_archive": false,
+      "derived_synthetic_states_in_release_archive": true,
+      "derived_state_redistribution_status": "confirmed",
+      "required_attribution_status": "confirmed",
+      "confirmation_basis": "Pinned LICENSE, README attribution conditions, individual case header, exact SHA-256, required source citation, and explicit change notice."
+    },
+    {
+      "constructor": "pglib-opf/pegase1354",
+      "system": "pegase1354",
+      "repository": "https://github.com/power-grid-lib/pglib-opf",
+      "release": "v23.07",
+      "commit": "dc6be4b2f85ca0e776952ec22cbd4c22396ea5a3",
+      "case_file": "pglib_opf_case1354_pegase.m",
+      "case_file_sha256": "cd6d27dff4a56684f1e4f82cfa346b36d84c4e90733228aa88331cd550e17652",
+      "registered_case_sha256": "cd6d27dff4a56684f1e4f82cfa346b36d84c4e90733228aa88331cd550e17652",
+      "license": "CC-BY-4.0 for data; MIT for software",
+      "license_sha256": "95b1cd9fee1676221d74f7c0cbba622d98ac098e9b317b3848113ef4356ab4fd",
+      "header_attribution_record": "pegase",
+      "required_source_citation": "Cite Fliscounakis et al., IEEE Transactions on Power Systems 28(4), 4909-4917 (2013), DOI 10.1109/TPWRS.2013.2251015.",
+      "case_header_change_notice": "Line-flow limits are 100 MVA below the original PEGASE current-flow limits; asymmetric branch shunts are represented nodally; line-flow constraints and the loss-minimizing objective are modified; GridInstruct further generates derived states.",
+      "usage_restriction": "Validation-only fictitious data; do not use for operation or planning of the European grid.",
+      "header_attribution": "Copyright (c) 2015 Cedric Josz, Stephane Fliscounakis, Jean Maeght, and Patrick Panciatici",
+      "raw_case_file_in_release_archive": false,
+      "derived_synthetic_states_in_release_archive": true,
+      "derived_state_redistribution_status": "confirmed",
+      "required_attribution_status": "confirmed",
+      "confirmation_basis": "Pinned LICENSE, README attribution conditions, individual case header, exact SHA-256, required source citation, and explicit change notice."
+    },
+    {
+      "constructor": "pglib-opf/rte1888",
+      "system": "rte1888",
+      "repository": "https://github.com/power-grid-lib/pglib-opf",
+      "release": "v23.07",
+      "commit": "dc6be4b2f85ca0e776952ec22cbd4c22396ea5a3",
+      "case_file": "pglib_opf_case1888_rte.m",
+      "case_file_sha256": "f4bc237298ed7c2e9291070f3c3a0983319565c12b801114a1e29641d0b5bff0",
+      "registered_case_sha256": "f4bc237298ed7c2e9291070f3c3a0983319565c12b801114a1e29641d0b5bff0",
+      "license": "CC-BY-4.0 for data; MIT for software",
+      "license_sha256": "95b1cd9fee1676221d74f7c0cbba622d98ac098e9b317b3848113ef4356ab4fd",
+      "header_attribution_record": "rte",
+      "required_source_citation": "Cite Josz et al., AC Power Flow Data in MATPOWER and QCQP Format: iTesla, RTE Snapshots, and PEGASE, arXiv:1603.01533.",
+      "case_header_change_notice": "PGLib curates a French-system snapshot sampled in the iTesla offline platform; GridInstruct further generates derived numerical states.",
+      "usage_restriction": "Use only to validate mathematical methods and tools; do not use for operation or planning of the French or European grids.",
+      "header_attribution": "Copyright (c) 2016 Cedric Josz, Stephane Fliscounakis, Jean Maeght, and Patrick Panciatici",
+      "raw_case_file_in_release_archive": false,
+      "derived_synthetic_states_in_release_archive": true,
+      "derived_state_redistribution_status": "confirmed",
+      "required_attribution_status": "confirmed",
+      "confirmation_basis": "Pinned LICENSE, README attribution conditions, individual case header, exact SHA-256, required source citation, and explicit change notice."
+    },
+    {
+      "constructor": "pglib-opf/rte2848",
+      "system": "rte2848",
+      "repository": "https://github.com/power-grid-lib/pglib-opf",
+      "release": "v23.07",
+      "commit": "dc6be4b2f85ca0e776952ec22cbd4c22396ea5a3",
+      "case_file": "pglib_opf_case2848_rte.m",
+      "case_file_sha256": "9d1ec26a6aef3e47bc23707a6c81db8d0528ff6ad90068b2f92df3d6e76ef591",
+      "registered_case_sha256": "9d1ec26a6aef3e47bc23707a6c81db8d0528ff6ad90068b2f92df3d6e76ef591",
+      "license": "CC-BY-4.0 for data; MIT for software",
+      "license_sha256": "95b1cd9fee1676221d74f7c0cbba622d98ac098e9b317b3848113ef4356ab4fd",
+      "header_attribution_record": "rte",
+      "required_source_citation": "Cite Josz et al., AC Power Flow Data in MATPOWER and QCQP Format: iTesla, RTE Snapshots, and PEGASE, arXiv:1603.01533.",
+      "case_header_change_notice": "PGLib curates a French-system snapshot sampled in the iTesla offline platform; GridInstruct further generates derived numerical states.",
+      "usage_restriction": "Use only to validate mathematical methods and tools; do not use for operation or planning of the French or European grids.",
+      "header_attribution": "Copyright (c) 2016 Cedric Josz, Stephane Fliscounakis, Jean Maeght, and Patrick Panciatici",
+      "raw_case_file_in_release_archive": false,
+      "derived_synthetic_states_in_release_archive": true,
+      "derived_state_redistribution_status": "confirmed",
+      "required_attribution_status": "confirmed",
+      "confirmation_basis": "Pinned LICENSE, README attribution conditions, individual case header, exact SHA-256, required source citation, and explicit change notice."
+    },
+    {
+      "constructor": "pglib-opf/pegase2869",
+      "system": "pegase2869",
+      "repository": "https://github.com/power-grid-lib/pglib-opf",
+      "release": "v23.07",
+      "commit": "dc6be4b2f85ca0e776952ec22cbd4c22396ea5a3",
+      "case_file": "pglib_opf_case2869_pegase.m",
+      "case_file_sha256": "6c8e80fba6fc2fa78d65fce64cf4801425b01a0aa093661caf581b6551d4a7ac",
+      "registered_case_sha256": "6c8e80fba6fc2fa78d65fce64cf4801425b01a0aa093661caf581b6551d4a7ac",
+      "license": "CC-BY-4.0 for data; MIT for software",
+      "license_sha256": "95b1cd9fee1676221d74f7c0cbba622d98ac098e9b317b3848113ef4356ab4fd",
+      "header_attribution_record": "pegase",
+      "required_source_citation": "Cite Fliscounakis et al., IEEE Transactions on Power Systems 28(4), 4909-4917 (2013), DOI 10.1109/TPWRS.2013.2251015.",
+      "case_header_change_notice": "Line-flow limits retain the original PEGASE current-flow limits; asymmetric branch shunts are represented nodally; line-flow constraints and the loss-minimizing objective are modified; GridInstruct further generates derived states.",
+      "usage_restriction": "Validation-only fictitious data; do not use for operation or planning of the European grid.",
+      "header_attribution": "Copyright (c) 2015 Cedric Josz, Stephane Fliscounakis, Jean Maeght, and Patrick Panciatici",
+      "raw_case_file_in_release_archive": false,
+      "derived_synthetic_states_in_release_archive": true,
+      "derived_state_redistribution_status": "confirmed",
+      "required_attribution_status": "confirmed",
+      "confirmation_basis": "Pinned LICENSE, README attribution conditions, individual case header, exact SHA-256, required source citation, and explicit change notice."
+    }
+  ],
+  "regulatory_sources": {
+    "release_content": "identifiers, short paraphrased rule summaries, clause locators, and URLs; no long source text",
+    "source_documents_redistributed": false
+  },
+  "pretrained_model_inputs": {
+    "release_content": "model names, immutable local snapshot hashes, run specifications, metrics, and predictions",
+    "model_weights_redistributed": false
+  },
+  "release_scope": {
+    "project_license_files": [
+      "LICENSE-CODE",
+      "LICENSE-DATA"
+    ],
+    "pglib_license_file_in_archive": true,
+    "pglib_license_file_required_by_current_archive_builder": true,
+    "raw_pglib_case_files_in_archive": false,
+    "installed_dependency_source_in_archive": false,
+    "derived_scenario_and_instruction_records_in_archive": true,
+    "archive_rebuild_required": true
+  },
+  "blocking_external_confirmations": [],
+  "remaining_external_submission_inputs": [
+    "final author identities and contribution declarations",
+    "public repository URL",
+    "data DOI",
+    "archived code-release DOI or equivalent permanent identifier",
+    "final release archive rebuild so the pinned PGLib LICENSE is physically present"
+  ],
+  "validation_errors": []
+}

@@ -1,0 +1,58 @@
+{
+  "generated_at": "2026-07-09T15:12:57.038029+00:00",
+  "objective": "schema_aware_supervised_structured_query_filter_selection",
+  "train": "data/v1.2_sd_core_train_en.jsonl",
+  "validation": "data/v1.2_sd_core_validation_en.jsonl",
+  "test": "data/v1.2_sd_core_test_en.jsonl",
+  "ood": "data/v1.2_sd_core_ood_test_en.jsonl",
+  "train_records": 3388,
+  "validation_records": 409,
+  "test_records": 412,
+  "ood_records": 11991,
+  "validation_evaluation": {
+    "accuracy": 1.0,
+    "macro_f1": 1.0,
+    "exact_match": 1.0,
+    "token_f1": 1.0,
+    "prediction_is_json": 1.0,
+    "structured_query_exact": 1.0,
+    "structured_query_field_accuracy": 1.0,
+    "n": 409,
+    "label_counts": {
+      "violation_type != none": 135,
+      "loading_percent > 100": 135,
+      "vm_pu < 0.95": 139
+    }
+  },
+  "test_evaluation": {
+    "accuracy": 1.0,
+    "macro_f1": 1.0,
+    "exact_match": 1.0,
+    "token_f1": 1.0,
+    "prediction_is_json": 1.0,
+    "structured_query_exact": 1.0,
+    "structured_query_field_accuracy": 1.0,
+    "n": 412,
+    "label_counts": {
+      "vm_pu < 0.95": 143,
+      "violation_type != none": 135,
+      "loading_percent > 100": 134
+    }
+  },
+  "ood_evaluation": {
+    "accuracy": 1.0,
+    "macro_f1": 1.0,
+    "exact_match": 1.0,
+    "token_f1": 1.0,
+    "prediction_is_json": 1.0,
+    "structured_query_exact": 1.0,
+    "structured_query_field_accuracy": 1.0,
+    "n": 11991,
+    "label_counts": {
+      "violation_type != none": 4005,
+      "vm_pu < 0.95": 3978,
+      "loading_percent > 100": 4008
+    }
+  },
+  "note": "The model predicts the structured_query.filter field from request text. The scenario_id is copied from the input field required by the public task schema, and the output is serialized as valid JSON."
+}

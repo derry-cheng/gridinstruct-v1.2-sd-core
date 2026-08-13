@@ -1,0 +1,223 @@
+{
+  "generated_at": "2026-07-31T09:44:25.862703+00:00",
+  "status": "pass",
+  "source": "data/gridinstruct_v1.2_sd_core.jsonl",
+  "input_sha256": "425449c0feaba3dfde0f3b79cd2304c10f499b7ace7d345be7c23de12cf4ea7c",
+  "output_sha256": {
+    "train": "0661e57a2857d53029d8efce0aada6f622647ec84651b3afc16d63ef764fc675",
+    "validation": "bba8eaaa7d34840e5dc1d458e2bdf25d933e6426ed9314513ff2812121b64fdc",
+    "test": "0692c31a2b023baaf3b6dbff7f5a0d828c71d73fa5461cd2c6d4615fb4a54b7c",
+    "ood_test": "64d030d91b93505cf6f38a1cd9f25a9d9719fdde7d2b4d88b3fefa5e9f27fd0b"
+  },
+  "split_paths": {
+    "train": "data/v1.2_sd_core_train.jsonl",
+    "validation": "data/v1.2_sd_core_validation.jsonl",
+    "test": "data/v1.2_sd_core_test.jsonl",
+    "ood_test": "data/v1.2_sd_core_ood_test.jsonl"
+  },
+  "splits": {
+    "train": {
+      "records": 28684,
+      "task_counts": {
+        "regulation_qa": 3366,
+        "operation_ticket_check": 8675,
+        "dispatcher_intent_tool_call": 3910,
+        "intelligent_data_query": 3476,
+        "regulation_compliance_check": 5655,
+        "auxiliary_decision": 3602
+      }
+    },
+    "validation": {
+      "records": 3598,
+      "task_counts": {
+        "regulation_compliance_check": 707,
+        "regulation_qa": 420,
+        "dispatcher_intent_tool_call": 490,
+        "operation_ticket_check": 1096,
+        "auxiliary_decision": 451,
+        "intelligent_data_query": 434
+      }
+    },
+    "test": {
+      "records": 3609,
+      "task_counts": {
+        "dispatcher_intent_tool_call": 494,
+        "regulation_compliance_check": 701,
+        "auxiliary_decision": 448,
+        "regulation_qa": 419,
+        "intelligent_data_query": 437,
+        "operation_ticket_check": 1110
+      }
+    },
+    "ood_test": {
+      "records": 59588,
+      "task_counts": {
+        "dispatcher_intent_tool_call": 14879,
+        "regulation_compliance_check": 17704,
+        "intelligent_data_query": 13419,
+        "auxiliary_decision": 13586
+      }
+    }
+  },
+  "scenario_overlap_train_test": [],
+  "source_group_overlap_train_test": [],
+  "provenance_component_overlap": {
+    "train__validation": 0,
+    "train__test": 0,
+    "train__ood_test": 0,
+    "validation__test": 0,
+    "validation__ood_test": 0,
+    "test__ood_test": 0
+  },
+  "individual_provenance_overlap": {
+    "source_group": {
+      "train__validation": 0,
+      "train__test": 0,
+      "train__ood_test": 0,
+      "validation__test": 0,
+      "validation__ood_test": 0,
+      "test__ood_test": 0
+    },
+    "source_record_id": {
+      "train__validation": 0,
+      "train__test": 0,
+      "train__ood_test": 0,
+      "validation__test": 0,
+      "validation__ood_test": 0,
+      "test__ood_test": 0
+    },
+    "scenario_id": {
+      "train__validation": 0,
+      "train__test": 0,
+      "train__ood_test": 0,
+      "validation__test": 0,
+      "validation__ood_test": 0,
+      "test__ood_test": 0
+    },
+    "source_simulation_case_id": {
+      "train__validation": 0,
+      "train__test": 0,
+      "train__ood_test": 0,
+      "validation__test": 0,
+      "validation__ood_test": 0,
+      "test__ood_test": 0
+    },
+    "operation_group": {
+      "train__validation": 0,
+      "train__test": 0,
+      "train__ood_test": 0,
+      "validation__test": 0,
+      "validation__ood_test": 0,
+      "test__ood_test": 0
+    }
+  },
+  "hard_gates": {
+    "all_splits_nonempty": true,
+    "ids_partition_input_exactly": true,
+    "provenance_components_disjoint": true,
+    "all_individual_provenance_keys_disjoint": true,
+    "all_tasks_present_in_iid_splits": true,
+    "classification_labels_present_in_iid_splits": true,
+    "classification_label_spaces_complete_in_iid_splits": true
+  },
+  "expected_classification_label_spaces": {
+    "operation_ticket_check": [
+      "compliant",
+      "compliant_with_monitoring",
+      "non_compliant"
+    ],
+    "regulation_compliance_check": [
+      "compliant",
+      "compliant_with_monitoring",
+      "non_compliant"
+    ],
+    "dispatcher_intent_tool_call": [
+      "diagnose_and_dispatch",
+      "mitigate_violations",
+      "security_check_and_redispatch"
+    ]
+  },
+  "classification_label_spaces_by_split": {
+    "train": {
+      "operation_ticket_check": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ],
+      "regulation_compliance_check": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ],
+      "dispatcher_intent_tool_call": [
+        "diagnose_and_dispatch",
+        "mitigate_violations",
+        "security_check_and_redispatch"
+      ]
+    },
+    "validation": {
+      "operation_ticket_check": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ],
+      "regulation_compliance_check": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ],
+      "dispatcher_intent_tool_call": [
+        "diagnose_and_dispatch",
+        "mitigate_violations",
+        "security_check_and_redispatch"
+      ]
+    },
+    "test": {
+      "operation_ticket_check": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ],
+      "regulation_compliance_check": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ],
+      "dispatcher_intent_tool_call": [
+        "diagnose_and_dispatch",
+        "mitigate_violations",
+        "security_check_and_redispatch"
+      ]
+    }
+  },
+  "authoritative_split_policy": "IID provenance-connected components over source group, source record, scenario, simulation case, and operation group; topology/scenario OOD held out first",
+  "seed": 42,
+  "ood_design": [
+    "topology transfer to IEEE118",
+    "external topology transfer to IEEE300, Illinois200, PEGASE89, PEGASE1354, RTE1888, RTE2848, and PEGASE2869",
+    "scenario transfer to high-load (120% and 130%) and selected N-2 events",
+    "held-out topology/scenario records for compliance, decision, tool-use and query tasks",
+    "operation_ticket_check and regulation_qa have no OOD split because they are not scenario-grounded"
+  ],
+  "split_limitations": {
+    "train": {
+      "missing_tasks": [],
+      "low_count_tasks_below_5": []
+    },
+    "validation": {
+      "missing_tasks": [],
+      "low_count_tasks_below_5": []
+    },
+    "test": {
+      "missing_tasks": [],
+      "low_count_tasks_below_5": []
+    },
+    "ood_test": {
+      "missing_tasks": [
+        "operation_ticket_check",
+        "regulation_qa"
+      ],
+      "low_count_tasks_below_5": []
+    }
+  }
+}

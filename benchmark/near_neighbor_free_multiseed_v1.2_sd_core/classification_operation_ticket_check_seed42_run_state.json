@@ -1,0 +1,66 @@
+{
+  "generated_at": "2026-08-06T10:42:00.451443+00:00",
+  "run_spec": {
+    "task": "operation_ticket_check",
+    "family": "classification",
+    "seed": 42,
+    "command": [
+      "/opt/homebrew/Caskroom/miniconda/base/bin/python",
+      "scripts/run_transformer_classifier_baseline.py",
+      "--task-type",
+      "operation_ticket_check",
+      "--train",
+      "/tmp/gaiav2_near_neighbor_free.qCa31e/train.jsonl",
+      "--validation",
+      "/tmp/gaiav2_near_neighbor_free.qCa31e/validation.jsonl",
+      "--test",
+      "/tmp/gaiav2_near_neighbor_free.qCa31e/test.jsonl",
+      "--model-name",
+      "/Users/lemon/.cache/huggingface/hub/models--distilbert-base-uncased/snapshots/12040accade4e8a0f71eabdb258fecc2e7e948be",
+      "--epochs",
+      "1",
+      "--batch-size",
+      "128",
+      "--learning-rate",
+      "5e-5",
+      "--max-length",
+      "128",
+      "--seed",
+      "42",
+      "--input-profile",
+      "natural",
+      "--local-files-only",
+      "--skip-latest-alias",
+      "--output-prefix",
+      "benchmark/near_neighbor_free_multiseed_v1.2_sd_core/classification_operation_ticket_check_seed42",
+      "--experiment-dir",
+      "experiments/near_neighbor_free_multiseed_v1.2_sd_core/classification_operation_ticket_check/seed42"
+    ],
+    "input_sha256": {
+      "train": "e636bee84de0c4a492bfd0de5117d1a23617d462ded02ee621554e213c84f6f3",
+      "validation": "db714117ba820cb0eaf3d99a829250238364d98e6277b34cc8d127ded1b8c149",
+      "test": "894453180029e16508561612ce839e367dfb3d055d82b82a45a572e32cbb8708"
+    },
+    "suite_script_sha256": "6486036f9773c678728104b0fd5fc42acc3b26c1b2f9fe37689530283efdae61",
+    "runner_script_sha256": "e46680684ebac62f1843242b90034a8f175b92a3367ad7f8edb7e2720f8639f7",
+    "model_revision": {
+      "model_name": "distilbert-base-uncased",
+      "snapshot": "/Users/lemon/.cache/huggingface/hub/models--distilbert-base-uncased/snapshots/12040accade4e8a0f71eabdb258fecc2e7e948be",
+      "member_count": 5,
+      "sha256": "ad1adf0a5b06cf01a40d74eb6b0b382192a451fe804596147865bd4051b5ff42"
+    },
+    "environment_versions": {
+      "python": "3.12.2",
+      "torch": "2.3.0",
+      "transformers": "4.40.1",
+      "scikit-learn": "1.4.2",
+      "pandapower": "2.14.11",
+      "lm-format-enforcer": null
+    }
+  },
+  "run_spec_sha256": "f83e3472149fe02566e4009b0d21551fdbd4e45b09720135485897cedc001509",
+  "prediction_sha256": "a66f598d418d8305990f030cb88131da8072e3e0c594873c2339be511d6e25ae",
+  "prediction_count": 1305,
+  "unique_prediction_count": 1305,
+  "report_sha256": "d6d4640cf0c384ac6c4af1bd1fb827603e5e3bdea36a2c28fac74371051a3720"
+}

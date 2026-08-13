@@ -1,0 +1,90 @@
+{
+  "generated_at": "2026-07-09T14:13:46.519783+00:00",
+  "status": "pass",
+  "systems": [
+    "ieee300",
+    "pegase89",
+    "pegase1354",
+    "rte1888",
+    "rte2848",
+    "pegase2869"
+  ],
+  "config": {
+    "seed": 20260710,
+    "load_levels": [
+      0.95,
+      1.0
+    ],
+    "max_lines_per_system": 3
+  },
+  "scenario_record_count": 48,
+  "converged_record_count": 46,
+  "convergence_rate": 0.9583333333333334,
+  "solver_status_counts": {
+    "converged": 46,
+    "failed": 2
+  },
+  "network_summaries": [
+    {
+      "system": "ieee300",
+      "bus_count": 300,
+      "line_count": 283,
+      "scenario_count": 8,
+      "converged_count": 8,
+      "max_loading": 10.65853,
+      "min_voltage": 0.811476,
+      "max_voltage": 1.0735
+    },
+    {
+      "system": "pegase89",
+      "bus_count": 89,
+      "line_count": 160,
+      "scenario_count": 8,
+      "converged_count": 8,
+      "max_loading": 99.610838,
+      "min_voltage": 0.965897,
+      "max_voltage": 1.131493
+    },
+    {
+      "system": "pegase1354",
+      "bus_count": 1354,
+      "line_count": 1751,
+      "scenario_count": 8,
+      "converged_count": 8,
+      "max_loading": 108.698663,
+      "min_voltage": 0.971445,
+      "max_voltage": 1.108028
+    },
+    {
+      "system": "rte1888",
+      "bus_count": 1888,
+      "line_count": 1976,
+      "scenario_count": 8,
+      "converged_count": 6,
+      "max_loading": 1563.432205,
+      "min_voltage": 0.35121,
+      "max_voltage": 1.301802
+    },
+    {
+      "system": "rte2848",
+      "bus_count": 2848,
+      "line_count": 2993,
+      "scenario_count": 8,
+      "converged_count": 8,
+      "max_loading": 760.178492,
+      "min_voltage": 0.891883,
+      "max_voltage": 1.202191
+    },
+    {
+      "system": "pegase2869",
+      "bus_count": 2869,
+      "line_count": 4051,
+      "scenario_count": 8,
+      "converged_count": 8,
+      "max_loading": 99.370521,
+      "min_voltage": 0.96393,
+      "max_voltage": 1.141159
+    }
+  ],
+  "scope": "external topology validation only; not merged into the release instruction table"
+}

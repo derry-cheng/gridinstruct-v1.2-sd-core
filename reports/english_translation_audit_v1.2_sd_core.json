@@ -1,0 +1,29 @@
+{
+  "generated_at": "2026-07-31T09:45:37.455017+00:00",
+  "source": "data/gridinstruct_v1.2_sd_core.jsonl",
+  "translated": "data/gridinstruct_v1.2_sd_core_en.jsonl",
+  "source_records": 95479,
+  "translated_records": 95479,
+  "record_count_match": true,
+  "id_order_aligned": true,
+  "missing_ids": [],
+  "extra_ids": [],
+  "records_with_cjk": 0,
+  "records_with_cjk_rate": 0.0,
+  "cjk_by_field_top": [],
+  "cjk_examples": [],
+  "classification_output_mismatch_count": 0,
+  "classification_output_mismatch_examples": [],
+  "language_metadata": {
+    "en": 95479
+  },
+  "task_counts": {
+    "auxiliary_decision": 18087,
+    "regulation_compliance_check": 24767,
+    "dispatcher_intent_tool_call": 19773,
+    "intelligent_data_query": 17766,
+    "regulation_qa": 4205,
+    "operation_ticket_check": 10881
+  },
+  "status": "pass"
+}

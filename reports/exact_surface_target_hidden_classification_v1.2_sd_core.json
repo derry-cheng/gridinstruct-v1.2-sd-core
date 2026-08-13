@@ -1,0 +1,312 @@
+{
+  "generated_at": "2026-08-12T15:46:37.328385+00:00",
+  "status": "pass",
+  "objective": "target-hidden classification on an exact character-5-gram component split",
+  "canonical": {
+    "path": "data/gridinstruct_v1.2_sd_core_en.jsonl",
+    "sha256": "75ffc5c5386e331eed6c7f4092d186e042be8a020a936993f5220a78c1fd058e",
+    "records": 95479
+  },
+  "split_report": {
+    "path": "reports/exact_surface_component_split_v1.2_sd_core.json",
+    "sha256": "fbb2785e877e6384c94aa56adfa27eed5aa1cdc9a9ca9152ad43d7bace1531f7"
+  },
+  "split_counts": {
+    "train": 31008,
+    "validation": 3877,
+    "test": 3878,
+    "ood_test": 56716
+  },
+  "rows": [
+    {
+      "task_type": "dispatcher_intent_tool_call",
+      "input_profile": "full_contract",
+      "n_train": 5456,
+      "n_test": 682,
+      "vocabulary_size": 43365,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "macro_f1_ci95": [
+        1.0,
+        1.0
+      ],
+      "balanced_accuracy": 1.0,
+      "gold_label_counts": {
+        "diagnose_and_dispatch": 231,
+        "security_check_and_redispatch": 226,
+        "mitigate_violations": 225
+      },
+      "prediction_label_counts": {
+        "diagnose_and_dispatch": 231,
+        "security_check_and_redispatch": 226,
+        "mitigate_violations": 225
+      },
+      "labels": [
+        "diagnose_and_dispatch",
+        "mitigate_violations",
+        "security_check_and_redispatch"
+      ],
+      "split": "exact_surface_component",
+      "train_manifest": "data/v1.2_sd_core_exact_surface_train_ids.jsonl",
+      "test_manifest": "data/v1.2_sd_core_exact_surface_test_ids.jsonl"
+    },
+    {
+      "task_type": "operation_ticket_check",
+      "input_profile": "full_contract",
+      "n_train": 8705,
+      "n_test": 1088,
+      "vocabulary_size": 45457,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "macro_f1_ci95": [
+        1.0,
+        1.0
+      ],
+      "balanced_accuracy": 1.0,
+      "gold_label_counts": {
+        "non_compliant": 316,
+        "compliant_with_monitoring": 495,
+        "compliant": 277
+      },
+      "prediction_label_counts": {
+        "non_compliant": 316,
+        "compliant_with_monitoring": 495,
+        "compliant": 277
+      },
+      "labels": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ],
+      "split": "exact_surface_component",
+      "train_manifest": "data/v1.2_sd_core_exact_surface_train_ids.jsonl",
+      "test_manifest": "data/v1.2_sd_core_exact_surface_test_ids.jsonl"
+    },
+    {
+      "task_type": "regulation_compliance_check",
+      "input_profile": "full_contract",
+      "n_train": 6713,
+      "n_test": 840,
+      "vocabulary_size": 45287,
+      "accuracy": 0.9642857142857143,
+      "macro_f1": 0.9604935757138279,
+      "macro_f1_ci95": [
+        0.9451271840756749,
+        0.9731965410187386
+      ],
+      "balanced_accuracy": 0.9685428549291663,
+      "gold_label_counts": {
+        "compliant_with_monitoring": 375,
+        "non_compliant": 362,
+        "compliant": 103
+      },
+      "prediction_label_counts": {
+        "compliant_with_monitoring": 355,
+        "non_compliant": 375,
+        "compliant": 110
+      },
+      "labels": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ],
+      "split": "exact_surface_component",
+      "train_manifest": "data/v1.2_sd_core_exact_surface_train_ids.jsonl",
+      "test_manifest": "data/v1.2_sd_core_exact_surface_test_ids.jsonl"
+    },
+    {
+      "task_type": "dispatcher_intent_tool_call",
+      "input_profile": "target_hidden",
+      "n_train": 5456,
+      "n_test": 682,
+      "vocabulary_size": 10466,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "macro_f1_ci95": [
+        1.0,
+        1.0
+      ],
+      "balanced_accuracy": 1.0,
+      "gold_label_counts": {
+        "diagnose_and_dispatch": 231,
+        "security_check_and_redispatch": 226,
+        "mitigate_violations": 225
+      },
+      "prediction_label_counts": {
+        "diagnose_and_dispatch": 231,
+        "security_check_and_redispatch": 226,
+        "mitigate_violations": 225
+      },
+      "labels": [
+        "diagnose_and_dispatch",
+        "mitigate_violations",
+        "security_check_and_redispatch"
+      ],
+      "split": "exact_surface_component",
+      "train_manifest": "data/v1.2_sd_core_exact_surface_train_ids.jsonl",
+      "test_manifest": "data/v1.2_sd_core_exact_surface_test_ids.jsonl"
+    },
+    {
+      "task_type": "operation_ticket_check",
+      "input_profile": "target_hidden",
+      "n_train": 8705,
+      "n_test": 1088,
+      "vocabulary_size": 45457,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "macro_f1_ci95": [
+        1.0,
+        1.0
+      ],
+      "balanced_accuracy": 1.0,
+      "gold_label_counts": {
+        "non_compliant": 316,
+        "compliant_with_monitoring": 495,
+        "compliant": 277
+      },
+      "prediction_label_counts": {
+        "non_compliant": 316,
+        "compliant_with_monitoring": 495,
+        "compliant": 277
+      },
+      "labels": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ],
+      "split": "exact_surface_component",
+      "train_manifest": "data/v1.2_sd_core_exact_surface_train_ids.jsonl",
+      "test_manifest": "data/v1.2_sd_core_exact_surface_test_ids.jsonl"
+    },
+    {
+      "task_type": "regulation_compliance_check",
+      "input_profile": "target_hidden",
+      "n_train": 6713,
+      "n_test": 840,
+      "vocabulary_size": 8958,
+      "accuracy": 0.6869047619047619,
+      "macro_f1": 0.6454057722373986,
+      "macro_f1_ci95": [
+        0.6088633259429923,
+        0.6761483783339964
+      ],
+      "balanced_accuracy": 0.6405525338673438,
+      "gold_label_counts": {
+        "compliant_with_monitoring": 375,
+        "non_compliant": 362,
+        "compliant": 103
+      },
+      "prediction_label_counts": {
+        "compliant_with_monitoring": 431,
+        "compliant": 97,
+        "non_compliant": 312
+      },
+      "labels": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ],
+      "split": "exact_surface_component",
+      "train_manifest": "data/v1.2_sd_core_exact_surface_train_ids.jsonl",
+      "test_manifest": "data/v1.2_sd_core_exact_surface_test_ids.jsonl"
+    },
+    {
+      "task_type": "dispatcher_intent_tool_call",
+      "input_profile": "instruction_only",
+      "n_train": 5456,
+      "n_test": 682,
+      "vocabulary_size": 6116,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "macro_f1_ci95": [
+        1.0,
+        1.0
+      ],
+      "balanced_accuracy": 1.0,
+      "gold_label_counts": {
+        "diagnose_and_dispatch": 231,
+        "security_check_and_redispatch": 226,
+        "mitigate_violations": 225
+      },
+      "prediction_label_counts": {
+        "diagnose_and_dispatch": 231,
+        "security_check_and_redispatch": 226,
+        "mitigate_violations": 225
+      },
+      "labels": [
+        "diagnose_and_dispatch",
+        "mitigate_violations",
+        "security_check_and_redispatch"
+      ],
+      "split": "exact_surface_component",
+      "train_manifest": "data/v1.2_sd_core_exact_surface_train_ids.jsonl",
+      "test_manifest": "data/v1.2_sd_core_exact_surface_test_ids.jsonl"
+    },
+    {
+      "task_type": "operation_ticket_check",
+      "input_profile": "instruction_only",
+      "n_train": 8705,
+      "n_test": 1088,
+      "vocabulary_size": 3843,
+      "accuracy": 0.38878676470588236,
+      "macro_f1": 0.2306804054143896,
+      "macro_f1_ci95": [
+        0.2126905868318452,
+        0.25248821338285204
+      ],
+      "balanced_accuracy": 0.2955729129402757,
+      "gold_label_counts": {
+        "non_compliant": 316,
+        "compliant_with_monitoring": 495,
+        "compliant": 277
+      },
+      "prediction_label_counts": {
+        "compliant_with_monitoring": 913,
+        "non_compliant": 108,
+        "compliant": 67
+      },
+      "labels": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ],
+      "split": "exact_surface_component",
+      "train_manifest": "data/v1.2_sd_core_exact_surface_train_ids.jsonl",
+      "test_manifest": "data/v1.2_sd_core_exact_surface_test_ids.jsonl"
+    },
+    {
+      "task_type": "regulation_compliance_check",
+      "input_profile": "instruction_only",
+      "n_train": 6713,
+      "n_test": 840,
+      "vocabulary_size": 8337,
+      "accuracy": 0.6928571428571428,
+      "macro_f1": 0.6560929152267528,
+      "macro_f1_ci95": [
+        0.619569124048762,
+        0.6860900408696132
+      ],
+      "balanced_accuracy": 0.6520709709333857,
+      "gold_label_counts": {
+        "compliant_with_monitoring": 375,
+        "non_compliant": 362,
+        "compliant": 103
+      },
+      "prediction_label_counts": {
+        "compliant_with_monitoring": 430,
+        "compliant": 99,
+        "non_compliant": 311
+      },
+      "labels": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ],
+      "split": "exact_surface_component",
+      "train_manifest": "data/v1.2_sd_core_exact_surface_train_ids.jsonl",
+      "test_manifest": "data/v1.2_sd_core_exact_surface_test_ids.jsonl"
+    }
+  ],
+  "figure": "figures/sd_core_quality/fig_exact_surface_target_hidden.png",
+  "interpretation": "Lexical near-duplicate stress diagnostic only; no semantic independence, physical-label validity, or operational dispatch claim."
+}

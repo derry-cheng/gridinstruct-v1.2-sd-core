@@ -1,0 +1,10 @@
+{
+  "generated_at": "2026-07-31T09:49:11.625503+00:00",
+  "status": "pass",
+  "output": "data/gridinstruct_v1.2_sd_core.jsonl",
+  "manifest": "metadata/canonical_dataset_promotion_manifest.json",
+  "records": 95479,
+  "output_sha256": "425449c0feaba3dfde0f3b79cd2304c10f499b7ace7d345be7c23de12cf4ea7c",
+  "manifest_sha256": "d1e648082e4baaf5bd55f199e74a90f4018315ac4cba4f6a038d6bcb4f50e8e4",
+  "canonical_dataset_immutable_since_promotion": true
+}

@@ -1,0 +1,13 @@
+{
+  "generated_at": "2026-08-13T04:39:25+00:00",
+  "status": "pass",
+  "removed_paths": [
+    ".pytest_cache",
+    "scripts/__pycache__",
+    "tests/__pycache__"
+  ],
+  "bytes_reclaimed": 2228651,
+  "project_size_after_cleanup": "approximately 3.7G",
+  "retained": "canonical data, ID-only manifests, bound reports, source code, figures, paper package, and release documentation",
+  "scope": "temporary caches only; no canonical data or evidence artifact removed"
+}

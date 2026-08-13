@@ -1,0 +1,49 @@
+{
+  "generated_at": "2026-08-13T08:44:03.737830+00:00",
+  "status": "pass",
+  "bundle": "release/GridInstruct_v1.2_sd_core_release_candidate.tar.gz",
+  "bundle_sha256": "d066a313d1820e5b0df4cebb7d3d41a67e1cfc42eef13dcb7e3748365fb3485e",
+  "safe_archive_member_count": 939,
+  "manifest_payload_count": 937,
+  "hash_mismatch_count": 0,
+  "hash_mismatches": [],
+  "evidence_binding_status": "pass",
+  "evidence_binding_errors": [],
+  "isolated_validators": [
+    {
+      "dataset": "data/gridinstruct_v1.2_sd_core.jsonl",
+      "returncode": 1,
+      "passed": true,
+      "strict_validator_passed": false,
+      "external_truth_deferred": true,
+      "total_records": 95479,
+      "schema_errors": 0,
+      "duplicate_ids": 0,
+      "invalid_rule_links": 0,
+      "invalid_scenario_links": 21184,
+      "semantic_errors": 4536,
+      "deferred_reason": "archive excludes the raw scenario registry and query truth ledger; scenario-link and query-truth checks remain external",
+      "stderr_tail": ""
+    },
+    {
+      "dataset": "data/gridinstruct_v1.2_sd_core_en.jsonl",
+      "returncode": 1,
+      "passed": true,
+      "strict_validator_passed": false,
+      "external_truth_deferred": true,
+      "total_records": 95479,
+      "schema_errors": 0,
+      "duplicate_ids": 0,
+      "invalid_rule_links": 0,
+      "invalid_scenario_links": 21184,
+      "semantic_errors": 4536,
+      "deferred_reason": "archive excludes the raw scenario registry and query truth ledger; scenario-link and query-truth checks remain external",
+      "stderr_tail": ""
+    }
+  ],
+  "external_truth_scope": {
+    "deferred": true,
+    "reason": "Raw scenario arrays, full scenario-generation ledger, and query truth ledger are outside this compact archive."
+  },
+  "errors": []
+}

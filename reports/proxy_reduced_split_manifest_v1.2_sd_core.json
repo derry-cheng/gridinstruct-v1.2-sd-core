@@ -1,0 +1,107 @@
+{
+  "generated_at": "2026-07-31T10:19:38.370082+00:00",
+  "status": "pass",
+  "policy": "classification-only JSONL derived from released splits; metadata, source ids, scenario ids, tool plans, slots, rationale, and explicit proxy keys are removed from model input records",
+  "conversions": [
+    {
+      "source": "data/v1.2_sd_core_train.jsonl",
+      "output": "data/v1.2_sd_core_proxyreduced_train.jsonl",
+      "source_records": 28684,
+      "output_records": 18240,
+      "task_counts": {
+        "operation_ticket_check": 8675,
+        "dispatcher_intent_tool_call": 3910,
+        "regulation_compliance_check": 5655
+      }
+    },
+    {
+      "source": "data/v1.2_sd_core_validation.jsonl",
+      "output": "data/v1.2_sd_core_proxyreduced_validation.jsonl",
+      "source_records": 3598,
+      "output_records": 2293,
+      "task_counts": {
+        "regulation_compliance_check": 707,
+        "dispatcher_intent_tool_call": 490,
+        "operation_ticket_check": 1096
+      }
+    },
+    {
+      "source": "data/v1.2_sd_core_test.jsonl",
+      "output": "data/v1.2_sd_core_proxyreduced_test.jsonl",
+      "source_records": 3609,
+      "output_records": 2305,
+      "task_counts": {
+        "dispatcher_intent_tool_call": 494,
+        "regulation_compliance_check": 701,
+        "operation_ticket_check": 1110
+      }
+    },
+    {
+      "source": "data/v1.2_sd_core_challenge_train.jsonl",
+      "output": "data/v1.2_sd_core_challenge_proxyreduced_train.jsonl",
+      "source_records": 44339,
+      "output_records": 44339,
+      "task_counts": {
+        "dispatcher_intent_tool_call": 17851,
+        "regulation_compliance_check": 24648,
+        "operation_ticket_check": 1840
+      }
+    },
+    {
+      "source": "data/v1.2_sd_core_challenge_validation.jsonl",
+      "output": "data/v1.2_sd_core_challenge_proxyreduced_validation.jsonl",
+      "source_records": 5745,
+      "output_records": 5745,
+      "task_counts": {
+        "operation_ticket_check": 5171,
+        "dispatcher_intent_tool_call": 522,
+        "regulation_compliance_check": 52
+      }
+    },
+    {
+      "source": "data/v1.2_sd_core_challenge_test.jsonl",
+      "output": "data/v1.2_sd_core_challenge_proxyreduced_test.jsonl",
+      "source_records": 5337,
+      "output_records": 5337,
+      "task_counts": {
+        "operation_ticket_check": 3870,
+        "dispatcher_intent_tool_call": 1400,
+        "regulation_compliance_check": 67
+      }
+    },
+    {
+      "source": "data/v1.2_sd_core_strict_train.jsonl",
+      "output": "data/v1.2_sd_core_strict_proxyreduced_train.jsonl",
+      "source_records": 76350,
+      "output_records": 44300,
+      "task_counts": {
+        "regulation_compliance_check": 19817,
+        "dispatcher_intent_tool_call": 15818,
+        "operation_ticket_check": 8665
+      }
+    },
+    {
+      "source": "data/v1.2_sd_core_strict_validation.jsonl",
+      "output": "data/v1.2_sd_core_strict_proxyreduced_validation.jsonl",
+      "source_records": 9570,
+      "output_records": 5566,
+      "task_counts": {
+        "dispatcher_intent_tool_call": 1980,
+        "regulation_compliance_check": 2473,
+        "operation_ticket_check": 1113
+      }
+    },
+    {
+      "source": "data/v1.2_sd_core_strict_test.jsonl",
+      "output": "data/v1.2_sd_core_strict_proxyreduced_test.jsonl",
+      "source_records": 9559,
+      "output_records": 5555,
+      "task_counts": {
+        "operation_ticket_check": 1103,
+        "dispatcher_intent_tool_call": 1975,
+        "regulation_compliance_check": 2477
+      }
+    }
+  ],
+  "missing_sources": []
+}

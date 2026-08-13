@@ -1,0 +1,5 @@
+severity_level,train,validation,test,ood_test,challenge_train,challenge_validation,challenge_test,strict_train,strict_validation,strict_test,proxyreduced_train,proxyreduced_validation,proxyreduced_test,strict_proxyreduced_train,strict_proxyreduced_validation,strict_proxyreduced_test
+alert,971,223,84,18281,10045,22,556,15693,1796,2070,0,0,0,0,0,0
+emergency,13140,1437,1700,39259,29420,531,871,44547,5673,5316,0,0,0,0,0,0
+no_severity,12041,1516,1529,0,1840,5171,3870,12030,1533,1523,18240,2293,2305,44300,5566,5555
+normal,2532,422,296,2048,3034,21,40,4080,568,650,0,0,0,0,0,0

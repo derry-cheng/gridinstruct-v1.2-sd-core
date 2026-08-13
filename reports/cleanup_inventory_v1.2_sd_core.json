@@ -1,0 +1,197 @@
+{
+  "generated_at": "2026-08-05T10:22:15.554270+00:00",
+  "status": "deleted_after_hash_validation",
+  "candidate_count": 23,
+  "candidate_bytes": 5977101019,
+  "candidate_gib": 5.567,
+  "policy": "Only explicitly listed files may be removed; current canonical tables, split files, audits, figures, manifests, and source diagrams are preserved.",
+  "candidates": [
+    {
+      "path": "data/stages/augmentation_v16/12_dispatcher_counterfactuals.jsonl",
+      "bytes": 222886073,
+      "sha256": "e0caf4c095cc3bd90da2812356df68d94fe5f1a68963131cdd7883ce6f8c44b0",
+      "reason": "superseded intermediate construction/probe stage; the current release is bound to canonical JSONL and current audits",
+      "manifest_referenced": false
+    },
+    {
+      "path": "data/stages/augmentation_v16/13_monitoring_counterfactuals.jsonl",
+      "bytes": 260944167,
+      "sha256": "7127fb2735a4f0bbafa64918b95fda1ccd9890a4d60d12aa2c5f6a70f02d20bc",
+      "reason": "superseded intermediate construction/probe stage; the current release is bound to canonical JSONL and current audits",
+      "manifest_referenced": false
+    },
+    {
+      "path": "data/stages/augmentation_v16/14_plain_ticket_adversarial.jsonl",
+      "bytes": 303324821,
+      "sha256": "46f51bd31e8c44492331e60d4d52f46ae218839acaf8ecb7b04ddc25340054b6",
+      "reason": "superseded intermediate construction/probe stage; the current release is bound to canonical JSONL and current audits",
+      "manifest_referenced": false
+    },
+    {
+      "path": "data/stages/probes/06_query_repaired_v12_contractcheck.jsonl",
+      "bytes": 232004192,
+      "sha256": "3eb6b64102f0473cdb3d186a676927edc12cd4305bb8f305f29b2a21e2a1e7d8",
+      "reason": "superseded intermediate construction/probe stage; the current release is bound to canonical JSONL and current audits",
+      "manifest_referenced": false
+    },
+    {
+      "path": "data/stages/probes/08_rule_linked_v12_rulecheck.jsonl",
+      "bytes": 425445577,
+      "sha256": "f4a54f8d71a81d8f33a979921ebbe55b4301bc74a70968f8d383bea47b80df46",
+      "reason": "superseded intermediate construction/probe stage; the current release is bound to canonical JSONL and current audits",
+      "manifest_referenced": false
+    },
+    {
+      "path": "data/stages/probes/08_rule_linked_v13_rulecheck.jsonl",
+      "bytes": 425445577,
+      "sha256": "f4a54f8d71a81d8f33a979921ebbe55b4301bc74a70968f8d383bea47b80df46",
+      "reason": "superseded intermediate construction/probe stage; the current release is bound to canonical JSONL and current audits",
+      "manifest_referenced": false
+    },
+    {
+      "path": "data/stages/probes/opf_v12_quick2.jsonl",
+      "bytes": 204655985,
+      "sha256": "6326aed2c23f41a297a2850bd10d1235b742988d726327fe9ab268090041532f",
+      "reason": "superseded intermediate construction/probe stage; the current release is bound to canonical JSONL and current audits",
+      "manifest_referenced": false
+    },
+    {
+      "path": "data/stages/probes/opf_v3_smoke.jsonl",
+      "bytes": 194050126,
+      "sha256": "47be448fb3b7c89127b1c3f320b3fe1eb95dd25bc48a10a79f2719a7f96ab363",
+      "reason": "superseded intermediate construction/probe stage; the current release is bound to canonical JSONL and current audits",
+      "manifest_referenced": false
+    },
+    {
+      "path": "data/stages/probes/opf_v3_state_smoke.jsonl",
+      "bytes": 193823867,
+      "sha256": "3615a0f08919ab61a6eb70e663f3a1f37a81e23a4de932e50713db07fe74b7c5",
+      "reason": "superseded intermediate construction/probe stage; the current release is bound to canonical JSONL and current audits",
+      "manifest_referenced": false
+    },
+    {
+      "path": "data/stages/probes/opf_v5_island_safe_smoke.jsonl",
+      "bytes": 203233698,
+      "sha256": "4ec288f1be5ef7252237be23755efac9da8bb4e3dcf8ba0c863d17c93d054273",
+      "reason": "superseded intermediate construction/probe stage; the current release is bound to canonical JSONL and current audits",
+      "manifest_referenced": false
+    },
+    {
+      "path": "data/stages/probes/opf_v6_full_island_safe.jsonl",
+      "bytes": 216249829,
+      "sha256": "f4aba60da8e13b9ef4fb9b207905178a8c9f29519bea00391df2dfa41bbd1249",
+      "reason": "superseded intermediate construction/probe stage; the current release is bound to canonical JSONL and current audits",
+      "manifest_referenced": false
+    },
+    {
+      "path": "data/stages/v1.2_sd_core/01_selected.jsonl",
+      "bytes": 183444175,
+      "sha256": "858248d582e17ddcff5429c0cf5049cb1bdf5850d12379ad823a1c39763dee89",
+      "reason": "superseded intermediate construction/probe stage; the current release is bound to canonical JSONL and current audits",
+      "manifest_referenced": false
+    },
+    {
+      "path": "data/stages/v1.2_sd_core/02_frozen_v1.jsonl",
+      "bytes": 186513744,
+      "sha256": "02bba2b62a2faa94365754506c5cde087d5aedf06ea8d6cdec2e6bf21071b4ee",
+      "reason": "superseded intermediate construction/probe stage; the current release is bound to canonical JSONL and current audits",
+      "manifest_referenced": false
+    },
+    {
+      "path": "data/stages/v1.2_sd_core/03_topology_v2.jsonl",
+      "bytes": 206667976,
+      "sha256": "307d1188f9208ece30560550dd24c5de28efc0d1cb7d5aeedbf39c074399e8cc",
+      "reason": "superseded intermediate construction/probe stage; the current release is bound to canonical JSONL and current audits",
+      "manifest_referenced": false
+    },
+    {
+      "path": "data/stages/v1.2_sd_core/04_equipment.jsonl",
+      "bytes": 210053110,
+      "sha256": "7c1a423c260630e7c0720914621811e59c08f0741f67191e73a781ad8a9b3bfc",
+      "reason": "superseded intermediate construction/probe stage; the current release is bound to canonical JSONL and current audits",
+      "manifest_referenced": false
+    },
+    {
+      "path": "data/stages/v1.2_sd_core/04_equipment_grounded.jsonl",
+      "bytes": 230404146,
+      "sha256": "ed554d1b328cb977bb0875427dcd25cd3376000115b34cb2d5d06929e52bbb29",
+      "reason": "superseded intermediate construction/probe stage; the current release is bound to canonical JSONL and current audits",
+      "manifest_referenced": false
+    },
+    {
+      "path": "data/stages/v1.2_sd_core/05_opf.jsonl",
+      "bytes": 275365135,
+      "sha256": "75546b114735e096a1a218c99284181d3001ce19cf8099b3afcb62a86c82c80a",
+      "reason": "superseded intermediate construction/probe stage; the current release is bound to canonical JSONL and current audits",
+      "manifest_referenced": false
+    },
+    {
+      "path": "data/stages/v1.2_sd_core/06_query_repaired.jsonl",
+      "bytes": 280814555,
+      "sha256": "5dc0e7b29f8eb70ce1a64e2bdf6cbf3aa761891fdf707e647ab6dbfee09497a9",
+      "reason": "superseded intermediate construction/probe stage; the current release is bound to canonical JSONL and current audits",
+      "manifest_referenced": false
+    },
+    {
+      "path": "data/stages/v1.2_sd_core/07_operation_state.jsonl",
+      "bytes": 282087251,
+      "sha256": "c027d544cc7664031c18b7ec9968f8eb3294cdb1425c127ccbf2432cd82022a8",
+      "reason": "superseded intermediate construction/probe stage; the current release is bound to canonical JSONL and current audits",
+      "manifest_referenced": false
+    },
+    {
+      "path": "data/stages/v1.2_sd_core/08_rule_linked.jsonl",
+      "bytes": 485677155,
+      "sha256": "9eaa7cf5fc352cddb9e61e438475d2d1dfd957df3485819cbf83e69772ccc9b5",
+      "reason": "superseded intermediate construction/probe stage; the current release is bound to canonical JSONL and current audits",
+      "manifest_referenced": false
+    },
+    {
+      "path": "data/stages/v1.2_sd_core/09_compliance_recomputed.jsonl",
+      "bytes": 486059665,
+      "sha256": "425449c0feaba3dfde0f3b79cd2304c10f499b7ace7d345be7c23de12cf4ea7c",
+      "reason": "superseded intermediate construction/probe stage; the current release is bound to canonical JSONL and current audits",
+      "manifest_referenced": false
+    },
+    {
+      "path": "experiments/04_transformer_classification/operation_ticket_check/checkpoints/best_model_state.pt",
+      "bytes": 267864110,
+      "sha256": "90ae280a52c8077b3b26b0e9b6641240809e26bcbc9803cfa197a838c57e452a",
+      "reason": "obsolete transformer checkpoint not used by the current CPU evidence",
+      "manifest_referenced": false
+    },
+    {
+      "path": "paper/scientific_data_latex/build_embedded/main_with_bbl.tex",
+      "bytes": 86085,
+      "sha256": "fca42efe986f5d892cad7d6135177888a50f534f17f1a050c56143b1dcb72a16",
+      "reason": "stale embedded manuscript build; current manuscript is paper/scientific_data_latex/main.tex",
+      "manifest_referenced": false
+    }
+  ],
+  "removed_count": 23,
+  "removed_paths": [
+    "data/stages/augmentation_v16/12_dispatcher_counterfactuals.jsonl",
+    "data/stages/augmentation_v16/13_monitoring_counterfactuals.jsonl",
+    "data/stages/augmentation_v16/14_plain_ticket_adversarial.jsonl",
+    "data/stages/probes/06_query_repaired_v12_contractcheck.jsonl",
+    "data/stages/probes/08_rule_linked_v12_rulecheck.jsonl",
+    "data/stages/probes/08_rule_linked_v13_rulecheck.jsonl",
+    "data/stages/probes/opf_v12_quick2.jsonl",
+    "data/stages/probes/opf_v3_smoke.jsonl",
+    "data/stages/probes/opf_v3_state_smoke.jsonl",
+    "data/stages/probes/opf_v5_island_safe_smoke.jsonl",
+    "data/stages/probes/opf_v6_full_island_safe.jsonl",
+    "data/stages/v1.2_sd_core/01_selected.jsonl",
+    "data/stages/v1.2_sd_core/02_frozen_v1.jsonl",
+    "data/stages/v1.2_sd_core/03_topology_v2.jsonl",
+    "data/stages/v1.2_sd_core/04_equipment.jsonl",
+    "data/stages/v1.2_sd_core/04_equipment_grounded.jsonl",
+    "data/stages/v1.2_sd_core/05_opf.jsonl",
+    "data/stages/v1.2_sd_core/06_query_repaired.jsonl",
+    "data/stages/v1.2_sd_core/07_operation_state.jsonl",
+    "data/stages/v1.2_sd_core/08_rule_linked.jsonl",
+    "data/stages/v1.2_sd_core/09_compliance_recomputed.jsonl",
+    "experiments/04_transformer_classification/operation_ticket_check/checkpoints/best_model_state.pt",
+    "paper/scientific_data_latex/build_embedded/main_with_bbl.tex"
+  ]
+}

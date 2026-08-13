@@ -1,0 +1,73 @@
+{
+  "generated_at": "2026-07-31T14:09:01.812135+00:00",
+  "run_spec": {
+    "task": "regulation_qa",
+    "family": "generation",
+    "seed": 71,
+    "command": [
+      "/data/anaconda3/envs/power/bin/python",
+      "scripts/run_seq2seq_generation_baseline.py",
+      "--train",
+      "data/v1.2_sd_core_train_en.jsonl",
+      "--validation",
+      "data/v1.2_sd_core_validation_en.jsonl",
+      "--test",
+      "data/v1.2_sd_core_test_en.jsonl",
+      "--task-types",
+      "regulation_qa",
+      "--model-name",
+      "/root/.cache/huggingface/hub/models--t5-small/snapshots/df1b051c49625cf57a3d0d8d3863ed4d13564fe4",
+      "--epochs",
+      "10",
+      "--patience",
+      "2",
+      "--batch-size",
+      "32",
+      "--learning-rate",
+      "0.0005",
+      "--seed",
+      "71",
+      "--max-source-len",
+      "384",
+      "--max-target-len",
+      "320",
+      "--target-mode",
+      "full",
+      "--prompt-mode",
+      "fielded",
+      "--num-beams",
+      "1",
+      "--local-files-only",
+      "--output-prefix",
+      "benchmark/multiseed_v1.2_sd_core/generation_regulation_qa_seed71",
+      "--experiment-dir",
+      "experiments/multiseed_v1.2_sd_core/generation_regulation_qa/seed71"
+    ],
+    "input_sha256": {
+      "train": "ff09925aacb7767dc303eebd4d4089c69f7216977bd9c0e76198788660c9ed3a",
+      "validation": "bbb8fab5478b7a4cc8b0b729180d3225cafc081ea56c5e30938f021b28b1e4a5",
+      "test": "982e6bef11f3cbc8fa8e3e280c447aadbb22bd26e708fd070957042f436755c0"
+    },
+    "suite_script_sha256": "bcb74d685df49a922f4ef0c670794578da1a456b2e79a48b60dd4038313e7652",
+    "runner_script_sha256": "2ac5a1e435ce5b53def077e374f8ecc80ebaed23aa6926d1225e44a395c31072",
+    "model_revision": {
+      "model_name": "t5-small",
+      "snapshot": "/root/.cache/huggingface/hub/models--t5-small/snapshots/df1b051c49625cf57a3d0d8d3863ed4d13564fe4",
+      "member_count": 6,
+      "sha256": "3782bdbb960d5a5a2ab1940a892f6a6a0a0ed31091f0a471f2e594912ab366cd"
+    },
+    "environment_versions": {
+      "python": "3.11.14",
+      "torch": "2.10.0",
+      "transformers": "5.5.3",
+      "scikit-learn": "1.8.0",
+      "pandapower": "3.3.2",
+      "lm-format-enforcer": "0.11.3"
+    }
+  },
+  "run_spec_sha256": "cceef60c842adf8a535d93fcf91195b386f9e82314b996277d336f1afaf08a49",
+  "prediction_sha256": "b30a045fcf20352287f8d5b63dc9c0e2de0426cf03abc734c35a42f3290296eb",
+  "prediction_count": 419,
+  "unique_prediction_count": 419,
+  "report_sha256": "125fd27e74b79f37e7add0a508220bd31b352c1e7b87144eeb741378049073bb"
+}

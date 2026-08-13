@@ -1,0 +1,93 @@
+{
+  "generated_at": "2026-07-09T17:09:42.955576+00:00",
+  "status": "pass",
+  "dataset": "data/gridinstruct_v1.2_sd_core_en.jsonl",
+  "output_dir": null,
+  "artifact_scope": "historical_diagnostic_report_retained_in_reports",
+  "model": "char_tfidf_logistic_regression_with_masked_scenarios_and_numbers",
+  "tasks": {
+    "operation_ticket_check": {
+      "train_records": 1620,
+      "test_records": 1080,
+      "labels": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ],
+      "train_label_counts": {
+        "compliant": 540,
+        "compliant_with_monitoring": 540,
+        "non_compliant": 540
+      },
+      "test_label_counts": {
+        "compliant": 360,
+        "compliant_with_monitoring": 360,
+        "non_compliant": 360
+      },
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "macro_f1": 1.0,
+      "surface_purity": {
+        "surface_groups": 2700,
+        "weighted_surface_label_purity": 1.0,
+        "repeated_surface_groups": 0
+      }
+    },
+    "dispatcher_intent_tool_call": {
+      "train_records": 1620,
+      "test_records": 1080,
+      "labels": [
+        "diagnose_and_dispatch",
+        "mitigate_violations",
+        "security_check_and_redispatch"
+      ],
+      "train_label_counts": {
+        "diagnose_and_dispatch": 540,
+        "mitigate_violations": 540,
+        "security_check_and_redispatch": 540
+      },
+      "test_label_counts": {
+        "diagnose_and_dispatch": 360,
+        "mitigate_violations": 360,
+        "security_check_and_redispatch": 360
+      },
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "macro_f1": 1.0,
+      "surface_purity": {
+        "surface_groups": 2495,
+        "weighted_surface_label_purity": 1.0,
+        "repeated_surface_groups": 110
+      }
+    },
+    "regulation_compliance_check": {
+      "train_records": 1362,
+      "test_records": 906,
+      "labels": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ],
+      "train_label_counts": {
+        "compliant": 454,
+        "compliant_with_monitoring": 454,
+        "non_compliant": 454
+      },
+      "test_label_counts": {
+        "compliant": 302,
+        "compliant_with_monitoring": 302,
+        "non_compliant": 302
+      },
+      "accuracy": 0.9415011037527594,
+      "balanced_accuracy": 0.9415011037527594,
+      "macro_f1": 0.9418138166334309,
+      "surface_purity": {
+        "surface_groups": 2212,
+        "weighted_surface_label_purity": 1.0,
+        "repeated_surface_groups": 51
+      }
+    }
+  },
+  "prediction_count": 3066,
+  "interpretation": "The hard-boundary benchmark is a diagnostic stress set for tasks with high standard-split scores. It is derived from released records, masks exact scenario identifiers and numeric values, and reports task-specific lightweight baseline scores beside label-support and surface-purity diagnostics."
+}

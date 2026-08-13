@@ -1,0 +1,14 @@
+{
+  "status": "pending_real_author_input",
+  "authors": [
+    {
+      "name": "PENDING",
+      "affiliation": "PENDING",
+      "orcid": "PENDING",
+      "credit_roles": ["PENDING"]
+    }
+  ],
+  "corresponding_author": "PENDING",
+  "funding_statement": "PENDING: provide grant identifiers or an explicit no-dedicated-funding statement",
+  "competing_interests": "PENDING_CONFIRMATION"
+}

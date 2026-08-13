@@ -1,0 +1,46 @@
+# Local credentials and machine-specific state
+.env
+.env.*
+!.env.example
+.DS_Store
+.aris/
+.claude/
+
+# Python and test caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Large release data are deposited through the data DOI, not ordinary Git history
+data/*.jsonl
+data/**/*.jsonl
+data/*.csv
+data/**/*.csv
+simulation_outputs/
+benchmark/**/predictions/
+benchmark/**/checkpoints/
+benchmark/**/*.pt
+benchmark/**/*.bin
+benchmark/**/*.safetensors
+benchmark/**/*_predictions.jsonl
+metadata/*source_group*.csv
+
+# Reproducible build products and local logs
+paper/**/build/
+paper/**/build_embedded/
+paper/**/*.aux
+paper/**/*.bbl
+paper/**/*.blg
+paper/**/*.fls
+paper/**/*.fdb_latexmk
+paper/**/*.log
+paper/**/*.out
+paper/**/*.synctex.gz
+logs/
+tmp/
+
+# Local archive copies; the release script recreates them deterministically
+release/*.tar.gz
+reports/*_attempts_*.json

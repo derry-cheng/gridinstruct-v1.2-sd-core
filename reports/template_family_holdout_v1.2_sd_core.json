@@ -1,0 +1,176 @@
+{
+  "generated_at": "2026-08-13T04:06:33.858123+00:00",
+  "status": "pass",
+  "contract": "template_family_atomic_holdout_v1",
+  "input": "data/gridinstruct_v1.2_sd_core_en.jsonl",
+  "records": 55421,
+  "elapsed_seconds_total": 46.624415,
+  "split_counts": {
+    "train": 38775,
+    "validation": 5557,
+    "test": 11089
+  },
+  "task_reports": [
+    {
+      "task_type": "dispatcher_intent_tool_call",
+      "records": 19773,
+      "group_count": 70,
+      "split_counts": {
+        "train": 13823,
+        "validation": 1992,
+        "test": 3958
+      },
+      "group_overlap": {
+        "train_validation": 0,
+        "train_test": 0,
+        "validation_test": 0
+      },
+      "label_counts": {
+        "train": {
+          "diagnose_and_dispatch": 4607,
+          "security_check_and_redispatch": 4583,
+          "mitigate_violations": 4633
+        },
+        "validation": {
+          "diagnose_and_dispatch": 686,
+          "mitigate_violations": 640,
+          "security_check_and_redispatch": 666
+        },
+        "test": {
+          "diagnose_and_dispatch": 1320,
+          "mitigate_violations": 1316,
+          "security_check_and_redispatch": 1322
+        }
+      }
+    },
+    {
+      "task_type": "operation_ticket_check",
+      "records": 10881,
+      "group_count": 4721,
+      "split_counts": {
+        "train": 7616,
+        "validation": 1088,
+        "test": 2177
+      },
+      "group_overlap": {
+        "train_validation": 0,
+        "train_test": 0,
+        "validation_test": 0
+      },
+      "label_counts": {
+        "train": {
+          "non_compliant": 2255,
+          "compliant": 2061,
+          "compliant_with_monitoring": 3300
+        },
+        "validation": {
+          "compliant": 240,
+          "compliant_with_monitoring": 607,
+          "non_compliant": 241
+        },
+        "test": {
+          "compliant": 470,
+          "compliant_with_monitoring": 1042,
+          "non_compliant": 665
+        }
+      }
+    },
+    {
+      "task_type": "regulation_compliance_check",
+      "records": 24767,
+      "group_count": 507,
+      "split_counts": {
+        "train": 17336,
+        "validation": 2477,
+        "test": 4954
+      },
+      "group_overlap": {
+        "train_validation": 0,
+        "train_test": 0,
+        "validation_test": 0
+      },
+      "label_counts": {
+        "train": {
+          "non_compliant": 8165,
+          "compliant_with_monitoring": 8452,
+          "compliant": 719
+        },
+        "validation": {
+          "compliant": 66,
+          "compliant_with_monitoring": 695,
+          "non_compliant": 1716
+        },
+        "test": {
+          "compliant_with_monitoring": 1550,
+          "compliant": 244,
+          "non_compliant": 3160
+        }
+      }
+    }
+  ],
+  "baseline_metrics": [
+    {
+      "task_type": "dispatcher_intent_tool_call",
+      "n_test": 3958,
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
+      "label_space": [
+        "diagnose_and_dispatch",
+        "mitigate_violations",
+        "security_check_and_redispatch"
+      ]
+    },
+    {
+      "task_type": "operation_ticket_check",
+      "n_test": 2177,
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
+      "label_space": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ]
+    },
+    {
+      "task_type": "regulation_compliance_check",
+      "n_test": 4954,
+      "macro_f1": 0.9610282428321645,
+      "balanced_accuracy": 0.948430529244679,
+      "label_space": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ]
+    }
+  ],
+  "surface_diagnostic": {
+    "train_validation": {
+      "sample_size": [
+        200,
+        200
+      ],
+      "max_jaccard": 0.7648766328011611
+    },
+    "train_test": {
+      "sample_size": [
+        200,
+        200
+      ],
+      "max_jaccard": 0.8184713375796179
+    },
+    "validation_test": {
+      "sample_size": [
+        200,
+        200
+      ],
+      "max_jaccard": 0.7609756097560976
+    }
+  },
+  "output_paths": {
+    "train": "data/v1.2_sd_core_template_family_holdout_train_ids.jsonl",
+    "validation": "data/v1.2_sd_core_template_family_holdout_validation_ids.jsonl",
+    "test": "data/v1.2_sd_core_template_family_holdout_test_ids.jsonl"
+  },
+  "group_definition": "task_type + metadata.template_family + variant_index + augmentation/action/issue family fields",
+  "interpretation": "Atomic template-family holdout and target classification diagnostic. The bounded character-Jaccard sample is descriptive and does not certify all-pair semantic independence."
+}

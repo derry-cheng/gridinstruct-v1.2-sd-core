@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-08-04T04:35:53.505985+00:00",
+  "dataset": {
+    "title": "GridInstruct v1.2",
+    "description": "Topology-grounded instruction dataset for power dispatch assistance and benchmark evaluation.",
+    "version": "1.2",
+    "record_count": 95479,
+    "language": "English-derived natural-language fields with stable structured identifiers",
+    "source_language": "mixed bilingual construction sources; English release validated separately",
+    "source_dataset_path": null,
+    "language_audit": "reports/english_translation_audit_v1.2_sd_core.json",
+    "release_status": "internal paper-grade snapshot; public archival identifiers pending",
+    "dataset_path": "data/gridinstruct_v1.2_sd_core_en.jsonl",
+    "split_paths": {
+      "train": "data/v1.2_sd_core_train_en.jsonl",
+      "validation": "data/v1.2_sd_core_validation_en.jsonl",
+      "test": "data/v1.2_sd_core_test_en.jsonl",
+      "ood_test": "data/v1.2_sd_core_ood_test_en.jsonl"
+    }
+  },
+  "readiness": {
+    "overall_status": "not_ready_for_submission",
+    "data_scale": "pass",
+    "data_quality": "pass",
+    "review_status": "pass",
+    "model_evidence": "pass",
+    "paper_readiness": "fail"
+  },
+  "remaining_gaps": [
+    "补齐公开仓库、版本存档和 DOI。"
+  ],
+  "notes": [
+    "This artifact tracks the submission-facing state of the current release snapshot.",
+    "It is an internal readiness audit, not a claim of external acceptance."
+  ]
+}

@@ -1,0 +1,7 @@
+task_type,train,validation,test,ood_test,challenge_train,challenge_validation,challenge_test,strict_train,strict_validation,strict_test,proxyreduced_train,proxyreduced_validation,proxyreduced_test,strict_proxyreduced_train,strict_proxyreduced_validation,strict_proxyreduced_test
+auxiliary_decision,3602,451,448,13586,0,0,0,14473,1807,1807,0,0,0,0,0,0
+dispatcher_intent_tool_call,3910,490,494,14879,17851,522,1400,15818,1980,1975,3910,490,494,15818,1980,1975
+intelligent_data_query,3476,434,437,13419,0,0,0,14212,1777,1777,0,0,0,0,0,0
+operation_ticket_check,8675,1096,1110,0,1840,5171,3870,8665,1113,1103,8675,1096,1110,8665,1113,1103
+regulation_compliance_check,5655,707,701,17704,24648,52,67,19817,2473,2477,5655,707,701,19817,2473,2477
+regulation_qa,3366,420,419,0,0,0,0,3365,420,420,0,0,0,0,0,0

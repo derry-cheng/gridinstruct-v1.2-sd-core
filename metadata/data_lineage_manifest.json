@@ -1,0 +1,53 @@
+{
+  "generated_at": "2026-08-05T19:10:00+00:00",
+  "status": "pass",
+  "components": {
+    "data/gridinstruct_v1.2_sd_core_en.jsonl": {
+      "sha256": "75ffc5c5386e331eed6c7f4092d186e042be8a020a936993f5220a78c1fd058e",
+      "size_bytes": 534958426,
+      "exists": true
+    },
+    "data/v1.2_sd_core_train_en.jsonl": {
+      "sha256": "ff09925aacb7767dc303eebd4d4089c69f7216977bd9c0e76198788660c9ed3a",
+      "size_bytes": 140766902,
+      "exists": true
+    },
+    "data/v1.2_sd_core_validation_en.jsonl": {
+      "sha256": "bbb8fab5478b7a4cc8b0b729180d3225cafc081ea56c5e30938f021b28b1e4a5",
+      "size_bytes": 17473764,
+      "exists": true
+    },
+    "data/v1.2_sd_core_test_en.jsonl": {
+      "sha256": "982e6bef11f3cbc8fa8e3e280c447aadbb22bd26e708fd070957042f436755c0",
+      "size_bytes": 17785811,
+      "exists": true
+    },
+    "data/v1.2_sd_core_ood_test_en.jsonl": {
+      "sha256": "b8fa701e9661e92d5df92328e9c1ece60d5440081c54cd509ad502008608fa8a",
+      "size_bytes": 363341461,
+      "exists": true
+    },
+    "metadata/schema.json": {
+      "sha256": "b1304984822f104af78f3055f4ae0af995f8da441bc69b0f9d09d2ddfa77b070",
+      "size_bytes": 3677,
+      "exists": true
+    },
+    "metadata/data_dictionary.csv": {
+      "sha256": "30e75d55c6d39e6dc1bbab47cd62e85734b81a21b638def81734a95685c6c5c5",
+      "size_bytes": 3982,
+      "exists": true
+    },
+    "metadata/rule_dictionary.csv": {
+      "sha256": "d6ba23cd7c18a04bb26750350d5214cd81f964b21cd8f3a8d6cde7b7ec243538",
+      "size_bytes": 13204,
+      "exists": true
+    },
+    "rules/regulation_rules.json": {
+      "sha256": "0c834cdf81dc0b10e76d525845111dc5e845ac8a559ef9c21bc02aeb0b4c1a83",
+      "size_bytes": 37019,
+      "exists": true
+    }
+  },
+  "total_components": 9,
+  "components_present": 9
+}

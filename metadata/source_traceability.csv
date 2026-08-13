@@ -1,0 +1,7 @@
+rationale_rate,records,rule_link_rate,simulation_link_rate,task_type,with_rationale,with_rules,with_simulation
+1.0,18087,1.0,1.0,auxiliary_decision,18087,18087,18087
+1.0,19773,1.0,1.0,dispatcher_intent_tool_call,19773,19773,19773
+1.0,17766,1.0,1.0,intelligent_data_query,17766,17766,17766
+1.0,10881,1.0,0.0,operation_ticket_check,10881,10881,0
+1.0,24767,1.0,1.0,regulation_compliance_check,24767,24767,24767
+1.0,4205,1.0,0.0,regulation_qa,4205,4205,0

@@ -1,0 +1,742 @@
+{
+  "generated_at": "2026-07-31T09:50:19.209190+00:00",
+  "dataset": "data/gridinstruct_v1.2_sd_core.jsonl",
+  "split_paths": {
+    "train": "data/v1.2_sd_core_train.jsonl",
+    "validation": "data/v1.2_sd_core_validation.jsonl",
+    "test": "data/v1.2_sd_core_test.jsonl",
+    "ood_test": "data/v1.2_sd_core_ood_test.jsonl"
+  },
+  "dataset_summary": {
+    "records": 95479,
+    "task_counts": {
+      "auxiliary_decision": 18087,
+      "regulation_compliance_check": 24767,
+      "dispatcher_intent_tool_call": 19773,
+      "intelligent_data_query": 17766,
+      "regulation_qa": 4205,
+      "operation_ticket_check": 10881
+    },
+    "network_counts": {
+      "IEEE14": 6701,
+      "IEEE30": 12405,
+      "IEEE118": 38159,
+      "IEEE57": 15336,
+      "none": 15086,
+      "IEEE300": 560,
+      "PEGASE1354": 1056,
+      "PEGASE89": 1472,
+      "RTE1888": 544,
+      "ILLINOIS200": 2912,
+      "PEGASE2869": 624,
+      "RTE2848": 624
+    },
+    "rule_counts": {
+      "REG_OVERLOAD_001": 50752,
+      "REG_VOLTAGE_001": 49207,
+      "REG_OVERLOAD_ALERT_002": 30508,
+      "REG_OVERLOAD_EMERGENCY_003": 17993,
+      "REG_VOLTAGE_HIGH_003": 8662,
+      "REG_SECURITY_REDISPATCH_004": 29646,
+      "REG_TOOL_POSTCHECK_004": 34442,
+      "REG_VOLTAGE_LOW_002": 39298,
+      "REG_TOOL_001": 20721,
+      "REG_TOOL_DIAGNOSIS_002": 10295,
+      "REG_TOOL_MITIGATION_003": 11879,
+      "REG_QUERY_001": 18712,
+      "REG_QUERY_FILTER_002": 17765,
+      "REG_QUERY_AGGREGATION_003": 13122,
+      "REG_SWITCHING_001": 11722,
+      "REG_SWITCHING_PERMISSION_002": 10880,
+      "REG_SWITCHING_MONITORING_003": 10880
+    },
+    "scenario_count": 2596,
+    "scenario_reuse_top10": [
+      [
+        "ieee30_n1_branch_outage_load70_branchidx_0_0_1",
+        98
+      ],
+      [
+        "ieee30_n1_branch_outage_load70_branchidx_3_2_3",
+        89
+      ],
+      [
+        "ieee30_n1_branch_outage_load80_branchidx_2_1_3",
+        83
+      ],
+      [
+        "ieee30_n1_branch_outage_load90_branchidx_2_1_3",
+        78
+      ],
+      [
+        "ieee30_n1_branch_outage_load70_branchidx_1_0_2",
+        75
+      ],
+      [
+        "ieee30_n1_branch_outage_load130_branchidx_7_4_6",
+        74
+      ],
+      [
+        "ieee30_n1_branch_outage_load130_branchidx_9_5_7",
+        74
+      ],
+      [
+        "ieee30_n1_branch_outage_load70_branchidx_4_1_4",
+        73
+      ],
+      [
+        "ieee57_n1_branch_outage_load120_branchidx_19_6_7",
+        71
+      ],
+      [
+        "ieee30_n1_branch_outage_load80_branchidx_0_0_1",
+        71
+      ]
+    ],
+    "validation_status_counts": {
+      "generated_pending_expert_review": 94048,
+      "llm_dual_review_accepted": 877,
+      "llm_augmented_pending_expert_review": 75,
+      "llm_adjudicated_revised": 159,
+      "opf_closed_loop_validated": 320
+    },
+    "missing_required": {},
+    "label_distribution": {
+      "regulation_compliance_check": {
+        "non_compliant": 13041,
+        "compliant_with_monitoring": 10697,
+        "compliant": 1029
+      },
+      "operation_ticket_check": {
+        "non_compliant": 3161,
+        "compliant_with_monitoring": 4949,
+        "compliant": 2771
+      }
+    },
+    "response_length_chars": {
+      "auxiliary_decision": {
+        "min": 67,
+        "median": 87,
+        "p95": 95,
+        "max": 555
+      },
+      "regulation_compliance_check": {
+        "min": 4,
+        "median": 4,
+        "p95": 10,
+        "max": 10
+      },
+      "dispatcher_intent_tool_call": {
+        "min": 112,
+        "median": 203,
+        "p95": 221,
+        "max": 234
+      },
+      "intelligent_data_query": {
+        "min": 148,
+        "median": 367,
+        "p95": 1726,
+        "max": 21096
+      },
+      "regulation_qa": {
+        "min": 78,
+        "median": 169,
+        "p95": 286,
+        "max": 539
+      },
+      "operation_ticket_check": {
+        "min": 4,
+        "median": 4,
+        "p95": 10,
+        "max": 10
+      }
+    },
+    "duplicate_prompt_input_count": 35
+  },
+  "split_summaries": {
+    "train": {
+      "records": 28684,
+      "task_counts": {
+        "regulation_qa": 3366,
+        "operation_ticket_check": 8675,
+        "dispatcher_intent_tool_call": 3910,
+        "intelligent_data_query": 3476,
+        "regulation_compliance_check": 5655,
+        "auxiliary_decision": 3602
+      },
+      "network_counts": {
+        "none": 12041,
+        "IEEE57": 8028,
+        "IEEE14": 2494,
+        "IEEE30": 6121
+      },
+      "rule_counts": {
+        "REG_QUERY_001": 4228,
+        "REG_VOLTAGE_001": 11097,
+        "REG_SWITCHING_001": 9351,
+        "REG_SWITCHING_PERMISSION_002": 8674,
+        "REG_SWITCHING_MONITORING_003": 8674,
+        "REG_TOOL_001": 4666,
+        "REG_TOOL_DIAGNOSIS_002": 2054,
+        "REG_TOOL_MITIGATION_003": 2338,
+        "REG_SECURITY_REDISPATCH_004": 5806,
+        "REG_QUERY_FILTER_002": 3475,
+        "REG_QUERY_AGGREGATION_003": 2499,
+        "REG_OVERLOAD_001": 11345,
+        "REG_OVERLOAD_ALERT_002": 5726,
+        "REG_OVERLOAD_EMERGENCY_003": 4171,
+        "REG_VOLTAGE_LOW_002": 7697,
+        "REG_TOOL_POSTCHECK_004": 7301,
+        "REG_VOLTAGE_HIGH_003": 1105
+      },
+      "scenario_count": 550,
+      "scenario_reuse_top10": [
+        [
+          "ieee30_n1_branch_outage_load70_branchidx_0_0_1",
+          98
+        ],
+        [
+          "ieee30_n1_branch_outage_load80_branchidx_2_1_3",
+          83
+        ],
+        [
+          "ieee30_n1_branch_outage_load90_branchidx_2_1_3",
+          78
+        ],
+        [
+          "ieee30_n1_branch_outage_load70_branchidx_1_0_2",
+          75
+        ],
+        [
+          "ieee30_n1_branch_outage_load80_branchidx_0_0_1",
+          71
+        ],
+        [
+          "ieee57_n1_branch_outage_load110_branchidx_19_6_7",
+          71
+        ],
+        [
+          "ieee30_n1_branch_outage_load90_branchidx_1_0_2",
+          70
+        ],
+        [
+          "ieee57_n1_branch_outage_load100_branchidx_25_13_14",
+          68
+        ],
+        [
+          "ieee57_n1_branch_outage_load100_branchidx_28_20_21",
+          68
+        ],
+        [
+          "ieee57_n1_branch_outage_load110_branchidx_22_11_12",
+          67
+        ]
+      ],
+      "validation_status_counts": {
+        "llm_adjudicated_revised": 59,
+        "generated_pending_expert_review": 28046,
+        "llm_dual_review_accepted": 433,
+        "opf_closed_loop_validated": 134,
+        "llm_augmented_pending_expert_review": 12
+      },
+      "missing_required": {},
+      "label_distribution": {
+        "operation_ticket_check": {
+          "compliant": 2226,
+          "compliant_with_monitoring": 3915,
+          "non_compliant": 2534
+        },
+        "regulation_compliance_check": {
+          "compliant_with_monitoring": 2326,
+          "non_compliant": 2739,
+          "compliant": 590
+        }
+      },
+      "response_length_chars": {
+        "regulation_qa": {
+          "min": 78,
+          "median": 170,
+          "p95": 297,
+          "max": 539
+        },
+        "operation_ticket_check": {
+          "min": 4,
+          "median": 4,
+          "p95": 10,
+          "max": 10
+        },
+        "dispatcher_intent_tool_call": {
+          "min": 177,
+          "median": 200,
+          "p95": 218,
+          "max": 220
+        },
+        "intelligent_data_query": {
+          "min": 148,
+          "median": 360,
+          "p95": 837,
+          "max": 1880
+        },
+        "regulation_compliance_check": {
+          "min": 4,
+          "median": 4,
+          "p95": 10,
+          "max": 10
+        },
+        "auxiliary_decision": {
+          "min": 67,
+          "median": 85,
+          "p95": 94,
+          "max": 324
+        }
+      },
+      "duplicate_prompt_input_count": 4
+    },
+    "validation": {
+      "records": 3598,
+      "task_counts": {
+        "regulation_compliance_check": 707,
+        "regulation_qa": 420,
+        "dispatcher_intent_tool_call": 490,
+        "operation_ticket_check": 1096,
+        "auxiliary_decision": 451,
+        "intelligent_data_query": 434
+      },
+      "network_counts": {
+        "IEEE57": 860,
+        "IEEE30": 811,
+        "none": 1516,
+        "IEEE14": 411
+      },
+      "rule_counts": {
+        "REG_OVERLOAD_001": 1418,
+        "REG_VOLTAGE_001": 1392,
+        "REG_VOLTAGE_LOW_002": 933,
+        "REG_OVERLOAD_ALERT_002": 729,
+        "REG_OVERLOAD_EMERGENCY_003": 538,
+        "REG_SWITCHING_001": 1178,
+        "REG_TOOL_001": 585,
+        "REG_TOOL_DIAGNOSIS_002": 260,
+        "REG_TOOL_MITIGATION_003": 295,
+        "REG_SECURITY_REDISPATCH_004": 734,
+        "REG_SWITCHING_PERMISSION_002": 1096,
+        "REG_SWITCHING_MONITORING_003": 1096,
+        "REG_TOOL_POSTCHECK_004": 886,
+        "REG_VOLTAGE_HIGH_003": 162,
+        "REG_QUERY_001": 524,
+        "REG_QUERY_FILTER_002": 434,
+        "REG_QUERY_AGGREGATION_003": 322
+      },
+      "scenario_count": 65,
+      "scenario_reuse_top10": [
+        [
+          "ieee30_n1_branch_outage_load70_branchidx_4_1_4",
+          73
+        ],
+        [
+          "ieee57_n1_branch_outage_load100_branchidx_12_12_13",
+          67
+        ],
+        [
+          "ieee30_n1_branch_outage_load80_branchidx_7_4_6",
+          64
+        ],
+        [
+          "ieee57_n1_branch_outage_load100_branchidx_17_2_14",
+          64
+        ],
+        [
+          "ieee30_n1_branch_outage_load80_branchidx_5_1_5",
+          62
+        ],
+        [
+          "ieee14_n1_branch_outage_load110_branchidx_1_0_4",
+          61
+        ],
+        [
+          "ieee57_n1_branch_outage_load100_branchidx_29_21_22",
+          60
+        ],
+        [
+          "ieee14_n1_branch_outage_load100_branchidx_5_2_3",
+          59
+        ],
+        [
+          "ieee30_n1_branch_outage_load90_branchidx_9_5_7",
+          58
+        ],
+        [
+          "ieee57_n1_branch_outage_load110_branchidx_2_2_3",
+          57
+        ]
+      ],
+      "validation_status_counts": {
+        "generated_pending_expert_review": 3518,
+        "llm_dual_review_accepted": 55,
+        "opf_closed_loop_validated": 12,
+        "llm_adjudicated_revised": 12,
+        "llm_augmented_pending_expert_review": 1
+      },
+      "missing_required": {},
+      "label_distribution": {
+        "regulation_compliance_check": {
+          "non_compliant": 339,
+          "compliant_with_monitoring": 291,
+          "compliant": 77
+        },
+        "operation_ticket_check": {
+          "non_compliant": 315,
+          "compliant_with_monitoring": 508,
+          "compliant": 273
+        }
+      },
+      "response_length_chars": {
+        "regulation_compliance_check": {
+          "min": 4,
+          "median": 4,
+          "p95": 10,
+          "max": 10
+        },
+        "regulation_qa": {
+          "min": 87,
+          "median": 171,
+          "p95": 297,
+          "max": 325
+        },
+        "dispatcher_intent_tool_call": {
+          "min": 178,
+          "median": 201,
+          "p95": 218,
+          "max": 220
+        },
+        "operation_ticket_check": {
+          "min": 4,
+          "median": 4,
+          "p95": 10,
+          "max": 10
+        },
+        "auxiliary_decision": {
+          "min": 69,
+          "median": 85,
+          "p95": 93,
+          "max": 324
+        },
+        "intelligent_data_query": {
+          "min": 161,
+          "median": 357,
+          "p95": 703,
+          "max": 965
+        }
+      },
+      "duplicate_prompt_input_count": 2
+    },
+    "test": {
+      "records": 3609,
+      "task_counts": {
+        "dispatcher_intent_tool_call": 494,
+        "regulation_compliance_check": 701,
+        "auxiliary_decision": 448,
+        "regulation_qa": 419,
+        "intelligent_data_query": 437,
+        "operation_ticket_check": 1110
+      },
+      "network_counts": {
+        "IEEE30": 1043,
+        "none": 1529,
+        "IEEE57": 808,
+        "IEEE14": 229
+      },
+      "rule_counts": {
+        "REG_TOOL_001": 591,
+        "REG_TOOL_DIAGNOSIS_002": 241,
+        "REG_TOOL_MITIGATION_003": 302,
+        "REG_SECURITY_REDISPATCH_004": 736,
+        "REG_OVERLOAD_001": 1405,
+        "REG_VOLTAGE_001": 1364,
+        "REG_OVERLOAD_ALERT_002": 809,
+        "REG_VOLTAGE_LOW_002": 932,
+        "REG_TOOL_POSTCHECK_004": 879,
+        "REG_OVERLOAD_EMERGENCY_003": 521,
+        "REG_QUERY_001": 541,
+        "REG_QUERY_FILTER_002": 437,
+        "REG_QUERY_AGGREGATION_003": 326,
+        "REG_SWITCHING_001": 1193,
+        "REG_SWITCHING_PERMISSION_002": 1110,
+        "REG_SWITCHING_MONITORING_003": 1110,
+        "REG_VOLTAGE_HIGH_003": 143
+      },
+      "scenario_count": 66,
+      "scenario_reuse_top10": [
+        [
+          "ieee30_n1_branch_outage_load70_branchidx_3_2_3",
+          89
+        ],
+        [
+          "ieee57_n1_branch_outage_load90_branchidx_7_7_8",
+          66
+        ],
+        [
+          "ieee30_n1_branch_outage_load100_branchidx_1_0_2",
+          64
+        ],
+        [
+          "ieee30_n1_branch_outage_load100_branchidx_7_4_6",
+          62
+        ],
+        [
+          "ieee57_n1_branch_outage_load110_branchidx_12_12_13",
+          61
+        ],
+        [
+          "ieee30_n1_branch_outage_load80_branchidx_6_3_5",
+          60
+        ],
+        [
+          "ieee57_n1_branch_outage_load100_branchidx_26_17_18",
+          59
+        ],
+        [
+          "ieee30_n1_branch_outage_load100_branchidx_8_5_6",
+          58
+        ],
+        [
+          "ieee30_n1_branch_outage_load110_branchidx_5_1_5",
+          56
+        ],
+        [
+          "ieee30_n1_branch_outage_load110_branchidx_1_0_2",
+          55
+        ]
+      ],
+      "validation_status_counts": {
+        "generated_pending_expert_review": 3535,
+        "llm_dual_review_accepted": 47,
+        "llm_adjudicated_revised": 12,
+        "opf_closed_loop_validated": 14,
+        "llm_augmented_pending_expert_review": 1
+      },
+      "missing_required": {},
+      "label_distribution": {
+        "regulation_compliance_check": {
+          "compliant_with_monitoring": 289,
+          "non_compliant": 338,
+          "compliant": 74
+        },
+        "operation_ticket_check": {
+          "compliant_with_monitoring": 526,
+          "non_compliant": 312,
+          "compliant": 272
+        }
+      },
+      "response_length_chars": {
+        "dispatcher_intent_tool_call": {
+          "min": 185,
+          "median": 201,
+          "p95": 219,
+          "max": 220
+        },
+        "regulation_compliance_check": {
+          "min": 4,
+          "median": 4,
+          "p95": 10,
+          "max": 10
+        },
+        "auxiliary_decision": {
+          "min": 69,
+          "median": 86,
+          "p95": 95,
+          "max": 324
+        },
+        "regulation_qa": {
+          "min": 102,
+          "median": 165,
+          "p95": 281,
+          "max": 327
+        },
+        "intelligent_data_query": {
+          "min": 161,
+          "median": 363,
+          "p95": 837,
+          "max": 1623
+        },
+        "operation_ticket_check": {
+          "min": 4,
+          "median": 4,
+          "p95": 10,
+          "max": 10
+        }
+      },
+      "duplicate_prompt_input_count": 0
+    },
+    "ood_test": {
+      "records": 59588,
+      "task_counts": {
+        "dispatcher_intent_tool_call": 14879,
+        "regulation_compliance_check": 17704,
+        "intelligent_data_query": 13419,
+        "auxiliary_decision": 13586
+      },
+      "network_counts": {
+        "IEEE14": 3567,
+        "IEEE118": 38159,
+        "ILLINOIS200": 2912,
+        "PEGASE1354": 1056,
+        "IEEE300": 560,
+        "IEEE57": 5640,
+        "PEGASE89": 1472,
+        "IEEE30": 4430,
+        "RTE2848": 624,
+        "PEGASE2869": 624,
+        "RTE1888": 544
+      },
+      "rule_counts": {
+        "REG_TOOL_001": 14879,
+        "REG_TOOL_POSTCHECK_004": 25376,
+        "REG_OVERLOAD_001": 36584,
+        "REG_VOLTAGE_001": 35354,
+        "REG_VOLTAGE_LOW_002": 29736,
+        "REG_QUERY_001": 13419,
+        "REG_QUERY_FILTER_002": 13419,
+        "REG_QUERY_AGGREGATION_003": 9975,
+        "REG_TOOL_DIAGNOSIS_002": 7740,
+        "REG_TOOL_MITIGATION_003": 8944,
+        "REG_SECURITY_REDISPATCH_004": 22370,
+        "REG_VOLTAGE_HIGH_003": 7252,
+        "REG_OVERLOAD_ALERT_002": 23244,
+        "REG_OVERLOAD_EMERGENCY_003": 12763
+      },
+      "scenario_count": 1915,
+      "scenario_reuse_top10": [
+        [
+          "ieee30_n1_branch_outage_load130_branchidx_9_5_7",
+          74
+        ],
+        [
+          "ieee30_n1_branch_outage_load130_branchidx_7_4_6",
+          74
+        ],
+        [
+          "ieee57_n1_branch_outage_load120_branchidx_19_6_7",
+          71
+        ],
+        [
+          "ieee57_n1_branch_outage_load120_branchidx_5_5_6",
+          70
+        ],
+        [
+          "ieee118_n1_branch_outage_load110_branchidx_63_44_48",
+          69
+        ],
+        [
+          "ieee118_n1_branch_outage_load120_branchidx_65_48_49",
+          68
+        ],
+        [
+          "ieee14_n1_branch_outage_load120_branchidx_4_1_4",
+          67
+        ],
+        [
+          "ieee57_n1_branch_outage_load120_branchidx_21_10_12",
+          67
+        ],
+        [
+          "ieee57_n1_branch_outage_load120_branchidx_30_22_23",
+          67
+        ],
+        [
+          "ieee30_n1_branch_outage_load130_branchidx_2_1_3",
+          67
+        ]
+      ],
+      "validation_status_counts": {
+        "generated_pending_expert_review": 58949,
+        "opf_closed_loop_validated": 160,
+        "llm_dual_review_accepted": 342,
+        "llm_adjudicated_revised": 76,
+        "llm_augmented_pending_expert_review": 61
+      },
+      "missing_required": {},
+      "label_distribution": {
+        "regulation_compliance_check": {
+          "compliant_with_monitoring": 7791,
+          "non_compliant": 9625,
+          "compliant": 288
+        }
+      },
+      "response_length_chars": {
+        "dispatcher_intent_tool_call": {
+          "min": 112,
+          "median": 203,
+          "p95": 222,
+          "max": 234
+        },
+        "regulation_compliance_check": {
+          "min": 4,
+          "median": 4,
+          "p95": 10,
+          "max": 10
+        },
+        "intelligent_data_query": {
+          "min": 149,
+          "median": 386,
+          "p95": 1920,
+          "max": 21096
+        },
+        "auxiliary_decision": {
+          "min": 67,
+          "median": 88,
+          "p95": 95,
+          "max": 555
+        }
+      },
+      "duplicate_prompt_input_count": 29
+    }
+  },
+  "split_overlap": {
+    "ood_test__test": {
+      "id_overlap": 0,
+      "scenario_overlap": 0,
+      "prompt_input_overlap": 0
+    },
+    "ood_test__train": {
+      "id_overlap": 0,
+      "scenario_overlap": 0,
+      "prompt_input_overlap": 0
+    },
+    "ood_test__validation": {
+      "id_overlap": 0,
+      "scenario_overlap": 0,
+      "prompt_input_overlap": 0
+    },
+    "test__train": {
+      "id_overlap": 0,
+      "scenario_overlap": 0,
+      "prompt_input_overlap": 0
+    },
+    "test__validation": {
+      "id_overlap": 0,
+      "scenario_overlap": 0,
+      "prompt_input_overlap": 0
+    },
+    "train__validation": {
+      "id_overlap": 0,
+      "scenario_overlap": 0,
+      "prompt_input_overlap": 0
+    }
+  },
+  "gates": {
+    "status": "pass",
+    "gates": {
+      "min_records_60000": true,
+      "all_tasks_present": true,
+      "min_task_records_4000": true,
+      "required_fields_complete": true,
+      "no_split_id_overlap": true,
+      "no_split_prompt_input_overlap": true,
+      "official_splits_present": true
+    },
+    "required_missing_total": 0,
+    "split_id_overlap_total": 0,
+    "split_prompt_input_overlap_total": 0
+  }
+}

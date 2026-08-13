@@ -1,0 +1,89 @@
+{
+  "generated_at": "2026-08-06T12:21:41.999028+00:00",
+  "objective": "schema_aware_supervised_structured_query_filter_and_equipment_scope_selection",
+  "train": "/tmp/gaiav2_near_neighbor_free.qCa31e/train.jsonl",
+  "validation": "/tmp/gaiav2_near_neighbor_free.qCa31e/validation.jsonl",
+  "test": "/tmp/gaiav2_near_neighbor_free.qCa31e/test.jsonl",
+  "ood": "/tmp/gaiav2_near_neighbor_free.qCa31e/ood_test.jsonl",
+  "train_records": 197,
+  "validation_records": 20,
+  "test_records": 23,
+  "ood_records": 17526,
+  "code_sha256": "eee2b370e30bb998671adef8caa455cab81b58b546a642c716b9fa8950a622b4",
+  "validation_evaluation": {
+    "accuracy": 1.0,
+    "macro_f1": 1.0,
+    "exact_match": 1.0,
+    "token_f1": 1.0,
+    "prediction_is_json": 1.0,
+    "deterministic_serialization_validity": 1.0,
+    "structured_query_exact": 1.0,
+    "structured_query_semantic_exact_excluding_scenario": 1.0,
+    "scenario_id_exact": 1.0,
+    "structured_query_field_accuracy": 1.0,
+    "n": 20,
+    "label_counts": {
+      "vm_pu < 0.95": 15,
+      "violation_type != none": 5
+    },
+    "majority_label": "vm_pu < 0.95",
+    "majority_accuracy": 0.75,
+    "majority_macro_f1": 0.42857142857142855
+  },
+  "test_evaluation": {
+    "accuracy": 1.0,
+    "macro_f1": 1.0,
+    "exact_match": 1.0,
+    "token_f1": 1.0,
+    "prediction_is_json": 1.0,
+    "deterministic_serialization_validity": 1.0,
+    "structured_query_exact": 1.0,
+    "structured_query_semantic_exact_excluding_scenario": 1.0,
+    "scenario_id_exact": 1.0,
+    "structured_query_field_accuracy": 1.0,
+    "n": 23,
+    "label_counts": {
+      "vm_pu < 0.95": 9,
+      "violation_type != none": 14
+    },
+    "majority_label": "violation_type != none",
+    "majority_accuracy": 0.6086956521739131,
+    "majority_macro_f1": 0.3783783783783784
+  },
+  "ood_evaluation": {
+    "accuracy": 0.6998174141275819,
+    "macro_f1": 0.5102323210734201,
+    "exact_match": 0.6998174141275819,
+    "token_f1": 0.8904779565596881,
+    "prediction_is_json": 1.0,
+    "deterministic_serialization_validity": 1.0,
+    "structured_query_exact": 0.6998174141275819,
+    "structured_query_semantic_exact_excluding_scenario": 0.6998174141275819,
+    "scenario_id_exact": 1.0,
+    "structured_query_field_accuracy": 0.8653809578151088,
+    "n": 17526,
+    "label_counts": {
+      "loading_percent > 100::all": 3248,
+      "vm_pu < 0.95": 5302,
+      "violation_type != none": 5281,
+      "loading_percent > 100::line": 2124,
+      "loading_percent > 100::transformer": 1571
+    },
+    "majority_label": "vm_pu < 0.95",
+    "majority_accuracy": 0.3025219673627753,
+    "majority_macro_f1": 0.092903451901174
+  },
+  "input_sha256": {
+    "train": "e636bee84de0c4a492bfd0de5117d1a23617d462ded02ee621554e213c84f6f3",
+    "validation": "db714117ba820cb0eaf3d99a829250238364d98e6277b34cc8d127ded1b8c149",
+    "test": "894453180029e16508561612ce839e367dfb3d055d82b82a45a572e32cbb8708",
+    "ood": "282d973c9872d92133a02d81dee357eb0ef6bc9993b408e678e6c617f84df4b7"
+  },
+  "prediction_sha256": {
+    "validation": "49292204449116054e277c0863590f81dc7433f64dbcc96210f3f9fdeac70085",
+    "test": "a4b1598e833ac2a6e127ba20803ca259ea0fbce3aca0f68d5e4d828283b593e4",
+    "ood": "0df3365060cbce75b0cf703c22a24bc9270ae7c2a308bb0018f1f677ca539515"
+  },
+  "scenario_id_input_exposed": true,
+  "note": "The model predicts only the structured_query filter and, for overload requests, the equipment scope. The scenario_id is copied from the exposed input field; no gold-target fallback is allowed. Full-contract exact match therefore measures both schema prediction and exposed identifier copying, while semantic_schema_exact_excluding_scenario isolates the predicted contract fields. The reported deterministic_serialization_validity is a format check because this baseline serializes a Python object before parsing it; it is excluded from model-performance interpretation. Majority-label diagnostics expose support imbalance."
+}

@@ -1,0 +1,969 @@
+{
+  "generated_at": "2026-08-05T15:21:51.874689+00:00",
+  "status": "pass",
+  "objective": "target-hidden input-surface ablation for classification learnability",
+  "input_policy": {
+    "profiles": [
+      "full_contract",
+      "target_hidden",
+      "instruction_only"
+    ],
+    "removed_key_tokens": [
+      "scenario",
+      "source",
+      "simulation",
+      "metadata",
+      "template",
+      "validation",
+      "tool_plan",
+      "structured_query",
+      "query_result",
+      "rule_summary",
+      "rule_id",
+      "active_constraints",
+      "observed_issues",
+      "grid_state_summary",
+      "compliance_label",
+      "intent",
+      "slots",
+      "rationale",
+      "chosen_response",
+      "rejected_response"
+    ],
+    "instruction_scrub": "scenario identifiers and numeric state fragments replaced with neutral tokens"
+  },
+  "splits": {
+    "standard": [
+      "data/v1.2_sd_core_train_en.jsonl",
+      "data/v1.2_sd_core_test_en.jsonl"
+    ],
+    "strict_source_group": [
+      "data/v1.2_sd_core_strict_train_en.jsonl",
+      "data/v1.2_sd_core_strict_test_en.jsonl"
+    ],
+    "template_holdout": [
+      "data/v1.2_sd_core_template_holdout_train_en.jsonl",
+      "data/v1.2_sd_core_template_holdout_test_en.jsonl"
+    ]
+  },
+  "rows": [
+    {
+      "task_type": "dispatcher_intent_tool_call",
+      "input_profile": "full_contract",
+      "n_train": 3910,
+      "n_test": 494,
+      "vocabulary_size": 28151,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "macro_f1_ci95": [
+        1.0,
+        1.0
+      ],
+      "balanced_accuracy": 1.0,
+      "gold_label_counts": {
+        "security_check_and_redispatch": 164,
+        "mitigate_violations": 166,
+        "diagnose_and_dispatch": 164
+      },
+      "prediction_label_counts": {
+        "security_check_and_redispatch": 164,
+        "mitigate_violations": 166,
+        "diagnose_and_dispatch": 164
+      },
+      "labels": [
+        "diagnose_and_dispatch",
+        "mitigate_violations",
+        "security_check_and_redispatch"
+      ],
+      "split": "standard",
+      "train_path": "data/v1.2_sd_core_train_en.jsonl",
+      "test_path": "data/v1.2_sd_core_test_en.jsonl",
+      "train_sha256": "ff09925aacb7767dc303eebd4d4089c69f7216977bd9c0e76198788660c9ed3a",
+      "test_sha256": "982e6bef11f3cbc8fa8e3e280c447aadbb22bd26e708fd070957042f436755c0"
+    },
+    {
+      "task_type": "operation_ticket_check",
+      "input_profile": "full_contract",
+      "n_train": 8675,
+      "n_test": 1110,
+      "vocabulary_size": 44383,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "macro_f1_ci95": [
+        1.0,
+        1.0
+      ],
+      "balanced_accuracy": 1.0,
+      "gold_label_counts": {
+        "compliant_with_monitoring": 526,
+        "non_compliant": 312,
+        "compliant": 272
+      },
+      "prediction_label_counts": {
+        "compliant_with_monitoring": 526,
+        "non_compliant": 312,
+        "compliant": 272
+      },
+      "labels": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ],
+      "split": "standard",
+      "train_path": "data/v1.2_sd_core_train_en.jsonl",
+      "test_path": "data/v1.2_sd_core_test_en.jsonl",
+      "train_sha256": "ff09925aacb7767dc303eebd4d4089c69f7216977bd9c0e76198788660c9ed3a",
+      "test_sha256": "982e6bef11f3cbc8fa8e3e280c447aadbb22bd26e708fd070957042f436755c0"
+    },
+    {
+      "task_type": "regulation_compliance_check",
+      "input_profile": "full_contract",
+      "n_train": 5655,
+      "n_test": 701,
+      "vocabulary_size": 30271,
+      "accuracy": 0.8559201141226819,
+      "macro_f1": 0.8635829784316517,
+      "macro_f1_ci95": [
+        0.8374835667886668,
+        0.8916947482415745
+      ],
+      "balanced_accuracy": 0.8580213677365661,
+      "gold_label_counts": {
+        "compliant_with_monitoring": 289,
+        "non_compliant": 338,
+        "compliant": 74
+      },
+      "prediction_label_counts": {
+        "compliant_with_monitoring": 304,
+        "non_compliant": 327,
+        "compliant": 70
+      },
+      "labels": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ],
+      "split": "standard",
+      "train_path": "data/v1.2_sd_core_train_en.jsonl",
+      "test_path": "data/v1.2_sd_core_test_en.jsonl",
+      "train_sha256": "ff09925aacb7767dc303eebd4d4089c69f7216977bd9c0e76198788660c9ed3a",
+      "test_sha256": "982e6bef11f3cbc8fa8e3e280c447aadbb22bd26e708fd070957042f436755c0"
+    },
+    {
+      "task_type": "dispatcher_intent_tool_call",
+      "input_profile": "target_hidden",
+      "n_train": 3910,
+      "n_test": 494,
+      "vocabulary_size": 8644,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "macro_f1_ci95": [
+        1.0,
+        1.0
+      ],
+      "balanced_accuracy": 1.0,
+      "gold_label_counts": {
+        "security_check_and_redispatch": 164,
+        "mitigate_violations": 166,
+        "diagnose_and_dispatch": 164
+      },
+      "prediction_label_counts": {
+        "security_check_and_redispatch": 164,
+        "mitigate_violations": 166,
+        "diagnose_and_dispatch": 164
+      },
+      "labels": [
+        "diagnose_and_dispatch",
+        "mitigate_violations",
+        "security_check_and_redispatch"
+      ],
+      "split": "standard",
+      "train_path": "data/v1.2_sd_core_train_en.jsonl",
+      "test_path": "data/v1.2_sd_core_test_en.jsonl",
+      "train_sha256": "ff09925aacb7767dc303eebd4d4089c69f7216977bd9c0e76198788660c9ed3a",
+      "test_sha256": "982e6bef11f3cbc8fa8e3e280c447aadbb22bd26e708fd070957042f436755c0"
+    },
+    {
+      "task_type": "operation_ticket_check",
+      "input_profile": "target_hidden",
+      "n_train": 8675,
+      "n_test": 1110,
+      "vocabulary_size": 44383,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "macro_f1_ci95": [
+        1.0,
+        1.0
+      ],
+      "balanced_accuracy": 1.0,
+      "gold_label_counts": {
+        "compliant_with_monitoring": 526,
+        "non_compliant": 312,
+        "compliant": 272
+      },
+      "prediction_label_counts": {
+        "compliant_with_monitoring": 526,
+        "non_compliant": 312,
+        "compliant": 272
+      },
+      "labels": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ],
+      "split": "standard",
+      "train_path": "data/v1.2_sd_core_train_en.jsonl",
+      "test_path": "data/v1.2_sd_core_test_en.jsonl",
+      "train_sha256": "ff09925aacb7767dc303eebd4d4089c69f7216977bd9c0e76198788660c9ed3a",
+      "test_sha256": "982e6bef11f3cbc8fa8e3e280c447aadbb22bd26e708fd070957042f436755c0"
+    },
+    {
+      "task_type": "regulation_compliance_check",
+      "input_profile": "target_hidden",
+      "n_train": 5655,
+      "n_test": 701,
+      "vocabulary_size": 8821,
+      "accuracy": 0.703281027104137,
+      "macro_f1": 0.6677595468164245,
+      "macro_f1_ci95": [
+        0.6242800928130456,
+        0.7073223615141733
+      ],
+      "balanced_accuracy": 0.694881866162143,
+      "gold_label_counts": {
+        "compliant_with_monitoring": 289,
+        "non_compliant": 338,
+        "compliant": 74
+      },
+      "prediction_label_counts": {
+        "compliant_with_monitoring": 299,
+        "non_compliant": 297,
+        "compliant": 105
+      },
+      "labels": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ],
+      "split": "standard",
+      "train_path": "data/v1.2_sd_core_train_en.jsonl",
+      "test_path": "data/v1.2_sd_core_test_en.jsonl",
+      "train_sha256": "ff09925aacb7767dc303eebd4d4089c69f7216977bd9c0e76198788660c9ed3a",
+      "test_sha256": "982e6bef11f3cbc8fa8e3e280c447aadbb22bd26e708fd070957042f436755c0"
+    },
+    {
+      "task_type": "dispatcher_intent_tool_call",
+      "input_profile": "instruction_only",
+      "n_train": 3910,
+      "n_test": 494,
+      "vocabulary_size": 5836,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "macro_f1_ci95": [
+        1.0,
+        1.0
+      ],
+      "balanced_accuracy": 1.0,
+      "gold_label_counts": {
+        "security_check_and_redispatch": 164,
+        "mitigate_violations": 166,
+        "diagnose_and_dispatch": 164
+      },
+      "prediction_label_counts": {
+        "security_check_and_redispatch": 164,
+        "mitigate_violations": 166,
+        "diagnose_and_dispatch": 164
+      },
+      "labels": [
+        "diagnose_and_dispatch",
+        "mitigate_violations",
+        "security_check_and_redispatch"
+      ],
+      "split": "standard",
+      "train_path": "data/v1.2_sd_core_train_en.jsonl",
+      "test_path": "data/v1.2_sd_core_test_en.jsonl",
+      "train_sha256": "ff09925aacb7767dc303eebd4d4089c69f7216977bd9c0e76198788660c9ed3a",
+      "test_sha256": "982e6bef11f3cbc8fa8e3e280c447aadbb22bd26e708fd070957042f436755c0"
+    },
+    {
+      "task_type": "operation_ticket_check",
+      "input_profile": "instruction_only",
+      "n_train": 8675,
+      "n_test": 1110,
+      "vocabulary_size": 3843,
+      "accuracy": 0.42162162162162165,
+      "macro_f1": 0.2533034816731986,
+      "macro_f1_ci95": [
+        0.2359945998403298,
+        0.271423849985711
+      ],
+      "balanced_accuracy": 0.319065458883173,
+      "gold_label_counts": {
+        "compliant_with_monitoring": 526,
+        "non_compliant": 312,
+        "compliant": 272
+      },
+      "prediction_label_counts": {
+        "compliant_with_monitoring": 921,
+        "compliant": 187,
+        "non_compliant": 2
+      },
+      "labels": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ],
+      "split": "standard",
+      "train_path": "data/v1.2_sd_core_train_en.jsonl",
+      "test_path": "data/v1.2_sd_core_test_en.jsonl",
+      "train_sha256": "ff09925aacb7767dc303eebd4d4089c69f7216977bd9c0e76198788660c9ed3a",
+      "test_sha256": "982e6bef11f3cbc8fa8e3e280c447aadbb22bd26e708fd070957042f436755c0"
+    },
+    {
+      "task_type": "regulation_compliance_check",
+      "input_profile": "instruction_only",
+      "n_train": 5655,
+      "n_test": 701,
+      "vocabulary_size": 8201,
+      "accuracy": 0.7047075606276747,
+      "macro_f1": 0.6678655282215815,
+      "macro_f1_ci95": [
+        0.6212000817618554,
+        0.707950775893541
+      ],
+      "balanced_accuracy": 0.6896674832527907,
+      "gold_label_counts": {
+        "compliant_with_monitoring": 289,
+        "non_compliant": 338,
+        "compliant": 74
+      },
+      "prediction_label_counts": {
+        "compliant_with_monitoring": 308,
+        "non_compliant": 294,
+        "compliant": 99
+      },
+      "labels": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ],
+      "split": "standard",
+      "train_path": "data/v1.2_sd_core_train_en.jsonl",
+      "test_path": "data/v1.2_sd_core_test_en.jsonl",
+      "train_sha256": "ff09925aacb7767dc303eebd4d4089c69f7216977bd9c0e76198788660c9ed3a",
+      "test_sha256": "982e6bef11f3cbc8fa8e3e280c447aadbb22bd26e708fd070957042f436755c0"
+    },
+    {
+      "task_type": "dispatcher_intent_tool_call",
+      "input_profile": "full_contract",
+      "n_train": 15818,
+      "n_test": 1975,
+      "vocabulary_size": 59518,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "macro_f1_ci95": [
+        1.0,
+        1.0
+      ],
+      "balanced_accuracy": 1.0,
+      "gold_label_counts": {
+        "diagnose_and_dispatch": 662,
+        "security_check_and_redispatch": 656,
+        "mitigate_violations": 657
+      },
+      "prediction_label_counts": {
+        "diagnose_and_dispatch": 662,
+        "security_check_and_redispatch": 656,
+        "mitigate_violations": 657
+      },
+      "labels": [
+        "diagnose_and_dispatch",
+        "mitigate_violations",
+        "security_check_and_redispatch"
+      ],
+      "split": "strict_source_group",
+      "train_path": "data/v1.2_sd_core_strict_train_en.jsonl",
+      "test_path": "data/v1.2_sd_core_strict_test_en.jsonl",
+      "train_sha256": "ac93d22b2ac63bbcd4ca9aad7edda066a8c1dc7ffe35aab7095c8c7c022b5669",
+      "test_sha256": "b7cd019ecf6884a2c3590918ffc01792ef56f57e2354645b3a14f7893651fe69"
+    },
+    {
+      "task_type": "operation_ticket_check",
+      "input_profile": "full_contract",
+      "n_train": 8665,
+      "n_test": 1103,
+      "vocabulary_size": 44308,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "macro_f1_ci95": [
+        1.0,
+        1.0
+      ],
+      "balanced_accuracy": 1.0,
+      "gold_label_counts": {
+        "non_compliant": 314,
+        "compliant": 274,
+        "compliant_with_monitoring": 515
+      },
+      "prediction_label_counts": {
+        "non_compliant": 314,
+        "compliant": 274,
+        "compliant_with_monitoring": 515
+      },
+      "labels": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ],
+      "split": "strict_source_group",
+      "train_path": "data/v1.2_sd_core_strict_train_en.jsonl",
+      "test_path": "data/v1.2_sd_core_strict_test_en.jsonl",
+      "train_sha256": "ac93d22b2ac63bbcd4ca9aad7edda066a8c1dc7ffe35aab7095c8c7c022b5669",
+      "test_sha256": "b7cd019ecf6884a2c3590918ffc01792ef56f57e2354645b3a14f7893651fe69"
+    },
+    {
+      "task_type": "regulation_compliance_check",
+      "input_profile": "full_contract",
+      "n_train": 19817,
+      "n_test": 2477,
+      "vocabulary_size": 61398,
+      "accuracy": 0.932983447719015,
+      "macro_f1": 0.9202304848880192,
+      "macro_f1_ci95": [
+        0.9008683952740661,
+        0.9361645367350847
+      ],
+      "balanced_accuracy": 0.9207432515316549,
+      "gold_label_counts": {
+        "non_compliant": 1303,
+        "compliant": 104,
+        "compliant_with_monitoring": 1070
+      },
+      "prediction_label_counts": {
+        "non_compliant": 1397,
+        "compliant": 106,
+        "compliant_with_monitoring": 974
+      },
+      "labels": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ],
+      "split": "strict_source_group",
+      "train_path": "data/v1.2_sd_core_strict_train_en.jsonl",
+      "test_path": "data/v1.2_sd_core_strict_test_en.jsonl",
+      "train_sha256": "ac93d22b2ac63bbcd4ca9aad7edda066a8c1dc7ffe35aab7095c8c7c022b5669",
+      "test_sha256": "b7cd019ecf6884a2c3590918ffc01792ef56f57e2354645b3a14f7893651fe69"
+    },
+    {
+      "task_type": "dispatcher_intent_tool_call",
+      "input_profile": "target_hidden",
+      "n_train": 15818,
+      "n_test": 1975,
+      "vocabulary_size": 13508,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "macro_f1_ci95": [
+        1.0,
+        1.0
+      ],
+      "balanced_accuracy": 1.0,
+      "gold_label_counts": {
+        "diagnose_and_dispatch": 662,
+        "security_check_and_redispatch": 656,
+        "mitigate_violations": 657
+      },
+      "prediction_label_counts": {
+        "diagnose_and_dispatch": 662,
+        "security_check_and_redispatch": 656,
+        "mitigate_violations": 657
+      },
+      "labels": [
+        "diagnose_and_dispatch",
+        "mitigate_violations",
+        "security_check_and_redispatch"
+      ],
+      "split": "strict_source_group",
+      "train_path": "data/v1.2_sd_core_strict_train_en.jsonl",
+      "test_path": "data/v1.2_sd_core_strict_test_en.jsonl",
+      "train_sha256": "ac93d22b2ac63bbcd4ca9aad7edda066a8c1dc7ffe35aab7095c8c7c022b5669",
+      "test_sha256": "b7cd019ecf6884a2c3590918ffc01792ef56f57e2354645b3a14f7893651fe69"
+    },
+    {
+      "task_type": "operation_ticket_check",
+      "input_profile": "target_hidden",
+      "n_train": 8665,
+      "n_test": 1103,
+      "vocabulary_size": 44308,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "macro_f1_ci95": [
+        1.0,
+        1.0
+      ],
+      "balanced_accuracy": 1.0,
+      "gold_label_counts": {
+        "non_compliant": 314,
+        "compliant": 274,
+        "compliant_with_monitoring": 515
+      },
+      "prediction_label_counts": {
+        "non_compliant": 314,
+        "compliant": 274,
+        "compliant_with_monitoring": 515
+      },
+      "labels": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ],
+      "split": "strict_source_group",
+      "train_path": "data/v1.2_sd_core_strict_train_en.jsonl",
+      "test_path": "data/v1.2_sd_core_strict_test_en.jsonl",
+      "train_sha256": "ac93d22b2ac63bbcd4ca9aad7edda066a8c1dc7ffe35aab7095c8c7c022b5669",
+      "test_sha256": "b7cd019ecf6884a2c3590918ffc01792ef56f57e2354645b3a14f7893651fe69"
+    },
+    {
+      "task_type": "regulation_compliance_check",
+      "input_profile": "target_hidden",
+      "n_train": 19817,
+      "n_test": 2477,
+      "vocabulary_size": 9707,
+      "accuracy": 0.8159063383124747,
+      "macro_f1": 0.7191047662661482,
+      "macro_f1_ci95": [
+        0.6934693305844762,
+        0.7453654118020379
+      ],
+      "balanced_accuracy": 0.7592954947926581,
+      "gold_label_counts": {
+        "non_compliant": 1303,
+        "compliant": 104,
+        "compliant_with_monitoring": 1070
+      },
+      "prediction_label_counts": {
+        "non_compliant": 1247,
+        "compliant": 163,
+        "compliant_with_monitoring": 1067
+      },
+      "labels": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ],
+      "split": "strict_source_group",
+      "train_path": "data/v1.2_sd_core_strict_train_en.jsonl",
+      "test_path": "data/v1.2_sd_core_strict_test_en.jsonl",
+      "train_sha256": "ac93d22b2ac63bbcd4ca9aad7edda066a8c1dc7ffe35aab7095c8c7c022b5669",
+      "test_sha256": "b7cd019ecf6884a2c3590918ffc01792ef56f57e2354645b3a14f7893651fe69"
+    },
+    {
+      "task_type": "dispatcher_intent_tool_call",
+      "input_profile": "instruction_only",
+      "n_train": 15818,
+      "n_test": 1975,
+      "vocabulary_size": 6742,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "macro_f1_ci95": [
+        1.0,
+        1.0
+      ],
+      "balanced_accuracy": 1.0,
+      "gold_label_counts": {
+        "diagnose_and_dispatch": 662,
+        "security_check_and_redispatch": 656,
+        "mitigate_violations": 657
+      },
+      "prediction_label_counts": {
+        "diagnose_and_dispatch": 662,
+        "security_check_and_redispatch": 656,
+        "mitigate_violations": 657
+      },
+      "labels": [
+        "diagnose_and_dispatch",
+        "mitigate_violations",
+        "security_check_and_redispatch"
+      ],
+      "split": "strict_source_group",
+      "train_path": "data/v1.2_sd_core_strict_train_en.jsonl",
+      "test_path": "data/v1.2_sd_core_strict_test_en.jsonl",
+      "train_sha256": "ac93d22b2ac63bbcd4ca9aad7edda066a8c1dc7ffe35aab7095c8c7c022b5669",
+      "test_sha256": "b7cd019ecf6884a2c3590918ffc01792ef56f57e2354645b3a14f7893651fe69"
+    },
+    {
+      "task_type": "operation_ticket_check",
+      "input_profile": "instruction_only",
+      "n_train": 8665,
+      "n_test": 1103,
+      "vocabulary_size": 3843,
+      "accuracy": 0.4605621033544878,
+      "macro_f1": 0.2259946851333348,
+      "macro_f1_ci95": [
+        0.21157980024455264,
+        0.24117419865307474
+      ],
+      "balanced_accuracy": 0.33247771197155224,
+      "gold_label_counts": {
+        "non_compliant": 314,
+        "compliant": 274,
+        "compliant_with_monitoring": 515
+      },
+      "prediction_label_counts": {
+        "compliant_with_monitoring": 1071,
+        "non_compliant": 11,
+        "compliant": 21
+      },
+      "labels": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ],
+      "split": "strict_source_group",
+      "train_path": "data/v1.2_sd_core_strict_train_en.jsonl",
+      "test_path": "data/v1.2_sd_core_strict_test_en.jsonl",
+      "train_sha256": "ac93d22b2ac63bbcd4ca9aad7edda066a8c1dc7ffe35aab7095c8c7c022b5669",
+      "test_sha256": "b7cd019ecf6884a2c3590918ffc01792ef56f57e2354645b3a14f7893651fe69"
+    },
+    {
+      "task_type": "regulation_compliance_check",
+      "input_profile": "instruction_only",
+      "n_train": 19817,
+      "n_test": 2477,
+      "vocabulary_size": 8999,
+      "accuracy": 0.8134840532902705,
+      "macro_f1": 0.7137267472189798,
+      "macro_f1_ci95": [
+        0.68669801284046,
+        0.7401668685087108
+      ],
+      "balanced_accuracy": 0.7547555604966254,
+      "gold_label_counts": {
+        "non_compliant": 1303,
+        "compliant": 104,
+        "compliant_with_monitoring": 1070
+      },
+      "prediction_label_counts": {
+        "non_compliant": 1239,
+        "compliant": 166,
+        "compliant_with_monitoring": 1072
+      },
+      "labels": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ],
+      "split": "strict_source_group",
+      "train_path": "data/v1.2_sd_core_strict_train_en.jsonl",
+      "test_path": "data/v1.2_sd_core_strict_test_en.jsonl",
+      "train_sha256": "ac93d22b2ac63bbcd4ca9aad7edda066a8c1dc7ffe35aab7095c8c7c022b5669",
+      "test_sha256": "b7cd019ecf6884a2c3590918ffc01792ef56f57e2354645b3a14f7893651fe69"
+    },
+    {
+      "task_type": "dispatcher_intent_tool_call",
+      "input_profile": "full_contract",
+      "n_train": 13832,
+      "n_test": 3955,
+      "vocabulary_size": 58416,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "macro_f1_ci95": [
+        1.0,
+        1.0
+      ],
+      "balanced_accuracy": 1.0,
+      "gold_label_counts": {
+        "diagnose_and_dispatch": 1343,
+        "mitigate_violations": 1277,
+        "security_check_and_redispatch": 1335
+      },
+      "prediction_label_counts": {
+        "diagnose_and_dispatch": 1343,
+        "mitigate_violations": 1277,
+        "security_check_and_redispatch": 1335
+      },
+      "labels": [
+        "diagnose_and_dispatch",
+        "mitigate_violations",
+        "security_check_and_redispatch"
+      ],
+      "split": "template_holdout",
+      "train_path": "data/v1.2_sd_core_template_holdout_train_en.jsonl",
+      "test_path": "data/v1.2_sd_core_template_holdout_test_en.jsonl",
+      "train_sha256": "3b28917909d1a2020c32336b471110532f31e1f3747e1ad53cf7ad816e69d006",
+      "test_sha256": "8debe62e4cb4c4f995686c5ca822b78386784e94f4a4e51c4fd5ff1f3aca5bc1"
+    },
+    {
+      "task_type": "operation_ticket_check",
+      "input_profile": "full_contract",
+      "n_train": 7585,
+      "n_test": 2186,
+      "vocabulary_size": 46025,
+      "accuracy": 0.9995425434583715,
+      "macro_f1": 0.9996142706820376,
+      "macro_f1_ci95": [
+        0.9988400540775324,
+        1.0
+      ],
+      "balanced_accuracy": 0.9995002498750626,
+      "gold_label_counts": {
+        "compliant": 1228,
+        "compliant_with_monitoring": 291,
+        "non_compliant": 667
+      },
+      "prediction_label_counts": {
+        "compliant": 1229,
+        "compliant_with_monitoring": 291,
+        "non_compliant": 666
+      },
+      "labels": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ],
+      "split": "template_holdout",
+      "train_path": "data/v1.2_sd_core_template_holdout_train_en.jsonl",
+      "test_path": "data/v1.2_sd_core_template_holdout_test_en.jsonl",
+      "train_sha256": "3b28917909d1a2020c32336b471110532f31e1f3747e1ad53cf7ad816e69d006",
+      "test_sha256": "8debe62e4cb4c4f995686c5ca822b78386784e94f4a4e51c4fd5ff1f3aca5bc1"
+    },
+    {
+      "task_type": "regulation_compliance_check",
+      "input_profile": "full_contract",
+      "n_train": 17206,
+      "n_test": 4975,
+      "vocabulary_size": 62950,
+      "accuracy": 0.9831155778894473,
+      "macro_f1": 0.9887402249464912,
+      "macro_f1_ci95": [
+        0.6533953600367371,
+        0.9910178195217909
+      ],
+      "balanced_accuracy": 0.9889260941584492,
+      "gold_label_counts": {
+        "compliant": 1,
+        "compliant_with_monitoring": 2430,
+        "non_compliant": 2544
+      },
+      "prediction_label_counts": {
+        "compliant": 1,
+        "compliant_with_monitoring": 2492,
+        "non_compliant": 2482
+      },
+      "labels": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ],
+      "split": "template_holdout",
+      "train_path": "data/v1.2_sd_core_template_holdout_train_en.jsonl",
+      "test_path": "data/v1.2_sd_core_template_holdout_test_en.jsonl",
+      "train_sha256": "3b28917909d1a2020c32336b471110532f31e1f3747e1ad53cf7ad816e69d006",
+      "test_sha256": "8debe62e4cb4c4f995686c5ca822b78386784e94f4a4e51c4fd5ff1f3aca5bc1"
+    },
+    {
+      "task_type": "dispatcher_intent_tool_call",
+      "input_profile": "target_hidden",
+      "n_train": 13832,
+      "n_test": 3955,
+      "vocabulary_size": 14043,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "macro_f1_ci95": [
+        1.0,
+        1.0
+      ],
+      "balanced_accuracy": 1.0,
+      "gold_label_counts": {
+        "diagnose_and_dispatch": 1343,
+        "mitigate_violations": 1277,
+        "security_check_and_redispatch": 1335
+      },
+      "prediction_label_counts": {
+        "diagnose_and_dispatch": 1343,
+        "mitigate_violations": 1277,
+        "security_check_and_redispatch": 1335
+      },
+      "labels": [
+        "diagnose_and_dispatch",
+        "mitigate_violations",
+        "security_check_and_redispatch"
+      ],
+      "split": "template_holdout",
+      "train_path": "data/v1.2_sd_core_template_holdout_train_en.jsonl",
+      "test_path": "data/v1.2_sd_core_template_holdout_test_en.jsonl",
+      "train_sha256": "3b28917909d1a2020c32336b471110532f31e1f3747e1ad53cf7ad816e69d006",
+      "test_sha256": "8debe62e4cb4c4f995686c5ca822b78386784e94f4a4e51c4fd5ff1f3aca5bc1"
+    },
+    {
+      "task_type": "operation_ticket_check",
+      "input_profile": "target_hidden",
+      "n_train": 7585,
+      "n_test": 2186,
+      "vocabulary_size": 46025,
+      "accuracy": 0.9995425434583715,
+      "macro_f1": 0.9996142706820376,
+      "macro_f1_ci95": [
+        0.9988400540775324,
+        1.0
+      ],
+      "balanced_accuracy": 0.9995002498750626,
+      "gold_label_counts": {
+        "compliant": 1228,
+        "compliant_with_monitoring": 291,
+        "non_compliant": 667
+      },
+      "prediction_label_counts": {
+        "compliant": 1229,
+        "compliant_with_monitoring": 291,
+        "non_compliant": 666
+      },
+      "labels": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ],
+      "split": "template_holdout",
+      "train_path": "data/v1.2_sd_core_template_holdout_train_en.jsonl",
+      "test_path": "data/v1.2_sd_core_template_holdout_test_en.jsonl",
+      "train_sha256": "3b28917909d1a2020c32336b471110532f31e1f3747e1ad53cf7ad816e69d006",
+      "test_sha256": "8debe62e4cb4c4f995686c5ca822b78386784e94f4a4e51c4fd5ff1f3aca5bc1"
+    },
+    {
+      "task_type": "regulation_compliance_check",
+      "input_profile": "target_hidden",
+      "n_train": 17206,
+      "n_test": 4975,
+      "vocabulary_size": 9760,
+      "accuracy": 0.9262311557788945,
+      "macro_f1": 0.6358618198408883,
+      "macro_f1_ci95": [
+        0.6305519856683147,
+        0.6413939671731407
+      ],
+      "balanced_accuracy": 0.9498476201568445,
+      "gold_label_counts": {
+        "compliant": 1,
+        "compliant_with_monitoring": 2430,
+        "non_compliant": 2544
+      },
+      "prediction_label_counts": {
+        "compliant": 269,
+        "non_compliant": 2587,
+        "compliant_with_monitoring": 2119
+      },
+      "labels": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ],
+      "split": "template_holdout",
+      "train_path": "data/v1.2_sd_core_template_holdout_train_en.jsonl",
+      "test_path": "data/v1.2_sd_core_template_holdout_test_en.jsonl",
+      "train_sha256": "3b28917909d1a2020c32336b471110532f31e1f3747e1ad53cf7ad816e69d006",
+      "test_sha256": "8debe62e4cb4c4f995686c5ca822b78386784e94f4a4e51c4fd5ff1f3aca5bc1"
+    },
+    {
+      "task_type": "dispatcher_intent_tool_call",
+      "input_profile": "instruction_only",
+      "n_train": 13832,
+      "n_test": 3955,
+      "vocabulary_size": 6898,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "macro_f1_ci95": [
+        1.0,
+        1.0
+      ],
+      "balanced_accuracy": 1.0,
+      "gold_label_counts": {
+        "diagnose_and_dispatch": 1343,
+        "mitigate_violations": 1277,
+        "security_check_and_redispatch": 1335
+      },
+      "prediction_label_counts": {
+        "diagnose_and_dispatch": 1343,
+        "mitigate_violations": 1277,
+        "security_check_and_redispatch": 1335
+      },
+      "labels": [
+        "diagnose_and_dispatch",
+        "mitigate_violations",
+        "security_check_and_redispatch"
+      ],
+      "split": "template_holdout",
+      "train_path": "data/v1.2_sd_core_template_holdout_train_en.jsonl",
+      "test_path": "data/v1.2_sd_core_template_holdout_test_en.jsonl",
+      "train_sha256": "3b28917909d1a2020c32336b471110532f31e1f3747e1ad53cf7ad816e69d006",
+      "test_sha256": "8debe62e4cb4c4f995686c5ca822b78386784e94f4a4e51c4fd5ff1f3aca5bc1"
+    },
+    {
+      "task_type": "operation_ticket_check",
+      "input_profile": "instruction_only",
+      "n_train": 7585,
+      "n_test": 2186,
+      "vocabulary_size": 3843,
+      "accuracy": 0.13311985361390669,
+      "macro_f1": 0.08175435540792163,
+      "macro_f1_ci95": [
+        0.07310371926390857,
+        0.09003777915644433
+      ],
+      "balanced_accuracy": 0.3307504323439655,
+      "gold_label_counts": {
+        "compliant": 1228,
+        "compliant_with_monitoring": 291,
+        "non_compliant": 667
+      },
+      "prediction_label_counts": {
+        "compliant_with_monitoring": 2166,
+        "non_compliant": 20
+      },
+      "labels": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ],
+      "split": "template_holdout",
+      "train_path": "data/v1.2_sd_core_template_holdout_train_en.jsonl",
+      "test_path": "data/v1.2_sd_core_template_holdout_test_en.jsonl",
+      "train_sha256": "3b28917909d1a2020c32336b471110532f31e1f3747e1ad53cf7ad816e69d006",
+      "test_sha256": "8debe62e4cb4c4f995686c5ca822b78386784e94f4a4e51c4fd5ff1f3aca5bc1"
+    },
+    {
+      "task_type": "regulation_compliance_check",
+      "input_profile": "instruction_only",
+      "n_train": 17206,
+      "n_test": 4975,
+      "vocabulary_size": 8932,
+      "accuracy": 0.9396984924623115,
+      "macro_f1": 0.6412258433266603,
+      "macro_f1_ci95": [
+        0.6346249369576851,
+        0.6488665562585267
+      ],
+      "balanced_accuracy": 0.9590505862256387,
+      "gold_label_counts": {
+        "compliant": 1,
+        "compliant_with_monitoring": 2430,
+        "non_compliant": 2544
+      },
+      "prediction_label_counts": {
+        "compliant": 187,
+        "non_compliant": 2599,
+        "compliant_with_monitoring": 2189
+      },
+      "labels": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ],
+      "split": "template_holdout",
+      "train_path": "data/v1.2_sd_core_template_holdout_train_en.jsonl",
+      "test_path": "data/v1.2_sd_core_template_holdout_test_en.jsonl",
+      "train_sha256": "3b28917909d1a2020c32336b471110532f31e1f3747e1ad53cf7ad816e69d006",
+      "test_sha256": "8debe62e4cb4c4f995686c5ca822b78386784e94f4a4e51c4fd5ff1f3aca5bc1"
+    }
+  ],
+  "figure": "figures/sd_core/fig_target_hidden_classification.png"
+}

@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:gridinstruct:schema:equipment-rating-overrides-v1",
+  "title": "GridInstruct source-bound equipment rating overrides",
+  "type": "object",
+  "required": [
+    "contract_version",
+    "ratings"
+  ],
+  "properties": {
+    "contract_version": {
+      "const": "gridinstruct-equipment-rating-overrides-v1"
+    },
+    "ratings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "network",
+          "element",
+          "index",
+          "rating_value",
+          "rating_unit",
+          "source"
+        ],
+        "properties": {
+          "network": {
+            "enum": [
+              "ieee14",
+              "ieee30",
+              "ieee57",
+              "ieee118",
+              "ieee300",
+              "illinois200",
+              "pegase89",
+              "pegase1354",
+              "rte1888",
+              "rte2848",
+              "pegase2869"
+            ]
+          },
+          "element": {
+            "enum": [
+              "line",
+              "trafo",
+              "gen"
+            ]
+          },
+          "index": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "pglib_source_row": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "rating_value": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "rating_unit": {
+            "enum": [
+              "MVA",
+              "MW"
+            ]
+          },
+          "source": {
+            "type": "object",
+            "required": [
+              "document_id",
+              "document_sha256",
+              "locator"
+            ],
+            "properties": {
+              "document_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "document_sha256": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "locator": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

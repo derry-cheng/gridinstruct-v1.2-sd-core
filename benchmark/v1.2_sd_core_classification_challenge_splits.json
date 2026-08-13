@@ -1,0 +1,126 @@
+{
+  "generated_at": "2026-07-31T10:16:59.127892+00:00",
+  "status": "pass",
+  "input": "data/gridinstruct_v1.2_sd_core.jsonl",
+  "input_sha256": "425449c0feaba3dfde0f3b79cd2304c10f499b7ace7d345be7c23de12cf4ea7c",
+  "output_sha256": {
+    "train": "aa4ceb0c674e9ea01897d8257c8700a8c09c4c6ff261ee02043a28e58f422dac",
+    "validation": "635cf11cee0824746bdd34d6b1d61e0a697c079f912846e2a98db715f63726f1",
+    "test": "6013130396a335a26982cdfeca21c859ea6fff7ac14767ba99fbd31be620138c"
+  },
+  "split_paths": {
+    "train": "data/v1.2_sd_core_challenge_train.jsonl",
+    "validation": "data/v1.2_sd_core_challenge_validation.jsonl",
+    "test": "data/v1.2_sd_core_challenge_test.jsonl"
+  },
+  "design": {
+    "operation_ticket_check": "hold out operation context/object groups",
+    "regulation_compliance_check": "hold out proposed_action surface groups within each semantic action category",
+    "dispatcher_intent_tool_call": "hold out scenario groups"
+  },
+  "task_summaries": {
+    "dispatcher_intent_tool_call": {
+      "records": 19773,
+      "split_counts": {
+        "train": 17851,
+        "validation": 522,
+        "test": 1400
+      },
+      "split_label_counts": {
+        "train": {
+          "diagnose_and_dispatch": 5972,
+          "mitigate_violations": 5948,
+          "security_check_and_redispatch": 5931
+        },
+        "validation": {
+          "diagnose_and_dispatch": 174,
+          "mitigate_violations": 174,
+          "security_check_and_redispatch": 174
+        },
+        "test": {
+          "diagnose_and_dispatch": 467,
+          "mitigate_violations": 467,
+          "security_check_and_redispatch": 466
+        }
+      }
+    },
+    "operation_ticket_check": {
+      "records": 10881,
+      "split_counts": {
+        "train": 1840,
+        "validation": 5171,
+        "test": 3870
+      },
+      "split_label_counts": {
+        "train": {
+          "non_compliant": 533,
+          "compliant_with_monitoring": 840,
+          "compliant": 467
+        },
+        "validation": {
+          "non_compliant": 1510,
+          "compliant_with_monitoring": 2348,
+          "compliant": 1313
+        },
+        "test": {
+          "compliant": 991,
+          "non_compliant": 1118,
+          "compliant_with_monitoring": 1761
+        }
+      }
+    },
+    "regulation_compliance_check": {
+      "records": 24767,
+      "split_counts": {
+        "train": 24648,
+        "validation": 52,
+        "test": 67
+      },
+      "split_label_counts": {
+        "train": {
+          "compliant": 1029,
+          "non_compliant": 12945,
+          "compliant_with_monitoring": 10674
+        },
+        "validation": {
+          "compliant_with_monitoring": 20,
+          "non_compliant": 32
+        },
+        "test": {
+          "non_compliant": 64,
+          "compliant_with_monitoring": 3
+        }
+      }
+    }
+  },
+  "joint_disjointness": "challenge surface groups are unioned with source group, source record, scenario, simulation case, and operation group before assignment",
+  "overlaps": {
+    "challenge_component": {
+      "train_validation": 0,
+      "train_test": 0,
+      "validation_test": 0
+    },
+    "source_group": {
+      "train_validation": 0,
+      "train_test": 0,
+      "validation_test": 0
+    },
+    "source_record_id": {
+      "train_validation": 0,
+      "train_test": 0,
+      "validation_test": 0
+    },
+    "operation_group": {
+      "train_validation": 0,
+      "train_test": 0,
+      "validation_test": 0
+    }
+  },
+  "hard_gates": {
+    "all_provenance_and_challenge_components_disjoint": true,
+    "all_splits_nonempty": true,
+    "ids_partition_input_exactly": true,
+    "all_tasks_in_all_splits": true,
+    "all_labels_in_all_splits": false
+  }
+}

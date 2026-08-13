@@ -1,0 +1,140 @@
+{
+  "generated_at": "2026-08-08T16:42:38.790990+00:00",
+  "status": "pass",
+  "source": "data/gridinstruct_v1.2_sd_core_en.jsonl",
+  "source_sha256": "75ffc5c5386e331eed6c7f4092d186e042be8a020a936993f5220a78c1fd058e",
+  "seed": 2036,
+  "group_key": "task_type + normalize_template(instruction)",
+  "total_groups": 16255,
+  "non_ood_groups": 8265,
+  "ood_groups": 7990,
+  "max_group_size": 749,
+  "allocation": {
+    "status": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "objective": 4.176246471810208e-06,
+    "tolerance_ratio": 0.01,
+    "target_by_split": {
+      "train": [
+        1065,
+        2036,
+        947,
+        6529,
+        1112,
+        2523
+      ],
+      "validation": [
+        355,
+        679,
+        316,
+        2176,
+        371,
+        841
+      ],
+      "test": [
+        355,
+        679,
+        316,
+        2176,
+        371,
+        841
+      ]
+    },
+    "actual_by_split": {
+      "train": [
+        1073,
+        2042,
+        953,
+        6529,
+        1120,
+        2540
+      ],
+      "validation": [
+        351,
+        680,
+        314,
+        2191,
+        367,
+        832
+      ],
+      "test": [
+        351,
+        672,
+        312,
+        2161,
+        367,
+        833
+      ]
+    },
+    "tasks": [
+      "auxiliary_decision",
+      "dispatcher_intent_tool_call",
+      "intelligent_data_query",
+      "operation_ticket_check",
+      "regulation_compliance_check",
+      "regulation_qa"
+    ]
+  },
+  "splits": {
+    "train": {
+      "records": 14257,
+      "sha256": "ae8812bb6fd61759d0e5fac2becd1a36e7b7c2a4230395936b52b08405df55e4",
+      "task_counts": {
+        "auxiliary_decision": 1073,
+        "regulation_compliance_check": 1120,
+        "dispatcher_intent_tool_call": 2042,
+        "intelligent_data_query": 953,
+        "regulation_qa": 2540,
+        "operation_ticket_check": 6529
+      }
+    },
+    "validation": {
+      "records": 4735,
+      "sha256": "c6faed9db029d9318541a236f1975c198e1f4bfa833944ac58ff47054ad5549f",
+      "task_counts": {
+        "auxiliary_decision": 351,
+        "regulation_compliance_check": 367,
+        "dispatcher_intent_tool_call": 680,
+        "intelligent_data_query": 314,
+        "regulation_qa": 832,
+        "operation_ticket_check": 2191
+      }
+    },
+    "test": {
+      "records": 4696,
+      "sha256": "8efe06626a8bf2d07f222992f3dc11e388200ef0c2e6a345e195ce68150fe8f5",
+      "task_counts": {
+        "auxiliary_decision": 351,
+        "regulation_compliance_check": 367,
+        "dispatcher_intent_tool_call": 672,
+        "intelligent_data_query": 312,
+        "regulation_qa": 833,
+        "operation_ticket_check": 2161
+      }
+    },
+    "ood_test": {
+      "records": 71791,
+      "sha256": "c9bc1c09a51f3b4c7ffd3bb1908bf74524f7525164a53f0a995b2482dca53dbf",
+      "task_counts": {
+        "auxiliary_decision": 16312,
+        "regulation_compliance_check": 22913,
+        "dispatcher_intent_tool_call": 16379,
+        "intelligent_data_query": 16187
+      }
+    }
+  },
+  "instruction_surface_counts": {
+    "train": 6241,
+    "validation": 1148,
+    "test": 876,
+    "ood_test": 7990
+  },
+  "cross_group_violations": [],
+  "output_paths": {
+    "train": "data/v1.2_sd_core_instruction_surface_balanced_train_ids.jsonl",
+    "validation": "data/v1.2_sd_core_instruction_surface_balanced_validation_ids.jsonl",
+    "test": "data/v1.2_sd_core_instruction_surface_balanced_test_ids.jsonl",
+    "ood_test": "data/v1.2_sd_core_instruction_surface_balanced_ood_test_ids.jsonl"
+  },
+  "interpretation": "This split prevents exact normalized user-instruction reuse across partitions. It is a lexical surface control and does not establish semantic independence or physical-label validity.",
+  "code_sha256": "669dd2dc34c16daf55908a0b2b1359067557cf70565267ab6c9b0ff38693a0ba"
+}

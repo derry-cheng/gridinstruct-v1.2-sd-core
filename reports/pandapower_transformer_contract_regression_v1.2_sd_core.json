@@ -1,0 +1,90 @@
+{
+  "environment": {
+    "numpy": "2.3.5",
+    "pandapower": "3.3.2",
+    "python": "3.11.14"
+  },
+  "generated_at": "2026-07-12T01:04:39.745126+00:00",
+  "generator_sha256": "b4775705e450b19db456b1b470348ddfcf6367a377e97f9d01b6c8a761e79567",
+  "regression_script_sha256": "bb4c02489220b61162fc4e4ea24fdd0959aeb67ec54476716b99256dc78816ba",
+  "scope": "pandapower bundled IEEE case constructors",
+  "status": "pass",
+  "systems": {
+    "ieee118": {
+      "legacy_characteristic_rows": 0,
+      "max_absolute_difference": 0.0,
+      "max_absolute_differences": {
+        "bus_va_degree": 0.0,
+        "bus_vm_pu": 0.0,
+        "line_p_from_mw": 0.0,
+        "line_q_from_mvar": 0.0,
+        "trafo_p_hv_mw": 0.0,
+        "trafo_q_hv_mvar": 0.0
+      },
+      "normalized_flag_present": true,
+      "pass": true,
+      "transformer_rows": 13
+    },
+    "ieee14": {
+      "legacy_characteristic_rows": 0,
+      "max_absolute_difference": 0.0,
+      "max_absolute_differences": {
+        "bus_va_degree": 0.0,
+        "bus_vm_pu": 0.0,
+        "line_p_from_mw": 0.0,
+        "line_q_from_mvar": 0.0,
+        "trafo_p_hv_mw": 0.0,
+        "trafo_q_hv_mvar": 0.0
+      },
+      "normalized_flag_present": true,
+      "pass": true,
+      "transformer_rows": 5
+    },
+    "ieee30": {
+      "legacy_characteristic_rows": 0,
+      "max_absolute_difference": 0.0,
+      "max_absolute_differences": {
+        "bus_va_degree": 0.0,
+        "bus_vm_pu": 0.0,
+        "line_p_from_mw": 0.0,
+        "line_q_from_mvar": 0.0,
+        "trafo_p_hv_mw": 0.0,
+        "trafo_q_hv_mvar": 0.0
+      },
+      "normalized_flag_present": true,
+      "pass": true,
+      "transformer_rows": 0
+    },
+    "ieee300": {
+      "legacy_characteristic_rows": 0,
+      "max_absolute_difference": 0.0,
+      "max_absolute_differences": {
+        "bus_va_degree": 0.0,
+        "bus_vm_pu": 0.0,
+        "line_p_from_mw": 0.0,
+        "line_q_from_mvar": 0.0,
+        "trafo_p_hv_mw": 0.0,
+        "trafo_q_hv_mvar": 0.0
+      },
+      "normalized_flag_present": true,
+      "pass": true,
+      "transformer_rows": 128
+    },
+    "ieee57": {
+      "legacy_characteristic_rows": 0,
+      "max_absolute_difference": 0.0,
+      "max_absolute_differences": {
+        "bus_va_degree": 0.0,
+        "bus_vm_pu": 0.0,
+        "line_p_from_mw": 0.0,
+        "line_q_from_mvar": 0.0,
+        "trafo_p_hv_mw": 0.0,
+        "trafo_q_hv_mvar": 0.0
+      },
+      "normalized_flag_present": true,
+      "pass": true,
+      "transformer_rows": 17
+    }
+  },
+  "tolerance": 1e-10
+}

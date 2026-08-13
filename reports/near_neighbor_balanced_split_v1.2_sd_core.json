@@ -1,0 +1,211 @@
+{
+  "generated_at": "2026-08-08T16:35:56.972199+00:00",
+  "status": "pass",
+  "source": "data/gridinstruct_v1.2_sd_core_en.jsonl",
+  "source_sha256": "75ffc5c5386e331eed6c7f4092d186e042be8a020a936993f5220a78c1fd058e",
+  "records": 95479,
+  "seed": 2036,
+  "split_policy": "all detected character-5-gram MinHash components remain atomic; preregistered OOD components stay in ood_test; non-OOD components are allocated by a deterministic MILP with explicit task-support bounds",
+  "threshold": 0.8,
+  "num_perm": 128,
+  "component_summary": {
+    "threshold": 0.8,
+    "num_perm": 128,
+    "records": 95479,
+    "query_records": 95479,
+    "records_with_neighbour": 88164,
+    "neighbour_rate": 0.9233862943683951,
+    "directed_edge_count": 6479614,
+    "exact_template_signature_count": 78931,
+    "exact_template_duplicate_records_after_first": 16548,
+    "total_components": 9586,
+    "max_component_size": 19983,
+    "ood_components": 634,
+    "non_ood_components": 8952
+  },
+  "allocation": {
+    "status": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "objective": 4.435130477167966e-06,
+    "tolerance_ratio": 0.01,
+    "target_by_split": {
+      "train": [
+        625,
+        86,
+        28,
+        6529,
+        679,
+        2523
+      ],
+      "validation": [
+        208,
+        29,
+        9,
+        2176,
+        226,
+        841
+      ],
+      "test": [
+        208,
+        29,
+        9,
+        2176,
+        226,
+        841
+      ]
+    },
+    "actual_by_split": {
+      "train": [
+        631,
+        85,
+        25,
+        6543,
+        684,
+        2532
+      ],
+      "validation": [
+        205,
+        32,
+        11,
+        2184,
+        224,
+        832
+      ],
+      "test": [
+        205,
+        27,
+        10,
+        2154,
+        223,
+        841
+      ]
+    },
+    "tasks": [
+      "auxiliary_decision",
+      "dispatcher_intent_tool_call",
+      "intelligent_data_query",
+      "operation_ticket_check",
+      "regulation_compliance_check",
+      "regulation_qa"
+    ]
+  },
+  "splits": {
+    "train": {
+      "records": 10500,
+      "sha256": "93f9a40df539b80c46b7a20b806d792e8da933ac85860ddadceda65bc99a5f44",
+      "task_counts": {
+        "auxiliary_decision": 631,
+        "regulation_compliance_check": 684,
+        "dispatcher_intent_tool_call": 85,
+        "intelligent_data_query": 25,
+        "regulation_qa": 2532,
+        "operation_ticket_check": 6543
+      }
+    },
+    "validation": {
+      "records": 3488,
+      "sha256": "eaa81ee7e937b841c0df4da4957cc2d7f36d00ccfbc41ebe5f1b3ecafcacd69a",
+      "task_counts": {
+        "auxiliary_decision": 205,
+        "regulation_compliance_check": 224,
+        "dispatcher_intent_tool_call": 32,
+        "intelligent_data_query": 11,
+        "regulation_qa": 832,
+        "operation_ticket_check": 2184
+      }
+    },
+    "test": {
+      "records": 3460,
+      "sha256": "639fcb4176c11fa7c4985f37bc2448475762a21255196d937d1ab1db8fa73aa0",
+      "task_counts": {
+        "auxiliary_decision": 205,
+        "regulation_compliance_check": 223,
+        "dispatcher_intent_tool_call": 27,
+        "intelligent_data_query": 10,
+        "regulation_qa": 841,
+        "operation_ticket_check": 2154
+      }
+    },
+    "ood_test": {
+      "records": 78031,
+      "sha256": "495e62615317abff66d2fe29314edfb4bd9c1f19691880317b48cc05eee23622",
+      "task_counts": {
+        "auxiliary_decision": 17046,
+        "regulation_compliance_check": 23636,
+        "dispatcher_intent_tool_call": 19629,
+        "intelligent_data_query": 17720
+      }
+    }
+  },
+  "classification_support": {
+    "operation_ticket_check": {
+      "train": {
+        "compliant": 2513,
+        "compliant_with_monitoring": 1131,
+        "non_compliant": 2899
+      },
+      "validation": {
+        "compliant": 119,
+        "compliant_with_monitoring": 1871,
+        "non_compliant": 194
+      },
+      "test": {
+        "compliant": 139,
+        "compliant_with_monitoring": 1947,
+        "non_compliant": 68
+      },
+      "ood_test": {}
+    },
+    "regulation_compliance_check": {
+      "train": {
+        "compliant": 286,
+        "compliant_with_monitoring": 269,
+        "non_compliant": 129
+      },
+      "validation": {
+        "compliant": 101,
+        "compliant_with_monitoring": 72,
+        "non_compliant": 51
+      },
+      "test": {
+        "compliant": 78,
+        "compliant_with_monitoring": 97,
+        "non_compliant": 48
+      },
+      "ood_test": {
+        "compliant": 564,
+        "compliant_with_monitoring": 10259,
+        "non_compliant": 12813
+      }
+    },
+    "dispatcher_intent_tool_call": {
+      "train": {
+        "diagnose_and_dispatch": 31,
+        "mitigate_violations": 35,
+        "security_check_and_redispatch": 19
+      },
+      "validation": {
+        "diagnose_and_dispatch": 8,
+        "mitigate_violations": 15,
+        "security_check_and_redispatch": 9
+      },
+      "test": {
+        "diagnose_and_dispatch": 12,
+        "mitigate_violations": 12,
+        "security_check_and_redispatch": 3
+      },
+      "ood_test": {
+        "diagnose_and_dispatch": 6562,
+        "mitigate_violations": 6527,
+        "security_check_and_redispatch": 6540
+      }
+    }
+  },
+  "cross_component_violations": [],
+  "output_paths": {
+    "train": "data/v1.2_sd_core_near_neighbor_balanced_train_ids.jsonl",
+    "validation": "data/v1.2_sd_core_near_neighbor_balanced_validation_ids.jsonl",
+    "test": "data/v1.2_sd_core_near_neighbor_balanced_test_ids.jsonl",
+    "ood_test": "data/v1.2_sd_core_near_neighbor_balanced_ood_test_ids.jsonl"
+  },
+  "code_sha256": "0cb05fc0336c2d2f75590bbe97edbac016d2971a048fd713052c148b78ea295a"
+}

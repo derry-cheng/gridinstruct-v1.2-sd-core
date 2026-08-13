@@ -1,0 +1,37 @@
+{
+  "generated_at": "2026-07-31T08:18:32.615758+00:00",
+  "status": "pass",
+  "systems": [
+    "ieee118",
+    "ieee14"
+  ],
+  "contingency_types": [
+    "base_power_flow",
+    "generator_perturbation",
+    "n1_branch_outage",
+    "n2_branch_outage"
+  ],
+  "record_count": 1394,
+  "by_system": {
+    "ieee118": 1141,
+    "ieee14": 253
+  },
+  "by_contingency_type": {
+    "base_power_flow": 13,
+    "generator_perturbation": 51,
+    "n1_branch_outage": 1099,
+    "n2_branch_outage": 231
+  },
+  "hard_gates": {
+    "projection_nonempty": true,
+    "scenario_ids_complete_and_unique": true,
+    "requested_systems_present": true,
+    "all_rows_converged": true,
+    "all_rows_have_physical_source": true,
+    "all_rows_have_case_hash": true
+  },
+  "input": "simulation_outputs/contingency/scenarios_converged.json",
+  "input_sha256": "1f23e2a868635d32aacc53269346030842a45465918f92c4ccc759a5482c99bf",
+  "output": "simulation_outputs/opf_closed_loop/ieee14_ieee118_source_scenarios_v1.json",
+  "output_sha256": "0da48f1f234fe3befd173f83bfaff120eaa4d770a42c25f625a7040d4a5205d3"
+}

@@ -1,0 +1,104 @@
+{
+  "generated_at": "2026-08-12T15:43:50.454615+00:00",
+  "status": "pass",
+  "input": "data/gridinstruct_v1.2_sd_core_en.jsonl",
+  "input_sha256": "75ffc5c5386e331eed6c7f4092d186e042be8a020a936993f5220a78c1fd058e",
+  "records": 95479,
+  "split_policy": "MinHash-LSH candidate retrieval at threshold 0.80 followed by exact character-5-gram Jaccard verification at threshold 0.85; every verified component is assigned to one split",
+  "parameters": {
+    "num_perm": 128,
+    "candidate_threshold": 0.8,
+    "exact_threshold": 0.85,
+    "seed": 20260812
+  },
+  "candidate_pairs": 771312,
+  "accepted_exact_edges": 151894,
+  "exact_surface_duplicate_records": 35,
+  "max_verified_candidate_jaccard": 1.0,
+  "component_count": 64029,
+  "split_counts": {
+    "train": 31008,
+    "validation": 3877,
+    "test": 3878,
+    "ood_test": 56716
+  },
+  "label_support": {
+    "train": {
+      "operation_ticket_check": {
+        "compliant": 2217,
+        "compliant_with_monitoring": 3959,
+        "non_compliant": 2529
+      },
+      "regulation_compliance_check": {
+        "compliant": 823,
+        "compliant_with_monitoring": 2997,
+        "non_compliant": 2893
+      },
+      "dispatcher_intent_tool_call": {
+        "diagnose_and_dispatch": 1848,
+        "mitigate_violations": 1799,
+        "security_check_and_redispatch": 1809
+      }
+    },
+    "validation": {
+      "operation_ticket_check": {
+        "compliant": 277,
+        "compliant_with_monitoring": 495,
+        "non_compliant": 316
+      },
+      "regulation_compliance_check": {
+        "compliant": 103,
+        "compliant_with_monitoring": 375,
+        "non_compliant": 362
+      },
+      "dispatcher_intent_tool_call": {
+        "diagnose_and_dispatch": 231,
+        "mitigate_violations": 225,
+        "security_check_and_redispatch": 226
+      }
+    },
+    "test": {
+      "operation_ticket_check": {
+        "compliant": 277,
+        "compliant_with_monitoring": 495,
+        "non_compliant": 316
+      },
+      "regulation_compliance_check": {
+        "compliant": 103,
+        "compliant_with_monitoring": 375,
+        "non_compliant": 362
+      },
+      "dispatcher_intent_tool_call": {
+        "diagnose_and_dispatch": 231,
+        "mitigate_violations": 225,
+        "security_check_and_redispatch": 226
+      }
+    },
+    "ood_test": {
+      "operation_ticket_check": {},
+      "regulation_compliance_check": {
+        "compliant_with_monitoring": 6950,
+        "non_compliant": 9424
+      },
+      "dispatcher_intent_tool_call": {
+        "diagnose_and_dispatch": 4303,
+        "mitigate_violations": 4340,
+        "security_check_and_redispatch": 4310
+      }
+    }
+  },
+  "output_paths": {
+    "train": "data/v1.2_sd_core_exact_surface_train_ids.jsonl",
+    "validation": "data/v1.2_sd_core_exact_surface_validation_ids.jsonl",
+    "test": "data/v1.2_sd_core_exact_surface_test_ids.jsonl",
+    "ood_test": "data/v1.2_sd_core_exact_surface_ood_test_ids.jsonl"
+  },
+  "component_violations": [],
+  "hard_gates": {
+    "all_splits_nonempty": true,
+    "component_disjoint": true,
+    "exact_surface_train_test_overlap_zero": true,
+    "classification_labels_in_test": true
+  },
+  "interpretation": "This is a lexical near-duplicate stress split. It is not a semantic equivalence test and does not establish physical-label validity."
+}

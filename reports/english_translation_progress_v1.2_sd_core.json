@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-07-31T09:45:20.310167+00:00",
+  "input": "data/gridinstruct_v1.2_sd_core.jsonl",
+  "cache": "metadata/translation_cache_v1.jsonl",
+  "log": "experiments/sd_core_rebuild_v17fix19_20260731/10_english_translation/logs/01_translate_full.stderr.log",
+  "records": 95479,
+  "records_with_cjk": 95479,
+  "total_cjk_fields": 1335820,
+  "unique_source_strings": 181589,
+  "cached_unique_translations": 181589,
+  "remaining_unique_strings": 0,
+  "cache_coverage": 1.0,
+  "cache_valid_lines": 231021,
+  "cache_invalid_lines": 0,
+  "cache_size_bytes": 218976480,
+  "cache_age_seconds": 187200.63322544098,
+  "log_age_seconds": 51.13682746887207,
+  "latest_progress": {
+    "log_bytes": 223
+  }
+}

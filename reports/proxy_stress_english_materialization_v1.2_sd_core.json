@@ -1,0 +1,149 @@
+{
+  "generated_at": "2026-07-31T10:42:29.708302+00:00",
+  "translated_full": "data/gridinstruct_v1.2_sd_core_en.jsonl",
+  "translated_full_records": 95479,
+  "duplicate_translated_ids": [],
+  "duplicate_translated_id_count": 0,
+  "split_pattern": "v1.2_sd_core*.jsonl",
+  "split_count": 9,
+  "missing_total": 0,
+  "splits": [
+    {
+      "source_split": "data/proxy_stress/regulation_compliance_check/train.jsonl",
+      "english_split": "data/proxy_stress/regulation_compliance_check/train_en.jsonl",
+      "source_records": 15822,
+      "english_records": 15822,
+      "resolved_from_existing_english_split": 0,
+      "missing_ids": [],
+      "missing_count": 0,
+      "structure_isomorphic": true,
+      "structure_mismatch_count": 0,
+      "structure_mismatch_ids": [],
+      "task_counts": {
+        "regulation_compliance_check": 15822
+      }
+    },
+    {
+      "source_split": "data/proxy_stress/regulation_compliance_check/validation.jsonl",
+      "english_split": "data/proxy_stress/regulation_compliance_check/validation_en.jsonl",
+      "source_records": 2953,
+      "english_records": 2953,
+      "resolved_from_existing_english_split": 0,
+      "missing_ids": [],
+      "missing_count": 0,
+      "structure_isomorphic": true,
+      "structure_mismatch_count": 0,
+      "structure_mismatch_ids": [],
+      "task_counts": {
+        "regulation_compliance_check": 2953
+      }
+    },
+    {
+      "source_split": "data/proxy_stress/regulation_compliance_check/test.jsonl",
+      "english_split": "data/proxy_stress/regulation_compliance_check/test_en.jsonl",
+      "source_records": 5992,
+      "english_records": 5992,
+      "resolved_from_existing_english_split": 0,
+      "missing_ids": [],
+      "missing_count": 0,
+      "structure_isomorphic": true,
+      "structure_mismatch_count": 0,
+      "structure_mismatch_ids": [],
+      "task_counts": {
+        "regulation_compliance_check": 5992
+      }
+    },
+    {
+      "source_split": "data/proxy_stress/operation_ticket_check/train.jsonl",
+      "english_split": "data/proxy_stress/operation_ticket_check/train_en.jsonl",
+      "source_records": 7647,
+      "english_records": 7647,
+      "resolved_from_existing_english_split": 0,
+      "missing_ids": [],
+      "missing_count": 0,
+      "structure_isomorphic": true,
+      "structure_mismatch_count": 0,
+      "structure_mismatch_ids": [],
+      "task_counts": {
+        "operation_ticket_check": 7647
+      }
+    },
+    {
+      "source_split": "data/proxy_stress/operation_ticket_check/validation.jsonl",
+      "english_split": "data/proxy_stress/operation_ticket_check/validation_en.jsonl",
+      "source_records": 1056,
+      "english_records": 1056,
+      "resolved_from_existing_english_split": 0,
+      "missing_ids": [],
+      "missing_count": 0,
+      "structure_isomorphic": true,
+      "structure_mismatch_count": 0,
+      "structure_mismatch_ids": [],
+      "task_counts": {
+        "operation_ticket_check": 1056
+      }
+    },
+    {
+      "source_split": "data/proxy_stress/operation_ticket_check/test.jsonl",
+      "english_split": "data/proxy_stress/operation_ticket_check/test_en.jsonl",
+      "source_records": 2178,
+      "english_records": 2178,
+      "resolved_from_existing_english_split": 0,
+      "missing_ids": [],
+      "missing_count": 0,
+      "structure_isomorphic": true,
+      "structure_mismatch_count": 0,
+      "structure_mismatch_ids": [],
+      "task_counts": {
+        "operation_ticket_check": 2178
+      }
+    },
+    {
+      "source_split": "data/proxy_stress/dispatcher_intent_tool_call/train.jsonl",
+      "english_split": "data/proxy_stress/dispatcher_intent_tool_call/train_en.jsonl",
+      "source_records": 13762,
+      "english_records": 13762,
+      "resolved_from_existing_english_split": 0,
+      "missing_ids": [],
+      "missing_count": 0,
+      "structure_isomorphic": true,
+      "structure_mismatch_count": 0,
+      "structure_mismatch_ids": [],
+      "task_counts": {
+        "dispatcher_intent_tool_call": 13762
+      }
+    },
+    {
+      "source_split": "data/proxy_stress/dispatcher_intent_tool_call/validation.jsonl",
+      "english_split": "data/proxy_stress/dispatcher_intent_tool_call/validation_en.jsonl",
+      "source_records": 1905,
+      "english_records": 1905,
+      "resolved_from_existing_english_split": 0,
+      "missing_ids": [],
+      "missing_count": 0,
+      "structure_isomorphic": true,
+      "structure_mismatch_count": 0,
+      "structure_mismatch_ids": [],
+      "task_counts": {
+        "dispatcher_intent_tool_call": 1905
+      }
+    },
+    {
+      "source_split": "data/proxy_stress/dispatcher_intent_tool_call/test.jsonl",
+      "english_split": "data/proxy_stress/dispatcher_intent_tool_call/test_en.jsonl",
+      "source_records": 4106,
+      "english_records": 4106,
+      "resolved_from_existing_english_split": 0,
+      "missing_ids": [],
+      "missing_count": 0,
+      "structure_isomorphic": true,
+      "structure_mismatch_count": 0,
+      "structure_mismatch_ids": [],
+      "task_counts": {
+        "dispatcher_intent_tool_call": 4106
+      }
+    }
+  ],
+  "structure_mismatch_total": 0,
+  "status": "pass"
+}

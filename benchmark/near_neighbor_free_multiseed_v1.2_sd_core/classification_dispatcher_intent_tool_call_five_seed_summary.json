@@ -1,0 +1,157 @@
+{
+  "generated_at": "2026-08-06T11:13:57.466462+00:00",
+  "status": "pass",
+  "family": "classification",
+  "task": "dispatcher_intent_tool_call",
+  "seeds": [
+    13,
+    29,
+    42,
+    57,
+    71
+  ],
+  "split_paths": {
+    "train": "/tmp/gaiav2_near_neighbor_free.qCa31e/train.jsonl",
+    "validation": "/tmp/gaiav2_near_neighbor_free.qCa31e/validation.jsonl",
+    "test": "/tmp/gaiav2_near_neighbor_free.qCa31e/test.jsonl"
+  },
+  "input_sha256": {
+    "train": "e636bee84de0c4a492bfd0de5117d1a23617d462ded02ee621554e213c84f6f3",
+    "validation": "db714117ba820cb0eaf3d99a829250238364d98e6277b34cc8d127ded1b8c149",
+    "test": "894453180029e16508561612ce839e367dfb3d055d82b82a45a572e32cbb8708"
+  },
+  "model_revision": {
+    "model_name": "distilbert-base-uncased",
+    "snapshot": "/Users/lemon/.cache/huggingface/hub/models--distilbert-base-uncased/snapshots/12040accade4e8a0f71eabdb258fecc2e7e948be",
+    "member_count": 5,
+    "sha256": "ad1adf0a5b06cf01a40d74eb6b0b382192a451fe804596147865bd4051b5ff42"
+  },
+  "classification_training_overrides": {
+    "epochs": 1,
+    "batch_size": 128,
+    "max_length": 128,
+    "defaults_preserved_when_null": true
+  },
+  "suite_script_sha256": "6486036f9773c678728104b0fd5fc42acc3b26c1b2f9fe37689530283efdae61",
+  "runs": [
+    {
+      "seed": 13,
+      "report": "benchmark/near_neighbor_free_multiseed_v1.2_sd_core/classification_dispatcher_intent_tool_call_seed13_report.json",
+      "test_predictions": "benchmark/near_neighbor_free_multiseed_v1.2_sd_core/classification_dispatcher_intent_tool_call_seed13_test_predictions.jsonl",
+      "prediction_sha256": "37740ea9405e98fb7203cd5bc7b82816b5bc2d159b106a2a9a813fc1e6067d29",
+      "run_state": "benchmark/near_neighbor_free_multiseed_v1.2_sd_core/classification_dispatcher_intent_tool_call_seed13_run_state.json",
+      "run_spec_sha256": "294375c1966b9ea765d1bd4eb135d827fa51e9ab49ec17c676c326265456f4f1",
+      "metrics": {
+        "accuracy": 1.0,
+        "macro_f1": 1.0,
+        "balanced_accuracy": 1.0,
+        "n": 207
+      },
+      "input_sha256": {
+        "train": "e636bee84de0c4a492bfd0de5117d1a23617d462ded02ee621554e213c84f6f3",
+        "validation": "db714117ba820cb0eaf3d99a829250238364d98e6277b34cc8d127ded1b8c149",
+        "test": "894453180029e16508561612ce839e367dfb3d055d82b82a45a572e32cbb8708"
+      }
+    },
+    {
+      "seed": 29,
+      "report": "benchmark/near_neighbor_free_multiseed_v1.2_sd_core/classification_dispatcher_intent_tool_call_seed29_report.json",
+      "test_predictions": "benchmark/near_neighbor_free_multiseed_v1.2_sd_core/classification_dispatcher_intent_tool_call_seed29_test_predictions.jsonl",
+      "prediction_sha256": "aea3dfd8477300f668254a9b21f546356795bd8164db2865d5b6d76d7b9c084d",
+      "run_state": "benchmark/near_neighbor_free_multiseed_v1.2_sd_core/classification_dispatcher_intent_tool_call_seed29_run_state.json",
+      "run_spec_sha256": "bd6809be11c53eed45ddd623a3f43db923fe79b0a1d1ff48ff55f101364b5832",
+      "metrics": {
+        "accuracy": 0.9855072463768116,
+        "macro_f1": 0.9854890741520664,
+        "balanced_accuracy": 0.9813315339631129,
+        "n": 207
+      },
+      "input_sha256": {
+        "train": "e636bee84de0c4a492bfd0de5117d1a23617d462ded02ee621554e213c84f6f3",
+        "validation": "db714117ba820cb0eaf3d99a829250238364d98e6277b34cc8d127ded1b8c149",
+        "test": "894453180029e16508561612ce839e367dfb3d055d82b82a45a572e32cbb8708"
+      }
+    },
+    {
+      "seed": 42,
+      "report": "benchmark/near_neighbor_free_multiseed_v1.2_sd_core/classification_dispatcher_intent_tool_call_seed42_report.json",
+      "test_predictions": "benchmark/near_neighbor_free_multiseed_v1.2_sd_core/classification_dispatcher_intent_tool_call_seed42_test_predictions.jsonl",
+      "prediction_sha256": "1701a38ef551ca2f7ed32d2ff91ba8554ad7132d3e6c231c1a9e450dc1dd22cf",
+      "run_state": "benchmark/near_neighbor_free_multiseed_v1.2_sd_core/classification_dispatcher_intent_tool_call_seed42_run_state.json",
+      "run_spec_sha256": "4f1ad91438bf9f59b22b6d5fd2c4703ec1bb586143e23c024b2115cf7e986a94",
+      "metrics": {
+        "accuracy": 0.9951690821256038,
+        "macro_f1": 0.9950717066679808,
+        "balanced_accuracy": 0.9935897435897436,
+        "n": 207
+      },
+      "input_sha256": {
+        "train": "e636bee84de0c4a492bfd0de5117d1a23617d462ded02ee621554e213c84f6f3",
+        "validation": "db714117ba820cb0eaf3d99a829250238364d98e6277b34cc8d127ded1b8c149",
+        "test": "894453180029e16508561612ce839e367dfb3d055d82b82a45a572e32cbb8708"
+      }
+    },
+    {
+      "seed": 57,
+      "report": "benchmark/near_neighbor_free_multiseed_v1.2_sd_core/classification_dispatcher_intent_tool_call_seed57_report.json",
+      "test_predictions": "benchmark/near_neighbor_free_multiseed_v1.2_sd_core/classification_dispatcher_intent_tool_call_seed57_test_predictions.jsonl",
+      "prediction_sha256": "7578605dc617cdfcb9c3f9136c3a64780f84648d2fe9f9cd7dca462317e7b7a2",
+      "run_state": "benchmark/near_neighbor_free_multiseed_v1.2_sd_core/classification_dispatcher_intent_tool_call_seed57_run_state.json",
+      "run_spec_sha256": "e4ee0b00f58b6c624469a741b40bfb46e9136b56a2ed8727cac7b7f5e9a4ec94",
+      "metrics": {
+        "accuracy": 0.9420289855072463,
+        "macro_f1": 0.9369391083291364,
+        "balanced_accuracy": 0.9253261358524516,
+        "n": 207
+      },
+      "input_sha256": {
+        "train": "e636bee84de0c4a492bfd0de5117d1a23617d462ded02ee621554e213c84f6f3",
+        "validation": "db714117ba820cb0eaf3d99a829250238364d98e6277b34cc8d127ded1b8c149",
+        "test": "894453180029e16508561612ce839e367dfb3d055d82b82a45a572e32cbb8708"
+      }
+    },
+    {
+      "seed": 71,
+      "report": "benchmark/near_neighbor_free_multiseed_v1.2_sd_core/classification_dispatcher_intent_tool_call_seed71_report.json",
+      "test_predictions": "benchmark/near_neighbor_free_multiseed_v1.2_sd_core/classification_dispatcher_intent_tool_call_seed71_test_predictions.jsonl",
+      "prediction_sha256": "3431127bbe197c7dcc9ec17d7f1b9998c025bd0e55059d45521b9ddb83dbbefb",
+      "run_state": "benchmark/near_neighbor_free_multiseed_v1.2_sd_core/classification_dispatcher_intent_tool_call_seed71_run_state.json",
+      "run_spec_sha256": "f6969477df6804b3f6e11f427c2a291136d56fa62417f010613b9be9ad08de8b",
+      "metrics": {
+        "accuracy": 0.9951690821256038,
+        "macro_f1": 0.9938652033206697,
+        "balanced_accuracy": 0.9935897435897436,
+        "n": 207
+      },
+      "input_sha256": {
+        "train": "e636bee84de0c4a492bfd0de5117d1a23617d462ded02ee621554e213c84f6f3",
+        "validation": "db714117ba820cb0eaf3d99a829250238364d98e6277b34cc8d127ded1b8c149",
+        "test": "894453180029e16508561612ce839e367dfb3d055d82b82a45a572e32cbb8708"
+      }
+    }
+  ],
+  "aggregate": {
+    "accuracy": {
+      "n": 5,
+      "mean": 0.9835748792270531,
+      "sample_std": 0.02381402423935506,
+      "min": 0.9420289855072463,
+      "max": 1.0
+    },
+    "balanced_accuracy": {
+      "n": 5,
+      "mean": 0.9787674313990103,
+      "sample_std": 0.030629930372140613,
+      "min": 0.9253261358524516,
+      "max": 1.0
+    },
+    "macro_f1": {
+      "n": 5,
+      "mean": 0.9822730184939706,
+      "sample_std": 0.025874395964815482,
+      "min": 0.9369391083291364,
+      "max": 1.0
+    }
+  },
+  "selection_policy": "all prespecified seeds retained; no best-seed selection"
+}

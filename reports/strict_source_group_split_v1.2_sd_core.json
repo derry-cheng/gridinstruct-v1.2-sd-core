@@ -1,0 +1,195 @@
+{
+  "generated_at": "2026-07-31T09:51:12.004905+00:00",
+  "status": "pass",
+  "input": "data/gridinstruct_v1.2_sd_core.jsonl",
+  "input_sha256": "425449c0feaba3dfde0f3b79cd2304c10f499b7ace7d345be7c23de12cf4ea7c",
+  "split_paths": {
+    "train": "data/v1.2_sd_core_strict_train.jsonl",
+    "validation": "data/v1.2_sd_core_strict_validation.jsonl",
+    "test": "data/v1.2_sd_core_strict_test.jsonl"
+  },
+  "component_count": 8359,
+  "split_policy": "global provenance connected components over source_group, source_record_id, scenario_id, source_simulation_case_id, and operation_group",
+  "splits": {
+    "train": {
+      "records": 76350,
+      "source_groups": 14415,
+      "scenarios": 2081,
+      "task_counts": {
+        "regulation_compliance_check": 19817,
+        "intelligent_data_query": 14212,
+        "auxiliary_decision": 14473,
+        "regulation_qa": 3365,
+        "dispatcher_intent_tool_call": 15818,
+        "operation_ticket_check": 8665
+      },
+      "target_counts": {
+        "regulation_compliance_check::non_compliant": 10436,
+        "intelligent_data_query::vm_pu < 0.95": 4327,
+        "intelligent_data_query::loading_percent > 100": 5560,
+        "auxiliary_decision::__task__": 14473,
+        "regulation_qa::__task__": 3365,
+        "regulation_compliance_check::compliant_with_monitoring": 8561,
+        "dispatcher_intent_tool_call::mitigate_violations": 5271,
+        "operation_ticket_check::compliant_with_monitoring": 3907,
+        "dispatcher_intent_tool_call::diagnose_and_dispatch": 5289,
+        "dispatcher_intent_tool_call::security_check_and_redispatch": 5258,
+        "intelligent_data_query::violation_type != none": 4325,
+        "operation_ticket_check::compliant": 2224,
+        "regulation_compliance_check::compliant": 820,
+        "operation_ticket_check::non_compliant": 2534
+      },
+      "network_counts": {
+        "IEEE118": 30222,
+        "IEEE14": 5411,
+        "IEEE57": 12219,
+        "no_network": 12030,
+        "ILLINOIS200": 2304,
+        "IEEE30": 10084,
+        "IEEE300": 464,
+        "RTE1888": 464,
+        "PEGASE89": 1264,
+        "PEGASE1354": 832,
+        "PEGASE2869": 544,
+        "RTE2848": 512
+      }
+    },
+    "validation": {
+      "records": 9570,
+      "source_groups": 1761,
+      "scenarios": 259,
+      "task_counts": {
+        "dispatcher_intent_tool_call": 1980,
+        "intelligent_data_query": 1777,
+        "regulation_compliance_check": 2473,
+        "regulation_qa": 420,
+        "auxiliary_decision": 1807,
+        "operation_ticket_check": 1113
+      },
+      "target_counts": {
+        "dispatcher_intent_tool_call::mitigate_violations": 661,
+        "intelligent_data_query::violation_type != none": 540,
+        "regulation_compliance_check::non_compliant": 1302,
+        "dispatcher_intent_tool_call::security_check_and_redispatch": 657,
+        "regulation_qa::__task__": 420,
+        "auxiliary_decision::__task__": 1807,
+        "operation_ticket_check::non_compliant": 313,
+        "operation_ticket_check::compliant_with_monitoring": 527,
+        "dispatcher_intent_tool_call::diagnose_and_dispatch": 662,
+        "intelligent_data_query::vm_pu < 0.95": 541,
+        "intelligent_data_query::loading_percent > 100": 696,
+        "regulation_compliance_check::compliant_with_monitoring": 1066,
+        "regulation_compliance_check::compliant": 105,
+        "operation_ticket_check::compliant": 273
+      },
+      "network_counts": {
+        "IEEE14": 529,
+        "IEEE57": 1271,
+        "IEEE118": 4362,
+        "no_network": 1533,
+        "IEEE30": 1187,
+        "RTE2848": 80,
+        "ILLINOIS200": 272,
+        "PEGASE89": 112,
+        "PEGASE1354": 80,
+        "IEEE300": 64,
+        "PEGASE2869": 48,
+        "RTE1888": 32
+      }
+    },
+    "test": {
+      "records": 9559,
+      "source_groups": 1784,
+      "scenarios": 256,
+      "task_counts": {
+        "operation_ticket_check": 1103,
+        "intelligent_data_query": 1777,
+        "dispatcher_intent_tool_call": 1975,
+        "auxiliary_decision": 1807,
+        "regulation_compliance_check": 2477,
+        "regulation_qa": 420
+      },
+      "target_counts": {
+        "operation_ticket_check::non_compliant": 314,
+        "intelligent_data_query::violation_type != none": 541,
+        "dispatcher_intent_tool_call::diagnose_and_dispatch": 662,
+        "auxiliary_decision::__task__": 1807,
+        "dispatcher_intent_tool_call::security_check_and_redispatch": 656,
+        "regulation_compliance_check::non_compliant": 1303,
+        "intelligent_data_query::vm_pu < 0.95": 540,
+        "operation_ticket_check::compliant": 274,
+        "dispatcher_intent_tool_call::mitigate_violations": 657,
+        "operation_ticket_check::compliant_with_monitoring": 515,
+        "regulation_compliance_check::compliant": 104,
+        "intelligent_data_query::loading_percent > 100": 696,
+        "regulation_compliance_check::compliant_with_monitoring": 1070,
+        "regulation_qa::__task__": 420
+      },
+      "network_counts": {
+        "no_network": 1523,
+        "IEEE118": 3575,
+        "IEEE30": 1134,
+        "IEEE14": 761,
+        "IEEE57": 1846,
+        "ILLINOIS200": 336,
+        "RTE1888": 48,
+        "IEEE300": 32,
+        "PEGASE1354": 144,
+        "RTE2848": 32,
+        "PEGASE89": 96,
+        "PEGASE2869": 32
+      }
+    }
+  },
+  "overlaps": {
+    "record_id": {
+      "train__validation": 0,
+      "train__test": 0,
+      "validation__test": 0
+    },
+    "source_group": {
+      "train__validation": 0,
+      "train__test": 0,
+      "validation__test": 0
+    },
+    "scenario_id": {
+      "train__validation": 0,
+      "train__test": 0,
+      "validation__test": 0
+    },
+    "source_record_id": {
+      "train__validation": 0,
+      "train__test": 0,
+      "validation__test": 0
+    },
+    "source_simulation_case_id": {
+      "train__validation": 0,
+      "train__test": 0,
+      "validation__test": 0
+    },
+    "operation_group": {
+      "train__validation": 0,
+      "train__test": 0,
+      "validation__test": 0
+    }
+  },
+  "hard_gates": {
+    "all_splits_nonempty": true,
+    "record_id_disjoint": true,
+    "source_group_disjoint": true,
+    "scenario_id_disjoint": true,
+    "source_record_id_disjoint": true,
+    "source_simulation_case_id_disjoint": true,
+    "operation_group_disjoint": true,
+    "all_tasks_in_train": true,
+    "classification_targets_in_test": true
+  },
+  "output_sha256": {
+    "train": "babcfab5866509d82e38c4eb4923f5d756fea4a3ea1dc871ce4ddea6b68ad35f",
+    "validation": "0ff9d68b28ff13744ddc4ad6c1ae001305dc18addcfa761efd87c87dbce8b005",
+    "test": "b845dcb8512ad846e25163f897006330090255204b43b2efe87faa38b68a921e"
+  },
+  "figures": {
+    "strict_group_overlap": "figures/sd_core/fig_strict_split_group_overlap.png"
+  }
+}

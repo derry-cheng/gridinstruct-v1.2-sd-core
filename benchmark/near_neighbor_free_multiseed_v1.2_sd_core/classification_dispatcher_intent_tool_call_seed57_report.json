@@ -1,0 +1,256 @@
+{
+  "generated_at": "2026-08-06T11:13:13.793706+00:00",
+  "status": "pass",
+  "train": "/tmp/gaiav2_near_neighbor_free.qCa31e/train.jsonl",
+  "validation": "/tmp/gaiav2_near_neighbor_free.qCa31e/validation.jsonl",
+  "test": "/tmp/gaiav2_near_neighbor_free.qCa31e/test.jsonl",
+  "task_type": "dispatcher_intent_tool_call",
+  "objective": "transformer_sequence_classification",
+  "model_name": "/Users/lemon/.cache/huggingface/hub/models--distilbert-base-uncased/snapshots/12040accade4e8a0f71eabdb258fecc2e7e948be",
+  "model_source": "/Users/lemon/.cache/huggingface/hub/models--distilbert-base-uncased/snapshots/12040accade4e8a0f71eabdb258fecc2e7e948be",
+  "resolved_model_source": "/Users/lemon/.cache/huggingface/hub/models--distilbert-base-uncased/snapshots/12040accade4e8a0f71eabdb258fecc2e7e948be",
+  "resolved_model_name": "/Users/lemon/.cache/huggingface/hub/models--distilbert-base-uncased/snapshots/12040accade4e8a0f71eabdb258fecc2e7e948be",
+  "eval_only_model": null,
+  "run_kind": "heldout_evaluation",
+  "device": "mps",
+  "device_details": {
+    "device": "mps",
+    "cuda_visible_devices": null
+  },
+  "determinism_contract": {
+    "python_hash_seed": null,
+    "cublas_workspace_config": ":4096:8",
+    "numpy_seeded": true,
+    "torch_seeded": true,
+    "cuda_seeded": false,
+    "deterministic_algorithms": true,
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": true,
+    "cuda_matmul_tf32": false,
+    "cudnn_tf32": false
+  },
+  "train_records": 1940,
+  "validation_records": 210,
+  "test_records": 207,
+  "input_sha256": {
+    "train": "e636bee84de0c4a492bfd0de5117d1a23617d462ded02ee621554e213c84f6f3",
+    "validation": "db714117ba820cb0eaf3d99a829250238364d98e6277b34cc8d127ded1b8c149",
+    "test": "894453180029e16508561612ce839e367dfb3d055d82b82a45a572e32cbb8708"
+  },
+  "prediction_sha256": {
+    "validation": "eb77ed4757fc6d91c5da5197f78aaa215a47cbe5f8a953e23189bf7d425df94b",
+    "test": "7578605dc617cdfcb9c3f9136c3a64780f84648d2fe9f9cd7dca462317e7b7a2"
+  },
+  "label_space": [
+    "diagnose_and_dispatch",
+    "mitigate_violations",
+    "security_check_and_redispatch"
+  ],
+  "config": {
+    "output_prefix": "benchmark/near_neighbor_free_multiseed_v1.2_sd_core/classification_dispatcher_intent_tool_call_seed57",
+    "epochs": 1,
+    "batch_size": 128,
+    "learning_rate": 5e-05,
+    "weight_decay": 0.01,
+    "max_length": 128,
+    "seed": 57,
+    "use_rationale": false,
+    "input_profile": "natural",
+    "eval_only_model": null,
+    "local_files_only": true,
+    "cpu": false,
+    "class_weighting": "inverse_frequency",
+    "experiment_dir": "experiments/near_neighbor_free_multiseed_v1.2_sd_core/classification_dispatcher_intent_tool_call/seed57",
+    "training_log": "experiments/near_neighbor_free_multiseed_v1.2_sd_core/classification_dispatcher_intent_tool_call/seed57/logs/training_log.jsonl",
+    "class_weights": {
+      "diagnose_and_dispatch": 1.0850111856823266,
+      "mitigate_violations": 0.9159584513692163,
+      "security_check_and_redispatch": 1.013584117032393
+    },
+    "skip_latest_alias": true
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 1.0539958477020264,
+      "validation_accuracy": 0.9238095238095239,
+      "validation_macro_f1": 0.9147850408029429,
+      "validation_balanced_accuracy": 0.9084887858472764
+    }
+  ],
+  "best_epoch": 1,
+  "best_validation": {
+    "accuracy": 0.9238095238095239,
+    "macro_f1": 0.9147850408029429,
+    "balanced_accuracy": 0.9084887858472764,
+    "n": 210
+  },
+  "final_validation": {
+    "accuracy": 0.9238095238095239,
+    "macro_f1": 0.9147850408029429,
+    "balanced_accuracy": 0.9084887858472764,
+    "n": 210
+  },
+  "validation_diagnostics": {
+    "gold_counts": {
+      "diagnose_and_dispatch": 66,
+      "security_check_and_redispatch": 53,
+      "mitigate_violations": 91
+    },
+    "prediction_counts": {
+      "diagnose_and_dispatch": 76,
+      "mitigate_violations": 93,
+      "security_check_and_redispatch": 41
+    },
+    "error_count": 16,
+    "confusion_matrix": {
+      "labels": [
+        "diagnose_and_dispatch",
+        "mitigate_violations",
+        "security_check_and_redispatch"
+      ],
+      "by_gold": {
+        "diagnose_and_dispatch": {
+          "diagnose_and_dispatch": 65,
+          "mitigate_violations": 1,
+          "security_check_and_redispatch": 0
+        },
+        "mitigate_violations": {
+          "diagnose_and_dispatch": 3,
+          "mitigate_violations": 88,
+          "security_check_and_redispatch": 0
+        },
+        "security_check_and_redispatch": {
+          "diagnose_and_dispatch": 8,
+          "mitigate_violations": 4,
+          "security_check_and_redispatch": 41
+        }
+      },
+      "matrix": [
+        [
+          65,
+          1,
+          0
+        ],
+        [
+          3,
+          88,
+          0
+        ],
+        [
+          8,
+          4,
+          41
+        ]
+      ]
+    },
+    "per_class": {
+      "diagnose_and_dispatch": {
+        "precision": 0.8552631578947368,
+        "recall": 0.9848484848484849,
+        "f1": 0.9154929577464789,
+        "support": 66,
+        "predicted": 76
+      },
+      "mitigate_violations": {
+        "precision": 0.946236559139785,
+        "recall": 0.967032967032967,
+        "f1": 0.9565217391304348,
+        "support": 91,
+        "predicted": 93
+      },
+      "security_check_and_redispatch": {
+        "precision": 1.0,
+        "recall": 0.7735849056603774,
+        "f1": 0.8723404255319149,
+        "support": 53,
+        "predicted": 41
+      }
+    }
+  },
+  "test_evaluation": {
+    "accuracy": 0.9420289855072463,
+    "macro_f1": 0.9369391083291364,
+    "balanced_accuracy": 0.9253261358524516,
+    "n": 207
+  },
+  "test_diagnostics": {
+    "gold_counts": {
+      "diagnose_and_dispatch": 98,
+      "security_check_and_redispatch": 52,
+      "mitigate_violations": 57
+    },
+    "prediction_counts": {
+      "diagnose_and_dispatch": 107,
+      "security_check_and_redispatch": 44,
+      "mitigate_violations": 56
+    },
+    "error_count": 12,
+    "confusion_matrix": {
+      "labels": [
+        "diagnose_and_dispatch",
+        "mitigate_violations",
+        "security_check_and_redispatch"
+      ],
+      "by_gold": {
+        "diagnose_and_dispatch": {
+          "diagnose_and_dispatch": 98,
+          "mitigate_violations": 0,
+          "security_check_and_redispatch": 0
+        },
+        "mitigate_violations": {
+          "diagnose_and_dispatch": 4,
+          "mitigate_violations": 53,
+          "security_check_and_redispatch": 0
+        },
+        "security_check_and_redispatch": {
+          "diagnose_and_dispatch": 5,
+          "mitigate_violations": 3,
+          "security_check_and_redispatch": 44
+        }
+      },
+      "matrix": [
+        [
+          98,
+          0,
+          0
+        ],
+        [
+          4,
+          53,
+          0
+        ],
+        [
+          5,
+          3,
+          44
+        ]
+      ]
+    },
+    "per_class": {
+      "diagnose_and_dispatch": {
+        "precision": 0.9158878504672897,
+        "recall": 1.0,
+        "f1": 0.9560975609756098,
+        "support": 98,
+        "predicted": 107
+      },
+      "mitigate_violations": {
+        "precision": 0.9464285714285714,
+        "recall": 0.9298245614035088,
+        "f1": 0.9380530973451328,
+        "support": 57,
+        "predicted": 56
+      },
+      "security_check_and_redispatch": {
+        "precision": 1.0,
+        "recall": 0.8461538461538461,
+        "f1": 0.9166666666666666,
+        "support": 52,
+        "predicted": 44
+      }
+    }
+  },
+  "runtime_seconds": 39.01149892807007,
+  "note": "Local Transformer classification baseline with held-out evaluation."
+}

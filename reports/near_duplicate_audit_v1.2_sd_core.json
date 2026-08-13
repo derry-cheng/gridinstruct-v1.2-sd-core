@@ -1,0 +1,2405 @@
+{
+  "generated_at": "2026-07-31T09:54:37.556730+00:00",
+  "semantic_backend_preflight": {
+    "requested_model_id": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "c9745ed1d9f207416be6d2e6f8de32d1f16199bf",
+    "local_path": "/data/gaiav2/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf",
+    "expected_sha256": null,
+    "actual_tree_sha256": null,
+    "weight_files": [],
+    "preflight_errors": [
+      "local_model_directory_missing"
+    ],
+    "backend": "deterministic_tfidf_char_ngrams",
+    "fallback": "deterministic_tfidf",
+    "fallback_contract": {
+      "backend": "sklearn_tfidf_nearest_neighbor",
+      "analyzer": "char_wb",
+      "ngram_range": [
+        3,
+        5
+      ],
+      "min_df": 1,
+      "sublinear_tf": true,
+      "norm": "l2",
+      "dtype": "float32",
+      "metric": "cosine",
+      "n_jobs": 1
+    },
+    "fallback_contract_sha256": "f4306958eb5c89186dff08bdafe7a3e126b84eac7985bbf09b0c76d4bf6ac6d1",
+    "network_access_allowed": false
+  },
+  "exact_full": {
+    "records": 95479,
+    "unique_signatures": 95447,
+    "duplicate_records_after_first": 32,
+    "duplicate_rate": 0.00033515223242807317,
+    "effective_unique_rate": 0.9996648477675719
+  },
+  "template_normalized_full": {
+    "records": 95479,
+    "unique_signatures": 78931,
+    "duplicate_records_after_first": 16548,
+    "duplicate_rate": 0.17331559819436734,
+    "effective_unique_rate": 0.8266844018056326
+  },
+  "cross_split": {
+    "train_test": {
+      "exact": {
+        "left_records": 28684,
+        "right_records": 3609,
+        "right_records_matching_left": 0,
+        "right_match_rate": 0.0,
+        "examples": []
+      },
+      "template_normalized": {
+        "left_records": 28684,
+        "right_records": 3609,
+        "right_records_matching_left": 297,
+        "right_match_rate": 0.08229426433915212,
+        "examples": [
+          "gridinstruct_v01_query_11718",
+          "gridinstruct_v01_query_07587",
+          "gridinstruct_v01_query_12821",
+          "gridinstruct_v01_query_02140",
+          "gridinstruct_v01_query_00514",
+          "gridinstruct_v01_query_12177",
+          "gridinstruct_v01_query_13446",
+          "gridinstruct_v01_query_00746",
+          "gridinstruct_v01_query_02151",
+          "gridinstruct_v01_compliance_00706",
+          "gridinstruct_v01_query_04362",
+          "gridinstruct_v01_query_14381",
+          "gridinstruct_v01_query_00869",
+          "gridinstruct_v01_query_15033",
+          "gridinstruct_v01_query_08340",
+          "gridinstruct_v01_query_01274",
+          "gridinstruct_v01_query_11688",
+          "gridinstruct_v01_query_14132",
+          "gridinstruct_v01_aux_02234",
+          "gridinstruct_v01_query_15389",
+          "gridinstruct_v01_compliance_04891_counterfactual_02",
+          "gridinstruct_v01_aux_00599",
+          "gridinstruct_v01_query_12858",
+          "gridinstruct_v01_query_10183",
+          "gridinstruct_v01_query_03664",
+          "gridinstruct_v01_aux_15089",
+          "gridinstruct_v01_query_10002",
+          "gridinstruct_v01_query_10654",
+          "gridinstruct_v01_intent_07642",
+          "gridinstruct_v01_query_01494",
+          "gridinstruct_v01_query_13474",
+          "gridinstruct_v01_query_00342",
+          "gridinstruct_v01_query_10673",
+          "gridinstruct_v01_query_03470",
+          "gridinstruct_v01_compliance_07714_actionpara_01",
+          "gridinstruct_v01_query_09302",
+          "gridinstruct_v01_query_05172",
+          "gridinstruct_v01_compliance_01967",
+          "gridinstruct_v01_query_01454",
+          "gridinstruct_v01_query_05843",
+          "gridinstruct_v01_compliance_03121",
+          "gridinstruct_v01_aux_09327",
+          "gridinstruct_v01_query_03806",
+          "gridinstruct_v01_intent_12365",
+          "gridinstruct_v01_compliance_05225",
+          "gridinstruct_v01_compliance_09029",
+          "gridinstruct_v01_compliance_09212",
+          "gridinstruct_v01_query_00783",
+          "gridinstruct_v01_compliance_01300_actionpara_01",
+          "gridinstruct_v01_query_09010"
+        ]
+      },
+      "minhash_char5": {
+        "threshold": 0.85,
+        "num_perm": 64,
+        "left_records": 28684,
+        "right_records": 3609,
+        "right_records_with_neighbor": 2156,
+        "right_match_rate": 0.597395400387919,
+        "examples": [
+          {
+            "id": "gridinstruct_v01_intent_10900",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_10264"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_00042",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_00282",
+              "gridinstruct_v01_compliance_00418",
+              "gridinstruct_v01_compliance_00562",
+              "gridinstruct_v01_compliance_00874",
+              "gridinstruct_v01_compliance_01042"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_07797",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_07997"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_08943",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_07515"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_13267",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_02951",
+              "gridinstruct_v01_compliance_03311",
+              "gridinstruct_v01_compliance_04431",
+              "gridinstruct_v01_compliance_04711",
+              "gridinstruct_v01_compliance_12827"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_regqa_00715",
+            "neighbor_ids": [
+              "gridinstruct_v01_regqa_02300"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_11718",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_00074",
+              "gridinstruct_v01_query_00158",
+              "gridinstruct_v01_query_00170",
+              "gridinstruct_v01_query_00182",
+              "gridinstruct_v01_query_00334"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_11662",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_10222",
+              "gridinstruct_v01_compliance_10702",
+              "gridinstruct_v01_compliance_10822",
+              "gridinstruct_v01_compliance_11222",
+              "gridinstruct_v01_compliance_11582"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_09131",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_08531"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_15083",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_15143",
+              "gridinstruct_v01_aux_15227"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_08591",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_07403",
+              "gridinstruct_v01_intent_08195",
+              "gridinstruct_v01_intent_08339",
+              "gridinstruct_v01_intent_08375",
+              "gridinstruct_v01_intent_08747"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_08541",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_00291",
+              "gridinstruct_v01_intent_00351",
+              "gridinstruct_v01_intent_00435",
+              "gridinstruct_v01_intent_00483",
+              "gridinstruct_v01_intent_00507"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_05891",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_06227",
+              "gridinstruct_v01_aux_06443",
+              "gridinstruct_v01_aux_06563",
+              "gridinstruct_v01_aux_06863",
+              "gridinstruct_v01_aux_07151"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_07824",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_05046",
+              "gridinstruct_v01_query_05194",
+              "gridinstruct_v01_query_05502",
+              "gridinstruct_v01_query_06122",
+              "gridinstruct_v01_query_06174"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_10111",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_00015",
+              "gridinstruct_v01_query_00675",
+              "gridinstruct_v01_query_01035",
+              "gridinstruct_v01_query_09967",
+              "gridinstruct_v01_query_10615"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_12654",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_02570",
+              "gridinstruct_v01_query_02774",
+              "gridinstruct_v01_query_02846",
+              "gridinstruct_v01_query_02886",
+              "gridinstruct_v01_query_02942"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_06957",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_06201",
+              "gridinstruct_v01_aux_06453"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_10330",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_01446",
+              "gridinstruct_v01_query_02226",
+              "gridinstruct_v01_query_09730",
+              "gridinstruct_v01_query_10102",
+              "gridinstruct_v01_query_10150"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_ticket_01251__plus12_operation_cf_1251",
+            "neighbor_ids": [
+              "gridinstruct_v01_ticket_03843"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_10857",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_02775",
+              "gridinstruct_v01_intent_06449",
+              "gridinstruct_v01_intent_07241",
+              "gridinstruct_v01_intent_10089",
+              "gridinstruct_v01_intent_10257"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_05591",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_14715",
+              "gridinstruct_v01_query_14967"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_15359",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_07187"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_15102",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_14542",
+              "gridinstruct_v01_compliance_14622",
+              "gridinstruct_v01_compliance_14822",
+              "gridinstruct_v01_compliance_15142",
+              "gridinstruct_v01_compliance_15182"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_ticket_02555__plus12_operation_cf_2555",
+            "neighbor_ids": [
+              "gridinstruct_v01_ticket_03275__plus12_operation_cf_3275"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_ticket_00031__plus14_plain_monitoring_31",
+            "neighbor_ids": [
+              "gridinstruct_v01_ticket_00295__plus14_plain_monitoring_295",
+              "gridinstruct_v01_ticket_01447__plus14_plain_monitoring_1447",
+              "gridinstruct_v01_ticket_02023__plus14_plain_monitoring_2023"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_07587",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_07287",
+              "gridinstruct_v01_query_07299",
+              "gridinstruct_v01_query_07419",
+              "gridinstruct_v01_query_07527",
+              "gridinstruct_v01_query_07851"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_ticket_02845__plus12_operation_cf_2845",
+            "neighbor_ids": [
+              "gridinstruct_v01_ticket_02285__plus12_operation_cf_2285",
+              "gridinstruct_v01_ticket_02860__plus12_operation_cf_2860"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_07829",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_08333",
+              "gridinstruct_v01_query_09453"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_05839",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_04999",
+              "gridinstruct_v01_query_06399",
+              "gridinstruct_v01_query_14739"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_ticket_00386__plus14_plain_monitoring_386",
+            "neighbor_ids": [
+              "gridinstruct_v01_ticket_00026__plus14_plain_monitoring_26",
+              "gridinstruct_v01_ticket_00122__plus14_plain_monitoring_122",
+              "gridinstruct_v01_ticket_00194__plus14_plain_monitoring_194",
+              "gridinstruct_v01_ticket_00410__plus14_plain_monitoring_410",
+              "gridinstruct_v01_ticket_00500__plus14_plain_monitoring_500"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_ticket_00543",
+            "neighbor_ids": [
+              "gridinstruct_v01_ticket_02559"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_03964",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_02452",
+              "gridinstruct_v01_intent_02476",
+              "gridinstruct_v01_intent_02500",
+              "gridinstruct_v01_intent_02668",
+              "gridinstruct_v01_intent_02980"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_01197",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_00909",
+              "gridinstruct_v01_intent_01065",
+              "gridinstruct_v01_intent_01125",
+              "gridinstruct_v01_intent_01377",
+              "gridinstruct_v12_equipment1_intent_ieee30_n1_transformer_outage_load100_trafoidx_1_bf670327883c_v00"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_00183__plus12_dispatcher_cf_183_mitigate_violations",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_00031__plus12_dispatcher_cf_31_mitigate_violations",
+              "gridinstruct_v01_intent_00251__plus12_dispatcher_cf_251_mitigate_violations",
+              "gridinstruct_v01_intent_00291__plus12_dispatcher_cf_291_mitigate_violations",
+              "gridinstruct_v01_intent_00351__plus12_dispatcher_cf_351_mitigate_violations",
+              "gridinstruct_v01_intent_00395__plus12_dispatcher_cf_395_mitigate_violations"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_ticket_00729__plus14_plain_monitoring_729",
+            "neighbor_ids": [
+              "gridinstruct_v01_ticket_00177__plus14_plain_monitoring_177",
+              "gridinstruct_v01_ticket_00753__plus14_plain_monitoring_753",
+              "gridinstruct_v01_ticket_01041__plus14_plain_monitoring_1041",
+              "gridinstruct_v01_ticket_01557__plus14_plain_monitoring_1557"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_14313",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_12553",
+              "gridinstruct_v01_compliance_13473"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_ticket_01401__plus12_operation_cf_1401",
+            "neighbor_ids": [
+              "gridinstruct_v01_ticket_03129"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_10883",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_00167",
+              "gridinstruct_v01_compliance_00607",
+              "gridinstruct_v01_compliance_00687",
+              "gridinstruct_v01_compliance_01167",
+              "gridinstruct_v01_compliance_01247"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_07681_actionpara_01",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_00243_actionpara_01",
+              "gridinstruct_v01_compliance_00403_actionpara_01",
+              "gridinstruct_v01_compliance_00563_actionpara_01",
+              "gridinstruct_v01_compliance_00683_actionpara_01",
+              "gridinstruct_v01_compliance_02291_actionpara_01"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_03832_actionpara_03",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_03992_actionpara_03",
+              "gridinstruct_v01_compliance_13652_actionpara_03"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_12388",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_12472",
+              "gridinstruct_v01_aux_12496",
+              "gridinstruct_v01_aux_12832",
+              "gridinstruct_v01_aux_13000",
+              "gridinstruct_v01_aux_13084"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_03038",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_03122",
+              "gridinstruct_v01_intent_04535",
+              "gridinstruct_v01_intent_04550",
+              "gridinstruct_v01_intent_04826",
+              "gridinstruct_v01_intent_05185"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_00535__plus12_dispatcher_cf_535_mitigate_violations",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_00251__plus12_dispatcher_cf_251_mitigate_violations",
+              "gridinstruct_v01_intent_00291__plus12_dispatcher_cf_291_mitigate_violations",
+              "gridinstruct_v01_intent_00395__plus12_dispatcher_cf_395_mitigate_violations",
+              "gridinstruct_v01_intent_00507__plus12_dispatcher_cf_507_mitigate_violations",
+              "gridinstruct_v01_intent_00539__plus12_dispatcher_cf_539_mitigate_violations"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_12821",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_02665",
+              "gridinstruct_v01_query_02761",
+              "gridinstruct_v01_query_03049",
+              "gridinstruct_v01_query_03097",
+              "gridinstruct_v01_query_03241"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_02140",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_00684",
+              "gridinstruct_v01_query_00796",
+              "gridinstruct_v01_query_01444",
+              "gridinstruct_v01_query_01776",
+              "gridinstruct_v01_query_03450"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_03424",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_03856",
+              "gridinstruct_v01_query_07674",
+              "gridinstruct_v01_query_07926",
+              "gridinstruct_v01_query_07986",
+              "gridinstruct_v01_query_09090"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_08435",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_08603"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_ticket_00730",
+            "neighbor_ids": [
+              "gridinstruct_v01_ticket_03322"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_00514",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_00250",
+              "gridinstruct_v01_query_00302",
+              "gridinstruct_v01_query_00346",
+              "gridinstruct_v01_query_00634",
+              "gridinstruct_v01_query_00682"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_12081_actionpara_01",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_05579",
+              "gridinstruct_v01_compliance_05859",
+              "gridinstruct_v01_compliance_06139",
+              "gridinstruct_v01_compliance_06619",
+              "gridinstruct_v01_compliance_06739"
+            ]
+          }
+        ]
+      },
+      "semantic_sample": {
+        "model": "deterministic_tfidf_char_ngrams_3_5",
+        "device": "cpu",
+        "threshold": 0.95,
+        "left_sample_records": 5000,
+        "right_sample_records": 3609,
+        "right_records_with_neighbor": 796,
+        "right_match_rate": 0.22055971183153228,
+        "examples": [
+          {
+            "id": "gridinstruct_v01_query_07587",
+            "neighbor_id": "gridinstruct_v01_query_08931",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_12821",
+            "neighbor_id": "gridinstruct_v01_query_13493",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_02140",
+            "neighbor_id": "gridinstruct_v01_query_01776",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_04362",
+            "neighbor_id": "gridinstruct_v01_query_04782",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_01274",
+            "neighbor_id": "gridinstruct_v01_query_00378",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_12858",
+            "neighbor_id": "gridinstruct_v01_query_13614",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_13474",
+            "neighbor_id": "gridinstruct_v01_query_13614",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_03470",
+            "neighbor_id": "gridinstruct_v01_query_02434",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_07714_actionpara_01",
+            "neighbor_id": "gridinstruct_v01_compliance_09282_actionpara_01",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_09302",
+            "neighbor_id": "gridinstruct_v01_query_09582",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_05843",
+            "neighbor_id": "gridinstruct_v01_query_06627",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_03806",
+            "neighbor_id": "gridinstruct_v01_query_02434",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_00783",
+            "neighbor_id": "gridinstruct_v01_query_01539",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_08616",
+            "neighbor_id": "gridinstruct_v01_query_08812",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_11584",
+            "neighbor_id": "gridinstruct_v01_query_10128",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_02238_counterfactual_01",
+            "neighbor_id": "gridinstruct_v01_compliance_01654_counterfactual_01",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_07136",
+            "neighbor_id": "gridinstruct_v01_query_06464",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_03494",
+            "neighbor_id": "gridinstruct_v01_query_04782",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_10203",
+            "neighbor_id": "gridinstruct_v01_query_10399",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_01013",
+            "neighbor_id": "gridinstruct_v01_query_10221",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_13349",
+            "neighbor_id": "gridinstruct_v01_query_13685",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_09762",
+            "neighbor_id": "gridinstruct_v01_query_09986",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_02082",
+            "neighbor_id": "gridinstruct_v01_aux_01998",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v12_equipment1_query_ieee57_n1_transformer_outage_load100_trafoidx_0_f3ea91346b05_v01",
+            "neighbor_id": "gridinstruct_v01_query_02434",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_01545",
+            "neighbor_id": "gridinstruct_v01_compliance_02265",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_09712",
+            "neighbor_id": "gridinstruct_v01_query_09936",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_02994",
+            "neighbor_id": "gridinstruct_v01_query_02434",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_05225_actionpara_01",
+            "neighbor_id": "gridinstruct_v01_compliance_06865_actionpara_01",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_13170",
+            "neighbor_id": "gridinstruct_v01_query_13114",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_08798",
+            "neighbor_id": "gridinstruct_v01_query_09582",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_09479",
+            "neighbor_id": "gridinstruct_v01_aux_08975",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_04329",
+            "neighbor_id": "gridinstruct_v01_query_03153",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v12_equipment1_query_ieee57_n1_transformer_outage_load100_trafoidx_0_f3ea91346b05_v00",
+            "neighbor_id": "gridinstruct_v01_query_02087",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_05764",
+            "neighbor_id": "gridinstruct_v01_query_05848",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_01399",
+            "neighbor_id": "gridinstruct_v01_query_01539",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v12_equipment1_query_ieee57_n1_transformer_outage_load100_trafoidx_1_1a111797ac84_v00",
+            "neighbor_id": "gridinstruct_v01_query_00618",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_02929",
+            "neighbor_id": "gridinstruct_v01_query_03433",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_15224_actionpara_01",
+            "neighbor_id": "gridinstruct_v01_compliance_09282_actionpara_01",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_03349",
+            "neighbor_id": "gridinstruct_v01_query_03433",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_03510",
+            "neighbor_id": "gridinstruct_v01_query_03874",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_10934",
+            "neighbor_id": "gridinstruct_v01_query_02090",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v12_equipment1_query_ieee57_n1_transformer_outage_load100_trafoidx_2_24d0e0bf18fc_v00",
+            "neighbor_id": "gridinstruct_v01_query_10522",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v12_equipment1_query_ieee57_n1_transformer_outage_load100_trafoidx_2_24d0e0bf18fc_v01",
+            "neighbor_id": "gridinstruct_v12_equipment1_query_ieee14_n1_transformer_outage_load100_trafoidx_2_8f55c0b8619d_v01",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_12974",
+            "neighbor_id": "gridinstruct_v01_query_02422",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_01055",
+            "neighbor_id": "gridinstruct_v01_query_02259",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_00732",
+            "neighbor_id": "gridinstruct_v01_query_11452",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_10717",
+            "neighbor_id": "gridinstruct_v01_compliance_10677",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_04338",
+            "neighbor_id": "gridinstruct_v01_query_02434",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_06383",
+            "neighbor_id": "gridinstruct_v01_query_06551",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v12_equipment1_query_ieee30_n1_transformer_outage_load100_trafoidx_3_dc62788f88d2_v01",
+            "neighbor_id": "gridinstruct_v01_query_04782",
+            "cosine_similarity": 1.0
+          }
+        ]
+      }
+    },
+    "train_ood": {
+      "exact": {
+        "left_records": 28684,
+        "right_records": 59588,
+        "right_records_matching_left": 0,
+        "right_match_rate": 0.0,
+        "examples": []
+      },
+      "template_normalized": {
+        "left_records": 28684,
+        "right_records": 59588,
+        "right_records_matching_left": 4609,
+        "right_match_rate": 0.07734778814526415,
+        "examples": [
+          "gridinstruct_v01_query_13126",
+          "gridinstruct_v01_aux_07740",
+          "gridinstruct_v01_query_06571",
+          "gridinstruct_v12_topology_query_0041_v01",
+          "gridinstruct_v01_intent_14989",
+          "gridinstruct_v01_query_06220",
+          "gridinstruct_v01_query_10570",
+          "gridinstruct_v01_intent_06093",
+          "gridinstruct_v01_compliance_09180",
+          "gridinstruct_v01_aux_01242",
+          "gridinstruct_v01_query_02395",
+          "gridinstruct_v01_query_08771",
+          "gridinstruct_v01_query_14370",
+          "gridinstruct_v01_query_15001",
+          "gridinstruct_v01_query_09575",
+          "gridinstruct_v01_query_05252",
+          "gridinstruct_v01_query_01962",
+          "gridinstruct_v01_query_01094",
+          "gridinstruct_v12_topology2_query_illinois200_sdv2_base_power_flow_load76_50f7c945e6b8_v03",
+          "gridinstruct_v01_intent_00401__plus12_dispatcher_cf_401_security_check_and_redispatch",
+          "gridinstruct_v01_query_06674",
+          "gridinstruct_v01_query_08266",
+          "gridinstruct_v01_aux_07762",
+          "gridinstruct_v01_query_00306",
+          "gridinstruct_v01_query_08076",
+          "gridinstruct_v12_equipment1_query_ieee118_n1_transformer_outage_load100_trafoidx_3_26f49f8aa85a_v01",
+          "gridinstruct_v01_query_14379",
+          "gridinstruct_v01_intent_02146",
+          "gridinstruct_v12_topology2_query_pegase1354_sdv2_n1_branch_outage_load85_line594_4d143ad1d00a_v01",
+          "gridinstruct_v01_query_09120",
+          "gridinstruct_v12_topology2_query_ieee300_sdv2_base_power_flow_load95_b19375b21c47_v01",
+          "gridinstruct_v12_equipment1_query_ieee57_n1_bus_outage_load120_busidx_11_f13559f8e59f_v00",
+          "gridinstruct_v01_query_13888",
+          "gridinstruct_v01_query_11043",
+          "gridinstruct_v01_query_02261",
+          "gridinstruct_v12_topology2_query_rte1888_sdv2_base_power_flow_load95_a4310939f079_v02",
+          "gridinstruct_v01_compliance_15412",
+          "gridinstruct_v01_compliance_09594",
+          "gridinstruct_v01_query_03422",
+          "gridinstruct_v01_query_00910",
+          "gridinstruct_v01_query_00555",
+          "gridinstruct_v01_query_12808",
+          "gridinstruct_v12_topology2_query_pegase89_sdv2_n1_branch_outage_load85_line159_6fcd966aab7b_v00",
+          "gridinstruct_v01_query_07995",
+          "gridinstruct_v01_query_07073",
+          "gridinstruct_v12_equipment1_query_ieee57_n1_generator_outage_load120_genidx_1_20146c4152b4_v01",
+          "gridinstruct_v01_query_10607",
+          "gridinstruct_v01_query_06327",
+          "gridinstruct_v01_query_11253",
+          "gridinstruct_v01_query_07148"
+        ]
+      },
+      "minhash_char5": {
+        "threshold": 0.85,
+        "num_perm": 64,
+        "left_records": 28684,
+        "right_records": 12000,
+        "right_records_with_neighbor": 8766,
+        "right_match_rate": 0.7305,
+        "examples": [
+          {
+            "id": "gridinstruct_v12_topology2_query_illinois200_sdv2_n1_branch_outage_load60_line83_f850416df38e_v00",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_01219",
+              "gridinstruct_v01_query_01723",
+              "gridinstruct_v01_query_02367",
+              "gridinstruct_v01_query_09971",
+              "gridinstruct_v01_query_10699"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_13126",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_02570",
+              "gridinstruct_v01_query_02750",
+              "gridinstruct_v01_query_02774",
+              "gridinstruct_v01_query_02846",
+              "gridinstruct_v01_query_02886"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_10705",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_09704",
+              "gridinstruct_v01_query_10236",
+              "gridinstruct_v01_query_11524"
+            ]
+          },
+          {
+            "id": "gridinstruct_v12_equipment1_query_ieee118_n1_transformer_outage_load100_trafoidx_1_9d36a25a160f_v00",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_00176",
+              "gridinstruct_v01_query_00316",
+              "gridinstruct_v01_query_01940",
+              "gridinstruct_v01_query_10580",
+              "gridinstruct_v12_equipment1_query_ieee30_n1_transformer_outage_load100_trafoidx_2_603efc0d4551_v00"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_15105",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_15117"
+            ]
+          },
+          {
+            "id": "gridinstruct_v12_topology_query_0003_v01",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_02489",
+              "gridinstruct_v01_query_02573",
+              "gridinstruct_v01_query_02585",
+              "gridinstruct_v01_query_02701",
+              "gridinstruct_v01_query_02801"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_01292_counterfactual_01",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_00132_counterfactual_01"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_03381",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_02649"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_07149",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_02894",
+              "gridinstruct_v01_query_03230",
+              "gridinstruct_v01_query_03566",
+              "gridinstruct_v01_query_04869",
+              "gridinstruct_v01_query_04925"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_07453",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_09013",
+              "gridinstruct_v01_compliance_09653"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_01933",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_05067",
+              "gridinstruct_v01_query_05151",
+              "gridinstruct_v01_query_14695"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_06129",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_05961"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_03969",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_02929",
+              "gridinstruct_v01_compliance_02969",
+              "gridinstruct_v01_compliance_03289",
+              "gridinstruct_v01_compliance_03569",
+              "gridinstruct_v01_compliance_13805"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_07715",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_07275",
+              "gridinstruct_v01_compliance_09515"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_08015",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_07255",
+              "gridinstruct_v01_compliance_07335",
+              "gridinstruct_v01_compliance_07615",
+              "gridinstruct_v01_compliance_08495",
+              "gridinstruct_v01_compliance_08655"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_01238",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_00198",
+              "gridinstruct_v01_compliance_00358",
+              "gridinstruct_v01_compliance_00478",
+              "gridinstruct_v01_compliance_01038",
+              "gridinstruct_v01_compliance_01638"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_00381",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_00501",
+              "gridinstruct_v01_compliance_00781",
+              "gridinstruct_v01_compliance_01701",
+              "gridinstruct_v01_compliance_01821",
+              "gridinstruct_v01_compliance_01941"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_00876",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_00360",
+              "gridinstruct_v01_intent_01464",
+              "gridinstruct_v01_intent_01572",
+              "gridinstruct_v01_intent_02124",
+              "gridinstruct_v12_equipment1_intent_ieee30_n1_bus_outage_load100_busidx_7_02e4ae3246b7_v00"
+            ]
+          },
+          {
+            "id": "gridinstruct_v12_topology2_query_illinois200_sdv2_n1_branch_outage_load76_line24_58ebbdfd1c4a_v00",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_00311"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_05421",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_06093"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_07595",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_09479",
+              "gridinstruct_v12_equipment1_intent_ieee14_n1_generator_outage_load100_genidx_2_f6d753e206bc_v00"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_05444",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_05126",
+              "gridinstruct_v01_intent_05294",
+              "gridinstruct_v01_intent_06464",
+              "gridinstruct_v01_intent_07148",
+              "gridinstruct_v01_intent_07160"
+            ]
+          },
+          {
+            "id": "gridinstruct_v12_topology_aux_0022_v01",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_03221",
+              "gridinstruct_v01_aux_03389"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_02499",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_04179",
+              "gridinstruct_v01_compliance_12135",
+              "gridinstruct_v01_compliance_12495",
+              "gridinstruct_v01_compliance_13815",
+              "gridinstruct_v01_compliance_14175"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_03866",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_03950"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_11720",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_11048",
+              "gridinstruct_v01_intent_11252",
+              "gridinstruct_v01_intent_12020"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_00333",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_00109",
+              "gridinstruct_v01_query_00725",
+              "gridinstruct_v01_query_01033",
+              "gridinstruct_v01_query_01173",
+              "gridinstruct_v01_query_01229"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_05673",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_06009",
+              "gridinstruct_v01_aux_06489"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_07855",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_07375",
+              "gridinstruct_v01_intent_07411",
+              "gridinstruct_v01_intent_07495",
+              "gridinstruct_v01_intent_07795",
+              "gridinstruct_v01_intent_07831"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_01962",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_00074",
+              "gridinstruct_v01_query_00158",
+              "gridinstruct_v01_query_00170",
+              "gridinstruct_v01_query_00334",
+              "gridinstruct_v01_query_00386"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_01094",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_00074",
+              "gridinstruct_v01_query_00158",
+              "gridinstruct_v01_query_00170",
+              "gridinstruct_v01_query_00334",
+              "gridinstruct_v01_query_00386"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_08242",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_07362"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_13118",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_02562",
+              "gridinstruct_v01_compliance_02922",
+              "gridinstruct_v01_compliance_03602",
+              "gridinstruct_v01_compliance_03722",
+              "gridinstruct_v01_compliance_13798"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_11722",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_10482",
+              "gridinstruct_v01_compliance_11202"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_14985",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_07109",
+              "gridinstruct_v01_compliance_07508",
+              "gridinstruct_v01_compliance_08628",
+              "gridinstruct_v01_compliance_09148",
+              "gridinstruct_v01_compliance_09588"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_11490",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_10122",
+              "gridinstruct_v01_aux_10734"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_02971",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_02579",
+              "gridinstruct_v01_query_03027",
+              "gridinstruct_v01_query_03183",
+              "gridinstruct_v01_query_03279",
+              "gridinstruct_v01_query_03391"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_11788",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_09988",
+              "gridinstruct_v01_compliance_10468",
+              "gridinstruct_v01_compliance_10708",
+              "gridinstruct_v01_compliance_10828",
+              "gridinstruct_v01_compliance_11068"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_09319",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_07415",
+              "gridinstruct_v01_query_07495",
+              "gridinstruct_v01_query_07579",
+              "gridinstruct_v01_query_07591",
+              "gridinstruct_v01_query_07863"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_07762",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_07366",
+              "gridinstruct_v01_aux_07486",
+              "gridinstruct_v01_aux_07534",
+              "gridinstruct_v01_aux_07618",
+              "gridinstruct_v01_aux_07642"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_08076",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_05046",
+              "gridinstruct_v01_query_05194",
+              "gridinstruct_v01_query_05502",
+              "gridinstruct_v01_query_06122",
+              "gridinstruct_v01_query_06174"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_07425",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_07953",
+              "gridinstruct_v01_aux_07977",
+              "gridinstruct_v01_aux_08493",
+              "gridinstruct_v01_aux_08733",
+              "gridinstruct_v01_aux_08769"
+            ]
+          },
+          {
+            "id": "gridinstruct_v12_topology2_query_rte1888_sdv2_n1_branch_outage_load95_line1093_76e111fe8d1d_v03",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_07579",
+              "gridinstruct_v01_query_08131",
+              "gridinstruct_v01_query_08287",
+              "gridinstruct_v01_query_08539",
+              "gridinstruct_v01_query_09067"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_13988",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_02460",
+              "gridinstruct_v01_query_02880",
+              "gridinstruct_v01_query_03132",
+              "gridinstruct_v01_query_03692",
+              "gridinstruct_v01_query_04028"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_06782",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_04871",
+              "gridinstruct_v01_query_06810"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_08980",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_07972",
+              "gridinstruct_v01_aux_08140",
+              "gridinstruct_v01_aux_09064"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_08656_actionpara_01",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_08456",
+              "gridinstruct_v01_compliance_08576_actionpara_01",
+              "gridinstruct_v01_compliance_08816_actionpara_01",
+              "gridinstruct_v01_compliance_09016_actionpara_01",
+              "gridinstruct_v01_compliance_09576"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_04780",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_02848",
+              "gridinstruct_v01_aux_03436",
+              "gridinstruct_v01_aux_03604",
+              "gridinstruct_v01_aux_04024"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_01888",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_00244",
+              "gridinstruct_v01_intent_00376",
+              "gridinstruct_v01_intent_00628",
+              "gridinstruct_v01_intent_01036",
+              "gridinstruct_v01_intent_01276"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_02565",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_02649",
+              "gridinstruct_v01_intent_02901",
+              "gridinstruct_v01_intent_03189",
+              "gridinstruct_v01_intent_03513",
+              "gridinstruct_v01_intent_03825"
+            ]
+          }
+        ]
+      },
+      "semantic_sample": {
+        "model": "deterministic_tfidf_char_ngrams_3_5",
+        "device": "cpu",
+        "threshold": 0.95,
+        "left_sample_records": 5000,
+        "right_sample_records": 5000,
+        "right_records_with_neighbor": 1349,
+        "right_match_rate": 0.2698,
+        "examples": [
+          {
+            "id": "gridinstruct_v01_query_01962",
+            "neighbor_id": "gridinstruct_v01_query_02270",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v12_topology2_query_ieee300_sdv2_base_power_flow_load95_b19375b21c47_v01",
+            "neighbor_id": "gridinstruct_v01_query_02793",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_02957",
+            "neighbor_id": "gridinstruct_v01_query_12361",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_05586",
+            "neighbor_id": "gridinstruct_v01_query_15354",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_12830",
+            "neighbor_id": "gridinstruct_v01_query_13614",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_09514",
+            "neighbor_id": "gridinstruct_v01_aux_07666",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_12906",
+            "neighbor_id": "gridinstruct_v01_query_12514",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_00478",
+            "neighbor_id": "gridinstruct_v01_query_00814",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_02294",
+            "neighbor_id": "gridinstruct_v01_query_10522",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_09953",
+            "neighbor_id": "gridinstruct_v01_query_11493",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_04058",
+            "neighbor_id": "gridinstruct_v01_query_04170",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_intent_08215",
+            "neighbor_id": "gridinstruct_v01_intent_09475",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_06092",
+            "neighbor_id": "gridinstruct_v01_query_05504",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v12_topology2_query_pegase89_sdv2_base_power_flow_load105_2d260a4ea08c_v00",
+            "neighbor_id": "gridinstruct_v01_query_02270",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v12_topology2_query_illinois200_sdv2_n1_branch_outage_load76_line89_12c0beb541b3_v00",
+            "neighbor_id": "gridinstruct_v01_query_00118",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_11715",
+            "neighbor_id": "gridinstruct_v01_query_10707",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_03325",
+            "neighbor_id": "gridinstruct_v01_query_03745",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_04646",
+            "neighbor_id": "gridinstruct_v01_query_04170",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_11549",
+            "neighbor_id": "gridinstruct_v01_query_11493",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_09412",
+            "neighbor_id": "gridinstruct_v01_query_07732",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_09951",
+            "neighbor_id": "gridinstruct_v01_query_10707",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_01888",
+            "neighbor_id": "gridinstruct_v01_compliance_01488",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_03650",
+            "neighbor_id": "gridinstruct_v01_query_13614",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_14482",
+            "neighbor_id": "gridinstruct_v01_query_13614",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_intent_04948",
+            "neighbor_id": "gridinstruct_v01_intent_05452",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_03372",
+            "neighbor_id": "gridinstruct_v01_query_02448",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_09954",
+            "neighbor_id": "gridinstruct_v01_query_01558",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v12_topology2_query_ieee300_sdv2_n1_branch_outage_load95_line197_ad8a74612874_v01",
+            "neighbor_id": "gridinstruct_v01_query_13614",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_03886",
+            "neighbor_id": "gridinstruct_v01_query_04418",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_06719",
+            "neighbor_id": "gridinstruct_v01_query_05907",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_12270",
+            "neighbor_id": "gridinstruct_v01_query_13614",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_08138_actionpara_01",
+            "neighbor_id": "gridinstruct_v01_compliance_09282_actionpara_01",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_04884",
+            "neighbor_id": "gridinstruct_v01_compliance_07244",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_08068",
+            "neighbor_id": "gridinstruct_v01_query_07732",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_02147",
+            "neighbor_id": "gridinstruct_v01_query_11663",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_02215",
+            "neighbor_id": "gridinstruct_v01_query_01263",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_00573",
+            "neighbor_id": "gridinstruct_v01_query_01077",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_07212",
+            "neighbor_id": "gridinstruct_v01_query_05000",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_14181",
+            "neighbor_id": "gridinstruct_v01_query_03153",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v12_topology2_query_ieee300_sdv2_n1_branch_outage_load0p955_line141_5bede578b2bc_v01",
+            "neighbor_id": "gridinstruct_v01_query_03153",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_04113",
+            "neighbor_id": "gridinstruct_v01_query_04785",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_13537",
+            "neighbor_id": "gridinstruct_v01_query_03153",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_15429",
+            "neighbor_id": "gridinstruct_v01_query_15205",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_13118",
+            "neighbor_id": "gridinstruct_v01_query_12166",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_00402_counterfactual_01",
+            "neighbor_id": "gridinstruct_v01_compliance_00282_counterfactual_01",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_02015",
+            "neighbor_id": "gridinstruct_v01_query_01539",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_08716",
+            "neighbor_id": "gridinstruct_v01_query_08352",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_09428",
+            "neighbor_id": "gridinstruct_v01_query_08812",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_07367",
+            "neighbor_id": "gridinstruct_v01_query_08347",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_00850",
+            "neighbor_id": "gridinstruct_v01_compliance_00010",
+            "cosine_similarity": 1.0
+          }
+        ]
+      }
+    },
+    "strict_train_strict_test": {
+      "exact": {
+        "left_records": 76350,
+        "right_records": 9559,
+        "right_records_matching_left": 0,
+        "right_match_rate": 0.0,
+        "examples": []
+      },
+      "template_normalized": {
+        "left_records": 76350,
+        "right_records": 9559,
+        "right_records_matching_left": 2044,
+        "right_match_rate": 0.2138298985249503,
+        "examples": [
+          "gridinstruct_v01_query_03162",
+          "gridinstruct_v01_compliance_00393",
+          "gridinstruct_v01_aux_01703",
+          "gridinstruct_v01_aux_13298",
+          "gridinstruct_v01_compliance_07718",
+          "gridinstruct_v01_compliance_00467",
+          "gridinstruct_v01_query_09936",
+          "gridinstruct_v01_query_00225",
+          "gridinstruct_v01_query_09431",
+          "gridinstruct_v01_query_12361",
+          "gridinstruct_v01_query_09862",
+          "gridinstruct_v01_query_07811",
+          "gridinstruct_v01_query_02462",
+          "gridinstruct_v01_query_01558",
+          "gridinstruct_v12_equipment1_aux_ieee30_n1_generator_outage_load100_genidx_2_2498374229f4_v00",
+          "gridinstruct_v01_aux_14761",
+          "gridinstruct_v01_compliance_00212",
+          "gridinstruct_v01_compliance_06008",
+          "gridinstruct_v01_query_07884",
+          "gridinstruct_v01_aux_07950",
+          "gridinstruct_v01_query_00686",
+          "gridinstruct_v01_intent_12614",
+          "gridinstruct_v01_query_10382",
+          "gridinstruct_v01_query_07548",
+          "gridinstruct_v01_query_08735",
+          "gridinstruct_v01_query_11787",
+          "gridinstruct_v01_compliance_08464",
+          "gridinstruct_v01_query_01097",
+          "gridinstruct_v01_intent_12970",
+          "gridinstruct_v01_query_08384",
+          "gridinstruct_v01_intent_08472",
+          "gridinstruct_v01_query_06135",
+          "gridinstruct_v01_compliance_00285",
+          "gridinstruct_v01_query_13262",
+          "gridinstruct_v01_query_10090",
+          "gridinstruct_v01_query_14465",
+          "gridinstruct_v01_aux_00201",
+          "gridinstruct_v01_query_08928",
+          "gridinstruct_v01_query_03293",
+          "gridinstruct_v01_query_03395",
+          "gridinstruct_v01_query_10927",
+          "gridinstruct_v01_query_02093",
+          "gridinstruct_v01_query_13045",
+          "gridinstruct_v01_query_04493",
+          "gridinstruct_v12_topology2_compliance_illinois200_sdv2_n1_branch_outage_load76_line103_2e4d3d7ceb06_v00",
+          "gridinstruct_v01_intent_01855",
+          "gridinstruct_v01_query_02961",
+          "gridinstruct_v01_compliance_01895",
+          "gridinstruct_v01_query_02718",
+          "gridinstruct_v01_query_12017"
+        ]
+      },
+      "minhash_char5": {
+        "threshold": 0.85,
+        "num_perm": 64,
+        "left_records": 76350,
+        "right_records": 9559,
+        "right_records_with_neighbor": 8055,
+        "right_match_rate": 0.8426613662517,
+        "examples": [
+          {
+            "id": "gridinstruct_v01_query_03162",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_00167",
+              "gridinstruct_v01_query_00503",
+              "gridinstruct_v01_query_00587",
+              "gridinstruct_v01_query_00776",
+              "gridinstruct_v01_query_00944"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_04973",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_05009",
+              "gridinstruct_v01_intent_05237",
+              "gridinstruct_v01_intent_05309",
+              "gridinstruct_v01_intent_05321",
+              "gridinstruct_v01_intent_05441"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_04068",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_02460",
+              "gridinstruct_v01_aux_02628",
+              "gridinstruct_v01_aux_02652",
+              "gridinstruct_v01_aux_02664",
+              "gridinstruct_v01_aux_02988"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_07605",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_07269",
+              "gridinstruct_v01_aux_08025",
+              "gridinstruct_v01_aux_08193",
+              "gridinstruct_v01_aux_08361"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_15275",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_00023",
+              "gridinstruct_v01_intent_00215",
+              "gridinstruct_v01_intent_00419",
+              "gridinstruct_v01_intent_00443",
+              "gridinstruct_v01_intent_00551"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_00393",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_00113",
+              "gridinstruct_v01_compliance_00233",
+              "gridinstruct_v01_compliance_00273",
+              "gridinstruct_v01_compliance_00353",
+              "gridinstruct_v01_compliance_00433"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_05614",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_02456",
+              "gridinstruct_v01_query_02512",
+              "gridinstruct_v01_query_02596",
+              "gridinstruct_v01_query_02612",
+              "gridinstruct_v01_query_02764"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_06546",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_05118",
+              "gridinstruct_v01_aux_05454",
+              "gridinstruct_v01_aux_06210",
+              "gridinstruct_v01_aux_07134"
+            ]
+          },
+          {
+            "id": "gridinstruct_v12_topology2_intent_illinois200_sdv2_n1_branch_outage_load96_line66_11607b12f1a9_v02",
+            "neighbor_ids": [
+              "gridinstruct_v12_topology2_intent_illinois200_sdv2_n1_branch_outage_load76_line36_bf9188a6feb4_v02",
+              "gridinstruct_v12_topology2_intent_illinois200_sdv2_n1_branch_outage_load80_line5_83c520ef193c_v02"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_05459",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_04979",
+              "gridinstruct_v01_intent_05375",
+              "gridinstruct_v01_intent_05411",
+              "gridinstruct_v01_intent_05423",
+              "gridinstruct_v01_intent_05495"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_01181_actionpara_01",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_00317_actionpara_01",
+              "gridinstruct_v01_compliance_00741_actionpara_01",
+              "gridinstruct_v01_compliance_00941_actionpara_01",
+              "gridinstruct_v01_compliance_01021_actionpara_01",
+              "gridinstruct_v01_compliance_01301_actionpara_01"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_00431__plus12_dispatcher_cf_431_mitigate_violations",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_00019__plus12_dispatcher_cf_19_mitigate_violations",
+              "gridinstruct_v01_intent_00060__plus12_dispatcher_cf_60_mitigate_violations"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_ticket_01228__plus14_plain_monitoring_1228",
+            "neighbor_ids": [
+              "gridinstruct_v01_ticket_01012__plus14_plain_monitoring_1012",
+              "gridinstruct_v01_ticket_01660__plus14_plain_monitoring_1660"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_01703",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_00191",
+              "gridinstruct_v01_aux_00275",
+              "gridinstruct_v01_aux_00359",
+              "gridinstruct_v01_aux_00467",
+              "gridinstruct_v01_aux_00695"
+            ]
+          },
+          {
+            "id": "gridinstruct_v12_equipment1_intent_ieee57_n1_transformer_outage_load120_trafoidx_10_1a60eb99a449_v01",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_02439",
+              "gridinstruct_v01_intent_02523",
+              "gridinstruct_v01_intent_02667",
+              "gridinstruct_v01_intent_02775",
+              "gridinstruct_v01_intent_02943"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_13298",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_12206",
+              "gridinstruct_v01_aux_12542",
+              "gridinstruct_v01_aux_12878",
+              "gridinstruct_v01_aux_13130",
+              "gridinstruct_v01_aux_13214"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_04344",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_02424",
+              "gridinstruct_v01_aux_02448",
+              "gridinstruct_v01_aux_02484",
+              "gridinstruct_v01_aux_02508",
+              "gridinstruct_v01_aux_02532"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_06954",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_00476",
+              "gridinstruct_v01_query_05071",
+              "gridinstruct_v01_query_05183",
+              "gridinstruct_v01_query_05386",
+              "gridinstruct_v01_query_05491"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_04151",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_02471",
+              "gridinstruct_v01_compliance_02511",
+              "gridinstruct_v01_compliance_02551",
+              "gridinstruct_v01_compliance_02591",
+              "gridinstruct_v01_compliance_02631"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_07718",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_07318",
+              "gridinstruct_v01_compliance_07438",
+              "gridinstruct_v01_compliance_07518",
+              "gridinstruct_v01_compliance_08038",
+              "gridinstruct_v01_compliance_08078"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_04830",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_02456",
+              "gridinstruct_v01_query_02512",
+              "gridinstruct_v01_query_02596",
+              "gridinstruct_v01_query_02612",
+              "gridinstruct_v01_query_02764"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_00254__plus12_dispatcher_cf_254_mitigate_violations",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_00002__plus12_dispatcher_cf_2_mitigate_violations",
+              "gridinstruct_v01_intent_00079__plus12_dispatcher_cf_79_mitigate_violations",
+              "gridinstruct_v01_intent_00093__plus12_dispatcher_cf_93_mitigate_violations",
+              "gridinstruct_v01_intent_00107__plus12_dispatcher_cf_107_mitigate_violations",
+              "gridinstruct_v01_intent_00142__plus12_dispatcher_cf_142_mitigate_violations"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_14112",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_12156",
+              "gridinstruct_v01_aux_12948",
+              "gridinstruct_v01_aux_13248",
+              "gridinstruct_v01_aux_13308",
+              "gridinstruct_v01_aux_13392"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_12564",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_02648",
+              "gridinstruct_v01_compliance_03328",
+              "gridinstruct_v01_compliance_04048",
+              "gridinstruct_v01_compliance_14284"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_12914",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_13634",
+              "gridinstruct_v01_compliance_14074"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_00330__plus12_dispatcher_cf_330_diagnose_and_dispatch",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_00110__plus12_dispatcher_cf_110_diagnose_and_dispatch",
+              "gridinstruct_v01_intent_00118__plus12_dispatcher_cf_118_diagnose_and_dispatch",
+              "gridinstruct_v01_intent_00134__plus12_dispatcher_cf_134_diagnose_and_dispatch",
+              "gridinstruct_v01_intent_00238__plus12_dispatcher_cf_238_diagnose_and_dispatch",
+              "gridinstruct_v01_intent_00242__plus12_dispatcher_cf_242_diagnose_and_dispatch"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_00467",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_00067",
+              "gridinstruct_v01_compliance_00187",
+              "gridinstruct_v01_compliance_00227",
+              "gridinstruct_v01_compliance_00707",
+              "gridinstruct_v01_compliance_00947"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_12967",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_12295"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_09936",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_00112",
+              "gridinstruct_v01_query_00568",
+              "gridinstruct_v01_query_00604",
+              "gridinstruct_v01_query_00652",
+              "gridinstruct_v01_query_00688"
+            ]
+          },
+          {
+            "id": "gridinstruct_v12_topology2_compliance_illinois200_sdv2_n1_branch_outage_load60_line22_20598cb88e0e_v03",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_07424",
+              "gridinstruct_v01_compliance_07584",
+              "gridinstruct_v01_compliance_07664",
+              "gridinstruct_v01_compliance_07784",
+              "gridinstruct_v01_compliance_07824"
+            ]
+          },
+          {
+            "id": "gridinstruct_v12_topology2_compliance_illinois200_sdv2_n1_branch_outage_load68_line166_c3126ad31bf4_v03",
+            "neighbor_ids": [
+              "gridinstruct_v12_topology2_compliance_illinois200_sdv2_n1_branch_outage_load50_line163_37d05968698e_v03",
+              "gridinstruct_v12_topology2_compliance_illinois200_sdv2_n1_branch_outage_load72_line3_c8208f4e915b_v03"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_02029",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_00265",
+              "gridinstruct_v01_aux_00853"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_07893",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_00015",
+              "gridinstruct_v01_intent_00195",
+              "gridinstruct_v01_intent_00315",
+              "gridinstruct_v01_intent_00327",
+              "gridinstruct_v01_intent_00339"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_00225",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_00477",
+              "gridinstruct_v01_query_09769",
+              "gridinstruct_v01_query_10021",
+              "gridinstruct_v01_query_11113"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_03228",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_03028",
+              "gridinstruct_v01_compliance_10825",
+              "gridinstruct_v01_compliance_11345",
+              "gridinstruct_v01_compliance_11465",
+              "gridinstruct_v01_compliance_13464"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_05598",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_02692",
+              "gridinstruct_v01_intent_02872",
+              "gridinstruct_v01_intent_03184",
+              "gridinstruct_v01_intent_03592",
+              "gridinstruct_v01_intent_03844"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_04189",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_03097",
+              "gridinstruct_v01_aux_04105",
+              "gridinstruct_v01_aux_04525"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_14941",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_14773",
+              "gridinstruct_v01_aux_14857",
+              "gridinstruct_v01_aux_15025",
+              "gridinstruct_v01_aux_15109",
+              "gridinstruct_v01_aux_15193"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_11617",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_02527",
+              "gridinstruct_v01_intent_02611",
+              "gridinstruct_v01_intent_03031",
+              "gridinstruct_v01_intent_03535",
+              "gridinstruct_v01_intent_03619"
+            ]
+          },
+          {
+            "id": "gridinstruct_v12_topology2_compliance_illinois200_sdv2_n1_branch_outage_load60_line83_f850416df38e_v00",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_00091",
+              "gridinstruct_v01_compliance_00291",
+              "gridinstruct_v01_compliance_00531",
+              "gridinstruct_v01_compliance_01131",
+              "gridinstruct_v01_compliance_01891"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_12439",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_12283",
+              "gridinstruct_v01_aux_12367",
+              "gridinstruct_v01_aux_12919",
+              "gridinstruct_v01_aux_13027",
+              "gridinstruct_v01_aux_13099"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_13857",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_04872",
+              "gridinstruct_v01_intent_04974",
+              "gridinstruct_v01_intent_04980",
+              "gridinstruct_v01_intent_05076",
+              "gridinstruct_v01_intent_05184"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_13561",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_12217",
+              "gridinstruct_v01_aux_12553",
+              "gridinstruct_v01_aux_12637",
+              "gridinstruct_v01_aux_12665",
+              "gridinstruct_v01_aux_12889"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_05700_counterfactual_01",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_04860_counterfactual_01",
+              "gridinstruct_v01_compliance_04900_counterfactual_01",
+              "gridinstruct_v01_compliance_04980_counterfactual_01",
+              "gridinstruct_v01_compliance_05180_counterfactual_01",
+              "gridinstruct_v01_compliance_05220_counterfactual_01"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_12817",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_12397",
+              "gridinstruct_v01_aux_12649",
+              "gridinstruct_v01_aux_12733",
+              "gridinstruct_v01_aux_13153",
+              "gridinstruct_v01_aux_13237"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_04402",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_02438",
+              "gridinstruct_v01_query_02498",
+              "gridinstruct_v01_query_02526",
+              "gridinstruct_v01_query_02554",
+              "gridinstruct_v01_query_02582"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_02784",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_02436",
+              "gridinstruct_v01_intent_02448",
+              "gridinstruct_v01_intent_02484",
+              "gridinstruct_v01_intent_02616",
+              "gridinstruct_v01_intent_02868"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_07471",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_00709_actionpara_01",
+              "gridinstruct_v01_compliance_07271",
+              "gridinstruct_v01_compliance_07311",
+              "gridinstruct_v01_compliance_07359",
+              "gridinstruct_v01_compliance_07391"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_09431",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_07255",
+              "gridinstruct_v01_query_07275",
+              "gridinstruct_v01_query_07355",
+              "gridinstruct_v01_query_07387",
+              "gridinstruct_v01_query_07439"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_12361",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_02453",
+              "gridinstruct_v01_query_02481",
+              "gridinstruct_v01_query_02565",
+              "gridinstruct_v01_query_02589",
+              "gridinstruct_v01_query_02593"
+            ]
+          }
+        ]
+      },
+      "semantic_sample": {
+        "model": "deterministic_tfidf_char_ngrams_3_5",
+        "device": "cpu",
+        "threshold": 0.95,
+        "left_sample_records": 5000,
+        "right_sample_records": 5000,
+        "right_records_with_neighbor": 2071,
+        "right_match_rate": 0.4142,
+        "examples": [
+          {
+            "id": "gridinstruct_v01_query_09431",
+            "neighbor_id": "gridinstruct_v01_query_08591",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_02462",
+            "neighbor_id": "gridinstruct_v01_query_04198",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_10382",
+            "neighbor_id": "gridinstruct_v01_query_11418",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_08464",
+            "neighbor_id": "gridinstruct_v01_compliance_09344",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_02093",
+            "neighbor_id": "gridinstruct_v01_query_12057",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_07854",
+            "neighbor_id": "gridinstruct_v01_query_09618",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v12_topology2_query_pegase1354_sdv2_n1_branch_outage_load85_line1750_5d1b755060b5_v00",
+            "neighbor_id": "gridinstruct_v01_query_10823",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_03820",
+            "neighbor_id": "gridinstruct_v01_query_14120",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_10189",
+            "neighbor_id": "gridinstruct_v01_query_09741",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_01770_counterfactual_01",
+            "neighbor_id": "gridinstruct_v01_compliance_02370_counterfactual_01",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_00870_counterfactual_01",
+            "neighbor_id": "gridinstruct_v01_compliance_01470_counterfactual_01",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_03889",
+            "neighbor_id": "gridinstruct_v12_equipment1_query_ieee57_n1_generator_outage_load120_genidx_0_328ecb90e71d_v01",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_12556",
+            "neighbor_id": "gridinstruct_v01_compliance_13956",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_08395",
+            "neighbor_id": "gridinstruct_v01_compliance_09035",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_09189",
+            "neighbor_id": "gridinstruct_v01_compliance_07389",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_10603",
+            "neighbor_id": "gridinstruct_v01_query_11779",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_06600",
+            "neighbor_id": "gridinstruct_v01_compliance_06000",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_00301",
+            "neighbor_id": "gridinstruct_v01_query_00021",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_05371",
+            "neighbor_id": "gridinstruct_v01_query_06491",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_11687",
+            "neighbor_id": "gridinstruct_v01_query_11351",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_02072",
+            "neighbor_id": "gridinstruct_v01_compliance_02152",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_11967",
+            "neighbor_id": "gridinstruct_v01_query_11351",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v12_equipment1_query_ieee57_n1_transformer_outage_load120_trafoidx_7_56c0c60d3a93_v00",
+            "neighbor_id": "gridinstruct_v01_query_01225",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_00491",
+            "neighbor_id": "gridinstruct_v01_query_11631",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_01101",
+            "neighbor_id": "gridinstruct_v01_aux_01605",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_01543",
+            "neighbor_id": "gridinstruct_v01_query_02215",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_09995",
+            "neighbor_id": "gridinstruct_v01_query_09855",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_11808",
+            "neighbor_id": "gridinstruct_v01_query_00332",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_15285",
+            "neighbor_id": "gridinstruct_v01_query_05349",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_05209",
+            "neighbor_id": "gridinstruct_v01_aux_05629",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v12_equipment1_query_ieee57_n1_transformer_outage_load120_trafoidx_10_1a60eb99a449_v00",
+            "neighbor_id": "gridinstruct_v01_query_02215",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_11647",
+            "neighbor_id": "gridinstruct_v01_query_11031",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_14398",
+            "neighbor_id": "gridinstruct_v01_query_03538",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_00293",
+            "neighbor_id": "gridinstruct_v01_compliance_00213",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_05516",
+            "neighbor_id": "gridinstruct_v01_query_06524",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_02509",
+            "neighbor_id": "gridinstruct_v12_topology2_query_pegase1354_sdv2_n1_branch_outage_load95_line262_03d7cae28088_v01",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_01174",
+            "neighbor_id": "gridinstruct_v01_query_11418",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_02978",
+            "neighbor_id": "gridinstruct_v01_query_13362",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v12_topology2_query_pegase89_sdv2_n1_branch_outage_load85_line31_df1d74fe4034_v03",
+            "neighbor_id": "gridinstruct_v12_topology2_query_pegase89_sdv2_n1_branch_outage_load85_line35_993c000d8efa_v03",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_10050",
+            "neighbor_id": "gridinstruct_v01_query_11618",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_13280",
+            "neighbor_id": "gridinstruct_v01_query_14120",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_12761",
+            "neighbor_id": "gridinstruct_v01_query_04309",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_06743",
+            "neighbor_id": "gridinstruct_v01_query_06491",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_10455",
+            "neighbor_id": "gridinstruct_v01_query_11351",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_08330",
+            "neighbor_id": "gridinstruct_v01_compliance_08650",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_09568",
+            "neighbor_id": "gridinstruct_v01_query_08336",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_01979",
+            "neighbor_id": "gridinstruct_v01_query_10823",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v12_topology2_query_pegase2869_sdv2_n1_branch_outage_load95_line3120_7c15e61208d8_v02",
+            "neighbor_id": "gridinstruct_v01_query_07229",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_10311",
+            "neighbor_id": "gridinstruct_v01_query_10563",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_12054",
+            "neighbor_id": "gridinstruct_v01_query_01754",
+            "cosine_similarity": 1.0
+          }
+        ]
+      }
+    }
+  },
+  "hard_gates": {
+    "all_splits_nonempty_unique_ids": true,
+    "official_train_test_id_disjoint": true,
+    "official_train_ood_id_disjoint": true,
+    "full_exact_duplicate_rate_within_limit": true,
+    "cross_exact_match_rates_within_limit": true,
+    "sampled_diagnostics_nonempty": true
+  },
+  "status": "pass",
+  "interpretation": "Exact, template-normalized, MinHash character-5-gram, and embedding cosine diagnostics are reported separately; sampled diagnostics retain their sample sizes."
+}

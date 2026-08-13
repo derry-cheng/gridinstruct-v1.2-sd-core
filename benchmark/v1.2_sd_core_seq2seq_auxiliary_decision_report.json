@@ -1,0 +1,188 @@
+{
+  "generated_at": "2026-07-31T13:03:33.483862+00:00",
+  "train": "data/v1.2_sd_core_train_en.jsonl",
+  "validation": "data/v1.2_sd_core_validation_en.jsonl",
+  "test": "data/v1.2_sd_core_test_en.jsonl",
+  "task_types": [
+    "auxiliary_decision"
+  ],
+  "objective": "pretrained_seq2seq_generation",
+  "model_name": "t5-small",
+  "run_kind": "heldout_evaluation",
+  "device": "cuda",
+  "determinism_contract": {
+    "python_hash_seed": null,
+    "cublas_workspace_config": ":4096:8",
+    "numpy_seeded": true,
+    "torch_seeded": true,
+    "cuda_seeded": true,
+    "deterministic_algorithms": true,
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": true,
+    "cuda_matmul_tf32": false,
+    "cudnn_tf32": false
+  },
+  "train_records": 3602,
+  "validation_records": 451,
+  "test_records": 448,
+  "truncation_audit": {
+    "train": {
+      "records": 3602,
+      "max_source_tokens": 458,
+      "max_target_tokens": 242,
+      "source_truncated_records": 134,
+      "target_truncated_records": 0,
+      "source_truncation_rate": 0.03720155469183787,
+      "target_truncation_rate": 0.0
+    },
+    "validation": {
+      "records": 451,
+      "max_source_tokens": 449,
+      "max_target_tokens": 237,
+      "source_truncated_records": 12,
+      "target_truncated_records": 0,
+      "source_truncation_rate": 0.026607538802660754,
+      "target_truncation_rate": 0.0
+    },
+    "test": {
+      "records": 448,
+      "max_source_tokens": 453,
+      "max_target_tokens": 228,
+      "source_truncated_records": 14,
+      "target_truncated_records": 0,
+      "source_truncation_rate": 0.03125,
+      "target_truncation_rate": 0.0
+    }
+  },
+  "input_sha256": {
+    "train": "ff09925aacb7767dc303eebd4d4089c69f7216977bd9c0e76198788660c9ed3a",
+    "validation": "bbb8fab5478b7a4cc8b0b729180d3225cafc081ea56c5e30938f021b28b1e4a5",
+    "test": "982e6bef11f3cbc8fa8e3e280c447aadbb22bd26e708fd070957042f436755c0"
+  },
+  "prediction_sha256": {
+    "validation": "b9aad8dadf7761524f2c6bc2d97efaa4d5b0b503f1bded79fc59cefa60efce09",
+    "test": "8329b7d6d61ca93814a602c025006b8d989dacd16cf8843e991b727f3f839a9b"
+  },
+  "config": {
+    "output_prefix": "benchmark/v1.2_sd_core_seq2seq_auxiliary_decision",
+    "experiment_dir": "experiments/05_seq2seq_generation/sd_core_auxiliary_decision_highlr",
+    "training_log": "experiments/05_seq2seq_generation/sd_core_auxiliary_decision_highlr/logs/training_log.jsonl",
+    "epochs": 10,
+    "batch_size": 32,
+    "learning_rate": 0.0005,
+    "weight_decay": 0.01,
+    "seed": 43,
+    "max_source_len": 384,
+    "max_target_len": 320,
+    "target_mode": "full",
+    "prompt_mode": "compact",
+    "num_beams": 1,
+    "use_slow_tokenizer": false,
+    "local_files_only": false,
+    "cpu": false,
+    "json_constrained_decoding": true,
+    "json_schema": {
+      "type": "object",
+      "properties": {
+        "response": {},
+        "tools": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "response",
+        "tools"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.9895989348930595,
+      "validation_exact_match": 0.0,
+      "validation_selection_f1": 0.9086283397027912
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.32593349123423077,
+      "validation_exact_match": 0.0,
+      "validation_selection_f1": 0.9162329598321145
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.24730991380932058,
+      "validation_exact_match": 0.0,
+      "validation_selection_f1": 0.9235115412191343
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.20895938153288005,
+      "validation_exact_match": 0.0,
+      "validation_selection_f1": 0.9225329849743662
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.18365385732819547,
+      "validation_exact_match": 0.0,
+      "validation_selection_f1": 0.9240261036328667
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.16470102108685317,
+      "validation_exact_match": 0.0,
+      "validation_selection_f1": 0.9238824060583491
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.14911902069517996,
+      "validation_exact_match": 0.0,
+      "validation_selection_f1": 0.9260663517257691
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.13782649058683782,
+      "validation_exact_match": 0.0,
+      "validation_selection_f1": 0.9257209117616076
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.12720794824108614,
+      "validation_exact_match": 0.0,
+      "validation_selection_f1": 0.928598472105078
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.11914777788704475,
+      "validation_exact_match": 0.0,
+      "validation_selection_f1": 0.9293742568945643
+    }
+  ],
+  "best_epoch": 10,
+  "best_validation": {
+    "exact_match": 0.0,
+    "char_f1": 0.9293742568945643,
+    "selection_f1": 0.9293742568945643,
+    "n": 451,
+    "prediction_is_json": 0.0
+  },
+  "final_validation": {
+    "exact_match": 0.0,
+    "char_f1": 0.9293742568945643,
+    "selection_f1": 0.9293742568945643,
+    "n": 451,
+    "prediction_is_json": 0.0
+  },
+  "test_evaluation": {
+    "exact_match": 0.0,
+    "char_f1": 0.9255203565884278,
+    "selection_f1": 0.9255203565884278,
+    "n": 448,
+    "prediction_is_json": 0.0
+  },
+  "metric_definition": "whitespace-token F1 for natural-language QA; character F1 is separately named for structured JSON and accompanied by canonical JSON, schema-validity, and typed required-field metrics",
+  "note": "Pretrained seq2seq generation baseline with held-out evaluation and saved checkpoints. In actionable mode, intelligent_data_query targets the executable structured_query; query_result remains validated as a dataset/simulation field rather than generated from hidden simulation records."
+}

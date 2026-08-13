@@ -1,0 +1,131 @@
+{
+  "generated_at": "2026-08-06T12:13:31.744141+00:00",
+  "code_sha256": "7467f57d27c1c466e7ca1548b48d713c93738ef2a9bc79da9ce8250cfca158fe",
+  "train": "data/v1.2_sd_core_template_holdout_train_en.jsonl",
+  "validation": "data/v1.2_sd_core_template_holdout_validation_en.jsonl",
+  "test": "data/v1.2_sd_core_template_holdout_test_en.jsonl",
+  "ood": "",
+  "objective": "task_specific_tfidf_baselines",
+  "status": "pass",
+  "train_records": 38623,
+  "validation_records": 5682,
+  "test_records": 11116,
+  "ood_records": 0,
+  "input_sha256": {
+    "train": "3b28917909d1a2020c32336b471110532f31e1f3747e1ad53cf7ad816e69d006",
+    "validation": "31a4137f2238c8160203dd3fdbf6560ab0a9064aadf6032aba58ff20f1ff257f",
+    "test": "8debe62e4cb4c4f995686c5ca822b78386784e94f4a4e51c4fd5ff1f3aca5bc1",
+    "ood": null
+  },
+  "validation_metrics": {
+    "dispatcher_intent_tool_call": {
+      "task_type": "dispatcher_intent_tool_call",
+      "model_family": "tfidf_linear_svc",
+      "n": 1986,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
+      "label_space": [
+        "diagnose_and_dispatch",
+        "mitigate_violations",
+        "security_check_and_redispatch"
+      ]
+    },
+    "operation_ticket_check": {
+      "task_type": "operation_ticket_check",
+      "model_family": "tfidf_linear_svc",
+      "n": 1110,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
+      "label_space": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ]
+    },
+    "regulation_compliance_check": {
+      "task_type": "regulation_compliance_check",
+      "model_family": "tfidf_linear_svc",
+      "n": 2586,
+      "accuracy": 0.9953596287703016,
+      "macro_f1": 0.9941206305595295,
+      "balanced_accuracy": 0.9981718464351005,
+      "label_space": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ]
+    }
+  },
+  "test_metrics": {
+    "dispatcher_intent_tool_call": {
+      "task_type": "dispatcher_intent_tool_call",
+      "model_family": "tfidf_linear_svc",
+      "n": 3955,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
+      "label_space": [
+        "diagnose_and_dispatch",
+        "mitigate_violations",
+        "security_check_and_redispatch"
+      ]
+    },
+    "operation_ticket_check": {
+      "task_type": "operation_ticket_check",
+      "model_family": "tfidf_linear_svc",
+      "n": 2186,
+      "accuracy": 0.9995425434583715,
+      "macro_f1": 0.9996142706820376,
+      "balanced_accuracy": 0.9995002498750626,
+      "label_space": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ]
+    },
+    "regulation_compliance_check": {
+      "task_type": "regulation_compliance_check",
+      "model_family": "tfidf_linear_svc",
+      "n": 4975,
+      "accuracy": 0.9792964824120604,
+      "macro_f1": 0.9861926650139811,
+      "balanced_accuracy": 0.9863443719750498,
+      "label_space": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ]
+    }
+  },
+  "ood_metrics": {},
+  "validation_metric_families": {
+    "classification_task_macro_f1": 0.9980402101865099,
+    "classification_task_macro_accuracy": 0.9984532095901005,
+    "generation_task_macro_exact_match": null,
+    "generation_task_macro_token_f1": null,
+    "aggregation_policy": "metrics are aggregated only within comparable task families"
+  },
+  "test_metric_families": {
+    "classification_task_macro_f1": 0.9952689785653396,
+    "classification_task_macro_accuracy": 0.9929463419568106,
+    "generation_task_macro_exact_match": null,
+    "generation_task_macro_token_f1": null,
+    "aggregation_policy": "metrics are aggregated only within comparable task families"
+  },
+  "ood_metric_families": {
+    "classification_task_macro_f1": null,
+    "classification_task_macro_accuracy": null,
+    "generation_task_macro_exact_match": null,
+    "generation_task_macro_token_f1": null,
+    "aggregation_policy": "metrics are aggregated only within comparable task families"
+  },
+  "deprecated_cross_task_macro_score": null,
+  "note": "Classification tasks use macro-F1 as the primary metric. Generation tasks report exact match and token-F1 separately; incompatible metrics are not averaged together.",
+  "prediction_sha256": {
+    "validation": "7a0b7923b9ce5d418511afa7dce18e1015afbc687d36566dd10edaf728daabc1",
+    "test": "850037ec5db6721d9275d42f0d09148795b84f6634f65165c2e26c9bf65de1a1",
+    "ood": null
+  }
+}

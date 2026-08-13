@@ -1,0 +1,31 @@
+# Source/English Alignment Gate
+
+- Status: `pass`
+- Full records: 95479/95479
+- Full stable-field mismatches: 0
+- Audited splits: 23
+- Missing English splits: 0
+
+- `data/v1.2_sd_core_boundary_challenge_test.jsonl` -> `data/v1.2_sd_core_boundary_challenge_test_en.jsonl`: pass, records=4800/4800, stable_mismatches=0
+- `data/v1.2_sd_core_challenge_proxyreduced_test.jsonl` -> `data/v1.2_sd_core_challenge_proxyreduced_test_en.jsonl`: pass, records=5337/5337, stable_mismatches=0
+- `data/v1.2_sd_core_challenge_proxyreduced_train.jsonl` -> `data/v1.2_sd_core_challenge_proxyreduced_train_en.jsonl`: pass, records=44339/44339, stable_mismatches=0
+- `data/v1.2_sd_core_challenge_proxyreduced_validation.jsonl` -> `data/v1.2_sd_core_challenge_proxyreduced_validation_en.jsonl`: pass, records=5745/5745, stable_mismatches=0
+- `data/v1.2_sd_core_challenge_test.jsonl` -> `data/v1.2_sd_core_challenge_test_en.jsonl`: pass, records=5337/5337, stable_mismatches=0
+- `data/v1.2_sd_core_challenge_train.jsonl` -> `data/v1.2_sd_core_challenge_train_en.jsonl`: pass, records=44339/44339, stable_mismatches=0
+- `data/v1.2_sd_core_challenge_validation.jsonl` -> `data/v1.2_sd_core_challenge_validation_en.jsonl`: pass, records=5745/5745, stable_mismatches=0
+- `data/v1.2_sd_core_ood_test.jsonl` -> `data/v1.2_sd_core_ood_test_en.jsonl`: pass, records=59588/59588, stable_mismatches=0
+- `data/v1.2_sd_core_proxyreduced_test.jsonl` -> `data/v1.2_sd_core_proxyreduced_test_en.jsonl`: pass, records=2305/2305, stable_mismatches=0
+- `data/v1.2_sd_core_proxyreduced_train.jsonl` -> `data/v1.2_sd_core_proxyreduced_train_en.jsonl`: pass, records=18240/18240, stable_mismatches=0
+- `data/v1.2_sd_core_proxyreduced_validation.jsonl` -> `data/v1.2_sd_core_proxyreduced_validation_en.jsonl`: pass, records=2293/2293, stable_mismatches=0
+- `data/v1.2_sd_core_strict_proxyreduced_test.jsonl` -> `data/v1.2_sd_core_strict_proxyreduced_test_en.jsonl`: pass, records=5555/5555, stable_mismatches=0
+- `data/v1.2_sd_core_strict_proxyreduced_train.jsonl` -> `data/v1.2_sd_core_strict_proxyreduced_train_en.jsonl`: pass, records=44300/44300, stable_mismatches=0
+- `data/v1.2_sd_core_strict_proxyreduced_validation.jsonl` -> `data/v1.2_sd_core_strict_proxyreduced_validation_en.jsonl`: pass, records=5566/5566, stable_mismatches=0
+- `data/v1.2_sd_core_strict_test.jsonl` -> `data/v1.2_sd_core_strict_test_en.jsonl`: pass, records=9559/9559, stable_mismatches=0
+- `data/v1.2_sd_core_strict_train.jsonl` -> `data/v1.2_sd_core_strict_train_en.jsonl`: pass, records=76350/76350, stable_mismatches=0
+- `data/v1.2_sd_core_strict_validation.jsonl` -> `data/v1.2_sd_core_strict_validation_en.jsonl`: pass, records=9570/9570, stable_mismatches=0
+- `data/v1.2_sd_core_template_holdout_test.jsonl` -> `data/v1.2_sd_core_template_holdout_test_en.jsonl`: pass, records=11116/11116, stable_mismatches=0
+- `data/v1.2_sd_core_template_holdout_train.jsonl` -> `data/v1.2_sd_core_template_holdout_train_en.jsonl`: pass, records=38623/38623, stable_mismatches=0
+- `data/v1.2_sd_core_template_holdout_validation.jsonl` -> `data/v1.2_sd_core_template_holdout_validation_en.jsonl`: pass, records=5682/5682, stable_mismatches=0
+- `data/v1.2_sd_core_test.jsonl` -> `data/v1.2_sd_core_test_en.jsonl`: pass, records=3609/3609, stable_mismatches=0
+- `data/v1.2_sd_core_train.jsonl` -> `data/v1.2_sd_core_train_en.jsonl`: pass, records=28684/28684, stable_mismatches=0
+- `data/v1.2_sd_core_validation.jsonl` -> `data/v1.2_sd_core_validation_en.jsonl`: pass, records=3598/3598, stable_mismatches=0

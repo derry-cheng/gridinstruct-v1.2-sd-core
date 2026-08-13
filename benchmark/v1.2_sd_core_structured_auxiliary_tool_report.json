@@ -1,0 +1,51 @@
+{
+  "generated_at": "2026-07-09T15:13:01.925420+00:00",
+  "objective": "schema_aware_supervised_auxiliary_tool_sequence_prediction",
+  "train": "data/v1.2_sd_core_train_en.jsonl",
+  "validation": "data/v1.2_sd_core_validation_en.jsonl",
+  "test": "data/v1.2_sd_core_test_en.jsonl",
+  "ood": "data/v1.2_sd_core_ood_test_en.jsonl",
+  "train_records": 3466,
+  "validation_records": 418,
+  "test_records": 416,
+  "ood_records": 12221,
+  "validation_evaluation": {
+    "accuracy": 0.8588516746411483,
+    "macro_f1": 0.5679018834866404,
+    "tool_sequence_exact": 0.8588516746411483,
+    "tool_set_exact": 0.8588516746411483,
+    "tool_set_jaccard": 1.0,
+    "prediction_is_json": 1.0,
+    "n": 418,
+    "label_counts": {
+      "[\"run_power_flow\", \"run_opf_redispatch\"]": 410,
+      "[\"run_power_flow\", \"run_opf_redispatch\", \"run_power_flow\"]": 8
+    }
+  },
+  "test_evaluation": {
+    "accuracy": 0.78125,
+    "macro_f1": 0.5408889697410708,
+    "tool_sequence_exact": 0.78125,
+    "tool_set_exact": 0.78125,
+    "tool_set_jaccard": 1.0,
+    "prediction_is_json": 1.0,
+    "n": 416,
+    "label_counts": {
+      "[\"run_power_flow\", \"run_opf_redispatch\"]": 404,
+      "[\"run_power_flow\", \"run_opf_redispatch\", \"run_power_flow\"]": 12
+    }
+  },
+  "ood_evaluation": {
+    "accuracy": 0.8811062924474266,
+    "macro_f1": 0.5155396152360826,
+    "tool_sequence_exact": 0.8811062924474266,
+    "tool_set_exact": 0.8811062924474266,
+    "tool_set_jaccard": 1.0,
+    "prediction_is_json": 1.0,
+    "n": 12221,
+    "label_counts": {
+      "[\"run_power_flow\", \"run_opf_redispatch\"]": 12011,
+      "[\"run_power_flow\", \"run_opf_redispatch\", \"run_power_flow\"]": 210
+    }
+  }
+}

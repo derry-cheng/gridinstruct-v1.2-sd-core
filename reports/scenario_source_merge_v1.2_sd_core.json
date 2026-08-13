@@ -1,0 +1,33 @@
+{
+  "generated_at": "2026-07-31T08:12:51.003316+00:00",
+  "status": "pass",
+  "sources": [
+    {
+      "path": "simulation_outputs/power_flow/scenarios_converged_core.json",
+      "sha256": "d35aa857076dbe6f7c3d3986f8d623a80e4d154a01c5a737e442d59e9427a80d",
+      "records": 2630,
+      "converged_records_before_exclusion": 2630,
+      "excluded_migrated_scenarios": 0,
+      "converged_records": 2630
+    },
+    {
+      "path": "simulation_outputs/topology_stress/extended_topology_scenarios.json",
+      "sha256": "5341c7850889358eff243b6dcaabb9cdea6e1f95825b37874e8a8b856fca7c19",
+      "records": 416,
+      "converged_records_before_exclusion": 416,
+      "excluded_migrated_scenarios": 0,
+      "converged_records": 416
+    }
+  ],
+  "source_records_total": 3046,
+  "unique_converged_scenarios": 3046,
+  "exact_duplicate_scenario_ids_deduplicated": [],
+  "exclusion_report": null,
+  "excluded_migrated_scenario_ids": [],
+  "excluded_migrated_scenario_count": 0,
+  "migration_replacement_scenario_ids": [],
+  "migration_replacements_present": true,
+  "output": "simulation_outputs/contingency/scenario_rebuild_manifest.json",
+  "output_sha256": "ac08e37488bdb6d4044613588e269809f4ba20ed0a108c3234bbc216fb603c6c",
+  "duplicate_policy": "exact duplicates are deduplicated; conflicting duplicate IDs fail before writing"
+}

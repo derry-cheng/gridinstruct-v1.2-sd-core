@@ -1,0 +1,53 @@
+{
+  "generated_at": "2026-08-12",
+  "release": "GridInstruct v1.2-sd-core",
+  "purpose": "Reconcile legacy construction-grounding receipts with the current compact release evidence without overwriting either receipt.",
+  "canonical_current_receipt": "reports/current_release_integrity_audit_v1.2_sd_core.json",
+  "legacy_receipt": "reports/generation_grounding_audit_v1.2_sd_core.json",
+  "reconciliation": [
+    {
+      "check": "row-level scenario and network links",
+      "legacy_result": "scenario_links_valid reported fail with missing=160; network mismatch=0",
+      "current_result": "scenario_link_missing_count=0; scenario_id_mismatch_count=0; network_missing_count=0",
+      "explanation": "The legacy receipt was generated before the current compact snapshot bound the migrated release rows and retained a pre-migration source lookup. It remains a historical construction artifact and is not the current row-integrity gate.",
+      "current_claim_boundary": "Current release rows have internally consistent scenario and network identifiers; this does not prove that the raw population-level scenario ledger is present."
+    },
+    {
+      "check": "explicit severity labels",
+      "legacy_result": "severity_metadata_consistent reported fail with mismatch=22437",
+      "current_result": "severity_checked=51804; severity_mismatch_count=0",
+      "explanation": "The legacy check compared a prior source-stage representation with the promoted release representation. The current receipt checks the explicit severity field against the current released truth contract.",
+      "current_claim_boundary": "Explicit severity consistency passes for the checked release field; it is separate from the incomplete numeric-state diagnostic."
+    },
+    {
+      "check": "numeric severity diagnostic",
+      "legacy_result": "not a complete-state physical gate",
+      "current_result": "42577 rows checked; 0 complete loading/minV/maxV tuples; 11810 diagnostic differences; max_vm missing in 42577 rows",
+      "explanation": "The current compact release does not expose a complete numeric tuple for these rows, so the diagnostic cannot be promoted to an independent physical validation result.",
+      "current_claim_boundary": "No claim of population-wide numeric severity correctness is made."
+    },
+    {
+      "check": "action-level physical recomputation",
+      "legacy_result": "historical source-dependent recomputation",
+      "current_result": "scenario_lookup_available=false; current audit compares released labels with the release-integrity source",
+      "explanation": "The action-level audit is intentionally scoped to released-field consistency when the authoritative raw scenario lookup is unavailable.",
+      "current_claim_boundary": "It is not a closed-loop physical dispatch execution test."
+    }
+  ],
+  "independent_solver_scope": {
+    "receipt": "reports/independent_solver_validation_v1.2_sd_core_rebound.json",
+    "raw_evidence": "reports/independent_solver_raw_evidence_v1.2_sd_core_rebound.json",
+    "case_manifest": "metadata/independent_solver_case_manifest_v1.json",
+    "cases": 160,
+    "passed": 160,
+    "scope": "native-source LightSim2Grid fixed-control replays for the registered case manifest",
+    "not_established": "full-population scenario reconstruction or independent OPF action generation"
+  },
+  "decision": {
+    "legacy_receipt_preserved": true,
+    "current_receipt_used_for_manuscript": true,
+    "raw_ledger_gate_open": true,
+    "human_review_gate_open": true,
+    "public_accession_gate_open": true
+  }
+}

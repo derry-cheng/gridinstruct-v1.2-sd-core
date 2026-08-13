@@ -1,0 +1,219 @@
+{
+  "generated_at": "2026-07-31T08:12:29.599339+00:00",
+  "status": "pass",
+  "legacy_scenarios": "simulation_outputs/topology_stress/legacy_topology_scenarios_v1.json",
+  "legacy_scenarios_sha256": "03da20b82d290d32f9f05388c1585cbce66c71af8350db66875bd53a30ef3d33",
+  "current_scenarios": "simulation_outputs/topology_stress/extended_topology_scenarios.json",
+  "current_scenarios_sha256": "5341c7850889358eff243b6dcaabb9cdea6e1f95825b37874e8a8b856fca7c19",
+  "frozen_records": "data/frozen_sources/extended_topology_instruction_v1.jsonl",
+  "frozen_records_sha256": "6578d6538f6ccad618b23bf7cac95f96cba8c82c4b196df99c961dd643dade02",
+  "output_records": "data/frozen_sources/extended_topology_instruction_v2.jsonl",
+  "output_records_sha256": "29374112132f6ef9fc870ee14c9921c4f544a280ed838f1976143badf5ea0994",
+  "legacy_scenario_count": 71,
+  "replayable_legacy_scenario_count": 50,
+  "invalid_legacy_scenario_count": 21,
+  "invalid_legacy_scenario_ids": [
+    "ieee300_base_power_flow_load100",
+    "ieee300_n1_branch_outage_load100_line0",
+    "ieee300_n1_branch_outage_load100_line141",
+    "ieee300_n1_branch_outage_load100_line231",
+    "ieee300_n1_branch_outage_load100_line252",
+    "ieee300_n1_branch_outage_load100_line265",
+    "ieee300_n1_branch_outage_load100_line282",
+    "ieee300_n1_branch_outage_load100_line66",
+    "ieee300_n1_branch_outage_load100_line98",
+    "pegase1354_n1_branch_outage_load100_line0",
+    "pegase1354_n1_branch_outage_load100_line942",
+    "pegase1354_n1_branch_outage_load110_line0",
+    "pegase1354_n1_branch_outage_load110_line942",
+    "pegase1354_n1_branch_outage_load90_line0",
+    "pegase1354_n1_branch_outage_load90_line942",
+    "pegase89_n1_branch_outage_load100_line0",
+    "pegase89_n1_branch_outage_load110_line0",
+    "pegase89_n1_branch_outage_load90_line0",
+    "rte1888_n1_branch_outage_load100_line0",
+    "rte1888_n1_branch_outage_load100_line1201",
+    "rte1888_n1_branch_outage_load100_line988"
+  ],
+  "record_count_before": 1136,
+  "record_count_after": 1136,
+  "migrated_record_count": 336,
+  "task_counts_after": {
+    "regulation_compliance_check": 284,
+    "auxiliary_decision": 284,
+    "dispatcher_intent_tool_call": 284,
+    "intelligent_data_query": 284
+  },
+  "scenario_migration": {
+    "ieee300_base_power_flow_load100": {
+      "replacement_scenario_id": "ieee300_sdv2_base_power_flow_load0p955",
+      "network_model": "ieee300",
+      "contingency_type": "base_power_flow",
+      "legacy_load_level": 1.0,
+      "replacement_load_level": 0.955,
+      "legacy_replay_error": "LoadflowNotConverged: Power Flow nr did not converge after 50 iterations!"
+    },
+    "ieee300_n1_branch_outage_load100_line0": {
+      "replacement_scenario_id": "ieee300_sdv2_n1_branch_outage_load0p955_line123",
+      "network_model": "ieee300",
+      "contingency_type": "n1_branch_outage",
+      "legacy_load_level": 1.0,
+      "replacement_load_level": 0.955,
+      "legacy_replay_error": "LoadflowNotConverged: Power Flow nr did not converge after 50 iterations!"
+    },
+    "ieee300_n1_branch_outage_load100_line141": {
+      "replacement_scenario_id": "ieee300_sdv2_n1_branch_outage_load0p955_line128",
+      "network_model": "ieee300",
+      "contingency_type": "n1_branch_outage",
+      "legacy_load_level": 1.0,
+      "replacement_load_level": 0.955,
+      "legacy_replay_error": "LoadflowNotConverged: Power Flow nr did not converge after 50 iterations!"
+    },
+    "ieee300_n1_branch_outage_load100_line231": {
+      "replacement_scenario_id": "ieee300_sdv2_n1_branch_outage_load0p955_line141",
+      "network_model": "ieee300",
+      "contingency_type": "n1_branch_outage",
+      "legacy_load_level": 1.0,
+      "replacement_load_level": 0.955,
+      "legacy_replay_error": "LoadflowNotConverged: Power Flow nr did not converge after 50 iterations!"
+    },
+    "ieee300_n1_branch_outage_load100_line252": {
+      "replacement_scenario_id": "ieee300_sdv2_n1_branch_outage_load0p955_line144",
+      "network_model": "ieee300",
+      "contingency_type": "n1_branch_outage",
+      "legacy_load_level": 1.0,
+      "replacement_load_level": 0.955,
+      "legacy_replay_error": "LoadflowNotConverged: Power Flow nr did not converge after 50 iterations!"
+    },
+    "ieee300_n1_branch_outage_load100_line265": {
+      "replacement_scenario_id": "ieee300_sdv2_n1_branch_outage_load0p955_line20",
+      "network_model": "ieee300",
+      "contingency_type": "n1_branch_outage",
+      "legacy_load_level": 1.0,
+      "replacement_load_level": 0.955,
+      "legacy_replay_error": "LoadflowNotConverged: Power Flow nr did not converge after 50 iterations!"
+    },
+    "ieee300_n1_branch_outage_load100_line282": {
+      "replacement_scenario_id": "ieee300_sdv2_n1_branch_outage_load0p955_line231",
+      "network_model": "ieee300",
+      "contingency_type": "n1_branch_outage",
+      "legacy_load_level": 1.0,
+      "replacement_load_level": 0.955,
+      "legacy_replay_error": "LoadflowNotConverged: Power Flow nr did not converge after 50 iterations!"
+    },
+    "ieee300_n1_branch_outage_load100_line66": {
+      "replacement_scenario_id": "ieee300_sdv2_n1_branch_outage_load0p955_line244",
+      "network_model": "ieee300",
+      "contingency_type": "n1_branch_outage",
+      "legacy_load_level": 1.0,
+      "replacement_load_level": 0.955,
+      "legacy_replay_error": "LoadflowNotConverged: Power Flow nr did not converge after 50 iterations!"
+    },
+    "ieee300_n1_branch_outage_load100_line98": {
+      "replacement_scenario_id": "ieee300_sdv2_n1_branch_outage_load0p955_line251",
+      "network_model": "ieee300",
+      "contingency_type": "n1_branch_outage",
+      "legacy_load_level": 1.0,
+      "replacement_load_level": 0.955,
+      "legacy_replay_error": "LoadflowNotConverged: Power Flow nr did not converge after 50 iterations!"
+    },
+    "pegase1354_n1_branch_outage_load100_line0": {
+      "replacement_scenario_id": "pegase1354_sdv2_n1_branch_outage_load100_line1013",
+      "network_model": "pegase1354",
+      "contingency_type": "n1_branch_outage",
+      "legacy_load_level": 1.0,
+      "replacement_load_level": 1.0,
+      "legacy_replay_error": "ValueError: pegase1354_n1_branch_outage_load100_line0: non-finite in-service electrical state"
+    },
+    "pegase1354_n1_branch_outage_load100_line942": {
+      "replacement_scenario_id": "pegase1354_sdv2_n1_branch_outage_load100_line1084",
+      "network_model": "pegase1354",
+      "contingency_type": "n1_branch_outage",
+      "legacy_load_level": 1.0,
+      "replacement_load_level": 1.0,
+      "legacy_replay_error": "ValueError: pegase1354_n1_branch_outage_load100_line942: non-finite in-service electrical state"
+    },
+    "pegase1354_n1_branch_outage_load110_line0": {
+      "replacement_scenario_id": "pegase1354_sdv2_n1_branch_outage_load100_line116",
+      "network_model": "pegase1354",
+      "contingency_type": "n1_branch_outage",
+      "legacy_load_level": 1.1,
+      "replacement_load_level": 1.0,
+      "legacy_replay_error": "ValueError: pegase1354_n1_branch_outage_load110_line0: non-finite in-service electrical state"
+    },
+    "pegase1354_n1_branch_outage_load110_line942": {
+      "replacement_scenario_id": "pegase1354_sdv2_n1_branch_outage_load100_line1288",
+      "network_model": "pegase1354",
+      "contingency_type": "n1_branch_outage",
+      "legacy_load_level": 1.1,
+      "replacement_load_level": 1.0,
+      "legacy_replay_error": "ValueError: pegase1354_n1_branch_outage_load110_line942: non-finite in-service electrical state"
+    },
+    "pegase1354_n1_branch_outage_load90_line0": {
+      "replacement_scenario_id": "pegase1354_sdv2_n1_branch_outage_load95_line1298",
+      "network_model": "pegase1354",
+      "contingency_type": "n1_branch_outage",
+      "legacy_load_level": 0.9,
+      "replacement_load_level": 0.95,
+      "legacy_replay_error": "ValueError: pegase1354_n1_branch_outage_load90_line0: non-finite in-service electrical state"
+    },
+    "pegase1354_n1_branch_outage_load90_line942": {
+      "replacement_scenario_id": "pegase1354_sdv2_n1_branch_outage_load95_line1477",
+      "network_model": "pegase1354",
+      "contingency_type": "n1_branch_outage",
+      "legacy_load_level": 0.9,
+      "replacement_load_level": 0.95,
+      "legacy_replay_error": "ValueError: pegase1354_n1_branch_outage_load90_line942: non-finite in-service electrical state"
+    },
+    "pegase89_n1_branch_outage_load100_line0": {
+      "replacement_scenario_id": "pegase89_sdv2_n1_branch_outage_load100_line1",
+      "network_model": "pegase89",
+      "contingency_type": "n1_branch_outage",
+      "legacy_load_level": 1.0,
+      "replacement_load_level": 1.0,
+      "legacy_replay_error": "ValueError: pegase89_n1_branch_outage_load100_line0: non-finite in-service electrical state"
+    },
+    "pegase89_n1_branch_outage_load110_line0": {
+      "replacement_scenario_id": "pegase89_sdv2_n1_branch_outage_load105_line108",
+      "network_model": "pegase89",
+      "contingency_type": "n1_branch_outage",
+      "legacy_load_level": 1.1,
+      "replacement_load_level": 1.05,
+      "legacy_replay_error": "ValueError: pegase89_n1_branch_outage_load110_line0: non-finite in-service electrical state"
+    },
+    "pegase89_n1_branch_outage_load90_line0": {
+      "replacement_scenario_id": "pegase89_sdv2_n1_branch_outage_load95_line100",
+      "network_model": "pegase89",
+      "contingency_type": "n1_branch_outage",
+      "legacy_load_level": 0.9,
+      "replacement_load_level": 0.95,
+      "legacy_replay_error": "ValueError: pegase89_n1_branch_outage_load90_line0: non-finite in-service electrical state"
+    },
+    "rte1888_n1_branch_outage_load100_line0": {
+      "replacement_scenario_id": "rte1888_sdv2_n1_branch_outage_load100_line1021",
+      "network_model": "rte1888",
+      "contingency_type": "n1_branch_outage",
+      "legacy_load_level": 1.0,
+      "replacement_load_level": 1.0,
+      "legacy_replay_error": "ValueError: rte1888_n1_branch_outage_load100_line0: non-finite in-service electrical state"
+    },
+    "rte1888_n1_branch_outage_load100_line1201": {
+      "replacement_scenario_id": "rte1888_sdv2_n1_branch_outage_load100_line1346",
+      "network_model": "rte1888",
+      "contingency_type": "n1_branch_outage",
+      "legacy_load_level": 1.0,
+      "replacement_load_level": 1.0,
+      "legacy_replay_error": "ValueError: rte1888_n1_branch_outage_load100_line1201: non-finite in-service electrical state"
+    },
+    "rte1888_n1_branch_outage_load100_line988": {
+      "replacement_scenario_id": "rte1888_sdv2_n1_branch_outage_load100_line1360",
+      "network_model": "rte1888",
+      "contingency_type": "n1_branch_outage",
+      "legacy_load_level": 1.0,
+      "replacement_load_level": 1.0,
+      "legacy_replay_error": "ValueError: rte1888_n1_branch_outage_load100_line988: non-finite in-service electrical state"
+    }
+  },
+  "cardinality_preserved": true,
+  "ids_preserved": true
+}

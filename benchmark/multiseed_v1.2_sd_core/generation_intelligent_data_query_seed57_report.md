@@ -1,0 +1,21 @@
+# Pretrained Seq2Seq Generation Baseline
+
+- Model: /root/.cache/huggingface/hub/models--t5-small/snapshots/df1b051c49625cf57a3d0d8d3863ed4d13564fe4
+- Device: cuda
+- Task types: intelligent_data_query
+- Target mode: actionable
+- Train records: 3476
+- Validation records: 434
+- Best epoch: 1
+- Validation exact match: 0.0000
+- Validation selection F1: 0.9870
+- Test split: data/v1.2_sd_core_test_en.jsonl
+- Test records: 437
+- Test exact match: 0.0000
+- Test selection F1: 0.9870
+- Test char_f1: 0.9870
+- Test prediction_is_json: 0.0000
+
+Pretrained seq2seq generation baseline with held-out evaluation and saved checkpoints. In actionable mode, intelligent_data_query targets the executable structured_query; query_result remains validated as a dataset/simulation field rather than generated from hidden simulation records.
+
+Metric: whitespace-token F1 for natural-language QA; character F1 is separately named for structured JSON and accompanied by canonical JSON, schema-validity, and typed required-field metrics

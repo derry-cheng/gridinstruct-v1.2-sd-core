@@ -1,0 +1,7 @@
+# Evidence reconciliation for GridInstruct v1.2-sd-core
+
+The July 31 `generation_grounding_audit_v1.2_sd_core` receipt is preserved as a historical construction artifact. It used a pre-migration source lookup and therefore reports 160 missing scenario links and 22,437 severity differences. The August 8 `current_release_integrity_audit_v1.2_sd_core` receipt is the canonical row-level gate for the promoted compact release: it checks 95,479 current rows, reports zero missing or mismatched scenario links, zero network-link errors, and zero explicit-severity mismatches among 51,804 checked rows.
+
+These receipts answer different questions and must not be merged into one pass claim. The current release still has an incomplete numeric-state diagnostic: all 42,577 checked rows lack a complete loading/minimum-voltage/maximum-voltage tuple, and 11,810 numeric-versus-explicit differences are retained as diagnostics. The action-level audit also reports `scenario_lookup_available=false`, so it checks released-field consistency and does not claim independent physical recomputation.
+
+The current rebound native-source replay (`independent_solver_validation_v1.2_sd_core_rebound.json`, bound to `independent_solver_case_manifest_v1.json`) covers 160 registered fixed-control cases and passes all 160. It does not replace the missing full-population scenario ledger, 35,200-candidate OPF ledger, complete solver arrays, or completed expert review. These remain explicit external gates for a submission-ready Scientific Data package.

@@ -1,0 +1,83 @@
+{
+  "generated_at": "2026-08-09",
+  "scope": "asset-level comparison for the closest power-domain language and numerical resources",
+  "field_definitions": [
+    "record_or_instance_scale",
+    "natural_language_supervision",
+    "physical_state_reconstruction",
+    "rule_or_regulation_links",
+    "typed_structured_contract",
+    "executable_control_evidence",
+    "topology_transfer_control",
+    "independent_human_validation",
+    "public_access_and_license"
+  ],
+  "resources": [
+    {
+      "name": "GAIA",
+      "record_or_instance_scale": "160,000 fine-tuning records in the published release",
+      "natural_language_supervision": "yes",
+      "physical_state_reconstruction": "scenario-linked in the cited description; full arrays not crosswalked here",
+      "rule_or_regulation_links": "domain text and task labels",
+      "typed_structured_contract": "not reported in the cited paper",
+      "executable_control_evidence": "not reported in the cited paper",
+      "topology_transfer_control": "not reported in the cited paper",
+      "independent_human_validation": "not reported in the cited paper",
+      "public_access_and_license": "paper-specific accession to be checked before release comparison",
+      "source": "main.tex related-work citation cheng2025gaia"
+    },
+    {
+      "name": "ElecBench",
+      "record_or_instance_scale": "34,030 entries from 24 datasets",
+      "natural_language_supervision": "yes",
+      "physical_state_reconstruction": "heterogeneous source datasets; not reported as one scenario ledger",
+      "rule_or_regulation_links": "power-business task labels",
+      "typed_structured_contract": "task-level benchmark schemas",
+      "executable_control_evidence": "not reported as a unified AC replay contract",
+      "topology_transfer_control": "not reported",
+      "independent_human_validation": "not reported in the cited paper",
+      "public_access_and_license": "paper-specific accession to be checked before release comparison",
+      "source": "main.tex related-work citation zhang2025elecbench"
+    },
+    {
+      "name": "ProOPF-D/B",
+      "record_or_instance_scale": "12,000 plus 121 directly adjacent natural-language-to-OPF records",
+      "natural_language_supervision": "yes",
+      "physical_state_reconstruction": "case-linked",
+      "rule_or_regulation_links": "task and expert test-case metadata",
+      "typed_structured_contract": "natural-language to OPF modifications",
+      "executable_control_evidence": "expert-annotated tests",
+      "topology_transfer_control": "case-level tests",
+      "independent_human_validation": "expert test cases reported",
+      "public_access_and_license": "paper-specific accession to be checked before release comparison",
+      "source": "main.tex related-work citation proopf2026"
+    },
+    {
+      "name": "PowerGraph",
+      "record_or_instance_scale": "graph instances and ground-truth failure explanations",
+      "natural_language_supervision": "limited to explanations, not a six-task instruction table",
+      "physical_state_reconstruction": "power-flow/OPF/cascading-failure graph evidence",
+      "rule_or_regulation_links": "not reported",
+      "typed_structured_contract": "graph prediction targets",
+      "executable_control_evidence": "not a dispatch tool-plan contract",
+      "topology_transfer_control": "graph-structured network split dimensions",
+      "independent_human_validation": "not reported as double review",
+      "public_access_and_license": "paper-specific accession to be checked before release comparison",
+      "source": "main.tex related-work citation varbella2024powergraph"
+    },
+    {
+      "name": "GridInstruct v1.2-sd-core",
+      "record_or_instance_scale": "95,479 records; 80,393 topology-linked rows; 320 OPF rows from 160 scenarios",
+      "natural_language_supervision": "six typed dispatch-assistance task families in English",
+      "physical_state_reconstruction": "registered physical links and scoped fixed-control replay; raw full ledger pending",
+      "rule_or_regulation_links": "17 rule cards with source metadata and record links",
+      "typed_structured_contract": "query, tool-plan, ticket, compliance, and rule-answer contracts",
+      "executable_control_evidence": "320 registered OPF controls, seven N-1 checks, and two stress models",
+      "topology_transfer_control": "official OOD, strict source-group, template, MinHash proxy, and instruction-surface regimes",
+      "independent_human_validation": "1,600 assignments prepared; 0 completed",
+      "public_access_and_license": "local candidate; repository/DOI and full raw package pending",
+      "source": "reports/current_release_integrity_audit_v1.2_sd_core.json; reports/claim_evidence_map_2026-08-06.json"
+    }
+  ],
+  "interpretation": "The crosswalk separates reported source capabilities from GridInstruct evidence classes. 'Not reported' means the cited source was not used as evidence for that field; it is not a claim that the source lacks the capability. The GAIA scale is taken from its published release description; fields beyond that description remain unverified. Final comparison requires checking each public accession and license directly."
+}

@@ -1,0 +1,66 @@
+{
+  "generated_at": "2026-08-04T04:00:00.591698+00:00",
+  "status": "pass",
+  "rows": [
+    {
+      "task_type": "operation_ticket_check",
+      "standard_transformer_macro_f1": 1.0,
+      "challenge_transformer_macro_f1": 0.9993654879605177,
+      "template_holdout_tfidf_macro_f1": 0.9996142706820376,
+      "dedicated_boundary_tfidf_macro_f1": 0.8603583371804264,
+      "rule_context_no_rule_macro_f1": 1.0,
+      "rule_context_with_rule_macro_f1": 1.0,
+      "proxy_reduced_standard_macro_f1": 1.0,
+      "proxy_reduced_strict_macro_f1": 1.0,
+      "strict_evidence_available": true,
+      "model_score_flags": [
+        "near_perfect_standard_score",
+        "near_perfect_challenge_score",
+        "challenge_groups_are_nearly_label_pure"
+      ]
+    },
+    {
+      "task_type": "dispatcher_intent_tool_call",
+      "standard_transformer_macro_f1": 1.0,
+      "challenge_transformer_macro_f1": 0.7756025485188864,
+      "template_holdout_tfidf_macro_f1": 1.0,
+      "dedicated_boundary_tfidf_macro_f1": 1.0,
+      "rule_context_no_rule_macro_f1": 1.0,
+      "rule_context_with_rule_macro_f1": 1.0,
+      "proxy_reduced_standard_macro_f1": 1.0,
+      "proxy_reduced_strict_macro_f1": 1.0,
+      "strict_evidence_available": true,
+      "model_score_flags": [
+        "near_perfect_standard_score",
+        "standard_test_reuses_train_template_or_action_groups",
+        "challenge_groups_are_nearly_label_pure",
+        "input_fields_have_high_label_purity",
+        "challenge_score_drop"
+      ]
+    },
+    {
+      "task_type": "regulation_compliance_check",
+      "standard_transformer_macro_f1": 0.920374867245268,
+      "challenge_transformer_macro_f1": 1.0,
+      "template_holdout_tfidf_macro_f1": 0.9861926650139811,
+      "dedicated_boundary_tfidf_macro_f1": null,
+      "rule_context_no_rule_macro_f1": 0.8746693657585874,
+      "rule_context_with_rule_macro_f1": 0.8717964974316562,
+      "proxy_reduced_standard_macro_f1": 0.8553395066187058,
+      "proxy_reduced_strict_macro_f1": 0.9083189037131021,
+      "strict_evidence_available": true,
+      "model_score_flags": [
+        "near_perfect_challenge_score",
+        "standard_test_reuses_train_template_or_action_groups"
+      ]
+    }
+  ],
+  "figures": [
+    "figures/sd_core/fig_high_score_plausibility_matrix.png"
+  ],
+  "claim_guidance": [
+    "Use near-perfect standard split results as trainability and data-consistency evidence.",
+    "Report template-holdout, challenge, dedicated boundary-set, proxy-reduced, strict source-group, calibration, and statistical interval evidence beside high scores.",
+    "Use rule-context baselines as a provenance-usefulness check, not as a handcrafted operational rule system."
+  ]
+}

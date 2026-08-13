@@ -1,0 +1,250 @@
+{
+  "generated_at": "2026-07-09T15:50:35.353099+00:00",
+  "train": "data/v1.2_sd_core_strict_train_en.jsonl",
+  "validation": "data/v1.2_sd_core_strict_validation_en.jsonl",
+  "test": "data/v1.2_sd_core_strict_test_en.jsonl",
+  "task_type": "operation_ticket_check",
+  "objective": "transformer_sequence_classification",
+  "model_name": "distilbert-base-uncased",
+  "model_source": "distilbert-base-uncased",
+  "resolved_model_source": "distilbert-base-uncased",
+  "resolved_model_name": "distilbert-base-uncased",
+  "eval_only_model": null,
+  "run_kind": "heldout_evaluation",
+  "device": "cuda",
+  "device_details": {
+    "device": "cuda",
+    "cuda_visible_devices": "5",
+    "cuda_device_name": "NVIDIA H20",
+    "cuda_device_count": 1
+  },
+  "train_records": 8665,
+  "validation_records": 1113,
+  "test_records": 1103,
+  "label_space": [
+    "compliant",
+    "compliant_with_monitoring",
+    "non_compliant"
+  ],
+  "config": {
+    "output_prefix": "benchmark/v1.2_sd_core_strict_transformer_operation_ticket_check",
+    "epochs": 3,
+    "batch_size": 32,
+    "learning_rate": 2e-05,
+    "weight_decay": 0.01,
+    "max_length": 256,
+    "seed": 42,
+    "use_rationale": false,
+    "input_profile": "full",
+    "eval_only_model": null,
+    "local_files_only": true,
+    "cpu": false,
+    "class_weighting": "inverse_frequency",
+    "experiment_dir": "experiments/04_transformer_classification/sd_core_strict_en_refresh/operation_ticket_check",
+    "training_log": "experiments/04_transformer_classification/sd_core_strict_en_refresh/operation_ticket_check/logs/training_log.jsonl",
+    "class_weights": {
+      "compliant": 1.29871103117506,
+      "compliant_with_monitoring": 0.7390822244967588,
+      "non_compliant": 1.1402816160021056
+    },
+    "skip_latest_alias": true
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.15761376075305705,
+      "validation_accuracy": 1.0,
+      "validation_macro_f1": 1.0,
+      "validation_balanced_accuracy": 1.0
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.0035918568058207465,
+      "validation_accuracy": 1.0,
+      "validation_macro_f1": 1.0,
+      "validation_balanced_accuracy": 1.0
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.0026872562225418325,
+      "validation_accuracy": 1.0,
+      "validation_macro_f1": 1.0,
+      "validation_balanced_accuracy": 1.0
+    }
+  ],
+  "best_epoch": 1,
+  "best_validation": {
+    "accuracy": 1.0,
+    "macro_f1": 1.0,
+    "balanced_accuracy": 1.0,
+    "n": 1113
+  },
+  "final_validation": {
+    "accuracy": 1.0,
+    "macro_f1": 1.0,
+    "balanced_accuracy": 1.0,
+    "n": 1113
+  },
+  "validation_diagnostics": {
+    "gold_counts": {
+      "non_compliant": 313,
+      "compliant": 273,
+      "compliant_with_monitoring": 527
+    },
+    "prediction_counts": {
+      "non_compliant": 313,
+      "compliant": 273,
+      "compliant_with_monitoring": 527
+    },
+    "error_count": 0,
+    "confusion_matrix": {
+      "labels": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ],
+      "by_gold": {
+        "compliant": {
+          "compliant": 273,
+          "compliant_with_monitoring": 0,
+          "non_compliant": 0
+        },
+        "compliant_with_monitoring": {
+          "compliant": 0,
+          "compliant_with_monitoring": 527,
+          "non_compliant": 0
+        },
+        "non_compliant": {
+          "compliant": 0,
+          "compliant_with_monitoring": 0,
+          "non_compliant": 313
+        }
+      },
+      "matrix": [
+        [
+          273,
+          0,
+          0
+        ],
+        [
+          0,
+          527,
+          0
+        ],
+        [
+          0,
+          0,
+          313
+        ]
+      ]
+    },
+    "per_class": {
+      "compliant": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 273,
+        "predicted": 273
+      },
+      "compliant_with_monitoring": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 527,
+        "predicted": 527
+      },
+      "non_compliant": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 313,
+        "predicted": 313
+      }
+    }
+  },
+  "test_evaluation": {
+    "accuracy": 1.0,
+    "macro_f1": 1.0,
+    "balanced_accuracy": 1.0,
+    "n": 1103
+  },
+  "test_diagnostics": {
+    "gold_counts": {
+      "compliant_with_monitoring": 514,
+      "non_compliant": 315,
+      "compliant": 274
+    },
+    "prediction_counts": {
+      "compliant_with_monitoring": 514,
+      "non_compliant": 315,
+      "compliant": 274
+    },
+    "error_count": 0,
+    "confusion_matrix": {
+      "labels": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ],
+      "by_gold": {
+        "compliant": {
+          "compliant": 274,
+          "compliant_with_monitoring": 0,
+          "non_compliant": 0
+        },
+        "compliant_with_monitoring": {
+          "compliant": 0,
+          "compliant_with_monitoring": 514,
+          "non_compliant": 0
+        },
+        "non_compliant": {
+          "compliant": 0,
+          "compliant_with_monitoring": 0,
+          "non_compliant": 315
+        }
+      },
+      "matrix": [
+        [
+          274,
+          0,
+          0
+        ],
+        [
+          0,
+          514,
+          0
+        ],
+        [
+          0,
+          0,
+          315
+        ]
+      ]
+    },
+    "per_class": {
+      "compliant": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 274,
+        "predicted": 274
+      },
+      "compliant_with_monitoring": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 514,
+        "predicted": 514
+      },
+      "non_compliant": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 315,
+        "predicted": 315
+      }
+    }
+  },
+  "runtime_seconds": 100.51821708679199,
+  "note": "Local Transformer classification baseline with held-out evaluation."
+}

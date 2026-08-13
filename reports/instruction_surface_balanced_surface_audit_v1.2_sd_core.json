@@ -1,0 +1,180 @@
+{
+  "generated_at": "2026-08-08T16:43:17.099772+00:00",
+  "status": "fail",
+  "source": "data/gridinstruct_v1.2_sd_core_en.jsonl",
+  "source_sha256": "75ffc5c5386e331eed6c7f4092d186e042be8a020a936993f5220a78c1fd058e",
+  "split_prefix": "data/v1.2_sd_core_instruction_surface_balanced",
+  "threshold": 0.85,
+  "records": 95479,
+  "task_counts": {
+    "train": {
+      "auxiliary_decision": 1073,
+      "dispatcher_intent_tool_call": 2042,
+      "intelligent_data_query": 953,
+      "operation_ticket_check": 6529,
+      "regulation_compliance_check": 1120,
+      "regulation_qa": 2540
+    },
+    "validation": {
+      "auxiliary_decision": 351,
+      "dispatcher_intent_tool_call": 680,
+      "intelligent_data_query": 314,
+      "operation_ticket_check": 2191,
+      "regulation_compliance_check": 367,
+      "regulation_qa": 832
+    },
+    "test": {
+      "auxiliary_decision": 351,
+      "dispatcher_intent_tool_call": 672,
+      "intelligent_data_query": 312,
+      "operation_ticket_check": 2161,
+      "regulation_compliance_check": 367,
+      "regulation_qa": 833
+    },
+    "ood_test": {
+      "auxiliary_decision": 16312,
+      "dispatcher_intent_tool_call": 16379,
+      "intelligent_data_query": 16187,
+      "regulation_compliance_check": 22913
+    }
+  },
+  "classification_label_counts": {
+    "operation_ticket_check": {
+      "train": {
+        "compliant": 1649,
+        "compliant_with_monitoring": 2991,
+        "non_compliant": 1889
+      },
+      "validation": {
+        "compliant": 562,
+        "compliant_with_monitoring": 998,
+        "non_compliant": 631
+      },
+      "test": {
+        "compliant": 560,
+        "compliant_with_monitoring": 960,
+        "non_compliant": 641
+      },
+      "ood_test": {}
+    },
+    "regulation_compliance_check": {
+      "train": {
+        "compliant": 211,
+        "compliant_with_monitoring": 490,
+        "non_compliant": 419
+      },
+      "validation": {
+        "compliant": 147,
+        "compliant_with_monitoring": 146,
+        "non_compliant": 74
+      },
+      "test": {
+        "compliant": 114,
+        "compliant_with_monitoring": 186,
+        "non_compliant": 67
+      },
+      "ood_test": {
+        "compliant": 557,
+        "compliant_with_monitoring": 9875,
+        "non_compliant": 12481
+      }
+    },
+    "dispatcher_intent_tool_call": {
+      "train": {
+        "diagnose_and_dispatch": 629,
+        "mitigate_violations": 701,
+        "security_check_and_redispatch": 712
+      },
+      "validation": {
+        "diagnose_and_dispatch": 215,
+        "mitigate_violations": 222,
+        "security_check_and_redispatch": 243
+      },
+      "test": {
+        "diagnose_and_dispatch": 255,
+        "mitigate_violations": 225,
+        "security_check_and_redispatch": 192
+      },
+      "ood_test": {
+        "diagnose_and_dispatch": 5514,
+        "mitigate_violations": 5441,
+        "security_check_and_redispatch": 5424
+      }
+    }
+  },
+  "exact_normalized_surface_collisions": {
+    "train__validation": 0,
+    "train__test": 0,
+    "validation__test": 0
+  },
+  "exact_character_5gram_jaccard_over_candidates": {
+    "train__validation": {
+      "reference_records": 3000,
+      "query_records": 2000,
+      "candidate_pairs_examined": 6000000,
+      "candidate_retrieval": "exact sparse binary character-5-gram matrix product over every pair in the deterministic sample",
+      "max_exact_character_5gram_jaccard": 0.9486373165618449,
+      "max_pair": [
+        "gridinstruct_v12_topology_aux_0060_v02",
+        "gridinstruct_v12_topology2_aux_pegase89_sdv2_n1_branch_outage_load95_line100_91b55a2c627f_v02"
+      ],
+      "query_rows_at_or_above_threshold": 70,
+      "threshold": 0.85
+    },
+    "train__test": {
+      "reference_records": 3000,
+      "query_records": 2000,
+      "candidate_pairs_examined": 6000000,
+      "candidate_retrieval": "exact sparse binary character-5-gram matrix product over every pair in the deterministic sample",
+      "max_exact_character_5gram_jaccard": 0.95,
+      "max_pair": [
+        "gridinstruct_v01_intent_02047",
+        "gridinstruct_v01_intent_09037"
+      ],
+      "query_rows_at_or_above_threshold": 24,
+      "threshold": 0.85
+    },
+    "validation__test": {
+      "reference_records": 2000,
+      "query_records": 2000,
+      "candidate_pairs_examined": 4000000,
+      "candidate_retrieval": "exact sparse binary character-5-gram matrix product over every pair in the deterministic sample",
+      "max_exact_character_5gram_jaccard": 0.9663608562691132,
+      "max_pair": [
+        "gridinstruct_v12_topology2_aux_pegase2869_sdv2_n1_branch_outage_load95_line1955_e70f58ab5038_v02",
+        "gridinstruct_v12_topology2_aux_pegase1354_sdv2_n1_branch_outage_load100_line128_8d2a0514e0a2_v02"
+      ],
+      "query_rows_at_or_above_threshold": 24,
+      "threshold": 0.85
+    },
+    "train__ood_sample": {
+      "reference_records": 2000,
+      "query_records": 2000,
+      "candidate_pairs_examined": 4000000,
+      "candidate_retrieval": "exact sparse binary character-5-gram matrix product over every pair in the deterministic sample",
+      "max_exact_character_5gram_jaccard": 0.960820895522388,
+      "max_pair": [
+        "gridinstruct_v01_query_09482",
+        "gridinstruct_v12_topology2_query_pegase89_sdv2_base_power_flow_load95_87f5a6d9cc00_v03"
+      ],
+      "query_rows_at_or_above_threshold": 57,
+      "threshold": 0.85
+    }
+  },
+  "ood_query_sample": {
+    "sample_records": 2000,
+    "selection": "lowest SHA-256 of balanced-pair-sample|record_id",
+    "selection_sha256": "c70da55d05aa4a3b8a1dc20c3f30b4b74ace2421403e5872182b77a25600aa0b"
+  },
+  "pair_query_sample": {
+    "train__validation": 2000,
+    "train__test": 2000,
+    "train__ood": 2000,
+    "selection": "lowest SHA-256 of balanced-pair-sample|record_id"
+  },
+  "pair_reference_sample": {
+    "records_per_pair": 3000,
+    "selection": "lowest SHA-256 of balanced-pair-sample|record_id"
+  },
+  "interpretation": "Exact normalized-surface checks cover all cross-split rows. Exact character-5-gram Jaccard is evaluated on deterministic query samples for every pair retrieved by an explicitly reported MinHash-LSH candidate index; this lexical diagnostic does not establish semantic independence or physical-label validity."
+}

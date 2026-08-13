@@ -1,0 +1,59 @@
+{
+  "generated_at": "2026-07-23T18:00:30+00:00",
+  "status": "local_licenses_and_fixed_pglib_terms_verified_external_submission_inputs_pending",
+  "code_license": {
+    "spdx": "MIT",
+    "file": "LICENSE-CODE",
+    "scope": [
+      "scripts/",
+      "docs/",
+      "metadata/"
+    ]
+  },
+  "data_license": {
+    "spdx": "CC-BY-4.0",
+    "file": "LICENSE-DATA",
+    "scope": [
+      "data/",
+      "metadata/",
+      "benchmark/",
+      "examples/"
+    ],
+    "notes": [
+      "Applies to the dataset package released by this workspace unless a file states otherwise.",
+      "Does not grant rights to third-party trademarks or long copyrighted source regulation text not redistributed here.",
+      "The eleven fixed PGLib-OPF v23.07 input cases are upstream CC-BY-4.0 data. Their raw .m files are excluded from the GridInstruct archive; derived numerical states are released with repository, version, commit, case filename, case hash, upstream license link, original attribution, source citations, and a notice that GridInstruct generated derived scenarios and records.",
+      "The PGLib verification is limited to commit dc6be4b2f85ca0e776952ec22cbd4c22396ea5a3 and the eleven hashes recorded in metadata/pglib_opf_v23_07_case_registry.json. A different upstream revision or case file requires a new audit."
+    ]
+  },
+  "third_party_verification": {
+    "provider": "IEEE PES PGLib-OPF",
+    "repository": "https://github.com/power-grid-lib/pglib-opf",
+    "release": "v23.07",
+    "commit": "dc6be4b2f85ca0e776952ec22cbd4c22396ea5a3",
+    "upstream_data_license": "CC-BY-4.0",
+    "upstream_software_license": "MIT",
+    "upstream_license_sha256": "95b1cd9fee1676221d74f7c0cbba622d98ac098e9b317b3848113ef4356ab4fd",
+    "verified_case_count": 11,
+    "verified_scope": "fixed PGLib input files and GridInstruct derived numerical states",
+    "verification_basis": [
+      "Pinned upstream LICENSE",
+      "README Contributions and Citation Guidelines",
+      "Individual header comments in all eleven fixed .m case files",
+      "Registry-to-file SHA-256 equality for all eleven cases"
+    ],
+    "legal_review_status": "technical provenance and license-text audit; no independent legal opinion"
+  },
+  "citation_placeholders": {
+    "data_doi": "pending",
+    "code_repository_url": "pending",
+    "archived_code_release_doi": "pending",
+    "third_party_case_redistribution_confirmation": "verified_for_fixed_pglib_v23.07_inputs_and_derived_states"
+  },
+  "remaining_external_submission_inputs": [
+    "final author identities and author-contribution declarations",
+    "public repository URL",
+    "data DOI",
+    "archived code-release DOI or equivalent permanent identifier"
+  ]
+}

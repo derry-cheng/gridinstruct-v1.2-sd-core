@@ -1,0 +1,511 @@
+{
+  "generated_at": "2026-08-04T03:54:21.057007+00:00",
+  "status": "pass",
+  "hard_gates": {
+    "standard_probability_files_present": true,
+    "challenge_probability_files_present": true
+  },
+  "runs": [
+    {
+      "split": "standard",
+      "task": "operation_ticket_check",
+      "path": "benchmark/v1.2_sd_core_transformer_operation_ticket_check_test_predictions.jsonl",
+      "n": 1110,
+      "probability_rows": 1110,
+      "ece": 0.0011424511939556181,
+      "brier": 2.039888777562567e-06,
+      "accuracy": 1.0,
+      "mean_confidence": 0.9988575488060444,
+      "bins": [
+        {
+          "lower": 0.0,
+          "upper": 0.1,
+          "count": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.1,
+          "upper": 0.2,
+          "count": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.2,
+          "upper": 0.30000000000000004,
+          "count": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.30000000000000004,
+          "upper": 0.4,
+          "count": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.4,
+          "upper": 0.5,
+          "count": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.5,
+          "upper": 0.6000000000000001,
+          "count": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.6000000000000001,
+          "upper": 0.7000000000000001,
+          "count": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.7000000000000001,
+          "upper": 0.8,
+          "count": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.8,
+          "upper": 0.9,
+          "count": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.9,
+          "upper": 1.0,
+          "count": 1110,
+          "confidence": 0.9988575488060444,
+          "accuracy": 1.0
+        }
+      ]
+    },
+    {
+      "split": "standard",
+      "task": "regulation_compliance_check",
+      "path": "benchmark/v1.2_sd_core_transformer_regulation_compliance_check_test_predictions.jsonl",
+      "n": 701,
+      "probability_rows": 701,
+      "ece": 0.07690225093068813,
+      "brier": 0.15587981946102641,
+      "accuracy": 0.920114122681883,
+      "mean_confidence": 0.986734411515795,
+      "bins": [
+        {
+          "lower": 0.0,
+          "upper": 0.1,
+          "count": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.1,
+          "upper": 0.2,
+          "count": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.2,
+          "upper": 0.30000000000000004,
+          "count": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.30000000000000004,
+          "upper": 0.4,
+          "count": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.4,
+          "upper": 0.5,
+          "count": 2,
+          "confidence": 0.45649629831314087,
+          "accuracy": 1.0
+        },
+        {
+          "lower": 0.5,
+          "upper": 0.6000000000000001,
+          "count": 4,
+          "confidence": 0.5651103854179382,
+          "accuracy": 1.0
+        },
+        {
+          "lower": 0.6000000000000001,
+          "upper": 0.7000000000000001,
+          "count": 5,
+          "confidence": 0.6445476293563843,
+          "accuracy": 0.8
+        },
+        {
+          "lower": 0.7000000000000001,
+          "upper": 0.8,
+          "count": 10,
+          "confidence": 0.7405656278133392,
+          "accuracy": 0.5
+        },
+        {
+          "lower": 0.8,
+          "upper": 0.9,
+          "count": 3,
+          "confidence": 0.8406326572100321,
+          "accuracy": 0.3333333333333333
+        },
+        {
+          "lower": 0.9,
+          "upper": 1.0,
+          "count": 677,
+          "confidence": 0.997602800498861,
+          "accuracy": 0.9290989660265879
+        }
+      ]
+    },
+    {
+      "split": "standard",
+      "task": "dispatcher_intent_tool_call",
+      "path": "benchmark/v1.2_sd_core_transformer_dispatcher_intent_tool_call_test_predictions.jsonl",
+      "n": 494,
+      "probability_rows": 494,
+      "ece": 0.004290903869428098,
+      "brier": 3.261031922816687e-05,
+      "accuracy": 1.0,
+      "mean_confidence": 0.9957090961305719,
+      "bins": [
+        {
+          "lower": 0.0,
+          "upper": 0.1,
+          "count": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.1,
+          "upper": 0.2,
+          "count": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.2,
+          "upper": 0.30000000000000004,
+          "count": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.30000000000000004,
+          "upper": 0.4,
+          "count": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.4,
+          "upper": 0.5,
+          "count": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.5,
+          "upper": 0.6000000000000001,
+          "count": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.6000000000000001,
+          "upper": 0.7000000000000001,
+          "count": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.7000000000000001,
+          "upper": 0.8,
+          "count": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.8,
+          "upper": 0.9,
+          "count": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.9,
+          "upper": 1.0,
+          "count": 494,
+          "confidence": 0.9957090961305719,
+          "accuracy": 1.0
+        }
+      ]
+    },
+    {
+      "split": "challenge",
+      "task": "operation_ticket_check",
+      "path": "benchmark/v1.2_sd_core_challenge_transformer_operation_ticket_check_test_predictions.jsonl",
+      "n": 3870,
+      "probability_rows": 3870,
+      "ece": 0.003127643088653713,
+      "brier": 0.0009324446986886678,
+      "accuracy": 0.999483204134367,
+      "mean_confidence": 0.9968096340349478,
+      "bins": [
+        {
+          "lower": 0.0,
+          "upper": 0.1,
+          "count": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.1,
+          "upper": 0.2,
+          "count": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.2,
+          "upper": 0.30000000000000004,
+          "count": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.30000000000000004,
+          "upper": 0.4,
+          "count": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.4,
+          "upper": 0.5,
+          "count": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.5,
+          "upper": 0.6000000000000001,
+          "count": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.6000000000000001,
+          "upper": 0.7000000000000001,
+          "count": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.7000000000000001,
+          "upper": 0.8,
+          "count": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.8,
+          "upper": 0.9,
+          "count": 1,
+          "confidence": 0.8786312341690063,
+          "accuracy": 0.0
+        },
+        {
+          "lower": 0.9,
+          "upper": 1.0,
+          "count": 3869,
+          "confidence": 0.9968401789819279,
+          "accuracy": 0.9997415352804342
+        }
+      ]
+    },
+    {
+      "split": "challenge",
+      "task": "regulation_compliance_check",
+      "path": "benchmark/v1.2_sd_core_challenge_transformer_regulation_compliance_check_test_predictions.jsonl",
+      "n": 67,
+      "probability_rows": 67,
+      "ece": 0.00034890157073286243,
+      "brier": 1.0310782094088823e-05,
+      "accuracy": 1.0,
+      "mean_confidence": 0.9996510984292671,
+      "bins": [
+        {
+          "lower": 0.0,
+          "upper": 0.1,
+          "count": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.1,
+          "upper": 0.2,
+          "count": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.2,
+          "upper": 0.30000000000000004,
+          "count": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.30000000000000004,
+          "upper": 0.4,
+          "count": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.4,
+          "upper": 0.5,
+          "count": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.5,
+          "upper": 0.6000000000000001,
+          "count": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.6000000000000001,
+          "upper": 0.7000000000000001,
+          "count": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.7000000000000001,
+          "upper": 0.8,
+          "count": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.8,
+          "upper": 0.9,
+          "count": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.9,
+          "upper": 1.0,
+          "count": 67,
+          "confidence": 0.9996510984292671,
+          "accuracy": 1.0
+        }
+      ]
+    },
+    {
+      "split": "challenge",
+      "task": "dispatcher_intent_tool_call",
+      "path": "benchmark/v1.2_sd_core_challenge_transformer_dispatcher_intent_tool_call_test_predictions.jsonl",
+      "n": 1400,
+      "probability_rows": 1400,
+      "ece": 0.19684078608240405,
+      "brier": 0.39778100365743324,
+      "accuracy": 0.785,
+      "mean_confidence": 0.981840786082404,
+      "bins": [
+        {
+          "lower": 0.0,
+          "upper": 0.1,
+          "count": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.1,
+          "upper": 0.2,
+          "count": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.2,
+          "upper": 0.30000000000000004,
+          "count": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.30000000000000004,
+          "upper": 0.4,
+          "count": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.4,
+          "upper": 0.5,
+          "count": 3,
+          "confidence": 0.49603893359502155,
+          "accuracy": 0.0
+        },
+        {
+          "lower": 0.5,
+          "upper": 0.6000000000000001,
+          "count": 10,
+          "confidence": 0.5616801023483277,
+          "accuracy": 0.4
+        },
+        {
+          "lower": 0.6000000000000001,
+          "upper": 0.7000000000000001,
+          "count": 13,
+          "confidence": 0.6509162783622742,
+          "accuracy": 0.5384615384615384
+        },
+        {
+          "lower": 0.7000000000000001,
+          "upper": 0.8,
+          "count": 22,
+          "confidence": 0.7498636408285662,
+          "accuracy": 0.36363636363636365
+        },
+        {
+          "lower": 0.8,
+          "upper": 0.9,
+          "count": 25,
+          "confidence": 0.8673562383651734,
+          "accuracy": 0.6
+        },
+        {
+          "lower": 0.9,
+          "upper": 1.0,
+          "count": 1327,
+          "confidence": 0.9953499359570686,
+          "accuracy": 0.8025621703089676
+        }
+      ]
+    }
+  ],
+  "figures": {
+    "reliability": "figures/sd_core/fig_calibration_reliability.png"
+  }
+}

@@ -1,0 +1,361 @@
+{
+  "generated_at": "2026-08-04T03:56:52.622010+00:00",
+  "challenge_test": "data/v1.2_sd_core_challenge_test_en.jsonl",
+  "prediction_files": {
+    "operation_ticket_check": "benchmark/v1.2_sd_core_challenge_transformer_operation_ticket_check_test_predictions.jsonl",
+    "dispatcher_intent_tool_call": "benchmark/v1.2_sd_core_challenge_transformer_dispatcher_intent_tool_call_test_predictions.jsonl"
+  },
+  "rows": [
+    {
+      "task_type": "operation_ticket_check",
+      "family": "base",
+      "records": 1495,
+      "matched_predictions": 1495,
+      "accuracy": 0.9986622073578595,
+      "macro_f1": 0.9986087691282612,
+      "label_counts": {
+        "non_compliant": 601,
+        "compliant": 894
+      },
+      "prediction_counts": {
+        "non_compliant": 601,
+        "compliant": 894
+      },
+      "confusion_top": [
+        [
+          "compliant -> compliant",
+          893
+        ],
+        [
+          "non_compliant -> non_compliant",
+          600
+        ],
+        [
+          "compliant -> non_compliant",
+          1
+        ],
+        [
+          "non_compliant -> compliant",
+          1
+        ]
+      ]
+    },
+    {
+      "task_type": "operation_ticket_check",
+      "family": "operation_implicit_ticket_llm",
+      "records": 264,
+      "matched_predictions": 264,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "label_counts": {
+        "non_compliant": 82,
+        "compliant": 92,
+        "compliant_with_monitoring": 90
+      },
+      "prediction_counts": {
+        "non_compliant": 82,
+        "compliant": 92,
+        "compliant_with_monitoring": 90
+      },
+      "confusion_top": [
+        [
+          "compliant -> compliant",
+          92
+        ],
+        [
+          "compliant_with_monitoring -> compliant_with_monitoring",
+          90
+        ],
+        [
+          "non_compliant -> non_compliant",
+          82
+        ]
+      ]
+    },
+    {
+      "task_type": "operation_ticket_check",
+      "family": "operation_monitoring_boundary_counterfactual",
+      "records": 696,
+      "matched_predictions": 696,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "label_counts": {
+        "compliant_with_monitoring": 673,
+        "non_compliant": 23
+      },
+      "prediction_counts": {
+        "compliant_with_monitoring": 673,
+        "non_compliant": 23
+      },
+      "confusion_top": [
+        [
+          "compliant_with_monitoring -> compliant_with_monitoring",
+          673
+        ],
+        [
+          "non_compliant -> non_compliant",
+          23
+        ]
+      ]
+    },
+    {
+      "task_type": "operation_ticket_check",
+      "family": "operation_plain_ticket_adversarial",
+      "records": 715,
+      "matched_predictions": 715,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "label_counts": {
+        "compliant_with_monitoring": 715
+      },
+      "prediction_counts": {
+        "compliant_with_monitoring": 715
+      },
+      "confusion_top": [
+        [
+          "compliant_with_monitoring -> compliant_with_monitoring",
+          715
+        ]
+      ]
+    },
+    {
+      "task_type": "operation_ticket_check",
+      "family": "operation_ticket_rulebook_counterfactual",
+      "records": 700,
+      "matched_predictions": 700,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "label_counts": {
+        "compliant_with_monitoring": 283,
+        "non_compliant": 412,
+        "compliant": 5
+      },
+      "prediction_counts": {
+        "compliant_with_monitoring": 283,
+        "non_compliant": 412,
+        "compliant": 5
+      },
+      "confusion_top": [
+        [
+          "non_compliant -> non_compliant",
+          412
+        ],
+        [
+          "compliant_with_monitoring -> compliant_with_monitoring",
+          283
+        ],
+        [
+          "compliant -> compliant",
+          5
+        ]
+      ]
+    },
+    {
+      "task_type": "operation_ticket_check",
+      "family": "all_boundary_families",
+      "records": 2375,
+      "matched_predictions": 2375,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "label_counts": {
+        "compliant_with_monitoring": 1761,
+        "non_compliant": 517,
+        "compliant": 97
+      },
+      "prediction_counts": {
+        "compliant_with_monitoring": 1761,
+        "non_compliant": 517,
+        "compliant": 97
+      },
+      "confusion_top": [
+        [
+          "compliant_with_monitoring -> compliant_with_monitoring",
+          1761
+        ],
+        [
+          "non_compliant -> non_compliant",
+          517
+        ],
+        [
+          "compliant -> compliant",
+          97
+        ]
+      ]
+    },
+    {
+      "task_type": "operation_ticket_check",
+      "family": "all_challenge_records",
+      "records": 3870,
+      "matched_predictions": 3870,
+      "accuracy": 0.999483204134367,
+      "macro_f1": 0.9993654879605177,
+      "label_counts": {
+        "non_compliant": 1118,
+        "compliant_with_monitoring": 1761,
+        "compliant": 991
+      },
+      "prediction_counts": {
+        "non_compliant": 1118,
+        "compliant_with_monitoring": 1761,
+        "compliant": 991
+      },
+      "confusion_top": [
+        [
+          "compliant_with_monitoring -> compliant_with_monitoring",
+          1761
+        ],
+        [
+          "non_compliant -> non_compliant",
+          1117
+        ],
+        [
+          "compliant -> compliant",
+          990
+        ],
+        [
+          "compliant -> non_compliant",
+          1
+        ],
+        [
+          "non_compliant -> compliant",
+          1
+        ]
+      ]
+    },
+    {
+      "task_type": "dispatcher_intent_tool_call",
+      "family": "dispatcher_intent_compound_counterfactual",
+      "records": 1400,
+      "matched_predictions": 1400,
+      "accuracy": 0.785,
+      "macro_f1": 0.7756025485188865,
+      "label_counts": {
+        "mitigate_violations": 467,
+        "security_check_and_redispatch": 466,
+        "diagnose_and_dispatch": 467
+      },
+      "prediction_counts": {
+        "diagnose_and_dispatch": 767,
+        "security_check_and_redispatch": 422,
+        "mitigate_violations": 211
+      },
+      "confusion_top": [
+        [
+          "diagnose_and_dispatch -> diagnose_and_dispatch",
+          467
+        ],
+        [
+          "security_check_and_redispatch -> security_check_and_redispatch",
+          422
+        ],
+        [
+          "mitigate_violations -> diagnose_and_dispatch",
+          257
+        ],
+        [
+          "mitigate_violations -> mitigate_violations",
+          210
+        ],
+        [
+          "security_check_and_redispatch -> diagnose_and_dispatch",
+          43
+        ],
+        [
+          "security_check_and_redispatch -> mitigate_violations",
+          1
+        ]
+      ]
+    },
+    {
+      "task_type": "dispatcher_intent_tool_call",
+      "family": "all_boundary_families",
+      "records": 1400,
+      "matched_predictions": 1400,
+      "accuracy": 0.785,
+      "macro_f1": 0.7756025485188865,
+      "label_counts": {
+        "mitigate_violations": 467,
+        "security_check_and_redispatch": 466,
+        "diagnose_and_dispatch": 467
+      },
+      "prediction_counts": {
+        "diagnose_and_dispatch": 767,
+        "security_check_and_redispatch": 422,
+        "mitigate_violations": 211
+      },
+      "confusion_top": [
+        [
+          "diagnose_and_dispatch -> diagnose_and_dispatch",
+          467
+        ],
+        [
+          "security_check_and_redispatch -> security_check_and_redispatch",
+          422
+        ],
+        [
+          "mitigate_violations -> diagnose_and_dispatch",
+          257
+        ],
+        [
+          "mitigate_violations -> mitigate_violations",
+          210
+        ],
+        [
+          "security_check_and_redispatch -> diagnose_and_dispatch",
+          43
+        ],
+        [
+          "security_check_and_redispatch -> mitigate_violations",
+          1
+        ]
+      ]
+    },
+    {
+      "task_type": "dispatcher_intent_tool_call",
+      "family": "all_challenge_records",
+      "records": 1400,
+      "matched_predictions": 1400,
+      "accuracy": 0.785,
+      "macro_f1": 0.7756025485188865,
+      "label_counts": {
+        "mitigate_violations": 467,
+        "security_check_and_redispatch": 466,
+        "diagnose_and_dispatch": 467
+      },
+      "prediction_counts": {
+        "diagnose_and_dispatch": 767,
+        "security_check_and_redispatch": 422,
+        "mitigate_violations": 211
+      },
+      "confusion_top": [
+        [
+          "diagnose_and_dispatch -> diagnose_and_dispatch",
+          467
+        ],
+        [
+          "security_check_and_redispatch -> security_check_and_redispatch",
+          422
+        ],
+        [
+          "mitigate_violations -> diagnose_and_dispatch",
+          257
+        ],
+        [
+          "mitigate_violations -> mitigate_violations",
+          210
+        ],
+        [
+          "security_check_and_redispatch -> diagnose_and_dispatch",
+          43
+        ],
+        [
+          "security_check_and_redispatch -> mitigate_violations",
+          1
+        ]
+      ]
+    }
+  ],
+  "figure": "figures/sd_core/fig_boundary_challenge_subset_scores.png",
+  "status": "pass",
+  "claim_guidance": "Use these subset results to interpret near-perfect aggregate F1. Boundary-family scores remain validation evidence for constrained labels, not evidence of autonomous dispatch reasoning."
+}

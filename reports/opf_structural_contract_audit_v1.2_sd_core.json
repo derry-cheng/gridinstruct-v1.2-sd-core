@@ -1,0 +1,28 @@
+{
+  "generated_at": "2026-08-13T04:10:24.363803+00:00",
+  "status": "pass",
+  "contract": "released_opf_structural_denominators_v1",
+  "input": {
+    "path": "data/gridinstruct_v1.2_sd_core_en.jsonl",
+    "sha256": "75ffc5c5386e331eed6c7f4092d186e042be8a020a936993f5220a78c1fd058e"
+  },
+  "record_count": 320,
+  "unique_scenario_count": 160,
+  "variant_count_distribution": {
+    "2": 160
+  },
+  "n1_contract": {
+    "requested_per_record": 7,
+    "completed_per_record": 7,
+    "secure_per_record": 7,
+    "detail_entries_per_record": 7
+  },
+  "uncertainty_contract": {
+    "models": 2,
+    "states_per_model": 48,
+    "states_per_record": 96,
+    "all_registered_states_safe": true
+  },
+  "checked_failures": [],
+  "scope": "Released-field structural contract audit; it does not recompute the external scenario arrays or certify independent OPF optimality."
+}

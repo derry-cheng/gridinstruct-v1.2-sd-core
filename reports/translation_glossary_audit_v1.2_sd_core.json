@@ -1,0 +1,71 @@
+{
+  "generated_at": "2026-08-04T04:11:26.744282+00:00",
+  "status": "pass",
+  "source": "data/gridinstruct_v1.2_sd_core.jsonl",
+  "english": "data/gridinstruct_v1.2_sd_core_en.jsonl",
+  "source_record_count": 95479,
+  "english_record_count": 95479,
+  "id_order_mismatch_count": 0,
+  "id_order_mismatches": [],
+  "stable_field_mismatch_count": 0,
+  "stable_field_mismatches": [],
+  "english_records_with_cjk": 0,
+  "cjk_examples": [],
+  "uncovered_glossary_groups": [],
+  "glossary_coverage": {
+    "dispatch_and_review": {
+      "hit_count": 91415,
+      "matched_terms": [
+        "dispatch",
+        "recheck",
+        "review",
+        "verification",
+        "verify"
+      ]
+    },
+    "operation_ticket": {
+      "hit_count": 11722,
+      "matched_terms": [
+        "operation ticket",
+        "switching ticket",
+        "ticket"
+      ]
+    },
+    "power_flow": {
+      "hit_count": 56276,
+      "matched_terms": [
+        "opf",
+        "power flow",
+        "redispatch"
+      ]
+    },
+    "security_constraints": {
+      "hit_count": 82831,
+      "matched_terms": [
+        "constraint",
+        "overload",
+        "safety margin",
+        "security margin",
+        "thermal",
+        "voltage"
+      ]
+    },
+    "structured_query": {
+      "hit_count": 18712,
+      "matched_terms": [
+        "aggregation",
+        "filter",
+        "query result",
+        "structured query"
+      ]
+    },
+    "tool_call": {
+      "hit_count": 18714,
+      "matched_terms": [
+        "run_power_flow",
+        "tool"
+      ]
+    }
+  },
+  "scope_statement": "This audit checks that English natural-language fields preserve stable identifiers and contain expected dispatch terminology. It is a deterministic consistency audit and does not replace bilingual expert adjudication."
+}

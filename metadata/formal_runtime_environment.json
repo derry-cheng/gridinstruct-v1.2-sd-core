@@ -1,0 +1,41 @@
+{
+  "captured_at": "2026-07-18T09:31:30.570641+08:00",
+  "role": "formal_v13_reconstruction_runtime",
+  "platform": {
+    "system": "Linux",
+    "architecture": "x86_64",
+    "gpu": "NVIDIA H20",
+    "cuda_runtime_source": "PyTorch wheel dependencies"
+  },
+  "python": {
+    "version": "3.11.14",
+    "executable": "/data/anaconda3/envs/power/bin/python"
+  },
+  "direct_package_versions": {
+    "datasketch": "1.10.0",
+    "jsonschema": "4.26.0",
+    "matplotlib": "3.10.8",
+    "numpy": "2.3.5",
+    "openai": "2.30.0",
+    "pandas": "2.3.3",
+    "pandapower": "3.3.2",
+    "pypower": "5.1.19",
+    "pytest": "9.0.2",
+    "PyYAML": "6.0.2",
+    "requests": "2.32.5",
+    "scikit-learn": "1.8.0",
+    "scipy": "1.16.3",
+    "sentence-transformers": "5.4.1",
+    "sentencepiece": "0.2.1",
+    "torch": "2.10.0",
+    "tqdm": "4.67.1",
+    "transformers": "5.5.3"
+  },
+  "environment_specification": "environment.yml",
+  "historical_snapshot": "metadata/runtime_environment.json",
+  "notes": [
+    "This file describes the formal Linux reconstruction runtime, not the historical macOS readiness-package assembly environment.",
+    "The environment.yml file pins direct project dependencies; full transitive package and model revisions are fingerprinted by the reconstruction and release scripts.",
+    "Third-party API credentials are intentionally excluded."
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "generated_at": "2026-08-12",
+  "scope": "local project cleanup after the v1.2-sd-core reconstruction",
+  "deleted_rebuildable_artifacts": [
+    {
+      "path": "paper/scientific_data_latex/main_round0_original_v15.pdf",
+      "reason": "superseded historical PDF; current main.pdf and round-0 preservation remain"
+    },
+    {
+      "path": "paper/scientific_data_latex/GridInstruct_SD_scientific_data_official_template.pdf",
+      "reason": "duplicate template render; source zip remains"
+    },
+    {
+      "path": "paper/scientific_data_latex/fig_target_hidden_classification_round0.png",
+      "reason": "superseded figure backup; current replay figure remains"
+    },
+    {
+      "path": "paper/scientific_data_latex/*.log",
+      "reason": "rebuildable LaTeX logs"
+    },
+    {
+      "path": "logs/*.log",
+      "reason": "stale local runtime logs; machine-readable reports remain"
+    },
+    {
+      "path": "experiments/**/suite.stdout.log",
+      "reason": "duplicated console logs; aggregate metrics and receipts remain"
+    },
+    {
+      "path": "scripts/__pycache__/*.pyc",
+      "reason": "rebuildable Python bytecode"
+    },
+    {
+      "path": "tests/__pycache__/*.pyc",
+      "reason": "rebuildable Python bytecode"
+    }
+  ],
+  "storage_check": {
+    "before_du_bytes_approx": 3950149632,
+    "after_du_blocks_1024": 3859716,
+    "after_du_bytes_approx": 3952349184,
+    "limit_bytes": 4000000000,
+    "status": "pass"
+  },
+  "preserved": [
+    "data/gridinstruct_v1.2_sd_core_en.jsonl",
+    "data/*_ids.jsonl",
+    "reports/*.json",
+    "paper/scientific_data_latex/main.pdf",
+    "paper/scientific_data_latex/main_round0_original.pdf",
+    "release/sd_remediation_manifest_2026-08-12.json",
+    "release/reviewer_access_manifest_2026-08-12.json"
+  ],
+  "note": "No canonical record table, split receipt, solver evidence receipt, or current manuscript artifact was removed."
+}

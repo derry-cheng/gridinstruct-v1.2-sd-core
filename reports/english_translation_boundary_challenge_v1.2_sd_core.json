@@ -1,0 +1,27 @@
+{
+  "generated_at": "2026-07-08T17:11:43.863947+00:00",
+  "input": "data/v1.2_sd_core_boundary_challenge_test.jsonl",
+  "output": "data/v1.2_sd_core_boundary_challenge_test_en.jsonl",
+  "records": 4800,
+  "max_records": null,
+  "total_cjk_fields": 54200,
+  "unique_cjk_strings": 5603,
+  "cache_entries": 53388,
+  "new_translations": 4,
+  "batch_size": 1,
+  "workers": 12,
+  "endpoint_order": [
+    "vllm:/data/huggingface/hub/Qwen3.5-35B-A3:key1",
+    "vllm:/data/huggingface/hub/Qwen3.5-35B-A3:key1",
+    "vllm:/data/huggingface/hub/Qwen3.5-35B-A3:key1",
+    "vllm:/data/huggingface/hub/Qwen3.5-35B-A3:key1",
+    "vllm:/data/huggingface/hub/Qwen3.5-35B-A3:key1",
+    "vllm:/data/huggingface/hub/Qwen3.5-35B-A3:key1"
+  ],
+  "materialize": {
+    "translated_fields": 54200,
+    "missing_translations": 0,
+    "records_with_cjk_remaining": 0
+  },
+  "errors_sample": []
+}

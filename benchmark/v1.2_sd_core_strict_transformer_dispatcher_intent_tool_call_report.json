@@ -1,0 +1,250 @@
+{
+  "generated_at": "2026-07-09T15:56:35.780089+00:00",
+  "train": "data/v1.2_sd_core_strict_train_en.jsonl",
+  "validation": "data/v1.2_sd_core_strict_validation_en.jsonl",
+  "test": "data/v1.2_sd_core_strict_test_en.jsonl",
+  "task_type": "dispatcher_intent_tool_call",
+  "objective": "transformer_sequence_classification",
+  "model_name": "distilbert-base-uncased",
+  "model_source": "distilbert-base-uncased",
+  "resolved_model_source": "distilbert-base-uncased",
+  "resolved_model_name": "distilbert-base-uncased",
+  "eval_only_model": null,
+  "run_kind": "heldout_evaluation",
+  "device": "cuda",
+  "device_details": {
+    "device": "cuda",
+    "cuda_visible_devices": "5",
+    "cuda_device_name": "NVIDIA H20",
+    "cuda_device_count": 1
+  },
+  "train_records": 14568,
+  "validation_records": 1822,
+  "test_records": 1817,
+  "label_space": [
+    "diagnose_and_dispatch",
+    "mitigate_violations",
+    "security_check_and_redispatch"
+  ],
+  "config": {
+    "output_prefix": "benchmark/v1.2_sd_core_strict_transformer_dispatcher_intent_tool_call",
+    "epochs": 3,
+    "batch_size": 32,
+    "learning_rate": 2e-05,
+    "weight_decay": 0.01,
+    "max_length": 256,
+    "seed": 42,
+    "use_rationale": false,
+    "input_profile": "full",
+    "eval_only_model": null,
+    "local_files_only": true,
+    "cpu": false,
+    "class_weighting": "inverse_frequency",
+    "experiment_dir": "experiments/04_transformer_classification/sd_core_strict_en_refresh/dispatcher_intent_tool_call",
+    "training_log": "experiments/04_transformer_classification/sd_core_strict_en_refresh/dispatcher_intent_tool_call/logs/training_log.jsonl",
+    "class_weights": {
+      "diagnose_and_dispatch": 1.0,
+      "mitigate_violations": 1.0004120313143798,
+      "security_check_and_redispatch": 0.9995883079456567
+    },
+    "skip_latest_alias": true
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.09376342294866877,
+      "validation_accuracy": 1.0,
+      "validation_macro_f1": 1.0,
+      "validation_balanced_accuracy": 1.0
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.0017981163626628633,
+      "validation_accuracy": 1.0,
+      "validation_macro_f1": 1.0,
+      "validation_balanced_accuracy": 1.0
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.0012834782533709106,
+      "validation_accuracy": 1.0,
+      "validation_macro_f1": 1.0,
+      "validation_balanced_accuracy": 1.0
+    }
+  ],
+  "best_epoch": 1,
+  "best_validation": {
+    "accuracy": 1.0,
+    "macro_f1": 1.0,
+    "balanced_accuracy": 1.0,
+    "n": 1822
+  },
+  "final_validation": {
+    "accuracy": 1.0,
+    "macro_f1": 1.0,
+    "balanced_accuracy": 1.0,
+    "n": 1822
+  },
+  "validation_diagnostics": {
+    "gold_counts": {
+      "security_check_and_redispatch": 603,
+      "mitigate_violations": 612,
+      "diagnose_and_dispatch": 607
+    },
+    "prediction_counts": {
+      "security_check_and_redispatch": 603,
+      "mitigate_violations": 612,
+      "diagnose_and_dispatch": 607
+    },
+    "error_count": 0,
+    "confusion_matrix": {
+      "labels": [
+        "diagnose_and_dispatch",
+        "mitigate_violations",
+        "security_check_and_redispatch"
+      ],
+      "by_gold": {
+        "diagnose_and_dispatch": {
+          "diagnose_and_dispatch": 607,
+          "mitigate_violations": 0,
+          "security_check_and_redispatch": 0
+        },
+        "mitigate_violations": {
+          "diagnose_and_dispatch": 0,
+          "mitigate_violations": 612,
+          "security_check_and_redispatch": 0
+        },
+        "security_check_and_redispatch": {
+          "diagnose_and_dispatch": 0,
+          "mitigate_violations": 0,
+          "security_check_and_redispatch": 603
+        }
+      },
+      "matrix": [
+        [
+          607,
+          0,
+          0
+        ],
+        [
+          0,
+          612,
+          0
+        ],
+        [
+          0,
+          0,
+          603
+        ]
+      ]
+    },
+    "per_class": {
+      "diagnose_and_dispatch": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 607,
+        "predicted": 607
+      },
+      "mitigate_violations": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 612,
+        "predicted": 612
+      },
+      "security_check_and_redispatch": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 603,
+        "predicted": 603
+      }
+    }
+  },
+  "test_evaluation": {
+    "accuracy": 1.0,
+    "macro_f1": 1.0,
+    "balanced_accuracy": 1.0,
+    "n": 1817
+  },
+  "test_diagnostics": {
+    "gold_counts": {
+      "mitigate_violations": 604,
+      "diagnose_and_dispatch": 607,
+      "security_check_and_redispatch": 606
+    },
+    "prediction_counts": {
+      "mitigate_violations": 604,
+      "diagnose_and_dispatch": 607,
+      "security_check_and_redispatch": 606
+    },
+    "error_count": 0,
+    "confusion_matrix": {
+      "labels": [
+        "diagnose_and_dispatch",
+        "mitigate_violations",
+        "security_check_and_redispatch"
+      ],
+      "by_gold": {
+        "diagnose_and_dispatch": {
+          "diagnose_and_dispatch": 607,
+          "mitigate_violations": 0,
+          "security_check_and_redispatch": 0
+        },
+        "mitigate_violations": {
+          "diagnose_and_dispatch": 0,
+          "mitigate_violations": 604,
+          "security_check_and_redispatch": 0
+        },
+        "security_check_and_redispatch": {
+          "diagnose_and_dispatch": 0,
+          "mitigate_violations": 0,
+          "security_check_and_redispatch": 606
+        }
+      },
+      "matrix": [
+        [
+          607,
+          0,
+          0
+        ],
+        [
+          0,
+          604,
+          0
+        ],
+        [
+          0,
+          0,
+          606
+        ]
+      ]
+    },
+    "per_class": {
+      "diagnose_and_dispatch": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 607,
+        "predicted": 607
+      },
+      "mitigate_violations": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 604,
+        "predicted": 604
+      },
+      "security_check_and_redispatch": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 606,
+        "predicted": 606
+      }
+    }
+  },
+  "runtime_seconds": 163.90304446220398,
+  "note": "Local Transformer classification baseline with held-out evaluation."
+}

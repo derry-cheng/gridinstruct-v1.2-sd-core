@@ -1,0 +1,383 @@
+{
+  "generated_at": "2026-07-31T12:20:21.688692+00:00",
+  "status": "pass",
+  "train": "data/v1.2_sd_core_challenge_train_en.jsonl",
+  "validation": "data/v1.2_sd_core_challenge_validation_en.jsonl",
+  "test": "data/v1.2_sd_core_challenge_test_en.jsonl",
+  "task_type": "regulation_compliance_check",
+  "objective": "transformer_sequence_classification",
+  "model_name": "distilbert-base-uncased",
+  "model_source": "distilbert-base-uncased",
+  "resolved_model_source": "distilbert-base-uncased",
+  "resolved_model_name": "distilbert-base-uncased",
+  "eval_only_model": null,
+  "run_kind": "heldout_evaluation",
+  "device": "cuda",
+  "device_details": {
+    "device": "cuda",
+    "cuda_visible_devices": "1",
+    "cuda_device_name": "NVIDIA H20",
+    "cuda_device_count": 1
+  },
+  "determinism_contract": {
+    "python_hash_seed": null,
+    "cublas_workspace_config": ":4096:8",
+    "numpy_seeded": true,
+    "torch_seeded": true,
+    "cuda_seeded": true,
+    "deterministic_algorithms": true,
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": true,
+    "cuda_matmul_tf32": false,
+    "cudnn_tf32": false
+  },
+  "train_records": 24648,
+  "validation_records": 52,
+  "test_records": 67,
+  "input_sha256": {
+    "train": "a1a5bf598f8f6d8c4dc27c6697dee75d440df02d1450ab2dc2c759655dcc0df9",
+    "validation": "4e73f45947b779ea848dc0c82a0156132d120c12fb6bdfc2267e1594f95cabfa",
+    "test": "b52f209f8195f328db87f70adf1180f9ea771f6c584a2a65d7ea8d093bc73803"
+  },
+  "prediction_sha256": {
+    "validation": "3a1b81dbae419a969d614a34971f0b5234b164050b048701b8a513952a51a5a4",
+    "test": "2c277b9091897ea6170990eb7617ce3e156cb5ecaa5db22302ab516a86f64b6c"
+  },
+  "label_space": [
+    "compliant",
+    "compliant_with_monitoring",
+    "non_compliant"
+  ],
+  "config": {
+    "output_prefix": "benchmark/v1.2_sd_core_challenge_tuned_natural_seed13_lr2e5_e20_no_w_transformer_regulation_compliance_check",
+    "epochs": 20,
+    "batch_size": 64,
+    "learning_rate": 2e-05,
+    "weight_decay": 0.01,
+    "max_length": 256,
+    "seed": 13,
+    "use_rationale": false,
+    "input_profile": "natural",
+    "eval_only_model": null,
+    "local_files_only": true,
+    "cpu": false,
+    "class_weighting": "none",
+    "experiment_dir": "experiments/04_transformer_classification/sd_core_challenge_regulation_tuning/natural_seed13_lr2e5_e20_no_w",
+    "training_log": "experiments/04_transformer_classification/sd_core_challenge_regulation_tuning/natural_seed13_lr2e5_e20_no_w/logs/training_log.jsonl",
+    "class_weights": {},
+    "skip_latest_alias": true
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.29192598400048797,
+      "validation_accuracy": 0.75,
+      "validation_macro_f1": 0.6748436748436748,
+      "validation_balanced_accuracy": 0.675
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.06271897693806439,
+      "validation_accuracy": 0.8461538461538461,
+      "validation_macro_f1": 0.8194444444444444,
+      "validation_balanced_accuracy": 0.8
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.028886309838757267,
+      "validation_accuracy": 1.0,
+      "validation_macro_f1": 1.0,
+      "validation_balanced_accuracy": 1.0
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.01609979329639479,
+      "validation_accuracy": 1.0,
+      "validation_macro_f1": 1.0,
+      "validation_balanced_accuracy": 1.0
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.011151652149902084,
+      "validation_accuracy": 1.0,
+      "validation_macro_f1": 1.0,
+      "validation_balanced_accuracy": 1.0
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.006345380988574304,
+      "validation_accuracy": 1.0,
+      "validation_macro_f1": 1.0,
+      "validation_balanced_accuracy": 1.0
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.0029356834703684366,
+      "validation_accuracy": 1.0,
+      "validation_macro_f1": 1.0,
+      "validation_balanced_accuracy": 1.0
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.006263854956173913,
+      "validation_accuracy": 0.9807692307692307,
+      "validation_macro_f1": 0.9794871794871796,
+      "validation_balanced_accuracy": 0.975
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.003684667495332376,
+      "validation_accuracy": 1.0,
+      "validation_macro_f1": 1.0,
+      "validation_balanced_accuracy": 1.0
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.0041190355613738286,
+      "validation_accuracy": 0.9807692307692307,
+      "validation_macro_f1": 0.9794871794871796,
+      "validation_balanced_accuracy": 0.975
+    },
+    {
+      "epoch": 11,
+      "train_loss": 0.0032200059659899033,
+      "validation_accuracy": 1.0,
+      "validation_macro_f1": 1.0,
+      "validation_balanced_accuracy": 1.0
+    },
+    {
+      "epoch": 12,
+      "train_loss": 0.0024335609137977024,
+      "validation_accuracy": 1.0,
+      "validation_macro_f1": 1.0,
+      "validation_balanced_accuracy": 1.0
+    },
+    {
+      "epoch": 13,
+      "train_loss": 0.001669018011301689,
+      "validation_accuracy": 1.0,
+      "validation_macro_f1": 1.0,
+      "validation_balanced_accuracy": 1.0
+    },
+    {
+      "epoch": 14,
+      "train_loss": 0.0043513924339127945,
+      "validation_accuracy": 1.0,
+      "validation_macro_f1": 1.0,
+      "validation_balanced_accuracy": 1.0
+    },
+    {
+      "epoch": 15,
+      "train_loss": 0.001065323633797255,
+      "validation_accuracy": 1.0,
+      "validation_macro_f1": 1.0,
+      "validation_balanced_accuracy": 1.0
+    },
+    {
+      "epoch": 16,
+      "train_loss": 0.0038600923285689696,
+      "validation_accuracy": 1.0,
+      "validation_macro_f1": 1.0,
+      "validation_balanced_accuracy": 1.0
+    },
+    {
+      "epoch": 17,
+      "train_loss": 0.0010437969702162767,
+      "validation_accuracy": 1.0,
+      "validation_macro_f1": 1.0,
+      "validation_balanced_accuracy": 1.0
+    },
+    {
+      "epoch": 18,
+      "train_loss": 2.1661585553110714e-05,
+      "validation_accuracy": 1.0,
+      "validation_macro_f1": 1.0,
+      "validation_balanced_accuracy": 1.0
+    },
+    {
+      "epoch": 19,
+      "train_loss": 0.0017523856560724034,
+      "validation_accuracy": 1.0,
+      "validation_macro_f1": 1.0,
+      "validation_balanced_accuracy": 1.0
+    },
+    {
+      "epoch": 20,
+      "train_loss": 0.004772063389400076,
+      "validation_accuracy": 1.0,
+      "validation_macro_f1": 1.0,
+      "validation_balanced_accuracy": 1.0
+    }
+  ],
+  "best_epoch": 3,
+  "best_validation": {
+    "accuracy": 1.0,
+    "macro_f1": 1.0,
+    "balanced_accuracy": 1.0,
+    "n": 52
+  },
+  "final_validation": {
+    "accuracy": 1.0,
+    "macro_f1": 1.0,
+    "balanced_accuracy": 1.0,
+    "n": 52
+  },
+  "validation_diagnostics": {
+    "gold_counts": {
+      "compliant_with_monitoring": 20,
+      "non_compliant": 32
+    },
+    "prediction_counts": {
+      "compliant_with_monitoring": 20,
+      "non_compliant": 32
+    },
+    "error_count": 0,
+    "confusion_matrix": {
+      "labels": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ],
+      "by_gold": {
+        "compliant": {
+          "compliant": 0,
+          "compliant_with_monitoring": 0,
+          "non_compliant": 0
+        },
+        "compliant_with_monitoring": {
+          "compliant": 0,
+          "compliant_with_monitoring": 20,
+          "non_compliant": 0
+        },
+        "non_compliant": {
+          "compliant": 0,
+          "compliant_with_monitoring": 0,
+          "non_compliant": 32
+        }
+      },
+      "matrix": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          20,
+          0
+        ],
+        [
+          0,
+          0,
+          32
+        ]
+      ]
+    },
+    "per_class": {
+      "compliant": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 0,
+        "predicted": 0
+      },
+      "compliant_with_monitoring": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 20,
+        "predicted": 20
+      },
+      "non_compliant": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 32,
+        "predicted": 32
+      }
+    }
+  },
+  "test_evaluation": {
+    "accuracy": 1.0,
+    "macro_f1": 1.0,
+    "balanced_accuracy": 1.0,
+    "n": 67
+  },
+  "test_diagnostics": {
+    "gold_counts": {
+      "non_compliant": 64,
+      "compliant_with_monitoring": 3
+    },
+    "prediction_counts": {
+      "non_compliant": 64,
+      "compliant_with_monitoring": 3
+    },
+    "error_count": 0,
+    "confusion_matrix": {
+      "labels": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ],
+      "by_gold": {
+        "compliant": {
+          "compliant": 0,
+          "compliant_with_monitoring": 0,
+          "non_compliant": 0
+        },
+        "compliant_with_monitoring": {
+          "compliant": 0,
+          "compliant_with_monitoring": 3,
+          "non_compliant": 0
+        },
+        "non_compliant": {
+          "compliant": 0,
+          "compliant_with_monitoring": 0,
+          "non_compliant": 64
+        }
+      },
+      "matrix": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          3,
+          0
+        ],
+        [
+          0,
+          0,
+          64
+        ]
+      ]
+    },
+    "per_class": {
+      "compliant": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 0,
+        "predicted": 0
+      },
+      "compliant_with_monitoring": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 3,
+        "predicted": 3
+      },
+      "non_compliant": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 64,
+        "predicted": 64
+      }
+    }
+  },
+  "runtime_seconds": 1670.2499344348907,
+  "note": "Local Transformer classification baseline with held-out evaluation."
+}

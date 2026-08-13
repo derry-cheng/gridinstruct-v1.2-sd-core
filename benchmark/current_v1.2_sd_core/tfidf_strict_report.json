@@ -1,0 +1,179 @@
+{
+  "generated_at": "2026-08-06T12:11:57.433296+00:00",
+  "code_sha256": "7467f57d27c1c466e7ca1548b48d713c93738ef2a9bc79da9ce8250cfca158fe",
+  "train": "data/v1.2_sd_core_strict_train_en.jsonl",
+  "validation": "data/v1.2_sd_core_strict_validation_en.jsonl",
+  "test": "data/v1.2_sd_core_strict_test_en.jsonl",
+  "ood": "",
+  "objective": "task_specific_tfidf_baselines",
+  "status": "pass",
+  "train_records": 76350,
+  "validation_records": 9570,
+  "test_records": 9559,
+  "ood_records": 0,
+  "input_sha256": {
+    "train": "ac93d22b2ac63bbcd4ca9aad7edda066a8c1dc7ffe35aab7095c8c7c022b5669",
+    "validation": "d2d24235673acc8c92765c3fc78aca6218a563fa695e19fd45585c65589497f3",
+    "test": "b7cd019ecf6884a2c3590918ffc01792ef56f57e2354645b3a14f7893651fe69",
+    "ood": null
+  },
+  "validation_metrics": {
+    "dispatcher_intent_tool_call": {
+      "task_type": "dispatcher_intent_tool_call",
+      "model_family": "tfidf_linear_svc",
+      "n": 1980,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
+      "label_space": [
+        "diagnose_and_dispatch",
+        "mitigate_violations",
+        "security_check_and_redispatch"
+      ]
+    },
+    "intelligent_data_query": {
+      "task_type": "intelligent_data_query",
+      "model_family": "tfidf_nearest_neighbor",
+      "n": 1777,
+      "exact_match": 0.0,
+      "token_f1": 0.7360417678429114,
+      "avg_nearest_similarity": 0.8978060701675167
+    },
+    "regulation_compliance_check": {
+      "task_type": "regulation_compliance_check",
+      "model_family": "tfidf_linear_svc",
+      "n": 2473,
+      "accuracy": 0.9555196118075212,
+      "macro_f1": 0.9250074309586863,
+      "balanced_accuracy": 0.9007431680130343,
+      "label_space": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ]
+    },
+    "regulation_qa": {
+      "task_type": "regulation_qa",
+      "model_family": "tfidf_nearest_neighbor",
+      "n": 420,
+      "exact_match": 0.1,
+      "token_f1": 0.6318798260898402,
+      "avg_nearest_similarity": 0.8967698177245644
+    },
+    "auxiliary_decision": {
+      "task_type": "auxiliary_decision",
+      "model_family": "tfidf_nearest_neighbor",
+      "n": 1807,
+      "exact_match": 0.22468179302711677,
+      "token_f1": 0.5956750017265573,
+      "avg_nearest_similarity": 0.8395605371074367
+    },
+    "operation_ticket_check": {
+      "task_type": "operation_ticket_check",
+      "model_family": "tfidf_linear_svc",
+      "n": 1113,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
+      "label_space": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ]
+    }
+  },
+  "test_metrics": {
+    "operation_ticket_check": {
+      "task_type": "operation_ticket_check",
+      "model_family": "tfidf_linear_svc",
+      "n": 1103,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
+      "label_space": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ]
+    },
+    "intelligent_data_query": {
+      "task_type": "intelligent_data_query",
+      "model_family": "tfidf_nearest_neighbor",
+      "n": 1777,
+      "exact_match": 0.0,
+      "token_f1": 0.7470430191406396,
+      "avg_nearest_similarity": 0.8949041735507168
+    },
+    "dispatcher_intent_tool_call": {
+      "task_type": "dispatcher_intent_tool_call",
+      "model_family": "tfidf_linear_svc",
+      "n": 1975,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
+      "label_space": [
+        "diagnose_and_dispatch",
+        "mitigate_violations",
+        "security_check_and_redispatch"
+      ]
+    },
+    "auxiliary_decision": {
+      "task_type": "auxiliary_decision",
+      "model_family": "tfidf_nearest_neighbor",
+      "n": 1807,
+      "exact_match": 0.2523519645821804,
+      "token_f1": 0.6088822627010564,
+      "avg_nearest_similarity": 0.8438292938668279
+    },
+    "regulation_compliance_check": {
+      "task_type": "regulation_compliance_check",
+      "model_family": "tfidf_linear_svc",
+      "n": 2477,
+      "accuracy": 0.9297537343560759,
+      "macro_f1": 0.9080408291044263,
+      "balanced_accuracy": 0.8837506452969691,
+      "label_space": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ]
+    },
+    "regulation_qa": {
+      "task_type": "regulation_qa",
+      "model_family": "tfidf_nearest_neighbor",
+      "n": 420,
+      "exact_match": 0.10952380952380952,
+      "token_f1": 0.6187848106403377,
+      "avg_nearest_similarity": 0.8960069047472302
+    }
+  },
+  "ood_metrics": {},
+  "validation_metric_families": {
+    "classification_task_macro_f1": 0.9750024769862288,
+    "classification_task_macro_accuracy": 0.9851732039358404,
+    "generation_task_macro_exact_match": 0.10822726434237225,
+    "generation_task_macro_token_f1": 0.654532198553103,
+    "aggregation_policy": "metrics are aggregated only within comparable task families"
+  },
+  "test_metric_families": {
+    "classification_task_macro_f1": 0.9693469430348087,
+    "classification_task_macro_accuracy": 0.9765845781186919,
+    "generation_task_macro_exact_match": 0.12062525803532997,
+    "generation_task_macro_token_f1": 0.6582366974940113,
+    "aggregation_policy": "metrics are aggregated only within comparable task families"
+  },
+  "ood_metric_families": {
+    "classification_task_macro_f1": null,
+    "classification_task_macro_accuracy": null,
+    "generation_task_macro_exact_match": null,
+    "generation_task_macro_token_f1": null,
+    "aggregation_policy": "metrics are aggregated only within comparable task families"
+  },
+  "deprecated_cross_task_macro_score": null,
+  "note": "Classification tasks use macro-F1 as the primary metric. Generation tasks report exact match and token-F1 separately; incompatible metrics are not averaged together.",
+  "prediction_sha256": {
+    "validation": "3a2dd674eb2803a0462218557d32afcaf81e1a8d802c90fc2fedd2a5d7822d1f",
+    "test": "926653ee370a692080fb4c8ef5d5390a48ac976d6bea304ef3002b1f23579bda",
+    "ood": null
+  }
+}
