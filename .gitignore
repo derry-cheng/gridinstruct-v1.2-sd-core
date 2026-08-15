@@ -30,6 +30,8 @@ metadata/*source_group*.csv
 # Reproducible build products and local logs
 paper/**/build/
 paper/**/build_embedded/
+paper/**/build_embedded_*/
+paper/**/main_with_bbl.tex
 paper/**/*.aux
 paper/**/*.bbl
 paper/**/*.blg
