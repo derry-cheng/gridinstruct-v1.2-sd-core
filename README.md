@@ -1,4 +1,4 @@
-# GridInstruct v1.2-sd-core
+# GridInstruct
 
 GridInstruct is a topology- and rule-grounded instruction dataset for research on power-grid
 dispatch assistance. It connects natural-language requests to reproducible AC operating
@@ -6,12 +6,11 @@ states, traceable rule cards, structured queries and tool actions, and task-spec
 evaluation evidence. The release covers six registered task families and several
 provenance-controlled evaluation regimes.
 
-The current local snapshot is `v1.2-sd-core`. It contains the promoted 95,479-row table,
-split manifests, current validation receipts, independent OPF and network-envelope
-diagnostics, a template-family holdout, and a Scientific Data manuscript. The local evidence
-is technically auditable, while the raw
-population-level solver ledgers, completed expert review, public repository/DOI, and named
-author metadata remain explicit external gates. The compact reviewer map is
+The current local snapshot contains the promoted 95,479-row table, split definitions,
+validation evidence, independent OPF and network-envelope diagnostics, a template-family
+holdout, and the Scientific Data manuscript. The code is publicly available on GitHub and
+archived at Zenodo. The raw population-level solver ledgers, completed expert review, final
+data accession, and named author metadata remain explicit external gates. The compact reviewer map is
 `release/reviewer_access_manifest_2026-08-13.json`.
 The dated remediation ledger is `reports/sd_closeout_status_2026-08-13.json`; it records the
 C1--C5 scope without treating external inputs as completed.
@@ -35,8 +34,9 @@ C1--C5 scope without treating external inputs as completed.
 
 The LaTeX package is kept under `paper/scientific_data_latex/`: `main.tex` is the source,
 `build/main.pdf` is the main compilation, `build_embedded/main_with_bbl.pdf` is the embedded-
-bibliography compilation, and `LATEX_BUILD_REPORT.json` is the current local receipt. Build
-outputs are kept separate from benchmark tables and raw data.
+bibliography compilation, and `LATEX_BUILD_REPORT.json` records the current build. Editable
+Drawio sources are under `figures/editable`, while article and supporting exports are separated
+under `figures/generated`. Build outputs remain separate from benchmark tables and raw data.
 
 All commands in this repository use the local snapshot. No remote workspace, GPU job, or
 untracked checkpoint is required for the published local audits.
