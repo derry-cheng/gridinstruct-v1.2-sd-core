@@ -49,20 +49,24 @@ def plot(rows: list[dict[str, Any]], path: Path) -> None:
     ensure_dirs(path.parent)
     profiles = ["full_contract", "target_hidden", "instruction_only"]
     tasks = list(TASKS)
-    fig, axes = plt.subplots(len(tasks), 1, figsize=(9.0, 8.4), sharex=True)
+    task_labels = {
+        "dispatcher_intent_tool_call": "Intent routing",
+        "operation_ticket_check": "Ticket check",
+        "regulation_compliance_check": "Compliance check",
+    }
+    fig, axes = plt.subplots(len(tasks), 1, figsize=(8.2, 6.5), sharex=True)
     x = np.arange(len(profiles))
     for ax, task in zip(np.atleast_1d(axes), tasks):
         subset = {row["input_profile"]: row for row in rows if row["task_type"] == task}
         values = [subset[profile]["macro_f1"] for profile in profiles]
         ax.bar(x, values, width=0.62, color=["#1b4965", "#5fa8d3", "#cae9ff"])
-        ax.set_ylim(0, 1.05)
-        ax.set_ylabel(task.replace("_", " ") + "\nmacro-F1")
+        ax.set_ylim(0, 1.12)
+        ax.set_ylabel(task_labels.get(task, task.replace("_", " ")) + "\nmacro-F1")
         ax.grid(axis="y", alpha=0.25)
         for index, value in enumerate(values):
             ax.text(index, value + 0.025, f"{value:.3f}", ha="center", va="bottom", fontsize=8)
     axes[-1].set_xticks(x)
     axes[-1].set_xticklabels(["Full contract", "Target hidden", "Instruction only"])
-    fig.suptitle("Exact-surface component split: target-hidden classification", y=0.995)
     fig.tight_layout()
     fig.savefig(path, dpi=220, bbox_inches="tight")
     plt.close(fig)

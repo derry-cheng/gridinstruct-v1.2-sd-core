@@ -241,20 +241,29 @@ def plot(rows: list[dict[str, Any]], path: Path) -> None:
     order = ["full_contract", "target_hidden", "instruction_only"]
     splits = list(SPLITS)
     tasks = list(TASKS)
-    fig, axes = plt.subplots(len(tasks), 1, figsize=(9.0, 9.0), sharex=True)
+    task_labels = {
+        "dispatcher_intent_tool_call": "Intent routing",
+        "operation_ticket_check": "Ticket check",
+        "regulation_compliance_check": "Compliance check",
+    }
+    split_labels = {
+        "standard": "Standard",
+        "strict_source_group": "Strict source-group",
+        "template_holdout": "Template holdout",
+    }
+    fig, axes = plt.subplots(len(tasks), 1, figsize=(8.2, 6.6), sharex=True)
     for ax, task in zip(np.atleast_1d(axes), tasks):
         for split_index, split in enumerate(splits):
             subset = {row["input_profile"]: row for row in rows if row["task_type"] == task and row["split"] == split}
             values = [subset[profile]["macro_f1"] if profile in subset else np.nan for profile in order]
             x = np.arange(len(order)) + split_index * 0.25
-            ax.bar(x, values, width=0.23, label=split.replace("_", " ").title())
-        ax.set_ylim(0, 1.05)
-        ax.set_ylabel(f"{task.replace('_', ' ')}\nmacro-F1")
+            ax.bar(x, values, width=0.23, label=split_labels.get(split, split.replace("_", " ").title()))
+        ax.set_ylim(0, 1.08)
+        ax.set_ylabel(f"{task_labels.get(task, task.replace('_', ' '))}\nmacro-F1")
         ax.grid(axis="y", alpha=0.25)
     axes[-1].set_xticks(np.arange(len(order)) + 0.25)
     axes[-1].set_xticklabels(["Full contract", "Target hidden", "Instruction only"])
-    axes[0].legend(frameon=False, ncol=3, loc="upper center")
-    fig.suptitle("Classification after target-field removal", y=0.995)
+    axes[0].legend(frameon=False, ncol=3, loc="lower center", bbox_to_anchor=(0.5, 1.01))
     fig.tight_layout()
     fig.savefig(path, dpi=220, bbox_inches="tight")
     plt.close(fig)
