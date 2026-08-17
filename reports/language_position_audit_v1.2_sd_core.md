@@ -1,6 +1,6 @@
 # Language position audit for GridInstruct v1.2-sd-core
 
-Generated at: `2026-08-13T04:17:46.355764+00:00`
+Generated at: `2026-08-17T02:30:51.114201+00:00`
 Dataset: `data/gridinstruct_v1.2_sd_core_en.jsonl`
 
 This audit checks the script profile of natural-language fields independently from stable schema identifiers. A translated release is treated as valid only after the same schema, split, grounding, and label-consistency checks pass.
