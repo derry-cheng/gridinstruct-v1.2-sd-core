@@ -20,7 +20,7 @@
       "regulation_qa"
     ],
     "access_date": "2026-08-18",
-    "extension_version": "international-rule-probe-v1",
+    "extension_version": "international-rule-probe-v2",
     "generation_scope": "jurisdictional_rule_probe_only",
     "source_metadata_sha256": "88db1ee38a661f252a31cce4aeb964303af20f3b3c7ab1fc3a1e461ab35ba150"
   },
@@ -45,7 +45,7 @@
       "regulation_qa"
     ],
     "access_date": "2026-08-18",
-    "extension_version": "international-rule-probe-v1",
+    "extension_version": "international-rule-probe-v2",
     "generation_scope": "jurisdictional_rule_probe_only",
     "source_metadata_sha256": "18c7362f24465b0f05337a93635ed0bbf7bac618873246fde827d06fff399ad6"
   },
@@ -70,7 +70,7 @@
       "regulation_qa"
     ],
     "access_date": "2026-08-18",
-    "extension_version": "international-rule-probe-v1",
+    "extension_version": "international-rule-probe-v2",
     "generation_scope": "jurisdictional_rule_probe_only",
     "source_metadata_sha256": "ba8adea951feae1dc2956e7320724091ad5bec75f1ce4380806973c058afc359"
   },
@@ -95,7 +95,7 @@
       "regulation_qa"
     ],
     "access_date": "2026-08-18",
-    "extension_version": "international-rule-probe-v1",
+    "extension_version": "international-rule-probe-v2",
     "generation_scope": "jurisdictional_rule_probe_only",
     "source_metadata_sha256": "a7e6e8c0ba0dd5c70cb05bad22cad6b7a9b1948d92240de2ec5cedf175c70d81"
   },
@@ -122,7 +122,7 @@
       "regulation_qa"
     ],
     "access_date": "2026-08-18",
-    "extension_version": "international-rule-probe-v1",
+    "extension_version": "international-rule-probe-v2",
     "generation_scope": "jurisdictional_rule_probe_only",
     "source_metadata_sha256": "06c5e1acb42fc38c4709bdc81049376402e9ee111dca58437ea68b88c878e9c2"
   },
@@ -148,7 +148,7 @@
       "regulation_qa"
     ],
     "access_date": "2026-08-18",
-    "extension_version": "international-rule-probe-v1",
+    "extension_version": "international-rule-probe-v2",
     "generation_scope": "jurisdictional_rule_probe_only",
     "source_metadata_sha256": "5d38105d930700dc45b4576f7221fdcfbd9d1d9ce4c2a9c0b00d415b88902b59"
   },
@@ -174,7 +174,7 @@
       "regulation_qa"
     ],
     "access_date": "2026-08-18",
-    "extension_version": "international-rule-probe-v1",
+    "extension_version": "international-rule-probe-v2",
     "generation_scope": "jurisdictional_rule_probe_only",
     "source_metadata_sha256": "608e18fe72d776c5360938f3bb62c1ddf032a2cc8c4ee1d59176788d6e93f7dd"
   },
@@ -200,7 +200,7 @@
       "regulation_qa"
     ],
     "access_date": "2026-08-18",
-    "extension_version": "international-rule-probe-v1",
+    "extension_version": "international-rule-probe-v2",
     "generation_scope": "jurisdictional_rule_probe_only",
     "source_metadata_sha256": "50e0005ae6116c177651ae43241eb9e23b0821b2e09876e398b97d4defadcdcf"
   }

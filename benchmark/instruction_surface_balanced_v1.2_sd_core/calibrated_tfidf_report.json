@@ -1,39 +1,39 @@
 {
-  "generated_at": "2026-08-08T17:02:46.993509+00:00",
+  "generated_at": "2026-08-18T15:38:55.457450+00:00",
   "status": "pass",
   "objective": "calibrated_probability_tfidf_classification",
   "train": "data/v1.2_sd_core_instruction_surface_balanced_train_en.jsonl",
   "test": "data/v1.2_sd_core_instruction_surface_balanced_test_en.jsonl",
   "ood": "data/v1.2_sd_core_instruction_surface_balanced_ood_test_en.jsonl",
-  "train_records": 14257,
-  "test_records": 4696,
-  "ood_records": 71791,
+  "train_records": 12625,
+  "test_records": 5319,
+  "ood_records": 71611,
   "code_sha256": "be95b67b0a9f0d0b6b96e5883aa555a597aedee21561343d6f66a4bcad4e0a2e",
   "input_sha256": {
-    "train": "ae0ce77d81aae353506b8e2a6d0f921eb22ebe82977a3536dc9505cbbc4d65da",
-    "test": "3bb67987c49d8b96f30f4020d5bd403da4638a677631bc2c92cb5bf2ba696c24",
-    "ood": "3163e274b1b704eaa4e6127e29759daaeeefb57261b25747333981e841558861"
+    "train": "592db2fd3d44650f1d52f50835ad751762bd0aa763065762a7b8ef0cd75a4c89",
+    "test": "5d94f750b54c2eb0797ed785c1cfc76b9cabf267dca3a01202d51ae34c6e5b91",
+    "ood": "c87e95cda9579104f7a2f67f1f243cc40dea90cd2d30c146a7c31cac22c4693c"
   },
   "prediction_sha256": {
-    "operation_ticket_check_test": "c4a68e8b80f376399c62ece27e7e417253bd4f90901baaff13e400fe857f2b99",
+    "operation_ticket_check_test": "be448b8a1c4b5c2a94ced59b01579de64f74e19772e3d95e23247d38d98057c0",
     "operation_ticket_check_ood": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "regulation_compliance_check_test": "682acc56995ae52fa1a08375cfcc00569389b5575d9771594099e0607f5099e5",
-    "regulation_compliance_check_ood": "97d46b5425bf9b608c463c4a6aded0fa8284af22f30fcb8b59aeb150a6bbc33e",
-    "dispatcher_intent_tool_call_test": "5494535161dfb94152532c5eca766584685fb9a524eef600a83c6031c2a77434",
-    "dispatcher_intent_tool_call_ood": "986245a43ec4e57241f448be94ff523185830c428566bd5da1e214deb6a26c83"
+    "regulation_compliance_check_test": "d4965ca6faf07895043f212ee89fca303f31ad12e95aed86dd9150969a2ea087",
+    "regulation_compliance_check_ood": "eee662d59e3d88718e868a3528c90992a0a58c566846da0f5f00327c0a0cad00",
+    "dispatcher_intent_tool_call_test": "4099b53efc08d056fabef10e60e5d233a6f273ccfeefa4f9e496d18b9828162d",
+    "dispatcher_intent_tool_call_ood": "d6fc04a9dc5744aca664cdff0ef65f226851b01c1c2bde3910b550410ca6b55e"
   },
   "metrics": {
     "operation_ticket_check": {
       "test": {
-        "n": 2161,
+        "n": 3264,
         "labels": [
           "compliant",
           "compliant_with_monitoring",
           "non_compliant"
         ],
-        "macro_f1": 0.992474786812039,
-        "ece_10bin": 0.0681283293066787,
-        "brier_multiclass": 0.020181541902232245,
+        "macro_f1": 0.998142679266549,
+        "ece_10bin": 0.07765649446327727,
+        "brier_multiclass": 0.019694134987795073,
         "probability_finite": true,
         "probability_nonnegative": true,
         "probability_rows_sum_to_one": true
@@ -51,29 +51,29 @@
     },
     "regulation_compliance_check": {
       "test": {
-        "n": 367,
+        "n": 322,
         "labels": [
           "compliant",
           "compliant_with_monitoring",
           "non_compliant"
         ],
-        "macro_f1": 0.6757407407407409,
-        "ece_10bin": 0.06485592236509502,
-        "brier_multiclass": 0.4226094343861652,
+        "macro_f1": 0.8611313212153547,
+        "ece_10bin": 0.11849766763139016,
+        "brier_multiclass": 0.2324324668461539,
         "probability_finite": true,
         "probability_nonnegative": true,
         "probability_rows_sum_to_one": true
       },
       "ood": {
-        "n": 22913,
+        "n": 21546,
         "labels": [
           "compliant",
           "compliant_with_monitoring",
           "non_compliant"
         ],
-        "macro_f1": 0.7614624129090682,
-        "ece_10bin": 0.11518535145376912,
-        "brier_multiclass": 0.2869604340366516,
+        "macro_f1": 0.7160569662504804,
+        "ece_10bin": 0.06678023162647614,
+        "brier_multiclass": 0.2894996755176641,
         "probability_finite": true,
         "probability_nonnegative": true,
         "probability_rows_sum_to_one": true
@@ -81,29 +81,27 @@
     },
     "dispatcher_intent_tool_call": {
       "test": {
-        "n": 672,
+        "n": 327,
         "labels": [
-          "diagnose_and_dispatch",
-          "mitigate_violations",
-          "security_check_and_redispatch"
+          "diagnose_and_dispatch"
         ],
         "macro_f1": 1.0,
-        "ece_10bin": 0.07736705885055409,
-        "brier_multiclass": 0.012091058110297526,
+        "ece_10bin": 0.27183537182136597,
+        "brier_multiclass": 0.12348090073413943,
         "probability_finite": true,
         "probability_nonnegative": true,
         "probability_rows_sum_to_one": true
       },
       "ood": {
-        "n": 16379,
+        "n": 18602,
         "labels": [
           "diagnose_and_dispatch",
           "mitigate_violations",
           "security_check_and_redispatch"
         ],
-        "macro_f1": 1.0,
-        "ece_10bin": 0.07604409384187691,
-        "brier_multiclass": 0.01246124779169043,
+        "macro_f1": 0.9648999406397937,
+        "ece_10bin": 0.2754904757283029,
+        "brier_multiclass": 0.1922998869714731,
         "probability_finite": true,
         "probability_nonnegative": true,
         "probability_rows_sum_to_one": true

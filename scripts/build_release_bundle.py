@@ -44,8 +44,10 @@ REQUIRED = [
     "metadata/data_lineage_manifest.json", "docs/DATA_GENERATION_LINEAGE.md",
     "metadata/third_party_asset_inventory.json", "docs/THIRD_PARTY_ASSETS.md",
     "third_party/pglib-opf-v23.07/LICENSE",
+    "third_party/pglib-opf-v23.07/UPSTREAM_COMMIT",
     "docs/SCIENTIFIC_DATA_DESCRIPTOR_DRAFT.md", "docs/DATA_RECORDS.md", "docs/TECHNICAL_VALIDATION.md", "docs/AVAILABILITY_AND_LIMITATIONS.md", "docs/LICENSES_AND_CITATION.md",
     "simulation_outputs/contingency/scenarios_converged.json", "simulation_outputs/opf_closed_loop/auxiliary_opf_results.json",
+    "simulation_outputs/contingency/scenario_reconstruction_attempts.json",
     "simulation_outputs/opf_closed_loop/opf_closed_loop_commit_v1.2_sd_core.json",
     "simulation_outputs/opf_closed_loop/ieee14_secure_candidate_scenarios_v1.json",
     "simulation_outputs/opf_closed_loop/opf_action_uncertainty_stress_cases_v1.json",
@@ -74,6 +76,19 @@ REQUIRED = [
     "benchmark/multiseed_v1.2_sd_core/generation_intelligent_data_query_five_seed_summary.json",
     "benchmark/multiseed_v1.2_sd_core/generation_auxiliary_decision_five_seed_summary.json",
     "release/archive_manifest_v1.2_sd_core.csv", "release/checksums_sha256.txt",
+    "reports/scenario_truth_reconstruction_v1.2_sd_core.json",
+    "reports/query_result_consistency_repair_final_v1.2_sd_core.json",
+    "reports/query_truth_completeness_gate_v1.2_sd_core.json",
+    "reports/compliance_label_recompute_direct_v1.2_sd_core.json",
+    "reports/data_validation_direct_english_v1.2_sd_core.json",
+    "reports/direct_english_materialization_v1.2_sd_core.json",
+    "reports/direct_english_canonical_materialization_v1.2_sd_core.json",
+    "reports/direct_english_split_materialization_v1.2_sd_core.json",
+    "data/international_rule_probe_v1.jsonl",
+    "metadata/international_rule_probe_splits_v1.json",
+    "reports/international_rule_probe_v1.json",
+    "reports/international_rule_probe_splits_v1.json",
+    "benchmark/international_rule_probe_v1/nearest_neighbor_report.json",
 ]
 EXPECTED_TASKS = {
     "operation_ticket_check",
@@ -199,6 +214,10 @@ def should_include(path: Path) -> bool:
         if any(token in text for token in SIDECAR_REPORT_TOKENS):
             return False
         keep_tokens = [
+            "direct_english_materialization_v1.2_sd_core", "direct_english_canonical_materialization_v1.2_sd_core",
+            "direct_english_split_materialization_v1.2_sd_core", "data_validation_direct_english_v1.2_sd_core",
+            "query_result_consistency_repair_final_v1.2_sd_core", "query_truth_completeness_gate_v1.2_sd_core",
+            "compliance_label_recompute_direct_v1.2_sd_core", "scenario_truth_reconstruction_v1.2_sd_core",
             "data_validation_v1.2_sd_core", "data_quality_optimization_v1.2_sd_core",
             "generation_grounding_audit_v1.2_sd_core", "model_score_quality_audit_v1.2_sd_core", "shortcut_ablation_v1.2_sd_core",
             "expert_review_package_v1.2_sd_core", "structured_prediction_normalization_v1.2_sd_core", "sd_core_distribution_risk_audit",
@@ -262,7 +281,7 @@ def should_include(path: Path) -> bool:
         return "stratified_expert_review_v1.2_sd_core" in text
     if text.startswith("release/"):
         return False
-    if text == "third_party/pglib-opf-v23.07/LICENSE":
+    if text.startswith("third_party/pglib-opf-v23.07/") and path.suffix.lower() in {"", ".m"}:
         return True
     if text.startswith("docs/") or text.startswith("metadata/") or text.startswith("rules/") or text.startswith("scripts/") or text.startswith("examples/"):
         return True
@@ -437,6 +456,79 @@ def write_reproducibility_manifests() -> None:
         name: sha256(path) if path.is_file() else None
         for name, path in split_paths.items()
     }
+    environment_drift = {
+        package: {
+            "expected": expected_versions[package],
+            "actual": package_versions[package],
+        }
+        for package in expected_versions
+        if package_versions[package] != expected_versions[package]
+    }
+    # The canonical English table was regenerated after the historical neural
+    # suite.  Use the current, fully reproducible CPU TF--IDF report as the
+    # active learnability evidence until a new neural snapshot is explicitly
+    # trained on these exact hashes.  Historical neural summaries remain local
+    # provenance but are not treated as current release evidence.
+    direct_report_path = ROOT / "benchmark/direct_english_tfidf_v1.2_sd_core_report.json"
+    if direct_report_path.is_file():
+        direct_report = json.loads(direct_report_path.read_text(encoding="utf-8"))
+        if direct_report.get("status") == "pass" and direct_report.get("input_sha256", {}).get("train") == split_hashes.get("train"):
+            direct_code_hash = sha256(ROOT / "scripts/run_tfidf_task_baselines.py")
+            direct_predictions = ROOT / "benchmark/direct_english_tfidf_v1.2_sd_core_test_predictions.jsonl"
+            revisions = []
+            for task in sorted(EXPECTED_TASKS):
+                metric = (direct_report.get("test_metrics") or {}).get(task)
+                if not isinstance(metric, dict):
+                    continue
+                revisions.append(
+                    {
+                        "summary": "benchmark/direct_english_tfidf_v1.2_sd_core_report.json",
+                        "summary_sha256": sha256(direct_report_path),
+                        "task": task,
+                        "family": "direct_cpu_tfidf_diagnostic",
+                        "input_sha256": direct_report.get("input_sha256"),
+                        "model_revision": {
+                            "model_name": "character-ngram TF-IDF with LinearSVC/nearest-neighbour retrieval",
+                            "snapshot": "scripts/run_tfidf_task_baselines.py",
+                            "sha256": direct_code_hash,
+                        },
+                        "suite_script_sha256": direct_code_hash,
+                        "artifacts": [
+                            {
+                                "seed": "deterministic",
+                                "artifacts": {
+                                    "report": "benchmark/direct_english_tfidf_v1.2_sd_core_report.json",
+                                    "predictions": "benchmark/direct_english_tfidf_v1.2_sd_core_test_predictions.jsonl",
+                                },
+                                "sha256": {
+                                    "report": sha256(direct_report_path),
+                                    "predictions": sha256(direct_predictions) if direct_predictions.is_file() else None,
+                                },
+                            }
+                        ],
+                        "status": "pass",
+                    }
+                )
+            direct_errors = []
+            if set(row["task"] for row in revisions) != EXPECTED_TASKS:
+                direct_errors.append("direct_baseline_task_set_mismatch")
+            if not direct_predictions.is_file():
+                direct_errors.append("direct_baseline_predictions_missing")
+            write_json(
+                ROOT / "metadata/model_revision_manifest.json",
+                {
+                    "schema_version": "2.0",
+                    "expected_task_count": len(EXPECTED_TASKS),
+                    "task_count": len(revisions),
+                    "current_split_sha256": split_hashes,
+                    "status": "pass" if not direct_errors else "fail",
+                    "validation_errors": direct_errors,
+                    "environment_drift": environment_drift,
+                    "active_evidence": "direct_cpu_tfidf_diagnostic",
+                    "models": revisions,
+                },
+            )
+            return
     revisions = []
     validation_errors: list[str] = []
     for path in sorted((ROOT / "benchmark/multiseed_v1.2_sd_core").glob("*_five_seed_summary.json")):

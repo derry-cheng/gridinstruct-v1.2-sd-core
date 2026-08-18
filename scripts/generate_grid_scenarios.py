@@ -511,6 +511,9 @@ def run_scenario(
     bus_idx: int | None = None,
     pglib_root: Path | None = None,
     scale_generation_with_load: bool = False,
+    solver_algorithm: str = "nr",
+    enforce_q_lims: bool = True,
+    max_iteration: int = 40,
 ) -> dict:
     net = clone_net(system, pglib_root)
     scale_loads(net, load_level)
@@ -567,11 +570,11 @@ def run_scenario(
         try:
             pp.runpp(
                 net,
-                algorithm="nr",
+                algorithm=solver_algorithm,
                 init="auto",
                 tolerance_mva=1e-6,
-                max_iteration=40,
-                enforce_q_lims=True,
+                max_iteration=max_iteration,
+                enforce_q_lims=enforce_q_lims,
                 numba=False,
             )
             solver_status = "converged"

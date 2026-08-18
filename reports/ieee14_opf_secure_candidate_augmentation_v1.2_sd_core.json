@@ -146,7 +146,7 @@
     },
     {
       "path": "scripts/generate_grid_scenarios.py",
-      "sha256": "d3335272233833621042441f1cc1bad2780963acb5748f9100c06f94b388d084"
+      "sha256": "8e84710dd9fc0d25817367c7be3811b3aa5243af609ab41e6f388de683cc2c3b"
     }
   ],
   "line_pairs": [

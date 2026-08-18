@@ -20,7 +20,7 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_ACCESS_DATE = "2026-08-18"
-EXTENSION_VERSION = "international-rule-probe-v1"
+EXTENSION_VERSION = "international-rule-probe-v2"
 
 AUDIENCES = (
     "duty dispatcher",
@@ -201,10 +201,25 @@ def make_record(rule: dict[str, Any], index: int, access_date: str) -> dict[str,
         f"For a {audience}, explain the {rule['standard_id']} requirement in one concise answer. "
         f"Use the rule summary and address {focus}. Rule summary: {rule['summary']}"
     )
+    answer_openers = {
+        "a concise rule summary": "Operational meaning",
+        "an evidence checklist": "Evidence required for review",
+        "an applicability note": "Applicability",
+        "a verification procedure": "Verification procedure",
+    }
+    focus_clauses = {
+        "the governing obligation": "The governing obligation is",
+        "the required evidence": "The review should retain",
+        "the operating state or limit": "The operating-state condition is",
+        "the contingency or post-action check": "The contingency or post-action check is",
+    }
+    opener = answer_openers[deliverable]
+    focus_sentence = focus_clauses[focus]
     output = (
-        f"{rule['standard_id']} ({rule['clause_id']}) requires the stated operator or coordinator "
-        f"to apply this condition: {rule['summary']} Evidence should include "
-        f"{', '.join(rule['evidence_fields'])}. {rule['threshold_origin']}"
+        f"{rule['standard_id']} ({rule['clause_id']}) — {opener}: {rule['summary']} "
+        f"{focus_sentence} {focus}. Record {', '.join(rule['evidence_fields'])}. "
+        f"{rule['threshold_origin']} The answer is scoped to {rule['jurisdiction']} and the cited source clause; "
+        f"it is written for a {audience}."
     )
     rationale = (
         f"The answer is generated directly from the typed English rule contract for {rule_id}; "
@@ -233,8 +248,17 @@ def make_record(rule: dict[str, Any], index: int, access_date: str) -> dict[str,
             "clause_id": rule["clause_id"],
             "source_url": rule["source_url"],
             "threshold_origin": rule["threshold_origin"],
+            "answer_variant": f"audience={audience};deliverable={deliverable};focus={focus}",
         },
         "output": output,
+        "target_contract": {
+            "rule_id": rule_id,
+            "jurisdiction": rule["jurisdiction"],
+            "standard_id": rule["standard_id"],
+            "clause_id": rule["clause_id"],
+            "evidence_fields": list(rule["evidence_fields"]),
+            "threshold_origin": rule["threshold_origin"],
+        },
         "rationale": rationale,
         "source_regulation_ids": [rule_id],
         "source_simulation_case_id": None,
@@ -252,6 +276,7 @@ def make_record(rule: dict[str, Any], index: int, access_date: str) -> dict[str,
             "source_metadata_sha256": rule["source_metadata_sha256"],
             "access_date": access_date,
             "extension_version": EXTENSION_VERSION,
+            "answer_variant": f"audience={audience};deliverable={deliverable};focus={focus}",
         },
     }
 
@@ -295,26 +320,35 @@ def validate(rules: list[dict[str, Any]], records: list[dict[str, Any]]) -> dict
     if len({row["id"] for row in records}) != len(records):
         errors.append("duplicate record id")
     per_rule = {rule_id: 0 for rule_id in sorted(rule_ids)}
+    outputs_per_rule: dict[str, set[str]] = {rule_id: set() for rule_id in sorted(rule_ids)}
     for row in records:
         linked = row.get("source_regulation_ids") or []
         if len(linked) != 1 or linked[0] not in rule_ids:
             errors.append(f"invalid rule link for {row.get('id')}")
         else:
             per_rule[linked[0]] += 1
+            outputs_per_rule[linked[0]].add(str(row.get("output")))
         if row.get("task_type") != "regulation_qa":
             errors.append(f"wrong task for {row.get('id')}")
         if row.get("metadata", {}).get("generation_mode") != "direct_english_from_typed_rule_contract":
             errors.append(f"wrong generation mode for {row.get('id')}")
         if not row.get("instruction") or not row.get("output") or not row.get("rationale"):
             errors.append(f"empty language field for {row.get('id')}")
+        target = row.get("target_contract") or {}
+        if target.get("rule_id") != linked[0] or not target.get("evidence_fields"):
+            errors.append(f"target contract mismatch for {row.get('id')}")
     if any(count != 64 for count in per_rule.values()):
         errors.append(f"per-rule count mismatch: {per_rule}")
+    if any(len(values) < 32 for values in outputs_per_rule.values()):
+        errors.append(f"insufficient answer diversity: { {key: len(value) for key, value in outputs_per_rule.items()} }")
     return {
         "status": "pass" if not errors else "fail",
         "extension_version": EXTENSION_VERSION,
         "rule_count": len(rules),
         "record_count": len(records),
         "records_per_rule": per_rule,
+        "unique_outputs_per_rule": {key: len(value) for key, value in outputs_per_rule.items()},
+        "unique_output_count": len({str(row.get("output")) for row in records}),
         "jurisdictions": {name: sum(1 for rule in rules if rule["jurisdiction"] == name) for name in sorted({r["jurisdiction"] for r in rules})},
         "errors": errors,
     }

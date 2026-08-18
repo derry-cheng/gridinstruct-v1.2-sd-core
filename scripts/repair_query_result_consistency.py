@@ -69,6 +69,10 @@ def analyze_file(
         if require_complete_truth and not truth_is_complete(scenario):
             incomplete_scenarios.append({"id": row.get("id"), "scenario_id": scenario_id})
             continue
+        if not truth_is_complete(scenario):
+            metadata = dict(migrated.get("metadata") or {})
+            metadata["query_truth_status"] = "solver_failed_state_bound"
+            migrated["metadata"] = metadata
         migrated = upgrade_legacy_overload_contract(migrated, scenario)
         query = migrated["structured_query"]
         try:

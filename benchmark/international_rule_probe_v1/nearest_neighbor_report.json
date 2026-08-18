@@ -1,24 +1,26 @@
 {
   "status": "pass",
-  "generated_at": "2026-08-18T09:37:45.996153+00:00",
-  "code_sha256": "8e69ea6a79e8b1a09a91a5f2dd90817109c9b9d2ff87220f2cae2e527e9ce652",
+  "generated_at": "2026-08-18T14:10:11.541271+00:00",
+  "code_sha256": "b162d41c0e790f6716bd7712b242c0062b82c267e25549683733caaf4b30adfb",
   "data": "data/international_rule_probe_v1.jsonl",
-  "data_sha256": "1c0a4ab5c8aa014a2f4eedaf26afc43c3ea87c1d59265e247644a7ccf577d912",
+  "data_sha256": "345d1ef94068dacb8e502efc045fbc9721172a46974c96956e275e292b6d688a",
   "split_manifest": "metadata/international_rule_probe_splits_v1.json",
-  "split_manifest_sha256": "e6df687fbe47ffc92fe189978be83fb083b8574c16f848d091780ccd24d27f82",
-  "objective": "diagnostic_lexical_transfer_under_leave_one_jurisdiction_out",
-  "model_family": "char_tfidf_nearest_neighbor_output_copy",
+  "split_manifest_sha256": "848af2e7204c64df36ff0e50d4c6e504fe2a0e0ae24653a6c9883340b01c5903",
+  "objective": "leakage_controlled_structured_transfer_under_leave_one_jurisdiction_out",
+  "model_family": "char_tfidf_nearest_neighbor_typed_contract_transfer",
   "vectorizer": {
     "analyzer": "char",
     "ngram_range": [
       2,
       4
     ],
-    "max_features": 60000
+    "max_features": 60000,
+    "implementation": "dependency_free"
   },
   "folds": [
     {
       "name": "train_european_union_test_nerc_north_america",
+      "fold_type": "cross_jurisdiction",
       "train_jurisdiction": "European Union",
       "test_jurisdiction": "NERC North America",
       "train_records": 256,
@@ -26,15 +28,19 @@
       "metrics": {
         "n": 256,
         "exact_match": 0.0,
-        "token_f1": 0.35453102741060766,
-        "avg_nearest_similarity": 0.7888910681917669,
-        "same_rule_id_rate": 0.0,
-        "same_standard_id_rate": 0.0
+        "token_f1": 0.4804452876089251,
+        "avg_nearest_similarity": 0.6505186331219227,
+        "rule_id_accuracy": 0.0,
+        "standard_id_accuracy": 0.0,
+        "jurisdiction_accuracy": 0.0,
+        "clause_exact": 0.0,
+        "evidence_field_f1": 0.0
       },
       "prediction_count": 256
     },
     {
       "name": "train_nerc_north_america_test_european_union",
+      "fold_type": "cross_jurisdiction",
       "train_jurisdiction": "NERC North America",
       "test_jurisdiction": "European Union",
       "train_records": 256,
@@ -42,22 +48,90 @@
       "metrics": {
         "n": 256,
         "exact_match": 0.0,
-        "token_f1": 0.3519127202287834,
-        "avg_nearest_similarity": 0.7832181767727142,
-        "same_rule_id_rate": 0.0,
-        "same_standard_id_rate": 0.0
+        "token_f1": 0.505619728984857,
+        "avg_nearest_similarity": 0.667051882261969,
+        "rule_id_accuracy": 0.0,
+        "standard_id_accuracy": 0.0,
+        "jurisdiction_accuracy": 0.0,
+        "clause_exact": 0.0,
+        "evidence_field_f1": 0.0
       },
       "prediction_count": 256
+    },
+    {
+      "name": "within_european_union_variant_holdout",
+      "fold_type": "within_jurisdiction_variant_holdout",
+      "train_jurisdiction": "European Union",
+      "test_jurisdiction": "European Union",
+      "train_records": 192,
+      "test_records": 64,
+      "metrics": {
+        "n": 64,
+        "exact_match": 0.0,
+        "token_f1": 0.9747262081029614,
+        "avg_nearest_similarity": 0.9843936511425032,
+        "rule_id_accuracy": 1.0,
+        "standard_id_accuracy": 1.0,
+        "jurisdiction_accuracy": 1.0,
+        "clause_exact": 1.0,
+        "evidence_field_f1": 1.0
+      },
+      "prediction_count": 64
+    },
+    {
+      "name": "within_nerc_north_america_variant_holdout",
+      "fold_type": "within_jurisdiction_variant_holdout",
+      "train_jurisdiction": "NERC North America",
+      "test_jurisdiction": "NERC North America",
+      "train_records": 192,
+      "test_records": 64,
+      "metrics": {
+        "n": 64,
+        "exact_match": 0.0,
+        "token_f1": 0.9724857168139845,
+        "avg_nearest_similarity": 0.976414641639004,
+        "rule_id_accuracy": 1.0,
+        "standard_id_accuracy": 1.0,
+        "jurisdiction_accuracy": 1.0,
+        "clause_exact": 1.0,
+        "evidence_field_f1": 1.0
+      },
+      "prediction_count": 64
     }
   ],
   "macro_metrics": {
     "exact_match": 0.0,
-    "token_f1": 0.3532218738196955,
-    "avg_nearest_similarity": 0.7860546224822406,
-    "same_rule_id_rate": 0.0,
-    "same_standard_id_rate": 0.0
+    "token_f1": 0.733319235377682,
+    "avg_nearest_similarity": 0.8195947020413498,
+    "rule_id_accuracy": 0.5,
+    "standard_id_accuracy": 0.5,
+    "jurisdiction_accuracy": 0.5,
+    "clause_exact": 0.5,
+    "evidence_field_f1": 0.5
+  },
+  "grouped_macro_metrics": {
+    "cross_jurisdiction": {
+      "exact_match": 0.0,
+      "token_f1": 0.49303250829689105,
+      "avg_nearest_similarity": 0.6587852576919458,
+      "rule_id_accuracy": 0.0,
+      "standard_id_accuracy": 0.0,
+      "jurisdiction_accuracy": 0.0,
+      "clause_exact": 0.0,
+      "evidence_field_f1": 0.0
+    },
+    "within_jurisdiction_variant_holdout": {
+      "exact_match": 0.0,
+      "token_f1": 0.973605962458473,
+      "avg_nearest_similarity": 0.9804041463907536,
+      "rule_id_accuracy": 1.0,
+      "standard_id_accuracy": 1.0,
+      "jurisdiction_accuracy": 1.0,
+      "clause_exact": 1.0,
+      "evidence_field_f1": 1.0
+    }
   },
   "prediction_path": "benchmark/international_rule_probe_v1/nearest_neighbor_predictions.jsonl",
-  "prediction_sha256": "5db255a024e541471d84f7a80a1f186d15c89fb27c9bf8079b47d9ebd3ad8462",
-  "interpretation": "This retrieval baseline measures lexical transfer across the two held-out jurisdictions. Exact match and token-F1 compare copied answers to the typed-contract outputs; they do not establish semantic legal correctness, physical compliance, or expert agreement."
+  "prediction_sha256": "35359e0ff0b092a811aa740533b95979a2b2c186bdd8e1642dbe51a7a8272d54",
+  "interpretation": "The baseline excludes explicit rule, standard, clause, and jurisdiction identifiers from its input. Structured field metrics are the primary transfer diagnostics. Exact match and token-F1 compare copied answers to the typed-contract outputs; none establishes legal correctness, physical compliance, or expert agreement."
 }

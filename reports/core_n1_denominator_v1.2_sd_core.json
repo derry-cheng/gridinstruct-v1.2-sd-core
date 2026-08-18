@@ -1,6 +1,6 @@
 {
   "contract_version": "gridinstruct-core4-line-n1-denominator-v2",
-  "generated_at": "2026-08-13T07:45:36.439882+00:00",
+  "generated_at": "2026-08-18T15:03:13.203961+00:00",
   "status": "pass",
   "scope": {
     "systems": [
@@ -52,7 +52,7 @@
     },
     "complete_truth": {
       "path": "simulation_outputs/contingency/scenarios_converged.json",
-      "sha256": "3e813b73ca2e9d1b4e899a54ca138b06c3350727c1d57b4f17b303188f5cd47d"
+      "sha256": "8f97a66cb91fea81fd495931b2af2e5eb4e5a5027a989c315c5523694fee93af"
     },
     "converged_core": {
       "path": "simulation_outputs/power_flow/scenarios_converged_core.json",
@@ -60,26 +60,26 @@
     },
     "generator_script": {
       "path": "scripts/generate_grid_scenarios.py",
-      "sha256": "d3335272233833621042441f1cc1bad2780963acb5748f9100c06f94b388d084"
+      "sha256": "8e84710dd9fc0d25817367c7be3811b3aa5243af609ab41e6f388de683cc2c3b"
     },
     "pglib_case_ieee118": {
-      "path": "/tmp/gaiav2-pglib-v23.07/pglib_opf_case118_ieee.m",
+      "path": "third_party/pglib-opf-v23.07/pglib_opf_case118_ieee.m",
       "sha256": "b1af0833849040c04babc3700631cff0d9afa66b79c5d3e13ae79bdf516cec78"
     },
     "pglib_case_ieee14": {
-      "path": "/tmp/gaiav2-pglib-v23.07/pglib_opf_case14_ieee.m",
+      "path": "third_party/pglib-opf-v23.07/pglib_opf_case14_ieee.m",
       "sha256": "bd5c568621de65e4b0922317010868bc7fa94173807faa10ea8fdbbe77c28106"
     },
     "pglib_case_ieee30": {
-      "path": "/tmp/gaiav2-pglib-v23.07/pglib_opf_case30_ieee.m",
+      "path": "third_party/pglib-opf-v23.07/pglib_opf_case30_ieee.m",
       "sha256": "cae3290639d989731d32428aacf30c0b918bc91db73bc54791f3aa62d3f76c70"
     },
     "pglib_case_ieee57": {
-      "path": "/tmp/gaiav2-pglib-v23.07/pglib_opf_case57_ieee.m",
+      "path": "third_party/pglib-opf-v23.07/pglib_opf_case57_ieee.m",
       "sha256": "aa3b48f7cbaade2afd69cb3790ef72be981db8494dcef9277bee460f754bdb22"
     },
     "pglib_license": {
-      "path": "/tmp/gaiav2-pglib-v23.07/LICENSE",
+      "path": "third_party/pglib-opf-v23.07/LICENSE",
       "sha256": "95b1cd9fee1676221d74f7c0cbba622d98ac098e9b317b3848113ef4356ab4fd"
     },
     "pglib_loader_script": {
@@ -88,7 +88,7 @@
     },
     "power_evidence_common_script": {
       "path": "scripts/power_evidence_common.py",
-      "sha256": "5451641fc315b4a4b59102684b9b63a551657ca1b5623b1987ba88e5e6c6c92b"
+      "sha256": "bf61c33986f9642035b396149e4050b76c9a2332abae10c231aede623189e0e1"
     },
     "simulation_report": {
       "path": "reports/simulation_report.json",

@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "file_count": 180,
+  "file_count": 186,
   "files": [
     {
       "path": "scripts/analyze_data_quality.py",
@@ -146,6 +146,11 @@
       "path": "scripts/audit_high_score_plausibility.py",
       "size_bytes": 8734,
       "sha256": "859ecf517185e3ed078553256a031ade55487429a027412d9d64d2898a4dce66"
+    },
+    {
+      "path": "scripts/audit_instruction_surface_current.py",
+      "size_bytes": 5437,
+      "sha256": "f77a7fa364cdea1eca12932a38329e1676b28b7bb0586a539418ff7c0a46d320"
     },
     {
       "path": "scripts/audit_label_split_support.py",
@@ -319,8 +324,8 @@
     },
     {
       "path": "scripts/build_release_bundle.py",
-      "size_bytes": 42970,
-      "sha256": "d590966ad49ce5a77d48e64f47693889a90676b71346c577189ce1aaa46e08d9"
+      "size_bytes": 48416,
+      "sha256": "96c0b4776394cc85452b0f3649c1cd5feaf7be9f99f66d7e7f5cb0e99aab7cc8"
     },
     {
       "path": "scripts/build_reproducibility_manifests.py",
@@ -334,8 +339,8 @@
     },
     {
       "path": "scripts/build_scoped_evidence_binding_manifest.py",
-      "size_bytes": 13924,
-      "sha256": "b66c91de8a7eae2623bd15561631a0fb56919e02f3d08fb36544dff8c9e6286e"
+      "size_bytes": 15543,
+      "sha256": "00ae4501b09b56f0d1c7ca8391aa515fda17c3ff9ca29f840e6a431a0fadc042"
     },
     {
       "path": "scripts/build_sd_closeout_manifest.py",
@@ -399,8 +404,8 @@
     },
     {
       "path": "scripts/create_balanced_near_neighbor_splits.py",
-      "size_bytes": 10333,
-      "sha256": "0cb05fc0336c2d2f75590bbe97edbac016d2971a048fd713052c148b78ea295a"
+      "size_bytes": 10593,
+      "sha256": "bd49f6e18e987aa123c4373baa2b00898a133f44eee987f491c94a4f2e982d9f"
     },
     {
       "path": "scripts/create_boundary_challenge_set.py",
@@ -429,13 +434,13 @@
     },
     {
       "path": "scripts/create_instruction_surface_balanced_splits.py",
-      "size_bytes": 5674,
-      "sha256": "669dd2dc34c16daf55908a0b2b1359067557cf70565267ab6c9b0ff38693a0ba"
+      "size_bytes": 5923,
+      "sha256": "616be3b6a3313535f126d269dc7b28f94cf6e2050b4d01abedb02d4a0f2476c6"
     },
     {
       "path": "scripts/create_international_rule_probe_splits.py",
-      "size_bytes": 3194,
-      "sha256": "f66a3f1f0402fb3d3c8f47398c6fa802b7977a664a1499f7573f8c05fb0665fc"
+      "size_bytes": 4505,
+      "sha256": "66f1e7c5cfbdacf72934eac348c4a0c7159a4d8c8fb6442dacf02a24a2adb461"
     },
     {
       "path": "scripts/create_international_rule_review_assignments.py",
@@ -519,13 +524,13 @@
     },
     {
       "path": "scripts/generate_extended_topology_stress.py",
-      "size_bytes": 27199,
-      "sha256": "d0719109b0c47c4b7c133f7eff24c885111fe90a32b20e746d8c2faf5f41c714"
+      "size_bytes": 27328,
+      "sha256": "654565f937aae52d8f7612a9adcb962271139692f8042dc31271e249a46d3821"
     },
     {
       "path": "scripts/generate_grid_scenarios.py",
-      "size_bytes": 37497,
-      "sha256": "d3335272233833621042441f1cc1bad2780963acb5748f9100c06f94b388d084"
+      "size_bytes": 37626,
+      "sha256": "8e84710dd9fc0d25817367c7be3811b3aa5243af609ab41e6f388de683cc2c3b"
     },
     {
       "path": "scripts/generate_instruction_data.py",
@@ -534,8 +539,8 @@
     },
     {
       "path": "scripts/generate_international_rule_probe.py",
-      "size_bytes": 18578,
-      "sha256": "72a96f91fd320749edc6e787b6ff0cbdb3ead18be4bd32aabaff30157853e5c1"
+      "size_bytes": 20583,
+      "sha256": "d0072524918276a383ffe4077a69606e034454caae8b692f9aae56057ebd3b9e"
     },
     {
       "path": "scripts/generate_opf_secure_candidate_augmentation.py",
@@ -544,8 +549,8 @@
     },
     {
       "path": "scripts/generate_publication_sd_figures.py",
-      "size_bytes": 49772,
-      "sha256": "e44fed4a852df84fd7a5ca66725dffb5a5d852d92505cd150d6d42d86b1b1fa2"
+      "size_bytes": 46773,
+      "sha256": "fdace46dd14da2259ea9465f783ec82b77386293eef10b7b63d3956dbf29d3af"
     },
     {
       "path": "scripts/generate_sd_figures.py",
@@ -568,9 +573,14 @@
       "sha256": "d60bea1e30f7299750275203f2c03dbfa4f1e88b245626546f8e4832a3847c55"
     },
     {
+      "path": "scripts/mark_complete_query_truth.py",
+      "size_bytes": 1943,
+      "sha256": "699b3a8cedb8b046ca30099e7840f483cc9c800233c8d734ad371856ae91cd8d"
+    },
+    {
       "path": "scripts/materialize_english_splits.py",
-      "size_bytes": 13723,
-      "sha256": "36083984fff907d938e3d41f48e7a88d3822e4b9d685a5707ee2be5f4a22f604"
+      "size_bytes": 10417,
+      "sha256": "15d60f5311b35c8d5cc8590e657d7408b6abde3b154c1218ea5ce542a27a5644"
     },
     {
       "path": "scripts/materialize_split_from_ids.py",
@@ -609,13 +619,18 @@
     },
     {
       "path": "scripts/power_evidence_common.py",
-      "size_bytes": 22596,
-      "sha256": "5451641fc315b4a4b59102684b9b63a551657ca1b5623b1987ba88e5e6c6c92b"
+      "size_bytes": 22982,
+      "sha256": "bf61c33986f9642035b396149e4050b76c9a2332abae10c231aede623189e0e1"
     },
     {
       "path": "scripts/promote_dataset_stage.py",
       "size_bytes": 4613,
       "sha256": "72526052e25cf1e5154482d3a047ce701794c46428f62e28c2f4c0c1b2e101a6"
+    },
+    {
+      "path": "scripts/promote_recomputed_core_to_splits.py",
+      "size_bytes": 4125,
+      "sha256": "cf9213b03008be2a7c7fcadd0e6f140f7409f213892271cbf7165ee37d6dd158"
     },
     {
       "path": "scripts/query_contract.py",
@@ -663,6 +678,11 @@
       "sha256": "647254a3edf547a37491da954c1c3869b54c38c3bd159bc3372d5cb2d236d3d9"
     },
     {
+      "path": "scripts/reconstruct_missing_scenario_truth.py",
+      "size_bytes": 14261,
+      "sha256": "edbed6c72c34f95697b8829550bc8b2848d96ca37f67c1f22688cf90d3b7e890"
+    },
+    {
       "path": "scripts/refresh_opf_secure_candidate_report_schema.py",
       "size_bytes": 6447,
       "sha256": "e3ffb9b679820db6b6334667008ac45559eab739ddb0ccc5cbd57d5b5a46ce2c"
@@ -671,6 +691,16 @@
       "path": "scripts/refresh_release_artifacts.py",
       "size_bytes": 58853,
       "sha256": "798b83ef6be4ad8578f935c0798ae415a741146d5f156a4f8bc4d992e67afa02"
+    },
+    {
+      "path": "scripts/regenerate_direct_english_core.py",
+      "size_bytes": 14732,
+      "sha256": "a8e4256745857df7d68eb8968b1665206d607c5b526d8aedfd49ad9b25a1aeb9"
+    },
+    {
+      "path": "scripts/regenerate_direct_english_splits.py",
+      "size_bytes": 3700,
+      "sha256": "d1c91e9afcc8551086f21d2b316ec214431cfa65c98b35f7d09342a48a854159"
     },
     {
       "path": "scripts/rematerialize_english_release_v15.py",
@@ -689,8 +719,8 @@
     },
     {
       "path": "scripts/repair_query_result_consistency.py",
-      "size_bytes": 11090,
-      "sha256": "5ce2daf86856527dd3973c621107d25e453572b6c3fd533227db62b8428295a6"
+      "size_bytes": 11311,
+      "sha256": "2ec248b1cdbeb908c3fb0fdb1176c02ae902b02a275411d86dc15313680cc186"
     },
     {
       "path": "scripts/replay_frozen_implicit_ticket_rows.py",
@@ -734,8 +764,8 @@
     },
     {
       "path": "scripts/run_international_rule_probe_baseline.py",
-      "size_bytes": 10852,
-      "sha256": "8e69ea6a79e8b1a09a91a5f2dd90817109c9b9d2ff87220f2cae2e527e9ce652"
+      "size_bytes": 16517,
+      "sha256": "b162d41c0e790f6716bd7712b242c0062b82c267e25549683733caaf4b30adfb"
     },
     {
       "path": "scripts/run_lightsim_native_independent_solver.py",
@@ -854,8 +884,8 @@
     },
     {
       "path": "scripts/validate_dataset.py",
-      "size_bytes": 20679,
-      "sha256": "b3609b17fe22760e1247dac1d7666b79f4b2da8fde9dda65f20214336d1cc049"
+      "size_bytes": 22259,
+      "sha256": "767b001f88a1fe02e7c43e39af52bd61f339f6f9d180054094142e48b85dd445"
     },
     {
       "path": "scripts/validate_independent_solver_evidence.py",

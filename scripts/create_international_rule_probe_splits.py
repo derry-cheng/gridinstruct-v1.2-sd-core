@@ -34,15 +34,42 @@ def build_manifest(rows: list[dict[str, Any]]) -> dict[str, Any]:
         folds.append(
             {
                 "name": f"train_{train_jurisdiction.lower().replace(' ', '_')}_test_{test_jurisdiction.lower().replace(' ', '_')}",
+                "fold_type": "cross_jurisdiction",
                 "train_jurisdiction": train_jurisdiction,
                 "test_jurisdiction": test_jurisdiction,
                 "train_ids": train,
                 "test_ids": test,
             }
         )
+    # Within-jurisdiction variant holdouts keep the rule cards in both train
+    # and test while holding out answer variants.  This tests whether a
+    # baseline can recover the typed rule contract without seeing the exact
+    # wording variant.
+    by_jurisdiction_rule: dict[tuple[str, str], list[str]] = defaultdict(list)
+    for row in rows:
+        by_jurisdiction_rule[(row["metadata"]["jurisdiction"], row["input"]["rule_id"])].append(row["id"])
+    for jurisdiction in jurisdictions:
+        train_ids: list[str] = []
+        test_ids: list[str] = []
+        for (item_jurisdiction, _rule_id), ids in sorted(by_jurisdiction_rule.items()):
+            if item_jurisdiction != jurisdiction:
+                continue
+            ordered = sorted(ids)
+            train_ids.extend(ordered[:48])
+            test_ids.extend(ordered[48:])
+        folds.append(
+            {
+                "name": f"within_{jurisdiction.lower().replace(' ', '_')}_variant_holdout",
+                "fold_type": "within_jurisdiction_variant_holdout",
+                "train_jurisdiction": jurisdiction,
+                "test_jurisdiction": jurisdiction,
+                "train_ids": sorted(train_ids),
+                "test_ids": sorted(test_ids),
+            }
+        )
     return {
         "status": "pass",
-        "manifest_version": "international-rule-probe-splits-v1",
+        "manifest_version": "international-rule-probe-splits-v2",
         "record_count": len(rows),
         "jurisdictions": jurisdictions,
         "folds": folds,

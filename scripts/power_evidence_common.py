@@ -132,6 +132,14 @@ def source_descriptor(system: str) -> dict[str, Any]:
 
 
 def pglib_repository_commit(root: Path) -> str:
+    # The release bundles immutable case files rather than the upstream Git
+    # object database.  In that self-contained form, the pinned upstream
+    # revision is recorded in a small text receipt next to the cases.
+    receipt = root / "UPSTREAM_COMMIT"
+    if receipt.exists():
+        value = receipt.read_text(encoding="utf-8").strip()
+        if value:
+            return value
     result = subprocess.run(
         ["git", "-C", str(root), "rev-parse", "HEAD"],
         check=True,

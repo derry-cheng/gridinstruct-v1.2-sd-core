@@ -39,9 +39,16 @@ LOCAL_BINDINGS = [
     "reports/strict_source_group_split_v1.2_sd_core.json",
     "reports/template_holdout_split_v1.2_sd_core.json",
     "reports/action_level_validation_audit_v1.2_sd_core.json",
-    "reports/source_english_alignment_v1.2_sd_core.json",
-    "reports/english_translation_audit_v1.2_sd_core.json",
-    "reports/english_split_audit_v1.2_sd_core.json",
+    "reports/direct_english_materialization_v1.2_sd_core.json",
+    "reports/direct_english_canonical_materialization_v1.2_sd_core.json",
+    "reports/direct_english_split_materialization_v1.2_sd_core.json",
+    "reports/data_validation_direct_english_v1.2_sd_core.json",
+    "reports/query_result_consistency_repair_final_v1.2_sd_core.json",
+    "reports/query_truth_completeness_gate_v1.2_sd_core.json",
+    "reports/compliance_label_recompute_direct_v1.2_sd_core.json",
+    "reports/scenario_truth_reconstruction_v1.2_sd_core.json",
+    "simulation_outputs/contingency/scenarios_converged.json",
+    "simulation_outputs/contingency/scenario_reconstruction_attempts.json",
     "reports/opf_action_uncertainty_stress_v1.2_sd_core.json",
     "reports/opf_action_constant_power_factor_stress_v1.2_sd_core.json",
     "reports/independent_solver_raw_evidence_v1.2_sd_core_rebound.json",
@@ -55,6 +62,11 @@ LOCAL_BINDINGS = [
     "reports/exact_surface_target_hidden_classification_v1.2_sd_core.json",
     "reports/independent_opf_envelope_v1.2_sd_core.json",
     "reports/pglib_network_envelope_replay_v1.2_sd_core.json",
+    "data/international_rule_probe_v1.jsonl",
+    "metadata/international_rule_probe_splits_v1.json",
+    "reports/international_rule_probe_v1.json",
+    "reports/international_rule_probe_splits_v1.json",
+    "benchmark/international_rule_probe_v1/nearest_neighbor_report.json",
     "reports/template_family_holdout_v1.2_sd_core.json",
     "reports/opf_structural_contract_audit_v1.2_sd_core.json",
     "data/v1.2_sd_core_template_family_holdout_train_ids.jsonl",
@@ -87,6 +99,8 @@ LOCAL_BINDINGS = [
     "benchmark/current_v1.2_sd_core/tfidf_proxyreduced_report.json",
     "benchmark/current_v1.2_sd_core/tfidf_challenge_report.json",
     "benchmark/instruction_surface_balanced_v1.2_sd_core/tfidf_report.json",
+    "benchmark/direct_english_tfidf_v1.2_sd_core_report.json",
+    "benchmark/direct_english_tfidf_v1.2_sd_core_test_predictions.jsonl",
     "benchmark/instruction_surface_balanced_v1.2_sd_core/query_report.json",
     "benchmark/instruction_surface_balanced_v1.2_sd_core/auxiliary_report.json",
     "benchmark/instruction_surface_balanced_v1.2_sd_core/calibrated_tfidf_report.json",
@@ -187,6 +201,22 @@ def main() -> None:
         == "pass",
         "template_holdout": bindings.get(
             "reports/template_holdout_split_v1.2_sd_core.json", {}
+        ).get("reported_status")
+        == "pass",
+        "direct_english_render": bindings.get(
+            "reports/direct_english_materialization_v1.2_sd_core.json", {}
+        ).get("reported_status")
+        == "pass",
+        "scenario_truth_reconstruction": bindings.get(
+            "reports/scenario_truth_reconstruction_v1.2_sd_core.json", {}
+        ).get("reported_status")
+        == "pass",
+        "query_repair": bindings.get(
+            "reports/query_result_consistency_repair_final_v1.2_sd_core.json", {}
+        ).get("reported_status")
+        == "pass",
+        "dataset_validation": bindings.get(
+            "reports/data_validation_direct_english_v1.2_sd_core.json", {}
         ).get("reported_status")
         == "pass",
         "target_hidden_classification": bindings.get(

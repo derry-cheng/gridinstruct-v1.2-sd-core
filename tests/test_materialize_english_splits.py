@@ -91,7 +91,7 @@ def test_proxy_reduced_english_projection_cannot_resurrect_removed_fields(tmp_pa
     assert report["structure_mismatch_total"] == 0
 
 
-def test_regular_split_keeps_source_schema_and_allows_translation_metadata(tmp_path, monkeypatch) -> None:
+def test_regular_split_keeps_source_schema_and_direct_english_metadata(tmp_path, monkeypatch) -> None:
     source = {
         "id": "r1",
         "task_type": "regulation_qa",
@@ -108,8 +108,8 @@ def test_regular_split_keeps_source_schema_and_allows_translation_metadata(tmp_p
         "metadata": {
             "source_group": "g1",
             "language": "en",
-            "source_language": "zh",
-            "translation_status": "machine_translated",
+            "language_contract_version": "direct-en-v2",
+            "generation_mode": "direct_english_from_typed_contract",
         },
     }
     _write(tmp_path / "data/gridinstruct_v1.2_sd_core_en.jsonl", [english])
@@ -135,5 +135,7 @@ def test_regular_split_keeps_source_schema_and_allows_translation_metadata(tmp_p
     assert row["instruction"] == "Explain the rule."
     assert row["metadata"]["source_group"] == "g1"
     assert row["metadata"]["language"] == "en"
+    assert row["metadata"]["generation_mode"] == "direct_english_from_typed_contract"
+    assert "translation_status" not in row["metadata"]
     report = json.loads((tmp_path / "reports/materialization.json").read_text())
     assert report["status"] == "pass"

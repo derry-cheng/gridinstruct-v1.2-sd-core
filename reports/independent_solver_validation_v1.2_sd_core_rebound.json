@@ -1,14 +1,14 @@
 {
   "contract_version": "gridinstruct-independent-solver-evidence-v1",
-  "generated_at": "2026-08-05T15:52:41.763553+00:00",
+  "generated_at": "2026-08-18T15:03:27.926699+00:00",
   "input": {
     "path": "reports/independent_solver_raw_evidence_v1.2_sd_core_rebound.json",
-    "sha256": "21bc606e7d32bc9fa80a4d98a677a82ce5840f1c4109c3a9c16eca76b7db3036"
+    "sha256": "be9e194e5237017e91720a3f1ef8c4a80079a24e66049479446a8aa1e4a7c877"
   },
   "case_manifest_binding": {
     "path": "metadata/independent_solver_case_manifest_v1.json",
-    "actual_sha256": "236a103ef7cd0b3b8a41bbd6208164ceebcfbed09981b4db05c7864904cc1e06",
-    "claimed_sha256": "236a103ef7cd0b3b8a41bbd6208164ceebcfbed09981b4db05c7864904cc1e06",
+    "actual_sha256": "502c0314142146ba6e9ba8fecf4f184c4882a75e29b0d6024d668aad0dc48fbc",
+    "claimed_sha256": "502c0314142146ba6e9ba8fecf4f184c4882a75e29b0d6024d668aad0dc48fbc",
     "match": true,
     "case_ids_match": true
   },

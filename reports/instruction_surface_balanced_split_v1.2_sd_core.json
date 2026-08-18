@@ -1,68 +1,68 @@
 {
-  "generated_at": "2026-08-08T16:42:38.790990+00:00",
+  "generated_at": "2026-08-18T15:23:29.751371+00:00",
   "status": "pass",
   "source": "data/gridinstruct_v1.2_sd_core_en.jsonl",
-  "source_sha256": "75ffc5c5386e331eed6c7f4092d186e042be8a020a936993f5220a78c1fd058e",
+  "source_sha256": "0b870168dca11910a526be288e5448151bed45f8809c333c9d4ed8f5f9295b8e",
   "seed": 2036,
   "group_key": "task_type + normalize_template(instruction)",
-  "total_groups": 16255,
-  "non_ood_groups": 8265,
-  "ood_groups": 7990,
-  "max_group_size": 749,
+  "total_groups": 18318,
+  "non_ood_groups": 14659,
+  "ood_groups": 3659,
+  "max_group_size": 4204,
   "allocation": {
     "status": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
-    "objective": 4.176246471810208e-06,
-    "tolerance_ratio": 0.01,
+    "objective": 7.340649222107415e-06,
+    "tolerance_ratio": 0.5,
     "target_by_split": {
       "train": [
-        1065,
-        2036,
-        947,
+        997,
+        703,
+        1637,
         6529,
-        1112,
+        1933,
         2523
       ],
       "validation": [
-        355,
-        679,
-        316,
+        332,
+        234,
+        546,
         2176,
-        371,
+        644,
         841
       ],
       "test": [
-        355,
-        679,
-        316,
+        332,
+        234,
+        546,
         2176,
-        371,
+        644,
         841
       ]
     },
     "actual_by_split": {
       "train": [
-        1073,
-        2042,
-        953,
-        6529,
-        1120,
-        2540
+        1006,
+        530,
+        1636,
+        4353,
+        2576,
+        2524
       ],
       "validation": [
-        351,
-        680,
+        490,
         314,
-        2191,
-        367,
-        832
+        273,
+        3264,
+        323,
+        1260
       ],
       "test": [
-        351,
-        672,
-        312,
-        2161,
-        367,
-        833
+        166,
+        327,
+        819,
+        3264,
+        322,
+        421
       ]
     },
     "tasks": [
@@ -76,65 +76,65 @@
   },
   "splits": {
     "train": {
-      "records": 14257,
-      "sha256": "ae8812bb6fd61759d0e5fac2becd1a36e7b7c2a4230395936b52b08405df55e4",
+      "records": 12625,
+      "sha256": "592db2fd3d44650f1d52f50835ad751762bd0aa763065762a7b8ef0cd75a4c89",
       "task_counts": {
-        "auxiliary_decision": 1073,
-        "regulation_compliance_check": 1120,
-        "dispatcher_intent_tool_call": 2042,
-        "intelligent_data_query": 953,
-        "regulation_qa": 2540,
-        "operation_ticket_check": 6529
+        "auxiliary_decision": 1006,
+        "regulation_compliance_check": 2576,
+        "dispatcher_intent_tool_call": 530,
+        "intelligent_data_query": 1636,
+        "regulation_qa": 2524,
+        "operation_ticket_check": 4353
       }
     },
     "validation": {
-      "records": 4735,
-      "sha256": "c6faed9db029d9318541a236f1975c198e1f4bfa833944ac58ff47054ad5549f",
+      "records": 5924,
+      "sha256": "884582cdf2b2514d84559db7fd955e5d91a89ce4cfe677b5d9d7fe592d48b074",
       "task_counts": {
-        "auxiliary_decision": 351,
-        "regulation_compliance_check": 367,
-        "dispatcher_intent_tool_call": 680,
-        "intelligent_data_query": 314,
-        "regulation_qa": 832,
-        "operation_ticket_check": 2191
+        "auxiliary_decision": 490,
+        "regulation_compliance_check": 323,
+        "dispatcher_intent_tool_call": 314,
+        "intelligent_data_query": 273,
+        "regulation_qa": 1260,
+        "operation_ticket_check": 3264
       }
     },
     "test": {
-      "records": 4696,
-      "sha256": "8efe06626a8bf2d07f222992f3dc11e388200ef0c2e6a345e195ce68150fe8f5",
+      "records": 5319,
+      "sha256": "5d94f750b54c2eb0797ed785c1cfc76b9cabf267dca3a01202d51ae34c6e5b91",
       "task_counts": {
-        "auxiliary_decision": 351,
-        "regulation_compliance_check": 367,
-        "dispatcher_intent_tool_call": 672,
-        "intelligent_data_query": 312,
-        "regulation_qa": 833,
-        "operation_ticket_check": 2161
+        "auxiliary_decision": 166,
+        "regulation_compliance_check": 322,
+        "dispatcher_intent_tool_call": 327,
+        "intelligent_data_query": 819,
+        "regulation_qa": 421,
+        "operation_ticket_check": 3264
       }
     },
     "ood_test": {
-      "records": 71791,
-      "sha256": "c9bc1c09a51f3b4c7ffd3bb1908bf74524f7525164a53f0a995b2482dca53dbf",
+      "records": 71611,
+      "sha256": "c87e95cda9579104f7a2f67f1f243cc40dea90cd2d30c146a7c31cac22c4693c",
       "task_counts": {
-        "auxiliary_decision": 16312,
-        "regulation_compliance_check": 22913,
-        "dispatcher_intent_tool_call": 16379,
-        "intelligent_data_query": 16187
+        "auxiliary_decision": 16425,
+        "regulation_compliance_check": 21546,
+        "dispatcher_intent_tool_call": 18602,
+        "intelligent_data_query": 15038
       }
     }
   },
   "instruction_surface_counts": {
-    "train": 6241,
-    "validation": 1148,
-    "test": 876,
-    "ood_test": 7990
+    "train": 6430,
+    "validation": 4095,
+    "test": 4134,
+    "ood_test": 3659
   },
   "cross_group_violations": [],
   "output_paths": {
-    "train": "data/v1.2_sd_core_instruction_surface_balanced_train_ids.jsonl",
-    "validation": "data/v1.2_sd_core_instruction_surface_balanced_validation_ids.jsonl",
-    "test": "data/v1.2_sd_core_instruction_surface_balanced_test_ids.jsonl",
-    "ood_test": "data/v1.2_sd_core_instruction_surface_balanced_ood_test_ids.jsonl"
+    "train": "data/v1.2_sd_core_instruction_surface_balanced_train_en.jsonl",
+    "validation": "data/v1.2_sd_core_instruction_surface_balanced_validation_en.jsonl",
+    "test": "data/v1.2_sd_core_instruction_surface_balanced_test_en.jsonl",
+    "ood_test": "data/v1.2_sd_core_instruction_surface_balanced_ood_test_en.jsonl"
   },
   "interpretation": "This split prevents exact normalized user-instruction reuse across partitions. It is a lexical surface control and does not establish semantic independence or physical-label validity.",
-  "code_sha256": "669dd2dc34c16daf55908a0b2b1359067557cf70565267ab6c9b0ff38693a0ba"
+  "code_sha256": "616be3b6a3313535f126d269dc7b28f94cf6e2050b4d01abedb02d4a0f2476c6"
 }

@@ -168,6 +168,9 @@ def run_case(
     scale_generation_with_load: bool = False,
     generator_voltage_factor: float = 1.0,
     dispatch_policy: str = "fixed_power_flow",
+    solver_algorithm: str = "nr",
+    enforce_q_lims: bool = True,
+    max_iteration: int = 50,
 ) -> dict[str, Any]:
     net = (
         load_pglib_network(system, pglib_root)
@@ -213,11 +216,11 @@ def run_case(
         elif dispatch_policy == "fixed_power_flow":
             pp.runpp(
                 net,
-                algorithm="nr",
+                algorithm=solver_algorithm,
                 init="auto",
                 tolerance_mva=1e-6,
-                max_iteration=50,
-                enforce_q_lims=True,
+                max_iteration=max_iteration,
+                enforce_q_lims=enforce_q_lims,
                 numba=False,
             )
         else:

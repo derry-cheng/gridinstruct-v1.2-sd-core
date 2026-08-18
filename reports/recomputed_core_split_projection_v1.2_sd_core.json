@@ -1,0 +1,39 @@
+{
+  "status": "pass",
+  "canonical_records": 95479,
+  "outputs": [
+    {
+      "path": "data/v1.2_sd_core_train.jsonl",
+      "records": 28684
+    },
+    {
+      "path": "data/v1.2_sd_core_validation.jsonl",
+      "records": 3598
+    },
+    {
+      "path": "data/v1.2_sd_core_test.jsonl",
+      "records": 3609
+    },
+    {
+      "path": "data/v1.2_sd_core_ood_test.jsonl",
+      "records": 59588
+    },
+    {
+      "path": "data/v1.2_sd_core_boundary_challenge_test_en.jsonl",
+      "records": 4800
+    },
+    {
+      "path": "data/v1.2_sd_core_proxyreduced_train_en.jsonl",
+      "records": 18240
+    },
+    {
+      "path": "data/v1.2_sd_core_proxyreduced_validation_en.jsonl",
+      "records": 2293
+    },
+    {
+      "path": "data/v1.2_sd_core_proxyreduced_test_en.jsonl",
+      "records": 2305
+    }
+  ],
+  "language_contract_version": "direct-en-v2"
+}

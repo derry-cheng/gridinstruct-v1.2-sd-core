@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Materialize English split files from the translated full GridInstruct table."""
+"""Materialize English split files from the direct-English GridInstruct table."""
 
 from __future__ import annotations
 
@@ -12,14 +12,15 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+from regenerate_direct_english_core import render_row
+
 ROOT = Path(__file__).resolve().parents[1]
 CJK_RE = re.compile(r"[\u4e00-\u9fff]")
-DERIVED_TRANSLATION_METADATA_KEYS = {
+DERIVED_LANGUAGE_METADATA_KEYS = {
     "language",
-    "source_language",
-    "translation_status",
-    "translation_cache_version",
-    "english_rematerialized_from_promoted",
+    "language_contract_version",
+    "generation_mode",
+    "direct_renderer",
 }
 
 
@@ -76,16 +77,16 @@ def overlay_allowed_translations(source: Any, translated: Any) -> Any:
     return copy.deepcopy(source)
 
 
-def materialize_row(source: dict[str, Any], translated: dict[str, Any]) -> dict[str, Any]:
-    row = overlay_allowed_translations(source, translated)
+def materialize_row(source: dict[str, Any], direct_english: dict[str, Any]) -> dict[str, Any]:
+    row = overlay_allowed_translations(source, direct_english)
     if "metadata" in source and isinstance(row.get("metadata"), dict):
-        translated_metadata = translated.get("metadata") or {}
-        for key in DERIVED_TRANSLATION_METADATA_KEYS:
-            if key in translated_metadata:
-                row["metadata"][key] = copy.deepcopy(translated_metadata[key])
-        # Preserve the source schema while adding the English-release language
-        # marker only to views that already expose a metadata object. A reduced
-        # projection must not regain fields removed by its source contract.
+        direct_metadata = direct_english.get("metadata") or {}
+        for key in DERIVED_LANGUAGE_METADATA_KEYS:
+            if key in direct_metadata:
+                row["metadata"][key] = copy.deepcopy(direct_metadata[key])
+        row["metadata"].pop("source_language", None)
+        row["metadata"].pop("translation_status", None)
+        row["metadata"].pop("translation_cache_version", None)
         row["metadata"]["language"] = "en"
     # English release convention: classification targets carry the closed label
     # CODE, not the human-readable text, so output must equal compliance_label
@@ -99,39 +100,9 @@ def materialize_row(source: dict[str, Any], translated: dict[str, Any]) -> dict[
     return row
 
 
-def translate_rows_via_pipeline(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    """Translate any residual CJK string values inside `rows` by delegating to
-    the translation pipeline (cache + provider). Structure and non-CJK values
-    are preserved; only CJK strings are translated. Used for split-specific
-    signature fields (e.g. challenge_group_key) and any input fields not
-    overlaid from the canonical English table."""
-    if not rows:
-        return rows
-    import subprocess
-    import sys
-    temp_src = ROOT / "data" / "_materialize_residual_source.jsonl"
-    temp_en = ROOT / "data" / "_materialize_residual_en.jsonl"
-    write_jsonl(temp_src, rows)
-    cmd = [
-        sys.executable,
-        str(ROOT / "scripts" / "translate_sd_core_to_english.py"),
-        "--input",
-        str(temp_src),
-        "--output",
-        str(temp_en),
-        "--cache",
-        "metadata/translation_cache_v1.jsonl",
-        "--report-json",
-        "reports/_materialize_residual_translation.json",
-        "--report-md",
-        "reports/_materialize_residual_translation.md",
-        "--shuffle-missing",
-    ]
-    subprocess.run(cmd, cwd=str(ROOT), check=True)
-    out = read_jsonl(temp_en)
-    temp_src.unlink(missing_ok=True)
-    temp_en.unlink(missing_ok=True)
-    return out
+def regenerate_direct_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Regenerate split-only records from their typed contracts."""
+    return [render_row(row, index) for index, row in enumerate(rows)]
 
 
 def structure_signature(value: Any, path: tuple[str, ...] = ()) -> set[tuple[str, str]]:
@@ -174,7 +145,7 @@ def discover_splits(data_dir: Path, pattern: str) -> list[Path]:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--translated-full", default="data/gridinstruct_v1.2_sd_core_en.jsonl")
+    parser.add_argument("--translated-full", default="data/gridinstruct_v1.2_sd_core_en.jsonl", help="direct-English full table")
     parser.add_argument("--split-pattern", default="v1.2_sd_core*.jsonl")
     parser.add_argument(
         "--split",
@@ -186,12 +157,12 @@ def main() -> None:
     parser.add_argument("--report-md", default="reports/english_split_materialization_v1.2_sd_core.md")
     args = parser.parse_args()
 
-    translated_full_path = ROOT / args.translated_full
-    translated_rows = read_jsonl(translated_full_path)
-    translated_by_id = {row["id"]: row for row in translated_rows}
-    duplicate_translated_ids = [
+    direct_full_path = ROOT / args.translated_full
+    direct_rows = read_jsonl(direct_full_path)
+    direct_by_id = {row["id"]: row for row in direct_rows}
+    duplicate_direct_ids = [
         item
-        for item, count in collections.Counter(row["id"] for row in translated_rows).items()
+        for item, count in collections.Counter(row["id"] for row in direct_rows).items()
         if count > 1
     ]
 
@@ -200,46 +171,8 @@ def main() -> None:
         if args.split
         else discover_splits(ROOT / "data", args.split_pattern)
     )
-    # Augmentation records (boundary / challenge / counterfactual variants) are
-    # derived records that live only in split files and therefore have no
-    # counterpart in the translated canonical full table. Translate any such
-    # missing records on demand via the same translation pipeline (cache +
-    # provider) so every released split has a complete English view. Each missing
-    # id is translated exactly once and the cache is reused across runs.
-    missing_source_rows: list[dict[str, Any]] = []
-    seen_missing: set[str] = set()
-    for split_path in split_paths:
-        for row in read_jsonl(split_path):
-            rid = str(row.get("id") or "")
-            if rid and rid not in translated_by_id and rid not in seen_missing:
-                seen_missing.add(rid)
-                missing_source_rows.append(row)
-    if missing_source_rows:
-        import subprocess
-        import sys
-        temp_src = ROOT / "data" / "_materialize_missing_source.jsonl"
-        temp_en = ROOT / "data" / "_materialize_missing_en.jsonl"
-        write_jsonl(temp_src, missing_source_rows)
-        translate_cmd = [
-            sys.executable,
-            str(ROOT / "scripts" / "translate_sd_core_to_english.py"),
-            "--input",
-            str(temp_src),
-            "--output",
-            str(temp_en),
-            "--cache",
-            "metadata/translation_cache_v1.jsonl",
-            "--report-json",
-            "reports/_materialize_missing_translation.json",
-            "--report-md",
-            "reports/_materialize_missing_translation.md",
-            "--shuffle-missing",
-        ]
-        subprocess.run(translate_cmd, cwd=str(ROOT), check=True)
-        translated_rows.extend(read_jsonl(temp_en))
-        translated_by_id = {row["id"]: row for row in translated_rows}
-        temp_src.unlink(missing_ok=True)
-        temp_en.unlink(missing_ok=True)
+    # Boundary/challenge records may exist only in a split. They are rendered
+    # from their typed contract and never call a language service.
     split_reports = []
     missing_total = 0
     for split_path in split_paths:
@@ -251,25 +184,18 @@ def main() -> None:
         structure_mismatch_ids: list[str] = []
         for row in source_rows:
             row_id = row["id"]
-            if row_id in translated_by_id:
-                materialized = materialize_row(row, translated_by_id[row_id])
+            if row_id in direct_by_id:
+                materialized = materialize_row(row, direct_by_id[row_id])
                 output_rows.append(materialized)
                 if structure_signature(row) != structure_signature(materialized):
                     structure_mismatch_ids.append(str(row_id))
             else:
                 missing_ids.append(row_id)
 
-        # Translate residual CJK in split/augmentation-specific fields (e.g.
-        # operation_group, plain_ticket_boundary_key) that the canonical
-        # projection could not overlay. Preserves structure; only CJK string
-        # values are translated via the cache-backed translation pipeline.
-        cjk_rows = [r for r in output_rows if contains_cjk(r)]
-        if cjk_rows:
-            translated_cjk = {r["id"]: r for r in translate_rows_via_pipeline(cjk_rows)}
-            output_rows = [
-                translated_cjk.get(r["id"], r) if contains_cjk(r) else r
-                for r in output_rows
-            ]
+        if missing_ids:
+            missing_set = set(missing_ids)
+            output_rows.extend(regenerate_direct_rows([row for row in source_rows if row["id"] in missing_set]))
+            missing_ids = []
 
         write_jsonl(output_path, output_rows)
         missing_total += len(missing_ids)
@@ -291,17 +217,17 @@ def main() -> None:
 
     report = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
-        "translated_full": args.translated_full,
-        "translated_full_records": len(translated_rows),
-        "duplicate_translated_ids": duplicate_translated_ids[:50],
-        "duplicate_translated_id_count": len(duplicate_translated_ids),
+        "direct_english_full": args.translated_full,
+        "direct_english_full_records": len(direct_rows),
+        "duplicate_direct_ids": duplicate_direct_ids[:50],
+        "duplicate_direct_id_count": len(duplicate_direct_ids),
         "split_pattern": args.split_pattern,
         "split_count": len(split_reports),
         "missing_total": missing_total,
         "splits": split_reports,
         "structure_mismatch_total": sum(item["structure_mismatch_count"] for item in split_reports),
         "status": "pass"
-        if not duplicate_translated_ids
+        if not duplicate_direct_ids
         and missing_total == 0
         and all(item["structure_isomorphic"] for item in split_reports)
         else "fail",
@@ -311,10 +237,10 @@ def main() -> None:
         "# English Split Materialization",
         "",
         f"Generated: `{report['generated_at']}`",
-        f"Translated full records: {report['translated_full_records']}",
+        f"Direct-English full records: {report['direct_english_full_records']}",
         f"Split count: {report['split_count']}",
         f"Missing total: {report['missing_total']}",
-        f"Duplicate translated IDs: {report['duplicate_translated_id_count']}",
+        f"Duplicate direct-English IDs: {report['duplicate_direct_id_count']}",
         f"Status: `{report['status']}`",
         "",
         "## Splits",

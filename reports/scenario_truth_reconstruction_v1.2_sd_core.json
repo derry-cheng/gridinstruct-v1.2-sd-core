@@ -1,0 +1,23 @@
+{
+  "status": "pass",
+  "dataset_records": 95479,
+  "requested_unique_scenario_ids": 2596,
+  "existing_registry_records": 2822,
+  "existing_registry_duplicate_ids": 0,
+  "missing_before_reconstruction": 0,
+  "nonconverged_retries_requested": 1,
+  "sealed_secure_candidate_bindings": 0,
+  "computed_attempts": 1,
+  "computed_passes": 1,
+  "computed_failures": 0,
+  "complete_registry_records": 2822,
+  "missing_after_reconstruction": 0,
+  "missing_after_examples": [],
+  "by_method": {
+    "computed": 1
+  },
+  "output": "simulation_outputs/contingency/scenarios_converged.json",
+  "attempts_output": "simulation_outputs/contingency/scenario_reconstruction_attempts.json",
+  "pglib_root": "third_party/pglib-opf-v23.07",
+  "pglib_commit": "dc6be4b2f85ca0e776952ec22cbd4c22396ea5a3"
+}

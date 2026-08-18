@@ -7,16 +7,22 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def test_international_baseline_report_is_two_fold_and_scope_bounded() -> None:
+def test_international_baseline_report_is_four_fold_and_scope_bounded() -> None:
     report = json.loads(
         (ROOT / "benchmark/international_rule_probe_v1/nearest_neighbor_report.json").read_text(encoding="utf-8")
     )
     assert report["status"] == "pass"
-    assert report["objective"] == "diagnostic_lexical_transfer_under_leave_one_jurisdiction_out"
-    assert len(report["folds"]) == 2
-    assert all(fold["train_records"] == 256 and fold["test_records"] == 256 for fold in report["folds"])
+    assert report["objective"] == "leakage_controlled_structured_transfer_under_leave_one_jurisdiction_out"
+    assert len(report["folds"]) == 4
+    for fold in report["folds"]:
+        expected = 512 if fold["fold_type"] == "cross_jurisdiction" else 256
+        assert fold["train_records"] + fold["test_records"] == expected
+    assert {fold["fold_type"] for fold in report["folds"]} == {
+        "cross_jurisdiction",
+        "within_jurisdiction_variant_holdout",
+    }
     assert all(0.0 <= float(report["macro_metrics"][name]) <= 1.0 for name in ("exact_match", "token_f1"))
-    assert "do not establish semantic legal correctness" in report["interpretation"]
+    assert "none establishes legal correctness" in report["interpretation"]
 
 
 def test_international_review_assignments_are_blank_and_double_assigned() -> None:

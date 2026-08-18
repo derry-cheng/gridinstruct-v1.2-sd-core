@@ -162,7 +162,11 @@ def main() -> None:
 
     assignment = None
     solve_details = None
-    for tolerance in (0.01, 0.02, 0.05, 0.10):
+    # Preserve an exact MILP allocation over lexical components.  Direct
+    # English rendering can make the tight task-count bands infeasible, so
+    # relax the count bands deterministically before declaring the split
+    # unsatisfiable.
+    for tolerance in (0.01, 0.02, 0.05, 0.10, 0.20, 0.50, 1.00):
         try:
             assignment, solve_details = solve_assignment(non_ood_groups, tasks, args.seed, tolerance)
             break

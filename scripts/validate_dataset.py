@@ -68,7 +68,7 @@ def near_limit_scenario(scenario: dict) -> bool:
 
 
 def compliance_category_for_action(action: str | None) -> str | None:
-    return {
+    category = {
         "继续增加受限断面潮流": "risky_increase",
         "继续提升受限断面潮流": "risky_increase",
         "继续提升受限断面输送功率": "risky_increase",
@@ -109,6 +109,24 @@ def compliance_category_for_action(action: str | None) -> str | None:
         "跳过状态校核直接送电故障线路": "premature_restore",
         "不做设备状态确认即恢复退出线路": "premature_restore",
     }.get(action)
+    if category:
+        return category
+    normalized = str(action or "").strip().lower()
+    if not normalized:
+        return None
+    if any(token in normalized for token in ("continue increasing", "continue to increase", "further increase", "increase transmission", "increase constrained")) and "power" in normalized:
+        return "risky_increase"
+    if "monitor" in normalized and any(token in normalized for token in ("maintain", "keep", "start", "current")):
+        return "monitor_only"
+    if any(token in normalized for token in ("reactive power", "reactive support", "reactive compensation", "voltage support")):
+        return "corrective_voltage"
+    if any(token in normalized for token in ("adjust output", "redispatch", "reduce section load", "reduce output of constrained", "output allocation")):
+        return "corrective_redispatch"
+    if any(token in normalized for token in ("topology", "load transfer", "transfer load", "switch local")):
+        return "corrective_topology"
+    if any(token in normalized for token in ("restore", "restoring")) and any(token in normalized for token in ("fault", "without verify", "without checking", "do not verify")):
+        return "premature_restore"
+    return None
 
 
 def expected_compliance_label(
@@ -369,6 +387,16 @@ def validate_records(input_path: Path) -> dict:
     near_duplicate_threshold = 0.02
     return {
         "generated_at": datetime.now(timezone.utc).isoformat(),
+        "status": "pass" if not (
+            schema_errors
+            or duplicate_ids
+            or invalid_rule_links
+            or invalid_scenario_links
+            or tool_plan_errors
+            or task_field_errors
+            or semantic_errors
+            or near_duplicate_rate > near_duplicate_threshold
+        ) else "fail",
         "input": str(input_path),
         "total_records": len(rows),
         "schema_errors": schema_errors,

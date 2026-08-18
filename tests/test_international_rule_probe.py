@@ -27,3 +27,6 @@ def test_international_rule_probe_is_complete() -> None:
     assert {rule_id: sum(record["source_regulation_ids"] == [rule_id] for record in records) for rule_id in rule_ids} == {
         rule_id: 64 for rule_id in rule_ids
     }
+    assert len({record["output"] for record in records}) == 512
+    assert all(record["target_contract"]["rule_id"] == record["source_regulation_ids"][0] for record in records)
+    assert all(len(record["target_contract"]["evidence_fields"]) > 0 for record in records)
