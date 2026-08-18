@@ -1,6 +1,12 @@
 # Technical Validation
 
-Generated: 2026-08-04T04:35:54.538667+00:00
+Generated: 2026-08-18
+
+## International Rule-Probe Extension
+
+The separate jurisdictional extension passes its local contract gate for 8 official rule cards and 512 directly generated English regulation-QA records. Four cards use NERC TOP-001-6, TOP-002-5, FAC-011-4, and VAR-001-5; four use Articles 18, 25, 33, and 72(3) of Commission Regulation (EU) 2017/1485. Each card has 64 records, one valid rule link per record, an official source URL, a clause locator, typed evidence fields, and direct-English generation metadata. The gate does not measure expert agreement or held-out-jurisdiction generalization.
+
+The companion leave-one-jurisdiction-out manifest contains two disjoint 256/256 folds. It provides the evaluation boundary for future source-conditioned model tests without changing the core split statistics.
 
 ## Dataset Integrity
 

@@ -1,6 +1,6 @@
 # Data Records
 
-Generated: 2026-08-04T04:35:54.537983+00:00
+Generated: 2026-08-18
 
 GridInstruct v1.2 contains 95479 instruction records. Records are stored as UTF-8 JSON Lines and validated against `metadata/schema.json`.
 
@@ -17,6 +17,20 @@ GridInstruct v1.2 contains 95479 instruction records. Records are stored as UTF-
 | metadata/task_taxonomy.json | None | 243 | 6dc8399ae3491756bf088f72eb58cbdcb7a95e4673f59d8b8f5f60a0acde0afa |
 | metadata/data_dictionary.csv | None | 3982 | 30e75d55c6d39e6dc1bbab47cd62e85734b81a21b638def81734a95685c6c5c5 |
 | rules/regulation_rules.json | 17 | 37019 | 0c834cdf81dc0b10e76d525845111dc5e845ac8a559ef9c21bc02aeb0b4c1a83 |
+
+## International Rule-Probe Extension
+
+The core table keeps its original 95,479 records and 17 domestic rule cards. A separate extension contains 512 directly generated English regulation-QA records linked to four NERC standards and four European system-operation articles.
+
+| path | records/cards | sha256 |
+| --- | ---: | --- |
+| data/international_rule_probe_v1.jsonl | 512 records | 1c0a4ab5c8aa014a2f4eedaf26afc43c3ea87c1d59265e247644a7ccf577d912 |
+| rules/international_rule_profiles.json | 8 cards | 1afa30d0f10ad0563f10df966eae3f12784471e9db5223447b8f4adb930fb281 |
+| metadata/international_rule_profile_matrix.csv | 8 rows | 15f8934dbce8d393fbb12ac816507f1d9c5791a71c5fac9f10e1bccc428046c8 |
+| metadata/international_rule_probe_splits_v1.json | two leave-one-jurisdiction-out folds | e6df687fbe47ffc92fe189978be83fb083b8574c16f848d091780ccd24d27f82 |
+| reports/international_rule_probe_v1.json | validation receipt | a10fc7f49f171ebb1e8658c15a9c935af5d3c98259f9bb15c11a5336d714f07a |
+
+The extension is a source-conditioned rule-grounding probe. It does not change the core split counts or imply that NERC or European rules endorse the domestic numeric policies.
 
 ## Rule Dictionary
 

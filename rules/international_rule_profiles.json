@@ -1,0 +1,207 @@
+[
+  {
+    "rule_id": "INTL_NERC_TOP_001_6_ACTION",
+    "jurisdiction": "NERC North America",
+    "authority": "North American Electric Reliability Corporation",
+    "standard_id": "TOP-001-6",
+    "standard_title": "Transmission Operations",
+    "clause_id": "R1-R4",
+    "source_title": "NERC TOP-001-6 Transmission Operations",
+    "source_url": "https://www.nerc.com/globalassets/standards/reliability-standards/top/top-001-6.pdf",
+    "source_kind": "enforceable_reliability_standard",
+    "summary": "Transmission operators maintain reliability through operating actions or instructions and communicate inability to comply with an instruction.",
+    "evidence_fields": [
+      "operating_instruction",
+      "operator_log",
+      "reliability_status"
+    ],
+    "threshold_origin": "No universal numeric threshold is asserted; the obligation is linked to the applicable operating area and instruction record.",
+    "applicable_tasks": [
+      "regulation_qa"
+    ],
+    "access_date": "2026-08-18",
+    "extension_version": "international-rule-probe-v1",
+    "generation_scope": "jurisdictional_rule_probe_only",
+    "source_metadata_sha256": "88db1ee38a661f252a31cce4aeb964303af20f3b3c7ab1fc3a1e461ab35ba150"
+  },
+  {
+    "rule_id": "INTL_NERC_TOP_002_5_PLAN",
+    "jurisdiction": "NERC North America",
+    "authority": "North American Electric Reliability Corporation",
+    "standard_id": "TOP-002-5",
+    "standard_title": "Operations Planning",
+    "clause_id": "R1-R3",
+    "source_title": "NERC TOP-002-5 Operations Planning",
+    "source_url": "https://www.nerc.com/globalassets/standards/reliability-standards/top/top-002-5.pdf",
+    "source_kind": "enforceable_reliability_standard",
+    "summary": "Transmission operators perform next-day operational planning analysis, identify possible system operating limit exceedances, and maintain an operating plan for them.",
+    "evidence_fields": [
+      "operational_planning_analysis",
+      "system_operating_limit",
+      "operating_plan"
+    ],
+    "threshold_origin": "System operating limits remain entity- and system-specific; this probe does not invent a numeric limit.",
+    "applicable_tasks": [
+      "regulation_qa"
+    ],
+    "access_date": "2026-08-18",
+    "extension_version": "international-rule-probe-v1",
+    "generation_scope": "jurisdictional_rule_probe_only",
+    "source_metadata_sha256": "18c7362f24465b0f05337a93635ed0bbf7bac618873246fde827d06fff399ad6"
+  },
+  {
+    "rule_id": "INTL_NERC_FAC_011_4_SOL",
+    "jurisdiction": "NERC North America",
+    "authority": "North American Electric Reliability Corporation",
+    "standard_id": "FAC-011-4",
+    "standard_title": "System Operating Limits Methodology for the Operations Horizon",
+    "clause_id": "R1-R4",
+    "source_title": "NERC FAC-011-4 System Operating Limits Methodology",
+    "source_url": "https://www.nerc.com/globalassets/standards/reliability-standards/fac/fac-011-4.pdf",
+    "source_kind": "enforceable_reliability_standard",
+    "summary": "A reliability coordinator documents the method for facility ratings, system voltage limits, and stability limits used in operations.",
+    "evidence_fields": [
+      "facility_rating",
+      "system_voltage_limit",
+      "stability_limit"
+    ],
+    "threshold_origin": "Limits are determined by the documented methodology and facility-specific ratings; no universal numeric threshold is asserted.",
+    "applicable_tasks": [
+      "regulation_qa"
+    ],
+    "access_date": "2026-08-18",
+    "extension_version": "international-rule-probe-v1",
+    "generation_scope": "jurisdictional_rule_probe_only",
+    "source_metadata_sha256": "ba8adea951feae1dc2956e7320724091ad5bec75f1ce4380806973c058afc359"
+  },
+  {
+    "rule_id": "INTL_NERC_VAR_001_5_VOLTAGE",
+    "jurisdiction": "NERC North America",
+    "authority": "North American Electric Reliability Corporation",
+    "standard_id": "VAR-001-5",
+    "standard_title": "Voltage and Reactive Control",
+    "clause_id": "Purpose; R1-R7",
+    "source_title": "NERC VAR-001-5 Voltage and Reactive Control",
+    "source_url": "https://www.nerc.com/standards/reliability-standards/var/var-001-5",
+    "source_kind": "enforceable_reliability_standard",
+    "summary": "Voltage levels, reactive flows, and reactive resources are monitored and controlled within applicable limits in real time.",
+    "evidence_fields": [
+      "voltage_schedule",
+      "reactive_power_schedule",
+      "reactive_resource_status"
+    ],
+    "threshold_origin": "Voltage and reactive schedules are operationally specified; this probe does not convert them into a fixed dataset threshold.",
+    "applicable_tasks": [
+      "regulation_qa"
+    ],
+    "access_date": "2026-08-18",
+    "extension_version": "international-rule-probe-v1",
+    "generation_scope": "jurisdictional_rule_probe_only",
+    "source_metadata_sha256": "a7e6e8c0ba0dd5c70cb05bad22cad6b7a9b1948d92240de2ec5cedf175c70d81"
+  },
+  {
+    "rule_id": "INTL_EU_SOGL_ART18_STATE",
+    "jurisdiction": "European Union",
+    "authority": "European Commission",
+    "standard_id": "Commission Regulation (EU) 2017/1485",
+    "standard_title": "Guideline on electricity transmission system operation",
+    "clause_id": "Article 18",
+    "source_title": "EU System Operation Guideline, Article 18: Classification of system states",
+    "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:32017R1485",
+    "source_kind": "eu_regulation",
+    "summary": "A transmission system is classified as normal, alert, emergency, or blackout according to operating limits, reserves, frequency, and contingency consequences.",
+    "evidence_fields": [
+      "voltage",
+      "power_flow",
+      "frequency",
+      "reserve",
+      "contingency_status"
+    ],
+    "threshold_origin": "The applicable ranges and triggers follow the regulation and the relevant TSO definitions; no domestic dataset threshold is reused.",
+    "applicable_tasks": [
+      "regulation_qa"
+    ],
+    "access_date": "2026-08-18",
+    "extension_version": "international-rule-probe-v1",
+    "generation_scope": "jurisdictional_rule_probe_only",
+    "source_metadata_sha256": "06c5e1acb42fc38c4709bdc81049376402e9ee111dca58437ea68b88c878e9c2"
+  },
+  {
+    "rule_id": "INTL_EU_SOGL_ART25_LIMITS",
+    "jurisdiction": "European Union",
+    "authority": "European Commission",
+    "standard_id": "Commission Regulation (EU) 2017/1485",
+    "standard_title": "Guideline on electricity transmission system operation",
+    "clause_id": "Article 25",
+    "source_title": "EU System Operation Guideline, Article 25: Operational security limits",
+    "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:32017R1485",
+    "source_kind": "eu_regulation",
+    "summary": "Each transmission system operator specifies operational security limits using voltage, short-circuit, and thermal characteristics for each transmission element.",
+    "evidence_fields": [
+      "voltage_limit",
+      "short_circuit_limit",
+      "thermal_rating",
+      "element_id"
+    ],
+    "threshold_origin": "The limits are operator-defined within the regulation's physical requirements and are not replaced by a fixed 100/110 percent rule.",
+    "applicable_tasks": [
+      "regulation_qa"
+    ],
+    "access_date": "2026-08-18",
+    "extension_version": "international-rule-probe-v1",
+    "generation_scope": "jurisdictional_rule_probe_only",
+    "source_metadata_sha256": "5d38105d930700dc45b4576f7221fdcfbd9d1d9ce4c2a9c0b00d415b88902b59"
+  },
+  {
+    "rule_id": "INTL_EU_SOGL_ART33_CONTINGENCY",
+    "jurisdiction": "European Union",
+    "authority": "European Commission",
+    "standard_id": "Commission Regulation (EU) 2017/1485",
+    "standard_title": "Guideline on electricity transmission system operation",
+    "clause_id": "Article 33",
+    "source_title": "EU System Operation Guideline, Article 33: Contingency list",
+    "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:32017R1485",
+    "source_kind": "eu_regulation",
+    "summary": "Each transmission system operator establishes and updates a contingency list that supports coordinated operational security analysis.",
+    "evidence_fields": [
+      "contingency_list",
+      "external_contingency",
+      "observability_area",
+      "list_update"
+    ],
+    "threshold_origin": "Contingency inclusion follows the regulation and the coordinated analysis methodology; no probability threshold is assumed in this probe.",
+    "applicable_tasks": [
+      "regulation_qa"
+    ],
+    "access_date": "2026-08-18",
+    "extension_version": "international-rule-probe-v1",
+    "generation_scope": "jurisdictional_rule_probe_only",
+    "source_metadata_sha256": "608e18fe72d776c5360938f3bb62c1ddf032a2cc8c4ee1d59176788d6e93f7dd"
+  },
+  {
+    "rule_id": "INTL_EU_SOGL_ART72_ANALYSIS",
+    "jurisdiction": "European Union",
+    "authority": "European Commission",
+    "standard_id": "Commission Regulation (EU) 2017/1485",
+    "standard_title": "Guideline on electricity transmission system operation",
+    "clause_id": "Article 72(3)",
+    "source_title": "EU System Operation Guideline, Article 72: Operational security analysis",
+    "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:32017R1485",
+    "source_kind": "eu_regulation",
+    "summary": "Operational security analysis simulates each listed contingency from the N state and verifies that N-1 operating security limits are not exceeded.",
+    "evidence_fields": [
+      "n_state",
+      "n_minus_1_state",
+      "contingency_list",
+      "operational_security_limit"
+    ],
+    "threshold_origin": "The pass condition is defined against the applicable operational security limits for the area and element under analysis.",
+    "applicable_tasks": [
+      "regulation_qa"
+    ],
+    "access_date": "2026-08-18",
+    "extension_version": "international-rule-probe-v1",
+    "generation_scope": "jurisdictional_rule_probe_only",
+    "source_metadata_sha256": "50e0005ae6116c177651ae43241eb9e23b0821b2e09876e398b97d4defadcdcf"
+  }
+]

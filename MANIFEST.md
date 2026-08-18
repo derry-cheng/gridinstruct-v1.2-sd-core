@@ -1,6 +1,6 @@
 # GridInstruct v1.2-sd-core release manifest
 
-This directory contains the English-derived canonical instruction table, its
+This directory contains the English-language canonical instruction table, its
 official split files, the data-generation and validation code, source and
 license provenance, and the evidence-bound reports used by the Scientific Data
 descriptor. The release excludes installed dependency source, pretrained

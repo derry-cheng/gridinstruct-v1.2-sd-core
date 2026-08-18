@@ -30,6 +30,11 @@ REQUIRED = [
     "data/v1.2_sd_core_train.jsonl", "data/v1.2_sd_core_validation.jsonl", "data/v1.2_sd_core_test.jsonl", "data/v1.2_sd_core_ood_test.jsonl",
     "data/v1.2_sd_core_train_en.jsonl", "data/v1.2_sd_core_validation_en.jsonl", "data/v1.2_sd_core_test_en.jsonl", "data/v1.2_sd_core_ood_test_en.jsonl",
     "metadata/dataset_metadata.json", "metadata/schema.json", "metadata/data_dictionary.csv", "rules/regulation_rules.json",
+    "rules/international_rule_profiles.json", "metadata/international_rule_profile_matrix.csv",
+    "metadata/international_rule_probe_splits_v1.json",
+    "data/international_rule_probe_v1.jsonl", "reports/international_rule_probe_v1.json",
+    "reports/international_rule_probe_v1.md", "reports/international_rule_probe_splits_v1.json",
+    "docs/INTERNATIONAL_RULE_EXTENSION.md",
     "metadata/data_lineage_manifest.json", "docs/DATA_GENERATION_LINEAGE.md",
     "metadata/third_party_asset_inventory.json", "docs/THIRD_PARTY_ASSETS.md",
     "third_party/pglib-opf-v23.07/LICENSE",
@@ -175,6 +180,7 @@ def should_include(path: Path) -> bool:
     if text.startswith("data/"):
         return (
             text in {"data/gridinstruct_v1.2_sd_core.jsonl", "data/gridinstruct_v1.2_sd_core_en.jsonl"}
+            or text == "data/international_rule_probe_v1.jsonl"
             or text == "data/gridinstruct_v1.2_paper_candidate_actionable_plus15_v16.jsonl"
             or text.startswith("data/frozen_sources/")
             or text.startswith("data/v1.2_sd_core_")

@@ -56,7 +56,7 @@ They are required only for optional translation-provider calls and are not relea
 
 ## Inputs
 
-Physical inputs are the named benchmark constructors recorded in `metadata/third_party_asset_inventory.json`. Raw installed case files and intermediate construction JSONL stages are not part of this compact local package. The authoritative source and English release files are `data/gridinstruct_v1.2_sd_core.jsonl` and `data/gridinstruct_v1.2_sd_core_en.jsonl`; official, strict source-group, challenge, legacy template-surface, atomic template-family, proxy-reduced, and exact-surface ID-only manifests are under `data/`. Rule cards are in `rules/regulation_rules.json`. The missing raw scenario and solver ledgers remain explicit external gates.
+Physical inputs are the named benchmark constructors recorded in `metadata/third_party_asset_inventory.json`. Raw installed case files and intermediate construction JSONL stages are not part of this compact local package. The authoritative source and English release files are `data/gridinstruct_v1.2_sd_core.jsonl` and `data/gridinstruct_v1.2_sd_core_en.jsonl`; official, strict source-group, challenge, legacy template-surface, atomic template-family, proxy-reduced, and exact-surface ID-only manifests are under `data/`. Core rule cards are in `rules/regulation_rules.json`. The separate NERC/EU rule probe can be regenerated with `python3 scripts/generate_international_rule_probe.py` and its two leave-one-jurisdiction-out folds with `python3 scripts/create_international_rule_probe_splits.py`. The missing raw scenario and solver ledgers remain explicit external gates.
 
 ## Outputs
 

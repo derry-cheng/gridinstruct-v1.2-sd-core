@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "file_count": 175,
+  "file_count": 178,
   "files": [
     {
       "path": "scripts/analyze_data_quality.py",
@@ -194,8 +194,8 @@
     },
     {
       "path": "scripts/audit_scientific_data_submission.py",
-      "size_bytes": 18039,
-      "sha256": "c68deab218e4eb58a0cbf1c25396aa3c0d563a54e80c17d9ced2bba27e3db2df"
+      "size_bytes": 18300,
+      "sha256": "a8acb084da1835507c3fe1170afdc0b6d88865fbe52a34061f017377c0c83058"
     },
     {
       "path": "scripts/audit_sd_submission_readiness.py",
@@ -204,8 +204,8 @@
     },
     {
       "path": "scripts/audit_sd_visualization_completeness.py",
-      "size_bytes": 7907,
-      "sha256": "367eb7c565d292e6b257b505f12525bebd5e850f964ba304d0993ee4587c4e7d"
+      "size_bytes": 7928,
+      "sha256": "b8ca2eeeb9fb292fa72e186787ae7c60f2869ee6f6cb475bc3a655118259b0dc"
     },
     {
       "path": "scripts/audit_split_independence.py",
@@ -319,8 +319,8 @@
     },
     {
       "path": "scripts/build_release_bundle.py",
-      "size_bytes": 41937,
-      "sha256": "b14c79a86a5bc9fb405ed7e91b38236a1764e824998a0e65248474f3f9633ad6"
+      "size_bytes": 42384,
+      "sha256": "639a5d53fbc0bdc27037fad1dc2a7ba9bb7c1290eba943911ee841785db15843"
     },
     {
       "path": "scripts/build_reproducibility_manifests.py",
@@ -433,6 +433,11 @@
       "sha256": "669dd2dc34c16daf55908a0b2b1359067557cf70565267ab6c9b0ff38693a0ba"
     },
     {
+      "path": "scripts/create_international_rule_probe_splits.py",
+      "size_bytes": 3194,
+      "sha256": "f66a3f1f0402fb3d3c8f47398c6fa802b7977a664a1499f7573f8c05fb0665fc"
+    },
+    {
       "path": "scripts/create_near_neighbor_free_splits.py",
       "size_bytes": 12611,
       "sha256": "2e5e8659bd2ef853d23bb33a900fc2b3f1385d3a763c93ad0291a9dfaa220e14"
@@ -498,6 +503,11 @@
       "sha256": "5d1a62f5e1d131a9c82b1ef489a0ae24e03442e77bad5555d55fc7272709875a"
     },
     {
+      "path": "scripts/finalize_external_deposition.py",
+      "size_bytes": 16505,
+      "sha256": "198cd63229df39740945d9615becf9a58c125d530c57e7709f65aa7c1f2a2d53"
+    },
+    {
       "path": "scripts/freeze_legacy_topology_source.py",
       "size_bytes": 3417,
       "sha256": "c22a566455a4ab11557620247fc63820f0f0fab09d414d3cc6b2f2f3eea7be5a"
@@ -518,14 +528,19 @@
       "sha256": "2281db11ef70ebf70d755f79456c25817a7d61fe2d228e6407e3e16f64c00fa8"
     },
     {
+      "path": "scripts/generate_international_rule_probe.py",
+      "size_bytes": 18578,
+      "sha256": "72a96f91fd320749edc6e787b6ff0cbdb3ead18be4bd32aabaff30157853e5c1"
+    },
+    {
       "path": "scripts/generate_opf_secure_candidate_augmentation.py",
       "size_bytes": 30752,
       "sha256": "5ef4d525c0dcce1418c420dc551933e92922c333cbeef7b1b60c96bbfc6bfce3"
     },
     {
       "path": "scripts/generate_publication_sd_figures.py",
-      "size_bytes": 50967,
-      "sha256": "0534dae9edd6adaa0ffd04ae2252e7511ab71773a90ba6e0b1b4d538d01d53fc"
+      "size_bytes": 49772,
+      "sha256": "e44fed4a852df84fd7a5ca66725dffb5a5d852d92505cd150d6d42d86b1b1fa2"
     },
     {
       "path": "scripts/generate_sd_figures.py",
@@ -614,8 +629,8 @@
     },
     {
       "path": "scripts/rebuild_latex_submission_package.py",
-      "size_bytes": 8374,
-      "sha256": "2a59ed7190c8e0e841c6235427d7ac7c7ff0fdea583b5020f5d20cd5cfd6a35c"
+      "size_bytes": 9465,
+      "sha256": "d1ac425f770e35f720c9c4588646c49000b9b59096c006b8f87533f6f3bb2441"
     },
     {
       "path": "scripts/rebuild_opf_replay_inputs.py",
@@ -699,8 +714,8 @@
     },
     {
       "path": "scripts/run_exact_surface_target_hidden.py",
-      "size_bytes": 7317,
-      "sha256": "ac572f49941debfe5333f8ebfd71c94d3c1cdb4250890dfb7450cafbdba70900"
+      "size_bytes": 7443,
+      "sha256": "71c217b475005519b541b4afac32ac3137fd65b86bb890902c25621af1321fe1"
     },
     {
       "path": "scripts/run_group_cluster_bootstrap.py",
@@ -784,8 +799,8 @@
     },
     {
       "path": "scripts/run_target_hidden_classification.py",
-      "size_bytes": 12392,
-      "sha256": "dbd6a6e027768897c62242e378cea9cb53bc6a04ee469969818ac0bbc973b703"
+      "size_bytes": 12750,
+      "sha256": "34642593cf40ba357b3c3d30a66644e4e4bab5152d914dbbb0ec8a474426bb08"
     },
     {
       "path": "scripts/run_tfidf_task_baselines.py",

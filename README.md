@@ -6,9 +6,10 @@ states, traceable rule cards, structured queries and tool actions, and task-spec
 evaluation evidence. The release covers six registered task families and several
 provenance-controlled evaluation regimes.
 
-The current local snapshot contains the promoted 95,479-row table, split definitions,
-validation evidence, independent OPF and network-envelope diagnostics, a template-family
-holdout, and the Scientific Data manuscript. The code is publicly available on GitHub and
+The current local snapshot contains the promoted 95,479-row core table, a separate 512-record
+international rule probe, split definitions, validation evidence, independent OPF and
+network-envelope diagnostics, a template-family holdout, and the Scientific Data manuscript.
+The code is publicly available on GitHub and
 archived at Zenodo. The raw population-level solver ledgers, completed expert review, final
 data accession, and named author metadata remain explicit external gates. The compact reviewer map is
 `release/reviewer_access_manifest_2026-08-13.json`.
