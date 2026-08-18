@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "file_count": 178,
+  "file_count": 180,
   "files": [
     {
       "path": "scripts/analyze_data_quality.py",
@@ -319,8 +319,8 @@
     },
     {
       "path": "scripts/build_release_bundle.py",
-      "size_bytes": 42384,
-      "sha256": "639a5d53fbc0bdc27037fad1dc2a7ba9bb7c1290eba943911ee841785db15843"
+      "size_bytes": 42970,
+      "sha256": "d590966ad49ce5a77d48e64f47693889a90676b71346c577189ce1aaa46e08d9"
     },
     {
       "path": "scripts/build_reproducibility_manifests.py",
@@ -436,6 +436,11 @@
       "path": "scripts/create_international_rule_probe_splits.py",
       "size_bytes": 3194,
       "sha256": "f66a3f1f0402fb3d3c8f47398c6fa802b7977a664a1499f7573f8c05fb0665fc"
+    },
+    {
+      "path": "scripts/create_international_rule_review_assignments.py",
+      "size_bytes": 4652,
+      "sha256": "b4a8d62cd0ca02c550973b85584ad85942d127cec73c82d89fde11a177e49b70"
     },
     {
       "path": "scripts/create_near_neighbor_free_splits.py",
@@ -726,6 +731,11 @@
       "path": "scripts/run_independent_opf_envelope.py",
       "size_bytes": 7001,
       "sha256": "036e9d9888980844a3dda325d79f779314041e88229dd5d133a7320dd2a7422a"
+    },
+    {
+      "path": "scripts/run_international_rule_probe_baseline.py",
+      "size_bytes": 10852,
+      "sha256": "8e69ea6a79e8b1a09a91a5f2dd90817109c9b9d2ff87220f2cae2e527e9ce652"
     },
     {
       "path": "scripts/run_lightsim_native_independent_solver.py",

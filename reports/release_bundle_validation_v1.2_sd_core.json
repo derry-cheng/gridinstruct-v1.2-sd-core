@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-08-13T08:42:53.913872+00:00",
+  "generated_at": "2026-08-18T10:01:17.996309+00:00",
   "status": "package_ready_external_identifiers_pending",
   "bundle": "release/GridInstruct_v1.2_sd_core_release_candidate.tar.gz",
-  "bundle_sha256": "d066a313d1820e5b0df4cebb7d3d41a67e1cfc42eef13dcb7e3748365fb3485e",
-  "file_count": 939,
-  "payload_file_count": 937,
+  "bundle_sha256": "df16d854c34fb07b1a3fa13e4425899f03901c9e1d889357ef87eb5769b09557",
+  "file_count": 961,
+  "payload_file_count": 959,
   "companion_file_count": 2,
-  "payload_size_bytes": 3590549209,
+  "payload_size_bytes": 3587383813,
   "manifest": "release/archive_manifest_v1.2_sd_core.csv",
   "checksums": "release/checksums_sha256.txt",
   "manifest_scope": "payload files only; manifest and checksum files are included in the archive but are not self-hashed",
@@ -48,9 +48,7 @@
   "pglib_license_in_archive": true,
   "deterministic_archive_headers": true,
   "public_identifiers_pending": [
-    "public_repository_url",
-    "data_doi",
-    "archived_code_release_doi"
+    "data_doi"
   ],
   "excludes_experiments_directory": true,
   "exclusion_reason": "Training checkpoints/log-heavy experiment folders remain local reproducibility evidence; release archive contains data, metadata, code, reports, figures, and review package."

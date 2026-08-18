@@ -18,6 +18,20 @@ The deterministic leave-one-jurisdiction-out manifests are generated with:
 python3 scripts/create_international_rule_probe_splits.py
 ```
 
-Each fold trains on 256 records from one jurisdiction and tests on 256 records from the other. The manifests enforce zero train--test record overlap and keep all four cards of the held-out jurisdiction together. They define an evaluation route; model scores and expert agreement are intentionally not reported until the corresponding runs and reviews are complete.
+Each fold trains on 256 records from one jurisdiction and tests on 256 records from the other. The manifests enforce zero train--test record overlap and keep all four cards of the held-out jurisdiction together.
 
-The current local gate checks rule-link integrity, per-card denominators, unique record identifiers, and direct-generation metadata. Two follow-up gates remain before making a cross-jurisdiction generalization claim: independent expert review of the rule interpretations and a held-out-jurisdiction evaluation. The extension is therefore reported separately from the core benchmark counts until those gates are complete.
+The CPU retrieval diagnostic is run with:
+
+```text
+python scripts/run_international_rule_probe_baseline.py
+```
+
+It fits character-level TF--IDF on one jurisdiction, copies the answer from the nearest training record, and evaluates the other jurisdiction. The two folds give macro exact match 0.0000, macro token-F1 0.3532, and mean nearest-neighbour cosine similarity 0.7861. These values quantify lexical transfer under a deliberately weak retrieval baseline; they do not measure semantic legal correctness, physical compliance, or expert agreement.
+
+A deterministic review package is generated with:
+
+```text
+python scripts/create_international_rule_review_assignments.py
+```
+
+It samples 16 records per card (128 records in total) and assigns each sampled record to two independent reviewer slots (256 assignments). The labels and adjudication fields are intentionally blank. The current local gate therefore establishes source, schema, split, and baseline reproducibility, while the independent human review remains an explicit external gate before making a cross-jurisdiction semantic-generalization claim. The extension remains reported separately from the core benchmark counts.

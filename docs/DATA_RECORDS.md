@@ -29,8 +29,11 @@ The core table keeps its original 95,479 records and 17 domestic rule cards. A s
 | metadata/international_rule_profile_matrix.csv | 8 rows | 15f8934dbce8d393fbb12ac816507f1d9c5791a71c5fac9f10e1bccc428046c8 |
 | metadata/international_rule_probe_splits_v1.json | two leave-one-jurisdiction-out folds | e6df687fbe47ffc92fe189978be83fb083b8574c16f848d091780ccd24d27f82 |
 | reports/international_rule_probe_v1.json | validation receipt | a10fc7f49f171ebb1e8658c15a9c935af5d3c98259f9bb15c11a5336d714f07a |
+| reports/international_rule_probe_splits_v1.json | split receipt | e6df687fbe47ffc92fe189978be83fb083b8574c16f848d091780ccd24d27f82 |
+| benchmark/international_rule_probe_v1/nearest_neighbor_report.json | two-fold CPU retrieval diagnostic | f3f4afb62f7610236da057adc463a830d8c758649ddfd879312f99f965b30a6d |
+| reports/international_rule_review_assignments_v1.json | 128-record, two-reviewer assignment receipt | d75afc60e8e179d4baa74a93d49fcc2e47cefe0c6946a34a7a6e84c3c94aaec5 |
 
-The extension is a source-conditioned rule-grounding probe. It does not change the core split counts or imply that NERC or European rules endorse the domestic numeric policies.
+The extension is a source-conditioned rule-grounding probe. Its CPU retrieval diagnostic gives macro exact match 0.0000, token-F1 0.3532, and mean nearest-neighbour similarity 0.7861 under two jurisdiction-held-out folds. These are lexical-transfer diagnostics, not semantic legal or physical-compliance scores. The review receipt contains blank labels for two independent reviewer slots per sampled record. The extension does not change the core split counts or imply that NERC or European rules endorse the domestic numeric policies.
 
 ## Rule Dictionary
 

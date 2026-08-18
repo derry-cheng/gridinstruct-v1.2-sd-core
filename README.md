@@ -7,8 +7,9 @@ evaluation evidence. The release covers six registered task families and several
 provenance-controlled evaluation regimes.
 
 The current local snapshot contains the promoted 95,479-row core table, a separate 512-record
-international rule probe, split definitions, validation evidence, independent OPF and
-network-envelope diagnostics, a template-family holdout, and the Scientific Data manuscript.
+international rule probe, split definitions, validation evidence, a jurisdiction-held-out
+retrieval diagnostic, a two-reviewer assignment package, independent OPF and network-envelope
+diagnostics, a template-family holdout, and the Scientific Data manuscript.
 The code is publicly available on GitHub and
 archived at Zenodo. The raw population-level solver ledgers, completed expert review, final
 data accession, and named author metadata remain explicit external gates. The compact reviewer map is

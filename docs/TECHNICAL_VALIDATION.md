@@ -4,9 +4,11 @@ Generated: 2026-08-18
 
 ## International Rule-Probe Extension
 
-The separate jurisdictional extension passes its local contract gate for 8 official rule cards and 512 directly generated English regulation-QA records. Four cards use NERC TOP-001-6, TOP-002-5, FAC-011-4, and VAR-001-5; four use Articles 18, 25, 33, and 72(3) of Commission Regulation (EU) 2017/1485. Each card has 64 records, one valid rule link per record, an official source URL, a clause locator, typed evidence fields, and direct-English generation metadata. The gate does not measure expert agreement or held-out-jurisdiction generalization.
+The separate jurisdictional extension passes its local contract gate for 8 official rule cards and 512 directly generated English regulation-QA records. Four cards use NERC TOP-001-6, TOP-002-5, FAC-011-4, and VAR-001-5; four use Articles 18, 25, 33, and 72(3) of Commission Regulation (EU) 2017/1485. Each card has 64 records, one valid rule link per record, an official source URL, a clause locator, typed evidence fields, and direct-English generation metadata. The gate does not measure expert agreement or semantic legal correctness.
 
-The companion leave-one-jurisdiction-out manifest contains two disjoint 256/256 folds. It provides the evaluation boundary for future source-conditioned model tests without changing the core split statistics.
+The companion leave-one-jurisdiction-out manifest contains two disjoint 256/256 folds. A CPU character TF--IDF nearest-neighbour output-copy diagnostic completes both folds with macro exact match 0.0000, macro token-F1 0.3532, and mean nearest-neighbour cosine similarity 0.7861. This is a lexical-transfer diagnostic; it does not establish held-out-jurisdiction semantic generalization. The review package contains 128 stratified records with two blank reviewer assignments per record, so human agreement remains pending.
+
+The final release-candidate archive was extracted in an isolated temporary directory and replayed. All 959 payload hashes and the scoped evidence bindings match; the two canonical validators report zero schema, duplicate-ID, and invalid-rule-link errors. Scenario-link and query-truth checks remain explicitly deferred because the compact archive excludes the raw scenario registry and query-truth ledger.
 
 ## Dataset Integrity
 

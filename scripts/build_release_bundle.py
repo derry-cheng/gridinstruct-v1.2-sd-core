@@ -34,6 +34,12 @@ REQUIRED = [
     "metadata/international_rule_probe_splits_v1.json",
     "data/international_rule_probe_v1.jsonl", "reports/international_rule_probe_v1.json",
     "reports/international_rule_probe_v1.md", "reports/international_rule_probe_splits_v1.json",
+    "benchmark/international_rule_probe_v1/nearest_neighbor_report.json",
+    "benchmark/international_rule_probe_v1/nearest_neighbor_report.md",
+    "benchmark/international_rule_probe_v1/nearest_neighbor_predictions.jsonl",
+    "reports/international_rule_review_assignments_v1.json",
+    "reports/international_rule_review_assignments_v1.jsonl",
+    "reports/international_rule_review_assignments_v1.csv",
     "docs/INTERNATIONAL_RULE_EXTENSION.md",
     "metadata/data_lineage_manifest.json", "docs/DATA_GENERATION_LINEAGE.md",
     "metadata/third_party_asset_inventory.json", "docs/THIRD_PARTY_ASSETS.md",
@@ -188,7 +194,7 @@ def should_include(path: Path) -> bool:
             or text.startswith("data/hard_boundary_v1.2_sd_core/")
         )
     if text.startswith("benchmark/"):
-        return "v1.2_sd_core" in text and path.suffix in {".json", ".md", ".jsonl", ".csv"}
+        return ("v1.2_sd_core" in text or "international_rule_probe_v1" in text) and path.suffix in {".json", ".md", ".jsonl", ".csv"}
     if text.startswith("reports/"):
         if any(token in text for token in SIDECAR_REPORT_TOKENS):
             return False
@@ -237,7 +243,7 @@ def should_include(path: Path) -> bool:
             "ieee14_opf_secure_candidate_augmentation_v1.2_sd_core",
             "independent_opf_envelope_v1.2_sd_core",
             "pglib_network_envelope_replay_v1.2_sd_core",
-            "template_family_holdout_v1.2_sd_core",
+            "template_family_holdout_v1.2_sd_core", "international_rule_probe_v1", "international_rule_probe_splits_v1", "international_rule_review_assignments_v1",
         ]
         return any(token in text for token in keep_tokens)
     if text.startswith("figures/"):
@@ -303,7 +309,7 @@ def write_csv(path: Path, rows: list[dict[str, str | int]]) -> None:
     ensure_dirs(path.parent)
     with path.open("w", encoding="utf-8", newline="") as f:
         fieldnames = ["path", "size_bytes", "sha256"]
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer = csv.DictWriter(f, fieldnames=fieldnames, lineterminator="\n")
         writer.writeheader()
         for row in rows:
             writer.writerow(row)
