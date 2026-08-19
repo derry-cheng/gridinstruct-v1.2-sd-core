@@ -1,6 +1,6 @@
 {
   "schema_version": "gridinstruct-scoped-evidence-v2",
-  "generated_at": "2026-08-18T16:00:02.528059+00:00",
+  "generated_at": "2026-08-19T02:04:55.522032+00:00",
   "status": "pass",
   "scope": "local_hash_bound_release_candidate",
   "runtime_policy": "local CPU/MPS only; no remote GPU execution",
@@ -147,15 +147,15 @@
     },
     "reports/direct_english_materialization_v1.2_sd_core.json": {
       "path": "reports/direct_english_materialization_v1.2_sd_core.json",
-      "sha256": "075e2a613c9bc9c56a89969d86c993c66d61109d933eb4f1fd12879a87fa95b4",
-      "bytes": 972,
+      "sha256": "ad14ac311b9d4c3cdb95ef53fe9feef601514995ed67b58796a0ce3ded34f59a",
+      "bytes": 947,
       "reported_status": "pass",
       "bound": true
     },
     "reports/direct_english_canonical_materialization_v1.2_sd_core.json": {
       "path": "reports/direct_english_canonical_materialization_v1.2_sd_core.json",
-      "sha256": "1ec01af6f30789178ec21ac3e6befd3b3db732233856749d242b7155addc8a36",
-      "bytes": 969,
+      "sha256": "2191734325cae8cdb159e40feefb86ec7c25eec9eba145073ad88e9755ceb7a6",
+      "bytes": 944,
       "reported_status": "pass",
       "bound": true
     },

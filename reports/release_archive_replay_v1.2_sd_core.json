@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-08-18T16:03:19.305609+00:00",
+  "generated_at": "2026-08-19T02:08:08.828715+00:00",
   "status": "pass",
   "bundle": "release/GridInstruct_v1.2_sd_core_release_candidate.tar.gz",
-  "bundle_sha256": "67b64b0e419bc27b7968f89937f3ccc0c9ce07d0bc3b126c469b46a79d80f400",
+  "bundle_sha256": "46a2d8a891e87a44d74b2f4ff08e69cab394d7afe6f82f9231f7479b3a1cc0b4",
   "safe_archive_member_count": 995,
   "manifest_payload_count": 993,
   "hash_mismatch_count": 0,
