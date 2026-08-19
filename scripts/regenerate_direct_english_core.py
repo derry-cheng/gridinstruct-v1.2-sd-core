@@ -113,11 +113,12 @@ def render_compliance(row: dict[str, Any]) -> None:
     goal = text(inp.get("operator_goal"), "the stated operating objective")
     issues = inp.get("observed_issues") or []
     issue_text = ", ".join(text(item).replace("_", " ") for item in issues) or "no explicit violation"
-    label = text(row.get("compliance_label"), text(row.get("output"), "unknown"))
     row["instruction"] = (
-        f"Determine whether the proposed action \"{action}\" is {label.replace('_', ' ')} under the "
-        f"current {issue_text} condition, and explain whether it supports {goal.lower()}."
+        f"Determine whether the proposed action \"{action}\" satisfies the applicable operating "
+        f"requirements under the current {issue_text} condition, and explain whether it supports "
+        f"{goal.lower()}."
     )
+    label = text(row.get("compliance_label"), text(row.get("output"), "unknown"))
     if label == "compliant":
         conclusion = "The action can be used under the stated condition after the required operating check."
     elif label == "compliant_with_monitoring":
@@ -139,11 +140,39 @@ def render_intent(row: dict[str, Any]) -> None:
     intent = text(output.get("intent"), "mitigate_violations")
     slots = output.get("slots") if isinstance(output.get("slots"), dict) else {}
     priority = text(slots.get("priority"), "review")
-    row["instruction"] = (
-        f"For {text(row.get('scenario_id'), 'the current scenario')}, route the operator request to "
-        f"{intent.replace('_', ' ')}. Address {issue_text} with {priority} priority and retain a "
-        "post-action power-flow check."
+    scenario = text(row.get("scenario_id"), "the current scenario")
+    variant = int((row.get("metadata") or {}).get("variant_index") or 0) % 12
+    templates = (
+        "For {scenario}, identify the dispatch tool family required by the operator request. Address {issue} with {priority} priority and retain a post-action power-flow check.",
+        "Select the suitable dispatch analysis route for {scenario}. The request concerns {issue}; use {priority} priority and keep the post-action power-flow check.",
+        "Determine the dispatch-tool route for {scenario}, focusing on {issue}. Preserve {priority} priority and an explicit post-action power-flow check.",
+        "Given {scenario}, assign the operator request to its appropriate dispatch analysis family. Review {issue} with {priority} priority and retain the verification step.",
+        "Route the current operating request for {scenario} through the suitable dispatch tool family. The active concern is {issue}, with {priority} priority and post-action verification.",
+        "For the operating state {scenario}, choose the dispatch analysis family that matches the request. Cover {issue} at {priority} priority and retain the power-flow check.",
+        "Identify an appropriate dispatch-tool route for {scenario}. Account for {issue}, preserve {priority} priority, and require a post-action power-flow check.",
+        "The operator request refers to {scenario}. Select the dispatch analysis family, address {issue} with {priority} priority, and keep the verification step explicit.",
+        "Assign {scenario} to the suitable dispatch tool family under the current request. Review {issue} at {priority} priority and repeat the power-flow check after action.",
+        "For scenario {scenario}, prepare the dispatch analysis route requested by the operator. Emphasize {issue}, use {priority} priority, and retain post-action verification.",
+        "Choose the dispatch-tool family for {scenario} from the operating request. The review covers {issue} with {priority} priority and includes a power-flow check after action.",
+        "Route the operator request associated with {scenario} to the appropriate dispatch analysis family. Address {issue} at {priority} priority and preserve post-action verification.",
     )
+    row["instruction"] = templates[variant].format(scenario=scenario, issue=issue_text, priority=priority)
+    # Legacy intent variants carried the gold intent in auxiliary input prose.
+    # Reconstruct those fields from the state contract so the classifier cannot
+    # solve the task by copying the target from the exposed input.
+    if isinstance(inp, dict):
+        inp["utterance"] = (
+            "The operator requests dispatch analysis for the current operating condition "
+            "and a reviewable recommendation."
+        )
+        inp["routing_priority"] = (
+            "The current shift supervisor requires a safe dispatch analysis followed by "
+            "a reviewable recommendation."
+        )
+        inp["routing_policy"] = (
+            "Follow the declared dispatch review sequence and retain a post-action power-flow check."
+        )
+        row["input"] = inp
     row["rationale"] = (
         f"The typed intent contract is {intent} with priority {priority}. The routing request is grounded "
         f"in the scenario state ({summary}) and retains the structured slots and verification step."
@@ -180,13 +209,13 @@ def render_query(row: dict[str, Any]) -> None:
 
 def render_ticket(row: dict[str, Any]) -> None:
     inp = row.get("input") or {}
-    label = text(row.get("compliance_label"), text(row.get("output"), "unknown"))
     action = text(inp.get("ticket_text"), "the proposed operation ticket")
     context = text(inp.get("operation_context"), "the stated operating context")
     row["instruction"] = (
-        f"Check whether the operation ticket is {label.replace('_', ' ')} for {context.lower()}. "
+        f"Check whether the operation ticket satisfies the applicable safeguards for {context.lower()}. "
         f"Use the ticket text and verify the listed pre-action safeguards: {action}"
     )
+    label = text(row.get("compliance_label"), text(row.get("output"), "unknown"))
     row["output"] = label
     row["rationale"] = (
         f"The typed ticket label is {label}. The decision is grounded in the equipment state, dispatch "
@@ -204,7 +233,7 @@ def render_rule_qa(row: dict[str, Any]) -> None:
     evidence = ", ".join(text(item) for item in (inp.get("evidence_fields") or [])) or "the declared evidence fields"
     row["instruction"] = (
         f"For a {audience}, explain {rule_id} as {deliverable.lower()}, focusing on {focus}. "
-        f"Use this typed rule summary: {summary}"
+        f"Use the applicable source rule and identify the required evidence fields: {evidence}."
     )
     row["output"] = (
         f"{rule_id} states: {summary} Evidence to record includes {evidence}. "
@@ -233,6 +262,12 @@ def render_row(row: dict[str, Any], index: int) -> dict[str, Any]:
         render_rule_qa(out)
     else:
         raise ValueError(f"Unsupported task_type at row {index}: {task}")
+
+    # A rule summary is the target evidence for regulation-QA.  Keeping it in
+    # the exposed input turns the task into answer copying, so it is removed
+    # after the target has been rendered from the typed rule contract.
+    if task == "regulation_qa" and isinstance(out.get("input"), dict):
+        out["input"].pop("rule_summary", None)
 
     metadata = dict(out.get("metadata") or {})
     for key in ("source_language", "translation_status", "translation_cache_version", "english_rematerialized_from_promoted"):

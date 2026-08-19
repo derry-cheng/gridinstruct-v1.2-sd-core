@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-18T15:46:28.996629+00:00",
+  "generated_at": "2026-08-19T11:43:52.067228+00:00",
   "dataset": "data/gridinstruct_v1.2_sd_core_en.jsonl",
   "record_count": 95479,
   "natural_language_fields": {
@@ -36,5 +36,5 @@
     "regulation_qa": 4205,
     "operation_ticket_check": 10881
   },
-  "language_position": "Natural-language fields are audited separately from stable schema identifiers. Any translated release must pass the same schema, split, grounding, and label-consistency checks."
+  "language_position": "Natural-language fields are generated directly in English and audited separately from stable schema identifiers. The direct-English contract is checked together with schema, split, grounding, and label consistency."
 }

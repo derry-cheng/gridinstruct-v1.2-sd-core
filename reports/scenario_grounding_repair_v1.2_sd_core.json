@@ -1,0 +1,16 @@
+{
+  "status": "pass",
+  "input": "data/gridinstruct_v1.2_sd_core.jsonl",
+  "output": "data/gridinstruct_v1.2_sd_core.jsonl",
+  "registry": "simulation_outputs/contingency/scenarios_converged.json",
+  "registry_records": 2822,
+  "counts": {
+    "issue_profile_updates": 4441,
+    "query_truth_bounded": 2,
+    "rule_or_non_scenario": 15086,
+    "scenario_bound": 80393,
+    "severity_updates": 22379,
+    "summary_rebound": 80393
+  },
+  "policy": "Scenario-facing summaries, severity fields, scenario-grounded query results, and compliance labels are rebound to the scenario registry; explicit failed states remain bounded and are not filled."
+}

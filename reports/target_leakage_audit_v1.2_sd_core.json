@@ -1,0 +1,17 @@
+{
+  "status": "pass",
+  "input": "data/gridinstruct_v1.2_sd_core.jsonl",
+  "records": 95479,
+  "task_counts": {
+    "auxiliary_decision": 18087,
+    "dispatcher_intent_tool_call": 19773,
+    "intelligent_data_query": 17766,
+    "operation_ticket_check": 10881,
+    "regulation_compliance_check": 24767,
+    "regulation_qa": 4205
+  },
+  "leak_counts": {},
+  "leak_total": 0,
+  "examples": {},
+  "policy": "Closed labels and rule summaries must not appear in the natural instruction or exposed structured input; provenance identifiers remain allowed."
+}

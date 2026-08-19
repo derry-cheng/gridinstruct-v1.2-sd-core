@@ -18,12 +18,35 @@ from pathlib import Path
 from typing import Any
 
 from create_balanced_near_neighbor_splits import solve_assignment
-from create_group_aware_splits import is_ood
+from create_group_aware_splits import OOD_NETWORKS, OOD_SCENARIO_TAGS, OOD_TASKS, ood_reason
 from audit_near_duplicates import normalize_template
 from gridinstruct_utils import ROOT, ensure_dirs, read_jsonl, write_json, write_jsonl
 
 
 SPLITS = ("train", "validation", "test")
+CLASSIFICATION_LABEL_FIELDS = {
+    "operation_ticket_check": "compliance_label",
+    "regulation_compliance_check": "compliance_label",
+    "dispatcher_intent_tool_call": "intent",
+}
+
+
+def surface_is_ood(row: dict[str, Any]) -> bool:
+    """Keep the surface stress split label-supported.
+
+    The official component split owns the complete external-network holdout.
+    For this lexical stress split, only IEEE118 and explicit stress strata are
+    reserved as topology OOD; otherwise a single normalized instruction group
+    can contain only one label across all three development partitions.
+    """
+    reason = ood_reason(row)
+    if reason is None:
+        return False
+    if reason == "topology_or_scenario_transfer":
+        network = str(row.get("network_model") or "").replace(" ", "").lower()
+        scenario = str(row.get("scenario_id") or "")
+        return network == "ieee118" or any(tag in scenario for tag in OOD_SCENARIO_TAGS)
+    return True
 
 
 def sha256(path: Path) -> str:
@@ -56,8 +79,8 @@ def main() -> None:
     for row in rows:
         groups_by_key[group_key(row)].append(row)
     groups = list(groups_by_key.values())
-    ood_groups = [group for group in groups if any(is_ood(row) for row in group)]
-    non_ood_groups = [group for group in groups if not any(is_ood(row) for row in group)]
+    ood_groups = [group for group in groups if any(surface_is_ood(row) for row in group)]
+    non_ood_groups = [group for group in groups if not any(surface_is_ood(row) for row in group)]
     tasks = sorted({str(row.get("task_type")) for row in rows})
     assignment = None
     solve_details = None
@@ -66,7 +89,13 @@ def main() -> None:
     # used only when the requested 1--10% task-count bands are infeasible.
     for tolerance in (0.01, 0.02, 0.05, 0.10, 0.20, 0.50, 1.00):
         try:
-            assignment, solve_details = solve_assignment(non_ood_groups, tasks, args.seed, tolerance)
+            assignment, solve_details = solve_assignment(
+                non_ood_groups,
+                tasks,
+                args.seed,
+                tolerance,
+                label_fields=CLASSIFICATION_LABEL_FIELDS,
+            )
             break
         except RuntimeError:
             continue

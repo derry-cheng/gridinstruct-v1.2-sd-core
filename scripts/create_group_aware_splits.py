@@ -9,6 +9,7 @@ or augmentation-source leakage.
 from __future__ import annotations
 
 import argparse
+import hashlib
 from collections import Counter, defaultdict
 from datetime import datetime, timezone
 from typing import Any
@@ -23,6 +24,17 @@ OOD_TASKS = {
     "intelligent_data_query",
 }
 OOD_SCENARIO_TAGS = ("load120", "load130", "n2_branch_outage")
+OOD_NETWORKS = {
+    "ieee118",
+    "ieee300",
+    "illinois200",
+    "pegase89",
+    "pegase1354",
+    "rte1888",
+    "rte2848",
+    "pegase2869",
+}
+RULE_ONLY_OOD_RULES = {"REG_QUERY_001"}
 SPLIT_NAMES = ("train", "validation", "test")
 SPLIT_RATIOS = {"train": 0.8, "validation": 0.1, "test": 0.1}
 CLASSIFICATION_LABEL_FIELDS = {
@@ -94,11 +106,31 @@ def target_key(row: dict[str, Any]) -> str:
     return f"{task}::__task__"
 
 
-def is_ood(row: dict[str, Any]) -> bool:
-    network = row.get("network_model")
+def ood_reason(row: dict[str, Any]) -> str | None:
+    network = str(row.get("network_model") or "").replace(" ", "").lower()
     scenario = row.get("scenario_id") or ""
     task_type = row.get("task_type")
-    return task_type in OOD_TASKS and (network == "IEEE118" or any(tag in scenario for tag in OOD_SCENARIO_TAGS))
+    if task_type in OOD_TASKS and (network in OOD_NETWORKS or any(tag in scenario for tag in OOD_SCENARIO_TAGS)):
+        return "topology_or_scenario_transfer"
+    if task_type == "operation_ticket_check":
+        # Ticket records have no electrical network identifier.  Reserve a
+        # deterministic construction-family holdout so the OOD split still
+        # has a non-zero ticket denominator without mixing records across
+        # operation-defect groups.
+        key = classification_group(row)
+        bucket = int(hashlib.sha256(key.encode("utf-8")).hexdigest()[:8], 16) % 10
+        if bucket == 0:
+            return "operation_ticket_construction_holdout"
+    if task_type == "regulation_qa":
+        rule_ids = set(str(item) for item in (row.get("source_regulation_ids") or []))
+        if rule_ids & RULE_ONLY_OOD_RULES:
+            return "rule_card_holdout"
+    return None
+
+
+def is_ood(row: dict[str, Any]) -> bool:
+    """Compatibility predicate for the other split builders."""
+    return ood_reason(row) is not None
 
 
 def build_connected_groups(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -367,9 +399,10 @@ def split_records(rows: list[dict[str, Any]], seed: int) -> dict[str, list[dict[
     ood: list[dict[str, Any]] = []
     iid: list[dict[str, Any]] = []
     for row in rows:
-        if is_ood(row):
+        reason = ood_reason(row)
+        if reason:
             row = dict(row)
-            row.setdefault("metadata", {})["ood_type"] = "topology_or_scenario_or_task_transfer"
+            row.setdefault("metadata", {})["ood_type"] = reason
             ood.append(row)
         else:
             iid.append(row)
@@ -466,7 +499,8 @@ def main() -> None:
         "ood_design": [
             "topology transfer to IEEE118",
             "scenario transfer to high-load (120% and 130%) and selected N-2 events",
-            "operation_ticket_check and regulation_qa have no OOD split because they are not scenario-grounded",
+            "operation-ticket construction-family holdout with deterministic group assignment",
+            "regulation-QA rule-card holdout for REG_QUERY_001",
         ],
         "split_limitations": split_limitations,
     }

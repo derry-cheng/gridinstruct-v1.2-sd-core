@@ -3,9 +3,9 @@
   "expected_task_count": 6,
   "task_count": 6,
   "current_split_sha256": {
-    "train": "b213c56b3cc4e4c05a66a4702a6e6c40755d1a3a48962ec3be3817cbdec00b6e",
-    "validation": "4f8b3ef02830e7980aa4a86bcd8c4f7400da1f0ae19f29d2a3c4a9eabc63442b",
-    "test": "ad36c58b4854448a887218a86021e176169e957da577d3493025cb7fcfdfb0a7"
+    "train": "27087a599f1a3b78cf69e27ae2f8ed71e513fb50c4e140025d3b6cb1efe33c95",
+    "validation": "ec1e2a0fa019f169e7317267c02bea6f3aaeb3531a0b79b2fa841c3dda0fd765",
+    "test": "d64dd5c72721b0f6bb0fda7911722d76dfba2bef9596fac10bd9bae227c9b401"
   },
   "status": "pass",
   "validation_errors": [],
@@ -98,15 +98,15 @@
   "active_evidence": "direct_cpu_tfidf_diagnostic",
   "models": [
     {
-      "summary": "benchmark/direct_english_tfidf_v1.2_sd_core_report.json",
-      "summary_sha256": "1df0ce782bb9065f0139ede51462e20b2fd47f5495f0bf237d42e3442d8a5630",
+      "summary": "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_report.json",
+      "summary_sha256": "a84771361f3542e5c660e58bbe0791fb84f3db22a8dc644afab7d532d154dfd3",
       "task": "auxiliary_decision",
       "family": "direct_cpu_tfidf_diagnostic",
       "input_sha256": {
-        "train": "b213c56b3cc4e4c05a66a4702a6e6c40755d1a3a48962ec3be3817cbdec00b6e",
-        "validation": "4f8b3ef02830e7980aa4a86bcd8c4f7400da1f0ae19f29d2a3c4a9eabc63442b",
-        "test": "ad36c58b4854448a887218a86021e176169e957da577d3493025cb7fcfdfb0a7",
-        "ood": "ee4cf435bc230f05a2cfe3d1eda730b278243d57ea8cfd67454ced7a65c9bad1"
+        "train": "27087a599f1a3b78cf69e27ae2f8ed71e513fb50c4e140025d3b6cb1efe33c95",
+        "validation": "ec1e2a0fa019f169e7317267c02bea6f3aaeb3531a0b79b2fa841c3dda0fd765",
+        "test": "d64dd5c72721b0f6bb0fda7911722d76dfba2bef9596fac10bd9bae227c9b401",
+        "ood": "c8bcdf784892728b7b981e5aaad76d7c3780b14ed4a8a06e58466d87ee021038"
       },
       "model_revision": {
         "model_name": "character-ngram TF-IDF with LinearSVC/nearest-neighbour retrieval",
@@ -118,27 +118,27 @@
         {
           "seed": "deterministic",
           "artifacts": {
-            "report": "benchmark/direct_english_tfidf_v1.2_sd_core_report.json",
-            "predictions": "benchmark/direct_english_tfidf_v1.2_sd_core_test_predictions.jsonl"
+            "report": "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_report.json",
+            "predictions": "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_test_predictions.jsonl"
           },
           "sha256": {
-            "report": "1df0ce782bb9065f0139ede51462e20b2fd47f5495f0bf237d42e3442d8a5630",
-            "predictions": "5eb1803da9babfc6ddd95428664464c092a436b6783b94f392b68f967fefd9eb"
+            "report": "a84771361f3542e5c660e58bbe0791fb84f3db22a8dc644afab7d532d154dfd3",
+            "predictions": "69dfd46cd3f4b8f5697f47d27759160dc5ffa88f1897d35bf50688b15e6b6f9e"
           }
         }
       ],
       "status": "pass"
     },
     {
-      "summary": "benchmark/direct_english_tfidf_v1.2_sd_core_report.json",
-      "summary_sha256": "1df0ce782bb9065f0139ede51462e20b2fd47f5495f0bf237d42e3442d8a5630",
+      "summary": "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_report.json",
+      "summary_sha256": "a84771361f3542e5c660e58bbe0791fb84f3db22a8dc644afab7d532d154dfd3",
       "task": "dispatcher_intent_tool_call",
       "family": "direct_cpu_tfidf_diagnostic",
       "input_sha256": {
-        "train": "b213c56b3cc4e4c05a66a4702a6e6c40755d1a3a48962ec3be3817cbdec00b6e",
-        "validation": "4f8b3ef02830e7980aa4a86bcd8c4f7400da1f0ae19f29d2a3c4a9eabc63442b",
-        "test": "ad36c58b4854448a887218a86021e176169e957da577d3493025cb7fcfdfb0a7",
-        "ood": "ee4cf435bc230f05a2cfe3d1eda730b278243d57ea8cfd67454ced7a65c9bad1"
+        "train": "27087a599f1a3b78cf69e27ae2f8ed71e513fb50c4e140025d3b6cb1efe33c95",
+        "validation": "ec1e2a0fa019f169e7317267c02bea6f3aaeb3531a0b79b2fa841c3dda0fd765",
+        "test": "d64dd5c72721b0f6bb0fda7911722d76dfba2bef9596fac10bd9bae227c9b401",
+        "ood": "c8bcdf784892728b7b981e5aaad76d7c3780b14ed4a8a06e58466d87ee021038"
       },
       "model_revision": {
         "model_name": "character-ngram TF-IDF with LinearSVC/nearest-neighbour retrieval",
@@ -150,27 +150,27 @@
         {
           "seed": "deterministic",
           "artifacts": {
-            "report": "benchmark/direct_english_tfidf_v1.2_sd_core_report.json",
-            "predictions": "benchmark/direct_english_tfidf_v1.2_sd_core_test_predictions.jsonl"
+            "report": "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_report.json",
+            "predictions": "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_test_predictions.jsonl"
           },
           "sha256": {
-            "report": "1df0ce782bb9065f0139ede51462e20b2fd47f5495f0bf237d42e3442d8a5630",
-            "predictions": "5eb1803da9babfc6ddd95428664464c092a436b6783b94f392b68f967fefd9eb"
+            "report": "a84771361f3542e5c660e58bbe0791fb84f3db22a8dc644afab7d532d154dfd3",
+            "predictions": "69dfd46cd3f4b8f5697f47d27759160dc5ffa88f1897d35bf50688b15e6b6f9e"
           }
         }
       ],
       "status": "pass"
     },
     {
-      "summary": "benchmark/direct_english_tfidf_v1.2_sd_core_report.json",
-      "summary_sha256": "1df0ce782bb9065f0139ede51462e20b2fd47f5495f0bf237d42e3442d8a5630",
+      "summary": "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_report.json",
+      "summary_sha256": "a84771361f3542e5c660e58bbe0791fb84f3db22a8dc644afab7d532d154dfd3",
       "task": "intelligent_data_query",
       "family": "direct_cpu_tfidf_diagnostic",
       "input_sha256": {
-        "train": "b213c56b3cc4e4c05a66a4702a6e6c40755d1a3a48962ec3be3817cbdec00b6e",
-        "validation": "4f8b3ef02830e7980aa4a86bcd8c4f7400da1f0ae19f29d2a3c4a9eabc63442b",
-        "test": "ad36c58b4854448a887218a86021e176169e957da577d3493025cb7fcfdfb0a7",
-        "ood": "ee4cf435bc230f05a2cfe3d1eda730b278243d57ea8cfd67454ced7a65c9bad1"
+        "train": "27087a599f1a3b78cf69e27ae2f8ed71e513fb50c4e140025d3b6cb1efe33c95",
+        "validation": "ec1e2a0fa019f169e7317267c02bea6f3aaeb3531a0b79b2fa841c3dda0fd765",
+        "test": "d64dd5c72721b0f6bb0fda7911722d76dfba2bef9596fac10bd9bae227c9b401",
+        "ood": "c8bcdf784892728b7b981e5aaad76d7c3780b14ed4a8a06e58466d87ee021038"
       },
       "model_revision": {
         "model_name": "character-ngram TF-IDF with LinearSVC/nearest-neighbour retrieval",
@@ -182,27 +182,27 @@
         {
           "seed": "deterministic",
           "artifacts": {
-            "report": "benchmark/direct_english_tfidf_v1.2_sd_core_report.json",
-            "predictions": "benchmark/direct_english_tfidf_v1.2_sd_core_test_predictions.jsonl"
+            "report": "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_report.json",
+            "predictions": "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_test_predictions.jsonl"
           },
           "sha256": {
-            "report": "1df0ce782bb9065f0139ede51462e20b2fd47f5495f0bf237d42e3442d8a5630",
-            "predictions": "5eb1803da9babfc6ddd95428664464c092a436b6783b94f392b68f967fefd9eb"
+            "report": "a84771361f3542e5c660e58bbe0791fb84f3db22a8dc644afab7d532d154dfd3",
+            "predictions": "69dfd46cd3f4b8f5697f47d27759160dc5ffa88f1897d35bf50688b15e6b6f9e"
           }
         }
       ],
       "status": "pass"
     },
     {
-      "summary": "benchmark/direct_english_tfidf_v1.2_sd_core_report.json",
-      "summary_sha256": "1df0ce782bb9065f0139ede51462e20b2fd47f5495f0bf237d42e3442d8a5630",
+      "summary": "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_report.json",
+      "summary_sha256": "a84771361f3542e5c660e58bbe0791fb84f3db22a8dc644afab7d532d154dfd3",
       "task": "operation_ticket_check",
       "family": "direct_cpu_tfidf_diagnostic",
       "input_sha256": {
-        "train": "b213c56b3cc4e4c05a66a4702a6e6c40755d1a3a48962ec3be3817cbdec00b6e",
-        "validation": "4f8b3ef02830e7980aa4a86bcd8c4f7400da1f0ae19f29d2a3c4a9eabc63442b",
-        "test": "ad36c58b4854448a887218a86021e176169e957da577d3493025cb7fcfdfb0a7",
-        "ood": "ee4cf435bc230f05a2cfe3d1eda730b278243d57ea8cfd67454ced7a65c9bad1"
+        "train": "27087a599f1a3b78cf69e27ae2f8ed71e513fb50c4e140025d3b6cb1efe33c95",
+        "validation": "ec1e2a0fa019f169e7317267c02bea6f3aaeb3531a0b79b2fa841c3dda0fd765",
+        "test": "d64dd5c72721b0f6bb0fda7911722d76dfba2bef9596fac10bd9bae227c9b401",
+        "ood": "c8bcdf784892728b7b981e5aaad76d7c3780b14ed4a8a06e58466d87ee021038"
       },
       "model_revision": {
         "model_name": "character-ngram TF-IDF with LinearSVC/nearest-neighbour retrieval",
@@ -214,27 +214,27 @@
         {
           "seed": "deterministic",
           "artifacts": {
-            "report": "benchmark/direct_english_tfidf_v1.2_sd_core_report.json",
-            "predictions": "benchmark/direct_english_tfidf_v1.2_sd_core_test_predictions.jsonl"
+            "report": "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_report.json",
+            "predictions": "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_test_predictions.jsonl"
           },
           "sha256": {
-            "report": "1df0ce782bb9065f0139ede51462e20b2fd47f5495f0bf237d42e3442d8a5630",
-            "predictions": "5eb1803da9babfc6ddd95428664464c092a436b6783b94f392b68f967fefd9eb"
+            "report": "a84771361f3542e5c660e58bbe0791fb84f3db22a8dc644afab7d532d154dfd3",
+            "predictions": "69dfd46cd3f4b8f5697f47d27759160dc5ffa88f1897d35bf50688b15e6b6f9e"
           }
         }
       ],
       "status": "pass"
     },
     {
-      "summary": "benchmark/direct_english_tfidf_v1.2_sd_core_report.json",
-      "summary_sha256": "1df0ce782bb9065f0139ede51462e20b2fd47f5495f0bf237d42e3442d8a5630",
+      "summary": "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_report.json",
+      "summary_sha256": "a84771361f3542e5c660e58bbe0791fb84f3db22a8dc644afab7d532d154dfd3",
       "task": "regulation_compliance_check",
       "family": "direct_cpu_tfidf_diagnostic",
       "input_sha256": {
-        "train": "b213c56b3cc4e4c05a66a4702a6e6c40755d1a3a48962ec3be3817cbdec00b6e",
-        "validation": "4f8b3ef02830e7980aa4a86bcd8c4f7400da1f0ae19f29d2a3c4a9eabc63442b",
-        "test": "ad36c58b4854448a887218a86021e176169e957da577d3493025cb7fcfdfb0a7",
-        "ood": "ee4cf435bc230f05a2cfe3d1eda730b278243d57ea8cfd67454ced7a65c9bad1"
+        "train": "27087a599f1a3b78cf69e27ae2f8ed71e513fb50c4e140025d3b6cb1efe33c95",
+        "validation": "ec1e2a0fa019f169e7317267c02bea6f3aaeb3531a0b79b2fa841c3dda0fd765",
+        "test": "d64dd5c72721b0f6bb0fda7911722d76dfba2bef9596fac10bd9bae227c9b401",
+        "ood": "c8bcdf784892728b7b981e5aaad76d7c3780b14ed4a8a06e58466d87ee021038"
       },
       "model_revision": {
         "model_name": "character-ngram TF-IDF with LinearSVC/nearest-neighbour retrieval",
@@ -246,27 +246,27 @@
         {
           "seed": "deterministic",
           "artifacts": {
-            "report": "benchmark/direct_english_tfidf_v1.2_sd_core_report.json",
-            "predictions": "benchmark/direct_english_tfidf_v1.2_sd_core_test_predictions.jsonl"
+            "report": "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_report.json",
+            "predictions": "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_test_predictions.jsonl"
           },
           "sha256": {
-            "report": "1df0ce782bb9065f0139ede51462e20b2fd47f5495f0bf237d42e3442d8a5630",
-            "predictions": "5eb1803da9babfc6ddd95428664464c092a436b6783b94f392b68f967fefd9eb"
+            "report": "a84771361f3542e5c660e58bbe0791fb84f3db22a8dc644afab7d532d154dfd3",
+            "predictions": "69dfd46cd3f4b8f5697f47d27759160dc5ffa88f1897d35bf50688b15e6b6f9e"
           }
         }
       ],
       "status": "pass"
     },
     {
-      "summary": "benchmark/direct_english_tfidf_v1.2_sd_core_report.json",
-      "summary_sha256": "1df0ce782bb9065f0139ede51462e20b2fd47f5495f0bf237d42e3442d8a5630",
+      "summary": "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_report.json",
+      "summary_sha256": "a84771361f3542e5c660e58bbe0791fb84f3db22a8dc644afab7d532d154dfd3",
       "task": "regulation_qa",
       "family": "direct_cpu_tfidf_diagnostic",
       "input_sha256": {
-        "train": "b213c56b3cc4e4c05a66a4702a6e6c40755d1a3a48962ec3be3817cbdec00b6e",
-        "validation": "4f8b3ef02830e7980aa4a86bcd8c4f7400da1f0ae19f29d2a3c4a9eabc63442b",
-        "test": "ad36c58b4854448a887218a86021e176169e957da577d3493025cb7fcfdfb0a7",
-        "ood": "ee4cf435bc230f05a2cfe3d1eda730b278243d57ea8cfd67454ced7a65c9bad1"
+        "train": "27087a599f1a3b78cf69e27ae2f8ed71e513fb50c4e140025d3b6cb1efe33c95",
+        "validation": "ec1e2a0fa019f169e7317267c02bea6f3aaeb3531a0b79b2fa841c3dda0fd765",
+        "test": "d64dd5c72721b0f6bb0fda7911722d76dfba2bef9596fac10bd9bae227c9b401",
+        "ood": "c8bcdf784892728b7b981e5aaad76d7c3780b14ed4a8a06e58466d87ee021038"
       },
       "model_revision": {
         "model_name": "character-ngram TF-IDF with LinearSVC/nearest-neighbour retrieval",
@@ -278,12 +278,12 @@
         {
           "seed": "deterministic",
           "artifacts": {
-            "report": "benchmark/direct_english_tfidf_v1.2_sd_core_report.json",
-            "predictions": "benchmark/direct_english_tfidf_v1.2_sd_core_test_predictions.jsonl"
+            "report": "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_report.json",
+            "predictions": "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_test_predictions.jsonl"
           },
           "sha256": {
-            "report": "1df0ce782bb9065f0139ede51462e20b2fd47f5495f0bf237d42e3442d8a5630",
-            "predictions": "5eb1803da9babfc6ddd95428664464c092a436b6783b94f392b68f967fefd9eb"
+            "report": "a84771361f3542e5c660e58bbe0791fb84f3db22a8dc644afab7d532d154dfd3",
+            "predictions": "69dfd46cd3f4b8f5697f47d27759160dc5ffa88f1897d35bf50688b15e6b6f9e"
           }
         }
       ],

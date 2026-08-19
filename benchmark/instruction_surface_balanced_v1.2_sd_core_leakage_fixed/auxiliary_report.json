@@ -1,0 +1,76 @@
+{
+  "generated_at": "2026-08-19T10:50:01.930444+00:00",
+  "objective": "schema_aware_supervised_auxiliary_tool_sequence_prediction",
+  "train": "data/v1.2_sd_core_instruction_surface_balanced_train_en.jsonl",
+  "validation": "data/v1.2_sd_core_instruction_surface_balanced_validation_en.jsonl",
+  "test": "data/v1.2_sd_core_instruction_surface_balanced_test_en.jsonl",
+  "ood": "data/v1.2_sd_core_instruction_surface_balanced_ood_test_en.jsonl",
+  "train_records": 1003,
+  "validation_records": 329,
+  "test_records": 330,
+  "ood_records": 16425,
+  "code_sha256": "69c043a2177e147c683c794c6e0445785a508df9c6014cfa7e238f972dedb4aa",
+  "validation_evaluation": {
+    "accuracy": 1.0,
+    "macro_f1": 1.0,
+    "tool_sequence_exact": 1.0,
+    "tool_set_exact": 1.0,
+    "tool_set_jaccard": 1.0,
+    "prediction_is_json": 1.0,
+    "deterministic_serialization_validity": 1.0,
+    "n": 329,
+    "label_counts": {
+      "[\"run_power_flow\", \"run_opf_redispatch\"]": 321,
+      "[\"run_power_flow\", \"run_opf_redispatch\", \"run_power_flow\"]": 8
+    },
+    "majority_label": "[\"run_power_flow\", \"run_opf_redispatch\"]",
+    "majority_accuracy": 0.9756838905775076,
+    "majority_macro_f1": 0.4938461538461538
+  },
+  "test_evaluation": {
+    "accuracy": 1.0,
+    "macro_f1": 1.0,
+    "tool_sequence_exact": 1.0,
+    "tool_set_exact": 1.0,
+    "tool_set_jaccard": 1.0,
+    "prediction_is_json": 1.0,
+    "deterministic_serialization_validity": 1.0,
+    "n": 330,
+    "label_counts": {
+      "[\"run_power_flow\", \"run_opf_redispatch\"]": 330
+    },
+    "majority_label": "[\"run_power_flow\", \"run_opf_redispatch\"]",
+    "majority_accuracy": 1.0,
+    "majority_macro_f1": 1.0
+  },
+  "ood_evaluation": {
+    "accuracy": 1.0,
+    "macro_f1": 1.0,
+    "tool_sequence_exact": 1.0,
+    "tool_set_exact": 1.0,
+    "tool_set_jaccard": 1.0,
+    "prediction_is_json": 1.0,
+    "deterministic_serialization_validity": 1.0,
+    "n": 16425,
+    "label_counts": {
+      "[\"run_power_flow\", \"run_opf_redispatch\"]": 16265,
+      "[\"run_power_flow\", \"run_opf_redispatch\", \"run_power_flow\"]": 160
+    },
+    "majority_label": "[\"run_power_flow\", \"run_opf_redispatch\"]",
+    "majority_accuracy": 0.9902587519025875,
+    "majority_macro_f1": 0.4975527684307128
+  },
+  "input_sha256": {
+    "train": "d41806cceb63154911f41446196fb4a8ae3ca7d460c8b09e2e8463867b3f6b75",
+    "validation": "bc0a7d08ce1fa0e9dd99e01e3d9effaeeb06667f70ece540afd58ff2371e48ae",
+    "test": "a4a7b49ddc4c37c3bb41010bc79079d0aacf10553207b63e5db8d72325ab3037",
+    "ood": "80c0c2f38c76efbaba8ea7881467b889cdd7fd7248edeeb71cebc518745f8c10"
+  },
+  "prediction_sha256": {
+    "validation": "6a896a27fcd27f651b630350b51ef1f47cbc0427dae090d0ec88bb42e96f0154",
+    "test": "c3238158d4186dead3fc052c6b1530bcc2f12acccc69b413b37d04ef0bd32413",
+    "ood": "b6ae0efae9803227c5350f80fd237eefa343ef5056b2cb255cec2ab3a05e1ae0"
+  },
+  "scenario_id_input_exposed": true,
+  "note": "The model predicts the ordered auxiliary tool sequence from the released input contract. Sequence exactness and set exactness are reported separately. The reported deterministic_serialization_validity is a format check because this baseline serializes a Python object before parsing it; it is excluded from model-performance interpretation. Majority-label diagnostics expose support imbalance. This is a contract-prediction baseline, not an executable-control test."
+}

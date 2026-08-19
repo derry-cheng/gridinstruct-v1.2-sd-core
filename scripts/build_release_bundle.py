@@ -29,6 +29,7 @@ REQUIRED = [
     "data/gridinstruct_v1.2_sd_core.jsonl", "data/gridinstruct_v1.2_sd_core_en.jsonl",
     "data/v1.2_sd_core_train.jsonl", "data/v1.2_sd_core_validation.jsonl", "data/v1.2_sd_core_test.jsonl", "data/v1.2_sd_core_ood_test.jsonl",
     "data/v1.2_sd_core_train_en.jsonl", "data/v1.2_sd_core_validation_en.jsonl", "data/v1.2_sd_core_test_en.jsonl", "data/v1.2_sd_core_ood_test_en.jsonl",
+    "data/v1.2_sd_core_instruction_surface_balanced_train_en.jsonl", "data/v1.2_sd_core_instruction_surface_balanced_validation_en.jsonl", "data/v1.2_sd_core_instruction_surface_balanced_test_en.jsonl", "data/v1.2_sd_core_instruction_surface_balanced_ood_test_en.jsonl",
     "metadata/dataset_metadata.json", "metadata/schema.json", "metadata/data_dictionary.csv", "rules/regulation_rules.json",
     "rules/international_rule_profiles.json", "metadata/international_rule_profile_matrix.csv",
     "metadata/international_rule_probe_splits_v1.json",
@@ -60,6 +61,13 @@ REQUIRED = [
     "metadata/frozen_source_checksums_v2.json", "metadata/rule_clause_matrix.csv", "metadata/rule_clause_matrix.json",
     "metadata/environment_lock.json", "metadata/runtime_environment.json", "metadata/formal_runtime_environment.json", "environment.yml", "metadata/requirements-lock.txt", "metadata/environment-freeze.txt", "metadata/model_revision_manifest.json", "metadata/code_manifest.json",
     "metadata/evidence_binding_manifest.json",
+    "reports/scenario_grounding_repair_v1.2_sd_core.json",
+    "reports/target_leakage_audit_v1.2_sd_core.json",
+    "reports/target_leakage_audit_v1.2_sd_core_en.json",
+    "reports/group_aware_split_current_v1.2_sd_core.json",
+    "reports/split_independence_audit_current_v1.2_sd_core.json",
+    "reports/instruction_surface_balanced_split_v1.2_sd_core.json",
+    "reports/instruction_surface_balanced_surface_audit_v1.2_sd_core.json",
     "reports/independent_query_truth_validation_v1.2_sd_core.json",
     "reports/cross_solver_power_flow_v1.2_sd_core.json", "reports/group_cluster_bootstrap_v1.2_sd_core.json",
     "reports/core_n1_denominator_v1.2_sd_core.json",
@@ -68,13 +76,15 @@ REQUIRED = [
     "reports/independent_solver_validation_v1.2_sd_core_rebound.json",
     "reports/opf_action_uncertainty_stress_v1.2_sd_core.json",
     "reports/opf_action_constant_power_factor_stress_v1.2_sd_core.json",
+    "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_report.json",
+    "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_calibrated_report.json",
+    "benchmark/direct_english_structured_query_v1.2_sd_core_leakage_fixed_report.json",
+    "benchmark/direct_english_structured_auxiliary_v1.2_sd_core_leakage_fixed_report.json",
+    "benchmark/instruction_surface_balanced_v1.2_sd_core_leakage_fixed/tfidf_report.json",
+    "benchmark/instruction_surface_balanced_v1.2_sd_core_leakage_fixed/calibrated_tfidf_report.json",
+    "benchmark/instruction_surface_balanced_v1.2_sd_core_leakage_fixed/structured_query_report.json",
+    "benchmark/instruction_surface_balanced_v1.2_sd_core_leakage_fixed/structured_auxiliary_report.json",
     "reports/sd_pre_release_quality_snapshot_v1.2_sd_core.json",
-    "benchmark/multiseed_v1.2_sd_core/classification_operation_ticket_check_five_seed_summary.json",
-    "benchmark/multiseed_v1.2_sd_core/classification_regulation_compliance_check_five_seed_summary.json",
-    "benchmark/multiseed_v1.2_sd_core/classification_dispatcher_intent_tool_call_five_seed_summary.json",
-    "benchmark/multiseed_v1.2_sd_core/generation_regulation_qa_five_seed_summary.json",
-    "benchmark/multiseed_v1.2_sd_core/generation_intelligent_data_query_five_seed_summary.json",
-    "benchmark/multiseed_v1.2_sd_core/generation_auxiliary_decision_five_seed_summary.json",
     "release/archive_manifest_v1.2_sd_core.csv", "release/checksums_sha256.txt",
     "reports/scenario_truth_reconstruction_v1.2_sd_core.json",
     "reports/query_result_consistency_repair_final_v1.2_sd_core.json",
@@ -469,12 +479,12 @@ def write_reproducibility_manifests() -> None:
     # active learnability evidence until a new neural snapshot is explicitly
     # trained on these exact hashes.  Historical neural summaries remain local
     # provenance but are not treated as current release evidence.
-    direct_report_path = ROOT / "benchmark/direct_english_tfidf_v1.2_sd_core_report.json"
+    direct_report_path = ROOT / "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_report.json"
     if direct_report_path.is_file():
         direct_report = json.loads(direct_report_path.read_text(encoding="utf-8"))
         if direct_report.get("status") == "pass" and direct_report.get("input_sha256", {}).get("train") == split_hashes.get("train"):
             direct_code_hash = sha256(ROOT / "scripts/run_tfidf_task_baselines.py")
-            direct_predictions = ROOT / "benchmark/direct_english_tfidf_v1.2_sd_core_test_predictions.jsonl"
+            direct_predictions = ROOT / "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_test_predictions.jsonl"
             revisions = []
             for task in sorted(EXPECTED_TASKS):
                 metric = (direct_report.get("test_metrics") or {}).get(task)
@@ -482,7 +492,7 @@ def write_reproducibility_manifests() -> None:
                     continue
                 revisions.append(
                     {
-                        "summary": "benchmark/direct_english_tfidf_v1.2_sd_core_report.json",
+                        "summary": "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_report.json",
                         "summary_sha256": sha256(direct_report_path),
                         "task": task,
                         "family": "direct_cpu_tfidf_diagnostic",
@@ -497,8 +507,8 @@ def write_reproducibility_manifests() -> None:
                             {
                                 "seed": "deterministic",
                                 "artifacts": {
-                                    "report": "benchmark/direct_english_tfidf_v1.2_sd_core_report.json",
-                                    "predictions": "benchmark/direct_english_tfidf_v1.2_sd_core_test_predictions.jsonl",
+                                    "report": "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_report.json",
+                                    "predictions": "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_test_predictions.jsonl",
                                 },
                                 "sha256": {
                                     "report": sha256(direct_report_path),
@@ -805,15 +815,15 @@ def main() -> None:
         "opf_closed_loop_results_present": "simulation_outputs/opf_closed_loop/auxiliary_opf_results.json" in names,
         "opf_robust_candidate_manifest_present": "simulation_outputs/opf_closed_loop/ieee14_secure_candidate_scenarios_v1.json" in names,
         "opf_robust_candidate_report_present": "reports/ieee14_opf_secure_candidate_augmentation_v1.2_sd_core.json" in names,
-        "scenario_rebuild_manifest_present": "reports/scenario_truth_migration_v1.2_sd_core.json" in names,
+        "scenario_rebuild_manifest_present": "reports/scenario_grounding_repair_v1.2_sd_core.json" in names,
         "core_scenario_truth_present": "simulation_outputs/power_flow/scenarios_converged_core.json" in names,
-        "dataset_scenario_link_migration_present": "reports/scenario_truth_migration_v1.2_sd_core.json" in names,
-        "frozen_instruction_source_present": False,
-        "migrated_frozen_instruction_source_present": False,
+        "dataset_scenario_link_migration_present": "reports/scenario_grounding_repair_v1.2_sd_core.json" in names,
+        "frozen_instruction_source_present": "reports/target_leakage_audit_v1.2_sd_core.json" in names,
+        "migrated_frozen_instruction_source_present": "reports/target_leakage_audit_v1.2_sd_core_en.json" in names,
         "frozen_topology_migration_report_present": "reports/frozen_external_topology_migration_v2.json" in names,
-        "scenario_truth_attempt_ledger_present": "reports/scenario_truth_migration_v1.2_sd_core.json" in names,
+        "scenario_truth_attempt_ledger_present": "simulation_outputs/contingency/scenario_reconstruction_attempts.json" in names,
         "external_topology_attempt_ledger_present": "reports/extended_topology_stress_attempts_v1.2_sd_core.json" in names,
-        "frozen_scenario_source_present": False,
+        "frozen_scenario_source_present": "simulation_outputs/contingency/scenarios_converged.json" in names,
         "environment_lock_present": "metadata/environment_lock.json" in names,
         "model_revision_manifest_present": "metadata/model_revision_manifest.json" in names,
         "code_manifest_present": "metadata/code_manifest.json" in names,

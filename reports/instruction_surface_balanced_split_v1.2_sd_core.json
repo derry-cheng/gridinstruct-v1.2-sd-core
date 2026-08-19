@@ -1,68 +1,68 @@
 {
-  "generated_at": "2026-08-18T15:23:29.751371+00:00",
+  "generated_at": "2026-08-19T11:23:22.311494+00:00",
   "status": "pass",
   "source": "data/gridinstruct_v1.2_sd_core_en.jsonl",
-  "source_sha256": "0b870168dca11910a526be288e5448151bed45f8809c333c9d4ed8f5f9295b8e",
+  "source_sha256": "882dc4960dcf14d5b6e6465ced25051c860f1b360ffdb58770c3b68d6e7b60b3",
   "seed": 2036,
   "group_key": "task_type + normalize_template(instruction)",
-  "total_groups": 18318,
-  "non_ood_groups": 14659,
-  "ood_groups": 3659,
-  "max_group_size": 4204,
+  "total_groups": 18214,
+  "non_ood_groups": 13056,
+  "ood_groups": 5158,
+  "max_group_size": 2824,
   "allocation": {
     "status": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
-    "objective": 7.340649222107415e-06,
+    "objective": 6.5333599101293975e-06,
     "tolerance_ratio": 0.5,
     "target_by_split": {
       "train": [
-        997,
-        703,
+        606,
+        378,
         1637,
-        6529,
-        1933,
-        2523
+        5962,
+        1753,
+        1808
       ],
       "validation": [
-        332,
-        234,
+        202,
+        126,
         546,
-        2176,
-        644,
-        841
+        1987,
+        584,
+        603
       ],
       "test": [
-        332,
-        234,
+        202,
+        126,
         546,
-        2176,
-        644,
-        841
+        1987,
+        584,
+        603
       ]
     },
     "actual_by_split": {
       "train": [
-        1006,
-        530,
-        1636,
-        4353,
-        2576,
-        2524
+        407,
+        388,
+        2157,
+        3974,
+        1958,
+        1805
       ],
       "validation": [
-        490,
-        314,
-        273,
-        3264,
-        323,
-        1260
+        303,
+        121,
+        298,
+        2981,
+        510,
+        905
       ],
       "test": [
-        166,
-        327,
-        819,
-        3264,
-        322,
-        421
+        300,
+        121,
+        273,
+        2981,
+        454,
+        303
       ]
     },
     "tasks": [
@@ -72,61 +72,144 @@
       "operation_ticket_check",
       "regulation_compliance_check",
       "regulation_qa"
-    ]
+    ],
+    "label_keys": [
+      "dispatcher_intent_tool_call::diagnose_and_dispatch",
+      "dispatcher_intent_tool_call::mitigate_violations",
+      "dispatcher_intent_tool_call::security_check_and_redispatch",
+      "operation_ticket_check::compliant",
+      "operation_ticket_check::compliant_with_monitoring",
+      "operation_ticket_check::non_compliant",
+      "regulation_compliance_check::compliant",
+      "regulation_compliance_check::compliant_with_monitoring",
+      "regulation_compliance_check::non_compliant"
+    ],
+    "label_target_by_split": {
+      "train": [
+        129,
+        119,
+        130,
+        1501,
+        2747,
+        1714,
+        388,
+        934,
+        431
+      ],
+      "validation": [
+        43,
+        40,
+        43,
+        500,
+        916,
+        571,
+        129,
+        311,
+        144
+      ],
+      "test": [
+        43,
+        40,
+        43,
+        500,
+        916,
+        571,
+        129,
+        311,
+        144
+      ]
+    },
+    "label_actual_by_split": {
+      "train": [
+        143,
+        113,
+        132,
+        1002,
+        1830,
+        1142,
+        403,
+        1235,
+        320
+      ],
+      "validation": [
+        30,
+        42,
+        49,
+        750,
+        1374,
+        857,
+        169,
+        156,
+        185
+      ],
+      "test": [
+        42,
+        44,
+        35,
+        750,
+        1374,
+        857,
+        74,
+        166,
+        214
+      ]
+    }
   },
   "splits": {
     "train": {
-      "records": 12625,
-      "sha256": "592db2fd3d44650f1d52f50835ad751762bd0aa763065762a7b8ef0cd75a4c89",
+      "records": 10689,
+      "sha256": "67f331de12e023aa733f0d3d50ba74bd339d94cafffc26d3f50b82baa0e9153e",
       "task_counts": {
-        "auxiliary_decision": 1006,
-        "regulation_compliance_check": 2576,
-        "dispatcher_intent_tool_call": 530,
-        "intelligent_data_query": 1636,
-        "regulation_qa": 2524,
-        "operation_ticket_check": 4353
+        "auxiliary_decision": 407,
+        "regulation_compliance_check": 1958,
+        "dispatcher_intent_tool_call": 388,
+        "intelligent_data_query": 2157,
+        "regulation_qa": 1805,
+        "operation_ticket_check": 3974
       }
     },
     "validation": {
-      "records": 5924,
-      "sha256": "884582cdf2b2514d84559db7fd955e5d91a89ce4cfe677b5d9d7fe592d48b074",
+      "records": 5118,
+      "sha256": "ab15bc0533ff9f3ccc2655b166ac2043b1173aad76395f1f19b006fc879f5d0c",
       "task_counts": {
-        "auxiliary_decision": 490,
-        "regulation_compliance_check": 323,
-        "dispatcher_intent_tool_call": 314,
-        "intelligent_data_query": 273,
-        "regulation_qa": 1260,
-        "operation_ticket_check": 3264
+        "auxiliary_decision": 303,
+        "regulation_compliance_check": 510,
+        "dispatcher_intent_tool_call": 121,
+        "intelligent_data_query": 298,
+        "regulation_qa": 905,
+        "operation_ticket_check": 2981
       }
     },
     "test": {
-      "records": 5319,
-      "sha256": "5d94f750b54c2eb0797ed785c1cfc76b9cabf267dca3a01202d51ae34c6e5b91",
+      "records": 4432,
+      "sha256": "faaee27950b5a577bebdbd1d40f99d49a3bfc8b921b48cba74f521d0690a905c",
       "task_counts": {
-        "auxiliary_decision": 166,
-        "regulation_compliance_check": 322,
-        "dispatcher_intent_tool_call": 327,
-        "intelligent_data_query": 819,
-        "regulation_qa": 421,
-        "operation_ticket_check": 3264
+        "auxiliary_decision": 300,
+        "regulation_compliance_check": 454,
+        "dispatcher_intent_tool_call": 121,
+        "intelligent_data_query": 273,
+        "regulation_qa": 303,
+        "operation_ticket_check": 2981
       }
     },
     "ood_test": {
-      "records": 71611,
-      "sha256": "c87e95cda9579104f7a2f67f1f243cc40dea90cd2d30c146a7c31cac22c4693c",
+      "records": 75240,
+      "sha256": "3674fc731033f2f6332a7c742cebf97c60cc2406e1b15e27f8d788aa3f1ce9b4",
       "task_counts": {
-        "auxiliary_decision": 16425,
-        "regulation_compliance_check": 21546,
-        "dispatcher_intent_tool_call": 18602,
-        "intelligent_data_query": 15038
+        "auxiliary_decision": 17077,
+        "regulation_compliance_check": 21845,
+        "dispatcher_intent_tool_call": 19143,
+        "intelligent_data_query": 15038,
+        "regulation_qa": 1192,
+        "operation_ticket_check": 945
       }
     }
   },
   "instruction_surface_counts": {
-    "train": 6430,
-    "validation": 4095,
-    "test": 4134,
-    "ood_test": 3659
+    "train": 5875,
+    "validation": 3664,
+    "test": 3517,
+    "ood_test": 5158
   },
   "cross_group_violations": [],
   "output_paths": {
@@ -136,5 +219,5 @@
     "ood_test": "data/v1.2_sd_core_instruction_surface_balanced_ood_test_en.jsonl"
   },
   "interpretation": "This split prevents exact normalized user-instruction reuse across partitions. It is a lexical surface control and does not establish semantic independence or physical-label validity.",
-  "code_sha256": "616be3b6a3313535f126d269dc7b28f94cf6e2050b4d01abedb02d4a0f2476c6"
+  "code_sha256": "56650053bf3ce0d3396116cb7294ea620422e918efbb459f872c2c16814f1bd1"
 }

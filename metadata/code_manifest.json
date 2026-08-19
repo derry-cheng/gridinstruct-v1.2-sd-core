@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "file_count": 186,
+  "file_count": 188,
   "files": [
     {
       "path": "scripts/analyze_data_quality.py",
@@ -164,8 +164,8 @@
     },
     {
       "path": "scripts/audit_manuscript_metric_bindings.py",
-      "size_bytes": 6076,
-      "sha256": "a0f72a6963d5b276dc83007ed37e12b5662c55a246607b7756a0c0d806524582"
+      "size_bytes": 6555,
+      "sha256": "225355fbe558dd4389abe03c8cd1aa7522aa3ecc073dd871e79ecfe7ffa4425e"
     },
     {
       "path": "scripts/audit_model_score_quality.py",
@@ -221,6 +221,11 @@
       "path": "scripts/audit_structured_prediction_normalization.py",
       "size_bytes": 11926,
       "sha256": "6bac662bde652c18653dadea75f980ed37b766b5f3ebc741629558cdc09b5275"
+    },
+    {
+      "path": "scripts/audit_target_leakage.py",
+      "size_bytes": 4629,
+      "sha256": "afa062e36af82caf2eae9a91391614efbc94bfcddf540e49881a6ba089a183d9"
     },
     {
       "path": "scripts/audit_transformer_contract_all_networks.py",
@@ -324,8 +329,8 @@
     },
     {
       "path": "scripts/build_release_bundle.py",
-      "size_bytes": 48416,
-      "sha256": "96c0b4776394cc85452b0f3649c1cd5feaf7be9f99f66d7e7f5cb0e99aab7cc8"
+      "size_bytes": 49539,
+      "sha256": "d20f03ff1e8b9e9ea1acde46b7246a0d9a894f6af7618ef0846128dd8ca12fb2"
     },
     {
       "path": "scripts/build_reproducibility_manifests.py",
@@ -339,8 +344,8 @@
     },
     {
       "path": "scripts/build_scoped_evidence_binding_manifest.py",
-      "size_bytes": 15543,
-      "sha256": "00ae4501b09b56f0d1c7ca8391aa515fda17c3ff9ca29f840e6a431a0fadc042"
+      "size_bytes": 14882,
+      "sha256": "a8312b0427d8c83262b58a51fc7e09f3f3c9c00f861ae5ab2d10d4152ae63aa3"
     },
     {
       "path": "scripts/build_sd_closeout_manifest.py",
@@ -404,8 +409,8 @@
     },
     {
       "path": "scripts/create_balanced_near_neighbor_splits.py",
-      "size_bytes": 10593,
-      "sha256": "bd49f6e18e987aa123c4373baa2b00898a133f44eee987f491c94a4f2e982d9f"
+      "size_bytes": 12879,
+      "sha256": "586ef8172d478c299118c0b0cdd321e5e546115ef55df2e577a3373ca8526211"
     },
     {
       "path": "scripts/create_boundary_challenge_set.py",
@@ -429,13 +434,13 @@
     },
     {
       "path": "scripts/create_group_aware_splits.py",
-      "size_bytes": 20246,
-      "sha256": "530eb57050c2807a2a57a4d0785515355573ee219682e35f800bd8c7830ed179"
+      "size_bytes": 21466,
+      "sha256": "38cc34c26d23928a09766fc0237f3d1ddad1a4458da5b2ce9ef7eed55b6eb1d8"
     },
     {
       "path": "scripts/create_instruction_surface_balanced_splits.py",
-      "size_bytes": 5923,
-      "sha256": "616be3b6a3313535f126d269dc7b28f94cf6e2050b4d01abedb02d4a0f2476c6"
+      "size_bytes": 7088,
+      "sha256": "56650053bf3ce0d3396116cb7294ea620422e918efbb459f872c2c16814f1bd1"
     },
     {
       "path": "scripts/create_international_rule_probe_splits.py",
@@ -549,8 +554,8 @@
     },
     {
       "path": "scripts/generate_publication_sd_figures.py",
-      "size_bytes": 46773,
-      "sha256": "fdace46dd14da2259ea9465f783ec82b77386293eef10b7b63d3956dbf29d3af"
+      "size_bytes": 47323,
+      "sha256": "0bbe3de8d55359596efacf7b33bc131866fe982680d3d3a09039045cc639f117"
     },
     {
       "path": "scripts/generate_sd_figures.py",
@@ -694,8 +699,8 @@
     },
     {
       "path": "scripts/regenerate_direct_english_core.py",
-      "size_bytes": 14732,
-      "sha256": "a8e4256745857df7d68eb8968b1665206d607c5b526d8aedfd49ad9b25a1aeb9"
+      "size_bytes": 18068,
+      "sha256": "0931abee8572650eb79032470b425767dca2963f8d864dc831f570e47b4c862c"
     },
     {
       "path": "scripts/regenerate_direct_english_splits.py",
@@ -721,6 +726,11 @@
       "path": "scripts/repair_query_result_consistency.py",
       "size_bytes": 11311,
       "sha256": "2ec248b1cdbeb908c3fb0fdb1176c02ae902b02a275411d86dc15313680cc186"
+    },
+    {
+      "path": "scripts/repair_scenario_grounding.py",
+      "size_bytes": 8364,
+      "sha256": "ff71d379e106861be286dd58a6fa840a0e3f8825fad5cf40574821274f7e8b6d"
     },
     {
       "path": "scripts/replay_frozen_implicit_ticket_rows.py",

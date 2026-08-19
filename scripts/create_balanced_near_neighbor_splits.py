@@ -64,6 +64,7 @@ def solve_assignment(
     tasks: list[str],
     seed: int,
     tolerance_ratio: float,
+    label_fields: dict[str, str] | None = None,
 ) -> tuple[np.ndarray, dict[str, Any]]:
     n_groups = len(groups)
     n_tasks = len(tasks)
@@ -74,7 +75,18 @@ def solve_assignment(
         for split_index in range(len(SPLITS)):
             costs[group_index * len(SPLITS) + split_index] = tie + split_index * 1e-12
 
-    rows = n_groups + len(SPLITS) * n_tasks
+    label_fields = label_fields or {}
+    label_keys = sorted(
+        {
+            f"{task}::{row.get(label_fields[task])}"
+            for group in groups
+            for row in group
+            if (task := str(row.get("task_type"))) in label_fields
+            and row.get(label_fields[task]) is not None
+        }
+    )
+    n_label_features = len(label_keys)
+    rows = n_groups + len(SPLITS) * (n_tasks + n_label_features)
     matrix = lil_matrix((rows, n_variables), dtype=float)
     lower = np.full(rows, -np.inf, dtype=float)
     upper = np.full(rows, np.inf, dtype=float)
@@ -96,7 +108,7 @@ def solve_assignment(
 
     for split_index, split in enumerate(SPLITS):
         for task_index, task in enumerate(tasks):
-            row_index = n_groups + split_index * n_tasks + task_index
+            row_index = n_groups + split_index * (n_tasks + n_label_features) + task_index
             for group_index in range(n_groups):
                 value = feature_matrix[group_index, task_index]
                 if value:
@@ -105,6 +117,38 @@ def solve_assignment(
             tolerance = max(3, int(np.ceil(target * tolerance_ratio)))
             lower[row_index] = max(0, target - tolerance)
             upper[row_index] = target + tolerance
+
+    if n_label_features:
+        label_matrix = np.asarray(
+            [
+                [
+                    sum(
+                        1
+                        for row in group
+                        if f"{row.get('task_type')}::{row.get(label_fields.get(str(row.get('task_type')), ''))}" == key
+                    )
+                    for key in label_keys
+                ]
+                for group in groups
+            ],
+            dtype=float,
+        )
+        total_by_label = label_matrix.sum(axis=0)
+        target_by_split_label = {
+            split: np.rint(total_by_label * FRACTIONS[split]).astype(int)
+            for split in SPLITS
+        }
+        for split_index, split in enumerate(SPLITS):
+            for label_index, key in enumerate(label_keys):
+                row_index = n_groups + split_index * (n_tasks + n_label_features) + n_tasks + label_index
+                for group_index in range(n_groups):
+                    value = label_matrix[group_index, label_index]
+                    if value:
+                        matrix[row_index, group_index * len(SPLITS) + split_index] = value
+                target = int(target_by_split_label[split][label_index])
+                tolerance = max(1, int(np.ceil(target * tolerance_ratio)))
+                lower[row_index] = max(1, target - tolerance)
+                upper[row_index] = target + tolerance
 
     result = milp(
         c=costs,
@@ -121,7 +165,7 @@ def solve_assignment(
         split: feature_matrix[assignment == split_index].sum(axis=0).astype(int).tolist()
         for split_index, split in enumerate(SPLITS)
     }
-    return assignment, {
+    details = {
         "status": result.message,
         "objective": float(result.fun),
         "tolerance_ratio": tolerance_ratio,
@@ -131,6 +175,16 @@ def solve_assignment(
         "actual_by_split": actual,
         "tasks": tasks,
     }
+    if n_label_features:
+        details["label_keys"] = label_keys
+        details["label_target_by_split"] = {
+            split: target_by_split_label[split].astype(int).tolist() for split in SPLITS
+        }
+        details["label_actual_by_split"] = {
+            split: label_matrix[assignment == split_index].sum(axis=0).astype(int).tolist()
+            for split_index, split in enumerate(SPLITS)
+        }
+    return assignment, details
 
 
 def main() -> None:

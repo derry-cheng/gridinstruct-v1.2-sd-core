@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-08-19T02:06:51.019300+00:00",
+  "generated_at": "2026-08-19T12:00:37.748445+00:00",
   "status": "package_ready_external_identifiers_pending",
   "bundle": "release/GridInstruct_v1.2_sd_core_release_candidate.tar.gz",
-  "bundle_sha256": "46a2d8a891e87a44d74b2f4ff08e69cab394d7afe6f82f9231f7479b3a1cc0b4",
-  "file_count": 995,
-  "payload_file_count": 993,
+  "bundle_sha256": "63e9cbfd6f39c0a4beefd4698f7a513ba291a9855b171bb1a8efada8b6f5ec3c",
+  "file_count": 836,
+  "payload_file_count": 834,
   "companion_file_count": 2,
-  "payload_size_bytes": 4402361263,
+  "payload_size_bytes": 4373180991,
   "manifest": "release/archive_manifest_v1.2_sd_core.csv",
   "checksums": "release/checksums_sha256.txt",
   "manifest_scope": "payload files only; manifest and checksum files are included in the archive but are not self-hashed",
@@ -44,7 +44,7 @@
       "errors": []
     }
   },
-  "bound_archive_file_count": 108,
+  "bound_archive_file_count": 101,
   "pglib_license_in_archive": true,
   "deterministic_archive_headers": true,
   "public_identifiers_pending": [

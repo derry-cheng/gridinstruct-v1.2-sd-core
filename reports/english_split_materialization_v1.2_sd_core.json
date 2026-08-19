@@ -1,0 +1,94 @@
+{
+  "generated_at": "2026-08-19T11:20:01.678928+00:00",
+  "direct_english_full": "data/gridinstruct_v1.2_sd_core_en.jsonl",
+  "direct_english_full_records": 95479,
+  "duplicate_direct_ids": [],
+  "duplicate_direct_id_count": 0,
+  "split_pattern": "v1.2_sd_core*.jsonl",
+  "split_count": 4,
+  "missing_total": 0,
+  "splits": [
+    {
+      "source_split": "data/v1.2_sd_core_train.jsonl",
+      "english_split": "data/v1.2_sd_core_train_en.jsonl",
+      "source_records": 26508,
+      "english_records": 26508,
+      "resolved_from_existing_english_split": 0,
+      "missing_ids": [],
+      "missing_count": 0,
+      "structure_isomorphic": true,
+      "structure_mismatch_count": 0,
+      "structure_mismatch_ids": [],
+      "task_counts": {
+        "regulation_qa": 2616,
+        "dispatcher_intent_tool_call": 3367,
+        "operation_ticket_check": 8020,
+        "intelligent_data_query": 3482,
+        "regulation_compliance_check": 5406,
+        "auxiliary_decision": 3617
+      }
+    },
+    {
+      "source_split": "data/v1.2_sd_core_validation.jsonl",
+      "english_split": "data/v1.2_sd_core_validation_en.jsonl",
+      "source_records": 3583,
+      "english_records": 3583,
+      "resolved_from_existing_english_split": 0,
+      "missing_ids": [],
+      "missing_count": 0,
+      "structure_isomorphic": true,
+      "structure_mismatch_count": 0,
+      "structure_mismatch_ids": [],
+      "task_counts": {
+        "operation_ticket_check": 988,
+        "auxiliary_decision": 446,
+        "intelligent_data_query": 431,
+        "regulation_qa": 323,
+        "dispatcher_intent_tool_call": 659,
+        "regulation_compliance_check": 736
+      }
+    },
+    {
+      "source_split": "data/v1.2_sd_core_test.jsonl",
+      "english_split": "data/v1.2_sd_core_test_en.jsonl",
+      "source_records": 3909,
+      "english_records": 3909,
+      "resolved_from_existing_english_split": 0,
+      "missing_ids": [],
+      "missing_count": 0,
+      "structure_isomorphic": true,
+      "structure_mismatch_count": 0,
+      "structure_mismatch_ids": [],
+      "task_counts": {
+        "regulation_compliance_check": 921,
+        "dispatcher_intent_tool_call": 868,
+        "operation_ticket_check": 928,
+        "auxiliary_decision": 438,
+        "regulation_qa": 320,
+        "intelligent_data_query": 434
+      }
+    },
+    {
+      "source_split": "data/v1.2_sd_core_ood_test.jsonl",
+      "english_split": "data/v1.2_sd_core_ood_test_en.jsonl",
+      "source_records": 61479,
+      "english_records": 61479,
+      "resolved_from_existing_english_split": 0,
+      "missing_ids": [],
+      "missing_count": 0,
+      "structure_isomorphic": true,
+      "structure_mismatch_count": 0,
+      "structure_mismatch_ids": [],
+      "task_counts": {
+        "dispatcher_intent_tool_call": 14879,
+        "intelligent_data_query": 13419,
+        "auxiliary_decision": 13586,
+        "regulation_compliance_check": 17704,
+        "regulation_qa": 946,
+        "operation_ticket_check": 945
+      }
+    }
+  ],
+  "structure_mismatch_total": 0,
+  "status": "pass"
+}

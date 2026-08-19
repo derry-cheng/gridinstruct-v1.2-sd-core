@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-08-18T15:31:49.756928+00:00",
+  "generated_at": "2026-08-19T11:23:40.939612+00:00",
   "status": "pass",
   "split_report": "reports/instruction_surface_balanced_split_v1.2_sd_core.json",
-  "split_report_sha256": "09787879eb21885be9b64117a2c3d308586fc9749af496a0f560b7974e6ed170",
+  "split_report_sha256": "2afca0af4cd4c0c36241321983b5c4f1bd717dce2fe3240f06ada112ea62ef6f",
   "source_paths": {
     "train": "data/v1.2_sd_core_instruction_surface_balanced_train_en.jsonl",
     "validation": "data/v1.2_sd_core_instruction_surface_balanced_validation_en.jsonl",
@@ -10,16 +10,16 @@
     "ood_test": "data/v1.2_sd_core_instruction_surface_balanced_ood_test_en.jsonl"
   },
   "source_sha256": {
-    "train": "592db2fd3d44650f1d52f50835ad751762bd0aa763065762a7b8ef0cd75a4c89",
-    "validation": "884582cdf2b2514d84559db7fd955e5d91a89ce4cfe677b5d9d7fe592d48b074",
-    "test": "5d94f750b54c2eb0797ed785c1cfc76b9cabf267dca3a01202d51ae34c6e5b91",
-    "ood_test": "c87e95cda9579104f7a2f67f1f243cc40dea90cd2d30c146a7c31cac22c4693c"
+    "train": "67f331de12e023aa733f0d3d50ba74bd339d94cafffc26d3f50b82baa0e9153e",
+    "validation": "ab15bc0533ff9f3ccc2655b166ac2043b1173aad76395f1f19b006fc879f5d0c",
+    "test": "faaee27950b5a577bebdbd1d40f99d49a3bfc8b921b48cba74f521d0690a905c",
+    "ood_test": "3674fc731033f2f6332a7c742cebf97c60cc2406e1b15e27f8d788aa3f1ce9b4"
   },
   "record_counts": {
-    "train": 12625,
-    "validation": 5924,
-    "test": 5319,
-    "ood_test": 71611
+    "train": 10689,
+    "validation": 5118,
+    "test": 4432,
+    "ood_test": 75240
   },
   "duplicate_id_counts": {
     "train": 0,
@@ -28,10 +28,10 @@
     "ood_test": 0
   },
   "normalized_surface_group_counts": {
-    "train": 6430,
-    "validation": 4095,
-    "test": 4134,
-    "ood_test": 3659
+    "train": 5875,
+    "validation": 3664,
+    "test": 3517,
+    "ood_test": 5158
   },
   "cross_split_normalized_surface_group_counts": {
     "train_validation": 0,
@@ -42,23 +42,23 @@
     "train_validation": {
       "left_sample_records": 200,
       "right_sample_records": 200,
-      "max_jaccard": 0.9644970414201184,
-      "left_id": "gridinstruct_v01_aux_02618",
-      "right_id": "gridinstruct_v01_aux_04298"
+      "max_jaccard": 0.9384615384615385,
+      "left_id": "gridinstruct_v01_aux_05650",
+      "right_id": "gridinstruct_v01_aux_02683"
     },
     "train_test": {
       "left_sample_records": 200,
       "right_sample_records": 200,
-      "max_jaccard": 0.9653179190751445,
-      "left_id": "gridinstruct_v01_aux_04875",
-      "right_id": "gridinstruct_v01_aux_07227"
+      "max_jaccard": 0.9292035398230089,
+      "left_id": "gridinstruct_v01_aux_09705",
+      "right_id": "gridinstruct_v01_aux_12868"
     },
     "validation_test": {
       "left_sample_records": 200,
       "right_sample_records": 200,
-      "max_jaccard": 0.9643916913946587,
-      "left_id": "gridinstruct_v01_aux_12120",
-      "right_id": "gridinstruct_v01_aux_14472"
+      "max_jaccard": 0.9480968858131488,
+      "left_id": "gridinstruct_v01_compliance_01713_actionpara_01",
+      "right_id": "gridinstruct_v01_compliance_00169_actionpara_01"
     }
   },
   "interpretation": "Exact normalized-surface groups are isolated by the MILP split. Sampled character-5-gram similarity is reported as a lexical diagnostic and does not establish semantic, physical, or legal independence."
