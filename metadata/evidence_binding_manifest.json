@@ -1,6 +1,6 @@
 {
   "schema_version": "gridinstruct-scoped-evidence-v2",
-  "generated_at": "2026-08-19T17:38:55.601053+00:00",
+  "generated_at": "2026-08-19T17:43:07.966176+00:00",
   "status": "pass",
   "scope": "local_hash_bound_release_candidate",
   "runtime_policy": "local CPU/MPS only; no remote GPU execution",

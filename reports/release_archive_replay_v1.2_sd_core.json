@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-08-19T17:40:51.034049+00:00",
+  "generated_at": "2026-08-19T17:45:50.792223+00:00",
   "status": "pass",
   "bundle": "/Users/lemon/Desktop/project/gaiav2/release/GridInstruct_v1.2_sd_core_data_only.tar.gz",
-  "bundle_sha256": "2a18a77d90726074a0ce44c53a7946cd0c96d67fd36c5c80f4fc352035678d10",
+  "bundle_sha256": "c5db348e7a298da09f8c38e9121fb0d13018e9adaa959bda34a46882d4f71c09",
   "archive_layout": "compact_public_review_package",
   "safe_archive_member_count": 47,
   "required_file_count": 13,
