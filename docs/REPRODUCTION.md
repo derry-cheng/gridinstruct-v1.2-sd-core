@@ -52,7 +52,9 @@ conda activate gridinstruct-sd-core
 ```
 
 Secrets and provider credentials are deliberately absent from the environment specification.
-They are required only for optional translation-provider calls and are not release artifacts.
+The current release renders English directly from typed scenario and rule contracts and does
+not require a translation-provider call; legacy translation scripts remain only as historical
+provenance and are excluded from the active reviewer package.
 
 ## Inputs
 

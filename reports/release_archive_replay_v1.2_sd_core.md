@@ -1,11 +1,9 @@
 # Release Archive Isolation Replay
 
 Status: `pass`
-Bundle SHA-256: `46a2d8a891e87a44d74b2f4ff08e69cab394d7afe6f82f9231f7479b3a1cc0b4`
-Payload hashes checked: 993
-Hash mismatches: 0
+Bundle SHA-256: `2a18a77d90726074a0ce44c53a7946cd0c96d67fd36c5c80f4fc352035678d10`
+Archive layout: `compact_public_review_package`
+Required files checked: 13
+English records parsed: 95479
 
-## Isolated validators
-
-- `data/gridinstruct_v1.2_sd_core.jsonl`: pass; records=95479
-- `data/gridinstruct_v1.2_sd_core_en.jsonl`: pass; records=95479
+The compact public package defers raw scenario, full construction, and human-review ledgers.

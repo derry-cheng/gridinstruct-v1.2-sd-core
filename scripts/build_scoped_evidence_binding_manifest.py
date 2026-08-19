@@ -88,6 +88,8 @@ LOCAL_BINDINGS = [
     "reports/manuscript_final_audit_20260812.json",
     "reports/manuscript_metric_bindings_v1.2_sd_core.json",
     "reports/manuscript_metric_bindings_v1.2_sd_core.md",
+    "reports/current_surface_seed_stability_v1.2_sd_core.json",
+    "reports/current_surface_seed_stability_v1.2_sd_core.md",
     "paper/scientific_data_latex/PAPER_CLAIM_AUDIT.json",
     "paper/scientific_data_latex/main.pdf",
     "paper/scientific_data_latex/LATEX_BUILD_REPORT.json",

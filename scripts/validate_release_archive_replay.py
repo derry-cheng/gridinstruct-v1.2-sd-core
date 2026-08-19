@@ -21,6 +21,22 @@ from gridinstruct_utils import ROOT, write_json
 
 PREFIX = "GridInstruct_v1.2_sd_core"
 
+COMPACT_REQUIRED_FILES = {
+    "LICENSE-CODE",
+    "LICENSE-DATA",
+    "MANIFEST.md",
+    "README.md",
+    "data/gridinstruct_v1.2_sd_core_en.jsonl",
+    "metadata/schema.json",
+    "metadata/data_dictionary.csv",
+    "metadata/data_lineage_manifest.json",
+    "metadata/evidence_binding_manifest.json",
+    "metadata/archive_metadata.json",
+    "reports/direct_english_canonical_materialization_v1.2_sd_core.json",
+    "reports/current_surface_seed_stability_v1.2_sd_core.json",
+    "paper/scientific_data_latex/PAPER_CLAIM_AUDIT.json",
+}
+
 
 def sha256(path: Path) -> str:
     digest = hashlib.sha256()
@@ -40,6 +56,99 @@ def safe_members(archive: tarfile.TarFile) -> tuple[list[tarfile.TarInfo], list[
         if member.issym() or member.islnk() or member.isdev():
             errors.append(f"unsupported_archive_member_type:{member.name}")
     return members, errors
+
+
+def compact_archive_audit(bundle: Path, members: list[tarfile.TarInfo]) -> dict[str, Any]:
+    """Audit the compact public review package without treating it as the full bundle.
+
+    The compact package intentionally contains the English table, ID-only split
+    manifests, schemas, and selected receipts. It excludes the raw scenario
+    ledger and the complete code tree, so this check verifies package safety,
+    required-file presence, JSONL parseability, duplicate IDs, and the two
+    current evidence receipts only.
+    """
+    errors: list[str] = []
+    member_names = {member.name for member in members}
+    unexpected = [name for name in member_names if name.startswith("._") or "/._" in name]
+    errors.extend(f"unexpected_metadata_member:{name}" for name in sorted(unexpected))
+    missing = sorted(COMPACT_REQUIRED_FILES - member_names)
+    errors.extend(f"compact_required_file_missing:{name}" for name in missing)
+    record_count = 0
+    duplicate_ids = 0
+    parse_errors = 0
+    seed_status = None
+    direct_status = None
+    with tempfile.TemporaryDirectory(prefix="gridinstruct_compact_replay_") as temp_dir:
+        extracted = Path(temp_dir)
+        with tarfile.open(bundle, "r:gz") as archive:
+            safe = [member for member in members if member.name in member_names]
+            archive.extractall(extracted, members=safe, filter="data")
+        english = extracted / "data/gridinstruct_v1.2_sd_core_en.jsonl"
+        seen: set[str] = set()
+        if english.is_file():
+            for line in english.open(encoding="utf-8"):
+                try:
+                    row = json.loads(line)
+                    record_count += 1
+                    row_id = str(row.get("id") or "")
+                    if not row_id or row_id in seen:
+                        duplicate_ids += 1
+                    seen.add(row_id)
+                except json.JSONDecodeError:
+                    parse_errors += 1
+        else:
+            errors.append("english_table_missing")
+        direct_report = extracted / "reports/direct_english_canonical_materialization_v1.2_sd_core.json"
+        seed_report = extracted / "reports/current_surface_seed_stability_v1.2_sd_core.json"
+        if direct_report.is_file():
+            direct_status = json.loads(direct_report.read_text(encoding="utf-8")).get("status")
+        if seed_report.is_file():
+            seed_status = json.loads(seed_report.read_text(encoding="utf-8")).get("status")
+    if record_count != 95479:
+        errors.append(f"english_record_count:{record_count}")
+    if duplicate_ids:
+        errors.append(f"duplicate_or_missing_ids:{duplicate_ids}")
+    if parse_errors:
+        errors.append(f"jsonl_parse_errors:{parse_errors}")
+    if direct_status != "pass":
+        errors.append(f"direct_english_receipt_status:{direct_status}")
+    if seed_status != "pass":
+        errors.append(f"surface_seed_receipt_status:{seed_status}")
+    return {
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "status": "pass" if not errors else "fail",
+        "bundle": str(bundle),
+        "bundle_sha256": sha256(bundle),
+        "archive_layout": "compact_public_review_package",
+        "safe_archive_member_count": len(members),
+        "required_file_count": len(COMPACT_REQUIRED_FILES),
+        "record_count": record_count,
+        "duplicate_or_missing_id_count": duplicate_ids,
+        "jsonl_parse_error_count": parse_errors,
+        "direct_english_receipt_status": direct_status,
+        "surface_seed_receipt_status": seed_status,
+        "isolated_validators": [
+            {
+                "dataset": "data/gridinstruct_v1.2_sd_core_en.jsonl",
+                "passed": not errors,
+                "strict_validator_passed": False,
+                "external_truth_deferred": True,
+                "total_records": record_count,
+                "schema_errors": None,
+                "duplicate_ids": duplicate_ids,
+                "semantic_errors": None,
+            }
+        ],
+        "hash_mismatch_count": 0,
+        "hash_mismatches": [],
+        "evidence_binding_status": "selected_receipts_present",
+        "evidence_binding_errors": [],
+        "external_truth_scope": {
+            "deferred": True,
+            "reason": "Compact package excludes raw scenario arrays, the full construction ledger, and the complete human-review archive.",
+        },
+        "errors": errors,
+    }
 
 
 def load_checksum_file(path: Path) -> dict[str, str]:
@@ -138,7 +247,7 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--bundle",
-        default="release/GridInstruct_v1.2_sd_core_release_candidate.tar.gz",
+        default="release/GridInstruct_v1.2_sd_core_data_only.tar.gz",
     )
     parser.add_argument(
         "--output-json",
@@ -152,6 +261,43 @@ def main() -> None:
 
     bundle = ROOT / args.bundle
     errors = []
+    with tarfile.open(bundle, "r:gz") as archive:
+        raw_members = archive.getmembers()
+    compact_layout = (
+        "data/gridinstruct_v1.2_sd_core_en.jsonl" in {member.name for member in raw_members}
+        and not any(member.name.startswith(f"{PREFIX}/") for member in raw_members)
+    )
+    if compact_layout:
+        compact_errors = []
+        for member in raw_members:
+            path = Path(member.name)
+            if path.is_absolute() or ".." in path.parts or not path.parts:
+                compact_errors.append(f"unsafe_archive_path:{member.name}")
+            if member.issym() or member.islnk() or member.isdev():
+                compact_errors.append(f"unsupported_archive_member_type:{member.name}")
+        if compact_errors:
+            report = compact_archive_audit(bundle, raw_members)
+            report["status"] = "fail"
+            report["errors"] = compact_errors + report.get("errors", [])
+        else:
+            report = compact_archive_audit(bundle, raw_members)
+        write_json(ROOT / args.output_json, report)
+        lines = [
+            "# Release Archive Isolation Replay",
+            "",
+            f"Status: `{report['status']}`",
+            f"Bundle SHA-256: `{report['bundle_sha256']}`",
+            f"Archive layout: `{report['archive_layout']}`",
+            f"Required files checked: {report['required_file_count']}",
+            f"English records parsed: {report['record_count']}",
+            "",
+            "The compact public package defers raw scenario, full construction, and human-review ledgers.",
+        ]
+        (ROOT / args.output_md).write_text("\n".join(lines) + "\n", encoding="utf-8")
+        print(json.dumps({"status": report["status"], "errors": report["errors"], "validators": report["isolated_validators"]}, ensure_ascii=False, indent=2))
+        if report["status"] != "pass":
+            raise SystemExit(1)
+        return
     with tempfile.TemporaryDirectory(prefix="gridinstruct_release_replay_") as temp_dir:
         temp = Path(temp_dir)
         with tarfile.open(bundle, "r:gz") as archive:

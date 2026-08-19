@@ -1,0 +1,381 @@
+{
+  "generated_at": "2026-08-19T16:55:37.398905+00:00",
+  "status": "pass",
+  "objective": "current_split_five_seed_linear_tfidf_stability",
+  "model": {
+    "family": "sgd_modified_huber",
+    "features": "character TF-IDF 2-4 grams, max_features=50000, sublinear_tf=true",
+    "class_weight": "balanced",
+    "random_seeds": [
+      11,
+      17,
+      23,
+      31,
+      43
+    ]
+  },
+  "input_sha256": {
+    "data/v1.2_sd_core_instruction_surface_balanced_train_en.jsonl": "67f331de12e023aa733f0d3d50ba74bd339d94cafffc26d3f50b82baa0e9153e",
+    "data/v1.2_sd_core_instruction_surface_balanced_test_en.jsonl": "faaee27950b5a577bebdbd1d40f99d49a3bfc8b921b48cba74f521d0690a905c",
+    "data/v1.2_sd_core_instruction_surface_balanced_ood_test_en.jsonl": "3674fc731033f2f6332a7c742cebf97c60cc2406e1b15e27f8d788aa3f1ce9b4"
+  },
+  "rows": [
+    {
+      "seed": 11,
+      "task_type": "operation_ticket_check",
+      "n_train": 3974,
+      "n_eval": 2981,
+      "macro_f1": 0.9995832660711287,
+      "balanced_accuracy": 0.9995555555555556,
+      "evaluation": "surface_test"
+    },
+    {
+      "seed": 17,
+      "task_type": "operation_ticket_check",
+      "n_train": 3974,
+      "n_eval": 2981,
+      "macro_f1": 0.9995832660711287,
+      "balanced_accuracy": 0.9995555555555556,
+      "evaluation": "surface_test"
+    },
+    {
+      "seed": 23,
+      "task_type": "operation_ticket_check",
+      "n_train": 3974,
+      "n_eval": 2981,
+      "macro_f1": 0.9995832660711287,
+      "balanced_accuracy": 0.9995555555555556,
+      "evaluation": "surface_test"
+    },
+    {
+      "seed": 31,
+      "task_type": "operation_ticket_check",
+      "n_train": 3974,
+      "n_eval": 2981,
+      "macro_f1": 0.9995832660711287,
+      "balanced_accuracy": 0.9995555555555556,
+      "evaluation": "surface_test"
+    },
+    {
+      "seed": 43,
+      "task_type": "operation_ticket_check",
+      "n_train": 3974,
+      "n_eval": 2981,
+      "macro_f1": 0.9992674196019093,
+      "balanced_accuracy": 0.9991666018410476,
+      "evaluation": "surface_test"
+    },
+    {
+      "seed": 11,
+      "task_type": "regulation_compliance_check",
+      "n_train": 1958,
+      "n_eval": 454,
+      "macro_f1": 0.8818278088473418,
+      "balanced_accuracy": 0.8649455107624234,
+      "evaluation": "surface_test"
+    },
+    {
+      "seed": 17,
+      "task_type": "regulation_compliance_check",
+      "n_train": 1958,
+      "n_eval": 454,
+      "macro_f1": 0.8271416845084557,
+      "balanced_accuracy": 0.8029896803683539,
+      "evaluation": "surface_test"
+    },
+    {
+      "seed": 23,
+      "task_type": "regulation_compliance_check",
+      "n_train": 1958,
+      "n_eval": 454,
+      "macro_f1": 0.8681947805768919,
+      "balanced_accuracy": 0.8535161104128562,
+      "evaluation": "surface_test"
+    },
+    {
+      "seed": 31,
+      "task_type": "regulation_compliance_check",
+      "n_train": 1958,
+      "n_eval": 454,
+      "macro_f1": 0.8534760787535656,
+      "balanced_accuracy": 0.832024739523895,
+      "evaluation": "surface_test"
+    },
+    {
+      "seed": 43,
+      "task_type": "regulation_compliance_check",
+      "n_train": 1958,
+      "n_eval": 454,
+      "macro_f1": 0.8963226709422738,
+      "balanced_accuracy": 0.8815742890734445,
+      "evaluation": "surface_test"
+    },
+    {
+      "seed": 11,
+      "task_type": "dispatcher_intent_tool_call",
+      "n_train": 388,
+      "n_eval": 121,
+      "macro_f1": 0.6178076309655257,
+      "balanced_accuracy": 0.6215007215007214,
+      "evaluation": "surface_test"
+    },
+    {
+      "seed": 17,
+      "task_type": "dispatcher_intent_tool_call",
+      "n_train": 388,
+      "n_eval": 121,
+      "macro_f1": 0.6262285012285013,
+      "balanced_accuracy": 0.629076479076479,
+      "evaluation": "surface_test"
+    },
+    {
+      "seed": 23,
+      "task_type": "dispatcher_intent_tool_call",
+      "n_train": 388,
+      "n_eval": 121,
+      "macro_f1": 0.6014599435652067,
+      "balanced_accuracy": 0.604040404040404,
+      "evaluation": "surface_test"
+    },
+    {
+      "seed": 31,
+      "task_type": "dispatcher_intent_tool_call",
+      "n_train": 388,
+      "n_eval": 121,
+      "macro_f1": 0.593953938781525,
+      "balanced_accuracy": 0.5980519480519481,
+      "evaluation": "surface_test"
+    },
+    {
+      "seed": 43,
+      "task_type": "dispatcher_intent_tool_call",
+      "n_train": 388,
+      "n_eval": 121,
+      "macro_f1": 0.6177363239321934,
+      "balanced_accuracy": 0.6215007215007214,
+      "evaluation": "surface_test"
+    },
+    {
+      "seed": 11,
+      "task_type": "operation_ticket_check",
+      "n_train": 3974,
+      "n_eval": 945,
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
+      "evaluation": "surface_ood"
+    },
+    {
+      "seed": 17,
+      "task_type": "operation_ticket_check",
+      "n_train": 3974,
+      "n_eval": 945,
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
+      "evaluation": "surface_ood"
+    },
+    {
+      "seed": 23,
+      "task_type": "operation_ticket_check",
+      "n_train": 3974,
+      "n_eval": 945,
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
+      "evaluation": "surface_ood"
+    },
+    {
+      "seed": 31,
+      "task_type": "operation_ticket_check",
+      "n_train": 3974,
+      "n_eval": 945,
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
+      "evaluation": "surface_ood"
+    },
+    {
+      "seed": 43,
+      "task_type": "operation_ticket_check",
+      "n_train": 3974,
+      "n_eval": 945,
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
+      "evaluation": "surface_ood"
+    },
+    {
+      "seed": 11,
+      "task_type": "regulation_compliance_check",
+      "n_train": 1958,
+      "n_eval": 21845,
+      "macro_f1": 0.6373784900642495,
+      "balanced_accuracy": 0.6350515607678036,
+      "evaluation": "surface_ood"
+    },
+    {
+      "seed": 17,
+      "task_type": "regulation_compliance_check",
+      "n_train": 1958,
+      "n_eval": 21845,
+      "macro_f1": 0.6350678385927425,
+      "balanced_accuracy": 0.6211034652751745,
+      "evaluation": "surface_ood"
+    },
+    {
+      "seed": 23,
+      "task_type": "regulation_compliance_check",
+      "n_train": 1958,
+      "n_eval": 21845,
+      "macro_f1": 0.6598234167557617,
+      "balanced_accuracy": 0.6698862235271245,
+      "evaluation": "surface_ood"
+    },
+    {
+      "seed": 31,
+      "task_type": "regulation_compliance_check",
+      "n_train": 1958,
+      "n_eval": 21845,
+      "macro_f1": 0.7124618552745229,
+      "balanced_accuracy": 0.725939930868423,
+      "evaluation": "surface_ood"
+    },
+    {
+      "seed": 43,
+      "task_type": "regulation_compliance_check",
+      "n_train": 1958,
+      "n_eval": 21845,
+      "macro_f1": 0.6892010936879145,
+      "balanced_accuracy": 0.6921835084119614,
+      "evaluation": "surface_ood"
+    },
+    {
+      "seed": 11,
+      "task_type": "dispatcher_intent_tool_call",
+      "n_train": 388,
+      "n_eval": 19143,
+      "macro_f1": 0.3270238963525023,
+      "balanced_accuracy": 0.3334894022419939,
+      "evaluation": "surface_ood"
+    },
+    {
+      "seed": 17,
+      "task_type": "dispatcher_intent_tool_call",
+      "n_train": 388,
+      "n_eval": 19143,
+      "macro_f1": 0.32886405391530676,
+      "balanced_accuracy": 0.33207666017980153,
+      "evaluation": "surface_ood"
+    },
+    {
+      "seed": 23,
+      "task_type": "dispatcher_intent_tool_call",
+      "n_train": 388,
+      "n_eval": 19143,
+      "macro_f1": 0.32445865997750784,
+      "balanced_accuracy": 0.33376741711446084,
+      "evaluation": "surface_ood"
+    },
+    {
+      "seed": 31,
+      "task_type": "dispatcher_intent_tool_call",
+      "n_train": 388,
+      "n_eval": 19143,
+      "macro_f1": 0.3265437141447809,
+      "balanced_accuracy": 0.3306854144358952,
+      "evaluation": "surface_ood"
+    },
+    {
+      "seed": 43,
+      "task_type": "dispatcher_intent_tool_call",
+      "n_train": 388,
+      "n_eval": 19143,
+      "macro_f1": 0.3244276583835253,
+      "balanced_accuracy": 0.33587334452495016,
+      "evaluation": "surface_ood"
+    }
+  ],
+  "summary": [
+    {
+      "evaluation": "surface_ood",
+      "task_type": "dispatcher_intent_tool_call",
+      "runs": 5,
+      "n_train": 388,
+      "n_eval": 19143,
+      "macro_f1_mean": 0.3262635965547246,
+      "macro_f1_std": 0.0016761482719143547,
+      "macro_f1_min": 0.3244276583835253,
+      "macro_f1_max": 0.32886405391530676,
+      "balanced_accuracy_mean": 0.33317844769942034,
+      "balanced_accuracy_std": 0.001739838911570922
+    },
+    {
+      "evaluation": "surface_ood",
+      "task_type": "operation_ticket_check",
+      "runs": 5,
+      "n_train": 3974,
+      "n_eval": 945,
+      "macro_f1_mean": 1.0,
+      "macro_f1_std": 0.0,
+      "macro_f1_min": 1.0,
+      "macro_f1_max": 1.0,
+      "balanced_accuracy_mean": 1.0,
+      "balanced_accuracy_std": 0.0
+    },
+    {
+      "evaluation": "surface_ood",
+      "task_type": "regulation_compliance_check",
+      "runs": 5,
+      "n_train": 1958,
+      "n_eval": 21845,
+      "macro_f1_mean": 0.6667865388750382,
+      "macro_f1_std": 0.030026791862455972,
+      "macro_f1_min": 0.6350678385927425,
+      "macro_f1_max": 0.7124618552745229,
+      "balanced_accuracy_mean": 0.6688329377700973,
+      "balanced_accuracy_std": 0.0380180251926203
+    },
+    {
+      "evaluation": "surface_test",
+      "task_type": "dispatcher_intent_tool_call",
+      "runs": 5,
+      "n_train": 388,
+      "n_eval": 121,
+      "macro_f1_mean": 0.6114372676945904,
+      "macro_f1_std": 0.011868058087219368,
+      "macro_f1_min": 0.593953938781525,
+      "macro_f1_max": 0.6262285012285013,
+      "balanced_accuracy_mean": 0.6148340548340548,
+      "balanced_accuracy_std": 0.011746297652378742
+    },
+    {
+      "evaluation": "surface_test",
+      "task_type": "operation_ticket_check",
+      "runs": 5,
+      "n_train": 3974,
+      "n_eval": 2981,
+      "macro_f1_mean": 0.9995200967772848,
+      "macro_f1_std": 0.00012633858768773543,
+      "macro_f1_min": 0.9992674196019093,
+      "macro_f1_max": 0.9995832660711287,
+      "balanced_accuracy_mean": 0.999477764812654,
+      "balanced_accuracy_std": 0.0001555814858032356
+    },
+    {
+      "evaluation": "surface_test",
+      "task_type": "regulation_compliance_check",
+      "runs": 5,
+      "n_train": 1958,
+      "n_eval": 454,
+      "macro_f1_mean": 0.8653926047257058,
+      "macro_f1_std": 0.023831800640712053,
+      "macro_f1_min": 0.8271416845084557,
+      "macro_f1_max": 0.8963226709422738,
+      "balanced_accuracy_mean": 0.8470100660281946,
+      "balanced_accuracy_std": 0.027280207734374444
+    }
+  ],
+  "hard_gates": {
+    "two_current_surface_geometries": true,
+    "five_seed_runs_per_stratum": true,
+    "non_empty_denominators": true,
+    "macro_f1_std_at_most_0.05": true
+  },
+  "interpretation": "This stochastic reference measures seed stability on frozen current splits. It is a trainability diagnostic and does not establish semantic, physical, legal, or operational correctness."
+}

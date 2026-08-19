@@ -1,49 +1,35 @@
 {
-  "generated_at": "2026-08-19T02:08:08.828715+00:00",
+  "generated_at": "2026-08-19T17:40:51.034049+00:00",
   "status": "pass",
-  "bundle": "release/GridInstruct_v1.2_sd_core_release_candidate.tar.gz",
-  "bundle_sha256": "46a2d8a891e87a44d74b2f4ff08e69cab394d7afe6f82f9231f7479b3a1cc0b4",
-  "safe_archive_member_count": 995,
-  "manifest_payload_count": 993,
-  "hash_mismatch_count": 0,
-  "hash_mismatches": [],
-  "evidence_binding_status": "pass",
-  "evidence_binding_errors": [],
+  "bundle": "/Users/lemon/Desktop/project/gaiav2/release/GridInstruct_v1.2_sd_core_data_only.tar.gz",
+  "bundle_sha256": "2a18a77d90726074a0ce44c53a7946cd0c96d67fd36c5c80f4fc352035678d10",
+  "archive_layout": "compact_public_review_package",
+  "safe_archive_member_count": 47,
+  "required_file_count": 13,
+  "record_count": 95479,
+  "duplicate_or_missing_id_count": 0,
+  "jsonl_parse_error_count": 0,
+  "direct_english_receipt_status": "pass",
+  "surface_seed_receipt_status": "pass",
   "isolated_validators": [
     {
-      "dataset": "data/gridinstruct_v1.2_sd_core.jsonl",
-      "returncode": 0,
-      "passed": true,
-      "strict_validator_passed": true,
-      "external_truth_deferred": false,
-      "total_records": 95479,
-      "schema_errors": 0,
-      "duplicate_ids": 0,
-      "invalid_rule_links": 0,
-      "invalid_scenario_links": 0,
-      "semantic_errors": 0,
-      "deferred_reason": null,
-      "stderr_tail": ""
-    },
-    {
       "dataset": "data/gridinstruct_v1.2_sd_core_en.jsonl",
-      "returncode": 0,
       "passed": true,
-      "strict_validator_passed": true,
-      "external_truth_deferred": false,
+      "strict_validator_passed": false,
+      "external_truth_deferred": true,
       "total_records": 95479,
-      "schema_errors": 0,
+      "schema_errors": null,
       "duplicate_ids": 0,
-      "invalid_rule_links": 0,
-      "invalid_scenario_links": 0,
-      "semantic_errors": 0,
-      "deferred_reason": null,
-      "stderr_tail": ""
+      "semantic_errors": null
     }
   ],
+  "hash_mismatch_count": 0,
+  "hash_mismatches": [],
+  "evidence_binding_status": "selected_receipts_present",
+  "evidence_binding_errors": [],
   "external_truth_scope": {
-    "deferred": false,
-    "reason": "Raw scenario arrays, full scenario-generation ledger, and query truth ledger are outside this compact archive."
+    "deferred": true,
+    "reason": "Compact package excludes raw scenario arrays, the full construction ledger, and the complete human-review archive."
   },
   "errors": []
 }

@@ -10,9 +10,9 @@ The current local snapshot contains the promoted 95,479-row core table, a separa
 international rule probe, split definitions, validation evidence, a jurisdiction-held-out
 retrieval diagnostic, a two-reviewer assignment package, independent OPF and network-envelope
 diagnostics, a template-family holdout, and the Scientific Data manuscript.
-The code is publicly available on GitHub and
-archived at Zenodo. The raw population-level solver ledgers, completed expert review, final
-data accession, and named author metadata remain explicit external gates. The compact reviewer map is
+The code repository URL and software archive are recorded, but anonymous public repository
+access is still being checked. The raw population-level solver ledgers, completed expert review,
+final data accession, and named author metadata remain explicit external gates. The compact reviewer map is
 `release/reviewer_access_manifest_2026-08-13.json`.
 The dated remediation ledger is `reports/sd_closeout_status_2026-08-13.json`; it records the
 C1--C5 scope without treating external inputs as completed.
@@ -103,6 +103,16 @@ On the recorded local run, the nine OPF solves used 3.036 s, the 33-state family
 30.514 s, and the 55,421-row template-family split plus CPU baseline used 46.624 s. The TF--IDF
 fit is the dominant local step; no remote GPU job is required.
 
+The current instruction-surface seed audit can be reproduced with:
+
+```bash
+python scripts/run_current_surface_seed_stability.py
+```
+
+It evaluates a stochastic character TF--IDF reference on the frozen surface test and OOD
+partitions using five seeds. The output is a stability diagnostic and does not certify
+semantic, physical, legal, or operational correctness.
+
 ## Fast physical regression
 
 ```bash
@@ -114,8 +124,8 @@ The full local suite additionally covers PGLib source binding, scenario-link mig
 complete control vectors, OPF security boundaries, transformer contracts, independent-solver
 manifests, and deterministic pipeline fingerprints.
 
-The current closeout run is `156 passed, 1 skipped`; the exact count is recorded in
-`reports/sd_closeout_status_2026-08-13.json`.
+The current local regression run is `162 passed, 1 skipped`; the exact count is recorded in
+the terminal output and should be refreshed before each release build.
 
 ## Evidence policy
 
