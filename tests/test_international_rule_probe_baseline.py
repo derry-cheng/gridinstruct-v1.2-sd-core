@@ -25,6 +25,22 @@ def test_international_baseline_report_is_four_fold_and_scope_bounded() -> None:
     assert "none establishes legal correctness" in report["interpretation"]
 
 
+def test_explicit_input_contract_copy_control_is_labeled_as_leakage_diagnostic() -> None:
+    report = json.loads(
+        (ROOT / "reports/international_rule_probe_controls_v1.json").read_text(encoding="utf-8")
+    )
+    assert report["status"] == "pass"
+    assert report["record_count"] == 512
+    assert report["aggregate_explicit_input_contract_copy"] == {
+        "rule_id": 1.0,
+        "standard_id": 1.0,
+        "jurisdiction": 1.0,
+        "clause_id": 1.0,
+        "evidence_fields": 1.0,
+    }
+    assert "leakage diagnostic" in report["interpretation"]
+
+
 def test_international_review_assignments_are_blank_and_double_assigned() -> None:
     report = json.loads(
         (ROOT / "reports/international_rule_review_assignments_v1.json").read_text(encoding="utf-8")

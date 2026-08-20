@@ -137,6 +137,14 @@ def sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
+def format_report_path(path: Path) -> str:
+    """Return a stable project-relative path or preserve an external staging path."""
+    try:
+        return str(path.relative_to(ROOT))
+    except ValueError:
+        return str(path)
+
+
 def nearest_rows(
     train_rows: list[dict[str, Any]],
     test_rows: list[dict[str, Any]],
@@ -312,7 +320,7 @@ def main() -> None:
         "folds": fold_reports,
         "macro_metrics": macro_metrics,
         "grouped_macro_metrics": grouped_macro_metrics,
-        "prediction_path": str(prediction_path.relative_to(ROOT)),
+        "prediction_path": format_report_path(prediction_path),
         "prediction_sha256": sha256(prediction_path),
         "interpretation": (
             "The baseline excludes explicit rule, standard, clause, and jurisdiction identifiers from its "

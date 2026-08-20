@@ -1,6 +1,6 @@
 # Data Records
 
-Generated: 2026-08-18
+Generated: 2026-08-20
 
 GridInstruct v1.2 contains 95479 instruction records. Records are stored as UTF-8 JSON Lines and validated against `metadata/schema.json`.
 
@@ -24,16 +24,17 @@ The core table keeps its original 95,479 records and 17 domestic rule cards. A s
 
 | path | records/cards | sha256 |
 | --- | ---: | --- |
-| data/international_rule_probe_v1.jsonl | 512 records | 1c0a4ab5c8aa014a2f4eedaf26afc43c3ea87c1d59265e247644a7ccf577d912 |
-| rules/international_rule_profiles.json | 8 cards | 1afa30d0f10ad0563f10df966eae3f12784471e9db5223447b8f4adb930fb281 |
+| data/international_rule_probe_v1.jsonl | 512 records | ffd3ce089f704d1f55341a66ce355cfc5c0a739e8c90024e40d1590c283cc85d |
+| rules/international_rule_profiles.json | 8 cards | 63d702b1cf5a8881d8fa008e0f99f1cb2e2b0f94ce990e7cfcbe4b400826f793 |
 | metadata/international_rule_profile_matrix.csv | 8 rows | 15f8934dbce8d393fbb12ac816507f1d9c5791a71c5fac9f10e1bccc428046c8 |
-| metadata/international_rule_probe_splits_v1.json | two leave-one-jurisdiction-out folds | e6df687fbe47ffc92fe189978be83fb083b8574c16f848d091780ccd24d27f82 |
-| reports/international_rule_probe_v1.json | validation receipt | a10fc7f49f171ebb1e8658c15a9c935af5d3c98259f9bb15c11a5336d714f07a |
-| reports/international_rule_probe_splits_v1.json | split receipt | e6df687fbe47ffc92fe189978be83fb083b8574c16f848d091780ccd24d27f82 |
-| benchmark/international_rule_probe_v1/nearest_neighbor_report.json | two-fold CPU retrieval diagnostic | f3f4afb62f7610236da057adc463a830d8c758649ddfd879312f99f965b30a6d |
-| reports/international_rule_review_assignments_v1.json | 128-record, two-reviewer assignment receipt | d75afc60e8e179d4baa74a93d49fcc2e47cefe0c6946a34a7a6e84c3c94aaec5 |
+| metadata/international_rule_probe_splits_v1.json | four leave-one-jurisdiction and variant-holdout folds | 848af2e7204c64df36ff0e50d4c6e504fe2a0e0ae24653a6c9883340b01c5903 |
+| reports/international_rule_probe_v1.json | validation receipt | 8fc8b60b087656b5fb058fa065824488318ced20c8ca75adecf792081d1bc69e |
+| reports/international_rule_probe_splits_v1.json | split receipt | 848af2e7204c64df36ff0e50d4c6e504fe2a0e0ae24653a6c9883340b01c5903 |
+| benchmark/international_rule_probe_v1/nearest_neighbor_report.json | four-fold CPU retrieval diagnostic | 5e366e7ccf78cb069ddf09e8da2501e767b4238ebaef7fcb67368c6261ac7364 |
+| reports/international_rule_probe_controls_v1.json | explicit-input leakage control receipt | 31b80495a106c1df4e22dedda0892e74c62968909c53f81c6c58eb2f887d8907 |
+| reports/international_rule_review_assignments_v1.json | 128-record, two-reviewer assignment receipt | 261abcd4279681251efce5d54e0183329ee5f15144c3e2ea21599e2a4a85cafa |
 
-The extension is a source-conditioned rule-grounding probe. Its CPU retrieval diagnostic gives macro exact match 0.0000, token-F1 0.3532, and mean nearest-neighbour similarity 0.7861 under two jurisdiction-held-out folds. These are lexical-transfer diagnostics, not semantic legal or physical-compliance scores. The review receipt contains blank labels for two independent reviewer slots per sampled record. The extension does not change the core split counts or imply that NERC or European rules endorse the domestic numeric policies.
+The extension is a source-conditioned rule-grounding probe. Its leakage-controlled CPU retrieval diagnostic gives macro exact match 0.0000, token-F1 0.5303 on the two cross-jurisdiction folds and 0.9756 on the two within-jurisdiction variant holdouts, with structured field scores of 0.000 and 1.000 respectively. The regenerated records contain zero semantic-template tautologies. An explicit-input contract-copy control reaches 1.000 on rule, standard, jurisdiction, clause, and evidence fields by construction; this is a leakage diagnostic rather than a model score. All values are lexical-transfer diagnostics, not semantic legal or physical-compliance scores. The review receipt contains blank labels for two independent reviewer slots per sampled record. The extension does not change the core split counts or imply that NERC or European rules endorse the domestic numeric policies.
 
 ## Rule Dictionary
 

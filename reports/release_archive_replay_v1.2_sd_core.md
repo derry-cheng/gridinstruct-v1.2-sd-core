@@ -1,9 +1,9 @@
 # Release Archive Isolation Replay
 
 Status: `pass`
-Bundle SHA-256: `c5db348e7a298da09f8c38e9121fb0d13018e9adaa959bda34a46882d4f71c09`
+Bundle SHA-256: `4e53daf354cf64e30bfde555faa1192802c278e6f9880cf45f771e95dac54340`
 Archive layout: `compact_public_review_package`
-Required files checked: 13
+Required files checked: 21
 English records parsed: 95479
 
 The compact public package defers raw scenario, full construction, and human-review ledgers.

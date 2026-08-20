@@ -1,6 +1,6 @@
 {
   "schema_version": "gridinstruct-scoped-evidence-v2",
-  "generated_at": "2026-08-19T17:43:07.966176+00:00",
+  "generated_at": "2026-08-20T16:29:15.824460+00:00",
   "status": "pass",
   "scope": "local_hash_bound_release_candidate",
   "runtime_policy": "local CPU/MPS only; no remote GPU execution",
@@ -336,8 +336,8 @@
     },
     "data/international_rule_probe_v1.jsonl": {
       "path": "data/international_rule_probe_v1.jsonl",
-      "sha256": "345d1ef94068dacb8e502efc045fbc9721172a46974c96956e275e292b6d688a",
-      "bytes": 1872896,
+      "sha256": "ffd3ce089f704d1f55341a66ce355cfc5c0a739e8c90024e40d1590c283cc85d",
+      "bytes": 1894144,
       "reported_status": null,
       "bound": true
     },
@@ -350,8 +350,8 @@
     },
     "reports/international_rule_probe_v1.json": {
       "path": "reports/international_rule_probe_v1.json",
-      "sha256": "39d1e9bb5bf5e7b37921ca0499a1cd4dca8693acea9b1e57ae3f2cdec9e83a5f",
-      "bytes": 1210,
+      "sha256": "8fc8b60b087656b5fb058fa065824488318ced20c8ca75adecf792081d1bc69e",
+      "bytes": 1252,
       "reported_status": "pass",
       "bound": true
     },
@@ -364,9 +364,37 @@
     },
     "benchmark/international_rule_probe_v1/nearest_neighbor_report.json": {
       "path": "benchmark/international_rule_probe_v1/nearest_neighbor_report.json",
-      "sha256": "0c60c875fdc7c81a1969080417ad1a1782273a62e468d892354abfd509b245cc",
-      "bytes": 4843,
+      "sha256": "5e366e7ccf78cb069ddf09e8da2501e767b4238ebaef7fcb67368c6261ac7364",
+      "bytes": 4845,
       "reported_status": "pass",
+      "bound": true
+    },
+    "reports/international_rule_probe_controls_v1.json": {
+      "path": "reports/international_rule_probe_controls_v1.json",
+      "sha256": "31b80495a106c1df4e22dedda0892e74c62968909c53f81c6c58eb2f887d8907",
+      "bytes": 2290,
+      "reported_status": "pass",
+      "bound": true
+    },
+    "reports/international_rule_review_assignments_v1.json": {
+      "path": "reports/international_rule_review_assignments_v1.json",
+      "sha256": "261abcd4279681251efce5d54e0183329ee5f15144c3e2ea21599e2a4a85cafa",
+      "bytes": 1109,
+      "reported_status": "ready_for_independent_review",
+      "bound": true
+    },
+    "reports/international_rule_review_assignments_v1.csv": {
+      "path": "reports/international_rule_review_assignments_v1.csv",
+      "sha256": "60c8cdf59cd1e60bd8d1c082150a8c09b6f89e54bd7508816b15764f4967d92e",
+      "bytes": 314981,
+      "reported_status": null,
+      "bound": true
+    },
+    "reports/international_rule_review_assignments_v1.jsonl": {
+      "path": "reports/international_rule_review_assignments_v1.jsonl",
+      "sha256": "6e2b5cdf1bf33391796d634226e44dd12e3e82a3b30b52540157a0b7477b2474",
+      "bytes": 383588,
+      "reported_status": null,
       "bound": true
     },
     "reports/template_family_holdout_v1.2_sd_core.json": {
@@ -462,22 +490,22 @@
     },
     "reports/manuscript_final_audit_20260812.json": {
       "path": "reports/manuscript_final_audit_20260812.json",
-      "sha256": "d0fcc4a79cb7dea5eeade83c3f971c104bf9020ea15acfc455fd8acc4ec699fa",
+      "sha256": "7f93bdd4c6ab5d5e4ccc1bb81d2f674231201b7517652bdbb66e60797498ccbd",
       "bytes": 1461,
       "reported_status": "pass",
       "bound": true
     },
     "reports/manuscript_metric_bindings_v1.2_sd_core.json": {
       "path": "reports/manuscript_metric_bindings_v1.2_sd_core.json",
-      "sha256": "7e99ea56e5d33214bf58569c93c3f764e64ba7e39c3e496ae975d6568604fb28",
-      "bytes": 4386,
+      "sha256": "69f1b120d4a4e3f8f0f529b7fe5034744df770016b824afa099b6abb77bd063c",
+      "bytes": 5997,
       "reported_status": "pass",
       "bound": true
     },
     "reports/manuscript_metric_bindings_v1.2_sd_core.md": {
       "path": "reports/manuscript_metric_bindings_v1.2_sd_core.md",
-      "sha256": "7fe5838b9c920ed0f8f2138a5e8c2895bdbeae1fdeb29c0659ea0856484f4c1c",
-      "bytes": 2071,
+      "sha256": "251f4ebbeaf7b3d7c8f98150ac609e36277fe8501483d097558e15d84b434446",
+      "bytes": 2919,
       "reported_status": null,
       "bound": true
     },
@@ -497,57 +525,57 @@
     },
     "paper/scientific_data_latex/PAPER_CLAIM_AUDIT.json": {
       "path": "paper/scientific_data_latex/PAPER_CLAIM_AUDIT.json",
-      "sha256": "0e2324015f2bae05b471c388890909b69c5681ad132e66fa8ebf35578402aa4e",
-      "bytes": 1617,
+      "sha256": "ad0ba72d49c18a5adeb720946e1b9aa571fa58a4656995c89d9cf29b9a06191a",
+      "bytes": 1890,
       "reported_status": "WARN_SCOPED_EXTERNAL_GATES_PENDING",
       "bound": true
     },
     "paper/scientific_data_latex/main.pdf": {
       "path": "paper/scientific_data_latex/main.pdf",
-      "sha256": "05dc3097007a8f70be4633025f25a563be1b18dfcfd816cc6167e9acab09eda6",
-      "bytes": 818640,
+      "sha256": "21cdd2e18a4ddf8ef417362cbeadd406ae00bc14953c56428a961a44904e9dac",
+      "bytes": 820072,
       "reported_status": null,
       "bound": true
     },
     "paper/scientific_data_latex/LATEX_BUILD_REPORT.json": {
       "path": "paper/scientific_data_latex/LATEX_BUILD_REPORT.json",
-      "sha256": "895eb30ee844cc8f5f20897b09319caa3efeeac9d128289097088eabeb6a27b7",
+      "sha256": "5c22acb3fb593cba92270b9a99a9096b2037c89497e81b1650921bccccd611cf",
       "bytes": 12350,
       "reported_status": "pass",
       "bound": true
     },
     "paper/scientific_data_latex/LATEX_BUILD_REPORT.md": {
       "path": "paper/scientific_data_latex/LATEX_BUILD_REPORT.md",
-      "sha256": "9862f96835153bfd8805f77e728e09ab78fdd4077922ac30f4dc8a2b1de76b5c",
+      "sha256": "0932974443839b91cbb59faebe1978803d1eae1d69265b4215de23e6ea0fc0cf",
       "bytes": 496,
       "reported_status": null,
       "bound": true
     },
     "paper/scientific_data_latex/build/main.pdf": {
       "path": "paper/scientific_data_latex/build/main.pdf",
-      "sha256": "05dc3097007a8f70be4633025f25a563be1b18dfcfd816cc6167e9acab09eda6",
-      "bytes": 818640,
+      "sha256": "d6bf713aead58897576487e054c1a46b7dd29e2aa2ae8aea8bd64b4860e8305e",
+      "bytes": 820072,
       "reported_status": null,
       "bound": true
     },
     "paper/scientific_data_latex/build_embedded/main_with_bbl.pdf": {
       "path": "paper/scientific_data_latex/build_embedded/main_with_bbl.pdf",
-      "sha256": "8791a3e69ce5c0e0adae06dbdd1f45805295912c9138e46b013891b7f80687f3",
-      "bytes": 818640,
+      "sha256": "3bba662b4e20b39106a71286892bc619fee222a01259776b876842c508f7e88f",
+      "bytes": 820072,
       "reported_status": null,
       "bound": true
     },
     "paper/scientific_data_latex/GridInstruct_SD_scientific_data_official_template.pdf": {
       "path": "paper/scientific_data_latex/GridInstruct_SD_scientific_data_official_template.pdf",
-      "sha256": "05dc3097007a8f70be4633025f25a563be1b18dfcfd816cc6167e9acab09eda6",
-      "bytes": 818640,
+      "sha256": "d6bf713aead58897576487e054c1a46b7dd29e2aa2ae8aea8bd64b4860e8305e",
+      "bytes": 820072,
       "reported_status": null,
       "bound": true
     },
     "paper/scientific_data_latex/GridInstruct_SD_scientific_data_latex_source.zip": {
       "path": "paper/scientific_data_latex/GridInstruct_SD_scientific_data_latex_source.zip",
-      "sha256": "5b951ae8e6607fde6d199e03fb07758e9c6292c22579ebf75d30aeb8a2cbecba",
-      "bytes": 8853685,
+      "sha256": "94af810e2bba34c57a63131e204a25b9695e94c7686038b3b4d021a3c74aaa67",
+      "bytes": 8853960,
       "reported_status": null,
       "bound": true
     },
@@ -700,15 +728,15 @@
     },
     "paper/scientific_data_latex/main.tex": {
       "path": "paper/scientific_data_latex/main.tex",
-      "sha256": "4c53e747584434ad1e3a1bf2069d545bf41e639f57dd43a7a7defd5d8cb98e73",
-      "bytes": 80216,
+      "sha256": "1f7ece3214da6543b4bcdabe369829b2ad6c3c87e2a1cbb7d035b32b374d1c16",
+      "bytes": 80787,
       "reported_status": null,
       "bound": true
     },
     "paper/scientific_data_latex/references.bib": {
       "path": "paper/scientific_data_latex/references.bib",
-      "sha256": "0f00523fa7c22c22576fe8fe17722681149cb80bebfba732199c6365875ae414",
-      "bytes": 15369,
+      "sha256": "adc9611024977b469ec7381326b3ec40a5e8c0d2b1b82758ec931f1120296a43",
+      "bytes": 16447,
       "reported_status": null,
       "bound": true
     },
@@ -734,8 +762,8 @@
       "bound": true
     }
   },
-  "total_evidence": 103,
-  "evidence_bound": 103,
+  "total_evidence": 107,
+  "evidence_bound": 107,
   "missing_local_bindings": [],
   "invalid_evidence_count": 0,
   "local_gate_summary": {

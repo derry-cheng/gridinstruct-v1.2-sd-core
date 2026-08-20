@@ -34,6 +34,14 @@ COMPACT_REQUIRED_FILES = {
     "metadata/archive_metadata.json",
     "reports/direct_english_canonical_materialization_v1.2_sd_core.json",
     "reports/current_surface_seed_stability_v1.2_sd_core.json",
+    "data/international_rule_probe_v1.jsonl",
+    "rules/international_rule_profiles.json",
+    "metadata/international_rule_probe_splits_v1.json",
+    "reports/international_rule_probe_v1.json",
+    "reports/international_rule_probe_splits_v1.json",
+    "benchmark/international_rule_probe_v1/nearest_neighbor_report.json",
+    "reports/international_rule_probe_controls_v1.json",
+    "reports/international_rule_review_assignments_v1.json",
     "paper/scientific_data_latex/PAPER_CLAIM_AUDIT.json",
 }
 

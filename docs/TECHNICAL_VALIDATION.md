@@ -1,12 +1,12 @@
 # Technical Validation
 
-Generated: 2026-08-18
+Generated: 2026-08-20
 
 ## International Rule-Probe Extension
 
-The separate jurisdictional extension passes its local contract gate for 8 official rule cards and 512 directly generated English regulation-QA records. Four cards use NERC TOP-001-6, TOP-002-5, FAC-011-4, and VAR-001-5; four use Articles 18, 25, 33, and 72(3) of Commission Regulation (EU) 2017/1485. Each card has 64 records, one valid rule link per record, an official source URL, a clause locator, typed evidence fields, and direct-English generation metadata. The gate does not measure expert agreement or semantic legal correctness.
+The separate jurisdictional extension passes its local contract gate for 8 official rule cards and 512 directly generated English regulation-QA records. Four cards use NERC TOP-001-6, TOP-002-5, FAC-011-4, and VAR-001-5; four use Articles 18, 25, 33, and 72(3) of Commission Regulation (EU) 2017/1485. Each card has 64 records, one valid rule link per record, an official source URL, a clause locator, typed evidence fields, and direct-English generation metadata. The regenerated output has zero semantic-template tautologies. The gate does not measure expert agreement or semantic legal correctness.
 
-The companion leave-one-jurisdiction-out manifest contains two disjoint 256/256 folds. A CPU character TF--IDF nearest-neighbour output-copy diagnostic completes both folds with macro exact match 0.0000, macro token-F1 0.3532, and mean nearest-neighbour cosine similarity 0.7861. This is a lexical-transfer diagnostic; it does not establish held-out-jurisdiction semantic generalization. The review package contains 128 stratified records with two blank reviewer assignments per record, so human agreement remains pending.
+The companion manifest contains two cross-jurisdiction 256/256 folds and two within-jurisdiction 192/64 variant-holdout folds, all with zero train/test ID overlap. A CPU character TF--IDF nearest-neighbour output-copy diagnostic completes all four folds with macro exact match 0.0000, cross-jurisdiction token-F1 0.5303, within-jurisdiction token-F1 0.9756, and structured field scores of 0.0000/1.0000 for the same two fold groups. An explicit-input contract-copy control reaches 1.000 on the five structured fields by construction and is retained only to expose input leakage. These are lexical-transfer diagnostics; they do not establish held-out-jurisdiction semantic generalization. The review package contains 128 stratified records with two blank reviewer assignments per record, so human agreement remains pending.
 
 The final release-candidate archive was extracted in an isolated temporary directory and replayed. All 959 payload hashes and the scoped evidence bindings match; the two canonical validators report zero schema, duplicate-ID, and invalid-rule-link errors. Scenario-link and query-truth checks remain explicitly deferred because the compact archive excludes the raw scenario registry and query-truth ledger.
 

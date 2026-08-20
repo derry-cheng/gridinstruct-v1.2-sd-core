@@ -9,3 +9,5 @@ The replay boundary is deliberately split. Row-level audits and TF--IDF baseline
 The historical multipart Zenodo reassembly note is retained for provenance only. The active anonymous review route is the compact GitHub release above; it is not a formal DOI-backed data accession.
 
 The compact package can be checked locally with `python3 scripts/validate_release_archive_replay.py --bundle release/GridInstruct_v1.2_sd_core_data_only.tar.gz`. This verifies archive safety, the 95,479-record English table, duplicate identifiers, and the selected direct-English and seed-stability receipts; raw scenario truth and independent human-review ledgers remain outside its declared scope.
+
+The older `archive_manifest_v1.2_sd_core.csv` and `checksums_sha256.txt` files describe the legacy full-bundle route and are retained for reproducibility of that route. The compact GitHub asset and its adjacent SHA-256 sidecar are the current reviewer-access package; the legacy manifest files are not used to certify the compact asset.

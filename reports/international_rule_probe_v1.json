@@ -24,13 +24,14 @@
     "INTL_NERC_VAR_001_5_VOLTAGE": 64
   },
   "unique_output_count": 512,
+  "semantic_template_tautology_count": 0,
   "jurisdictions": {
     "European Union": 4,
     "NERC North America": 4
   },
   "errors": [],
-  "generated_at": "2026-08-18",
-  "data_sha256": "345d1ef94068dacb8e502efc045fbc9721172a46974c96956e275e292b6d688a",
+  "generated_at": "2026-08-20",
+  "data_sha256": "ffd3ce089f704d1f55341a66ce355cfc5c0a739e8c90024e40d1590c283cc85d",
   "data_path": "data/international_rule_probe_v1.jsonl",
   "rules_path": "rules/international_rule_profiles.json",
   "matrix_path": "metadata/international_rule_profile_matrix.csv"

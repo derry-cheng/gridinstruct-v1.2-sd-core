@@ -1,9 +1,9 @@
 {
   "status": "pass",
-  "generated_at": "2026-08-18T14:10:11.541271+00:00",
-  "code_sha256": "b162d41c0e790f6716bd7712b242c0062b82c267e25549683733caaf4b30adfb",
+  "generated_at": "2026-08-20T15:26:19.967667+00:00",
+  "code_sha256": "043a80874c00964926b732e4a975968fca6ee2a6e6729e0cb1b18ed0df46aadb",
   "data": "data/international_rule_probe_v1.jsonl",
-  "data_sha256": "345d1ef94068dacb8e502efc045fbc9721172a46974c96956e275e292b6d688a",
+  "data_sha256": "ffd3ce089f704d1f55341a66ce355cfc5c0a739e8c90024e40d1590c283cc85d",
   "split_manifest": "metadata/international_rule_probe_splits_v1.json",
   "split_manifest_sha256": "848af2e7204c64df36ff0e50d4c6e504fe2a0e0ae24653a6c9883340b01c5903",
   "objective": "leakage_controlled_structured_transfer_under_leave_one_jurisdiction_out",
@@ -28,7 +28,7 @@
       "metrics": {
         "n": 256,
         "exact_match": 0.0,
-        "token_f1": 0.4804452876089251,
+        "token_f1": 0.5184279320578151,
         "avg_nearest_similarity": 0.6505186331219227,
         "rule_id_accuracy": 0.0,
         "standard_id_accuracy": 0.0,
@@ -48,7 +48,7 @@
       "metrics": {
         "n": 256,
         "exact_match": 0.0,
-        "token_f1": 0.505619728984857,
+        "token_f1": 0.5421022197447604,
         "avg_nearest_similarity": 0.667051882261969,
         "rule_id_accuracy": 0.0,
         "standard_id_accuracy": 0.0,
@@ -68,7 +68,7 @@
       "metrics": {
         "n": 64,
         "exact_match": 0.0,
-        "token_f1": 0.9747262081029614,
+        "token_f1": 0.9765145148794695,
         "avg_nearest_similarity": 0.9843936511425032,
         "rule_id_accuracy": 1.0,
         "standard_id_accuracy": 1.0,
@@ -88,7 +88,7 @@
       "metrics": {
         "n": 64,
         "exact_match": 0.0,
-        "token_f1": 0.9724857168139845,
+        "token_f1": 0.9745911741835445,
         "avg_nearest_similarity": 0.976414641639004,
         "rule_id_accuracy": 1.0,
         "standard_id_accuracy": 1.0,
@@ -101,7 +101,7 @@
   ],
   "macro_metrics": {
     "exact_match": 0.0,
-    "token_f1": 0.733319235377682,
+    "token_f1": 0.7529089602163974,
     "avg_nearest_similarity": 0.8195947020413498,
     "rule_id_accuracy": 0.5,
     "standard_id_accuracy": 0.5,
@@ -112,7 +112,7 @@
   "grouped_macro_metrics": {
     "cross_jurisdiction": {
       "exact_match": 0.0,
-      "token_f1": 0.49303250829689105,
+      "token_f1": 0.5302650759012877,
       "avg_nearest_similarity": 0.6587852576919458,
       "rule_id_accuracy": 0.0,
       "standard_id_accuracy": 0.0,
@@ -122,7 +122,7 @@
     },
     "within_jurisdiction_variant_holdout": {
       "exact_match": 0.0,
-      "token_f1": 0.973605962458473,
+      "token_f1": 0.9755528445315069,
       "avg_nearest_similarity": 0.9804041463907536,
       "rule_id_accuracy": 1.0,
       "standard_id_accuracy": 1.0,
@@ -132,6 +132,6 @@
     }
   },
   "prediction_path": "benchmark/international_rule_probe_v1/nearest_neighbor_predictions.jsonl",
-  "prediction_sha256": "35359e0ff0b092a811aa740533b95979a2b2c186bdd8e1642dbe51a7a8272d54",
+  "prediction_sha256": "e1249b3f109a9c9c397418fc909543ddc24abbec1f17fe61be232baac1d4dc7a",
   "interpretation": "The baseline excludes explicit rule, standard, clause, and jurisdiction identifiers from its input. Structured field metrics are the primary transfer diagnostics. Exact match and token-F1 compare copied answers to the typed-contract outputs; none establishes legal correctness, physical compliance, or expert agreement."
 }

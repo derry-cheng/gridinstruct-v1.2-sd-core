@@ -1,0 +1,75 @@
+{
+  "status": "pass",
+  "generated_at": "2026-08-20T15:26:20.034584+00:00",
+  "data": "data/international_rule_probe_v1.jsonl",
+  "data_sha256": "ffd3ce089f704d1f55341a66ce355cfc5c0a739e8c90024e40d1590c283cc85d",
+  "split_manifest": "metadata/international_rule_probe_splits_v1.json",
+  "split_manifest_sha256": "848af2e7204c64df36ff0e50d4c6e504fe2a0e0ae24653a6c9883340b01c5903",
+  "record_count": 512,
+  "folds": [
+    {
+      "name": "train_european_union_test_nerc_north_america",
+      "fold_type": "cross_jurisdiction",
+      "test_records": 256,
+      "explicit_input_contract_copy": {
+        "rule_id": 1.0,
+        "standard_id": 1.0,
+        "jurisdiction": 1.0,
+        "clause_id": 1.0,
+        "evidence_fields": 1.0
+      }
+    },
+    {
+      "name": "train_nerc_north_america_test_european_union",
+      "fold_type": "cross_jurisdiction",
+      "test_records": 256,
+      "explicit_input_contract_copy": {
+        "rule_id": 1.0,
+        "standard_id": 1.0,
+        "jurisdiction": 1.0,
+        "clause_id": 1.0,
+        "evidence_fields": 1.0
+      }
+    },
+    {
+      "name": "within_european_union_variant_holdout",
+      "fold_type": "within_jurisdiction_variant_holdout",
+      "test_records": 64,
+      "explicit_input_contract_copy": {
+        "rule_id": 1.0,
+        "standard_id": 1.0,
+        "jurisdiction": 1.0,
+        "clause_id": 1.0,
+        "evidence_fields": 1.0
+      }
+    },
+    {
+      "name": "within_nerc_north_america_variant_holdout",
+      "fold_type": "within_jurisdiction_variant_holdout",
+      "test_records": 64,
+      "explicit_input_contract_copy": {
+        "rule_id": 1.0,
+        "standard_id": 1.0,
+        "jurisdiction": 1.0,
+        "clause_id": 1.0,
+        "evidence_fields": 1.0
+      }
+    }
+  ],
+  "aggregate_explicit_input_contract_copy": {
+    "rule_id": 1.0,
+    "standard_id": 1.0,
+    "jurisdiction": 1.0,
+    "clause_id": 1.0,
+    "evidence_fields": 1.0
+  },
+  "copied_fields": [
+    "rule_id",
+    "standard_id",
+    "jurisdiction",
+    "clause_id",
+    "evidence_fields"
+  ],
+  "interpretation": "This control copies fields already present in the released input; 1.0 is expected by construction. It is a leakage diagnostic and does not measure legal correctness, physical compliance, or model quality.",
+  "errors": []
+}
