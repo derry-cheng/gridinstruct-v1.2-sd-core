@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-28T16:57:40.332726+00:00",
+  "generated_at": "2026-08-28T21:43:29.565654+00:00",
   "dataset": {
     "title": "GridInstruct v1.2",
     "description": "Topology-grounded instruction dataset for power dispatch assistance and benchmark evaluation.",
@@ -91,75 +91,75 @@
   "split_integrity": {
     "splits": {
       "train": {
-        "total_records": 26508,
+        "total_records": 26545,
         "by_stage": {
-          "real-time": 15006,
+          "real-time": 15043,
           "pre-event": 8020,
           "post-event": 3482
         },
         "by_task": {
-          "regulation_qa": 2616,
-          "dispatcher_intent_tool_call": 3367,
+          "regulation_qa": 2652,
+          "dispatcher_intent_tool_call": 3368,
           "operation_ticket_check": 8020,
           "intelligent_data_query": 3482,
           "regulation_compliance_check": 5406,
           "auxiliary_decision": 3617
         },
         "by_network": {
-          "null": 10636,
+          "null": 10672,
           "IEEE 14": 2622,
           "IEEE 57": 7969,
-          "IEEE 30": 5281
+          "IEEE 30": 5282
         },
-        "with_rationale": 26508,
+        "with_rationale": 26545,
         "with_preference": 3617
       },
       "validation": {
-        "total_records": 3583,
+        "total_records": 3561,
         "by_stage": {
           "pre-event": 988,
-          "real-time": 2164,
+          "real-time": 2142,
           "post-event": 431
         },
         "by_task": {
           "operation_ticket_check": 988,
           "auxiliary_decision": 446,
           "intelligent_data_query": 431,
-          "regulation_qa": 323,
+          "regulation_qa": 301,
           "dispatcher_intent_tool_call": 659,
           "regulation_compliance_check": 736
         },
         "by_network": {
-          "null": 1311,
+          "null": 1289,
           "IEEE 30": 1317,
           "IEEE 14": 201,
           "IEEE 57": 754
         },
-        "with_rationale": 3583,
+        "with_rationale": 3561,
         "with_preference": 446
       },
       "test": {
-        "total_records": 3909,
+        "total_records": 3894,
         "by_stage": {
-          "real-time": 2547,
+          "real-time": 2532,
           "pre-event": 928,
           "post-event": 434
         },
         "by_task": {
           "regulation_compliance_check": 921,
-          "dispatcher_intent_tool_call": 868,
+          "dispatcher_intent_tool_call": 867,
           "operation_ticket_check": 928,
           "auxiliary_decision": 438,
-          "regulation_qa": 320,
+          "regulation_qa": 306,
           "intelligent_data_query": 434
         },
         "by_network": {
           "IEEE 57": 973,
-          "IEEE 30": 1377,
-          "null": 1248,
+          "IEEE 30": 1376,
+          "null": 1234,
           "IEEE 14": 311
         },
-        "with_rationale": 3909,
+        "with_rationale": 3894,
         "with_preference": 438
       },
       "ood_test": {
@@ -1060,14 +1060,15 @@
     }
   },
   "validation": {
-    "path": "reports/data_validation_v1.2_sd_core.json",
+    "path": "reports/data_validation_direct_english_v1.2_sd_core.json",
     "passed": true,
-    "near_duplicate_rate": 0.0036028864986017866,
+    "near_duplicate_rate": 0.011646540076875543,
     "schema_errors": 0,
     "duplicate_ids": 0,
     "invalid_rule_links": 0,
     "invalid_scenario_links": 0,
-    "semantic_errors": 0
+    "semantic_errors": 0,
+    "near_duplicate_count": 1112
   },
   "simulation": {
     "generated_at": "2026-07-31T08:02:32.850912+00:00",
@@ -2417,7 +2418,7 @@
     "data_quality": {
       "status": "pass",
       "validation_passed": true,
-      "near_duplicate_rate": 0.0036028864986017866,
+      "near_duplicate_rate": 0.011646540076875543,
       "scenario_overlap": {
         "train_test": 0,
         "train_validation": 0,
@@ -3128,65 +3129,65 @@
     {
       "path": "data/gridinstruct_v1.2_sd_core_en.jsonl",
       "exists": true,
-      "bytes": 558229292,
+      "bytes": 593841086,
       "records": 95479,
-      "sha256": "882dc4960dcf14d5b6e6465ced25051c860f1b360ffdb58770c3b68d6e7b60b3"
+      "sha256": "18a4d36153f9d77ae9b26744978a7bea27138aee048d1b12906335797e908013"
     },
     {
       "path": "data/v1.2_sd_core_ood_test_en.jsonl",
       "exists": true,
-      "bytes": 396519953,
+      "bytes": 417267736,
       "records": 61479,
-      "sha256": "c8bcdf784892728b7b981e5aaad76d7c3780b14ed4a8a06e58466d87ee021038"
+      "sha256": "a7a75d1a0551cfe8f688b90af32b535cb54767944fbf319a4a8c53e64b2adb17"
     },
     {
       "path": "data/v1.2_sd_core_strict_test.jsonl",
       "exists": true,
-      "bytes": 57370445,
-      "records": 9574,
-      "sha256": "4603c73134c551d14ed840abc00d1df1563a65394bd4b47a17f49d7600b7b277"
+      "bytes": 59218475,
+      "records": 9543,
+      "sha256": "753734fe89bf899592591cf863b56bfcbc6219b5735aaadd4c5980dbcb2458ed"
     },
     {
       "path": "data/v1.2_sd_core_strict_train.jsonl",
       "exists": true,
-      "bytes": 462175724,
-      "records": 76341,
-      "sha256": "7951515c3ae3eb519c1acc9d31e25484c71530e4cc781ff0b1634d0c4770e217"
+      "bytes": 476844445,
+      "records": 76378,
+      "sha256": "4ea2d05b59ff253fd44c00f8f69a978159b7548b72a5016822c0fcc7520f0153"
     },
     {
       "path": "data/v1.2_sd_core_strict_validation.jsonl",
       "exists": true,
-      "bytes": 55753059,
-      "records": 9564,
-      "sha256": "6352a055051f1e2ac36abef9a878b7d06832b45a0107cfe55091beb7ca3fa3f1"
+      "bytes": 57778166,
+      "records": 9558,
+      "sha256": "52f5da72bf071c27bc8d842de55f8a46d2ed5cb4d33f567b9e4ce3d597cc7152"
     },
     {
       "path": "data/v1.2_sd_core_test_en.jsonl",
       "exists": true,
-      "bytes": 20632332,
-      "records": 3909,
-      "sha256": "d64dd5c72721b0f6bb0fda7911722d76dfba2bef9596fac10bd9bae227c9b401"
+      "bytes": 21668841,
+      "records": 3894,
+      "sha256": "83576760eb091531d08ae6a7b6bf95d52b8266a6e5fe4aa9c2875c3eccd56110"
     },
     {
       "path": "data/v1.2_sd_core_train_en.jsonl",
       "exists": true,
-      "bytes": 141970489,
-      "records": 26508,
-      "sha256": "27087a599f1a3b78cf69e27ae2f8ed71e513fb50c4e140025d3b6cb1efe33c95"
+      "bytes": 151419585,
+      "records": 26545,
+      "sha256": "2fffd5d0b7d1cb417a4dd919af39aba859f736d3f2da2d3f52340169388b3ac9"
     },
     {
       "path": "data/v1.2_sd_core_validation_en.jsonl",
       "exists": true,
-      "bytes": 18939217,
-      "records": 3583,
-      "sha256": "ec1e2a0fa019f169e7317267c02bea6f3aaeb3531a0b79b2fa841c3dda0fd765"
+      "bytes": 20200172,
+      "records": 3561,
+      "sha256": "03a4f3126a1ae181524610cf6ef6efd60774f61b78a31e8fb9e9d232a3abc06f"
     },
     {
       "path": "docs/ARTIFACT_INDEX_2026-08-13.md",
       "exists": true,
-      "bytes": 4101,
+      "bytes": 4080,
       "records": null,
-      "sha256": "d520f19839164f2863ec7eeb05a86063de414a57a70601e05e81cfe5b0d1b396"
+      "sha256": "d522895ac53b17b6daad1ac32f5c9c51e53cba9b38ce8d308ee228a4b0eb5430"
     },
     {
       "path": "docs/LICENSES_AND_CITATION.md",
@@ -3205,16 +3206,16 @@
     {
       "path": "docs/REVIEW_ISSUE_CLOSURE_2026-08-28.md",
       "exists": true,
-      "bytes": 2986,
+      "bytes": 2987,
       "records": null,
-      "sha256": "544d8b65f7deeb9b0554000dc13fb6b687695ecfc8ba524c38e5d572e5610afc"
+      "sha256": "c700db12f826ddf18893b2bc9ea13054edf33f06a35f499b07174a143d2d6241"
     },
     {
       "path": "docs/SCIENTIFIC_DATA_READINESS_CHECKLIST.md",
       "exists": true,
-      "bytes": 2748,
+      "bytes": 2738,
       "records": null,
-      "sha256": "b50d466cd8edfe02e29e350e8ff1cd2a26b44cb4b249431e063719f0d4018d97"
+      "sha256": "e6c9fc927c12734abde7d0e20c1525b12aed37f2e53dfb93f86caf282dec5720"
     },
     {
       "path": "docs/THIRD_PARTY_ASSETS.md",
@@ -3247,9 +3248,9 @@
     {
       "path": "metadata/code_manifest.json",
       "exists": true,
-      "bytes": 34294,
+      "bytes": 34836,
       "records": null,
-      "sha256": "a1370435fe67e3ffb1034c740ea023c599b87303d79189934d18e3e70065da1e"
+      "sha256": "9f36b92c7f0236c2df0f1b37144903a0f1cd0d59b337845bd85524afe6f0fbca"
     },
     {
       "path": "metadata/data_descriptor_audit.json",
@@ -3271,6 +3272,13 @@
       "bytes": 2058,
       "records": null,
       "sha256": "eb42cf0ed5d68761a796a6a01ef948dec97db9947ec9fd012703989176f7d6c3"
+    },
+    {
+      "path": "metadata/international_rule_probe_schema.json",
+      "exists": true,
+      "bytes": 3004,
+      "records": null,
+      "sha256": "44bc99e037697493178795991d9e23d20c9a8d0fdf36bc5c8e3b6a8078ea1658"
     },
     {
       "path": "metadata/paper_outline_alignment.json",
@@ -3315,11 +3323,39 @@
       "sha256": "6dc8399ae3491756bf088f72eb58cbdcb7a95e4673f59d8b8f5f60a0acde0afa"
     },
     {
+      "path": "reports/compliance_label_current_audit_v1.2_sd_core.json",
+      "exists": true,
+      "bytes": 1002,
+      "records": null,
+      "sha256": "969805f522418d019e9106c027a214e2c0e05ca094ab991f8e4d64e3514c4986"
+    },
+    {
+      "path": "reports/compliance_label_current_audit_v1.2_sd_core.md",
+      "exists": true,
+      "bytes": 314,
+      "records": null,
+      "sha256": "79af2f30862db90726a2588d55216c1f4240a9a8a99eab387ee32cc207889019"
+    },
+    {
       "path": "reports/data_validation_v1.2_sd_core.json",
       "exists": true,
-      "bytes": 948,
+      "bytes": 932,
       "records": null,
-      "sha256": "31e9d147647596f161e71885c6df486fbe30f58d8faac5cdc50ce96604de0e09"
+      "sha256": "f0e359e91b0ec9a7dbb8a0c2d6719b832fb0593c8cdc0dbad29378819233ac74"
+    },
+    {
+      "path": "reports/dispatcher_request_contract_repair_v1.2_sd_core.json",
+      "exists": true,
+      "bytes": 932,
+      "records": null,
+      "sha256": "ff9f1c08b1e2168b6b0d0ea3c789da949b9c388567818d0075bd2a2e33a5bc14"
+    },
+    {
+      "path": "reports/dispatcher_request_contract_repair_v1.2_sd_core.md",
+      "exists": true,
+      "bytes": 481,
+      "records": null,
+      "sha256": "67fe570eed6f6d63d881da707ee656287adbe11d113f1e77581a3e661d55ee6c"
     },
     {
       "path": "reports/evidence_tiers_v1.2_sd_core.json",
@@ -3350,6 +3386,27 @@
       "sha256": "e01e8569c972c58438f31643412308943603f43619244dfc820b03a52d10810c"
     },
     {
+      "path": "reports/near_neighbor_free_surface_audit_v1.2_sd_core.json",
+      "exists": true,
+      "bytes": 5678,
+      "records": null,
+      "sha256": "85c6750a30cd95520cf910cbaa285c167af67799d73ef856a8d2639369181c7b"
+    },
+    {
+      "path": "reports/official_exact_content_overlap_repair_v1.2_sd_core.json",
+      "exists": true,
+      "bytes": 5945,
+      "records": null,
+      "sha256": "de490bc2f1ab6130e945118a4a9e574aa23696fb5a578d74eafffb72f7114a77"
+    },
+    {
+      "path": "reports/official_exact_content_overlap_repair_v1.2_sd_core.md",
+      "exists": true,
+      "bytes": 447,
+      "records": null,
+      "sha256": "1589c907df63c154fc4663e6de853fd38660d731b54aa0fb48b231df47e7d255"
+    },
+    {
       "path": "reports/opf_closed_loop_assumption_audit_v1.2_sd_core.json",
       "exists": true,
       "bytes": 2147,
@@ -3357,11 +3414,39 @@
       "sha256": "004e9e479438bbbf6ea2b20ca3228e17b3c1f2fcf79aa2765f1e340794a7d2eb"
     },
     {
+      "path": "reports/sd_core_distribution_risk_audit.json",
+      "exists": true,
+      "bytes": 44738,
+      "records": null,
+      "sha256": "c290b665fb11323af420b99f827a8f1687de24fc71cdfcf7264aa577cbf92b60"
+    },
+    {
+      "path": "reports/sd_core_distribution_risk_audit.md",
+      "exists": true,
+      "bytes": 2595,
+      "records": null,
+      "sha256": "0c57bc8a362f033e03f02471f7662911377f4075f8a53c8876163c20234a39a0"
+    },
+    {
       "path": "reports/simulation_report.json",
       "exists": true,
       "bytes": 2153,
       "records": null,
       "sha256": "3e2fd06b5f93b6f0ae39c448a22d10fa3f3e3f5e3c361fee264672eecc95ccec"
+    },
+    {
+      "path": "reports/strict_exact_content_overlap_repair_v1.2_sd_core.json",
+      "exists": true,
+      "bytes": 6266,
+      "records": null,
+      "sha256": "89699c23cbe112a475ebb6e392a93cddadb2747e879a1a21999b0732f3dcece3"
+    },
+    {
+      "path": "reports/strict_exact_content_overlap_repair_v1.2_sd_core.md",
+      "exists": true,
+      "bytes": 447,
+      "records": null,
+      "sha256": "1229971e1f109f088d80136da8259b6fc17d50091cc4a7f0988a84b7d1d2aed0"
     },
     {
       "path": "review_packages/stratified_expert_review_v1.2_sd_core/README.md",
@@ -3413,6 +3498,13 @@
       "sha256": "0c834cdf81dc0b10e76d525845111dc5e845ac8a559ef9c21bc02aeb0b4c1a83"
     },
     {
+      "path": "scripts/audit_compliance_labels_current.py",
+      "exists": true,
+      "bytes": 9453,
+      "records": null,
+      "sha256": "96e7b86cebbbe09891ee88f3c89e5d85235e5cfa5a89d7c2cf3a02c0de98c7ea"
+    },
+    {
       "path": "scripts/audit_evidence_tiers.py",
       "exists": true,
       "bytes": 10261,
@@ -3422,23 +3514,30 @@
     {
       "path": "scripts/build_compact_public_archive.py",
       "exists": true,
-      "bytes": 8725,
+      "bytes": 9672,
       "records": null,
-      "sha256": "635fbc560a43162c6c41f4fd0052e567ac50626809711b42db0bcb9c41e6c518"
+      "sha256": "70e10d342a5f5a6da80819da3848a032e578e472d1e65893908dc5663527b6f6"
     },
     {
       "path": "scripts/refresh_current_snapshot_metadata.py",
       "exists": true,
-      "bytes": 10501,
+      "bytes": 14002,
       "records": null,
-      "sha256": "cf9a662c73e294a7b34e64cf71652575cedddc2eb12724610ac6857536422311"
+      "sha256": "85e0dcda130b9232964626348667237cb8c39a412e1239219fe744cf3fcbc177"
+    },
+    {
+      "path": "scripts/repair_official_exact_content_overlap.py",
+      "exists": true,
+      "bytes": 7891,
+      "records": null,
+      "sha256": "85332f8c500dde6e45b5e2831c4150b00bc9f9feae5bd75affae097f1a3e8aec"
     },
     {
       "path": "scripts/validate_release_archive_replay.py",
       "exists": true,
-      "bytes": 20094,
+      "bytes": 20351,
       "records": null,
-      "sha256": "0e1f492f08cb8a35694d06b9a58594162bfe0acd5fe7167ccb935951fe2d6414"
+      "sha256": "8ce360917ca3f348a5c35a666465baa242b85396b71caf4b47aa1b81cef4c80f"
     },
     {
       "path": "scripts/write_compact_bundle_validation.py",

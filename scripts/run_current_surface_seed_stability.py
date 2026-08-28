@@ -39,6 +39,19 @@ def sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
+def load_rows(path: Path, canonical_path: Path) -> list[dict[str, Any]]:
+    """Load a full split or project an ID-only manifest onto the canonical table."""
+
+    rows = read_jsonl(path)
+    if not path.name.endswith("_ids.jsonl"):
+        return rows
+    canonical = {str(row["id"]): row for row in read_jsonl(canonical_path)}
+    missing = [str(row["id"]) for row in rows if str(row["id"]) not in canonical]
+    if missing:
+        raise ValueError(f"split manifest IDs missing from canonical table: {missing[:3]}")
+    return [canonical[str(row["id"])] for row in rows]
+
+
 def normalize(value: Any) -> str:
     if isinstance(value, (dict, list)):
         value = json.dumps(value, ensure_ascii=False, sort_keys=True)
@@ -131,6 +144,7 @@ def main() -> None:
         "--output",
         default="reports/current_surface_seed_stability_v1.2_sd_core.json",
     )
+    parser.add_argument("--canonical", default="data/gridinstruct_v1.2_sd_core_en.jsonl")
     args = parser.parse_args()
 
     # The official split already has a deterministic, hash-bound baseline and
@@ -144,11 +158,12 @@ def main() -> None:
         ),
         "surface_ood": (
             "data/v1.2_sd_core_instruction_surface_balanced_train_en.jsonl",
-            "data/v1.2_sd_core_instruction_surface_balanced_ood_test_en.jsonl",
+            "data/v1.2_sd_core_instruction_surface_balanced_ood_test_ids.jsonl",
         ),
     }
     rows: list[dict[str, Any]] = []
     input_hashes: dict[str, str] = {}
+    canonical_path = ROOT / args.canonical
     for evaluation, (train_path, eval_path) in split_paths.items():
         train_file = ROOT / train_path
         eval_file = ROOT / eval_path
@@ -156,8 +171,8 @@ def main() -> None:
             raise FileNotFoundError(f"missing split for {evaluation}: {train_path}, {eval_path}")
         input_hashes[train_path] = sha256(train_file)
         input_hashes[eval_path] = sha256(eval_file)
-        train = read_jsonl(train_file)
-        evaluation_rows = read_jsonl(eval_file)
+        train = load_rows(train_file, canonical_path)
+        evaluation_rows = load_rows(eval_file, canonical_path)
         for task, field in TASK_FIELDS.items():
             task_train = [row for row in train if row.get("task_type") == task]
             task_eval = [row for row in evaluation_rows if row.get("task_type") == task]
@@ -188,6 +203,8 @@ def main() -> None:
             "random_seeds": args.seeds,
         },
         "input_sha256": input_hashes,
+        "canonical": args.canonical,
+        "canonical_sha256": sha256(canonical_path),
         "rows": rows,
         "summary": summary,
         "hard_gates": hard_gates,

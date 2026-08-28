@@ -10,6 +10,13 @@ The extension is generated with:
 python3 scripts/generate_international_rule_probe.py
 ```
 
+The machine-readable contract for these records is
+`metadata/international_rule_probe_schema.json`. It is intentionally separate
+from `metadata/schema.json`: the domestic schema restricts `task_stage` to the
+three simulated workflow stages, whereas this extension uses the explicit
+`rule-only` stage and the `INTL_` rule namespace. The eight-card registry in
+`rules/international_rule_profiles.json` is the corresponding rule dictionary.
+
 The generator writes the rule registry, source matrix, JSONL probe set, and validation report. Each of the eight cards receives 64 records. Records are English-language regulation-QA probes and carry `generation_mode=direct_english_from_typed_rule_contract`. They do not copy the domestic 100/110 percent or 0.95--1.05 p.u. policies into NERC or EU evidence.
 
 The deterministic leave-one-jurisdiction-out manifests are generated with:

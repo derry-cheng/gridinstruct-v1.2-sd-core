@@ -1,6 +1,7 @@
 {
-  "generated_at": "2026-08-19T11:19:07.763264+00:00",
+  "generated_at": "2026-08-28T21:20:17.487645+00:00",
   "source": "data/gridinstruct_v1.2_sd_core.jsonl",
+  "source_sha256": "18a4d36153f9d77ae9b26744978a7bea27138aee048d1b12906335797e908013",
   "split_policy": "task-scoped connected components; classification tasks use whole semantic challenge groups as the supervised unit, while scenario-grounded non-classification tasks use source_record_id/original id plus scenario_id; label-aware assignment and whole-component movement for classification tasks; OOD by IEEE118/high-load/N-2 policy",
   "split_paths": {
     "train": "data/v1.2_sd_core_train.jsonl",
@@ -8,12 +9,18 @@
     "test": "data/v1.2_sd_core_test.jsonl",
     "ood_test": "data/v1.2_sd_core_ood_test.jsonl"
   },
+  "split_hashes": {
+    "train": "81fb662da56a2685b9edabde8843b277600832345ae438fd23674ade0bc95283",
+    "validation": "ee3e73c1c70afc000b473ad4268d8eea905461005f1242f8394d465100a94465",
+    "test": "8c9c6e9f87209aa356aaea4c8e707c30fb5608ab5a5a968f83ecab0c5d73e988",
+    "ood_test": "146c23fc751f6d9003b62407a4e921f5d5742638f114ddd854dd264bd28d6343"
+  },
   "splits": {
     "train": {
-      "records": 26508,
+      "records": 26545,
       "task_counts": {
-        "regulation_qa": 2616,
-        "dispatcher_intent_tool_call": 3367,
+        "regulation_qa": 2652,
+        "dispatcher_intent_tool_call": 3368,
         "operation_ticket_check": 8020,
         "intelligent_data_query": 3482,
         "regulation_compliance_check": 5406,
@@ -23,7 +30,7 @@
         "dispatcher_intent_tool_call": {
           "diagnose_and_dispatch": 1127,
           "mitigate_violations": 1122,
-          "security_check_and_redispatch": 1118
+          "security_check_and_redispatch": 1119
         },
         "operation_ticket_check": {
           "compliant_with_monitoring": 3716,
@@ -38,25 +45,25 @@
       }
     },
     "validation": {
-      "records": 3583,
+      "records": 3561,
       "task_counts": {
         "operation_ticket_check": 988,
         "auxiliary_decision": 446,
         "intelligent_data_query": 431,
-        "regulation_qa": 323,
+        "regulation_qa": 301,
         "dispatcher_intent_tool_call": 659,
         "regulation_compliance_check": 736
       },
       "classification_label_counts": {
-        "dispatcher_intent_tool_call": {
-          "mitigate_violations": 218,
-          "diagnose_and_dispatch": 218,
-          "security_check_and_redispatch": 223
-        },
         "operation_ticket_check": {
           "compliant_with_monitoring": 459,
           "compliant": 247,
           "non_compliant": 282
+        },
+        "dispatcher_intent_tool_call": {
+          "mitigate_violations": 218,
+          "diagnose_and_dispatch": 218,
+          "security_check_and_redispatch": 223
         },
         "regulation_compliance_check": {
           "non_compliant": 352,
@@ -66,30 +73,30 @@
       }
     },
     "test": {
-      "records": 3909,
+      "records": 3894,
       "task_counts": {
         "regulation_compliance_check": 921,
-        "dispatcher_intent_tool_call": 868,
+        "dispatcher_intent_tool_call": 867,
         "operation_ticket_check": 928,
         "auxiliary_decision": 438,
-        "regulation_qa": 320,
+        "regulation_qa": 306,
         "intelligent_data_query": 434
       },
       "classification_label_counts": {
+        "regulation_compliance_check": {
+          "non_compliant": 546,
+          "compliant_with_monitoring": 286,
+          "compliant": 89
+        },
         "dispatcher_intent_tool_call": {
           "diagnose_and_dispatch": 293,
-          "security_check_and_redispatch": 284,
+          "security_check_and_redispatch": 283,
           "mitigate_violations": 291
         },
         "operation_ticket_check": {
           "compliant_with_monitoring": 403,
           "non_compliant": 280,
           "compliant": 245
-        },
-        "regulation_compliance_check": {
-          "non_compliant": 546,
-          "compliant_with_monitoring": 286,
-          "compliant": 89
         }
       }
     },
@@ -109,15 +116,15 @@
           "diagnose_and_dispatch": 4975,
           "security_check_and_redispatch": 4946
         },
-        "operation_ticket_check": {
-          "compliant": 269,
-          "non_compliant": 305,
-          "compliant_with_monitoring": 371
-        },
         "regulation_compliance_check": {
           "compliant_with_monitoring": 7824,
           "non_compliant": 9568,
           "compliant": 312
+        },
+        "operation_ticket_check": {
+          "compliant": 269,
+          "non_compliant": 305,
+          "compliant_with_monitoring": 371
         }
       }
     }
@@ -225,7 +232,7 @@
         ]
       },
       "train__test": {
-        "count": 1099,
+        "count": 1100,
         "examples": [
           "gridinstruct_v01_compliance_00060",
           "gridinstruct_v01_compliance_00108",
@@ -385,8 +392,9 @@
         ]
       },
       "train__test": {
-        "count": 1099,
+        "count": 1100,
         "examples": [
+          "dispatcher_intent_tool_call::gridinstruct_v01_intent_00042",
           "operation_ticket_check::gridinstruct_v01_ticket_00002",
           "operation_ticket_check::gridinstruct_v01_ticket_00012",
           "operation_ticket_check::gridinstruct_v01_ticket_00019",
@@ -395,8 +403,7 @@
           "operation_ticket_check::gridinstruct_v01_ticket_00026",
           "operation_ticket_check::gridinstruct_v01_ticket_00030",
           "operation_ticket_check::gridinstruct_v01_ticket_00033",
-          "operation_ticket_check::gridinstruct_v01_ticket_00036",
-          "operation_ticket_check::gridinstruct_v01_ticket_00044"
+          "operation_ticket_check::gridinstruct_v01_ticket_00036"
         ]
       },
       "train__ood_test": {
@@ -466,22 +473,24 @@
         "examples": []
       },
       "train__test": {
-        "count": 0,
-        "examples": []
+        "count": 1,
+        "examples": [
+          "task_classification::dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator asks for a security assessment before the generation redispatch decision. The requested operational focus is Branch overload.|policy:Verify security constraints first, then route the request to redispatch and post-action review.|priority:The current shift supervisor requires the operating constraints to be checked before redispatch. The review should address Branch overload.|issue:combined"
+        ]
       },
       "train__ood_test": {
-        "count": 101,
+        "count": 127,
         "examples": [
-          "task_classification::dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator requests dispatch analysis for the current operating condition and a reviewable recommendation.|policy:Follow the declared dispatch review sequence and retain a post-action power-flow check.|priority:The current shift supervisor requires a safe dispatch analysis followed by a reviewable recommendation.|issue:thermal",
-          "task_classification::dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator requests dispatch analysis for the current operating condition and a reviewable recommendation.|policy:Follow the declared dispatch review sequence and retain a post-action power-flow check.|priority:The current shift supervisor requires a safe dispatch analysis followed by a reviewable recommendation.|issue:voltage",
-          "task_classification::regulation_compliance_check::action_category:None|surface:Adjust output of nearby generators to reduce section load|issue:combined",
-          "task_classification::regulation_compliance_check::action_category:None|surface:Adjust output of nearby generators to reduce section load|issue:normal",
-          "task_classification::regulation_compliance_check::action_category:None|surface:Adjust output of nearby generators to reduce section load|issue:voltage",
-          "task_classification::regulation_compliance_check::action_category:None|surface:Continue increasing power flow on constrained cross-section|issue:combined",
-          "task_classification::regulation_compliance_check::action_category:None|surface:Continue increasing power flow on constrained cross-section|issue:normal",
-          "task_classification::regulation_compliance_check::action_category:None|surface:Continue increasing power flow on constrained cross-section|issue:voltage",
-          "task_classification::regulation_compliance_check::action_category:None|surface:Do not verify equipment status before restoring faulted line operation.|issue:combined",
-          "task_classification::regulation_compliance_check::action_category:None|surface:Do not verify equipment status before restoring faulted line operation.|issue:voltage"
+          "task_classification::dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator asks for a security assessment before the generation redispatch decision. The requested operational focus is Branch overload.|policy:Verify security constraints first, then route the request to redispatch and post-action review.|priority:The current shift supervisor requires the operating constraints to be checked before redispatch. The review should address Branch overload.|issue:combined",
+          "task_classification::dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator asks for a security assessment before the generation redispatch decision. The requested operational focus is Branch overload.|policy:Verify security constraints first, then route the request to redispatch and post-action review.|priority:The current shift supervisor requires the operating constraints to be checked before redispatch. The review should address Branch overload.|issue:thermal",
+          "task_classification::dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator asks for a security assessment before the generation redispatch decision. The requested operational focus is high voltage.|policy:Verify security constraints first, then route the request to redispatch and post-action review.|priority:The current shift supervisor requires the operating constraints to be checked before redispatch. The review should address high voltage.|issue:voltage",
+          "task_classification::dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator asks for a security assessment before the generation redispatch decision. The requested operational focus is low voltage.|policy:Verify security constraints first, then route the request to redispatch and post-action review.|priority:The current shift supervisor requires the operating constraints to be checked before redispatch. The review should address low voltage.|issue:voltage",
+          "task_classification::dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator asks for an action plan that brings the active violation back within its limit. The requested operational focus is Branch overload.|policy:Form a reversible corrective plan, then verify the post-action power-flow state.|priority:The current shift supervisor places corrective handling before the final operating review. The review should address Branch overload.|issue:thermal",
+          "task_classification::dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator asks for an action plan that brings the active violation back within its limit. The requested operational focus is high voltage.|policy:Form a reversible corrective plan, then verify the post-action power-flow state.|priority:The current shift supervisor places corrective handling before the final operating review. The review should address high voltage.|issue:voltage",
+          "task_classification::dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator asks for an action plan that brings the active violation back within its limit. The requested operational focus is low voltage.|policy:Form a reversible corrective plan, then verify the post-action power-flow state.|priority:The current shift supervisor places corrective handling before the final operating review. The review should address low voltage.|issue:voltage",
+          "task_classification::dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator asks to locate the source of the reported condition before an action is prepared. The requested operational focus is Branch overload.|policy:Trace the operating condition, prepare the suitable dispatch route, and retain verification.|priority:The current shift supervisor requires cause identification before dispatch execution. The review should address Branch overload.|issue:thermal",
+          "task_classification::dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator asks to locate the source of the reported condition before an action is prepared. The requested operational focus is high voltage.|policy:Trace the operating condition, prepare the suitable dispatch route, and retain verification.|priority:The current shift supervisor requires cause identification before dispatch execution. The review should address high voltage.|issue:voltage",
+          "task_classification::dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator asks to locate the source of the reported condition before an action is prepared. The requested operational focus is low voltage.|policy:Trace the operating condition, prepare the suitable dispatch route, and retain verification.|priority:The current shift supervisor requires cause identification before dispatch execution. The review should address low voltage.|issue:voltage"
         ]
       },
       "validation__test": {
@@ -489,27 +498,33 @@
         "examples": []
       },
       "validation__ood_test": {
-        "count": 8,
+        "count": 16,
         "examples": [
-          "task_classification::dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator requests dispatch analysis for the current operating condition and a reviewable recommendation.|policy:Follow the declared dispatch review sequence and retain a post-action power-flow check.|priority:The current shift supervisor requires a safe dispatch analysis followed by a reviewable recommendation.|issue:normal",
-          "task_classification::regulation_compliance_check::action_category:None|surface:Execute reactive power support first, then recheck power flow|issue:combined",
-          "task_classification::regulation_compliance_check::action_category:None|surface:First switch local topology then check if limit violation is eliminated|issue:normal",
-          "task_classification::regulation_compliance_check::action_category:corrective_redispatch|surface:Adjust generation output combination to alleviate overloaded sections|issue:combined",
-          "task_classification::regulation_compliance_check::action_category:corrective_redispatch|surface:Adjust output of nearby generators to reduce section load|issue:normal",
-          "task_classification::regulation_compliance_check::action_category:corrective_redispatch|surface:Adjust output of nearby generators to reduce section load|issue:voltage",
-          "task_classification::regulation_compliance_check::action_category:corrective_voltage|surface:First arrange reactive power regulation and verify voltage violations.|issue:combined",
-          "task_classification::regulation_compliance_check::action_category:risky_increase|surface:Continue increasing power flow on constrained cross-section|issue:combined"
+          "task_classification::dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator asks for a security assessment before the generation redispatch decision. The requested operational focus is Routine safety check.|policy:Verify security constraints first, then route the request to redispatch and post-action review.|priority:The current shift supervisor requires the operating constraints to be checked before redispatch. The review should address Routine safety check.|issue:normal",
+          "task_classification::dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator asks for an action plan that brings the active violation back within its limit. The requested operational focus is Routine safety check.|policy:Form a reversible corrective plan, then verify the post-action power-flow state.|priority:The current shift supervisor places corrective handling before the final operating review. The review should address Routine safety check.|issue:normal",
+          "task_classification::dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator asks to locate the source of the reported condition before an action is prepared. The requested operational focus is Routine safety check.|policy:Trace the operating condition, prepare the suitable dispatch route, and retain verification.|priority:The current shift supervisor requires cause identification before dispatch execution. The review should address Routine safety check.|issue:normal",
+          "task_classification::dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator requests a security check followed by redispatch planning. The requested operational focus is Routine safety check.|policy:Complete the declared security check, then prepare redispatch and retain a post-action check.|priority:The current shift supervisor prioritizes security verification before redispatch. The review should address Routine safety check.|issue:normal",
+          "task_classification::dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator requests corrective measures to reduce the active violation before review. The requested operational focus is Routine safety check.|policy:Follow the dispatch review sequence and retain a post-action power-flow check after mitigation.|priority:The current shift supervisor prioritizes violation mitigation followed by a post-action review. The review should address Routine safety check.|issue:normal",
+          "task_classification::dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator requests diagnosis of the active condition followed by dispatch planning. The requested operational focus is Routine safety check.|policy:Identify the operating cause first, then route the request to dispatch planning and review.|priority:The current shift supervisor prioritizes diagnosis before selecting a dispatch action. The review should address Routine safety check.|issue:normal",
+          "task_classification::dispatcher_intent_tool_call::dispatcher_surface:utterance:The requested route is to handle the reported operating violation and then check the result. The requested operational focus is Routine safety check.|policy:Select a dispatch action for violation reduction and preserve the post-action check.|priority:The shift review gives priority to reducing the reported violation before closure. The review should address Routine safety check.|issue:normal",
+          "task_classification::dispatcher_intent_tool_call::dispatcher_surface:utterance:The requested route is to verify the operating margin and then form a redispatch recommendation. The requested operational focus is Routine safety check.|policy:Run the security check, form the redispatch plan, and retain a power-flow check afterward.|priority:The shift review places security verification ahead of the redispatch action. The review should address Routine safety check.|issue:normal",
+          "task_classification::dispatcher_intent_tool_call::dispatcher_surface:utterance:The requested route starts with an operating-state diagnosis and continues with an executable plan. The requested operational focus is Routine safety check.|policy:Diagnose the state first, then prepare a reviewable dispatch action and check its result.|priority:The shift review places source diagnosis before any corrective dispatch decision. The review should address Routine safety check.|issue:normal",
+          "task_classification::regulation_compliance_check::action_category:None|surface:Execute reactive power support first, then recheck power flow|issue:combined"
         ]
       },
       "test__ood_test": {
-        "count": 6,
+        "count": 14,
         "examples": [
-          "task_classification::dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator requests dispatch analysis for the current operating condition and a reviewable recommendation.|policy:Follow the declared dispatch review sequence and retain a post-action power-flow check.|priority:The current shift supervisor requires a safe dispatch analysis followed by a reviewable recommendation.|issue:combined",
-          "task_classification::regulation_compliance_check::action_category:corrective_redispatch|surface:First reduce output of constrained section and then recalculate power flow|issue:combined",
-          "task_classification::regulation_compliance_check::action_category:corrective_redispatch|surface:First reduce output of constrained section and then recalculate power flow|issue:normal",
-          "task_classification::regulation_compliance_check::action_category:corrective_redispatch|surface:First reduce output of constrained section and then recalculate power flow|issue:voltage",
-          "task_classification::regulation_compliance_check::action_category:corrective_topology|surface:Perform topology transfer first, then check for low voltage and overloading.|issue:combined",
-          "task_classification::regulation_compliance_check::action_category:risky_increase|surface:Continue increasing power flow on constrained cross-section|issue:voltage"
+          "task_classification::dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator asks for a security assessment before the generation redispatch decision. The requested operational focus is Branch overload.|policy:Verify security constraints first, then route the request to redispatch and post-action review.|priority:The current shift supervisor requires the operating constraints to be checked before redispatch. The review should address Branch overload.|issue:combined",
+          "task_classification::dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator asks for an action plan that brings the active violation back within its limit. The requested operational focus is Branch overload.|policy:Form a reversible corrective plan, then verify the post-action power-flow state.|priority:The current shift supervisor places corrective handling before the final operating review. The review should address Branch overload.|issue:combined",
+          "task_classification::dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator asks to locate the source of the reported condition before an action is prepared. The requested operational focus is Branch overload.|policy:Trace the operating condition, prepare the suitable dispatch route, and retain verification.|priority:The current shift supervisor requires cause identification before dispatch execution. The review should address Branch overload.|issue:combined",
+          "task_classification::dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator requests a security check followed by redispatch planning. The requested operational focus is Branch overload.|policy:Complete the declared security check, then prepare redispatch and retain a post-action check.|priority:The current shift supervisor prioritizes security verification before redispatch. The review should address Branch overload.|issue:combined",
+          "task_classification::dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator requests corrective measures to reduce the active violation before review. The requested operational focus is Branch overload.|policy:Follow the dispatch review sequence and retain a post-action power-flow check after mitigation.|priority:The current shift supervisor prioritizes violation mitigation followed by a post-action review. The review should address Branch overload.|issue:combined",
+          "task_classification::dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator requests diagnosis of the active condition followed by dispatch planning. The requested operational focus is Branch overload.|policy:Identify the operating cause first, then route the request to dispatch planning and review.|priority:The current shift supervisor prioritizes diagnosis before selecting a dispatch action. The review should address Branch overload.|issue:combined",
+          "task_classification::dispatcher_intent_tool_call::dispatcher_surface:utterance:The requested route is to handle the reported operating violation and then check the result. The requested operational focus is Branch overload.|policy:Select a dispatch action for violation reduction and preserve the post-action check.|priority:The shift review gives priority to reducing the reported violation before closure. The review should address Branch overload.|issue:combined",
+          "task_classification::dispatcher_intent_tool_call::dispatcher_surface:utterance:The requested route is to verify the operating margin and then form a redispatch recommendation. The requested operational focus is Branch overload.|policy:Run the security check, form the redispatch plan, and retain a power-flow check afterward.|priority:The shift review places security verification ahead of the redispatch action. The review should address Branch overload.|issue:combined",
+          "task_classification::dispatcher_intent_tool_call::dispatcher_surface:utterance:The requested route starts with an operating-state diagnosis and continues with an executable plan. The requested operational focus is Branch overload.|policy:Diagnose the state first, then prepare a reviewable dispatch action and check its result.|priority:The shift review places source diagnosis before any corrective dispatch decision. The review should address Branch overload.|issue:combined",
+          "task_classification::regulation_compliance_check::action_category:corrective_redispatch|surface:First reduce output of constrained section and then recalculate power flow|issue:combined"
         ]
       }
     },
@@ -519,22 +534,24 @@
         "examples": []
       },
       "train__test": {
-        "count": 0,
-        "examples": []
+        "count": 1,
+        "examples": [
+          "dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator asks for a security assessment before the generation redispatch decision. The requested operational focus is Branch overload.|policy:Verify security constraints first, then route the request to redispatch and post-action review.|priority:The current shift supervisor requires the operating constraints to be checked before redispatch. The review should address Branch overload.|issue:combined"
+        ]
       },
       "train__ood_test": {
-        "count": 101,
+        "count": 127,
         "examples": [
-          "dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator requests dispatch analysis for the current operating condition and a reviewable recommendation.|policy:Follow the declared dispatch review sequence and retain a post-action power-flow check.|priority:The current shift supervisor requires a safe dispatch analysis followed by a reviewable recommendation.|issue:thermal",
-          "dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator requests dispatch analysis for the current operating condition and a reviewable recommendation.|policy:Follow the declared dispatch review sequence and retain a post-action power-flow check.|priority:The current shift supervisor requires a safe dispatch analysis followed by a reviewable recommendation.|issue:voltage",
-          "regulation_compliance_check::action_category:None|surface:Adjust output of nearby generators to reduce section load|issue:combined",
-          "regulation_compliance_check::action_category:None|surface:Adjust output of nearby generators to reduce section load|issue:normal",
-          "regulation_compliance_check::action_category:None|surface:Adjust output of nearby generators to reduce section load|issue:voltage",
-          "regulation_compliance_check::action_category:None|surface:Continue increasing power flow on constrained cross-section|issue:combined",
-          "regulation_compliance_check::action_category:None|surface:Continue increasing power flow on constrained cross-section|issue:normal",
-          "regulation_compliance_check::action_category:None|surface:Continue increasing power flow on constrained cross-section|issue:voltage",
-          "regulation_compliance_check::action_category:None|surface:Do not verify equipment status before restoring faulted line operation.|issue:combined",
-          "regulation_compliance_check::action_category:None|surface:Do not verify equipment status before restoring faulted line operation.|issue:voltage"
+          "dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator asks for a security assessment before the generation redispatch decision. The requested operational focus is Branch overload.|policy:Verify security constraints first, then route the request to redispatch and post-action review.|priority:The current shift supervisor requires the operating constraints to be checked before redispatch. The review should address Branch overload.|issue:combined",
+          "dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator asks for a security assessment before the generation redispatch decision. The requested operational focus is Branch overload.|policy:Verify security constraints first, then route the request to redispatch and post-action review.|priority:The current shift supervisor requires the operating constraints to be checked before redispatch. The review should address Branch overload.|issue:thermal",
+          "dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator asks for a security assessment before the generation redispatch decision. The requested operational focus is high voltage.|policy:Verify security constraints first, then route the request to redispatch and post-action review.|priority:The current shift supervisor requires the operating constraints to be checked before redispatch. The review should address high voltage.|issue:voltage",
+          "dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator asks for a security assessment before the generation redispatch decision. The requested operational focus is low voltage.|policy:Verify security constraints first, then route the request to redispatch and post-action review.|priority:The current shift supervisor requires the operating constraints to be checked before redispatch. The review should address low voltage.|issue:voltage",
+          "dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator asks for an action plan that brings the active violation back within its limit. The requested operational focus is Branch overload.|policy:Form a reversible corrective plan, then verify the post-action power-flow state.|priority:The current shift supervisor places corrective handling before the final operating review. The review should address Branch overload.|issue:thermal",
+          "dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator asks for an action plan that brings the active violation back within its limit. The requested operational focus is high voltage.|policy:Form a reversible corrective plan, then verify the post-action power-flow state.|priority:The current shift supervisor places corrective handling before the final operating review. The review should address high voltage.|issue:voltage",
+          "dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator asks for an action plan that brings the active violation back within its limit. The requested operational focus is low voltage.|policy:Form a reversible corrective plan, then verify the post-action power-flow state.|priority:The current shift supervisor places corrective handling before the final operating review. The review should address low voltage.|issue:voltage",
+          "dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator asks to locate the source of the reported condition before an action is prepared. The requested operational focus is Branch overload.|policy:Trace the operating condition, prepare the suitable dispatch route, and retain verification.|priority:The current shift supervisor requires cause identification before dispatch execution. The review should address Branch overload.|issue:thermal",
+          "dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator asks to locate the source of the reported condition before an action is prepared. The requested operational focus is high voltage.|policy:Trace the operating condition, prepare the suitable dispatch route, and retain verification.|priority:The current shift supervisor requires cause identification before dispatch execution. The review should address high voltage.|issue:voltage",
+          "dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator asks to locate the source of the reported condition before an action is prepared. The requested operational focus is low voltage.|policy:Trace the operating condition, prepare the suitable dispatch route, and retain verification.|priority:The current shift supervisor requires cause identification before dispatch execution. The review should address low voltage.|issue:voltage"
         ]
       },
       "validation__test": {
@@ -542,27 +559,33 @@
         "examples": []
       },
       "validation__ood_test": {
-        "count": 8,
+        "count": 16,
         "examples": [
-          "dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator requests dispatch analysis for the current operating condition and a reviewable recommendation.|policy:Follow the declared dispatch review sequence and retain a post-action power-flow check.|priority:The current shift supervisor requires a safe dispatch analysis followed by a reviewable recommendation.|issue:normal",
-          "regulation_compliance_check::action_category:None|surface:Execute reactive power support first, then recheck power flow|issue:combined",
-          "regulation_compliance_check::action_category:None|surface:First switch local topology then check if limit violation is eliminated|issue:normal",
-          "regulation_compliance_check::action_category:corrective_redispatch|surface:Adjust generation output combination to alleviate overloaded sections|issue:combined",
-          "regulation_compliance_check::action_category:corrective_redispatch|surface:Adjust output of nearby generators to reduce section load|issue:normal",
-          "regulation_compliance_check::action_category:corrective_redispatch|surface:Adjust output of nearby generators to reduce section load|issue:voltage",
-          "regulation_compliance_check::action_category:corrective_voltage|surface:First arrange reactive power regulation and verify voltage violations.|issue:combined",
-          "regulation_compliance_check::action_category:risky_increase|surface:Continue increasing power flow on constrained cross-section|issue:combined"
+          "dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator asks for a security assessment before the generation redispatch decision. The requested operational focus is Routine safety check.|policy:Verify security constraints first, then route the request to redispatch and post-action review.|priority:The current shift supervisor requires the operating constraints to be checked before redispatch. The review should address Routine safety check.|issue:normal",
+          "dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator asks for an action plan that brings the active violation back within its limit. The requested operational focus is Routine safety check.|policy:Form a reversible corrective plan, then verify the post-action power-flow state.|priority:The current shift supervisor places corrective handling before the final operating review. The review should address Routine safety check.|issue:normal",
+          "dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator asks to locate the source of the reported condition before an action is prepared. The requested operational focus is Routine safety check.|policy:Trace the operating condition, prepare the suitable dispatch route, and retain verification.|priority:The current shift supervisor requires cause identification before dispatch execution. The review should address Routine safety check.|issue:normal",
+          "dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator requests a security check followed by redispatch planning. The requested operational focus is Routine safety check.|policy:Complete the declared security check, then prepare redispatch and retain a post-action check.|priority:The current shift supervisor prioritizes security verification before redispatch. The review should address Routine safety check.|issue:normal",
+          "dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator requests corrective measures to reduce the active violation before review. The requested operational focus is Routine safety check.|policy:Follow the dispatch review sequence and retain a post-action power-flow check after mitigation.|priority:The current shift supervisor prioritizes violation mitigation followed by a post-action review. The review should address Routine safety check.|issue:normal",
+          "dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator requests diagnosis of the active condition followed by dispatch planning. The requested operational focus is Routine safety check.|policy:Identify the operating cause first, then route the request to dispatch planning and review.|priority:The current shift supervisor prioritizes diagnosis before selecting a dispatch action. The review should address Routine safety check.|issue:normal",
+          "dispatcher_intent_tool_call::dispatcher_surface:utterance:The requested route is to handle the reported operating violation and then check the result. The requested operational focus is Routine safety check.|policy:Select a dispatch action for violation reduction and preserve the post-action check.|priority:The shift review gives priority to reducing the reported violation before closure. The review should address Routine safety check.|issue:normal",
+          "dispatcher_intent_tool_call::dispatcher_surface:utterance:The requested route is to verify the operating margin and then form a redispatch recommendation. The requested operational focus is Routine safety check.|policy:Run the security check, form the redispatch plan, and retain a power-flow check afterward.|priority:The shift review places security verification ahead of the redispatch action. The review should address Routine safety check.|issue:normal",
+          "dispatcher_intent_tool_call::dispatcher_surface:utterance:The requested route starts with an operating-state diagnosis and continues with an executable plan. The requested operational focus is Routine safety check.|policy:Diagnose the state first, then prepare a reviewable dispatch action and check its result.|priority:The shift review places source diagnosis before any corrective dispatch decision. The review should address Routine safety check.|issue:normal",
+          "regulation_compliance_check::action_category:None|surface:Execute reactive power support first, then recheck power flow|issue:combined"
         ]
       },
       "test__ood_test": {
-        "count": 6,
+        "count": 14,
         "examples": [
-          "dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator requests dispatch analysis for the current operating condition and a reviewable recommendation.|policy:Follow the declared dispatch review sequence and retain a post-action power-flow check.|priority:The current shift supervisor requires a safe dispatch analysis followed by a reviewable recommendation.|issue:combined",
-          "regulation_compliance_check::action_category:corrective_redispatch|surface:First reduce output of constrained section and then recalculate power flow|issue:combined",
-          "regulation_compliance_check::action_category:corrective_redispatch|surface:First reduce output of constrained section and then recalculate power flow|issue:normal",
-          "regulation_compliance_check::action_category:corrective_redispatch|surface:First reduce output of constrained section and then recalculate power flow|issue:voltage",
-          "regulation_compliance_check::action_category:corrective_topology|surface:Perform topology transfer first, then check for low voltage and overloading.|issue:combined",
-          "regulation_compliance_check::action_category:risky_increase|surface:Continue increasing power flow on constrained cross-section|issue:voltage"
+          "dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator asks for a security assessment before the generation redispatch decision. The requested operational focus is Branch overload.|policy:Verify security constraints first, then route the request to redispatch and post-action review.|priority:The current shift supervisor requires the operating constraints to be checked before redispatch. The review should address Branch overload.|issue:combined",
+          "dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator asks for an action plan that brings the active violation back within its limit. The requested operational focus is Branch overload.|policy:Form a reversible corrective plan, then verify the post-action power-flow state.|priority:The current shift supervisor places corrective handling before the final operating review. The review should address Branch overload.|issue:combined",
+          "dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator asks to locate the source of the reported condition before an action is prepared. The requested operational focus is Branch overload.|policy:Trace the operating condition, prepare the suitable dispatch route, and retain verification.|priority:The current shift supervisor requires cause identification before dispatch execution. The review should address Branch overload.|issue:combined",
+          "dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator requests a security check followed by redispatch planning. The requested operational focus is Branch overload.|policy:Complete the declared security check, then prepare redispatch and retain a post-action check.|priority:The current shift supervisor prioritizes security verification before redispatch. The review should address Branch overload.|issue:combined",
+          "dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator requests corrective measures to reduce the active violation before review. The requested operational focus is Branch overload.|policy:Follow the dispatch review sequence and retain a post-action power-flow check after mitigation.|priority:The current shift supervisor prioritizes violation mitigation followed by a post-action review. The review should address Branch overload.|issue:combined",
+          "dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator requests diagnosis of the active condition followed by dispatch planning. The requested operational focus is Branch overload.|policy:Identify the operating cause first, then route the request to dispatch planning and review.|priority:The current shift supervisor prioritizes diagnosis before selecting a dispatch action. The review should address Branch overload.|issue:combined",
+          "dispatcher_intent_tool_call::dispatcher_surface:utterance:The requested route is to handle the reported operating violation and then check the result. The requested operational focus is Branch overload.|policy:Select a dispatch action for violation reduction and preserve the post-action check.|priority:The shift review gives priority to reducing the reported violation before closure. The review should address Branch overload.|issue:combined",
+          "dispatcher_intent_tool_call::dispatcher_surface:utterance:The requested route is to verify the operating margin and then form a redispatch recommendation. The requested operational focus is Branch overload.|policy:Run the security check, form the redispatch plan, and retain a power-flow check afterward.|priority:The shift review places security verification ahead of the redispatch action. The review should address Branch overload.|issue:combined",
+          "dispatcher_intent_tool_call::dispatcher_surface:utterance:The requested route starts with an operating-state diagnosis and continues with an executable plan. The requested operational focus is Branch overload.|policy:Diagnose the state first, then prepare a reviewable dispatch action and check its result.|priority:The shift review places source diagnosis before any corrective dispatch decision. The review should address Branch overload.|issue:combined",
+          "regulation_compliance_check::action_category:corrective_redispatch|surface:First reduce output of constrained section and then recalculate power flow|issue:combined"
         ]
       }
     }
@@ -590,5 +613,7 @@
       "missing_tasks": [],
       "low_count_tasks_below_5": []
     }
-  }
+  },
+  "post_repair_receipt": "reports/official_exact_content_overlap_repair_v1.2_sd_core.json",
+  "interpretation": "Current official split receipt after the exact-content single-split repair. Record IDs remain disjoint, registered OOD scenario IDs remain isolated, and development scenario/source-group overlaps are reported diagnostics."
 }

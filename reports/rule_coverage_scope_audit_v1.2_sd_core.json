@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-04T04:11:18.326278+00:00",
+  "generated_at": "2026-08-28T19:59:41.722580+00:00",
   "status": "pass",
   "dataset": "data/gridinstruct_v1.2_sd_core_en.jsonl",
   "rule_count": 17,
@@ -109,7 +109,7 @@
         "auxiliary_decision",
         "intelligent_data_query"
       ],
-      "record_link_count": 30508
+      "record_link_count": 35973
     },
     {
       "rule_id": "REG_OVERLOAD_EMERGENCY_003",
@@ -125,7 +125,7 @@
         "regulation_compliance_check",
         "auxiliary_decision"
       ],
-      "record_link_count": 17993
+      "record_link_count": 15150
     },
     {
       "rule_id": "REG_VOLTAGE_LOW_002",
@@ -141,7 +141,7 @@
         "regulation_compliance_check",
         "auxiliary_decision"
       ],
-      "record_link_count": 39298
+      "record_link_count": 14911
     },
     {
       "rule_id": "REG_VOLTAGE_HIGH_003",
@@ -157,7 +157,7 @@
         "regulation_compliance_check",
         "auxiliary_decision"
       ],
-      "record_link_count": 8662
+      "record_link_count": 1611
     },
     {
       "rule_id": "REG_SECURITY_REDISPATCH_004",
@@ -173,7 +173,7 @@
         "auxiliary_decision",
         "dispatcher_intent_tool_call"
       ],
-      "record_link_count": 29646
+      "record_link_count": 26481
     },
     {
       "rule_id": "REG_SWITCHING_PERMISSION_002",
@@ -215,7 +215,7 @@
       "applicable_tasks": [
         "dispatcher_intent_tool_call"
       ],
-      "record_link_count": 10295
+      "record_link_count": 13601
     },
     {
       "rule_id": "REG_TOOL_MITIGATION_003",
@@ -229,7 +229,7 @@
       "applicable_tasks": [
         "dispatcher_intent_tool_call"
       ],
-      "record_link_count": 11879
+      "record_link_count": 8714
     },
     {
       "rule_id": "REG_TOOL_POSTCHECK_004",
@@ -247,7 +247,7 @@
         "auxiliary_decision",
         "regulation_compliance_check"
       ],
-      "record_link_count": 34442
+      "record_link_count": 20337
     },
     {
       "rule_id": "REG_QUERY_FILTER_002",
@@ -278,7 +278,7 @@
       "applicable_tasks": [
         "intelligent_data_query"
       ],
-      "record_link_count": 13122
+      "record_link_count": 13475
     }
   ],
   "task_rule_matrix": {
@@ -286,24 +286,23 @@
       "REG_OVERLOAD_001": 18087,
       "REG_VOLTAGE_001": 18087,
       "REG_OVERLOAD_ALERT_002": 18087,
-      "REG_OVERLOAD_EMERGENCY_003": 16629,
-      "REG_VOLTAGE_HIGH_003": 3788,
+      "REG_OVERLOAD_EMERGENCY_003": 15139,
+      "REG_VOLTAGE_LOW_002": 14911,
       "REG_SECURITY_REDISPATCH_004": 17767,
       "REG_TOOL_POSTCHECK_004": 18087,
-      "REG_VOLTAGE_LOW_002": 17031
+      "REG_VOLTAGE_HIGH_003": 1611
     },
     "dispatcher_intent_tool_call": {
       "REG_TOOL_001": 19773,
-      "REG_TOOL_POSTCHECK_004": 3444,
-      "REG_TOOL_DIAGNOSIS_002": 10295,
-      "REG_TOOL_MITIGATION_003": 11879,
-      "REG_SECURITY_REDISPATCH_004": 11879
+      "REG_TOOL_DIAGNOSIS_002": 13601,
+      "REG_TOOL_MITIGATION_003": 8714,
+      "REG_SECURITY_REDISPATCH_004": 8714
     },
     "intelligent_data_query": {
       "REG_QUERY_001": 17766,
       "REG_OVERLOAD_001": 6952,
       "REG_QUERY_FILTER_002": 17765,
-      "REG_QUERY_AGGREGATION_003": 13122,
+      "REG_QUERY_AGGREGATION_003": 13475,
       "REG_VOLTAGE_001": 5408
     },
     "operation_ticket_check": {
@@ -314,11 +313,9 @@
     "regulation_compliance_check": {
       "REG_OVERLOAD_001": 24767,
       "REG_VOLTAGE_001": 24767,
-      "REG_VOLTAGE_LOW_002": 22267,
-      "REG_VOLTAGE_HIGH_003": 4874,
-      "REG_OVERLOAD_ALERT_002": 12421,
-      "REG_TOOL_POSTCHECK_004": 12911,
-      "REG_OVERLOAD_EMERGENCY_003": 1364
+      "REG_OVERLOAD_ALERT_002": 17886,
+      "REG_TOOL_POSTCHECK_004": 2250,
+      "REG_OVERLOAD_EMERGENCY_003": 11
     },
     "regulation_qa": {
       "REG_OVERLOAD_001": 946,

@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-08-28T21:40:28.318487+00:00",
+  "status": "pass",
+  "dataset": "data/gridinstruct_v1.2_sd_core_en.jsonl",
+  "dataset_sha256": "18a4d36153f9d77ae9b26744978a7bea27138aee048d1b12906335797e908013",
+  "scenarios": "simulation_outputs/contingency/scenarios_converged.json",
+  "scenario_truth_sha256": "8f97a66cb91fea81fd495931b2af2e5eb4e5a5027a989c315c5523694fee93af",
+  "records": 95479,
+  "compliance_records_checked": 24767,
+  "scenario_count": 2822,
+  "missing_scenario_count": 0,
+  "unresolved_category_count": 0,
+  "mismatch_counts": {
+    "label": 0,
+    "issue_list": 0,
+    "issue_profile": 0,
+    "output_label": 0,
+    "rationale": 0
+  },
+  "label_transitions": {},
+  "examples": {
+    "missing_scenarios": [],
+    "unresolved_categories": [],
+    "label": [],
+    "issue_list": [],
+    "issue_profile": [],
+    "output_label": [],
+    "rationale": []
+  },
+  "scope": "in-memory recomputation against the current scenario registry; no derived dataset stage is retained"
+}

@@ -89,11 +89,39 @@ def group_size_stats(rows: list[dict[str, Any]]) -> dict[str, Any]:
     return {"groups": len(values), "max": max(values), "p95": p95, "histogram": dict(Counter(values))}
 
 
-def duplicate_stats(rows: list[dict[str, Any]]) -> dict[str, int]:
-    c = Counter(exact_key(row) for row in rows)
+def duplicate_stats(
+    rows: list[dict[str, Any]], split_by_id: dict[str, str] | None = None
+) -> dict[str, Any]:
+    groups: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for row in rows:
+        groups[exact_key(row)].append(row)
+    duplicate_groups = [group for group in groups.values() if len(group) > 1]
+    conflicting_groups = [
+        group
+        for group in duplicate_groups
+        if len({json.dumps(row.get("output"), ensure_ascii=False, sort_keys=True) for row in group}) > 1
+    ]
+    cross_split_groups = []
+    if split_by_id is not None:
+        cross_split_groups = [
+            group
+            for group in duplicate_groups
+            if len({split_by_id.get(str(row.get("id")), "?") for row in group}) > 1
+        ]
     return {
-        "duplicate_keys": sum(1 for value in c.values() if value > 1),
-        "duplicate_rows": sum(value for value in c.values() if value > 1),
+        "duplicate_keys": len(duplicate_groups),
+        "duplicate_rows": sum(len(group) for group in duplicate_groups),
+        "duplicate_extra_rows": sum(len(group) - 1 for group in duplicate_groups),
+        "conflicting_output_groups": len(conflicting_groups),
+        "conflicting_output_rows": sum(len(group) for group in conflicting_groups),
+        "cross_split_duplicate_groups": len(cross_split_groups),
+        "cross_split_duplicate_rows": sum(len(group) for group in cross_split_groups),
+        "conflicting_output_examples": [
+            [str(row.get("id")) for row in group[:5]] for group in conflicting_groups[:10]
+        ],
+        "cross_split_duplicate_examples": [
+            [str(row.get("id")) for row in group[:5]] for group in cross_split_groups[:10]
+        ],
     }
 
 
@@ -230,7 +258,8 @@ def write_md(path: Path, report: dict[str, Any]) -> None:
         "## Dataset Summary",
         "",
         f"- Records: {report['records']}",
-        f"- Exact duplicate rows: {report['duplicates']['duplicate_rows']}",
+        f"- Exact prompt/input duplicate rows: {report['duplicates']['duplicate_rows']} (extra rows after the first: {report['duplicates']['duplicate_extra_rows']})",
+        f"- Conflicting prompt/input groups: {report['duplicates']['conflicting_output_groups']}; cross-split prompt/input groups: {report['duplicates']['cross_split_duplicate_groups']}",
         f"- Augmented source-group max: {report['source_group_size']['max']}",
         f"- Augmented source-group p95: {report['source_group_size']['p95']}",
         "",
@@ -257,7 +286,11 @@ def write_md(path: Path, report: dict[str, Any]) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--dataset", default="data/gridinstruct_v1.2_sd_core.jsonl")
-    parser.add_argument("--full-pool", default="data/gridinstruct_v1.2_paper_candidate_actionable_plus15.jsonl")
+    parser.add_argument(
+        "--full-pool",
+        default=None,
+        help="Optional historical source pool; omit it for the promoted release table.",
+    )
     parser.add_argument("--train", default="data/v1.2_sd_core_train.jsonl")
     parser.add_argument("--validation", default="data/v1.2_sd_core_validation.jsonl")
     parser.add_argument("--test", default="data/v1.2_sd_core_test.jsonl")
@@ -275,9 +308,15 @@ def main() -> None:
         "test": read_jsonl(ROOT / args.test),
         "ood": read_jsonl(ROOT / args.ood),
     }
+    split_by_id = {
+        str(row.get("id")): split
+        for split, subset in split_rows.items()
+        for row in subset
+        if row.get("id")
+    }
     purity = task_purity(rows)
     source_stats = group_size_stats(rows)
-    duplicates = duplicate_stats(rows)
+    duplicates = duplicate_stats(rows, split_by_id)
     overlaps = {
         "record_id": split_overlap(split_rows, lambda row: str(row.get("id") or "NA")),
         "scenario_id": split_overlap(split_rows, scenario_id),
@@ -292,8 +331,18 @@ def main() -> None:
 
     gates = {
         "exact_prompt_input_duplicates": {
-            "status": "pass" if duplicates["duplicate_rows"] == 0 else "fail",
-            "detail": f"duplicate_rows={duplicates['duplicate_rows']}",
+            "status": (
+                "pass"
+                if duplicates["conflicting_output_groups"] == 0
+                and duplicates["cross_split_duplicate_groups"] == 0
+                else "fail"
+            ),
+            "detail": (
+                f"duplicate_rows={duplicates['duplicate_rows']}, "
+                f"duplicate_extra_rows={duplicates['duplicate_extra_rows']}, "
+                f"conflicting_output_groups={duplicates['conflicting_output_groups']}, "
+                f"cross_split_duplicate_groups={duplicates['cross_split_duplicate_groups']}"
+            ),
         },
         "source_group_expansion": {
             "status": "pass" if source_stats["max"] <= 3 and source_stats["p95"] <= 3 else "warn",
@@ -333,6 +382,7 @@ def main() -> None:
         "high_purity_groupings": high_purity,
         "gates": gates,
         "passed": all(item["status"] != "fail" for item in gates.values()),
+        "status": "pass" if all(item["status"] != "fail" for item in gates.values()) else "fail",
     }
     write_json(ROOT / args.output_json, report)
     write_md(ROOT / args.output_md, report)

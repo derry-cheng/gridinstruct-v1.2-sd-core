@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-13T04:06:33.858123+00:00",
+  "generated_at": "2026-08-28T18:25:27.250610+00:00",
   "status": "pass",
   "contract": "template_family_atomic_holdout_v1",
   "input": "data/gridinstruct_v1.2_sd_core_en.jsonl",
   "records": 55421,
-  "elapsed_seconds_total": 46.624415,
+  "elapsed_seconds_total": 55.51759,
   "split_counts": {
     "train": 38775,
     "validation": 5557,
@@ -78,7 +78,7 @@
     {
       "task_type": "regulation_compliance_check",
       "records": 24767,
-      "group_count": 507,
+      "group_count": 504,
       "split_counts": {
         "train": 17336,
         "validation": 2477,
@@ -91,19 +91,19 @@
       },
       "label_counts": {
         "train": {
-          "non_compliant": 8165,
-          "compliant_with_monitoring": 8452,
-          "compliant": 719
+          "non_compliant": 8147,
+          "compliant_with_monitoring": 8428,
+          "compliant": 761
         },
         "validation": {
-          "compliant": 66,
-          "compliant_with_monitoring": 695,
-          "non_compliant": 1716
+          "compliant_with_monitoring": 672,
+          "compliant": 56,
+          "non_compliant": 1749
         },
         "test": {
-          "compliant_with_monitoring": 1550,
-          "compliant": 244,
-          "non_compliant": 3160
+          "compliant": 237,
+          "compliant_with_monitoring": 1638,
+          "non_compliant": 3079
         }
       }
     }
@@ -112,8 +112,8 @@
     {
       "task_type": "dispatcher_intent_tool_call",
       "n_test": 3958,
-      "macro_f1": 1.0,
-      "balanced_accuracy": 1.0,
+      "macro_f1": 0.20488295371002316,
+      "balanced_accuracy": 0.3250319214195675,
       "label_space": [
         "diagnose_and_dispatch",
         "mitigate_violations",
@@ -134,8 +134,8 @@
     {
       "task_type": "regulation_compliance_check",
       "n_test": 4954,
-      "macro_f1": 0.9610282428321645,
-      "balanced_accuracy": 0.948430529244679,
+      "macro_f1": 0.9443488642103364,
+      "balanced_accuracy": 0.9283115142674182,
       "label_space": [
         "compliant",
         "compliant_with_monitoring",
@@ -149,21 +149,21 @@
         200,
         200
       ],
-      "max_jaccard": 0.7648766328011611
+      "max_jaccard": 0.9127423822714681
     },
     "train_test": {
       "sample_size": [
         200,
         200
       ],
-      "max_jaccard": 0.8184713375796179
+      "max_jaccard": 0.9233983286908078
     },
     "validation_test": {
       "sample_size": [
         200,
         200
       ],
-      "max_jaccard": 0.7609756097560976
+      "max_jaccard": 1.0
     }
   },
   "output_paths": {

@@ -1,6 +1,6 @@
 # Data Records
 
-Generated: 2026-08-28
+Generated: 2026-08-29
 
 GridInstruct v1.2 contains 95,479 instruction records. Records are stored as UTF-8 JSON Lines and validated against `metadata/schema.json`. The release-facing English table is rendered directly from typed scenario and rule contracts.
 
@@ -8,14 +8,14 @@ GridInstruct v1.2 contains 95,479 instruction records. Records are stored as UTF
 
 | path | records | bytes | sha256 |
 | --- | ---: | ---: | --- |
-| data/gridinstruct_v1.2_sd_core_en.jsonl | 95479 | 558229292 | 882dc4960dcf14d5b6e6465ced25051c860f1b360ffdb58770c3b68d6e7b60b3 |
-| data/v1.2_sd_core_train_en.jsonl | 26508 | 141970489 | 27087a599f1a3b78cf69e27ae2f8ed71e513fb50c4e140025d3b6cb1efe33c95 |
-| data/v1.2_sd_core_validation_en.jsonl | 3583 | 18939217 | ec1e2a0fa019f169e7317267c02bea6f3aaeb3531a0b79b2fa841c3dda0fd765 |
-| data/v1.2_sd_core_test_en.jsonl | 3909 | 20632332 | d64dd5c72721b0f6bb0fda7911722d76dfba2bef9596fac10bd9bae227c9b401 |
-| data/v1.2_sd_core_ood_test_en.jsonl | 61479 | 396519953 | c8bcdf784892728b7b981e5aaad76d7c3780b14ed4a8a06e58466d87ee021038 |
-| data/v1.2_sd_core_strict_train.jsonl | 76341 | 462175724 | 7951515c3ae3eb519c1acc9d31e25484c71530e4cc781ff0b1634d0c4770e217 |
-| data/v1.2_sd_core_strict_validation.jsonl | 9564 | 55753059 | 6352a055051f1e2ac36abef9a878b7d06832b45a0107cfe55091beb7ca3fa3f1 |
-| data/v1.2_sd_core_strict_test.jsonl | 9574 | 57370445 | 4603c73134c551d14ed840abc00d1df1563a65394bd4b47a17f49d7600b7b2775 |
+| data/gridinstruct_v1.2_sd_core_en.jsonl | 95479 | 593841086 | 18a4d36153f9d77ae9b26744978a7bea27138aee048d1b12906335797e908013 |
+| data/v1.2_sd_core_train_en.jsonl | 26545 | 147932029 | 81fb662da56a2685b9edabde8843b277600832345ae438fd23674ade0bc95283 |
+| data/v1.2_sd_core_validation_en.jsonl | 3561 | 19735811 | ee3e73c1c70afc000b473ad4268d8eea905461005f1242f8394d465100a94465 |
+| data/v1.2_sd_core_test_en.jsonl | 3894 | 21169452 | 8c9c6e9f87209aa356aaea4c8e707c30fb5608ab5a5a968f83ecab0c5d73e988 |
+| data/v1.2_sd_core_ood_test_en.jsonl | 61479 | 405003794 | 146c23fc751f6d9003b62407a4e921f5d5742638f114ddd854dd264bd28d6343 |
+| data/v1.2_sd_core_strict_train.jsonl | 76378 | 476844445 | 4ea2d05b59ff253fd44c00f8f69a978159b7548b72a5016822c0fcc7520f0153 |
+| data/v1.2_sd_core_strict_validation.jsonl | 9558 | 57778166 | 52f5da72bf071c27bc8d842de55f8a46d2ed5cb4d33f567b9e4ce3d597cc7152 |
+| data/v1.2_sd_core_strict_test.jsonl | 9543 | 59218475 | 753734fe89bf899592591cf863b56bfcbc6219b5735aaadd4c5980dbcb2458ed |
 | metadata/schema.json | None | 4060 | 344efb82e99b2c2716f9cecfe8fc5c0f71aa7bc465dee5dc3b03aa95a7e8cfe5 |
 | metadata/task_taxonomy.json | None | 243 | 6dc8399ae3491756bf088f72eb58cbdcb7a95e4673f59d8b8f5f60a0acde0afa |
 | metadata/data_dictionary.csv | None | 5627 | 37d473c9bbd5c29fc2a9811bde90e377e9ec5c2b2a92b312c407943373b30ac9 |
@@ -79,14 +79,15 @@ The extension is a source-conditioned rule-grounding probe. Its leakage-controll
 
 | split | records |
 | --- | ---: |
-| train | 26508 |
-| validation | 3583 |
-| test | 3909 |
+| train | 26545 |
+| validation | 3561 |
+| test | 3894 |
 | ood_test | 61479 |
 
 ## Split Coverage Notes
 
 - All six task families occur in the promoted OOD split; task counts are recomputed from the current English files.
+- The 75,240-record instruction-surface OOD view is distributed as the ID-only manifest `data/v1.2_sd_core_instruction_surface_balanced_ood_test_ids.jsonl`; evaluation scripts materialize its rows from the canonical English table on demand and bind the resulting metrics to the canonical SHA-256.
 
 ## Record Schema
 

@@ -1,31 +1,31 @@
 {
-  "generated_at": "2026-08-28T16:34:56+00:00",
+  "generated_at": "2026-08-28T21:43:45.449859+00:00",
   "status": "pass",
   "scope": "current_compact_release_views",
   "components": {
     "data/gridinstruct_v1.2_sd_core_en.jsonl": {
-      "sha256": "882dc4960dcf14d5b6e6465ced25051c860f1b360ffdb58770c3b68d6e7b60b3",
-      "size_bytes": 558229292,
+      "sha256": "18a4d36153f9d77ae9b26744978a7bea27138aee048d1b12906335797e908013",
+      "size_bytes": 593841086,
       "exists": true
     },
     "data/v1.2_sd_core_train_en.jsonl": {
-      "sha256": "27087a599f1a3b78cf69e27ae2f8ed71e513fb50c4e140025d3b6cb1efe33c95",
-      "size_bytes": 141970489,
+      "sha256": "2fffd5d0b7d1cb417a4dd919af39aba859f736d3f2da2d3f52340169388b3ac9",
+      "size_bytes": 151419585,
       "exists": true
     },
     "data/v1.2_sd_core_validation_en.jsonl": {
-      "sha256": "ec1e2a0fa019f169e7317267c02bea6f3aaeb3531a0b79b2fa841c3dda0fd765",
-      "size_bytes": 18939217,
+      "sha256": "03a4f3126a1ae181524610cf6ef6efd60774f61b78a31e8fb9e9d232a3abc06f",
+      "size_bytes": 20200172,
       "exists": true
     },
     "data/v1.2_sd_core_test_en.jsonl": {
-      "sha256": "d64dd5c72721b0f6bb0fda7911722d76dfba2bef9596fac10bd9bae227c9b401",
-      "size_bytes": 20632332,
+      "sha256": "83576760eb091531d08ae6a7b6bf95d52b8266a6e5fe4aa9c2875c3eccd56110",
+      "size_bytes": 21668841,
       "exists": true
     },
     "data/v1.2_sd_core_ood_test_en.jsonl": {
-      "sha256": "c8bcdf784892728b7b981e5aaad76d7c3780b14ed4a8a06e58466d87ee021038",
-      "size_bytes": 396519953,
+      "sha256": "a7a75d1a0551cfe8f688b90af32b535cb54767944fbf319a4a8c53e64b2adb17",
+      "size_bytes": 417267736,
       "exists": true
     },
     "metadata/schema.json": {

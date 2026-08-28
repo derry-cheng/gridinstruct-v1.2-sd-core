@@ -34,5 +34,10 @@
   "data_sha256": "ffd3ce089f704d1f55341a66ce355cfc5c0a739e8c90024e40d1590c283cc85d",
   "data_path": "data/international_rule_probe_v1.jsonl",
   "rules_path": "rules/international_rule_profiles.json",
-  "matrix_path": "metadata/international_rule_profile_matrix.csv"
+  "matrix_path": "metadata/international_rule_profile_matrix.csv",
+  "schema_path": "metadata/international_rule_probe_schema.json",
+  "schema_sha256": "44bc99e037697493178795991d9e23d20c9a8d0fdf36bc5c8e3b6a8078ea1658",
+  "schema_validation_status": "pass",
+  "schema_validation_error_count": 0,
+  "schema_validation_error_examples": []
 }

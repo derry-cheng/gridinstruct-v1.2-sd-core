@@ -27,6 +27,19 @@ def read_jsonl(path: Path) -> list[dict[str, Any]]:
     return rows
 
 
+def load_rows(path: Path, canonical_path: Path) -> list[dict[str, Any]]:
+    """Load a full split or project an ID-only manifest onto the canonical table."""
+
+    rows = read_jsonl(path)
+    if not path.name.endswith("_ids.jsonl"):
+        return rows
+    canonical = {str(row["id"]): row for row in read_jsonl(canonical_path)}
+    missing = [str(row["id"]) for row in rows if str(row["id"]) not in canonical]
+    if missing:
+        raise ValueError(f"split manifest IDs missing from canonical table: {missing[:3]}")
+    return [canonical[str(row["id"])] for row in rows]
+
+
 def write_jsonl(path: Path, rows: list[dict[str, Any]]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("w", encoding="utf-8") as handle:
@@ -151,13 +164,15 @@ def main() -> None:
     parser.add_argument("--validation", default="data/v1.2_sd_core_validation_en.jsonl")
     parser.add_argument("--test", default="data/v1.2_sd_core_test_en.jsonl")
     parser.add_argument("--ood", default="data/v1.2_sd_core_ood_test_en.jsonl")
+    parser.add_argument("--canonical", default="data/gridinstruct_v1.2_sd_core_en.jsonl")
     parser.add_argument("--output-prefix", default="benchmark/v1.2_sd_core_structured_auxiliary_tool")
     args = parser.parse_args()
 
-    train_rows = filter_rows(read_jsonl(ROOT / args.train))
-    validation_rows = filter_rows(read_jsonl(ROOT / args.validation))
-    test_rows = filter_rows(read_jsonl(ROOT / args.test))
-    ood_rows = filter_rows(read_jsonl(ROOT / args.ood)) if args.ood and (ROOT / args.ood).exists() else []
+    canonical_path = ROOT / args.canonical
+    train_rows = filter_rows(load_rows(ROOT / args.train, canonical_path))
+    validation_rows = filter_rows(load_rows(ROOT / args.validation, canonical_path))
+    test_rows = filter_rows(load_rows(ROOT / args.test, canonical_path))
+    ood_rows = filter_rows(load_rows(ROOT / args.ood, canonical_path)) if args.ood and (ROOT / args.ood).exists() else []
 
     model = Pipeline(
         [
@@ -176,6 +191,7 @@ def main() -> None:
         "validation": args.validation,
         "test": args.test,
         "ood": args.ood,
+        "canonical": args.canonical,
         "train_records": len(train_rows),
         "validation_records": len(validation_rows),
         "test_records": len(test_rows),
@@ -189,6 +205,7 @@ def main() -> None:
             "validation": hashlib.sha256((ROOT / args.validation).read_bytes()).hexdigest(),
             "test": hashlib.sha256((ROOT / args.test).read_bytes()).hexdigest(),
             "ood": hashlib.sha256((ROOT / args.ood).read_bytes()).hexdigest() if args.ood and (ROOT / args.ood).exists() else None,
+            "canonical": file_sha256(canonical_path),
         },
         "prediction_sha256": {
             split: file_sha256(Path(f"{prefix}_{split}_predictions.jsonl"))

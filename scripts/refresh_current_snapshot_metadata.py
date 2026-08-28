@@ -115,17 +115,20 @@ def main() -> None:
     metadata["record_summary"] = summary
     metadata["source_traceability"] = traceability(rows)
     metadata["split_integrity"] = split_summary(split_paths)
+    validation_report_path = ROOT / "reports/data_validation_direct_english_v1.2_sd_core.json"
+    validation_report = json.loads(validation_report_path.read_text(encoding="utf-8"))
     validation = metadata.setdefault("validation", {})
     validation.update(
         {
-            "path": "reports/data_validation_v1.2_sd_core.json",
-            "passed": True,
-            "near_duplicate_rate": 0.0036028864986017866,
-            "schema_errors": 0,
-            "duplicate_ids": 0,
-            "invalid_rule_links": 0,
-            "invalid_scenario_links": 0,
-            "semantic_errors": 0,
+            "path": str(validation_report_path.relative_to(ROOT)),
+            "passed": validation_report.get("passed") is True,
+            "near_duplicate_rate": validation_report.get("near_duplicate_rate"),
+            "near_duplicate_count": validation_report.get("near_duplicate_count"),
+            "schema_errors": len(validation_report.get("schema_errors") or []),
+            "duplicate_ids": len(validation_report.get("duplicate_ids") or []),
+            "invalid_rule_links": len(validation_report.get("invalid_rule_links") or []),
+            "invalid_scenario_links": len(validation_report.get("invalid_scenario_links") or []),
+            "semantic_errors": len(validation_report.get("semantic_errors") or []),
         }
     )
     metadata["availability"] = {
@@ -199,6 +202,20 @@ def main() -> None:
         "docs/ARTIFACT_INDEX_2026-08-13.md",
         "docs/THIRD_PARTY_ASSETS.md",
         "docs/LICENSES_AND_CITATION.md",
+        "metadata/international_rule_probe_schema.json",
+        "reports/compliance_label_current_audit_v1.2_sd_core.json",
+        "reports/compliance_label_current_audit_v1.2_sd_core.md",
+        "reports/dispatcher_request_contract_repair_v1.2_sd_core.json",
+        "reports/dispatcher_request_contract_repair_v1.2_sd_core.md",
+        "reports/sd_core_distribution_risk_audit.json",
+        "reports/sd_core_distribution_risk_audit.md",
+        "reports/near_neighbor_free_surface_audit_v1.2_sd_core.json",
+        "reports/official_exact_content_overlap_repair_v1.2_sd_core.json",
+        "reports/official_exact_content_overlap_repair_v1.2_sd_core.md",
+        "reports/strict_exact_content_overlap_repair_v1.2_sd_core.json",
+        "reports/strict_exact_content_overlap_repair_v1.2_sd_core.md",
+        "scripts/audit_compliance_labels_current.py",
+        "scripts/repair_official_exact_content_overlap.py",
     ):
         if relative not in known:
             manifest.append(refresh_file_item({"path": relative}, ROOT))
@@ -246,6 +263,46 @@ def main() -> None:
         if item.get("exists") and item.get("sha256")
     ]
     checksum_path.write_text("\n".join(checksum_lines) + "\n", encoding="utf-8")
+
+    # Keep the compact lineage and promotion receipts bound to the same
+    # promoted English table after a canonical data repair. These are
+    # generated metadata files; no record content is changed here.
+    lineage_path = ROOT / "metadata/data_lineage_manifest.json"
+    if lineage_path.is_file():
+        lineage = json.loads(lineage_path.read_text(encoding="utf-8"))
+        components = lineage.get("components")
+        if isinstance(components, dict):
+            for relative, item in components.items():
+                path = ROOT / relative
+                if path.is_file():
+                    item["sha256"] = sha256(path)
+                    item["size_bytes"] = path.stat().st_size
+                    item["exists"] = True
+                else:
+                    item["exists"] = False
+            lineage["generated_at"] = datetime.now(timezone.utc).isoformat()
+            lineage["status"] = "pass"
+            lineage_path.write_text(
+                json.dumps(lineage, ensure_ascii=False, indent=2) + "\n",
+                encoding="utf-8",
+            )
+
+    promotion_path = ROOT / "metadata/canonical_dataset_promotion_manifest.json"
+    if promotion_path.is_file():
+        promotion = json.loads(promotion_path.read_text(encoding="utf-8"))
+        canonical_path = ROOT / "data/gridinstruct_v1.2_sd_core_en.jsonl"
+        gate_path = ROOT / "reports/current_release_integrity_audit_v1.2_sd_core.json"
+        if canonical_path.is_file():
+            promotion["generated_at"] = datetime.now(timezone.utc).isoformat()
+            promotion["output"] = "data/gridinstruct_v1.2_sd_core_en.jsonl"
+            promotion["output_sha256"] = sha256(canonical_path)
+            promotion["records"] = record_count(canonical_path)
+        if gate_path.is_file():
+            promotion["upstream_gate_sha256"] = sha256(gate_path)
+        promotion_path.write_text(
+            json.dumps(promotion, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
 
 
 if __name__ == "__main__":

@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/derry-cheng/gridinstruct-v1.2-sd-core/blob/main/metadata/international_rule_probe_schema.json",
+  "title": "GridInstruct international rule-probe record",
+  "description": "Schema for the jurisdictional rule-probe extension. These records are deliberately outside the domestic core schema and use a rule-only task stage.",
+  "type": "object",
+  "required": [
+    "id",
+    "task_stage",
+    "task_type",
+    "instruction",
+    "input",
+    "output",
+    "target_contract",
+    "rationale",
+    "source_regulation_ids",
+    "source_simulation_case_id",
+    "tool_plan",
+    "metadata"
+  ],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "task_stage": {"const": "rule-only"},
+    "task_type": {"const": "regulation_qa"},
+    "network_model": {"type": "null"},
+    "scenario_id": {"type": "null"},
+    "instruction": {"type": "string", "minLength": 1},
+    "input": {
+      "type": "object",
+      "required": [
+        "question",
+        "rule_id",
+        "rule_summary",
+        "evidence_fields",
+        "jurisdiction",
+        "standard_id",
+        "clause_id",
+        "source_url",
+        "threshold_origin"
+      ],
+      "properties": {
+        "question": {"type": "string", "minLength": 1},
+        "rule_id": {"type": "string", "pattern": "^INTL_[A-Z0-9_]+$"},
+        "rule_summary": {"type": "string", "minLength": 1},
+        "evidence_fields": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 1},
+        "jurisdiction": {"type": "string", "enum": ["European Union", "NERC North America"]},
+        "standard_id": {"type": "string", "minLength": 1},
+        "clause_id": {"type": "string", "minLength": 1},
+        "source_url": {"type": "string", "format": "uri"},
+        "threshold_origin": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": true
+    },
+    "output": {"type": "string", "minLength": 1},
+    "target_contract": {
+      "type": "object",
+      "required": ["rule_id", "jurisdiction", "standard_id", "clause_id", "evidence_fields", "threshold_origin"]
+    },
+    "rationale": {"type": "string", "minLength": 1},
+    "source_regulation_ids": {
+      "type": "array",
+      "prefixItems": [{"type": "string", "pattern": "^INTL_[A-Z0-9_]+$"}],
+      "minItems": 1,
+      "maxItems": 1
+    },
+    "source_simulation_case_id": {"type": "null"},
+    "tool_plan": {"type": "array"},
+    "metadata": {
+      "type": "object",
+      "required": ["extension_version", "generation_mode", "jurisdiction", "source_metadata_sha256"],
+      "properties": {
+        "extension_version": {"const": "international-rule-probe-v2"},
+        "generation_mode": {"const": "direct_english_from_typed_rule_contract"},
+        "jurisdiction": {"type": "string"},
+        "source_metadata_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

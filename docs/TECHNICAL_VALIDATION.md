@@ -1,6 +1,6 @@
 # Technical Validation
 
-Generated: 2026-08-28
+Generated: 2026-08-29
 
 ## International Rule-Probe Extension
 
@@ -8,7 +8,7 @@ The separate jurisdictional extension passes its local contract gate for 8 offic
 
 The companion manifest contains two cross-jurisdiction 256/256 folds and two within-jurisdiction 192/64 variant-holdout folds, all with zero train/test ID overlap. A CPU character TF--IDF nearest-neighbour output-copy diagnostic completes all four folds with macro exact match 0.0000, cross-jurisdiction token-F1 0.5303, within-jurisdiction token-F1 0.9756, and structured field scores of 0.0000/1.0000 for the same two fold groups. An explicit-input contract-copy control reaches 1.000 on the five structured fields by construction and is retained only to expose input leakage. These are lexical-transfer diagnostics; they do not establish held-out-jurisdiction semantic generalization. The international review artifact contains 128 stratified records with two blank reviewer assignments per record; it is excluded from metrics and human agreement remains pending.
 
-The current compact review archive was extracted in an isolated temporary directory and replayed. Its 91 dereferenced members, canonical English table, selected receipts, and review-package geometry pass the declared checks; the isolated validator reports zero duplicate-ID and JSONL parse errors. Scenario-link and query-truth checks remain explicitly deferred because the compact archive excludes the raw scenario registry and query-truth ledger.
+The current compact review archive was extracted in an isolated temporary directory and replayed. Its 107 dereferenced members, canonical English table, selected receipts, and review-package geometry pass the declared checks; the isolated validator reports zero duplicate-ID and JSONL parse errors. Scenario-link and query-truth checks remain explicitly deferred because the compact archive excludes the raw scenario registry and query-truth ledger.
 
 ## Dataset Integrity
 
@@ -16,12 +16,51 @@ The current compact review archive was extracted in an isolated temporary direct
 | --- | ---: |
 | Total records | 95479 |
 | Validation passed | true |
-| Near-duplicate rate | 0.0036028864986017866 |
+| Near-duplicate rate (schema validator) | 0.011646540076875543 |
 | Schema errors | 0 |
 | Duplicate ids | 0 |
 | Invalid rule links | 0 |
 | Invalid scenario links | 0 |
 | Semantic errors | 0 |
+
+The official development projections were re-partitioned by exact normalized
+task--instruction--input--output signature. Thirty-eight records moved to the
+earliest split; train--validation, train--test, and validation--test exact
+signature overlap is now zero. The strict source-group projections received a
+corresponding 42-record repair with zero exact signature overlap. Full-table
+exact duplicate rate is 990 records after the first occurrence (1.0369%),
+below the prespecified 2% diagnostic limit. The schema validator's normalized-
+field duplicate rate is reported separately in the table above because it uses
+a different normalization contract.
+
+The current in-memory compliance-label audit checks all 24,767
+`regulation_compliance_check` records against the released scenario registry.
+It reports zero mismatches in the deterministic label, observed-issue list,
+issue profile, output label, and English rationale. No derived JSONL stage is
+retained for this check; the older staged recomputation receipt is historical
+and excluded from the current evidence binding.
+
+An independent registry severity replay recomputes the loading/voltage
+severity for 80,385 complete scenario-linked rows with zero mismatches. Eight
+rows linked to the registered unsupplied-island boundary carry the explicit
+`invalid` marker and remain outside numeric truth. Compact row summaries omit
+maximum voltage for some records, so the text-only numeric parser is retained
+as an inconclusive diagnostic rather than a physical gate.
+
+The dispatcher-request contract receipt re-renders the typed request semantics
+and target slot for all 19,773 dispatcher-intent records without dropping
+records or changing targets. Conflicting prompt/input groups decrease from 936
+to zero, and official cross-split prompt/input duplicates decrease from 17 to
+zero. Rule-evidence pointers are refreshed after the same materialisation.
+The resulting request surface explicitly states the operator's requested
+dispatch route in natural language; consequently, the closed-label intent
+baseline is expected to be highly separable and is reported as a learnability
+diagnostic rather than evidence of dispatch competence.
+
+The large instruction-surface OOD view is stored as an ID-only manifest and is
+materialised from the canonical table on demand. This avoids a second copy of
+the 75,240-row view while preserving the exact record denominator and its
+canonical-data hash.
 
 ## Evidence Tiers
 
@@ -36,6 +75,12 @@ The full 95,479-row table is covered by machine-checkable schema, provenance, an
 | Core-4 converged attempts | 1772 |
 | Core-4 convergence rate | 0.9345991561181435 |
 | Release scenario identifiers | 2822 requested; 2821 converged |
+
+The independent query replay recomputes 2,452 of 2,453 query-linked scenarios
+and exactly matches 17,764 of 17,766 query records after the declared
+Newton/Iwamoto--Newton deterministic solver policy. Two records associated with
+the retained unsupplied-island state remain solver-bound and are excluded from
+complete numerical-truth claims.
 
 ## Source Traceability
 
@@ -72,11 +117,11 @@ The full 95,479-row table is covered by machine-checkable schema, provenance, an
 The current CPU reference uses TF--IDF features with a linear support-vector
 classifier for closed-label tasks and nearest-neighbour retrieval for open
 targets. On the direct-English official test split, macro-F1 is 0.9987 for
-operation-ticket checking, 0.9790 for regulation compliance, and 0.3998 for
+operation-ticket checking, 0.9790 for regulation compliance, and 1.0000 for
 dispatcher-intent routing; the corresponding OOD values are 1.0000, 0.8130,
-and 0.3800. On the exact instruction-surface test split, the same classifier
-obtains 0.9996, 0.8723, and 0.4358, with OOD values 1.0000, 0.7054, and
-0.2976. Nearest-neighbour retrieval gives official test exact match 0.8406,
+and 1.0000. On the exact instruction-surface test split, the same classifier
+obtains 0.9996, 0.8723, and 1.0000, with OOD values 1.0000, 0.7054, and
+1.0000. Nearest-neighbour retrieval gives official test exact match 0.8366,
 0.8904, and 0.0000 for regulation QA, auxiliary decision drafting, and
 intelligent data querying, respectively. These values are task-specific
 learnability and structured-output diagnostics; they are not dispatch,

@@ -1,10 +1,11 @@
 {
-  "generated_at": "2026-08-19T11:33:07.924448+00:00",
-  "code_sha256": "7467f57d27c1c466e7ca1548b48d713c93738ef2a9bc79da9ce8250cfca158fe",
+  "generated_at": "2026-08-28T20:05:09.739956+00:00",
+  "code_sha256": "8438a8718212650cc594a0e42f4bc6abf261ac6423ab6644fa38abb312d7badf",
   "train": "data/v1.2_sd_core_instruction_surface_balanced_train_en.jsonl",
   "validation": "data/v1.2_sd_core_instruction_surface_balanced_validation_en.jsonl",
   "test": "data/v1.2_sd_core_instruction_surface_balanced_test_en.jsonl",
-  "ood": "data/v1.2_sd_core_instruction_surface_balanced_ood_test_en.jsonl",
+  "ood": "data/v1.2_sd_core_instruction_surface_balanced_ood_test_ids.jsonl",
+  "canonical": "data/gridinstruct_v1.2_sd_core_en.jsonl",
   "objective": "task_specific_tfidf_baselines",
   "status": "pass",
   "train_records": 10689,
@@ -12,10 +13,11 @@
   "test_records": 4432,
   "ood_records": 75240,
   "input_sha256": {
-    "train": "67f331de12e023aa733f0d3d50ba74bd339d94cafffc26d3f50b82baa0e9153e",
-    "validation": "ab15bc0533ff9f3ccc2655b166ac2043b1173aad76395f1f19b006fc879f5d0c",
-    "test": "faaee27950b5a577bebdbd1d40f99d49a3bfc8b921b48cba74f521d0690a905c",
-    "ood": "3674fc731033f2f6332a7c742cebf97c60cc2406e1b15e27f8d788aa3f1ce9b4"
+    "train": "9de230d3717d0ad1ada766b916070105b7a55e1d9f53a3079a0faaf2d60f20af",
+    "validation": "f002d3220f818d5b89a08d767bf8a86c55142c7d11ec6bd2bb108d96ebd00aba",
+    "test": "2b75a9c52a8418a835994d5dc523a8bd08587308f10147e667fcf0c94d7fe426",
+    "ood": "0c2847bd1f5ffff2122ec76d020ec8b175c6014e3aa6bcd60eb289c44548e781",
+    "canonical": "18a4d36153f9d77ae9b26744978a7bea27138aee048d1b12906335797e908013"
   },
   "validation_metrics": {
     "auxiliary_decision": {
@@ -43,9 +45,9 @@
       "task_type": "dispatcher_intent_tool_call",
       "model_family": "tfidf_linear_svc",
       "n": 121,
-      "accuracy": 0.24793388429752067,
-      "macro_f1": 0.2478931540370256,
-      "balanced_accuracy": 0.2628117913832199,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
       "label_space": [
         "diagnose_and_dispatch",
         "mitigate_violations",
@@ -108,9 +110,9 @@
       "task_type": "dispatcher_intent_tool_call",
       "model_family": "tfidf_linear_svc",
       "n": 121,
-      "accuracy": 0.4462809917355372,
-      "macro_f1": 0.43583924690513065,
-      "balanced_accuracy": 0.4515873015873016,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
       "label_space": [
         "diagnose_and_dispatch",
         "mitigate_violations",
@@ -173,9 +175,9 @@
       "task_type": "dispatcher_intent_tool_call",
       "model_family": "tfidf_linear_svc",
       "n": 19143,
-      "accuracy": 0.33176618084939663,
-      "macro_f1": 0.297606663673868,
-      "balanced_accuracy": 0.3314548969560494,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
       "label_space": [
         "diagnose_and_dispatch",
         "mitigate_violations",
@@ -213,22 +215,22 @@
     }
   },
   "validation_metric_families": {
-    "classification_task_macro_f1": 0.6921606092398259,
-    "classification_task_macro_accuracy": 0.6910295408253062,
+    "classification_task_macro_f1": 0.942862891227484,
+    "classification_task_macro_accuracy": 0.941718246059466,
     "generation_task_macro_exact_match": 0.6358658829285354,
     "generation_task_macro_token_f1": 0.868271545927121,
     "aggregation_policy": "metrics are aggregated only within comparable task families"
   },
   "test_metric_families": {
-    "classification_task_macro_f1": 0.769238892990129,
-    "classification_task_macro_accuracy": 0.7771360296338611,
+    "classification_task_macro_f1": 0.9572924773550855,
+    "classification_task_macro_accuracy": 0.9617090323886819,
     "generation_task_macro_exact_match": 0.6511264642947812,
     "generation_task_macro_token_f1": 0.8695820571559816,
     "aggregation_policy": "metrics are aggregated only within comparable task families"
   },
   "ood_metric_families": {
-    "classification_task_macro_f1": 0.667661382944655,
-    "classification_task_macro_accuracy": 0.6917438349073789,
+    "classification_task_macro_f1": 0.9017924950533658,
+    "classification_task_macro_accuracy": 0.9144884412909132,
     "generation_task_macro_exact_match": 0.08676388143312345,
     "generation_task_macro_token_f1": 0.7644423249301112,
     "aggregation_policy": "metrics are aggregated only within comparable task families"
@@ -236,8 +238,8 @@
   "deprecated_cross_task_macro_score": null,
   "note": "Classification tasks use macro-F1 as the primary metric. Generation tasks report exact match and token-F1 separately; incompatible metrics are not averaged together.",
   "prediction_sha256": {
-    "validation": "6e710aa1aba4de8cd4c124dcae5f31a53cc904c8110cef77bdc68d2fe65675a1",
-    "test": "e718631848bb4d8936b85f453c09314da54d1ef10744ca2b01d7c5b7752202a5",
-    "ood": "9633bdfb25184f3eede03d27caa8644ad2a1a9ca420b69e965d3243be1503a41"
+    "validation": "891c262c700a297bc97876b153a5993018cc68fa53cece3f0f19d1e1d8b5e56d",
+    "test": "a196b8f1b5d51f7d07853135ee4048f105286874cd960a868b9639b8bf87a57b",
+    "ood": "1815b126bddad85a4098eef40b86368652c28551b8eee14bdbca3f5cb347052f"
   }
 }

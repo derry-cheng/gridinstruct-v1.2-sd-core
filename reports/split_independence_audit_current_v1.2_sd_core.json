@@ -1,87 +1,87 @@
 {
-  "generated_at": "2026-08-19T11:36:05.391667+00:00",
+  "generated_at": "2026-08-28T21:19:25.771181+00:00",
   "status": "pass",
   "scope_statement": "Record-id and OOD scenario isolation are hard gates; standard scenario/source-group overlaps are reported as diagnostics.",
   "split_summary": {
     "train": {
-      "records": 26508,
+      "records": 26545,
       "scenario_ids": 665,
-      "source_record_ids": 20092,
-      "source_groups": 9078,
+      "source_record_ids": 20129,
+      "source_groups": 9115,
       "task_counts": {
         "auxiliary_decision": 3617,
-        "dispatcher_intent_tool_call": 3367,
+        "dispatcher_intent_tool_call": 3368,
         "intelligent_data_query": 3482,
         "operation_ticket_check": 8020,
         "regulation_compliance_check": 5406,
-        "regulation_qa": 2616
+        "regulation_qa": 2652
       },
       "network_counts": {
         "IEEE 14": 2622,
-        "IEEE 30": 5281,
+        "IEEE 30": 5282,
         "IEEE 57": 7969,
-        "no_network": 10636
+        "no_network": 10672
       },
       "severity_counts": {
         "alert": 4431,
-        "emergency": 8946,
+        "emergency": 8947,
         "invalid": 4,
         "normal": 2491,
-        "unknown": 10636
+        "unknown": 10672
       }
     },
     "validation": {
-      "records": 3583,
+      "records": 3561,
       "scenario_ids": 295,
-      "source_record_ids": 3401,
-      "source_groups": 1607,
+      "source_record_ids": 3379,
+      "source_groups": 1585,
       "task_counts": {
         "auxiliary_decision": 446,
         "dispatcher_intent_tool_call": 659,
         "intelligent_data_query": 431,
         "operation_ticket_check": 988,
         "regulation_compliance_check": 736,
-        "regulation_qa": 323
+        "regulation_qa": 301
       },
       "network_counts": {
         "IEEE 14": 201,
         "IEEE 30": 1317,
         "IEEE 57": 754,
-        "no_network": 1311
+        "no_network": 1289
       },
       "severity_counts": {
         "alert": 483,
         "emergency": 983,
         "invalid": 2,
         "normal": 804,
-        "unknown": 1311
+        "unknown": 1289
       }
     },
     "test": {
-      "records": 3909,
+      "records": 3894,
       "scenario_ids": 368,
-      "source_record_ids": 3720,
-      "source_groups": 1657,
+      "source_record_ids": 3706,
+      "source_groups": 1643,
       "task_counts": {
         "auxiliary_decision": 438,
-        "dispatcher_intent_tool_call": 868,
+        "dispatcher_intent_tool_call": 867,
         "intelligent_data_query": 434,
         "operation_ticket_check": 928,
         "regulation_compliance_check": 921,
-        "regulation_qa": 320
+        "regulation_qa": 306
       },
       "network_counts": {
         "IEEE 14": 311,
-        "IEEE 30": 1377,
+        "IEEE 30": 1376,
         "IEEE 57": 973,
-        "no_network": 1248
+        "no_network": 1234
       },
       "severity_counts": {
         "alert": 574,
-        "emergency": 1785,
+        "emergency": 1784,
         "invalid": 2,
         "normal": 300,
-        "unknown": 1248
+        "unknown": 1234
       }
     },
     "ood_test": {
@@ -167,7 +167,7 @@
       "ood_test__test": 171,
       "ood_test__train": 647,
       "ood_test__validation": 147,
-      "test__train": 1099,
+      "test__train": 1100,
       "test__validation": 320,
       "train__validation": 1134
     },
@@ -175,7 +175,7 @@
       "ood_test__test": 171,
       "ood_test__train": 647,
       "ood_test__validation": 147,
-      "test__train": 1007,
+      "test__train": 1008,
       "test__validation": 261,
       "train__validation": 1017
     },
@@ -198,6 +198,6 @@
     "all_released_splits_nonempty": true
   },
   "figures": {
-    "overlap_diagnostics": "figures/sd_core_current/fig_split_independence_overlap.png"
+    "overlap_diagnostics": "figures/sd_core/fig_split_independence_overlap.png"
   }
 }

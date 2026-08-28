@@ -1,6 +1,6 @@
 # Split Independence Audit
 
-Generated: 2026-08-19T11:36:05.391667+00:00
+Generated: 2026-08-28T21:19:25.771181+00:00
 Status: `pass`
 
 This audit separates record-level isolation, scenario-level diagnostics, source-record diagnostics, and OOD isolation so that split claims use a single scope.
@@ -16,9 +16,9 @@ This audit separates record-level isolation, scenario-level diagnostics, source-
 
 | split | records | scenarios | source_records | source_groups |
 | --- | ---: | ---: | ---: | ---: |
-| train | 26508 | 665 | 20092 | 9078 |
-| validation | 3583 | 295 | 3401 | 1607 |
-| test | 3909 | 368 | 3720 | 1657 |
+| train | 26545 | 665 | 20129 | 9115 |
+| validation | 3561 | 295 | 3379 | 1585 |
+| test | 3894 | 368 | 3706 | 1643 |
 | ood_test | 61479 | 1915 | 55633 | 8343 |
 | challenge_train | 0 | 0 | 0 | 0 |
 | challenge_validation | 0 | 0 | 0 | 0 |
@@ -44,14 +44,14 @@ This audit separates record-level isolation, scenario-level diagnostics, source-
 - `ood_test__test`: 171
 - `ood_test__train`: 647
 - `ood_test__validation`: 147
-- `test__train`: 1099
+- `test__train`: 1100
 - `test__validation`: 320
 - `train__validation`: 1134
 ### source_group_standard
 - `ood_test__test`: 171
 - `ood_test__train`: 647
 - `ood_test__validation`: 147
-- `test__train`: 1007
+- `test__train`: 1008
 - `test__validation`: 261
 - `train__validation`: 1017
 ### record_id_challenge
@@ -69,4 +69,4 @@ Record identifiers are isolated across released splits. Standard train/validatio
 
 ## Figures
 
-- overlap_diagnostics: `figures/sd_core_current/fig_split_independence_overlap.png`
+- overlap_diagnostics: `figures/sd_core/fig_split_independence_overlap.png`

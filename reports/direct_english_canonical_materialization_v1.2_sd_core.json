@@ -19,8 +19,10 @@
   },
   "cjk_record_count": 0,
   "cjk_record_examples": [],
-  "source_sha256": "882dc4960dcf14d5b6e6465ced25051c860f1b360ffdb58770c3b68d6e7b60b3",
-  "output_sha256": "be438aff887f0c2fb8f3ea6958c49237da8bfb79a4f38c13f827d182652c9a38",
+  "source_sha256": "18a4d36153f9d77ae9b26744978a7bea27138aee048d1b12906335797e908013",
+  "output_sha256": "18a4d36153f9d77ae9b26744978a7bea27138aee048d1b12906335797e908013",
+  "output_file_sha256": "18a4d36153f9d77ae9b26744978a7bea27138aee048d1b12906335797e908013",
+  "output_contract_sha256": "3bceaa3d9371267694d17d8454cb5d337827cbfa3a5b96b6eacef6988a1989ed",
   "external_translation_service_used": false,
   "source_language_fields_removed": true
 }

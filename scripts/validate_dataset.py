@@ -385,6 +385,10 @@ def validate_records(input_path: Path) -> dict:
 
     near_duplicate_rate = near_duplicate_count / max(len(rows), 1)
     near_duplicate_threshold = 0.02
+    try:
+        report_input = str(input_path.resolve().relative_to(ROOT.resolve()))
+    except ValueError:
+        report_input = str(input_path)
     return {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "status": "pass" if not (
@@ -397,7 +401,7 @@ def validate_records(input_path: Path) -> dict:
             or semantic_errors
             or near_duplicate_rate > near_duplicate_threshold
         ) else "fail",
-        "input": str(input_path),
+        "input": report_input,
         "total_records": len(rows),
         "schema_errors": schema_errors,
         "schema_pass_rate": 1 - (len(schema_errors) / max(len(rows), 1)),

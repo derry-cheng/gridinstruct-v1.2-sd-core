@@ -1,15 +1,16 @@
 {
-  "generated_at": "2026-08-19T11:34:24.064843+00:00",
+  "generated_at": "2026-08-28T20:54:39.012768+00:00",
   "objective": "schema_aware_supervised_auxiliary_tool_sequence_prediction",
   "train": "data/v1.2_sd_core_instruction_surface_balanced_train_en.jsonl",
   "validation": "data/v1.2_sd_core_instruction_surface_balanced_validation_en.jsonl",
   "test": "data/v1.2_sd_core_instruction_surface_balanced_test_en.jsonl",
-  "ood": "data/v1.2_sd_core_instruction_surface_balanced_ood_test_en.jsonl",
+  "ood": "data/v1.2_sd_core_instruction_surface_balanced_ood_test_ids.jsonl",
+  "canonical": "data/gridinstruct_v1.2_sd_core_en.jsonl",
   "train_records": 407,
   "validation_records": 303,
   "test_records": 300,
   "ood_records": 17077,
-  "code_sha256": "69c043a2177e147c683c794c6e0445785a508df9c6014cfa7e238f972dedb4aa",
+  "code_sha256": "02f39b3158cfeb0b79dc2e7f10d1c8f9a4648c810ab864706e3c7d7fc877f49d",
   "validation_evaluation": {
     "accuracy": 1.0,
     "macro_f1": 1.0,
@@ -45,9 +46,9 @@
     "majority_macro_f1": 0.4727592267135325
   },
   "ood_evaluation": {
-    "accuracy": 1.0,
-    "macro_f1": 1.0,
-    "tool_sequence_exact": 1.0,
+    "accuracy": 0.9987117175147859,
+    "macro_f1": 0.9675109290241258,
+    "tool_sequence_exact": 0.9987117175147859,
     "tool_set_exact": 1.0,
     "tool_set_jaccard": 1.0,
     "prediction_is_json": 1.0,
@@ -62,15 +63,16 @@
     "majority_macro_f1": 0.497646643525328
   },
   "input_sha256": {
-    "train": "67f331de12e023aa733f0d3d50ba74bd339d94cafffc26d3f50b82baa0e9153e",
-    "validation": "ab15bc0533ff9f3ccc2655b166ac2043b1173aad76395f1f19b006fc879f5d0c",
-    "test": "faaee27950b5a577bebdbd1d40f99d49a3bfc8b921b48cba74f521d0690a905c",
-    "ood": "3674fc731033f2f6332a7c742cebf97c60cc2406e1b15e27f8d788aa3f1ce9b4"
+    "train": "9de230d3717d0ad1ada766b916070105b7a55e1d9f53a3079a0faaf2d60f20af",
+    "validation": "f002d3220f818d5b89a08d767bf8a86c55142c7d11ec6bd2bb108d96ebd00aba",
+    "test": "2b75a9c52a8418a835994d5dc523a8bd08587308f10147e667fcf0c94d7fe426",
+    "ood": "0c2847bd1f5ffff2122ec76d020ec8b175c6014e3aa6bcd60eb289c44548e781",
+    "canonical": "18a4d36153f9d77ae9b26744978a7bea27138aee048d1b12906335797e908013"
   },
   "prediction_sha256": {
     "validation": "e5575acab70ea37e8f7894dbc454b6eb4eaf6f91b74536e915f068048ebe5589",
     "test": "dba0f15a1c50bd63227f91ee6fe3a20bedfd30a5e2990b75932a6f95fb33803a",
-    "ood": "8b7d6dc27a047957809226ccb29caf3fd3da8ebbc0f96c590ac526907e665e5a"
+    "ood": "787870e37cf2ea64b5a19d44b664df94e106d1ad05a924504fedcc94f5bf62bc"
   },
   "scenario_id_input_exposed": true,
   "note": "The model predicts the ordered auxiliary tool sequence from the released input contract. Sequence exactness and set exactness are reported separately. The reported deterministic_serialization_validity is a format check because this baseline serializes a Python object before parsing it; it is excluded from model-performance interpretation. Majority-label diagnostics expose support imbalance. This is a contract-prediction baseline, not an executable-control test."

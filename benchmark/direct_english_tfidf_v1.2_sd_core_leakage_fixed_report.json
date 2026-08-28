@@ -1,21 +1,23 @@
 {
-  "generated_at": "2026-08-19T11:28:44.406508+00:00",
-  "code_sha256": "7467f57d27c1c466e7ca1548b48d713c93738ef2a9bc79da9ce8250cfca158fe",
+  "generated_at": "2026-08-28T21:04:54.441830+00:00",
+  "code_sha256": "8438a8718212650cc594a0e42f4bc6abf261ac6423ab6644fa38abb312d7badf",
   "train": "data/v1.2_sd_core_train_en.jsonl",
   "validation": "data/v1.2_sd_core_validation_en.jsonl",
   "test": "data/v1.2_sd_core_test_en.jsonl",
   "ood": "data/v1.2_sd_core_ood_test_en.jsonl",
+  "canonical": "data/gridinstruct_v1.2_sd_core_en.jsonl",
   "objective": "task_specific_tfidf_baselines",
   "status": "pass",
-  "train_records": 26508,
-  "validation_records": 3583,
-  "test_records": 3909,
+  "train_records": 26545,
+  "validation_records": 3561,
+  "test_records": 3894,
   "ood_records": 61479,
   "input_sha256": {
-    "train": "27087a599f1a3b78cf69e27ae2f8ed71e513fb50c4e140025d3b6cb1efe33c95",
-    "validation": "ec1e2a0fa019f169e7317267c02bea6f3aaeb3531a0b79b2fa841c3dda0fd765",
-    "test": "d64dd5c72721b0f6bb0fda7911722d76dfba2bef9596fac10bd9bae227c9b401",
-    "ood": "c8bcdf784892728b7b981e5aaad76d7c3780b14ed4a8a06e58466d87ee021038"
+    "train": "81fb662da56a2685b9edabde8843b277600832345ae438fd23674ade0bc95283",
+    "validation": "ee3e73c1c70afc000b473ad4268d8eea905461005f1242f8394d465100a94465",
+    "test": "8c9c6e9f87209aa356aaea4c8e707c30fb5608ab5a5a968f83ecab0c5d73e988",
+    "ood": "146c23fc751f6d9003b62407a4e921f5d5742638f114ddd854dd264bd28d6343",
+    "canonical": "18a4d36153f9d77ae9b26744978a7bea27138aee048d1b12906335797e908013"
   },
   "validation_metrics": {
     "operation_ticket_check": {
@@ -50,18 +52,18 @@
     "regulation_qa": {
       "task_type": "regulation_qa",
       "model_family": "tfidf_nearest_neighbor",
-      "n": 323,
-      "exact_match": 0.8947368421052632,
-      "token_f1": 0.9893459165915522,
-      "avg_nearest_similarity": 0.918812725663028
+      "n": 301,
+      "exact_match": 0.8837209302325582,
+      "token_f1": 0.9882349869072136,
+      "avg_nearest_similarity": 0.9126691235147522
     },
     "dispatcher_intent_tool_call": {
       "task_type": "dispatcher_intent_tool_call",
       "model_family": "tfidf_linear_svc",
       "n": 659,
-      "accuracy": 0.3611532625189681,
-      "macro_f1": 0.35982224548303,
-      "balanced_accuracy": 0.3606917074642421,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
       "label_space": [
         "diagnose_and_dispatch",
         "mitigate_violations",
@@ -99,10 +101,10 @@
     "dispatcher_intent_tool_call": {
       "task_type": "dispatcher_intent_tool_call",
       "model_family": "tfidf_linear_svc",
-      "n": 868,
-      "accuracy": 0.39976958525345624,
-      "macro_f1": 0.39977375024384526,
-      "balanced_accuracy": 0.3999531634210613,
+      "n": 867,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
       "label_space": [
         "diagnose_and_dispatch",
         "mitigate_violations",
@@ -133,10 +135,10 @@
     "regulation_qa": {
       "task_type": "regulation_qa",
       "model_family": "tfidf_nearest_neighbor",
-      "n": 320,
-      "exact_match": 0.840625,
-      "token_f1": 0.9835962357858623,
-      "avg_nearest_similarity": 0.9130210291108083
+      "n": 306,
+      "exact_match": 0.8366013071895425,
+      "token_f1": 0.9831569723748825,
+      "avg_nearest_similarity": 0.9092690409437073
     },
     "intelligent_data_query": {
       "task_type": "intelligent_data_query",
@@ -152,9 +154,9 @@
       "task_type": "dispatcher_intent_tool_call",
       "model_family": "tfidf_linear_svc",
       "n": 14879,
-      "accuracy": 0.3836951408024733,
-      "macro_f1": 0.3799732875061766,
-      "balanced_accuracy": 0.38351412468331564,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
       "label_space": [
         "diagnose_and_dispatch",
         "mitigate_violations",
@@ -195,8 +197,8 @@
       "model_family": "tfidf_nearest_neighbor",
       "n": 946,
       "exact_match": 0.09408033826638477,
-      "token_f1": 0.8954186983589802,
-      "avg_nearest_similarity": 0.7935415088192159
+      "token_f1": 0.895441902607936,
+      "avg_nearest_similarity": 0.7932573704634551
     },
     "operation_ticket_check": {
       "task_type": "operation_ticket_check",
@@ -213,31 +215,31 @@
     }
   },
   "validation_metric_families": {
-    "classification_task_macro_f1": 0.6902137795618358,
-    "classification_task_macro_accuracy": 0.7240981889555981,
-    "generation_task_macro_exact_match": 0.607662654393832,
-    "generation_task_macro_token_f1": 0.8998672384841488,
+    "classification_task_macro_f1": 0.9036063644008259,
+    "classification_task_macro_accuracy": 0.9370471014492754,
+    "generation_task_macro_exact_match": 0.6039906837695971,
+    "generation_task_macro_token_f1": 0.8994969285893694,
     "aggregation_policy": "metrics are aggregated only within comparable task families"
   },
   "test_metric_families": {
-    "classification_task_macro_f1": 0.7924915454888467,
-    "classification_task_macro_accuracy": 0.7955828198052411,
-    "generation_task_macro_exact_match": 0.5770119863013699,
-    "generation_task_macro_token_f1": 0.903831167608908,
+    "classification_task_macro_f1": 0.9925669620742318,
+    "classification_task_macro_accuracy": 0.9956596247207559,
+    "generation_task_macro_exact_match": 0.5756707553645507,
+    "generation_task_macro_token_f1": 0.9036847464719148,
     "aggregation_policy": "metrics are aggregated only within comparable task families"
   },
   "ood_metric_families": {
-    "classification_task_macro_f1": 0.7309971335520525,
-    "classification_task_macro_accuracy": 0.7801615223069548,
+    "classification_task_macro_f1": 0.937672704383327,
+    "classification_task_macro_accuracy": 0.9855964753727972,
     "generation_task_macro_exact_match": 0.29925843946432856,
-    "generation_task_macro_token_f1": 0.8212881099396222,
+    "generation_task_macro_token_f1": 0.8212958446892741,
     "aggregation_policy": "metrics are aggregated only within comparable task families"
   },
   "deprecated_cross_task_macro_score": null,
   "note": "Classification tasks use macro-F1 as the primary metric. Generation tasks report exact match and token-F1 separately; incompatible metrics are not averaged together.",
   "prediction_sha256": {
-    "validation": "c580c41581e74073ab2aaa3fd0fda32fc85575d78f322022c72c29f8f5a7d1ff",
-    "test": "69dfd46cd3f4b8f5697f47d27759160dc5ffa88f1897d35bf50688b15e6b6f9e",
-    "ood": "aef87a520b7e358575cd732d0d2e8a3e748663a876982672f9dfe3ca9e8e0143"
+    "validation": "922b0891cf28ed136dffe9f3c185572ccf08cf50eb2598030c21ec1d45efc48a",
+    "test": "582cf2ee39156806e142977239af951d358255af3c2ebe5bb3bce9e22fe1ac88",
+    "ood": "159f786ce0af3dc33300e373b949986c443d4cf62bf0908b5d2e7da014208770"
   }
 }

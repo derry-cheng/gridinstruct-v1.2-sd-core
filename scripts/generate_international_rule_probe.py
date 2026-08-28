@@ -377,6 +377,32 @@ def validate(rules: list[dict[str, Any]], records: list[dict[str, Any]]) -> dict
     }
 
 
+def validate_json_schema(records: list[dict[str, Any]], schema_path: Path) -> dict[str, Any]:
+    """Validate the extension rows against its explicit, separate schema."""
+    from jsonschema import Draft202012Validator
+
+    schema = json.loads(schema_path.read_text(encoding="utf-8"))
+    validator = Draft202012Validator(schema)
+    errors: list[dict[str, Any]] = []
+    for index, record in enumerate(records, 1):
+        record_errors = sorted(validator.iter_errors(record), key=lambda error: list(error.path))
+        if record_errors:
+            errors.append(
+                {
+                    "line": index,
+                    "messages": [error.message for error in record_errors[:10]],
+                }
+            )
+    digest = hashlib.sha256(schema_path.read_bytes()).hexdigest()
+    return {
+        "schema_path": str(schema_path.relative_to(ROOT)),
+        "schema_sha256": digest,
+        "schema_validation_status": "pass" if not errors else "fail",
+        "schema_validation_error_count": len(errors),
+        "schema_validation_error_examples": errors[:10],
+    }
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--access-date", default=DEFAULT_ACCESS_DATE)
@@ -385,6 +411,7 @@ def main() -> None:
     parser.add_argument("--data", default="data/international_rule_probe_v1.jsonl")
     parser.add_argument("--report-json", default="reports/international_rule_probe_v1.json")
     parser.add_argument("--report-md", default="reports/international_rule_probe_v1.md")
+    parser.add_argument("--schema", default="metadata/international_rule_probe_schema.json")
     args = parser.parse_args()
     rules = materialize_rules(args.access_date)
     records = [
@@ -397,7 +424,16 @@ def main() -> None:
     (ROOT / args.rules).parent.mkdir(parents=True, exist_ok=True)
     (ROOT / args.rules).write_text(json.dumps(rules, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     write_matrix(ROOT / args.matrix, rules)
-    result.update({"generated_at": args.access_date, "data_sha256": data_sha, "data_path": args.data, "rules_path": args.rules, "matrix_path": args.matrix})
+    result.update(
+        {
+            "generated_at": args.access_date,
+            "data_sha256": data_sha,
+            "data_path": args.data,
+            "rules_path": args.rules,
+            "matrix_path": args.matrix,
+            **validate_json_schema(records, ROOT / args.schema),
+        }
+    )
     (ROOT / args.report_json).write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     md = [
         "# International rule-probe extension",
@@ -414,6 +450,7 @@ def main() -> None:
     md.extend([
         "",
         f"The JSONL data SHA-256 is `{data_sha}`. No domestic numeric threshold is copied into the international cards; each card records whether limits are operator-defined or regulation-specific.",
+        f"The extension schema is `{result['schema_path']}` (SHA-256 `{result['schema_sha256']}`); schema validation status is `{result['schema_validation_status']}` for all {result['record_count']} records.",
         "",
         "The extension still requires independent expert review and a jurisdiction-held-out evaluation before any cross-jurisdiction generalization claim is made.",
     ])

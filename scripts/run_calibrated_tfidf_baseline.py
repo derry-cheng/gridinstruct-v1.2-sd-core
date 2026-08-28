@@ -33,6 +33,19 @@ def sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
+def load_rows(path: Path, canonical_path: Path) -> list[dict[str, Any]]:
+    """Load a full split or project an ID-only manifest onto the canonical table."""
+
+    rows = read_jsonl(path)
+    if not path.name.endswith("_ids.jsonl"):
+        return rows
+    canonical = {str(row["id"]): row for row in read_jsonl(canonical_path)}
+    missing = [str(row["id"]) for row in rows if str(row["id"]) not in canonical]
+    if missing:
+        raise ValueError(f"split manifest IDs missing from canonical table: {missing[:3]}")
+    return [canonical[str(row["id"])] for row in rows]
+
+
 def text_for(row: dict[str, Any]) -> str:
     return "\n".join(
         [
@@ -101,12 +114,14 @@ def main() -> None:
     parser.add_argument("--train", required=True)
     parser.add_argument("--test", required=True)
     parser.add_argument("--ood", required=True)
+    parser.add_argument("--canonical", default="data/gridinstruct_v1.2_sd_core_en.jsonl")
     parser.add_argument("--output-prefix", default="benchmark/instruction_surface_balanced_v1.2_sd_core/calibrated_tfidf")
     args = parser.parse_args()
 
-    train = read_jsonl(ROOT / args.train)
-    test = read_jsonl(ROOT / args.test)
-    ood = read_jsonl(ROOT / args.ood)
+    canonical_path = ROOT / args.canonical
+    train = load_rows(ROOT / args.train, canonical_path)
+    test = load_rows(ROOT / args.test, canonical_path)
+    ood = load_rows(ROOT / args.ood, canonical_path)
     prefix = ROOT / args.output_prefix
     prefix.parent.mkdir(parents=True, exist_ok=True)
     metrics: dict[str, Any] = {}
@@ -140,11 +155,16 @@ def main() -> None:
         "train": args.train,
         "test": args.test,
         "ood": args.ood,
+        "canonical": args.canonical,
         "train_records": len(train),
         "test_records": len(test),
         "ood_records": len(ood),
         "code_sha256": sha256(Path(__file__).resolve()),
-        "input_sha256": {name: sha256(ROOT / value) for name, value in (("train", args.train), ("test", args.test), ("ood", args.ood))},
+        "input_sha256": {
+            name: sha256(ROOT / value)
+            for name, value in (("train", args.train), ("test", args.test), ("ood", args.ood))
+        }
+        | {"canonical": sha256(canonical_path)},
         "prediction_sha256": prediction_hashes,
         "metrics": metrics,
         "interpretation": "ECE and multiclass Brier scores quantify probability calibration for a CPU logistic TF-IDF reference; they do not imply physical-label correctness or dispatch competence.",

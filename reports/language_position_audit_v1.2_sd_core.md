@@ -1,6 +1,6 @@
 # Language position audit for GridInstruct v1.2-sd-core
 
-Generated at: `2026-08-28T15:34:27.648851+00:00`
+Generated at: `2026-08-28T21:40:46.628106+00:00`
 Dataset: `data/gridinstruct_v1.2_sd_core_en.jsonl`
 
 This audit checks the direct-English profile of natural-language fields independently from stable schema identifiers. The same schema, split, grounding, and label-consistency checks govern the released contract.

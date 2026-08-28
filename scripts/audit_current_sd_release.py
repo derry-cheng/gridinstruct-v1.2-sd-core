@@ -31,6 +31,7 @@ SUPPORTED_QUERY_FILTERS = {
     "violation_type != none",
 }
 SUPPORTED_QUERY_SCOPES = {"line", "transformer", "all"}
+SCENARIO_REGISTRY_DEFAULT = "simulation_outputs/contingency/scenarios_converged.json"
 
 
 def sha256(path: Path) -> str:
@@ -105,6 +106,31 @@ def derive_severity(input_obj: Any) -> str | None:
     if (loading_percent is not None and loading_percent > 100.0) or (
         min_vm is not None and min_vm < 0.95
     ) or (max_vm is not None and max_vm > 1.05):
+        return "alert"
+    return "normal"
+
+
+def derive_registry_severity(scenario: Any) -> str | None:
+    """Derive severity from a complete registered scenario state.
+
+    The registry is the independent numeric source for scenario-linked rows.
+    ``invalid`` records (for example, an unsupplied island) intentionally have
+    no numeric operating state and are excluded from this numeric check.
+    """
+
+    if not isinstance(scenario, dict):
+        return None
+    if str(scenario.get("severity_level") or "").lower() == "invalid":
+        return None
+    required = ("max_branch_loading_percent", "min_bus_voltage_pu", "max_bus_voltage_pu")
+    if any(scenario.get(field) is None for field in required):
+        return None
+    loading = float(scenario["max_branch_loading_percent"])
+    min_vm = float(scenario["min_bus_voltage_pu"])
+    max_vm = float(scenario["max_bus_voltage_pu"])
+    if loading > 110.0 or min_vm < 0.92 or max_vm > 1.08:
+        return "emergency"
+    if loading > 100.0 or min_vm < 0.95 or max_vm > 1.05:
         return "alert"
     return "normal"
 
@@ -285,13 +311,88 @@ def template_surface(row: dict[str, Any]) -> str:
     return f"{task}|" + "|".join(norm(value) for value in fields)
 
 
+def template_family_group(row: dict[str, Any]) -> str:
+    """Return the atomic group key used by ``create_template_family_holdout``."""
+    def normalize(value: Any) -> str:
+        if isinstance(value, (dict, list)):
+            value = json.dumps(value, ensure_ascii=False, sort_keys=True)
+        return " ".join(str(value or "").strip().split()) or "none"
+
+    meta = row.get("metadata") or {}
+    values = [
+        row.get("task_type"),
+        meta.get("template_family"),
+        meta.get("variant_index"),
+        meta.get("augmentation_type"),
+        meta.get("issue_profile"),
+        meta.get("action_category"),
+        meta.get("action_surface_variant"),
+        meta.get("counterfactual_variant"),
+        meta.get("counterfactual_intent"),
+        meta.get("plain_ticket_boundary_key"),
+        meta.get("implicit_case_key"),
+        meta.get("counterfactual_role"),
+    ]
+    return "|".join(normalize(value) for value in values)
+
+
 def template_holdout_report(root: Path) -> dict[str, Any]:
-    paths = {
+    legacy_paths = {
         "train": root / "data/v1.2_sd_core_template_holdout_train_en.jsonl",
         "validation": root / "data/v1.2_sd_core_template_holdout_validation_en.jsonl",
         "test": root / "data/v1.2_sd_core_template_holdout_test_en.jsonl",
     }
+    # The current compact release keeps the atomic template-family split as
+    # ID-only projections.  The earlier legacy template-surface JSONL files
+    # were intentionally removed; silently returning zero counts for them
+    # made the release audit look as if the split had been checked.
+    if all(path.is_file() for path in legacy_paths.values()):
+        paths = legacy_paths
+        split_source = "legacy_template_surface_full_jsonl"
+    else:
+        paths = {
+            "train": root / "data/v1.2_sd_core_template_family_holdout_train_ids.jsonl",
+            "validation": root / "data/v1.2_sd_core_template_family_holdout_validation_ids.jsonl",
+            "test": root / "data/v1.2_sd_core_template_family_holdout_test_ids.jsonl",
+        }
+        canonical_path = root / "data/gridinstruct_v1.2_sd_core_en.jsonl"
+        canonical_rows = {
+            str(row.get("id")): row
+            for row in rows(canonical_path)
+        } if canonical_path.is_file() else {}
+        split_rows: dict[str, list[dict[str, Any]]] = {}
+        missing_ids: dict[str, int] = {}
+        for name, path in paths.items():
+            ids = [str(row.get("id") or "") for row in rows(path)] if path.is_file() else []
+            split_rows[name] = [canonical_rows[row_id] for row_id in ids if row_id in canonical_rows]
+            missing_ids[name] = sum(row_id not in canonical_rows for row_id in ids)
+        surfaces = {
+            name: {template_surface(row) for row in selected}
+            for name, selected in split_rows.items()
+        }
+        groups = {
+            name: {template_family_group(row) for row in selected}
+            for name, selected in split_rows.items()
+        }
+        return {
+            "split_source": "atomic_template_family_id_only",
+            "legacy_projection_present": False,
+            "counts": {name: len(selected) for name, selected in split_rows.items()},
+            "surface_counts": {name: len(value) for name, value in surfaces.items()},
+            "surface_overlap": {
+                "train_validation": len(surfaces["train"] & surfaces["validation"]),
+                "train_test": len(surfaces["train"] & surfaces["test"]),
+                "validation_test": len(surfaces["validation"] & surfaces["test"]),
+            },
+            "group_overlap": {
+                "train_validation": len(groups["train"] & groups["validation"]),
+                "train_test": len(groups["train"] & groups["test"]),
+                "validation_test": len(groups["validation"] & groups["test"]),
+            },
+            "missing_canonical_ids": missing_ids,
+        }
     surfaces: dict[str, set[str]] = {name: set() for name in paths}
+    groups: dict[str, set[str]] = {name: set() for name in paths}
     counts = {name: 0 for name in paths}
     for name, path in paths.items():
         if not path.exists():
@@ -299,15 +400,23 @@ def template_holdout_report(root: Path) -> dict[str, Any]:
         for row in rows(path):
             counts[name] += 1
             surfaces[name].add(template_surface(row))
+            groups[name].add(template_family_group(row))
     overlap = {
         "train_validation": len(surfaces["train"] & surfaces["validation"]),
         "train_test": len(surfaces["train"] & surfaces["test"]),
         "validation_test": len(surfaces["validation"] & surfaces["test"]),
     }
     return {
+        "split_source": split_source,
+        "legacy_projection_present": True,
         "counts": counts,
         "surface_counts": {name: len(value) for name, value in surfaces.items()},
         "surface_overlap": overlap,
+        "group_overlap": {
+            "train_validation": len(groups["train"] & groups["validation"]),
+            "train_test": len(groups["train"] & groups["test"]),
+            "validation_test": len(groups["validation"] & groups["test"]),
+        },
     }
 
 
@@ -315,12 +424,24 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--dataset", default="data/gridinstruct_v1.2_sd_core_en.jsonl")
     parser.add_argument("--source-stage", default="data/gridinstruct_v1.2_sd_core_en.jsonl")
+    parser.add_argument("--scenario-registry", default=SCENARIO_REGISTRY_DEFAULT)
     parser.add_argument("--output-json", default="reports/current_release_integrity_audit_v1.2_sd_core.json")
     parser.add_argument("--output-md", default="reports/current_release_integrity_audit_v1.2_sd_core.md")
     args = parser.parse_args()
     root = Path(__file__).resolve().parents[1]
     dataset = root / args.dataset
     source_stage = root / args.source_stage
+    scenario_registry = root / args.scenario_registry
+    if not scenario_registry.exists():
+        raise FileNotFoundError(f"scenario registry not found: {scenario_registry}")
+    scenario_values = json.loads(scenario_registry.read_text(encoding="utf-8"))
+    if not isinstance(scenario_values, list):
+        raise ValueError(f"scenario registry must be a JSON list: {scenario_registry}")
+    scenario_registry_rows = {
+        str(item.get("scenario_id")): item
+        for item in scenario_values
+        if isinstance(item, dict) and item.get("scenario_id")
+    }
 
     counts = Counter()
     ids: set[str] = set()
@@ -332,6 +453,10 @@ def main() -> None:
     tool_scenario_errors: list[str] = []
     severity_checked = 0
     severity_mismatch: list[dict[str, Any]] = []
+    registry_severity_checked = 0
+    registry_severity_incomplete: list[dict[str, Any]] = []
+    registry_severity_missing: list[dict[str, Any]] = []
+    registry_severity_mismatch: list[dict[str, Any]] = []
     numeric_severity_checked = 0
     numeric_severity_mismatch: list[dict[str, Any]] = []
     numeric_state_incomplete = 0
@@ -385,6 +510,45 @@ def main() -> None:
                 severity_checked += 1
                 if str(actual_severity).lower() != expected_severity:
                     severity_mismatch.append({"id": record_id, "expected": expected_severity, "actual": actual_severity})
+            registry_scenario = scenario_registry_rows.get(str(row.get("scenario_id") or ""))
+            if registry_scenario is None:
+                registry_severity_missing.append(
+                    {"id": record_id, "scenario_id": row.get("scenario_id")}
+                )
+            else:
+                registry_expected = derive_registry_severity(registry_scenario)
+                if registry_expected is None:
+                    # An unsupplied island has no valid numerical operating
+                    # state.  Retain it as an explicit incomplete boundary,
+                    # and require the row to carry the same invalid marker.
+                    registry_severity_incomplete.append(
+                        {
+                            "id": record_id,
+                            "scenario_id": row.get("scenario_id"),
+                            "registry_severity": registry_scenario.get("severity_level"),
+                            "row_severity": actual_severity,
+                        }
+                    )
+                    if str(actual_severity).lower() != "invalid":
+                        registry_severity_mismatch.append(
+                            {
+                                "id": record_id,
+                                "expected": "invalid",
+                                "actual": actual_severity,
+                                "reason": "registry_numeric_state_incomplete",
+                            }
+                        )
+                else:
+                    registry_severity_checked += 1
+                    if str(actual_severity).lower() != registry_expected:
+                        registry_severity_mismatch.append(
+                            {
+                                "id": record_id,
+                                "expected": registry_expected,
+                                "actual": actual_severity,
+                                "scenario_id": row.get("scenario_id"),
+                            }
+                        )
             # Run the independent numeric parser as a diagnostic whenever the
             # released prose contains enough numeric fields.  The released
             # English summary omits maximum voltage in some high-voltage rows
@@ -470,6 +634,9 @@ def main() -> None:
         "scenario_links_present_and_equal": not missing_scenario and not scenario_mismatch,
         "network_and_tool_links_consistent": not network_missing and not tool_scenario_errors,
         "severity_explicit_consistency": severity_checked > 0 and not severity_mismatch,
+        "severity_registry_consistency": (
+            not registry_severity_missing and not registry_severity_mismatch
+        ),
         "query_contract_complete": not query_errors,
         "source_stage_row_alignment": source_stage_exists and not source_alignment_errors and source_row_count == len(ids),
         "split_ids_disjoint": not any(value for value in split_report["id_overlap"].values()),
@@ -485,6 +652,14 @@ def main() -> None:
                 for value in pair.values()
             )
             and all(value == 0 for value in strict_split_report["id_overlap"].values())
+        ),
+        "template_family_holdout_integrity": (
+            all(value > 0 for value in template_report["counts"].values())
+            and all(
+                value == 0
+                for value in template_report.get("missing_canonical_ids", {}).values()
+            )
+            and all(value == 0 for value in template_report["group_overlap"].values())
         ),
         "opf_two_variants_per_scenario": bool(opf_scenario_counts)
         and all(value == 2 for value in opf_scenario_counts.values()),
@@ -505,6 +680,19 @@ def main() -> None:
         "severity_checked": severity_checked,
         "severity_mismatch_count": len(severity_mismatch),
         "severity_mismatch_examples": severity_mismatch[:20],
+        "severity_registry": {
+            "path": args.scenario_registry,
+            "registry_sha256": sha256(scenario_registry),
+            "registry_scenario_count": len(scenario_registry_rows),
+            "numeric_state_checked": registry_severity_checked,
+            "numeric_state_incomplete_count": len(registry_severity_incomplete),
+            "numeric_state_incomplete_examples": registry_severity_incomplete[:20],
+            "missing_registry_link_count": len(registry_severity_missing),
+            "missing_registry_link_examples": registry_severity_missing[:20],
+            "mismatch_count": len(registry_severity_mismatch),
+            "mismatch_examples": registry_severity_mismatch[:20],
+            "scope": "complete numeric states are independently recomputed from the current scenario registry; invalid unsupplied-island states remain explicit incomplete boundaries",
+        },
         "numeric_severity_diagnostic": {
             "checked": numeric_severity_checked,
             "mismatch_count": len(numeric_severity_mismatch),
@@ -543,7 +731,7 @@ def main() -> None:
         "status": "pass" if all(gates.values()) else "fail",
         "local_integrity_status": "pass" if all(gates.values()) else "fail",
         "release_readiness_status": "blocked_external_gates" if not all(raw_replay.values()) else "ready_for_external_review",
-        "interpretation": "The official split gate covers record-id separation and registered OOD scenario/topology isolation; its development scenario and source-group overlaps remain diagnostics. The strict split gate covers complete provenance-key isolation. Missing raw replay or expert-review outcomes remain explicit external gates; summary reports are not promoted to evidence.",
+        "interpretation": "The official split gate covers record-id separation and registered OOD scenario/topology isolation; its development scenario and source-group overlaps remain diagnostics. The strict split gate covers complete provenance-key isolation. The template-family gate checks the atomic group key used to construct the ID-only holdout; exact natural-language surface overlap remains a descriptive diagnostic. Complete scenario numeric states are independently checked against the current registry, while invalid unsupplied-island states remain explicit incomplete boundaries. Missing raw replay or expert-review outcomes remain explicit external gates; summary reports are not promoted to evidence.",
     }
     out_json = root / args.output_json
     out_json.parent.mkdir(parents=True, exist_ok=True)
@@ -564,6 +752,7 @@ def main() -> None:
         "",
         f"Records: {payload['records']:,}; unique IDs: {payload['unique_ids']:,}.",
         f"Scenario-link missing/mismatch: {payload['scenario_link_missing_count']}/{payload['scenario_id_mismatch_count']}; severity mismatches: {payload['severity_mismatch_count']} of {payload['severity_checked']:,} checked.",
+        f"Independent registry severity: {payload['severity_registry']['numeric_state_checked']:,} complete states checked; {payload['severity_registry']['numeric_state_incomplete_count']:,} explicit invalid boundaries; mismatches={payload['severity_registry']['mismatch_count']}; missing links={payload['severity_registry']['missing_registry_link_count']}.",
         f"Numeric severity diagnostic: {payload['numeric_severity_diagnostic']['checked']:,} partial states; {payload['numeric_severity_diagnostic']['complete_numeric_state_rows']:,} complete three-field states; status={payload['numeric_severity_diagnostic']['status']}.",
         f"Solver-bound query records: {payload['solver_bound_query_record_count']} (retained with incomplete scenario truth).",
         f"OPF closed-loop rows/scenarios: {payload['opf_closed_loop_rows']}/{payload['opf_closed_loop_unique_scenarios']}.",

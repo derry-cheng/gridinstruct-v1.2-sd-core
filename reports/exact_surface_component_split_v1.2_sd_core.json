@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-08-28T16:28:52.435254+00:00",
+  "generated_at": "2026-08-28T20:27:09.351286+00:00",
   "status": "pass",
   "input": "data/gridinstruct_v1.2_sd_core_en.jsonl",
-  "input_sha256": "882dc4960dcf14d5b6e6465ced25051c860f1b360ffdb58770c3b68d6e7b60b3",
+  "input_sha256": "18a4d36153f9d77ae9b26744978a7bea27138aee048d1b12906335797e908013",
   "records": 95479,
   "split_policy": "MinHash-LSH candidate retrieval at threshold 0.80 followed by exact character-5-gram Jaccard verification at threshold 0.85; every verified component is assigned to one split",
   "parameters": {
@@ -11,66 +11,66 @@
     "exact_threshold": 0.85,
     "seed": 20260812
   },
-  "candidate_pairs": 14667322,
-  "accepted_exact_edges": 2191852,
-  "exact_surface_duplicate_records": 2120,
+  "candidate_pairs": 6720233,
+  "accepted_exact_edges": 950177,
+  "exact_surface_duplicate_records": 990,
   "max_verified_candidate_jaccard": 1.0,
-  "component_count": 24428,
+  "component_count": 26162,
   "split_counts": {
-    "train": 16732,
-    "validation": 2135,
-    "test": 2135,
-    "ood_test": 74477
+    "train": 17330,
+    "validation": 2169,
+    "test": 2169,
+    "ood_test": 73811
   },
   "label_support": {
     "train": {
       "operation_ticket_check": {
         "compliant": 2002,
-        "compliant_with_monitoring": 3497,
-        "non_compliant": 2277
+        "compliant_with_monitoring": 3495,
+        "non_compliant": 2275
       },
       "regulation_compliance_check": {
-        "compliant": 541,
+        "compliant": 540,
         "compliant_with_monitoring": 1097,
-        "non_compliant": 492
+        "non_compliant": 491
       },
       "dispatcher_intent_tool_call": {
-        "diagnose_and_dispatch": 151,
-        "mitigate_violations": 130,
-        "security_check_and_redispatch": 134
+        "diagnose_and_dispatch": 326,
+        "mitigate_violations": 351,
+        "security_check_and_redispatch": 348
       }
     },
     "validation": {
       "operation_ticket_check": {
         "compliant": 250,
-        "compliant_with_monitoring": 436,
-        "non_compliant": 284
+        "compliant_with_monitoring": 437,
+        "non_compliant": 285
       },
       "regulation_compliance_check": {
         "compliant": 68,
         "compliant_with_monitoring": 137,
-        "non_compliant": 60
+        "non_compliant": 61
       },
       "dispatcher_intent_tool_call": {
-        "diagnose_and_dispatch": 27,
+        "diagnose_and_dispatch": 41,
         "mitigate_violations": 44,
-        "security_check_and_redispatch": 30
+        "security_check_and_redispatch": 44
       }
     },
     "test": {
       "operation_ticket_check": {
         "compliant": 250,
-        "compliant_with_monitoring": 436,
-        "non_compliant": 284
+        "compliant_with_monitoring": 437,
+        "non_compliant": 285
       },
       "regulation_compliance_check": {
-        "compliant": 67,
+        "compliant": 68,
         "compliant_with_monitoring": 137,
         "non_compliant": 61
       },
       "dispatcher_intent_tool_call": {
-        "diagnose_and_dispatch": 30,
-        "mitigate_violations": 27,
+        "diagnose_and_dispatch": 41,
+        "mitigate_violations": 44,
         "security_check_and_redispatch": 44
       }
     },
@@ -86,9 +86,9 @@
         "non_compliant": 12362
       },
       "dispatcher_intent_tool_call": {
-        "diagnose_and_dispatch": 6405,
-        "mitigate_violations": 6388,
-        "security_check_and_redispatch": 6363
+        "diagnose_and_dispatch": 6205,
+        "mitigate_violations": 6150,
+        "security_check_and_redispatch": 6135
       }
     }
   },

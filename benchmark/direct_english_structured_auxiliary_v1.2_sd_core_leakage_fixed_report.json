@@ -1,15 +1,16 @@
 {
-  "generated_at": "2026-08-19T11:30:10.047807+00:00",
+  "generated_at": "2026-08-28T21:06:51.387382+00:00",
   "objective": "schema_aware_supervised_auxiliary_tool_sequence_prediction",
   "train": "data/v1.2_sd_core_train_en.jsonl",
   "validation": "data/v1.2_sd_core_validation_en.jsonl",
   "test": "data/v1.2_sd_core_test_en.jsonl",
   "ood": "data/v1.2_sd_core_ood_test_en.jsonl",
+  "canonical": "data/gridinstruct_v1.2_sd_core_en.jsonl",
   "train_records": 3617,
   "validation_records": 446,
   "test_records": 438,
   "ood_records": 13586,
-  "code_sha256": "69c043a2177e147c683c794c6e0445785a508df9c6014cfa7e238f972dedb4aa",
+  "code_sha256": "02f39b3158cfeb0b79dc2e7f10d1c8f9a4648c810ab864706e3c7d7fc877f49d",
   "validation_evaluation": {
     "accuracy": 1.0,
     "macro_f1": 1.0,
@@ -62,10 +63,11 @@
     "majority_macro_f1": 0.4970383533244484
   },
   "input_sha256": {
-    "train": "27087a599f1a3b78cf69e27ae2f8ed71e513fb50c4e140025d3b6cb1efe33c95",
-    "validation": "ec1e2a0fa019f169e7317267c02bea6f3aaeb3531a0b79b2fa841c3dda0fd765",
-    "test": "d64dd5c72721b0f6bb0fda7911722d76dfba2bef9596fac10bd9bae227c9b401",
-    "ood": "c8bcdf784892728b7b981e5aaad76d7c3780b14ed4a8a06e58466d87ee021038"
+    "train": "81fb662da56a2685b9edabde8843b277600832345ae438fd23674ade0bc95283",
+    "validation": "ee3e73c1c70afc000b473ad4268d8eea905461005f1242f8394d465100a94465",
+    "test": "8c9c6e9f87209aa356aaea4c8e707c30fb5608ab5a5a968f83ecab0c5d73e988",
+    "ood": "146c23fc751f6d9003b62407a4e921f5d5742638f114ddd854dd264bd28d6343",
+    "canonical": "18a4d36153f9d77ae9b26744978a7bea27138aee048d1b12906335797e908013"
   },
   "prediction_sha256": {
     "validation": "0267156333b242dfb01ae83526ae35da9d350228bd0e81f485b78bf7057bf9dd",

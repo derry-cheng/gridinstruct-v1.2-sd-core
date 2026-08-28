@@ -76,12 +76,16 @@ def main() -> None:
         "benchmark/direct_english_structured_auxiliary_v1.2_sd_core_leakage_fixed_report.json",
         "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_report.json",
         "benchmark/v1.2_sd_core_proxyreduced_tfidf_report.json",
-        "benchmark/v1.2_sd_core_template_holdout_tfidf_report.json",
+        "reports/template_family_holdout_v1.2_sd_core.json",
         "benchmark/v1.2_sd_core_strict_tfidf_report.json",
         "benchmark/v1.2_sd_core_challenge_tfidf_report.json",
         "reports/target_hidden_classification_v1.2_sd_core.json",
         "reports/independent_solver_raw_evidence_v1.2_sd_core_rebound.json",
         "reports/independent_solver_validation_v1.2_sd_core_rebound.json",
+        "reports/independent_query_truth_validation_v1.2_sd_core.json",
+        "reports/compliance_label_current_audit_v1.2_sd_core.json",
+        "reports/official_exact_content_overlap_repair_v1.2_sd_core.json",
+        "reports/strict_exact_content_overlap_repair_v1.2_sd_core.json",
     ]
     required_predictions = sorted(
         str(path.relative_to(root))
@@ -114,6 +118,7 @@ def main() -> None:
         "reports/generation_grounding_audit_v1.2_sd_core.json",
         "reports/high_score_plausibility_audit_v1.2_sd_core.json",
         "reports/independent_query_truth_validation_v1.2_sd_core.json",
+        "reports/compliance_label_current_audit_v1.2_sd_core.json",
         "reports/independent_solver_raw_evidence_v1.2_sd_core.json",
         "reports/independent_solver_validation_v1.2_sd_core.json",
         "reports/independent_solver_raw_evidence_v1.2_sd_core_rebound.json",
@@ -132,7 +137,9 @@ def main() -> None:
         "reports/split_independence_audit_v1.2_sd_core.json",
         "reports/strict_source_group_split_v1.2_sd_core.json",
         "reports/structured_prediction_normalization_v1.2_sd_core.json",
-        "reports/template_holdout_split_v1.2_sd_core.json",
+        "reports/template_family_holdout_v1.2_sd_core.json",
+        "reports/official_exact_content_overlap_repair_v1.2_sd_core.json",
+        "reports/strict_exact_content_overlap_repair_v1.2_sd_core.json",
         "reports/translation_glossary_audit_v1.2_sd_core.json",
         "reports/expert_review_execution_check_v1.2_sd_core.json",
         "reports/expert_review_package_v1.2_sd_core.json",
@@ -153,6 +160,7 @@ def main() -> None:
         "metadata/source_traceability.csv",
         "metadata/third_party_asset_inventory.json",
         "metadata/independent_solver_case_manifest_v1.json",
+        "metadata/international_rule_probe_schema.json",
     ]
     relevant_scripts = [
         "scripts/audit_current_sd_release.py",
@@ -182,6 +190,9 @@ def main() -> None:
         "scripts/audit_release_claim_alignment.py",
         "scripts/audit_sd_submission_readiness.py",
         "scripts/audit_english_splits.py",
+        "scripts/validate_query_truth_independent.py",
+        "scripts/audit_compliance_labels_current.py",
+        "scripts/repair_official_exact_content_overlap.py",
     ]
     local_required = inputs + required_reports + required_predictions + required_manuscript + figure_files
     required_artifacts = collect_required(root, local_required)
@@ -266,7 +277,7 @@ def main() -> None:
         "baseline_families": [
             "tfidf_linear_svc_and_nearest_neighbor",
             "proxy_reduced_tfidf",
-            "template_holdout_tfidf",
+            "template_family_holdout_tfidf",
             "strict_source_group_tfidf",
             "challenge_tfidf",
             "target_hidden_character_tfidf",

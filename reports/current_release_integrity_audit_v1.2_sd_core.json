@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-08-28T16:46:34.494367+00:00",
+  "generated_at": "2026-08-28T21:40:19.640620+00:00",
   "dataset": "data/gridinstruct_v1.2_sd_core_en.jsonl",
-  "dataset_sha256": "882dc4960dcf14d5b6e6465ced25051c860f1b360ffdb58770c3b68d6e7b60b3",
+  "dataset_sha256": "18a4d36153f9d77ae9b26744978a7bea27138aee048d1b12906335797e908013",
   "records": 95479,
   "by_task": {
     "auxiliary_decision": 18087,
@@ -21,6 +21,68 @@
   "severity_checked": 55215,
   "severity_mismatch_count": 0,
   "severity_mismatch_examples": [],
+  "severity_registry": {
+    "path": "simulation_outputs/contingency/scenarios_converged.json",
+    "registry_sha256": "8f97a66cb91fea81fd495931b2af2e5eb4e5a5027a989c315c5523694fee93af",
+    "registry_scenario_count": 2822,
+    "numeric_state_checked": 80385,
+    "numeric_state_incomplete_count": 8,
+    "numeric_state_incomplete_examples": [
+      {
+        "id": "gridinstruct_v12_equipment1_compliance_ieee30_n1_transformer_outage_load100_trafoidx_2_603efc0d4551_v00",
+        "scenario_id": "ieee30_n1_transformer_outage_load100_trafoidx_2",
+        "registry_severity": "invalid",
+        "row_severity": "invalid"
+      },
+      {
+        "id": "gridinstruct_v12_equipment1_aux_ieee30_n1_transformer_outage_load100_trafoidx_2_603efc0d4551_v00",
+        "scenario_id": "ieee30_n1_transformer_outage_load100_trafoidx_2",
+        "registry_severity": "invalid",
+        "row_severity": "invalid"
+      },
+      {
+        "id": "gridinstruct_v12_equipment1_intent_ieee30_n1_transformer_outage_load100_trafoidx_2_603efc0d4551_v00",
+        "scenario_id": "ieee30_n1_transformer_outage_load100_trafoidx_2",
+        "registry_severity": "invalid",
+        "row_severity": "invalid"
+      },
+      {
+        "id": "gridinstruct_v12_equipment1_query_ieee30_n1_transformer_outage_load100_trafoidx_2_603efc0d4551_v00",
+        "scenario_id": "ieee30_n1_transformer_outage_load100_trafoidx_2",
+        "registry_severity": "invalid",
+        "row_severity": "invalid"
+      },
+      {
+        "id": "gridinstruct_v12_equipment1_compliance_ieee30_n1_transformer_outage_load100_trafoidx_2_603efc0d4551_v01",
+        "scenario_id": "ieee30_n1_transformer_outage_load100_trafoidx_2",
+        "registry_severity": "invalid",
+        "row_severity": "invalid"
+      },
+      {
+        "id": "gridinstruct_v12_equipment1_aux_ieee30_n1_transformer_outage_load100_trafoidx_2_603efc0d4551_v01",
+        "scenario_id": "ieee30_n1_transformer_outage_load100_trafoidx_2",
+        "registry_severity": "invalid",
+        "row_severity": "invalid"
+      },
+      {
+        "id": "gridinstruct_v12_equipment1_intent_ieee30_n1_transformer_outage_load100_trafoidx_2_603efc0d4551_v01",
+        "scenario_id": "ieee30_n1_transformer_outage_load100_trafoidx_2",
+        "registry_severity": "invalid",
+        "row_severity": "invalid"
+      },
+      {
+        "id": "gridinstruct_v12_equipment1_query_ieee30_n1_transformer_outage_load100_trafoidx_2_603efc0d4551_v01",
+        "scenario_id": "ieee30_n1_transformer_outage_load100_trafoidx_2",
+        "registry_severity": "invalid",
+        "row_severity": "invalid"
+      }
+    ],
+    "missing_registry_link_count": 0,
+    "missing_registry_link_examples": [],
+    "mismatch_count": 0,
+    "mismatch_examples": [],
+    "scope": "complete numeric states are independently recomputed from the current scenario registry; invalid unsupplied-island states remain explicit incomplete boundaries"
+  },
   "numeric_severity_diagnostic": {
     "checked": 31485,
     "mismatch_count": 780,
@@ -162,9 +224,9 @@
   },
   "split_integrity": {
     "counts": {
-      "train": 26508,
-      "validation": 3583,
-      "test": 3909,
+      "train": 26545,
+      "validation": 3561,
+      "test": 3894,
       "ood_test": 61479
     },
     "id_overlap": {
@@ -176,7 +238,7 @@
       "test__ood_test": 0
     },
     "source_group_overlap": {
-      "train__test": 772,
+      "train__test": 773,
       "train__ood_test": 647
     },
     "provenance_overlap": {
@@ -189,7 +251,7 @@
       },
       "train__test": {
         "source_group": 26,
-        "source_record_id": 472,
+        "source_record_id": 473,
         "scenario_id": 360,
         "source_simulation_case_id": 360,
         "operation_group": 46
@@ -234,7 +296,7 @@
       "train": {
         "IEEE 14": 2622,
         "IEEE 57": 7969,
-        "IEEE 30": 5281
+        "IEEE 30": 5282
       },
       "validation": {
         "IEEE 30": 1317,
@@ -243,7 +305,7 @@
       },
       "test": {
         "IEEE 57": 973,
-        "IEEE 30": 1377,
+        "IEEE 30": 1376,
         "IEEE 14": 311
       },
       "ood_test": {
@@ -263,9 +325,9 @@
   },
   "strict_split_integrity": {
     "counts": {
-      "train": 76341,
-      "validation": 9564,
-      "test": 9574
+      "train": 76378,
+      "validation": 9558,
+      "test": 9543
     },
     "id_overlap": {
       "train__validation": 0,
@@ -348,20 +410,32 @@
     }
   },
   "template_holdout_integrity": {
+    "split_source": "atomic_template_family_id_only",
+    "legacy_projection_present": false,
     "counts": {
-      "train": 0,
-      "validation": 0,
-      "test": 0
+      "train": 38775,
+      "validation": 5557,
+      "test": 11089
     },
     "surface_counts": {
-      "train": 0,
-      "validation": 0,
-      "test": 0
+      "train": 6599,
+      "validation": 915,
+      "test": 1846
     },
     "surface_overlap": {
       "train_validation": 0,
       "train_test": 0,
       "validation_test": 0
+    },
+    "group_overlap": {
+      "train_validation": 0,
+      "train_test": 0,
+      "validation_test": 0
+    },
+    "missing_canonical_ids": {
+      "train": 0,
+      "validation": 0,
+      "test": 0
     }
   },
   "raw_replay_artifacts_present": {
@@ -383,6 +457,9 @@
     "severity_explicit_consistency": {
       "status": "pass"
     },
+    "severity_registry_consistency": {
+      "status": "pass"
+    },
     "query_contract_complete": {
       "status": "pass"
     },
@@ -398,6 +475,9 @@
     "strict_split_provenance_keys_disjoint": {
       "status": "pass"
     },
+    "template_family_holdout_integrity": {
+      "status": "pass"
+    },
     "opf_two_variants_per_scenario": {
       "status": "pass"
     }
@@ -405,5 +485,5 @@
   "status": "pass",
   "local_integrity_status": "pass",
   "release_readiness_status": "blocked_external_gates",
-  "interpretation": "The official split gate covers record-id separation and registered OOD scenario/topology isolation; its development scenario and source-group overlaps remain diagnostics. The strict split gate covers complete provenance-key isolation. Missing raw replay or expert-review outcomes remain explicit external gates; summary reports are not promoted to evidence."
+  "interpretation": "The official split gate covers record-id separation and registered OOD scenario/topology isolation; its development scenario and source-group overlaps remain diagnostics. The strict split gate covers complete provenance-key isolation. The template-family gate checks the atomic group key used to construct the ID-only holdout; exact natural-language surface overlap remains a descriptive diagnostic. Complete scenario numeric states are independently checked against the current registry, while invalid unsupplied-island states remain explicit incomplete boundaries. Missing raw replay or expert-review outcomes remain explicit external gates; summary reports are not promoted to evidence."
 }

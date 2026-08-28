@@ -1,11 +1,11 @@
 # Data Validation Report
 
-- Input: `/Users/lemon/Desktop/project/gaiav2/data/gridinstruct_v1.2_sd_core.jsonl`
+- Input: `data/gridinstruct_v1.2_sd_core_en.jsonl`
 - Total records: 95479
 - Schema pass rate: 1.0000
 - ID unique rate: 1.0000
 - Topology link valid rate: 1.0000
-- Near duplicate rate: 0.0045 (threshold 0.0200)
+- Near duplicate rate: 0.0116 (threshold 0.0200)
 - Passed: True
 
 ## Task Counts

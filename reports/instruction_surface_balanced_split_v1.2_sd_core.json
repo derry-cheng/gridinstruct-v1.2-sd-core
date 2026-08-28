@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-08-19T11:23:22.311494+00:00",
+  "generated_at": "2026-08-28T20:02:04.575431+00:00",
   "status": "pass",
   "source": "data/gridinstruct_v1.2_sd_core_en.jsonl",
-  "source_sha256": "882dc4960dcf14d5b6e6465ced25051c860f1b360ffdb58770c3b68d6e7b60b3",
+  "source_sha256": "18a4d36153f9d77ae9b26744978a7bea27138aee048d1b12906335797e908013",
   "seed": 2036,
   "group_key": "task_type + normalize_template(instruction)",
   "total_groups": 18214,
@@ -158,7 +158,7 @@
   "splits": {
     "train": {
       "records": 10689,
-      "sha256": "67f331de12e023aa733f0d3d50ba74bd339d94cafffc26d3f50b82baa0e9153e",
+      "sha256": "8393aaf5a7ce34254b4edb3a4dcd9123352d9d529b0005101959761986545fb8",
       "task_counts": {
         "auxiliary_decision": 407,
         "regulation_compliance_check": 1958,
@@ -170,7 +170,7 @@
     },
     "validation": {
       "records": 5118,
-      "sha256": "ab15bc0533ff9f3ccc2655b166ac2043b1173aad76395f1f19b006fc879f5d0c",
+      "sha256": "a77f5575066333ba5ee555f5a28f955876b1e6fc2cfbc42d6c6541d806775e72",
       "task_counts": {
         "auxiliary_decision": 303,
         "regulation_compliance_check": 510,
@@ -182,7 +182,7 @@
     },
     "test": {
       "records": 4432,
-      "sha256": "faaee27950b5a577bebdbd1d40f99d49a3bfc8b921b48cba74f521d0690a905c",
+      "sha256": "c9275c1df497277269520d07169a1146a9bcb928f511f727bc6f1e0add560e72",
       "task_counts": {
         "auxiliary_decision": 300,
         "regulation_compliance_check": 454,
@@ -194,7 +194,7 @@
     },
     "ood_test": {
       "records": 75240,
-      "sha256": "3674fc731033f2f6332a7c742cebf97c60cc2406e1b15e27f8d788aa3f1ce9b4",
+      "sha256": "0c2847bd1f5ffff2122ec76d020ec8b175c6014e3aa6bcd60eb289c44548e781",
       "task_counts": {
         "auxiliary_decision": 17077,
         "regulation_compliance_check": 21845,
@@ -213,11 +213,11 @@
   },
   "cross_group_violations": [],
   "output_paths": {
-    "train": "data/v1.2_sd_core_instruction_surface_balanced_train_en.jsonl",
-    "validation": "data/v1.2_sd_core_instruction_surface_balanced_validation_en.jsonl",
-    "test": "data/v1.2_sd_core_instruction_surface_balanced_test_en.jsonl",
-    "ood_test": "data/v1.2_sd_core_instruction_surface_balanced_ood_test_en.jsonl"
+    "train": "data/v1.2_sd_core_instruction_surface_balanced_train_ids.jsonl",
+    "validation": "data/v1.2_sd_core_instruction_surface_balanced_validation_ids.jsonl",
+    "test": "data/v1.2_sd_core_instruction_surface_balanced_test_ids.jsonl",
+    "ood_test": "data/v1.2_sd_core_instruction_surface_balanced_ood_test_ids.jsonl"
   },
   "interpretation": "This split prevents exact normalized user-instruction reuse across partitions. It is a lexical surface control and does not establish semantic independence or physical-label validity.",
-  "code_sha256": "56650053bf3ce0d3396116cb7294ea620422e918efbb459f872c2c16814f1bd1"
+  "code_sha256": "87d2796a6176055f484233e11c794b3146b229c636aa88439b0aa496dc11b4fc"
 }

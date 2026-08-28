@@ -1,6 +1,6 @@
 # High-score Plausibility Audit
 
-Generated: 2026-08-04T04:00:00.591698+00:00
+Generated: 2026-08-28T18:43:43.182237+00:00
 
 This audit consolidates evidence for interpreting near-perfect classification scores. It does not convert high held-out scores into operational dispatch-reasoning claims.
 
@@ -11,7 +11,7 @@ Status: pass
 ### operation_ticket_check
 - standard_transformer_macro_f1: 1.0000
 - challenge_transformer_macro_f1: 0.9994
-- template_holdout_tfidf_macro_f1: 0.9996
+- template_holdout_tfidf_macro_f1: 1.0000
 - dedicated_boundary_tfidf_macro_f1: 0.8604
 - proxy_reduced_standard_macro_f1: 1.0000
 - proxy_reduced_strict_macro_f1: 1.0000
@@ -21,7 +21,7 @@ Status: pass
 ### dispatcher_intent_tool_call
 - standard_transformer_macro_f1: 1.0000
 - challenge_transformer_macro_f1: 0.7756
-- template_holdout_tfidf_macro_f1: 1.0000
+- template_holdout_tfidf_macro_f1: 0.2049
 - dedicated_boundary_tfidf_macro_f1: 1.0000
 - proxy_reduced_standard_macro_f1: 1.0000
 - proxy_reduced_strict_macro_f1: 1.0000
@@ -31,7 +31,7 @@ Status: pass
 ### regulation_compliance_check
 - standard_transformer_macro_f1: 0.9204
 - challenge_transformer_macro_f1: 1.0000
-- template_holdout_tfidf_macro_f1: 0.9862
+- template_holdout_tfidf_macro_f1: 0.9443
 - dedicated_boundary_tfidf_macro_f1: not available
 - proxy_reduced_standard_macro_f1: 0.8553
 - proxy_reduced_strict_macro_f1: 0.9083

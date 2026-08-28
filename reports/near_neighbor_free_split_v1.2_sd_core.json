@@ -1,162 +1,153 @@
 {
-  "generated_at": "2026-08-28T16:16:08.376045+00:00",
+  "generated_at": "2026-08-28T20:31:27.236195+00:00",
   "status": "pass",
   "source": "data/gridinstruct_v1.2_sd_core_en.jsonl",
-  "source_sha256": "882dc4960dcf14d5b6e6465ced25051c860f1b360ffdb58770c3b68d6e7b60b3",
+  "source_sha256": "18a4d36153f9d77ae9b26744978a7bea27138aee048d1b12906335797e908013",
   "records": 95479,
   "seed": 2036,
   "split_policy": "all character-5-gram MinHash connected components at threshold 0.85 are assigned to exactly one split; components touching the preregistered OOD rule are kept in ood_test",
   "threshold": 0.85,
-  "num_perm": 64,
+  "num_perm": 128,
   "threshold_sensitivity": {
     "0.8": {
       "threshold": 0.8,
-      "num_perm": 64,
+      "num_perm": 128,
       "records": 95479,
       "query_records": 95479,
-      "records_with_neighbour": 94684,
-      "neighbour_rate": 0.991673561725615,
-      "directed_edge_count": 133597396,
+      "records_with_neighbour": 94837,
+      "neighbour_rate": 0.9932760083369118,
+      "directed_edge_count": 62694366,
       "sampling": "full 95,479-row query against the full 95,479-row index"
     },
     "0.85": {
       "threshold": 0.85,
-      "num_perm": 64,
+      "num_perm": 128,
       "records": 95479,
       "query_records": 95479,
-      "records_with_neighbour": 90972,
-      "neighbour_rate": 0.9527959027639585,
-      "directed_edge_count": 53138968,
+      "records_with_neighbour": 93449,
+      "neighbour_rate": 0.9787387802553441,
+      "directed_edge_count": 39036498,
       "sampling": "full 95,479-row query against the full 95,479-row index"
     },
     "0.9": {
       "threshold": 0.9,
-      "num_perm": 64,
+      "num_perm": 128,
       "records": 95479,
       "query_records": 95479,
-      "records_with_neighbour": 85355,
-      "neighbour_rate": 0.8939662124655684,
-      "directed_edge_count": 20457088,
+      "records_with_neighbour": 85201,
+      "neighbour_rate": 0.8923532923470082,
+      "directed_edge_count": 13577432,
       "sampling": "full 95,479-row query against the full 95,479-row index"
     }
   },
   "component_summary": {
     "threshold": 0.85,
-    "num_perm": 64,
+    "num_perm": 128,
     "records": 95479,
     "query_records": 95479,
-    "records_with_neighbour": 90972,
-    "neighbour_rate": 0.9527959027639585,
-    "directed_edge_count": 53138968,
-    "exact_template_signature_count": 36448,
-    "exact_template_duplicate_records_after_first": 59031,
-    "total_components": 6128,
-    "max_component_size": 17469,
-    "ood_components": 1032
+    "records_with_neighbour": 93449,
+    "neighbour_rate": 0.9787387802553441,
+    "directed_edge_count": 39036498,
+    "exact_template_signature_count": 39151,
+    "exact_template_duplicate_records_after_first": 56328,
+    "total_components": 2643,
+    "max_component_size": 24633,
+    "ood_components": 429
   },
   "splits": {
     "train": {
-      "records": 6554,
-      "sha256": "3ec4b3a91587c8dbca38bdca8aacdbb27bdcb4f558e450445c345b240a3d6720",
+      "records": 2574,
+      "sha256": "9ba4d5f70a68c79d9dcdcae904179823c7f3e7794188f02b9a8d04c5d11fb726",
       "task_counts": {
-        "regulation_compliance_check": 70,
-        "intelligent_data_query": 105,
-        "regulation_qa": 2548,
-        "operation_ticket_check": 3830,
-        "dispatcher_intent_tool_call": 1
+        "regulation_compliance_check": 19,
+        "intelligent_data_query": 6,
+        "regulation_qa": 325,
+        "operation_ticket_check": 2224
       }
     },
     "validation": {
-      "records": 819,
-      "sha256": "f76af80d77420069a216fc0e6f482d65514d3407c39dd52812f8e6f50b6cd5c2",
+      "records": 322,
+      "sha256": "a9c3a777e52d2bc693944aa7e8ff1508930475cf8ab50884ffb0bf7211351938",
       "task_counts": {
-        "regulation_compliance_check": 8,
-        "intelligent_data_query": 5,
-        "regulation_qa": 395,
-        "operation_ticket_check": 411
+        "regulation_qa": 35,
+        "operation_ticket_check": 287
       }
     },
     "test": {
-      "records": 820,
-      "sha256": "6187aa838a0e4710248bdea85f4398b674a2e5882f5b17e7fde1b911d373dff8",
+      "records": 320,
+      "sha256": "052595292cbf73f9fb53f5b7813ad70c368463ebedda1a72842468ebeca96189",
       "task_counts": {
-        "regulation_compliance_check": 6,
-        "intelligent_data_query": 6,
-        "regulation_qa": 316,
-        "operation_ticket_check": 492
+        "regulation_compliance_check": 1,
+        "intelligent_data_query": 1,
+        "regulation_qa": 55,
+        "operation_ticket_check": 263
       }
     },
     "ood_test": {
-      "records": 87286,
-      "sha256": "469a7624690f9485db8db1d7f12bb03750cc5932064b34494425e5ebaef1d0c3",
+      "records": 92263,
+      "sha256": "bda045e42fbb3da268f5ce5c32f0d023b439cadec00b97fe4c42f81eba2d23d4",
       "task_counts": {
         "auxiliary_decision": 18087,
-        "regulation_compliance_check": 24683,
-        "dispatcher_intent_tool_call": 19772,
-        "intelligent_data_query": 17650,
-        "regulation_qa": 946,
-        "operation_ticket_check": 6148
+        "regulation_compliance_check": 24747,
+        "dispatcher_intent_tool_call": 19773,
+        "intelligent_data_query": 17759,
+        "regulation_qa": 3790,
+        "operation_ticket_check": 8107
       }
     }
   },
   "label_support": {
     "operation_ticket_check": {
       "train": {
-        "compliant": 1553,
-        "compliant_with_monitoring": 752,
-        "non_compliant": 1525
+        "compliant": 533,
+        "compliant_with_monitoring": 410,
+        "non_compliant": 1281
       },
       "validation": {
-        "compliant": 196,
-        "compliant_with_monitoring": 79,
-        "non_compliant": 136
+        "compliant": 90,
+        "compliant_with_monitoring": 45,
+        "non_compliant": 152
       },
       "test": {
-        "compliant": 205,
-        "compliant_with_monitoring": 84,
-        "non_compliant": 203
+        "compliant": 61,
+        "compliant_with_monitoring": 49,
+        "non_compliant": 153
       },
       "ood_test": {
-        "compliant": 817,
-        "compliant_with_monitoring": 4034,
-        "non_compliant": 1297
+        "compliant": 2087,
+        "compliant_with_monitoring": 4445,
+        "non_compliant": 1575
       }
     },
     "regulation_compliance_check": {
       "train": {
-        "compliant": 5,
-        "compliant_with_monitoring": 58,
-        "non_compliant": 7
-      },
-      "validation": {
         "compliant": 3,
-        "compliant_with_monitoring": 5
+        "compliant_with_monitoring": 13,
+        "non_compliant": 3
       },
+      "validation": {},
       "test": {
-        "compliant_with_monitoring": 4,
-        "non_compliant": 2
+        "compliant_with_monitoring": 1
       },
       "ood_test": {
-        "compliant": 1046,
-        "compliant_with_monitoring": 10671,
-        "non_compliant": 12966
+        "compliant": 1051,
+        "compliant_with_monitoring": 10724,
+        "non_compliant": 12972
       }
     },
     "dispatcher_intent_tool_call": {
-      "train": {
-        "mitigate_violations": 1
-      },
+      "train": {},
       "validation": {},
       "test": {},
       "ood_test": {
         "diagnose_and_dispatch": 6613,
-        "mitigate_violations": 6588,
+        "mitigate_violations": 6589,
         "security_check_and_redispatch": 6571
       }
     }
   },
   "cross_component_violations": [],
-  "component_assignment_sha256": "5f602610341e5235e22f80481b8e9b8e9fc9c6f6b013bf746d0ffe5f7651890c",
+  "component_assignment_sha256": "2f3246802d0e58b59e2f06b3529d8bd889e59e29cb8f05993ebda5395a8b28b3",
   "output_paths": {
     "train": "data/v1.2_sd_core_near_neighbor_free_train_ids.jsonl",
     "validation": "data/v1.2_sd_core_near_neighbor_free_validation_ids.jsonl",

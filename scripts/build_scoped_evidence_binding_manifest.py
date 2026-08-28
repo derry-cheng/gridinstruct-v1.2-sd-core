@@ -34,18 +34,23 @@ LOCAL_BINDINGS = [
     "reports/linear_seed_stability_audit_v1.2_sd_core.json",
     "reports/model_score_quality_audit_v1.2_sd_core.json",
     "reports/near_duplicate_audit_v1.2_sd_core.json",
+    "reports/near_neighbor_free_surface_audit_v1.2_sd_core.json",
     "reports/split_independence_audit_current_v1.2_sd_core.json",
     "reports/strict_source_group_split_v1.2_sd_core.json",
-    "reports/template_holdout_split_v1.2_sd_core.json",
+    "reports/template_family_holdout_v1.2_sd_core.json",
     "reports/action_level_validation_audit_v1.2_sd_core.json",
     "reports/evidence_tiers_v1.2_sd_core.json",
     "reports/direct_english_materialization_v1.2_sd_core.json",
     "reports/direct_english_canonical_materialization_v1.2_sd_core.json",
     "reports/direct_english_split_materialization_v1.2_sd_core.json",
     "reports/data_validation_direct_english_v1.2_sd_core.json",
-    "reports/query_result_consistency_repair_final_v1.2_sd_core.json",
+    "reports/independent_query_truth_validation_v1.2_sd_core.json",
+    "reports/compliance_label_current_audit_v1.2_sd_core.json",
+    "reports/dispatcher_request_contract_repair_v1.2_sd_core.json",
+    "reports/sd_core_distribution_risk_audit.json",
+    "reports/official_exact_content_overlap_repair_v1.2_sd_core.json",
+    "reports/strict_exact_content_overlap_repair_v1.2_sd_core.json",
     "reports/query_truth_completeness_gate_v1.2_sd_core.json",
-    "reports/compliance_label_recompute_direct_v1.2_sd_core.json",
     "reports/scenario_truth_reconstruction_v1.2_sd_core.json",
     "simulation_outputs/contingency/scenarios_converged.json",
     "simulation_outputs/contingency/scenario_reconstruction_attempts.json",
@@ -67,6 +72,7 @@ LOCAL_BINDINGS = [
     "reports/pglib_network_envelope_replay_v1.2_sd_core.json",
     "data/international_rule_probe_v1.jsonl",
     "metadata/international_rule_probe_splits_v1.json",
+    "metadata/international_rule_probe_schema.json",
     "reports/international_rule_probe_v1.json",
     "reports/international_rule_probe_splits_v1.json",
     "benchmark/international_rule_probe_v1/nearest_neighbor_report.json",
@@ -74,7 +80,6 @@ LOCAL_BINDINGS = [
     "reports/international_rule_review_assignments_v1.json",
     "reports/international_rule_review_assignments_v1.csv",
     "reports/international_rule_review_assignments_v1.jsonl",
-    "reports/template_family_holdout_v1.2_sd_core.json",
     "reports/opf_structural_contract_audit_v1.2_sd_core.json",
     "data/v1.2_sd_core_template_family_holdout_train_ids.jsonl",
     "data/v1.2_sd_core_template_family_holdout_validation_ids.jsonl",
@@ -117,7 +122,6 @@ LOCAL_BINDINGS = [
     "benchmark/v1.2_sd_core_rule_context_tfidf_report.json",
     "benchmark/v1.2_sd_core_tfidf_report.json",
     "benchmark/v1.2_sd_core_strict_tfidf_report.json",
-    "benchmark/v1.2_sd_core_template_holdout_tfidf_report.json",
     "metadata/independent_solver_case_manifest_v1.json",
     "metadata/dataset_metadata.json",
     "metadata/data_lineage_manifest.json",
@@ -132,6 +136,10 @@ LOCAL_BINDINGS = [
 HISTORICAL_NOT_BOUND = {
     "reports/group_cluster_bootstrap_v1.2_sd_core.json": "multiseed bootstrap bound to a superseded pre-direct-English split; retained for history",
     "reports/near_neighbor_balanced_surface_audit_v1.2_sd_core.json": "balanced diagnostic split is no longer shipped; current manuscript uses the regenerated instruction-surface split",
+    "reports/template_holdout_split_v1.2_sd_core.json": "legacy full template-surface projections were removed; current release retains atomic template-family ID-only manifests",
+    "benchmark/v1.2_sd_core_template_holdout_tfidf_report.json": "legacy baseline references removed full template-surface files; current release uses the atomic template-family diagnostic",
+    "reports/query_result_consistency_repair_final_v1.2_sd_core.json": "historical staged repair receipt points to an unshipped derived JSONL stage; current release uses the independent in-memory query replay receipt",
+    "reports/compliance_label_recompute_direct_v1.2_sd_core.json": "historical staged recomputation receipt is bound to a superseded canonical hash and an unshipped derived JSONL stage; current release uses the in-memory compliance audit",
 }
 
 
@@ -190,6 +198,12 @@ def main() -> None:
             "reports/current_release_integrity_audit_v1.2_sd_core.json", {}
         ).get("reported_status")
         == "pass",
+        "severity_registry_consistency": (
+            bindings.get(
+                "reports/current_release_integrity_audit_v1.2_sd_core.json", {}
+            ).get("reported_status")
+            == "pass"
+        ),
         "embedded_opf": bindings.get(
             "reports/current_opf_closed_loop_audit_v1.2_sd_core.json", {}
         ).get("reported_status")
@@ -202,8 +216,12 @@ def main() -> None:
             "reports/split_independence_audit_current_v1.2_sd_core.json", {}
         ).get("reported_status")
         == "pass",
-        "template_holdout": bindings.get(
-            "reports/template_holdout_split_v1.2_sd_core.json", {}
+        "template_family_holdout": bindings.get(
+            "reports/template_family_holdout_v1.2_sd_core.json", {}
+        ).get("reported_status")
+        == "pass",
+        "independent_query_truth": bindings.get(
+            "reports/independent_query_truth_validation_v1.2_sd_core.json", {}
         ).get("reported_status")
         == "pass",
         "direct_english_render": bindings.get(
@@ -214,8 +232,20 @@ def main() -> None:
             "reports/scenario_truth_reconstruction_v1.2_sd_core.json", {}
         ).get("reported_status")
         == "pass",
-        "query_repair": bindings.get(
-            "reports/query_result_consistency_repair_final_v1.2_sd_core.json", {}
+        "compliance_label_current": bindings.get(
+            "reports/compliance_label_current_audit_v1.2_sd_core.json", {}
+        ).get("reported_status")
+        == "pass",
+        "dispatcher_request_contract": bindings.get(
+            "reports/dispatcher_request_contract_repair_v1.2_sd_core.json", {}
+        ).get("reported_status")
+        == "pass",
+        "distribution_risk": bindings.get(
+            "reports/sd_core_distribution_risk_audit.json", {}
+        ).get("reported_status")
+        == "pass",
+        "near_neighbor_surface_diagnostic": bindings.get(
+            "reports/near_neighbor_free_surface_audit_v1.2_sd_core.json", {}
         ).get("reported_status")
         == "pass",
         "dataset_validation": bindings.get(

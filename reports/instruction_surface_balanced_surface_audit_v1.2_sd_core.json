@@ -1,65 +1,187 @@
 {
-  "generated_at": "2026-08-19T11:23:40.939612+00:00",
+  "generated_at": "2026-08-28T20:54:03.923718+00:00",
   "status": "pass",
-  "split_report": "reports/instruction_surface_balanced_split_v1.2_sd_core.json",
-  "split_report_sha256": "2afca0af4cd4c0c36241321983b5c4f1bd717dce2fe3240f06ada112ea62ef6f",
-  "source_paths": {
-    "train": "data/v1.2_sd_core_instruction_surface_balanced_train_en.jsonl",
-    "validation": "data/v1.2_sd_core_instruction_surface_balanced_validation_en.jsonl",
-    "test": "data/v1.2_sd_core_instruction_surface_balanced_test_en.jsonl",
-    "ood_test": "data/v1.2_sd_core_instruction_surface_balanced_ood_test_en.jsonl"
-  },
-  "source_sha256": {
-    "train": "67f331de12e023aa733f0d3d50ba74bd339d94cafffc26d3f50b82baa0e9153e",
-    "validation": "ab15bc0533ff9f3ccc2655b166ac2043b1173aad76395f1f19b006fc879f5d0c",
-    "test": "faaee27950b5a577bebdbd1d40f99d49a3bfc8b921b48cba74f521d0690a905c",
-    "ood_test": "3674fc731033f2f6332a7c742cebf97c60cc2406e1b15e27f8d788aa3f1ce9b4"
-  },
-  "record_counts": {
-    "train": 10689,
-    "validation": 5118,
-    "test": 4432,
-    "ood_test": 75240
-  },
-  "duplicate_id_counts": {
-    "train": 0,
-    "validation": 0,
-    "test": 0,
-    "ood_test": 0
-  },
-  "normalized_surface_group_counts": {
-    "train": 5875,
-    "validation": 3664,
-    "test": 3517,
-    "ood_test": 5158
-  },
-  "cross_split_normalized_surface_group_counts": {
-    "train_validation": 0,
-    "train_test": 0,
-    "validation_test": 0
-  },
-  "sampled_character_5gram_jaccard": {
-    "train_validation": {
-      "left_sample_records": 200,
-      "right_sample_records": 200,
-      "max_jaccard": 0.9384615384615385,
-      "left_id": "gridinstruct_v01_aux_05650",
-      "right_id": "gridinstruct_v01_aux_02683"
+  "source": "data/gridinstruct_v1.2_sd_core_en.jsonl",
+  "source_sha256": "18a4d36153f9d77ae9b26744978a7bea27138aee048d1b12906335797e908013",
+  "split_prefix": "data/v1.2_sd_core_instruction_surface_balanced",
+  "threshold": 0.85,
+  "records": 95479,
+  "task_counts": {
+    "train": {
+      "auxiliary_decision": 407,
+      "dispatcher_intent_tool_call": 388,
+      "intelligent_data_query": 2157,
+      "operation_ticket_check": 3974,
+      "regulation_compliance_check": 1958,
+      "regulation_qa": 1805
     },
-    "train_test": {
-      "left_sample_records": 200,
-      "right_sample_records": 200,
-      "max_jaccard": 0.9292035398230089,
-      "left_id": "gridinstruct_v01_aux_09705",
-      "right_id": "gridinstruct_v01_aux_12868"
+    "validation": {
+      "auxiliary_decision": 303,
+      "dispatcher_intent_tool_call": 121,
+      "intelligent_data_query": 298,
+      "operation_ticket_check": 2981,
+      "regulation_compliance_check": 510,
+      "regulation_qa": 905
     },
-    "validation_test": {
-      "left_sample_records": 200,
-      "right_sample_records": 200,
-      "max_jaccard": 0.9480968858131488,
-      "left_id": "gridinstruct_v01_compliance_01713_actionpara_01",
-      "right_id": "gridinstruct_v01_compliance_00169_actionpara_01"
+    "test": {
+      "auxiliary_decision": 300,
+      "dispatcher_intent_tool_call": 121,
+      "intelligent_data_query": 273,
+      "operation_ticket_check": 2981,
+      "regulation_compliance_check": 454,
+      "regulation_qa": 303
+    },
+    "ood_test": {
+      "auxiliary_decision": 17077,
+      "dispatcher_intent_tool_call": 19143,
+      "intelligent_data_query": 15038,
+      "operation_ticket_check": 945,
+      "regulation_compliance_check": 21845,
+      "regulation_qa": 1192
     }
   },
-  "interpretation": "Exact normalized-surface groups are isolated by the MILP split. Sampled character-5-gram similarity is reported as a lexical diagnostic and does not establish semantic, physical, or legal independence."
+  "classification_label_counts": {
+    "operation_ticket_check": {
+      "train": {
+        "compliant": 1002,
+        "compliant_with_monitoring": 1830,
+        "non_compliant": 1142
+      },
+      "validation": {
+        "compliant": 750,
+        "compliant_with_monitoring": 1374,
+        "non_compliant": 857
+      },
+      "test": {
+        "compliant": 750,
+        "compliant_with_monitoring": 1374,
+        "non_compliant": 857
+      },
+      "ood_test": {
+        "compliant": 269,
+        "compliant_with_monitoring": 371,
+        "non_compliant": 305
+      }
+    },
+    "regulation_compliance_check": {
+      "train": {
+        "compliant": 403,
+        "compliant_with_monitoring": 1235,
+        "non_compliant": 320
+      },
+      "validation": {
+        "compliant": 169,
+        "compliant_with_monitoring": 156,
+        "non_compliant": 185
+      },
+      "test": {
+        "compliant": 74,
+        "compliant_with_monitoring": 166,
+        "non_compliant": 214
+      },
+      "ood_test": {
+        "compliant": 408,
+        "compliant_with_monitoring": 9181,
+        "non_compliant": 12256
+      }
+    },
+    "dispatcher_intent_tool_call": {
+      "train": {
+        "diagnose_and_dispatch": 143,
+        "mitigate_violations": 113,
+        "security_check_and_redispatch": 132
+      },
+      "validation": {
+        "diagnose_and_dispatch": 30,
+        "mitigate_violations": 42,
+        "security_check_and_redispatch": 49
+      },
+      "test": {
+        "diagnose_and_dispatch": 42,
+        "mitigate_violations": 44,
+        "security_check_and_redispatch": 35
+      },
+      "ood_test": {
+        "diagnose_and_dispatch": 6398,
+        "mitigate_violations": 6390,
+        "security_check_and_redispatch": 6355
+      }
+    }
+  },
+  "exact_normalized_surface_collisions": {
+    "train__validation": 0,
+    "train__test": 0,
+    "validation__test": 0
+  },
+  "exact_character_5gram_jaccard_over_candidates": {
+    "train__validation": {
+      "reference_records": 3000,
+      "query_records": 2000,
+      "candidate_pairs_examined": 6000000,
+      "candidate_retrieval": "exact sparse binary character-5-gram matrix product over every pair in the deterministic sample",
+      "max_exact_character_5gram_jaccard": 0.9907651715039578,
+      "max_pair": [
+        "gridinstruct_v01_query_06254",
+        "gridinstruct_v01_query_05974"
+      ],
+      "query_rows_at_or_above_threshold": 548,
+      "threshold": 0.85
+    },
+    "train__test": {
+      "reference_records": 3000,
+      "query_records": 2000,
+      "candidate_pairs_examined": 6000000,
+      "candidate_retrieval": "exact sparse binary character-5-gram matrix product over every pair in the deterministic sample",
+      "max_exact_character_5gram_jaccard": 0.9901153212520593,
+      "max_pair": [
+        "gridinstruct_v12_topology2_query_illinois200_sdv2_n1_branch_outage_load96_line128_4ad337d00806_v00",
+        "gridinstruct_v12_topology2_query_illinois200_sdv2_n1_branch_outage_load96_line17_f2b4d7dbfa87_v00"
+      ],
+      "query_rows_at_or_above_threshold": 598,
+      "threshold": 0.85
+    },
+    "validation__test": {
+      "reference_records": 2000,
+      "query_records": 2000,
+      "candidate_pairs_examined": 4000000,
+      "candidate_retrieval": "exact sparse binary character-5-gram matrix product over every pair in the deterministic sample",
+      "max_exact_character_5gram_jaccard": 0.9856020942408377,
+      "max_pair": [
+        "gridinstruct_v01_query_12267",
+        "gridinstruct_v01_query_14115"
+      ],
+      "query_rows_at_or_above_threshold": 502,
+      "threshold": 0.85
+    },
+    "train__ood_sample": {
+      "reference_records": 2000,
+      "query_records": 10000,
+      "candidate_pairs_examined": 20000000,
+      "candidate_retrieval": "exact sparse binary character-5-gram matrix product over every pair in the deterministic sample",
+      "max_exact_character_5gram_jaccard": 0.9839307787391842,
+      "max_pair": [
+        "gridinstruct_v12_topology2_intent_pegase2869_sdv2_n1_branch_outage_load100_line380_2de238e54796_v02",
+        "gridinstruct_v12_topology_intent_0066_v02"
+      ],
+      "query_rows_at_or_above_threshold": 1707,
+      "threshold": 0.85
+    }
+  },
+  "lexical_similarity_warning_count": 3355,
+  "ood_query_sample": {
+    "sample_records": 10000,
+    "selection": "lowest SHA-256 of balanced-pair-sample|record_id",
+    "selection_sha256": "06f4460bd70b1d4da7cc495f697453b0a15611a5c7d8943885ae3f13c29632c0"
+  },
+  "pair_query_sample": {
+    "train__validation": 2000,
+    "train__test": 2000,
+    "train__ood": 10000,
+    "selection": "lowest SHA-256 of balanced-pair-sample|record_id"
+  },
+  "pair_reference_sample": {
+    "records_per_pair": 3000,
+    "selection": "lowest SHA-256 of balanced-pair-sample|record_id"
+  },
+  "interpretation": "Exact normalized-surface checks cover all cross-split rows and define the pass gate. Exact character-5-gram Jaccard is evaluated on deterministic query samples and retained as a warning diagnostic; high lexical similarity does not establish semantic dependence or physical-label validity, and it is not silently converted into an exact-overlap failure."
 }

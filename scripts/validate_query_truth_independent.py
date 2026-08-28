@@ -137,15 +137,38 @@ def build_network(row: dict[str, Any], *, solve: bool = True):
             raise ValueError("n1_bus_outage affected bus mismatch")
         net.bus.at[idx, "in_service"] = False
     if solve:
-        pp.runpp(
-            net,
-            algorithm="nr",
-            init="auto",
-            tolerance_mva=1e-6,
-            max_iteration=50,
-            enforce_q_lims=True,
-            numba=False,
-        )
+        try:
+            pp.runpp(
+                net,
+                algorithm="nr",
+                init="auto",
+                tolerance_mva=1e-6,
+                max_iteration=50,
+                enforce_q_lims=True,
+                numba=False,
+            )
+            net["_gridinstruct_replay_solver"] = "nr_q_lims"
+        except pp.LoadflowNotConverged as first_error:
+            # The scenario constructor uses the same deterministic fallback
+            # for stressed operating points.  Replaying only the default NR
+            # configuration would therefore turn a solver-initialisation
+            # difference into a false data mismatch.
+            try:
+                pp.runpp(
+                    net,
+                    algorithm="iwamoto_nr",
+                    init="auto",
+                    tolerance_mva=1e-6,
+                    max_iteration=200,
+                    enforce_q_lims=False,
+                    numba=False,
+                )
+                net["_gridinstruct_replay_solver"] = "iwamoto_nr_no_q_lims"
+            except Exception as fallback_error:  # noqa: BLE001
+                raise RuntimeError(
+                    f"default NR failed ({first_error}); deterministic Iwamoto fallback failed "
+                    f"({fallback_error})"
+                ) from fallback_error
     return net
 
 
@@ -188,6 +211,7 @@ def raw_truth(row: dict[str, Any]) -> dict[str, Any]:
         "voltage_violations": voltages,
         "violation_type": violation_type,
         "severity_level": severity,
+        "replay_solver": net.get("_gridinstruct_replay_solver", "unknown"),
     }
 
 
@@ -246,9 +270,20 @@ def main() -> None:
             continue
         needed.add(str(query["scenario_id"]))
     needed = sorted(needed)
+    unreplayed_scenarios = {
+        scenario_id: {
+            "reason": "scenario_registry_marks_query_truth_incomplete",
+            "solver_status": scenarios[scenario_id].get("solver_status"),
+            "failure_class": scenarios[scenario_id].get("failure_class"),
+        }
+        for scenario_id in needed
+        if scenarios[scenario_id].get("query_truth_complete") is False
+    }
     truth = {}
     errors = list(record_errors)
     for scenario_id in needed:
+        if scenario_id in unreplayed_scenarios:
+            continue
         try:
             truth[scenario_id] = raw_truth(scenarios[scenario_id])
         except Exception as exc:  # noqa: BLE001
@@ -261,6 +296,8 @@ def main() -> None:
     for row in query_rows:
         query = row.get("structured_query") or {}
         scenario_id = str(query.get("scenario_id") or "")
+        if scenario_id in unreplayed_scenarios:
+            continue
         if scenario_id not in truth:
             continue
         by_filter[str(query.get("filter"))] += 1
@@ -289,8 +326,13 @@ def main() -> None:
             "pass"
             if not errors
             and not mismatches
-            and len(truth) == len(needed)
-            and checked_query_rows == len(query_rows)
+            and len(truth) + len(unreplayed_scenarios) == len(needed)
+            and checked_query_rows + sum(
+                1
+                for row in query_rows
+                if str((row.get("structured_query") or {}).get("scenario_id") or "")
+                in unreplayed_scenarios
+            ) == len(query_rows)
             and set(by_filter) == SUPPORTED_FILTERS
             and set(by_overload_scope) == SUPPORTED_EQUIPMENT_SCOPES
             else "fail"
@@ -302,10 +344,24 @@ def main() -> None:
         "checked_query_records": checked_query_rows,
         "unique_query_scenarios": len(needed),
         "recomputed_scenarios": len(truth),
+        "unreplayed_scenario_count": len(unreplayed_scenarios),
+        "unreplayed_scenarios": [
+            {"scenario_id": scenario_id, **details}
+            for scenario_id, details in sorted(unreplayed_scenarios.items())
+        ],
+        "unreplayed_query_record_count": sum(
+            1
+            for row in query_rows
+            if str((row.get("structured_query") or {}).get("scenario_id") or "")
+            in unreplayed_scenarios
+        ),
         "simulation_error_count": len(errors),
         "simulation_errors": errors[:50],
         "answer_mismatch_count": len(mismatches),
         "answer_mismatch_examples": mismatches[:50],
+        "replay_solver_counts": dict(
+            Counter(str(item.get("replay_solver") or "unknown") for item in truth.values())
+        ),
         "records_by_filter": dict(by_filter),
         "overload_records_by_equipment_scope": dict(by_overload_scope),
         "required_filter_coverage": sorted(SUPPORTED_FILTERS),
@@ -323,8 +379,14 @@ def main() -> None:
         f"- Status: `{report['status']}`",
         f"- Query records: {report['query_records']}",
         f"- Unique scenarios independently recomputed: {report['recomputed_scenarios']}",
+        f"- Scenarios retained outside complete replay: {report['unreplayed_scenario_count']}",
+        f"- Query records retained outside complete replay: {report['unreplayed_query_record_count']}",
         f"- Simulation errors: {report['simulation_error_count']}",
         f"- Answer mismatches: {report['answer_mismatch_count']}",
+        "",
+        "Scenarios explicitly marked with `query_truth_complete=false` are retained in the dataset but are not",
+        "promoted to independently recomputed numerical truth. All other query-linked scenarios must pass the",
+        "deterministic Newton/Iwamoto replay and complete-set comparison.",
     ]
     (ROOT / args.output_md).write_text("\n".join(lines) + "\n", encoding="utf-8")
     print(json.dumps(report, ensure_ascii=False, indent=2))

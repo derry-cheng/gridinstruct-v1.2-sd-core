@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-08-04T04:00:00.591698+00:00",
+  "generated_at": "2026-08-28T18:43:43.182237+00:00",
   "status": "pass",
   "rows": [
     {
       "task_type": "operation_ticket_check",
       "standard_transformer_macro_f1": 1.0,
       "challenge_transformer_macro_f1": 0.9993654879605177,
-      "template_holdout_tfidf_macro_f1": 0.9996142706820376,
+      "template_holdout_tfidf_macro_f1": 1.0,
       "dedicated_boundary_tfidf_macro_f1": 0.8603583371804264,
       "rule_context_no_rule_macro_f1": 1.0,
       "rule_context_with_rule_macro_f1": 1.0,
@@ -23,7 +23,7 @@
       "task_type": "dispatcher_intent_tool_call",
       "standard_transformer_macro_f1": 1.0,
       "challenge_transformer_macro_f1": 0.7756025485188864,
-      "template_holdout_tfidf_macro_f1": 1.0,
+      "template_holdout_tfidf_macro_f1": 0.20488295371002316,
       "dedicated_boundary_tfidf_macro_f1": 1.0,
       "rule_context_no_rule_macro_f1": 1.0,
       "rule_context_with_rule_macro_f1": 1.0,
@@ -42,7 +42,7 @@
       "task_type": "regulation_compliance_check",
       "standard_transformer_macro_f1": 0.920374867245268,
       "challenge_transformer_macro_f1": 1.0,
-      "template_holdout_tfidf_macro_f1": 0.9861926650139811,
+      "template_holdout_tfidf_macro_f1": 0.9443488642103364,
       "dedicated_boundary_tfidf_macro_f1": null,
       "rule_context_no_rule_macro_f1": 0.8746693657585874,
       "rule_context_with_rule_macro_f1": 0.8717964974316562,

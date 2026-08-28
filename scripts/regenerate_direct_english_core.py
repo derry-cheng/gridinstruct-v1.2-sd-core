@@ -140,6 +140,7 @@ def render_intent(row: dict[str, Any]) -> None:
     intent = text(output.get("intent"), "mitigate_violations")
     slots = output.get("slots") if isinstance(output.get("slots"), dict) else {}
     priority = text(slots.get("priority"), "review")
+    target_issue = text(slots.get("target_issue"), "the active operating condition")
     scenario = text(row.get("scenario_id"), "the current scenario")
     variant = int((row.get("metadata") or {}).get("variant_index") or 0) % 12
     templates = (
@@ -157,21 +158,90 @@ def render_intent(row: dict[str, Any]) -> None:
         "Route the operator request associated with {scenario} to the appropriate dispatch analysis family. Address {issue} at {priority} priority and preserve post-action verification.",
     )
     row["instruction"] = templates[variant].format(scenario=scenario, issue=issue_text, priority=priority)
-    # Legacy intent variants carried the gold intent in auxiliary input prose.
-    # Reconstruct those fields from the state contract so the classifier cannot
-    # solve the task by copying the target from the exposed input.
+    # The base intent records use a neutral routing request so that the label
+    # is not copied from an auxiliary field.  Counterfactual intent records
+    # must retain an observable request distinction: their augmentation
+    # contract deliberately changes the requested route while holding the
+    # operating state fixed.  Collapsing all three routes to the neutral text
+    # creates identical prompt/input pairs with conflicting targets, which is
+    # an invalid supervised-learning contract.  The following typed phrases
+    # expose the request semantics without adding the gold label as a field.
     if isinstance(inp, dict):
-        inp["utterance"] = (
-            "The operator requests dispatch analysis for the current operating condition "
-            "and a reviewable recommendation."
-        )
-        inp["routing_priority"] = (
-            "The current shift supervisor requires a safe dispatch analysis followed by "
-            "a reviewable recommendation."
-        )
-        inp["routing_policy"] = (
-            "Follow the declared dispatch review sequence and retain a post-action power-flow check."
-        )
+        metadata = row.get("metadata") or {}
+        requested_intent = text(metadata.get("counterfactual_intent"), intent)
+        intent_phrases = {
+            "mitigate_violations": [
+                (
+                    "The operator requests corrective measures to reduce the active violation before review.",
+                    "The current shift supervisor prioritizes violation mitigation followed by a post-action review.",
+                    "Follow the dispatch review sequence and retain a post-action power-flow check after mitigation.",
+                ),
+                (
+                    "The operator asks for an action plan that brings the active violation back within its limit.",
+                    "The current shift supervisor places corrective handling before the final operating review.",
+                    "Form a reversible corrective plan, then verify the post-action power-flow state.",
+                ),
+                (
+                    "The requested route is to handle the reported operating violation and then check the result.",
+                    "The shift review gives priority to reducing the reported violation before closure.",
+                    "Select a dispatch action for violation reduction and preserve the post-action check.",
+                ),
+            ],
+            "diagnose_and_dispatch": [
+                (
+                    "The operator requests diagnosis of the active condition followed by dispatch planning.",
+                    "The current shift supervisor prioritizes diagnosis before selecting a dispatch action.",
+                    "Identify the operating cause first, then route the request to dispatch planning and review.",
+                ),
+                (
+                    "The operator asks to locate the source of the reported condition before an action is prepared.",
+                    "The current shift supervisor requires cause identification before dispatch execution.",
+                    "Trace the operating condition, prepare the suitable dispatch route, and retain verification.",
+                ),
+                (
+                    "The requested route starts with an operating-state diagnosis and continues with an executable plan.",
+                    "The shift review places source diagnosis before any corrective dispatch decision.",
+                    "Diagnose the state first, then prepare a reviewable dispatch action and check its result.",
+                ),
+            ],
+            "security_check_and_redispatch": [
+                (
+                    "The operator requests a security check followed by redispatch planning.",
+                    "The current shift supervisor prioritizes security verification before redispatch.",
+                    "Complete the declared security check, then prepare redispatch and retain a post-action check.",
+                ),
+                (
+                    "The operator asks for a security assessment before the generation redispatch decision.",
+                    "The current shift supervisor requires the operating constraints to be checked before redispatch.",
+                    "Verify security constraints first, then route the request to redispatch and post-action review.",
+                ),
+                (
+                    "The requested route is to verify the operating margin and then form a redispatch recommendation.",
+                    "The shift review places security verification ahead of the redispatch action.",
+                    "Run the security check, form the redispatch plan, and retain a power-flow check afterward.",
+                ),
+            ],
+        }
+        if requested_intent in intent_phrases:
+            phrase_index = int(hashlib.sha256(text(row.get("id")).encode("utf-8")).hexdigest()[:8], 16) % len(intent_phrases[requested_intent])
+            utterance, priority, policy = intent_phrases[requested_intent][phrase_index]
+        else:
+            utterance = (
+                "The operator requests dispatch analysis for the current operating condition "
+                "and a reviewable recommendation."
+            )
+            priority = (
+                "The current shift supervisor requires a safe dispatch analysis followed by "
+                "a reviewable recommendation."
+            )
+            policy = (
+                "Follow the declared dispatch review sequence and retain a post-action power-flow check."
+            )
+        utterance = f"{utterance} The requested operational focus is {target_issue}."
+        priority = f"{priority} The review should address {target_issue}."
+        inp["utterance"] = utterance
+        inp["routing_priority"] = priority
+        inp["routing_policy"] = policy
         row["input"] = inp
     row["rationale"] = (
         f"The typed intent contract is {intent} with priority {priority}. The routing request is grounded "
@@ -281,6 +351,7 @@ def render_row(row: dict[str, Any], index: int) -> dict[str, Any]:
         }
     )
     out["metadata"] = metadata
+    refresh_rule_evidence(out)
     return out
 
 
@@ -297,6 +368,46 @@ def has_cjk(value: Any) -> bool:
 def stable_digest(rows: list[dict[str, Any]]) -> str:
     payload = "".join(json.dumps(row, sort_keys=True, ensure_ascii=False, separators=(",", ":")) for row in rows)
     return hashlib.sha256(payload.encode("utf-8")).hexdigest()
+
+
+def display_path(path: Path) -> str:
+    """Use a repository-relative path when possible, otherwise an absolute path."""
+
+    try:
+        return str(path.relative_to(ROOT))
+    except ValueError:
+        return str(path)
+
+
+def refresh_rule_evidence(row: dict[str, Any]) -> None:
+    """Rebind rule-evidence receipts after direct rendering changes surfaces."""
+
+    metadata = row.get("metadata")
+    if not isinstance(metadata, dict):
+        return
+    bindings = metadata.get("rule_link_evidence_fields")
+    if not isinstance(bindings, dict):
+        return
+    for evidence_rows in bindings.values():
+        if not isinstance(evidence_rows, list):
+            continue
+        for evidence in evidence_rows:
+            if not isinstance(evidence, dict):
+                continue
+            pointer = str(evidence.get("json_pointer") or "")
+            if not pointer.startswith("/"):
+                continue
+            value: Any = row
+            for part in pointer.lstrip("/").split("/"):
+                if isinstance(value, dict) and part in value:
+                    value = value[part]
+                else:
+                    value = None
+                    break
+            if value not in (None, "", [], {}):
+                evidence["normalized_evidence"] = json.dumps(
+                    value, ensure_ascii=False, sort_keys=True
+                ).lower()
 
 
 def main() -> None:
@@ -319,19 +430,26 @@ def main() -> None:
         "renderer": "regenerate_direct_english_core.py",
         "language_contract_version": CONTRACT_VERSION,
         "generation_mode": DIRECT_MODE,
-        "source": str(source.relative_to(ROOT)),
-        "output": str(output.relative_to(ROOT)),
+        "source": display_path(source),
+        "output": display_path(output),
         "records": len(rendered),
         "task_counts": dict(sorted(task_counts.items())),
         "generation_mode_counts": dict(mode_counts),
         "cjk_record_count": len(cjk_locations),
         "cjk_record_examples": cjk_locations[:20],
         "source_sha256": hashlib.sha256(source.read_bytes()).hexdigest(),
-        "output_sha256": stable_digest(rendered),
+        # Keep the byte-level receipt and canonical contract digest explicit.
+        # Earlier reports called the latter `output_sha256`, which was easy to
+        # confuse with the file hash when auditing the release.
+        "output_sha256": None,
+        "output_file_sha256": None,
+        "output_contract_sha256": stable_digest(rendered),
         "external_translation_service_used": False,
         "source_language_fields_removed": True,
     }
     write_jsonl_atomic(output, rendered)
+    report["output_sha256"] = hashlib.sha256(output.read_bytes()).hexdigest()
+    report["output_file_sha256"] = report["output_sha256"]
     (ROOT / args.report_json).write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     md = [
         "# Direct-English materialisation report",
@@ -341,6 +459,8 @@ def main() -> None:
         f"- Renderer: `{report['renderer']}` ({CONTRACT_VERSION})",
         f"- External translation service used: **{report['external_translation_service_used']}**",
         f"- CJK-containing records after rendering: **{report['cjk_record_count']}**",
+        f"- Output file SHA-256: `{report['output_sha256']}`",
+        f"- Output contract SHA-256: `{report['output_contract_sha256']}`",
         "",
         "The English view is regenerated from typed scenario, rule, label, and structured-output contracts. "
         "The release metadata contains no source-language or translation-status fields.",

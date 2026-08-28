@@ -29,6 +29,9 @@ def task_score_from_tfidf(report: dict[str, Any], task: str) -> float | None:
     metrics = report.get("test_metrics", {}).get(task)
     if metrics:
         return metrics.get("macro_f1")
+    for metrics in report.get("baseline_metrics", []):
+        if metrics.get("task_type") == task:
+            return metrics.get("macro_f1")
     return None
 
 
@@ -102,7 +105,7 @@ def plot(rows: list[dict[str, Any]], figure_dir: Path) -> list[str]:
     metrics = [
         ("standard_transformer_macro_f1", "Standard"),
         ("challenge_transformer_macro_f1", "Challenge"),
-        ("template_holdout_tfidf_macro_f1", "Template\nholdout"),
+        ("template_holdout_tfidf_macro_f1", "Template-family\nholdout"),
         ("dedicated_boundary_tfidf_macro_f1", "Boundary\nset"),
         ("proxy_reduced_standard_macro_f1", "Proxy\nreduced"),
         ("rule_context_with_rule_macro_f1", "Rule\ncontext"),
@@ -169,7 +172,7 @@ def write_markdown(path: Path, report: dict[str, Any]) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--model-score-quality", default="reports/model_score_quality_audit_v1.2_sd_core.json")
-    parser.add_argument("--template-tfidf", default="benchmark/v1.2_sd_core_template_holdout_tfidf_report.json")
+    parser.add_argument("--template-tfidf", default="reports/template_family_holdout_v1.2_sd_core.json")
     parser.add_argument("--boundary-tfidf", default="benchmark/v1.2_sd_core_boundary_challenge_tfidf_report.json")
     parser.add_argument("--rule-context-tfidf", default="benchmark/v1.2_sd_core_rule_context_tfidf_report.json")
     parser.add_argument("--proxy-reduced-input", default="reports/proxy_reduced_input_audit_v1.2_sd_core.json")

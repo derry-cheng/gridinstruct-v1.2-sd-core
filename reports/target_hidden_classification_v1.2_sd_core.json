@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-05T15:21:51.874689+00:00",
+  "generated_at": "2026-08-28T20:19:01.263989+00:00",
   "status": "pass",
   "objective": "target-hidden input-surface ablation for classification learnability",
   "input_policy": {
@@ -38,21 +38,21 @@
       "data/v1.2_sd_core_test_en.jsonl"
     ],
     "strict_source_group": [
-      "data/v1.2_sd_core_strict_train_en.jsonl",
-      "data/v1.2_sd_core_strict_test_en.jsonl"
+      "data/v1.2_sd_core_strict_train.jsonl",
+      "data/v1.2_sd_core_strict_test.jsonl"
     ],
     "template_holdout": [
-      "data/v1.2_sd_core_template_holdout_train_en.jsonl",
-      "data/v1.2_sd_core_template_holdout_test_en.jsonl"
+      "data/v1.2_sd_core_template_family_holdout_train_ids.jsonl",
+      "data/v1.2_sd_core_template_family_holdout_test_ids.jsonl"
     ]
   },
   "rows": [
     {
       "task_type": "dispatcher_intent_tool_call",
       "input_profile": "full_contract",
-      "n_train": 3910,
-      "n_test": 494,
-      "vocabulary_size": 28151,
+      "n_train": 3368,
+      "n_test": 867,
+      "vocabulary_size": 21488,
       "accuracy": 1.0,
       "macro_f1": 1.0,
       "macro_f1_ci95": [
@@ -61,14 +61,14 @@
       ],
       "balanced_accuracy": 1.0,
       "gold_label_counts": {
-        "security_check_and_redispatch": 164,
-        "mitigate_violations": 166,
-        "diagnose_and_dispatch": 164
+        "diagnose_and_dispatch": 293,
+        "security_check_and_redispatch": 283,
+        "mitigate_violations": 291
       },
       "prediction_label_counts": {
-        "security_check_and_redispatch": 164,
-        "mitigate_violations": 166,
-        "diagnose_and_dispatch": 164
+        "diagnose_and_dispatch": 293,
+        "security_check_and_redispatch": 283,
+        "mitigate_violations": 291
       },
       "labels": [
         "diagnose_and_dispatch",
@@ -78,31 +78,31 @@
       "split": "standard",
       "train_path": "data/v1.2_sd_core_train_en.jsonl",
       "test_path": "data/v1.2_sd_core_test_en.jsonl",
-      "train_sha256": "ff09925aacb7767dc303eebd4d4089c69f7216977bd9c0e76198788660c9ed3a",
-      "test_sha256": "982e6bef11f3cbc8fa8e3e280c447aadbb22bd26e708fd070957042f436755c0"
+      "train_sha256": "81fb662da56a2685b9edabde8843b277600832345ae438fd23674ade0bc95283",
+      "test_sha256": "8c9c6e9f87209aa356aaea4c8e707c30fb5608ab5a5a968f83ecab0c5d73e988"
     },
     {
       "task_type": "operation_ticket_check",
       "input_profile": "full_contract",
-      "n_train": 8675,
-      "n_test": 1110,
-      "vocabulary_size": 44383,
-      "accuracy": 1.0,
-      "macro_f1": 1.0,
+      "n_train": 8020,
+      "n_test": 928,
+      "vocabulary_size": 44391,
+      "accuracy": 0.9989224137931034,
+      "macro_f1": 0.9987248104521823,
       "macro_f1_ci95": [
-        1.0,
+        0.9960260285738441,
         1.0
       ],
-      "balanced_accuracy": 1.0,
+      "balanced_accuracy": 0.9988095238095238,
       "gold_label_counts": {
-        "compliant_with_monitoring": 526,
-        "non_compliant": 312,
-        "compliant": 272
+        "compliant_with_monitoring": 403,
+        "non_compliant": 280,
+        "compliant": 245
       },
       "prediction_label_counts": {
-        "compliant_with_monitoring": 526,
-        "non_compliant": 312,
-        "compliant": 272
+        "compliant_with_monitoring": 403,
+        "non_compliant": 279,
+        "compliant": 246
       },
       "labels": [
         "compliant",
@@ -112,31 +112,31 @@
       "split": "standard",
       "train_path": "data/v1.2_sd_core_train_en.jsonl",
       "test_path": "data/v1.2_sd_core_test_en.jsonl",
-      "train_sha256": "ff09925aacb7767dc303eebd4d4089c69f7216977bd9c0e76198788660c9ed3a",
-      "test_sha256": "982e6bef11f3cbc8fa8e3e280c447aadbb22bd26e708fd070957042f436755c0"
+      "train_sha256": "81fb662da56a2685b9edabde8843b277600832345ae438fd23674ade0bc95283",
+      "test_sha256": "8c9c6e9f87209aa356aaea4c8e707c30fb5608ab5a5a968f83ecab0c5d73e988"
     },
     {
       "task_type": "regulation_compliance_check",
       "input_profile": "full_contract",
-      "n_train": 5655,
-      "n_test": 701,
-      "vocabulary_size": 30271,
-      "accuracy": 0.8559201141226819,
-      "macro_f1": 0.8635829784316517,
+      "n_train": 5406,
+      "n_test": 921,
+      "vocabulary_size": 23213,
+      "accuracy": 0.988056460369164,
+      "macro_f1": 0.9774232982282749,
       "macro_f1_ci95": [
-        0.8374835667886668,
-        0.8916947482415745
+        0.9627718827152365,
+        0.9898936042738491
       ],
-      "balanced_accuracy": 0.8580213677365661,
+      "balanced_accuracy": 0.9733655857251362,
       "gold_label_counts": {
-        "compliant_with_monitoring": 289,
-        "non_compliant": 338,
-        "compliant": 74
+        "non_compliant": 546,
+        "compliant_with_monitoring": 286,
+        "compliant": 89
       },
       "prediction_label_counts": {
-        "compliant_with_monitoring": 304,
-        "non_compliant": 327,
-        "compliant": 70
+        "non_compliant": 543,
+        "compliant_with_monitoring": 293,
+        "compliant": 85
       },
       "labels": [
         "compliant",
@@ -146,15 +146,15 @@
       "split": "standard",
       "train_path": "data/v1.2_sd_core_train_en.jsonl",
       "test_path": "data/v1.2_sd_core_test_en.jsonl",
-      "train_sha256": "ff09925aacb7767dc303eebd4d4089c69f7216977bd9c0e76198788660c9ed3a",
-      "test_sha256": "982e6bef11f3cbc8fa8e3e280c447aadbb22bd26e708fd070957042f436755c0"
+      "train_sha256": "81fb662da56a2685b9edabde8843b277600832345ae438fd23674ade0bc95283",
+      "test_sha256": "8c9c6e9f87209aa356aaea4c8e707c30fb5608ab5a5a968f83ecab0c5d73e988"
     },
     {
       "task_type": "dispatcher_intent_tool_call",
       "input_profile": "target_hidden",
-      "n_train": 3910,
-      "n_test": 494,
-      "vocabulary_size": 8644,
+      "n_train": 3368,
+      "n_test": 867,
+      "vocabulary_size": 4203,
       "accuracy": 1.0,
       "macro_f1": 1.0,
       "macro_f1_ci95": [
@@ -163,14 +163,14 @@
       ],
       "balanced_accuracy": 1.0,
       "gold_label_counts": {
-        "security_check_and_redispatch": 164,
-        "mitigate_violations": 166,
-        "diagnose_and_dispatch": 164
+        "diagnose_and_dispatch": 293,
+        "security_check_and_redispatch": 283,
+        "mitigate_violations": 291
       },
       "prediction_label_counts": {
-        "security_check_and_redispatch": 164,
-        "mitigate_violations": 166,
-        "diagnose_and_dispatch": 164
+        "diagnose_and_dispatch": 293,
+        "security_check_and_redispatch": 283,
+        "mitigate_violations": 291
       },
       "labels": [
         "diagnose_and_dispatch",
@@ -180,31 +180,31 @@
       "split": "standard",
       "train_path": "data/v1.2_sd_core_train_en.jsonl",
       "test_path": "data/v1.2_sd_core_test_en.jsonl",
-      "train_sha256": "ff09925aacb7767dc303eebd4d4089c69f7216977bd9c0e76198788660c9ed3a",
-      "test_sha256": "982e6bef11f3cbc8fa8e3e280c447aadbb22bd26e708fd070957042f436755c0"
+      "train_sha256": "81fb662da56a2685b9edabde8843b277600832345ae438fd23674ade0bc95283",
+      "test_sha256": "8c9c6e9f87209aa356aaea4c8e707c30fb5608ab5a5a968f83ecab0c5d73e988"
     },
     {
       "task_type": "operation_ticket_check",
       "input_profile": "target_hidden",
-      "n_train": 8675,
-      "n_test": 1110,
-      "vocabulary_size": 44383,
-      "accuracy": 1.0,
-      "macro_f1": 1.0,
+      "n_train": 8020,
+      "n_test": 928,
+      "vocabulary_size": 44391,
+      "accuracy": 0.9989224137931034,
+      "macro_f1": 0.9987248104521823,
       "macro_f1_ci95": [
-        1.0,
+        0.9960260285738441,
         1.0
       ],
-      "balanced_accuracy": 1.0,
+      "balanced_accuracy": 0.9988095238095238,
       "gold_label_counts": {
-        "compliant_with_monitoring": 526,
-        "non_compliant": 312,
-        "compliant": 272
+        "compliant_with_monitoring": 403,
+        "non_compliant": 280,
+        "compliant": 245
       },
       "prediction_label_counts": {
-        "compliant_with_monitoring": 526,
-        "non_compliant": 312,
-        "compliant": 272
+        "compliant_with_monitoring": 403,
+        "non_compliant": 279,
+        "compliant": 246
       },
       "labels": [
         "compliant",
@@ -214,31 +214,31 @@
       "split": "standard",
       "train_path": "data/v1.2_sd_core_train_en.jsonl",
       "test_path": "data/v1.2_sd_core_test_en.jsonl",
-      "train_sha256": "ff09925aacb7767dc303eebd4d4089c69f7216977bd9c0e76198788660c9ed3a",
-      "test_sha256": "982e6bef11f3cbc8fa8e3e280c447aadbb22bd26e708fd070957042f436755c0"
+      "train_sha256": "81fb662da56a2685b9edabde8843b277600832345ae438fd23674ade0bc95283",
+      "test_sha256": "8c9c6e9f87209aa356aaea4c8e707c30fb5608ab5a5a968f83ecab0c5d73e988"
     },
     {
       "task_type": "regulation_compliance_check",
       "input_profile": "target_hidden",
-      "n_train": 5655,
-      "n_test": 701,
-      "vocabulary_size": 8821,
-      "accuracy": 0.703281027104137,
-      "macro_f1": 0.6677595468164245,
+      "n_train": 5406,
+      "n_test": 921,
+      "vocabulary_size": 3896,
+      "accuracy": 0.6927252985884907,
+      "macro_f1": 0.49892703670766264,
       "macro_f1_ci95": [
-        0.6242800928130456,
-        0.7073223615141733
+        0.47310137884684667,
+        0.525697172395747
       ],
-      "balanced_accuracy": 0.694881866162143,
+      "balanced_accuracy": 0.5428441720576552,
       "gold_label_counts": {
-        "compliant_with_monitoring": 289,
-        "non_compliant": 338,
-        "compliant": 74
+        "non_compliant": 546,
+        "compliant_with_monitoring": 286,
+        "compliant": 89
       },
       "prediction_label_counts": {
-        "compliant_with_monitoring": 299,
-        "non_compliant": 297,
-        "compliant": 105
+        "non_compliant": 371,
+        "compliant_with_monitoring": 527,
+        "compliant": 23
       },
       "labels": [
         "compliant",
@@ -248,31 +248,31 @@
       "split": "standard",
       "train_path": "data/v1.2_sd_core_train_en.jsonl",
       "test_path": "data/v1.2_sd_core_test_en.jsonl",
-      "train_sha256": "ff09925aacb7767dc303eebd4d4089c69f7216977bd9c0e76198788660c9ed3a",
-      "test_sha256": "982e6bef11f3cbc8fa8e3e280c447aadbb22bd26e708fd070957042f436755c0"
+      "train_sha256": "81fb662da56a2685b9edabde8843b277600832345ae438fd23674ade0bc95283",
+      "test_sha256": "8c9c6e9f87209aa356aaea4c8e707c30fb5608ab5a5a968f83ecab0c5d73e988"
     },
     {
       "task_type": "dispatcher_intent_tool_call",
       "input_profile": "instruction_only",
-      "n_train": 3910,
-      "n_test": 494,
-      "vocabulary_size": 5836,
-      "accuracy": 1.0,
-      "macro_f1": 1.0,
+      "n_train": 3368,
+      "n_test": 867,
+      "vocabulary_size": 1687,
+      "accuracy": 0.4244521337946944,
+      "macro_f1": 0.4237278416562993,
       "macro_f1_ci95": [
-        1.0,
-        1.0
+        0.38885207790006554,
+        0.45513024341548775
       ],
-      "balanced_accuracy": 1.0,
+      "balanced_accuracy": 0.42409040567571377,
       "gold_label_counts": {
-        "security_check_and_redispatch": 164,
-        "mitigate_violations": 166,
-        "diagnose_and_dispatch": 164
+        "diagnose_and_dispatch": 293,
+        "security_check_and_redispatch": 283,
+        "mitigate_violations": 291
       },
       "prediction_label_counts": {
-        "security_check_and_redispatch": 164,
-        "mitigate_violations": 166,
-        "diagnose_and_dispatch": 164
+        "diagnose_and_dispatch": 326,
+        "security_check_and_redispatch": 263,
+        "mitigate_violations": 278
       },
       "labels": [
         "diagnose_and_dispatch",
@@ -282,31 +282,31 @@
       "split": "standard",
       "train_path": "data/v1.2_sd_core_train_en.jsonl",
       "test_path": "data/v1.2_sd_core_test_en.jsonl",
-      "train_sha256": "ff09925aacb7767dc303eebd4d4089c69f7216977bd9c0e76198788660c9ed3a",
-      "test_sha256": "982e6bef11f3cbc8fa8e3e280c447aadbb22bd26e708fd070957042f436755c0"
+      "train_sha256": "81fb662da56a2685b9edabde8843b277600832345ae438fd23674ade0bc95283",
+      "test_sha256": "8c9c6e9f87209aa356aaea4c8e707c30fb5608ab5a5a968f83ecab0c5d73e988"
     },
     {
       "task_type": "operation_ticket_check",
       "input_profile": "instruction_only",
-      "n_train": 8675,
-      "n_test": 1110,
-      "vocabulary_size": 3843,
-      "accuracy": 0.42162162162162165,
-      "macro_f1": 0.2533034816731986,
+      "n_train": 8020,
+      "n_test": 928,
+      "vocabulary_size": 41452,
+      "accuracy": 0.9967672413793104,
+      "macro_f1": 0.9961762702976319,
       "macro_f1_ci95": [
-        0.2359945998403298,
-        0.271423849985711
+        0.9907261490161845,
+        1.0
       ],
-      "balanced_accuracy": 0.319065458883173,
+      "balanced_accuracy": 0.9964285714285714,
       "gold_label_counts": {
-        "compliant_with_monitoring": 526,
-        "non_compliant": 312,
-        "compliant": 272
+        "compliant_with_monitoring": 403,
+        "non_compliant": 280,
+        "compliant": 245
       },
       "prediction_label_counts": {
-        "compliant_with_monitoring": 921,
-        "compliant": 187,
-        "non_compliant": 2
+        "compliant_with_monitoring": 403,
+        "non_compliant": 277,
+        "compliant": 248
       },
       "labels": [
         "compliant",
@@ -316,31 +316,31 @@
       "split": "standard",
       "train_path": "data/v1.2_sd_core_train_en.jsonl",
       "test_path": "data/v1.2_sd_core_test_en.jsonl",
-      "train_sha256": "ff09925aacb7767dc303eebd4d4089c69f7216977bd9c0e76198788660c9ed3a",
-      "test_sha256": "982e6bef11f3cbc8fa8e3e280c447aadbb22bd26e708fd070957042f436755c0"
+      "train_sha256": "81fb662da56a2685b9edabde8843b277600832345ae438fd23674ade0bc95283",
+      "test_sha256": "8c9c6e9f87209aa356aaea4c8e707c30fb5608ab5a5a968f83ecab0c5d73e988"
     },
     {
       "task_type": "regulation_compliance_check",
       "input_profile": "instruction_only",
-      "n_train": 5655,
-      "n_test": 701,
-      "vocabulary_size": 8201,
-      "accuracy": 0.7047075606276747,
-      "macro_f1": 0.6678655282215815,
+      "n_train": 5406,
+      "n_test": 921,
+      "vocabulary_size": 3545,
+      "accuracy": 0.6927252985884907,
+      "macro_f1": 0.49892703670766264,
       "macro_f1_ci95": [
-        0.6212000817618554,
-        0.707950775893541
+        0.47310137884684667,
+        0.525697172395747
       ],
-      "balanced_accuracy": 0.6896674832527907,
+      "balanced_accuracy": 0.5428441720576552,
       "gold_label_counts": {
-        "compliant_with_monitoring": 289,
-        "non_compliant": 338,
-        "compliant": 74
+        "non_compliant": 546,
+        "compliant_with_monitoring": 286,
+        "compliant": 89
       },
       "prediction_label_counts": {
-        "compliant_with_monitoring": 308,
-        "non_compliant": 294,
-        "compliant": 99
+        "non_compliant": 371,
+        "compliant_with_monitoring": 527,
+        "compliant": 23
       },
       "labels": [
         "compliant",
@@ -350,15 +350,15 @@
       "split": "standard",
       "train_path": "data/v1.2_sd_core_train_en.jsonl",
       "test_path": "data/v1.2_sd_core_test_en.jsonl",
-      "train_sha256": "ff09925aacb7767dc303eebd4d4089c69f7216977bd9c0e76198788660c9ed3a",
-      "test_sha256": "982e6bef11f3cbc8fa8e3e280c447aadbb22bd26e708fd070957042f436755c0"
+      "train_sha256": "81fb662da56a2685b9edabde8843b277600832345ae438fd23674ade0bc95283",
+      "test_sha256": "8c9c6e9f87209aa356aaea4c8e707c30fb5608ab5a5a968f83ecab0c5d73e988"
     },
     {
       "task_type": "dispatcher_intent_tool_call",
       "input_profile": "full_contract",
-      "n_train": 15818,
-      "n_test": 1975,
-      "vocabulary_size": 59518,
+      "n_train": 15821,
+      "n_test": 1976,
+      "vocabulary_size": 53178,
       "accuracy": 1.0,
       "macro_f1": 1.0,
       "macro_f1_ci95": [
@@ -367,14 +367,14 @@
       ],
       "balanced_accuracy": 1.0,
       "gold_label_counts": {
-        "diagnose_and_dispatch": 662,
-        "security_check_and_redispatch": 656,
-        "mitigate_violations": 657
+        "mitigate_violations": 657,
+        "security_check_and_redispatch": 657,
+        "diagnose_and_dispatch": 662
       },
       "prediction_label_counts": {
-        "diagnose_and_dispatch": 662,
-        "security_check_and_redispatch": 656,
-        "mitigate_violations": 657
+        "mitigate_violations": 657,
+        "security_check_and_redispatch": 657,
+        "diagnose_and_dispatch": 662
       },
       "labels": [
         "diagnose_and_dispatch",
@@ -382,17 +382,17 @@
         "security_check_and_redispatch"
       ],
       "split": "strict_source_group",
-      "train_path": "data/v1.2_sd_core_strict_train_en.jsonl",
-      "test_path": "data/v1.2_sd_core_strict_test_en.jsonl",
-      "train_sha256": "ac93d22b2ac63bbcd4ca9aad7edda066a8c1dc7ffe35aab7095c8c7c022b5669",
-      "test_sha256": "b7cd019ecf6884a2c3590918ffc01792ef56f57e2354645b3a14f7893651fe69"
+      "train_path": "data/v1.2_sd_core_strict_train.jsonl",
+      "test_path": "data/v1.2_sd_core_strict_test.jsonl",
+      "train_sha256": "4ea2d05b59ff253fd44c00f8f69a978159b7548b72a5016822c0fcc7520f0153",
+      "test_sha256": "753734fe89bf899592591cf863b56bfcbc6219b5735aaadd4c5980dbcb2458ed"
     },
     {
       "task_type": "operation_ticket_check",
       "input_profile": "full_contract",
       "n_train": 8665,
-      "n_test": 1103,
-      "vocabulary_size": 44308,
+      "n_test": 1113,
+      "vocabulary_size": 44338,
       "accuracy": 1.0,
       "macro_f1": 1.0,
       "macro_f1_ci95": [
@@ -401,14 +401,14 @@
       ],
       "balanced_accuracy": 1.0,
       "gold_label_counts": {
-        "non_compliant": 314,
-        "compliant": 274,
-        "compliant_with_monitoring": 515
+        "compliant": 273,
+        "compliant_with_monitoring": 527,
+        "non_compliant": 313
       },
       "prediction_label_counts": {
-        "non_compliant": 314,
-        "compliant": 274,
-        "compliant_with_monitoring": 515
+        "compliant": 273,
+        "compliant_with_monitoring": 527,
+        "non_compliant": 313
       },
       "labels": [
         "compliant",
@@ -416,33 +416,33 @@
         "non_compliant"
       ],
       "split": "strict_source_group",
-      "train_path": "data/v1.2_sd_core_strict_train_en.jsonl",
-      "test_path": "data/v1.2_sd_core_strict_test_en.jsonl",
-      "train_sha256": "ac93d22b2ac63bbcd4ca9aad7edda066a8c1dc7ffe35aab7095c8c7c022b5669",
-      "test_sha256": "b7cd019ecf6884a2c3590918ffc01792ef56f57e2354645b3a14f7893651fe69"
+      "train_path": "data/v1.2_sd_core_strict_train.jsonl",
+      "test_path": "data/v1.2_sd_core_strict_test.jsonl",
+      "train_sha256": "4ea2d05b59ff253fd44c00f8f69a978159b7548b72a5016822c0fcc7520f0153",
+      "test_sha256": "753734fe89bf899592591cf863b56bfcbc6219b5735aaadd4c5980dbcb2458ed"
     },
     {
       "task_type": "regulation_compliance_check",
       "input_profile": "full_contract",
-      "n_train": 19817,
-      "n_test": 2477,
-      "vocabulary_size": 61398,
-      "accuracy": 0.932983447719015,
-      "macro_f1": 0.9202304848880192,
+      "n_train": 19806,
+      "n_test": 2481,
+      "vocabulary_size": 51440,
+      "accuracy": 0.9641273679967755,
+      "macro_f1": 0.9445971177374094,
       "macro_f1_ci95": [
-        0.9008683952740661,
-        0.9361645367350847
+        0.9293530235398929,
+        0.9581196002425412
       ],
-      "balanced_accuracy": 0.9207432515316549,
+      "balanced_accuracy": 0.970462337884458,
       "gold_label_counts": {
-        "non_compliant": 1303,
-        "compliant": 104,
-        "compliant_with_monitoring": 1070
+        "compliant_with_monitoring": 1077,
+        "non_compliant": 1298,
+        "compliant": 106
       },
       "prediction_label_counts": {
-        "non_compliant": 1397,
-        "compliant": 106,
-        "compliant_with_monitoring": 974
+        "compliant_with_monitoring": 1022,
+        "non_compliant": 1332,
+        "compliant": 127
       },
       "labels": [
         "compliant",
@@ -450,17 +450,17 @@
         "non_compliant"
       ],
       "split": "strict_source_group",
-      "train_path": "data/v1.2_sd_core_strict_train_en.jsonl",
-      "test_path": "data/v1.2_sd_core_strict_test_en.jsonl",
-      "train_sha256": "ac93d22b2ac63bbcd4ca9aad7edda066a8c1dc7ffe35aab7095c8c7c022b5669",
-      "test_sha256": "b7cd019ecf6884a2c3590918ffc01792ef56f57e2354645b3a14f7893651fe69"
+      "train_path": "data/v1.2_sd_core_strict_train.jsonl",
+      "test_path": "data/v1.2_sd_core_strict_test.jsonl",
+      "train_sha256": "4ea2d05b59ff253fd44c00f8f69a978159b7548b72a5016822c0fcc7520f0153",
+      "test_sha256": "753734fe89bf899592591cf863b56bfcbc6219b5735aaadd4c5980dbcb2458ed"
     },
     {
       "task_type": "dispatcher_intent_tool_call",
       "input_profile": "target_hidden",
-      "n_train": 15818,
-      "n_test": 1975,
-      "vocabulary_size": 13508,
+      "n_train": 15821,
+      "n_test": 1976,
+      "vocabulary_size": 4232,
       "accuracy": 1.0,
       "macro_f1": 1.0,
       "macro_f1_ci95": [
@@ -469,14 +469,14 @@
       ],
       "balanced_accuracy": 1.0,
       "gold_label_counts": {
-        "diagnose_and_dispatch": 662,
-        "security_check_and_redispatch": 656,
-        "mitigate_violations": 657
+        "mitigate_violations": 657,
+        "security_check_and_redispatch": 657,
+        "diagnose_and_dispatch": 662
       },
       "prediction_label_counts": {
-        "diagnose_and_dispatch": 662,
-        "security_check_and_redispatch": 656,
-        "mitigate_violations": 657
+        "mitigate_violations": 657,
+        "security_check_and_redispatch": 657,
+        "diagnose_and_dispatch": 662
       },
       "labels": [
         "diagnose_and_dispatch",
@@ -484,17 +484,17 @@
         "security_check_and_redispatch"
       ],
       "split": "strict_source_group",
-      "train_path": "data/v1.2_sd_core_strict_train_en.jsonl",
-      "test_path": "data/v1.2_sd_core_strict_test_en.jsonl",
-      "train_sha256": "ac93d22b2ac63bbcd4ca9aad7edda066a8c1dc7ffe35aab7095c8c7c022b5669",
-      "test_sha256": "b7cd019ecf6884a2c3590918ffc01792ef56f57e2354645b3a14f7893651fe69"
+      "train_path": "data/v1.2_sd_core_strict_train.jsonl",
+      "test_path": "data/v1.2_sd_core_strict_test.jsonl",
+      "train_sha256": "4ea2d05b59ff253fd44c00f8f69a978159b7548b72a5016822c0fcc7520f0153",
+      "test_sha256": "753734fe89bf899592591cf863b56bfcbc6219b5735aaadd4c5980dbcb2458ed"
     },
     {
       "task_type": "operation_ticket_check",
       "input_profile": "target_hidden",
       "n_train": 8665,
-      "n_test": 1103,
-      "vocabulary_size": 44308,
+      "n_test": 1113,
+      "vocabulary_size": 44338,
       "accuracy": 1.0,
       "macro_f1": 1.0,
       "macro_f1_ci95": [
@@ -503,14 +503,14 @@
       ],
       "balanced_accuracy": 1.0,
       "gold_label_counts": {
-        "non_compliant": 314,
-        "compliant": 274,
-        "compliant_with_monitoring": 515
+        "compliant": 273,
+        "compliant_with_monitoring": 527,
+        "non_compliant": 313
       },
       "prediction_label_counts": {
-        "non_compliant": 314,
-        "compliant": 274,
-        "compliant_with_monitoring": 515
+        "compliant": 273,
+        "compliant_with_monitoring": 527,
+        "non_compliant": 313
       },
       "labels": [
         "compliant",
@@ -518,33 +518,33 @@
         "non_compliant"
       ],
       "split": "strict_source_group",
-      "train_path": "data/v1.2_sd_core_strict_train_en.jsonl",
-      "test_path": "data/v1.2_sd_core_strict_test_en.jsonl",
-      "train_sha256": "ac93d22b2ac63bbcd4ca9aad7edda066a8c1dc7ffe35aab7095c8c7c022b5669",
-      "test_sha256": "b7cd019ecf6884a2c3590918ffc01792ef56f57e2354645b3a14f7893651fe69"
+      "train_path": "data/v1.2_sd_core_strict_train.jsonl",
+      "test_path": "data/v1.2_sd_core_strict_test.jsonl",
+      "train_sha256": "4ea2d05b59ff253fd44c00f8f69a978159b7548b72a5016822c0fcc7520f0153",
+      "test_sha256": "753734fe89bf899592591cf863b56bfcbc6219b5735aaadd4c5980dbcb2458ed"
     },
     {
       "task_type": "regulation_compliance_check",
       "input_profile": "target_hidden",
-      "n_train": 19817,
-      "n_test": 2477,
-      "vocabulary_size": 9707,
-      "accuracy": 0.8159063383124747,
-      "macro_f1": 0.7191047662661482,
+      "n_train": 19806,
+      "n_test": 2481,
+      "vocabulary_size": 4368,
+      "accuracy": 0.9359129383313181,
+      "macro_f1": 0.9118922100673595,
       "macro_f1_ci95": [
-        0.6934693305844762,
-        0.7453654118020379
+        0.8910166186400463,
+        0.9279992031203791
       ],
-      "balanced_accuracy": 0.7592954947926581,
+      "balanced_accuracy": 0.9400282797653885,
       "gold_label_counts": {
-        "non_compliant": 1303,
-        "compliant": 104,
-        "compliant_with_monitoring": 1070
+        "compliant_with_monitoring": 1077,
+        "non_compliant": 1298,
+        "compliant": 106
       },
       "prediction_label_counts": {
-        "non_compliant": 1247,
-        "compliant": 163,
-        "compliant_with_monitoring": 1067
+        "compliant_with_monitoring": 947,
+        "non_compliant": 1403,
+        "compliant": 131
       },
       "labels": [
         "compliant",
@@ -552,33 +552,33 @@
         "non_compliant"
       ],
       "split": "strict_source_group",
-      "train_path": "data/v1.2_sd_core_strict_train_en.jsonl",
-      "test_path": "data/v1.2_sd_core_strict_test_en.jsonl",
-      "train_sha256": "ac93d22b2ac63bbcd4ca9aad7edda066a8c1dc7ffe35aab7095c8c7c022b5669",
-      "test_sha256": "b7cd019ecf6884a2c3590918ffc01792ef56f57e2354645b3a14f7893651fe69"
+      "train_path": "data/v1.2_sd_core_strict_train.jsonl",
+      "test_path": "data/v1.2_sd_core_strict_test.jsonl",
+      "train_sha256": "4ea2d05b59ff253fd44c00f8f69a978159b7548b72a5016822c0fcc7520f0153",
+      "test_sha256": "753734fe89bf899592591cf863b56bfcbc6219b5735aaadd4c5980dbcb2458ed"
     },
     {
       "task_type": "dispatcher_intent_tool_call",
       "input_profile": "instruction_only",
-      "n_train": 15818,
-      "n_test": 1975,
-      "vocabulary_size": 6742,
-      "accuracy": 1.0,
-      "macro_f1": 1.0,
+      "n_train": 15821,
+      "n_test": 1976,
+      "vocabulary_size": 1687,
+      "accuracy": 0.4043522267206478,
+      "macro_f1": 0.4039426560235037,
       "macro_f1_ci95": [
-        1.0,
-        1.0
+        0.38296237348898227,
+        0.4259825082370336
       ],
-      "balanced_accuracy": 1.0,
+      "balanced_accuracy": 0.4042628690023467,
       "gold_label_counts": {
-        "diagnose_and_dispatch": 662,
-        "security_check_and_redispatch": 656,
-        "mitigate_violations": 657
+        "mitigate_violations": 657,
+        "security_check_and_redispatch": 657,
+        "diagnose_and_dispatch": 662
       },
       "prediction_label_counts": {
-        "diagnose_and_dispatch": 662,
-        "security_check_and_redispatch": 656,
-        "mitigate_violations": 657
+        "diagnose_and_dispatch": 737,
+        "security_check_and_redispatch": 633,
+        "mitigate_violations": 606
       },
       "labels": [
         "diagnose_and_dispatch",
@@ -586,33 +586,33 @@
         "security_check_and_redispatch"
       ],
       "split": "strict_source_group",
-      "train_path": "data/v1.2_sd_core_strict_train_en.jsonl",
-      "test_path": "data/v1.2_sd_core_strict_test_en.jsonl",
-      "train_sha256": "ac93d22b2ac63bbcd4ca9aad7edda066a8c1dc7ffe35aab7095c8c7c022b5669",
-      "test_sha256": "b7cd019ecf6884a2c3590918ffc01792ef56f57e2354645b3a14f7893651fe69"
+      "train_path": "data/v1.2_sd_core_strict_train.jsonl",
+      "test_path": "data/v1.2_sd_core_strict_test.jsonl",
+      "train_sha256": "4ea2d05b59ff253fd44c00f8f69a978159b7548b72a5016822c0fcc7520f0153",
+      "test_sha256": "753734fe89bf899592591cf863b56bfcbc6219b5735aaadd4c5980dbcb2458ed"
     },
     {
       "task_type": "operation_ticket_check",
       "input_profile": "instruction_only",
       "n_train": 8665,
-      "n_test": 1103,
-      "vocabulary_size": 3843,
-      "accuracy": 0.4605621033544878,
-      "macro_f1": 0.2259946851333348,
+      "n_test": 1113,
+      "vocabulary_size": 41351,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
       "macro_f1_ci95": [
-        0.21157980024455264,
-        0.24117419865307474
+        1.0,
+        1.0
       ],
-      "balanced_accuracy": 0.33247771197155224,
+      "balanced_accuracy": 1.0,
       "gold_label_counts": {
-        "non_compliant": 314,
-        "compliant": 274,
-        "compliant_with_monitoring": 515
+        "compliant": 273,
+        "compliant_with_monitoring": 527,
+        "non_compliant": 313
       },
       "prediction_label_counts": {
-        "compliant_with_monitoring": 1071,
-        "non_compliant": 11,
-        "compliant": 21
+        "compliant": 273,
+        "compliant_with_monitoring": 527,
+        "non_compliant": 313
       },
       "labels": [
         "compliant",
@@ -620,33 +620,33 @@
         "non_compliant"
       ],
       "split": "strict_source_group",
-      "train_path": "data/v1.2_sd_core_strict_train_en.jsonl",
-      "test_path": "data/v1.2_sd_core_strict_test_en.jsonl",
-      "train_sha256": "ac93d22b2ac63bbcd4ca9aad7edda066a8c1dc7ffe35aab7095c8c7c022b5669",
-      "test_sha256": "b7cd019ecf6884a2c3590918ffc01792ef56f57e2354645b3a14f7893651fe69"
+      "train_path": "data/v1.2_sd_core_strict_train.jsonl",
+      "test_path": "data/v1.2_sd_core_strict_test.jsonl",
+      "train_sha256": "4ea2d05b59ff253fd44c00f8f69a978159b7548b72a5016822c0fcc7520f0153",
+      "test_sha256": "753734fe89bf899592591cf863b56bfcbc6219b5735aaadd4c5980dbcb2458ed"
     },
     {
       "task_type": "regulation_compliance_check",
       "input_profile": "instruction_only",
-      "n_train": 19817,
-      "n_test": 2477,
-      "vocabulary_size": 8999,
-      "accuracy": 0.8134840532902705,
-      "macro_f1": 0.7137267472189798,
+      "n_train": 19806,
+      "n_test": 2481,
+      "vocabulary_size": 3972,
+      "accuracy": 0.9355098750503829,
+      "macro_f1": 0.9105090301468933,
       "macro_f1_ci95": [
-        0.68669801284046,
-        0.7401668685087108
+        0.8899750338269533,
+        0.9277441214709872
       ],
-      "balanced_accuracy": 0.7547555604966254,
+      "balanced_accuracy": 0.9397187780631291,
       "gold_label_counts": {
-        "non_compliant": 1303,
-        "compliant": 104,
-        "compliant_with_monitoring": 1070
+        "compliant_with_monitoring": 1077,
+        "non_compliant": 1298,
+        "compliant": 106
       },
       "prediction_label_counts": {
-        "non_compliant": 1239,
-        "compliant": 166,
-        "compliant_with_monitoring": 1072
+        "compliant_with_monitoring": 946,
+        "non_compliant": 1403,
+        "compliant": 132
       },
       "labels": [
         "compliant",
@@ -654,17 +654,17 @@
         "non_compliant"
       ],
       "split": "strict_source_group",
-      "train_path": "data/v1.2_sd_core_strict_train_en.jsonl",
-      "test_path": "data/v1.2_sd_core_strict_test_en.jsonl",
-      "train_sha256": "ac93d22b2ac63bbcd4ca9aad7edda066a8c1dc7ffe35aab7095c8c7c022b5669",
-      "test_sha256": "b7cd019ecf6884a2c3590918ffc01792ef56f57e2354645b3a14f7893651fe69"
+      "train_path": "data/v1.2_sd_core_strict_train.jsonl",
+      "test_path": "data/v1.2_sd_core_strict_test.jsonl",
+      "train_sha256": "4ea2d05b59ff253fd44c00f8f69a978159b7548b72a5016822c0fcc7520f0153",
+      "test_sha256": "753734fe89bf899592591cf863b56bfcbc6219b5735aaadd4c5980dbcb2458ed"
     },
     {
       "task_type": "dispatcher_intent_tool_call",
       "input_profile": "full_contract",
-      "n_train": 13832,
-      "n_test": 3955,
-      "vocabulary_size": 58416,
+      "n_train": 13823,
+      "n_test": 3958,
+      "vocabulary_size": 56598,
       "accuracy": 1.0,
       "macro_f1": 1.0,
       "macro_f1_ci95": [
@@ -673,14 +673,14 @@
       ],
       "balanced_accuracy": 1.0,
       "gold_label_counts": {
-        "diagnose_and_dispatch": 1343,
-        "mitigate_violations": 1277,
-        "security_check_and_redispatch": 1335
+        "diagnose_and_dispatch": 1320,
+        "mitigate_violations": 1316,
+        "security_check_and_redispatch": 1322
       },
       "prediction_label_counts": {
-        "diagnose_and_dispatch": 1343,
-        "mitigate_violations": 1277,
-        "security_check_and_redispatch": 1335
+        "diagnose_and_dispatch": 1320,
+        "mitigate_violations": 1316,
+        "security_check_and_redispatch": 1322
       },
       "labels": [
         "diagnose_and_dispatch",
@@ -688,85 +688,17 @@
         "security_check_and_redispatch"
       ],
       "split": "template_holdout",
-      "train_path": "data/v1.2_sd_core_template_holdout_train_en.jsonl",
-      "test_path": "data/v1.2_sd_core_template_holdout_test_en.jsonl",
-      "train_sha256": "3b28917909d1a2020c32336b471110532f31e1f3747e1ad53cf7ad816e69d006",
-      "test_sha256": "8debe62e4cb4c4f995686c5ca822b78386784e94f4a4e51c4fd5ff1f3aca5bc1"
+      "train_path": "data/v1.2_sd_core_template_family_holdout_train_ids.jsonl",
+      "test_path": "data/v1.2_sd_core_template_family_holdout_test_ids.jsonl",
+      "train_sha256": "18e1e6c7d1e4ed1b857ef512ebcc68dc9a3133688d96ac0665c7b5af0d7013b3",
+      "test_sha256": "645cb800577a4c7a14ae6e7a2647e4f25fe9192a7183b6b855621a390de3c539"
     },
     {
       "task_type": "operation_ticket_check",
       "input_profile": "full_contract",
-      "n_train": 7585,
-      "n_test": 2186,
-      "vocabulary_size": 46025,
-      "accuracy": 0.9995425434583715,
-      "macro_f1": 0.9996142706820376,
-      "macro_f1_ci95": [
-        0.9988400540775324,
-        1.0
-      ],
-      "balanced_accuracy": 0.9995002498750626,
-      "gold_label_counts": {
-        "compliant": 1228,
-        "compliant_with_monitoring": 291,
-        "non_compliant": 667
-      },
-      "prediction_label_counts": {
-        "compliant": 1229,
-        "compliant_with_monitoring": 291,
-        "non_compliant": 666
-      },
-      "labels": [
-        "compliant",
-        "compliant_with_monitoring",
-        "non_compliant"
-      ],
-      "split": "template_holdout",
-      "train_path": "data/v1.2_sd_core_template_holdout_train_en.jsonl",
-      "test_path": "data/v1.2_sd_core_template_holdout_test_en.jsonl",
-      "train_sha256": "3b28917909d1a2020c32336b471110532f31e1f3747e1ad53cf7ad816e69d006",
-      "test_sha256": "8debe62e4cb4c4f995686c5ca822b78386784e94f4a4e51c4fd5ff1f3aca5bc1"
-    },
-    {
-      "task_type": "regulation_compliance_check",
-      "input_profile": "full_contract",
-      "n_train": 17206,
-      "n_test": 4975,
-      "vocabulary_size": 62950,
-      "accuracy": 0.9831155778894473,
-      "macro_f1": 0.9887402249464912,
-      "macro_f1_ci95": [
-        0.6533953600367371,
-        0.9910178195217909
-      ],
-      "balanced_accuracy": 0.9889260941584492,
-      "gold_label_counts": {
-        "compliant": 1,
-        "compliant_with_monitoring": 2430,
-        "non_compliant": 2544
-      },
-      "prediction_label_counts": {
-        "compliant": 1,
-        "compliant_with_monitoring": 2492,
-        "non_compliant": 2482
-      },
-      "labels": [
-        "compliant",
-        "compliant_with_monitoring",
-        "non_compliant"
-      ],
-      "split": "template_holdout",
-      "train_path": "data/v1.2_sd_core_template_holdout_train_en.jsonl",
-      "test_path": "data/v1.2_sd_core_template_holdout_test_en.jsonl",
-      "train_sha256": "3b28917909d1a2020c32336b471110532f31e1f3747e1ad53cf7ad816e69d006",
-      "test_sha256": "8debe62e4cb4c4f995686c5ca822b78386784e94f4a4e51c4fd5ff1f3aca5bc1"
-    },
-    {
-      "task_type": "dispatcher_intent_tool_call",
-      "input_profile": "target_hidden",
-      "n_train": 13832,
-      "n_test": 3955,
-      "vocabulary_size": 14043,
+      "n_train": 7616,
+      "n_test": 2177,
+      "vocabulary_size": 43219,
       "accuracy": 1.0,
       "macro_f1": 1.0,
       "macro_f1_ci95": [
@@ -775,48 +707,14 @@
       ],
       "balanced_accuracy": 1.0,
       "gold_label_counts": {
-        "diagnose_and_dispatch": 1343,
-        "mitigate_violations": 1277,
-        "security_check_and_redispatch": 1335
+        "compliant_with_monitoring": 1042,
+        "non_compliant": 665,
+        "compliant": 470
       },
       "prediction_label_counts": {
-        "diagnose_and_dispatch": 1343,
-        "mitigate_violations": 1277,
-        "security_check_and_redispatch": 1335
-      },
-      "labels": [
-        "diagnose_and_dispatch",
-        "mitigate_violations",
-        "security_check_and_redispatch"
-      ],
-      "split": "template_holdout",
-      "train_path": "data/v1.2_sd_core_template_holdout_train_en.jsonl",
-      "test_path": "data/v1.2_sd_core_template_holdout_test_en.jsonl",
-      "train_sha256": "3b28917909d1a2020c32336b471110532f31e1f3747e1ad53cf7ad816e69d006",
-      "test_sha256": "8debe62e4cb4c4f995686c5ca822b78386784e94f4a4e51c4fd5ff1f3aca5bc1"
-    },
-    {
-      "task_type": "operation_ticket_check",
-      "input_profile": "target_hidden",
-      "n_train": 7585,
-      "n_test": 2186,
-      "vocabulary_size": 46025,
-      "accuracy": 0.9995425434583715,
-      "macro_f1": 0.9996142706820376,
-      "macro_f1_ci95": [
-        0.9988400540775324,
-        1.0
-      ],
-      "balanced_accuracy": 0.9995002498750626,
-      "gold_label_counts": {
-        "compliant": 1228,
-        "compliant_with_monitoring": 291,
-        "non_compliant": 667
-      },
-      "prediction_label_counts": {
-        "compliant": 1229,
-        "compliant_with_monitoring": 291,
-        "non_compliant": 666
+        "compliant_with_monitoring": 1042,
+        "non_compliant": 665,
+        "compliant": 470
       },
       "labels": [
         "compliant",
@@ -824,33 +722,33 @@
         "non_compliant"
       ],
       "split": "template_holdout",
-      "train_path": "data/v1.2_sd_core_template_holdout_train_en.jsonl",
-      "test_path": "data/v1.2_sd_core_template_holdout_test_en.jsonl",
-      "train_sha256": "3b28917909d1a2020c32336b471110532f31e1f3747e1ad53cf7ad816e69d006",
-      "test_sha256": "8debe62e4cb4c4f995686c5ca822b78386784e94f4a4e51c4fd5ff1f3aca5bc1"
+      "train_path": "data/v1.2_sd_core_template_family_holdout_train_ids.jsonl",
+      "test_path": "data/v1.2_sd_core_template_family_holdout_test_ids.jsonl",
+      "train_sha256": "18e1e6c7d1e4ed1b857ef512ebcc68dc9a3133688d96ac0665c7b5af0d7013b3",
+      "test_sha256": "645cb800577a4c7a14ae6e7a2647e4f25fe9192a7183b6b855621a390de3c539"
     },
     {
       "task_type": "regulation_compliance_check",
-      "input_profile": "target_hidden",
-      "n_train": 17206,
-      "n_test": 4975,
-      "vocabulary_size": 9760,
-      "accuracy": 0.9262311557788945,
-      "macro_f1": 0.6358618198408883,
+      "input_profile": "full_contract",
+      "n_train": 17336,
+      "n_test": 4954,
+      "vocabulary_size": 55591,
+      "accuracy": 0.9786031489705289,
+      "macro_f1": 0.9634015613777333,
       "macro_f1_ci95": [
-        0.6305519856683147,
-        0.6413939671731407
+        0.9536712754253147,
+        0.9737583706899856
       ],
-      "balanced_accuracy": 0.9498476201568445,
+      "balanced_accuracy": 0.9623844739306359,
       "gold_label_counts": {
-        "compliant": 1,
-        "compliant_with_monitoring": 2430,
-        "non_compliant": 2544
+        "non_compliant": 3079,
+        "compliant_with_monitoring": 1638,
+        "compliant": 237
       },
       "prediction_label_counts": {
-        "compliant": 269,
-        "non_compliant": 2587,
-        "compliant_with_monitoring": 2119
+        "non_compliant": 3114,
+        "compliant_with_monitoring": 1602,
+        "compliant": 238
       },
       "labels": [
         "compliant",
@@ -858,17 +756,17 @@
         "non_compliant"
       ],
       "split": "template_holdout",
-      "train_path": "data/v1.2_sd_core_template_holdout_train_en.jsonl",
-      "test_path": "data/v1.2_sd_core_template_holdout_test_en.jsonl",
-      "train_sha256": "3b28917909d1a2020c32336b471110532f31e1f3747e1ad53cf7ad816e69d006",
-      "test_sha256": "8debe62e4cb4c4f995686c5ca822b78386784e94f4a4e51c4fd5ff1f3aca5bc1"
+      "train_path": "data/v1.2_sd_core_template_family_holdout_train_ids.jsonl",
+      "test_path": "data/v1.2_sd_core_template_family_holdout_test_ids.jsonl",
+      "train_sha256": "18e1e6c7d1e4ed1b857ef512ebcc68dc9a3133688d96ac0665c7b5af0d7013b3",
+      "test_sha256": "645cb800577a4c7a14ae6e7a2647e4f25fe9192a7183b6b855621a390de3c539"
     },
     {
       "task_type": "dispatcher_intent_tool_call",
-      "input_profile": "instruction_only",
-      "n_train": 13832,
-      "n_test": 3955,
-      "vocabulary_size": 6898,
+      "input_profile": "target_hidden",
+      "n_train": 13823,
+      "n_test": 3958,
+      "vocabulary_size": 4232,
       "accuracy": 1.0,
       "macro_f1": 1.0,
       "macro_f1_ci95": [
@@ -877,14 +775,14 @@
       ],
       "balanced_accuracy": 1.0,
       "gold_label_counts": {
-        "diagnose_and_dispatch": 1343,
-        "mitigate_violations": 1277,
-        "security_check_and_redispatch": 1335
+        "diagnose_and_dispatch": 1320,
+        "mitigate_violations": 1316,
+        "security_check_and_redispatch": 1322
       },
       "prediction_label_counts": {
-        "diagnose_and_dispatch": 1343,
-        "mitigate_violations": 1277,
-        "security_check_and_redispatch": 1335
+        "diagnose_and_dispatch": 1320,
+        "mitigate_violations": 1316,
+        "security_check_and_redispatch": 1322
       },
       "labels": [
         "diagnose_and_dispatch",
@@ -892,32 +790,135 @@
         "security_check_and_redispatch"
       ],
       "split": "template_holdout",
-      "train_path": "data/v1.2_sd_core_template_holdout_train_en.jsonl",
-      "test_path": "data/v1.2_sd_core_template_holdout_test_en.jsonl",
-      "train_sha256": "3b28917909d1a2020c32336b471110532f31e1f3747e1ad53cf7ad816e69d006",
-      "test_sha256": "8debe62e4cb4c4f995686c5ca822b78386784e94f4a4e51c4fd5ff1f3aca5bc1"
+      "train_path": "data/v1.2_sd_core_template_family_holdout_train_ids.jsonl",
+      "test_path": "data/v1.2_sd_core_template_family_holdout_test_ids.jsonl",
+      "train_sha256": "18e1e6c7d1e4ed1b857ef512ebcc68dc9a3133688d96ac0665c7b5af0d7013b3",
+      "test_sha256": "645cb800577a4c7a14ae6e7a2647e4f25fe9192a7183b6b855621a390de3c539"
+    },
+    {
+      "task_type": "operation_ticket_check",
+      "input_profile": "target_hidden",
+      "n_train": 7616,
+      "n_test": 2177,
+      "vocabulary_size": 43219,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "macro_f1_ci95": [
+        1.0,
+        1.0
+      ],
+      "balanced_accuracy": 1.0,
+      "gold_label_counts": {
+        "compliant_with_monitoring": 1042,
+        "non_compliant": 665,
+        "compliant": 470
+      },
+      "prediction_label_counts": {
+        "compliant_with_monitoring": 1042,
+        "non_compliant": 665,
+        "compliant": 470
+      },
+      "labels": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ],
+      "split": "template_holdout",
+      "train_path": "data/v1.2_sd_core_template_family_holdout_train_ids.jsonl",
+      "test_path": "data/v1.2_sd_core_template_family_holdout_test_ids.jsonl",
+      "train_sha256": "18e1e6c7d1e4ed1b857ef512ebcc68dc9a3133688d96ac0665c7b5af0d7013b3",
+      "test_sha256": "645cb800577a4c7a14ae6e7a2647e4f25fe9192a7183b6b855621a390de3c539"
+    },
+    {
+      "task_type": "regulation_compliance_check",
+      "input_profile": "target_hidden",
+      "n_train": 17336,
+      "n_test": 4954,
+      "vocabulary_size": 4436,
+      "accuracy": 0.9364150181671377,
+      "macro_f1": 0.8883545921385844,
+      "macro_f1_ci95": [
+        0.8729695016731798,
+        0.9032398947693684
+      ],
+      "balanced_accuracy": 0.9089661151751836,
+      "gold_label_counts": {
+        "non_compliant": 3079,
+        "compliant_with_monitoring": 1638,
+        "compliant": 237
+      },
+      "prediction_label_counts": {
+        "non_compliant": 3235,
+        "compliant_with_monitoring": 1425,
+        "compliant": 294
+      },
+      "labels": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ],
+      "split": "template_holdout",
+      "train_path": "data/v1.2_sd_core_template_family_holdout_train_ids.jsonl",
+      "test_path": "data/v1.2_sd_core_template_family_holdout_test_ids.jsonl",
+      "train_sha256": "18e1e6c7d1e4ed1b857ef512ebcc68dc9a3133688d96ac0665c7b5af0d7013b3",
+      "test_sha256": "645cb800577a4c7a14ae6e7a2647e4f25fe9192a7183b6b855621a390de3c539"
+    },
+    {
+      "task_type": "dispatcher_intent_tool_call",
+      "input_profile": "instruction_only",
+      "n_train": 13823,
+      "n_test": 3958,
+      "vocabulary_size": 1687,
+      "accuracy": 0.3350176856998484,
+      "macro_f1": 0.19973064026827816,
+      "macro_f1_ci95": [
+        0.18921166789549762,
+        0.2091559602311519
+      ],
+      "balanced_accuracy": 0.3348819100235394,
+      "gold_label_counts": {
+        "diagnose_and_dispatch": 1320,
+        "mitigate_violations": 1316,
+        "security_check_and_redispatch": 1322
+      },
+      "prediction_label_counts": {
+        "diagnose_and_dispatch": 3721,
+        "mitigate_violations": 172,
+        "security_check_and_redispatch": 65
+      },
+      "labels": [
+        "diagnose_and_dispatch",
+        "mitigate_violations",
+        "security_check_and_redispatch"
+      ],
+      "split": "template_holdout",
+      "train_path": "data/v1.2_sd_core_template_family_holdout_train_ids.jsonl",
+      "test_path": "data/v1.2_sd_core_template_family_holdout_test_ids.jsonl",
+      "train_sha256": "18e1e6c7d1e4ed1b857ef512ebcc68dc9a3133688d96ac0665c7b5af0d7013b3",
+      "test_sha256": "645cb800577a4c7a14ae6e7a2647e4f25fe9192a7183b6b855621a390de3c539"
     },
     {
       "task_type": "operation_ticket_check",
       "input_profile": "instruction_only",
-      "n_train": 7585,
-      "n_test": 2186,
-      "vocabulary_size": 3843,
-      "accuracy": 0.13311985361390669,
-      "macro_f1": 0.08175435540792163,
+      "n_train": 7616,
+      "n_test": 2177,
+      "vocabulary_size": 40250,
+      "accuracy": 0.9972439136426274,
+      "macro_f1": 0.9965658854492198,
       "macro_f1_ci95": [
-        0.07310371926390857,
-        0.09003777915644433
+        0.9938494553973609,
+        0.9988559084754096
       ],
-      "balanced_accuracy": 0.3307504323439655,
+      "balanced_accuracy": 0.9969924812030074,
       "gold_label_counts": {
-        "compliant": 1228,
-        "compliant_with_monitoring": 291,
-        "non_compliant": 667
+        "compliant_with_monitoring": 1042,
+        "non_compliant": 665,
+        "compliant": 470
       },
       "prediction_label_counts": {
-        "compliant_with_monitoring": 2166,
-        "non_compliant": 20
+        "compliant_with_monitoring": 1043,
+        "non_compliant": 659,
+        "compliant": 475
       },
       "labels": [
         "compliant",
@@ -925,33 +926,33 @@
         "non_compliant"
       ],
       "split": "template_holdout",
-      "train_path": "data/v1.2_sd_core_template_holdout_train_en.jsonl",
-      "test_path": "data/v1.2_sd_core_template_holdout_test_en.jsonl",
-      "train_sha256": "3b28917909d1a2020c32336b471110532f31e1f3747e1ad53cf7ad816e69d006",
-      "test_sha256": "8debe62e4cb4c4f995686c5ca822b78386784e94f4a4e51c4fd5ff1f3aca5bc1"
+      "train_path": "data/v1.2_sd_core_template_family_holdout_train_ids.jsonl",
+      "test_path": "data/v1.2_sd_core_template_family_holdout_test_ids.jsonl",
+      "train_sha256": "18e1e6c7d1e4ed1b857ef512ebcc68dc9a3133688d96ac0665c7b5af0d7013b3",
+      "test_sha256": "645cb800577a4c7a14ae6e7a2647e4f25fe9192a7183b6b855621a390de3c539"
     },
     {
       "task_type": "regulation_compliance_check",
       "input_profile": "instruction_only",
-      "n_train": 17206,
-      "n_test": 4975,
-      "vocabulary_size": 8932,
-      "accuracy": 0.9396984924623115,
-      "macro_f1": 0.6412258433266603,
+      "n_train": 17336,
+      "n_test": 4954,
+      "vocabulary_size": 4026,
+      "accuracy": 0.9392410173597093,
+      "macro_f1": 0.897706670248844,
       "macro_f1_ci95": [
-        0.6346249369576851,
-        0.6488665562585267
+        0.8823366557123162,
+        0.9110108489178166
       ],
-      "balanced_accuracy": 0.9590505862256387,
+      "balanced_accuracy": 0.9118151180241864,
       "gold_label_counts": {
-        "compliant": 1,
-        "compliant_with_monitoring": 2430,
-        "non_compliant": 2544
+        "non_compliant": 3079,
+        "compliant_with_monitoring": 1638,
+        "compliant": 237
       },
       "prediction_label_counts": {
-        "compliant": 187,
-        "non_compliant": 2599,
-        "compliant_with_monitoring": 2189
+        "non_compliant": 3236,
+        "compliant_with_monitoring": 1439,
+        "compliant": 279
       },
       "labels": [
         "compliant",
@@ -959,10 +960,10 @@
         "non_compliant"
       ],
       "split": "template_holdout",
-      "train_path": "data/v1.2_sd_core_template_holdout_train_en.jsonl",
-      "test_path": "data/v1.2_sd_core_template_holdout_test_en.jsonl",
-      "train_sha256": "3b28917909d1a2020c32336b471110532f31e1f3747e1ad53cf7ad816e69d006",
-      "test_sha256": "8debe62e4cb4c4f995686c5ca822b78386784e94f4a4e51c4fd5ff1f3aca5bc1"
+      "train_path": "data/v1.2_sd_core_template_family_holdout_train_ids.jsonl",
+      "test_path": "data/v1.2_sd_core_template_family_holdout_test_ids.jsonl",
+      "train_sha256": "18e1e6c7d1e4ed1b857ef512ebcc68dc9a3133688d96ac0665c7b5af0d7013b3",
+      "test_sha256": "645cb800577a4c7a14ae6e7a2647e4f25fe9192a7183b6b855621a390de3c539"
     }
   ],
   "figure": "figures/sd_core/fig_target_hidden_classification.png"

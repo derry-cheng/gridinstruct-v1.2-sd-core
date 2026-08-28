@@ -41,12 +41,12 @@ SPLITS = {
         "data/v1.2_sd_core_test_en.jsonl",
     ),
     "strict_source_group": (
-        "data/v1.2_sd_core_strict_train_en.jsonl",
-        "data/v1.2_sd_core_strict_test_en.jsonl",
+        "data/v1.2_sd_core_strict_train.jsonl",
+        "data/v1.2_sd_core_strict_test.jsonl",
     ),
     "template_holdout": (
-        "data/v1.2_sd_core_template_holdout_train_en.jsonl",
-        "data/v1.2_sd_core_template_holdout_test_en.jsonl",
+        "data/v1.2_sd_core_template_family_holdout_train_ids.jsonl",
+        "data/v1.2_sd_core_template_family_holdout_test_ids.jsonl",
     ),
 }
 
@@ -80,6 +80,23 @@ def sha256(path: Path) -> str:
         for chunk in iter(lambda: handle.read(1024 * 1024), b""):
             digest.update(chunk)
     return digest.hexdigest()
+
+
+def load_split_rows(path: str) -> tuple[list[dict[str, Any]], str]:
+    """Load a full JSONL split or project an ID-only manifest onto the core."""
+    split_path = ROOT / path
+    if split_path.name.endswith("_ids.jsonl"):
+        canonical_path = ROOT / "data/gridinstruct_v1.2_sd_core_en.jsonl"
+        canonical = {
+            str(row["id"]): row
+            for row in read_jsonl(canonical_path)
+        }
+        ids = [str(row["id"]) for row in read_jsonl(split_path)]
+        missing = [row_id for row_id in ids if row_id not in canonical]
+        if missing:
+            raise ValueError(f"split manifest IDs missing from canonical table: {missing[:3]}")
+        return [canonical[row_id] for row_id in ids], path
+    return read_jsonl(split_path), path
 
 
 def normalize(value: Any) -> str:
@@ -202,8 +219,8 @@ def evaluate_task(train_rows: list[dict[str, Any]], test_rows: list[dict[str, An
 
 def evaluate_split(name: str, train_path: str, test_path: str) -> list[dict[str, Any]]:
     split_started = time.perf_counter()
-    train_rows = read_jsonl(ROOT / train_path)
-    test_rows = read_jsonl(ROOT / test_path)
+    train_rows, train_receipt_path = load_split_rows(train_path)
+    test_rows, test_receipt_path = load_split_rows(test_path)
     train_by_task: dict[str, list[dict[str, Any]]] = defaultdict(list)
     test_by_task: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for row in train_rows:
@@ -221,8 +238,8 @@ def evaluate_split(name: str, train_path: str, test_path: str) -> list[dict[str,
             item.update(
                 {
                     "split": name,
-                    "train_path": train_path,
-                    "test_path": test_path,
+                    "train_path": train_receipt_path,
+                    "test_path": test_receipt_path,
                     "train_sha256": sha256(ROOT / train_path),
                     "test_sha256": sha256(ROOT / test_path),
                 }
@@ -249,7 +266,7 @@ def plot(rows: list[dict[str, Any]], path: Path) -> None:
     split_labels = {
         "standard": "Standard",
         "strict_source_group": "Strict source-group",
-        "template_holdout": "Template holdout",
+        "template_holdout": "Template-family holdout",
     }
     fig, axes = plt.subplots(len(tasks), 1, figsize=(8.2, 6.6), sharex=True)
     for ax, task in zip(np.atleast_1d(axes), tasks):
