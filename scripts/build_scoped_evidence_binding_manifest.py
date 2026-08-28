@@ -39,6 +39,7 @@ LOCAL_BINDINGS = [
     "reports/strict_source_group_split_v1.2_sd_core.json",
     "reports/template_holdout_split_v1.2_sd_core.json",
     "reports/action_level_validation_audit_v1.2_sd_core.json",
+    "reports/evidence_tiers_v1.2_sd_core.json",
     "reports/direct_english_materialization_v1.2_sd_core.json",
     "reports/direct_english_canonical_materialization_v1.2_sd_core.json",
     "reports/direct_english_split_materialization_v1.2_sd_core.json",

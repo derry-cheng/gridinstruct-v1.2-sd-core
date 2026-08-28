@@ -52,9 +52,9 @@ conda activate gridinstruct-sd-core
 ```
 
 Secrets and provider credentials are deliberately absent from the environment specification.
-The current release renders English directly from typed scenario and rule contracts and does
-not require a translation-provider call; legacy translation scripts remain only as historical
-provenance and are excluded from the active reviewer package.
+The current release renders English directly from typed scenario and rule contracts. The
+release-facing renderer uses the stored variant index and deterministic templates; no external
+language service is part of the reproducible path.
 
 ## Inputs
 
@@ -70,4 +70,4 @@ TF-IDF and lightweight linear audits run on CPU. Transformer and sequence-to-seq
 
 ## Validation Gates
 
-The current local gate is `reports/current_quality_snapshot_v1.2_sd_core.json`. It requires schema/link checks, five-key split isolation, released-field OPF closure, current CPU/MPS baselines, figure generation, and a successful LaTeX build. The retained native-source fixed-control replay passes within its 160-case manifest scope, and the latest isolated archive replay passes its compact-package checks. Submission readiness additionally requires the raw scenario construction ledger, completed double human review and adjudication, final author/funding/competing-interest fields, a public versioned repository, archival identifiers/DOIs, and confirmation of upstream benchmark-case attribution and redistribution terms. The workflow never converts a prepared review packet, a lexical-transfer diagnostic, or placeholder metadata into completed external evidence.
+The current local gate is `reports/current_quality_snapshot_v1.2_sd_core.json`. It requires schema/link checks, official split-scope checks plus strict five-key isolation, released-field OPF closure, current CPU/MPS baselines, figure generation, and a successful LaTeX build. The retained native-source fixed-control replay passes within its 160-case manifest scope, and the latest isolated archive replay passes its compact-package checks. Submission readiness additionally requires the raw scenario and candidate ledgers, completed double human review and adjudication, final author/funding/competing-interest fields, a persistent data DOI, and confirmation of upstream benchmark-case attribution and redistribution terms. The workflow never converts a prepared review packet, a lexical-transfer diagnostic, or placeholder metadata into completed external evidence.

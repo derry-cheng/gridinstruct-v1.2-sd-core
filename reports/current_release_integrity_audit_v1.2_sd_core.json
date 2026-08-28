@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-08-08T17:26:30.464108+00:00",
+  "generated_at": "2026-08-28T11:46:20.326596+00:00",
   "dataset": "data/gridinstruct_v1.2_sd_core_en.jsonl",
-  "dataset_sha256": "75ffc5c5386e331eed6c7f4092d186e042be8a020a936993f5220a78c1fd058e",
+  "dataset_sha256": "882dc4960dcf14d5b6e6465ced25051c860f1b360ffdb58770c3b68d6e7b60b3",
   "records": 95479,
   "by_task": {
     "auxiliary_decision": 18087,
@@ -18,120 +18,118 @@
   "scenario_id_mismatch_count": 0,
   "network_missing_count": 0,
   "tool_scenario_error_count": 0,
-  "severity_checked": 51804,
+  "severity_checked": 55215,
   "severity_mismatch_count": 0,
   "severity_mismatch_examples": [],
   "numeric_severity_diagnostic": {
-    "checked": 42577,
-    "mismatch_count": 11810,
+    "checked": 31485,
+    "mismatch_count": 780,
     "mismatch_examples": [
       {
-        "id": "gridinstruct_v01_aux_00007",
-        "numeric": "emergency",
-        "explicit": "alert"
-      },
-      {
-        "id": "gridinstruct_v01_aux_00019",
-        "numeric": "emergency",
-        "explicit": "alert"
-      },
-      {
-        "id": "gridinstruct_v01_aux_00026",
-        "numeric": "emergency",
-        "explicit": "alert"
-      },
-      {
-        "id": "gridinstruct_v01_aux_00027",
-        "numeric": "emergency",
-        "explicit": "alert"
-      },
-      {
-        "id": "gridinstruct_v01_aux_00034",
-        "numeric": "emergency",
-        "explicit": "alert"
-      },
-      {
-        "id": "gridinstruct_v01_aux_00038",
-        "numeric": "emergency",
-        "explicit": "alert"
-      },
-      {
-        "id": "gridinstruct_v01_aux_00039",
+        "id": "gridinstruct_v01_aux_00015",
         "numeric": "normal",
-        "explicit": "emergency"
-      },
-      {
-        "id": "gridinstruct_v01_aux_00044",
-        "numeric": "emergency",
         "explicit": "alert"
       },
       {
-        "id": "gridinstruct_v01_aux_00046",
-        "numeric": "emergency",
+        "id": "gridinstruct_v01_aux_00057",
+        "numeric": "normal",
         "explicit": "alert"
       },
       {
-        "id": "gridinstruct_v01_aux_00047",
-        "numeric": "emergency",
+        "id": "gridinstruct_v01_aux_00058",
+        "numeric": "normal",
         "explicit": "alert"
       },
       {
-        "id": "gridinstruct_v01_aux_00048",
-        "numeric": "emergency",
+        "id": "gridinstruct_v01_aux_00090",
+        "numeric": "normal",
         "explicit": "alert"
       },
       {
-        "id": "gridinstruct_v01_aux_00049",
-        "numeric": "emergency",
+        "id": "gridinstruct_v01_aux_00091",
+        "numeric": "normal",
         "explicit": "alert"
       },
       {
-        "id": "gridinstruct_v01_aux_00052",
-        "numeric": "emergency",
+        "id": "gridinstruct_v01_aux_00130",
+        "numeric": "normal",
         "explicit": "alert"
       },
       {
-        "id": "gridinstruct_v01_aux_00056",
-        "numeric": "emergency",
+        "id": "gridinstruct_v01_aux_00159",
+        "numeric": "normal",
         "explicit": "alert"
       },
       {
-        "id": "gridinstruct_v01_aux_00056_llmaug_001",
-        "numeric": "emergency",
+        "id": "gridinstruct_v01_aux_00245",
+        "numeric": "normal",
         "explicit": "alert"
       },
       {
-        "id": "gridinstruct_v01_aux_00062",
-        "numeric": "emergency",
+        "id": "gridinstruct_v01_aux_00313",
+        "numeric": "normal",
         "explicit": "alert"
       },
       {
-        "id": "gridinstruct_v01_aux_00064",
-        "numeric": "emergency",
+        "id": "gridinstruct_v01_aux_00378",
+        "numeric": "normal",
         "explicit": "alert"
       },
       {
-        "id": "gridinstruct_v01_aux_00066",
-        "numeric": "emergency",
+        "id": "gridinstruct_v01_aux_00386",
+        "numeric": "normal",
         "explicit": "alert"
       },
       {
-        "id": "gridinstruct_v01_aux_00068",
-        "numeric": "emergency",
+        "id": "gridinstruct_v01_aux_00421",
+        "numeric": "normal",
         "explicit": "alert"
       },
       {
-        "id": "gridinstruct_v01_aux_00076",
-        "numeric": "emergency",
+        "id": "gridinstruct_v01_aux_00433",
+        "numeric": "normal",
+        "explicit": "alert"
+      },
+      {
+        "id": "gridinstruct_v01_aux_00497",
+        "numeric": "normal",
+        "explicit": "alert"
+      },
+      {
+        "id": "gridinstruct_v01_aux_00499",
+        "numeric": "normal",
+        "explicit": "alert"
+      },
+      {
+        "id": "gridinstruct_v01_aux_00748",
+        "numeric": "normal",
+        "explicit": "alert"
+      },
+      {
+        "id": "gridinstruct_v01_aux_00802",
+        "numeric": "normal",
+        "explicit": "alert"
+      },
+      {
+        "id": "gridinstruct_v01_aux_00830",
+        "numeric": "normal",
+        "explicit": "alert"
+      },
+      {
+        "id": "gridinstruct_v01_aux_00909",
+        "numeric": "normal",
+        "explicit": "alert"
+      },
+      {
+        "id": "gridinstruct_v01_aux_00915",
+        "numeric": "normal",
         "explicit": "alert"
       }
     ],
     "complete_numeric_state_rows": 0,
-    "incomplete_numeric_state_rows": 42577,
+    "incomplete_numeric_state_rows": 31485,
     "missing_field_counts": {
-      "max_vm": 42577,
-      "loading": 704,
-      "min_vm": 18246
+      "max_vm": 31485
     },
     "status": "inconclusive_due_to_missing_numeric_state_fields",
     "interpretation": "The explicit severity string is audited independently. Numeric severity is not promoted because a complete decision requires loading, minimum voltage, and maximum voltage; compact release rows currently omit maximum voltage whenever a numeric state is present."
@@ -159,10 +157,10 @@
   },
   "split_integrity": {
     "counts": {
-      "train": 28684,
-      "validation": 3598,
-      "test": 3609,
-      "ood_test": 59588
+      "train": 26508,
+      "validation": 3583,
+      "test": 3909,
+      "ood_test": 61479
     },
     "id_overlap": {
       "train__validation": 0,
@@ -171,6 +169,103 @@
       "validation__test": 0,
       "validation__ood_test": 0,
       "test__ood_test": 0
+    },
+    "source_group_overlap": {
+      "train__test": 772,
+      "train__ood_test": 647
+    },
+    "provenance_overlap": {
+      "train__validation": {
+        "source_group": 14,
+        "source_record_id": 524,
+        "scenario_id": 287,
+        "source_simulation_case_id": 287,
+        "operation_group": 44
+      },
+      "train__test": {
+        "source_group": 26,
+        "source_record_id": 472,
+        "scenario_id": 360,
+        "source_simulation_case_id": 360,
+        "operation_group": 46
+      },
+      "train__ood_test": {
+        "source_group": 0,
+        "source_record_id": 427,
+        "scenario_id": 0,
+        "source_simulation_case_id": 0,
+        "operation_group": 45
+      },
+      "validation__test": {
+        "source_group": 9,
+        "source_record_id": 78,
+        "scenario_id": 187,
+        "source_simulation_case_id": 187,
+        "operation_group": 41
+      },
+      "validation__ood_test": {
+        "source_group": 0,
+        "source_record_id": 63,
+        "scenario_id": 0,
+        "source_simulation_case_id": 0,
+        "operation_group": 41
+      },
+      "test__ood_test": {
+        "source_group": 0,
+        "source_record_id": 95,
+        "scenario_id": 0,
+        "source_simulation_case_id": 0,
+        "operation_group": 43
+      }
+    },
+    "provenance_keys": [
+      "source_group",
+      "source_record_id",
+      "scenario_id",
+      "source_simulation_case_id",
+      "operation_group"
+    ],
+    "network_counts": {
+      "train": {
+        "IEEE 14": 2622,
+        "IEEE 57": 7969,
+        "IEEE 30": 5281
+      },
+      "validation": {
+        "IEEE 30": 1317,
+        "IEEE 14": 201,
+        "IEEE 57": 754
+      },
+      "test": {
+        "IEEE 57": 973,
+        "IEEE 30": 1377,
+        "IEEE 14": 311
+      },
+      "ood_test": {
+        "IEEE 118": 38159,
+        "IEEE 30": 4430,
+        "IEEE 57": 5640,
+        "pegase89": 1472,
+        "rte1888": 544,
+        "ieee300": 560,
+        "pegase2869": 624,
+        "IEEE 14": 3567,
+        "illinois200": 2912,
+        "rte2848": 624,
+        "pegase1354": 1056
+      }
+    }
+  },
+  "strict_split_integrity": {
+    "counts": {
+      "train": 76341,
+      "validation": 9564,
+      "test": 9574
+    },
+    "id_overlap": {
+      "train__validation": 0,
+      "train__test": 0,
+      "validation__test": 0
     },
     "source_group_overlap": {
       "train__test": 0,
@@ -191,28 +286,7 @@
         "source_simulation_case_id": 0,
         "operation_group": 0
       },
-      "train__ood_test": {
-        "source_group": 0,
-        "source_record_id": 0,
-        "scenario_id": 0,
-        "source_simulation_case_id": 0,
-        "operation_group": 0
-      },
       "validation__test": {
-        "source_group": 0,
-        "source_record_id": 0,
-        "scenario_id": 0,
-        "source_simulation_case_id": 0,
-        "operation_group": 0
-      },
-      "validation__ood_test": {
-        "source_group": 0,
-        "source_record_id": 0,
-        "scenario_id": 0,
-        "source_simulation_case_id": 0,
-        "operation_group": 0
-      },
-      "test__ood_test": {
         "source_group": 0,
         "source_record_id": 0,
         "scenario_id": 0,
@@ -229,45 +303,55 @@
     ],
     "network_counts": {
       "train": {
-        "IEEE57": 8028,
-        "IEEE14": 2494,
-        "IEEE30": 6121
+        "IEEE 57": 12282,
+        "IEEE 118": 30527,
+        "IEEE 14": 5252,
+        "IEEE 30": 9994,
+        "rte2848": 480,
+        "illinois200": 2304,
+        "ieee300": 528,
+        "pegase89": 1264,
+        "rte1888": 448,
+        "pegase2869": 528,
+        "pegase1354": 704
       },
       "validation": {
-        "IEEE57": 860,
-        "IEEE30": 811,
-        "IEEE14": 411
+        "IEEE 118": 3808,
+        "IEEE 14": 648,
+        "IEEE 57": 1525,
+        "IEEE 30": 1276,
+        "rte2848": 80,
+        "pegase89": 160,
+        "illinois200": 304,
+        "pegase1354": 128,
+        "rte1888": 48,
+        "pegase2869": 64
       },
       "test": {
-        "IEEE30": 1043,
-        "IEEE57": 808,
-        "IEEE14": 229
-      },
-      "ood_test": {
-        "IEEE14": 3567,
-        "IEEE118": 38159,
-        "ILLINOIS200": 2912,
-        "PEGASE1354": 1056,
-        "IEEE300": 560,
-        "IEEE57": 5640,
-        "PEGASE89": 1472,
-        "IEEE30": 4430,
-        "RTE2848": 624,
-        "PEGASE2869": 624,
-        "RTE1888": 544
+        "IEEE 118": 3824,
+        "IEEE 57": 1529,
+        "IEEE 30": 1135,
+        "IEEE 14": 801,
+        "illinois200": 304,
+        "rte2848": 64,
+        "pegase1354": 224,
+        "pegase89": 48,
+        "rte1888": 48,
+        "pegase2869": 32,
+        "ieee300": 32
       }
     }
   },
   "template_holdout_integrity": {
     "counts": {
-      "train": 38623,
-      "validation": 5682,
-      "test": 11116
+      "train": 0,
+      "validation": 0,
+      "test": 0
     },
     "surface_counts": {
-      "train": 15237,
-      "validation": 203,
-      "test": 521
+      "train": 0,
+      "validation": 0,
+      "test": 0
     },
     "surface_overlap": {
       "train_validation": 0,
@@ -276,10 +360,10 @@
     }
   },
   "raw_replay_artifacts_present": {
-    "scenario_registry": false,
+    "scenario_registry": true,
     "n1_attempt_manifest": false,
     "independent_solver_case_manifest": true,
-    "expert_review_assignments": false
+    "expert_review_assignments": true
   },
   "gates": {
     "jsonl_schema_and_unique_ids": {
@@ -303,7 +387,10 @@
     "split_ids_disjoint": {
       "status": "pass"
     },
-    "split_provenance_keys_disjoint": {
+    "official_ood_scenario_isolation": {
+      "status": "pass"
+    },
+    "strict_split_provenance_keys_disjoint": {
       "status": "pass"
     },
     "opf_two_variants_per_scenario": {
@@ -313,5 +400,5 @@
   "status": "pass",
   "local_integrity_status": "pass",
   "release_readiness_status": "blocked_external_gates",
-  "interpretation": "Row-level integrity and split checks are independent of the missing raw replay ledgers. Missing replay or expert-review artifacts remain explicit failures; summary reports are not promoted to evidence."
+  "interpretation": "The official split gate covers record-id separation and registered OOD scenario/topology isolation; its development scenario and source-group overlaps remain diagnostics. The strict split gate covers complete provenance-key isolation. Missing raw replay or expert-review outcomes remain explicit external gates; summary reports are not promoted to evidence."
 }

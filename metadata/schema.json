@@ -91,6 +91,30 @@
         "null"
       ]
     },
+    "closed_loop_validation": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "physical_source": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "executable_control_target": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "target_replay_validation": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
     "source_regulation_ids": {
       "type": "array",
       "items": {

@@ -1,21 +1,24 @@
 # Data Records
 
-Generated: 2026-08-20
+Generated: 2026-08-28
 
-GridInstruct v1.2 contains 95479 instruction records. Records are stored as UTF-8 JSON Lines and validated against `metadata/schema.json`.
+GridInstruct v1.2 contains 95,479 instruction records. Records are stored as UTF-8 JSON Lines and validated against `metadata/schema.json`. The release-facing English table is rendered directly from typed scenario and rule contracts.
 
 ## Core Files
 
 | path | records | bytes | sha256 |
 | --- | ---: | ---: | --- |
-| data/gridinstruct_v1.2_sd_core_en.jsonl | 95479 | 534958426 | 75ffc5c5386e331eed6c7f4092d186e042be8a020a936993f5220a78c1fd058e |
-| data/v1.2_sd_core_train_en.jsonl | 28684 | 140766902 | ff09925aacb7767dc303eebd4d4089c69f7216977bd9c0e76198788660c9ed3a |
-| data/v1.2_sd_core_validation_en.jsonl | 3598 | 17473764 | bbb8fab5478b7a4cc8b0b729180d3225cafc081ea56c5e30938f021b28b1e4a5 |
-| data/v1.2_sd_core_test_en.jsonl | 3609 | 17785811 | 982e6bef11f3cbc8fa8e3e280c447aadbb22bd26e708fd070957042f436755c0 |
-| data/v1.2_sd_core_ood_test_en.jsonl | 59588 | 363341461 | b8fa701e9661e92d5df92328e9c1ece60d5440081c54cd509ad502008608fa8a |
-| metadata/schema.json | None | 3677 | b1304984822f104af78f3055f4ae0af995f8da441bc69b0f9d09d2ddfa77b070 |
+| data/gridinstruct_v1.2_sd_core_en.jsonl | 95479 | 558229292 | 882dc4960dcf14d5b6e6465ced25051c860f1b360ffdb58770c3b68d6e7b60b3 |
+| data/v1.2_sd_core_train_en.jsonl | 26508 | 141970489 | 27087a599f1a3b78cf69e27ae2f8ed71e513fb50c4e140025d3b6cb1efe33c95 |
+| data/v1.2_sd_core_validation_en.jsonl | 3583 | 18939217 | ec1e2a0fa019f169e7317267c02bea6f3aaeb3531a0b79b2fa841c3dda0fd765 |
+| data/v1.2_sd_core_test_en.jsonl | 3909 | 20632332 | d64dd5c72721b0f6bb0fda7911722d76dfba2bef9596fac10bd9bae227c9b401 |
+| data/v1.2_sd_core_ood_test_en.jsonl | 61479 | 396519953 | c8bcdf784892728b7b981e5aaad76d7c3780b14ed4a8a06e58466d87ee021038 |
+| data/v1.2_sd_core_strict_train.jsonl | 76341 | 462175724 | 7951515c3ae3eb519c1acc9d31e25484c71530e4cc781ff0b1634d0c4770e217 |
+| data/v1.2_sd_core_strict_validation.jsonl | 9564 | 55753059 | 6352a055051f1e2ac36abef9a878b7d06832b45a0107cfe55091beb7ca3fa3f1 |
+| data/v1.2_sd_core_strict_test.jsonl | 9574 | 57370445 | 4603c73134c551d14ed840abc00d1df1563a65394bd4b47a17f49d7600b7b2775 |
+| metadata/schema.json | None | 4060 | 344efb82e99b2c2716f9cecfe8fc5c0f71aa7bc465dee5dc3b03aa95a7e8cfe5 |
 | metadata/task_taxonomy.json | None | 243 | 6dc8399ae3491756bf088f72eb58cbdcb7a95e4673f59d8b8f5f60a0acde0afa |
-| metadata/data_dictionary.csv | None | 3982 | 30e75d55c6d39e6dc1bbab47cd62e85734b81a21b638def81734a95685c6c5c5 |
+| metadata/data_dictionary.csv | None | 5627 | 37d473c9bbd5c29fc2a9811bde90e377e9ec5c2b2a92b312c407943373b30ac9 |
 | rules/regulation_rules.json | 17 | 37019 | 0c834cdf81dc0b10e76d525845111dc5e845ac8a559ef9c21bc02aeb0b4c1a83 |
 
 ## International Rule-Probe Extension
@@ -33,6 +36,9 @@ The core table keeps its original 95,479 records and 17 domestic rule cards. A s
 | benchmark/international_rule_probe_v1/nearest_neighbor_report.json | four-fold CPU retrieval diagnostic | 5e366e7ccf78cb069ddf09e8da2501e767b4238ebaef7fcb67368c6261ac7364 |
 | reports/international_rule_probe_controls_v1.json | explicit-input leakage control receipt | 31b80495a106c1df4e22dedda0892e74c62968909c53f81c6c58eb2f887d8907 |
 | reports/international_rule_review_assignments_v1.json | 128-record, two-reviewer assignment receipt | 261abcd4279681251efce5d54e0183329ee5f15144c3e2ea21599e2a4a85cafa |
+| review_packages/stratified_expert_review_v1.2_sd_core/ | 800-record blinded sample, 1,600 empty assignment slots, and blank review-log schema | Generated locally; no completed human judgments |
+
+The evidence-tier receipt separates the 95,479-row contract layer, 80,393 scenario-and-rule rows, 18,087 auxiliary-decision contracts, 320 OPF-tagged auxiliary rows, 160 fixed-control replay cases, and nine selected independent OPF solves. The remaining 17,767 auxiliary rows carry contract-level decision evidence and are not counted as executable-control replays. The core human-review ledger currently has 0 completed rows out of 1,600 assignments; the international assignment artifact has no human results.
 
 The extension is a source-conditioned rule-grounding probe. Its leakage-controlled CPU retrieval diagnostic gives macro exact match 0.0000, token-F1 0.5303 on the two cross-jurisdiction folds and 0.9756 on the two within-jurisdiction variant holdouts, with structured field scores of 0.000 and 1.000 respectively. The regenerated records contain zero semantic-template tautologies. An explicit-input contract-copy control reaches 1.000 on rule, standard, jurisdiction, clause, and evidence fields by construction; this is a leakage diagnostic rather than a model score. All values are lexical-transfer diagnostics, not semantic legal or physical-compliance scores. The review receipt contains blank labels for two independent reviewer slots per sampled record. The extension does not change the core split counts or imply that NERC or European rules endorse the domestic numeric policies.
 
@@ -73,14 +79,14 @@ The extension is a source-conditioned rule-grounding probe. Its leakage-controll
 
 | split | records |
 | --- | ---: |
-| train | 28684 |
-| validation | 3598 |
-| test | 3609 |
-| ood_test | 59588 |
+| train | 26508 |
+| validation | 3583 |
+| test | 3909 |
+| ood_test | 61479 |
 
 ## Split Coverage Notes
 
-- ood_test missing task types: operation_ticket_check, regulation_qa
+- All six task families occur in the promoted OOD split; task counts are recomputed from the current English files.
 
 ## Record Schema
 

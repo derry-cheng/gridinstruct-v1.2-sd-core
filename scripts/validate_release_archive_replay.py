@@ -43,6 +43,15 @@ COMPACT_REQUIRED_FILES = {
     "reports/international_rule_probe_controls_v1.json",
     "reports/international_rule_review_assignments_v1.json",
     "paper/scientific_data_latex/PAPER_CLAIM_AUDIT.json",
+    "docs/DATA_RECORDS.md",
+    "docs/EXPERT_REVIEW_PROTOCOL.md",
+    "docs/TECHNICAL_VALIDATION.md",
+    "reports/evidence_tiers_v1.2_sd_core.json",
+    "reports/expert_review_execution_check_v1.2_sd_core.json",
+    "review_packages/stratified_expert_review_v1.2_sd_core/review_packet_blinded.jsonl",
+    "review_packages/stratified_expert_review_v1.2_sd_core/sample_manifest.csv",
+    "review_packages/stratified_expert_review_v1.2_sd_core/review_assignments.csv",
+    "review_packages/stratified_expert_review_v1.2_sd_core/human_review_log_template.csv",
 }
 
 
@@ -86,6 +95,9 @@ def compact_archive_audit(bundle: Path, members: list[tarfile.TarInfo]) -> dict[
     parse_errors = 0
     seed_status = None
     direct_status = None
+    review_sample_count = None
+    review_assignment_count = None
+    review_completed_rows = None
     with tempfile.TemporaryDirectory(prefix="gridinstruct_compact_replay_") as temp_dir:
         extracted = Path(temp_dir)
         with tarfile.open(bundle, "r:gz") as archive:
@@ -112,6 +124,19 @@ def compact_archive_audit(bundle: Path, members: list[tarfile.TarInfo]) -> dict[
             direct_status = json.loads(direct_report.read_text(encoding="utf-8")).get("status")
         if seed_report.is_file():
             seed_status = json.loads(seed_report.read_text(encoding="utf-8")).get("status")
+        sample_manifest = extracted / "review_packages/stratified_expert_review_v1.2_sd_core/sample_manifest.csv"
+        assignments = extracted / "review_packages/stratified_expert_review_v1.2_sd_core/review_assignments.csv"
+        execution_report = extracted / "reports/expert_review_execution_check_v1.2_sd_core.json"
+        if sample_manifest.is_file():
+            with sample_manifest.open(encoding="utf-8", newline="") as handle:
+                review_sample_count = max(0, sum(1 for _ in handle) - 1)
+        if assignments.is_file():
+            with assignments.open(encoding="utf-8", newline="") as handle:
+                review_assignment_count = max(0, sum(1 for _ in handle) - 1)
+        if execution_report.is_file():
+            review_completed_rows = json.loads(execution_report.read_text(encoding="utf-8")).get(
+                "complete_human_review_rows", 0
+            )
     if record_count != 95479:
         errors.append(f"english_record_count:{record_count}")
     if duplicate_ids:
@@ -122,6 +147,12 @@ def compact_archive_audit(bundle: Path, members: list[tarfile.TarInfo]) -> dict[
         errors.append(f"direct_english_receipt_status:{direct_status}")
     if seed_status != "pass":
         errors.append(f"surface_seed_receipt_status:{seed_status}")
+    if review_sample_count != 800:
+        errors.append(f"review_sample_count:{review_sample_count}")
+    if review_assignment_count != 1600:
+        errors.append(f"review_assignment_count:{review_assignment_count}")
+    if review_completed_rows != 0:
+        errors.append(f"review_completed_rows_unexpected:{review_completed_rows}")
     return {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "status": "pass" if not errors else "fail",
@@ -135,6 +166,9 @@ def compact_archive_audit(bundle: Path, members: list[tarfile.TarInfo]) -> dict[
         "jsonl_parse_error_count": parse_errors,
         "direct_english_receipt_status": direct_status,
         "surface_seed_receipt_status": seed_status,
+        "review_sample_count": review_sample_count,
+        "review_assignment_count": review_assignment_count,
+        "review_completed_rows": review_completed_rows,
         "isolated_validators": [
             {
                 "dataset": "data/gridinstruct_v1.2_sd_core_en.jsonl",

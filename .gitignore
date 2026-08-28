@@ -46,3 +46,7 @@ tmp/
 # Local archive copies; the release script recreates them deterministically
 release/*.tar.gz
 reports/*_attempts_*.json
+
+# Full sampling frames are local audit inputs; the compact review package
+# publishes the blinded packet, sample manifest, and assignment schema.
+review_packages/**/sampling_frame.jsonl

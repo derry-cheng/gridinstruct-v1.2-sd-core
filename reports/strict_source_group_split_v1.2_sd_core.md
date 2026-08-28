@@ -1,6 +1,6 @@
 # Strict Source-Group Split
 
-Generated: 2026-07-31T09:51:12.004905+00:00
+Generated: 2026-08-28T10:59:54.893855+00:00
 Status: `pass`
 
 This split is an additional stress split. It assigns global provenance-connected components to train, validation, or test so source groups and scenario identifiers do not cross strict split boundaries.
@@ -9,9 +9,9 @@ This split is an additional stress split. It assigns global provenance-connected
 
 | split | records | source groups | scenarios |
 | --- | ---: | ---: | ---: |
-| train | 76350 | 14415 | 2081 |
-| validation | 9570 | 1761 | 259 |
-| test | 9559 | 1784 | 256 |
+| train | 76341 | 14418 | 2079 |
+| validation | 9564 | 1753 | 256 |
+| test | 9574 | 1789 | 261 |
 
 ## Hard Gates
 

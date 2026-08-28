@@ -1,14 +1,14 @@
 # Technical Validation
 
-Generated: 2026-08-20
+Generated: 2026-08-28
 
 ## International Rule-Probe Extension
 
 The separate jurisdictional extension passes its local contract gate for 8 official rule cards and 512 directly generated English regulation-QA records. Four cards use NERC TOP-001-6, TOP-002-5, FAC-011-4, and VAR-001-5; four use Articles 18, 25, 33, and 72(3) of Commission Regulation (EU) 2017/1485. Each card has 64 records, one valid rule link per record, an official source URL, a clause locator, typed evidence fields, and direct-English generation metadata. The regenerated output has zero semantic-template tautologies. The gate does not measure expert agreement or semantic legal correctness.
 
-The companion manifest contains two cross-jurisdiction 256/256 folds and two within-jurisdiction 192/64 variant-holdout folds, all with zero train/test ID overlap. A CPU character TF--IDF nearest-neighbour output-copy diagnostic completes all four folds with macro exact match 0.0000, cross-jurisdiction token-F1 0.5303, within-jurisdiction token-F1 0.9756, and structured field scores of 0.0000/1.0000 for the same two fold groups. An explicit-input contract-copy control reaches 1.000 on the five structured fields by construction and is retained only to expose input leakage. These are lexical-transfer diagnostics; they do not establish held-out-jurisdiction semantic generalization. The review package contains 128 stratified records with two blank reviewer assignments per record, so human agreement remains pending.
+The companion manifest contains two cross-jurisdiction 256/256 folds and two within-jurisdiction 192/64 variant-holdout folds, all with zero train/test ID overlap. A CPU character TF--IDF nearest-neighbour output-copy diagnostic completes all four folds with macro exact match 0.0000, cross-jurisdiction token-F1 0.5303, within-jurisdiction token-F1 0.9756, and structured field scores of 0.0000/1.0000 for the same two fold groups. An explicit-input contract-copy control reaches 1.000 on the five structured fields by construction and is retained only to expose input leakage. These are lexical-transfer diagnostics; they do not establish held-out-jurisdiction semantic generalization. The international review artifact contains 128 stratified records with two blank reviewer assignments per record; it is excluded from metrics and human agreement remains pending.
 
-The final release-candidate archive was extracted in an isolated temporary directory and replayed. All 959 payload hashes and the scoped evidence bindings match; the two canonical validators report zero schema, duplicate-ID, and invalid-rule-link errors. Scenario-link and query-truth checks remain explicitly deferred because the compact archive excludes the raw scenario registry and query-truth ledger.
+The current compact review archive was extracted in an isolated temporary directory and replayed. Its 91 dereferenced members, canonical English table, selected receipts, and review-package geometry pass the declared checks; the isolated validator reports zero duplicate-ID and JSONL parse errors. Scenario-link and query-truth checks remain explicitly deferred because the compact archive excludes the raw scenario registry and query-truth ledger.
 
 ## Dataset Integrity
 
@@ -23,14 +23,19 @@ The final release-candidate archive was extracted in an isolated temporary direc
 | Invalid scenario links | 0 |
 | Semantic errors | 0 |
 
+## Evidence Tiers
+
+The full 95,479-row table is covered by machine-checkable schema, provenance, and task-contract checks. Within the auxiliary-decision family, 17,767 rows remain contract-level decision records and 320 rows carry the OPF closed-loop flag, complete executable controls, and post-action replay fields. The fixed-control replay covers 160 registered cases and the independent OPF envelope covers nine selected solves. These populations are separate evidence tiers and are not pooled into a population-wide executable-action claim. The core human-review ledger currently has 0 completed rows out of 1,600 assignments; the international assignment artifact has no human results.
+
 ## Simulation Validation
 
 | Check | Result |
 | --- | ---: |
 | Systems | ieee14, ieee30, ieee57, ieee118 |
-| Total scenarios | 3034 |
-| Converged scenarios | 2630 |
-| Convergence rate | 0.8668424522083059 |
+| Core-4 N-1 attempts | 1896 |
+| Core-4 converged attempts | 1772 |
+| Core-4 convergence rate | 0.9345991561181435 |
+| Release scenario identifiers | 2822 requested; 2821 converged |
 
 ## Source Traceability
 
@@ -64,28 +69,27 @@ The final release-candidate archive was extracted in an isolated temporary direc
 
 ## Model Evidence
 
-- TF-IDF baseline: test macro score None, OOD macro score None.
-- Transformer `dispatcher_intent_tool_call`: test macro F1 1.0.
-- Transformer `operation_ticket_check`: test macro F1 1.0.
-- Transformer `regulation_compliance_check`: test macro F1 0.4980109492414864.
-- Transformer `regulation_compliance_check`: test macro F1 0.9881287661660919.
-- Transformer `regulation_compliance_check`: test macro F1 0.6449108106721044.
-- Transformer `regulation_compliance_check`: test macro F1 0.920374867245268.
-- Pretrained seq2seq generation (`auxiliary_decision`): test token F1 None.
-- Pretrained seq2seq generation (`intelligent_data_query`): test token F1 None.
-- Pretrained seq2seq generation (`regulation_qa`): test token F1 0.8072746532282353.
+The current CPU reference uses TF--IDF features with a linear support-vector
+classifier for closed-label tasks and nearest-neighbour retrieval for open
+targets. On the direct-English official test split, macro-F1 is 0.9987 for
+operation-ticket checking, 0.9790 for regulation compliance, and 0.3998 for
+dispatcher-intent routing; the corresponding OOD values are 1.0000, 0.8130,
+and 0.3800. On the exact instruction-surface test split, the same classifier
+obtains 0.9996, 0.8723, and 0.4358, with OOD values 1.0000, 0.7054, and
+0.2976. Nearest-neighbour retrieval gives official test exact match 0.8406,
+0.8904, and 0.0000 for regulation QA, auxiliary decision drafting, and
+intelligent data querying, respectively. These values are task-specific
+learnability and structured-output diagnostics; they are not dispatch,
+legal-compliance, or electrical-safety certificates.
 
 ## External Topology Physical Envelope
 
 - Status: `pass`.
-- Stress-source scenarios: 126.
-- Converged stress-source scenarios: 117.
-- Formal external instruction records in release: 2768.
-- Formal external scenarios in release: 173.
-- emergency-stress: 62.
-- extreme-stress: 40.
-- operational-stress: 15.
-- solver-not-converged: 9.
+- Candidate attempts in the current seven-network construction: 534.
+- Converged source-bound scenarios in the current release: 416.
+- External-topology instruction records in the release: 7,792.
+- Envelope counts: 128 normal, 112 operational-stress, 71 emergency-stress, and 105 extreme-stress.
+- All-family parser/envelope diagnostic: 33 pinned attempts across 11 network families, 26 converged; this is coverage evidence and not a complete-population convergence certificate.
 
 ## OPF Closed-Loop Assumption Audit
 
@@ -105,7 +109,8 @@ The final release-candidate archive was extracted in an isolated temporary direc
 
 ## Review Pipeline
 
-- No LLM review report was provided for this refresh run.
+- Machine-assisted screen: 548 records, agreement rate 0.7646; this is not human-expert evidence.
+- External human review: 800 sampled records, 1,600 assignment rows, 0 completed rows.
 
 ## Limits
 

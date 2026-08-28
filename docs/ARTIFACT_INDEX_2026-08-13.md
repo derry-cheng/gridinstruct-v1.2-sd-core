@@ -8,8 +8,8 @@ subset is `release/reviewer_access_manifest_2026-08-13.json`.
 
 | Area | Current artifact | Interpretation |
 | --- | --- | --- |
-| Canonical data | `data/gridinstruct_v1.2_sd_core_en.jsonl` | 95,479 English-derived records |
-| Task-balanced split | `reports/instruction_surface_balanced_split_v1.2_sd_core.json` | 14,257/4,735/4,696/71,791 records; exact normalized-instruction collisions zero; character-similarity warning retained |
+| Canonical data | `data/gridinstruct_v1.2_sd_core_en.jsonl` | 95,479 English records rendered from typed contracts |
+| Task-balanced split | `reports/instruction_surface_balanced_split_v1.2_sd_core.json` | 10,689/5,118/4,432/75,240 records; exact normalized-instruction collisions zero; character-similarity warning retained |
 | Template-family holdout | `reports/template_family_holdout_v1.2_sd_core.json` | 38,775/5,557/11,089 records; zero atomic group overlap; compliance macro-F1 0.961 |
 | Embedded OPF contract | `reports/current_opf_closed_loop_audit_v1.2_sd_core.json` | 320 records over 160 cases pass released-field checks |
 | Core-4 N-1 denominator | `reports/core_n1_denominator_v1.2_sd_core.json` | 1,896 registered IEEE14/30/57/118 line-outage states; 1,772 converge and 124 fail with recorded solver/islanding status |
@@ -19,7 +19,7 @@ subset is `release/reviewer_access_manifest_2026-08-13.json`.
 | Native fixed-control replay | `reports/independent_solver_validation_v1.2_sd_core_rebound.json` | 160/160 registered IEEE14/IEEE118 replays pass; fixed-control AC power-flow scope |
 | Independent OPF envelope | `reports/independent_opf_envelope_v1.2_sd_core.json` | 9/9 selected solves converge; no global-optimality claim |
 | All-family envelope | `reports/pglib_network_envelope_replay_v1.2_sd_core.json` | 26/33 attempts converge over 11 pinned families; failed attempts remain visible |
-| LaTeX package | `paper/scientific_data_latex/LATEX_BUILD_REPORT.json` | 36 main pages = 36 embedded pages; 10 figures; 35 bibliography entries; hard errors, undefined references, and overfull boxes are zero |
+| LaTeX package | `paper/scientific_data_latex/LATEX_BUILD_REPORT.json` | 33 main pages = 33 embedded pages; 10 figure inclusions; 41 bibliography entries; hard errors, undefined references, and overfull boxes are zero |
 
 ## Historical or diagnostic artifacts
 
@@ -31,14 +31,15 @@ score geometry and is not used to overwrite the current 0.961 template-family re
 must not be cited as current evidence without their configuration name.
 
 The removed `_materialize_*` report snapshots were stale logs containing `/data/gaiav2` paths and
-service-endpoint details; they were not bound by the current manifest. Legacy strict, challenge,
-template-holdout, instruction-surface split JSONL files, the translation cache, and Python cache
-directories were removed because they were regenerated derivatives outside the current bound
-release; their generation scripts remain available.
+service-endpoint details; they were not bound by the current manifest. Strict source-group
+projections were regenerated from the current canonical table and are now included in the
+hash-bound local package. Challenge, template-holdout, and instruction-surface derivatives remain
+named diagnostics; obsolete intermediate caches and Python cache directories remain excluded from
+the release, while their generation scripts are retained.
 
 ## Open submission gates
 
 The local package still lacks the raw scenario/candidate ledgers, full solver arrays, completed
-double human review, public repository and DOI, final author metadata, and isolated archive replay.
-Those gates remain explicit in `reports/scientific_data_submission_gate.json` and are not inferred
-from the current local receipts.
+double human review, persistent data DOI, and final author metadata. The compact archive replay
+passes within its declared scope; the remaining gates remain explicit in
+`reports/scientific_data_submission_gate.json` and are not inferred from the current local receipts.

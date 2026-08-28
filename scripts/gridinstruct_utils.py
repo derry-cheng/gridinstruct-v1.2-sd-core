@@ -128,6 +128,8 @@ def default_schema() -> dict[str, Any]:
             "chosen_response": {"type": ["object", "string", "null"]},
             "rejected_response": {"type": ["object", "string", "null"]},
             "preference_rationale": {"type": ["object", "null"]},
+            "closed_loop_validation": {"type": ["object", "null"]},
+            "physical_source": {"type": ["object", "null"]},
             "executable_control_target": {"type": ["object", "null"]},
             "target_replay_validation": {"type": ["object", "null"]},
             "source_regulation_ids": {

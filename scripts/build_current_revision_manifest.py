@@ -72,17 +72,16 @@ def main() -> None:
         "reports/release_claim_alignment_audit_v1.2_sd_core.json",
         "reports/sd_submission_readiness.json",
         "reports/english_split_audit_v1.2_sd_core.json",
-        "benchmark/current_v1.2_sd_core/structured_query_filter_report.json",
-        "benchmark/current_v1.2_sd_core/structured_auxiliary_tool_report.json",
-        "benchmark/current_v1.2_sd_core/tfidf_standard_report.json",
-        "benchmark/current_v1.2_sd_core/tfidf_proxyreduced_report.json",
-        "benchmark/current_v1.2_sd_core/tfidf_template_holdout_report.json",
-        "benchmark/current_v1.2_sd_core/tfidf_strict_report.json",
-        "benchmark/current_v1.2_sd_core/tfidf_challenge_report.json",
+        "benchmark/direct_english_structured_query_v1.2_sd_core_leakage_fixed_report.json",
+        "benchmark/direct_english_structured_auxiliary_v1.2_sd_core_leakage_fixed_report.json",
+        "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_report.json",
+        "benchmark/v1.2_sd_core_proxyreduced_tfidf_report.json",
+        "benchmark/v1.2_sd_core_template_holdout_tfidf_report.json",
+        "benchmark/v1.2_sd_core_strict_tfidf_report.json",
+        "benchmark/v1.2_sd_core_challenge_tfidf_report.json",
         "reports/target_hidden_classification_v1.2_sd_core.json",
         "reports/independent_solver_raw_evidence_v1.2_sd_core_rebound.json",
         "reports/independent_solver_validation_v1.2_sd_core_rebound.json",
-        "benchmark/current_v1.2_sd_core/transformer_operation_ticket_current_report.json",
     ]
     required_predictions = sorted(
         str(path.relative_to(root))
@@ -243,7 +242,9 @@ def main() -> None:
         },
         "local_gate_summary": {
             "row_integrity": audit.get("status") == "pass",
-            "five_key_split_provenance": audit.get("gates", {}).get("split_provenance_keys_disjoint", {}).get("status") == "pass",
+            "five_key_split_provenance": (
+                audit.get("gates", {}).get("strict_split_provenance_keys_disjoint", {}).get("status") == "pass"
+            ),
             "opf_detail_recomputation": opf.get("relative_reduction_recomputed_pass_count") == opf.get("opf_record_count") == 320,
             "opf_detail_n1": opf.get("post_action_n1_detail_pass_count") == 320,
             "opf_detail_uncertainty": opf.get("embedded_uncertainty_detail_pass_count") == 320,
@@ -269,7 +270,6 @@ def main() -> None:
             "strict_source_group_tfidf",
             "challenge_tfidf",
             "target_hidden_character_tfidf",
-            "distilbert_current_split_finetune",
             "schema_aware_structured_query",
             "schema_aware_auxiliary_tool",
         ],

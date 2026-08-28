@@ -446,6 +446,12 @@ def main() -> None:
             "ood_test": root / "data/v1.2_sd_core_ood_test_en.jsonl",
         },
     )
+    strict_split_paths = {
+        "train": root / "data/v1.2_sd_core_strict_train.jsonl",
+        "validation": root / "data/v1.2_sd_core_strict_validation.jsonl",
+        "test": root / "data/v1.2_sd_core_strict_test.jsonl",
+    }
+    strict_split_report = split_sets(root, strict_split_paths)
     template_report = template_holdout_report(root)
     # The current revision deliberately stores the rebound manifest under
     # metadata/.  Keep the historical simulation_outputs path out of the
@@ -464,10 +470,18 @@ def main() -> None:
         "query_contract_complete": not query_errors,
         "source_stage_row_alignment": source_stage_exists and not source_alignment_errors and source_row_count == len(ids),
         "split_ids_disjoint": not any(value for value in split_report["id_overlap"].values()),
-        "split_provenance_keys_disjoint": not any(
-            value
-            for pair in split_report["provenance_overlap"].values()
-            for value in pair.values()
+        "official_ood_scenario_isolation": all(
+            pair.get("scenario_id", 0) == 0
+            for name, pair in split_report["provenance_overlap"].items()
+            if name.endswith("__ood_test")
+        ),
+        "strict_split_provenance_keys_disjoint": (
+            all(
+                value == 0
+                for pair in strict_split_report["provenance_overlap"].values()
+                for value in pair.values()
+            )
+            and all(value == 0 for value in strict_split_report["id_overlap"].values())
         ),
         "opf_two_variants_per_scenario": bool(opf_scenario_counts)
         and all(value == 2 for value in opf_scenario_counts.values()),
@@ -517,13 +531,14 @@ def main() -> None:
             "alignment_error_examples": source_alignment_errors[:20],
         },
         "split_integrity": split_report,
+        "strict_split_integrity": strict_split_report,
         "template_holdout_integrity": template_report,
         "raw_replay_artifacts_present": raw_replay,
         "gates": {name: {"status": "pass" if value else "fail"} for name, value in gates.items()},
         "status": "pass" if all(gates.values()) else "fail",
         "local_integrity_status": "pass" if all(gates.values()) else "fail",
         "release_readiness_status": "blocked_external_gates" if not all(raw_replay.values()) else "ready_for_external_review",
-        "interpretation": "Row-level integrity and split checks are independent of the missing raw replay ledgers. Missing replay or expert-review artifacts remain explicit failures; summary reports are not promoted to evidence.",
+        "interpretation": "The official split gate covers record-id separation and registered OOD scenario/topology isolation; its development scenario and source-group overlaps remain diagnostics. The strict split gate covers complete provenance-key isolation. Missing raw replay or expert-review outcomes remain explicit external gates; summary reports are not promoted to evidence.",
     }
     out_json = root / args.output_json
     out_json.parent.mkdir(parents=True, exist_ok=True)

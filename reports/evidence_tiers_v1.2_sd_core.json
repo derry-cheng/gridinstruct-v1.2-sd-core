@@ -1,0 +1,98 @@
+{
+  "generated_at": "2026-08-28T11:11:54.010289+00:00",
+  "status": "pass",
+  "dataset": "data/gridinstruct_v1.2_sd_core_en.jsonl",
+  "record_count": 95479,
+  "task_counts": {
+    "auxiliary_decision": 18087,
+    "dispatcher_intent_tool_call": 19773,
+    "intelligent_data_query": 17766,
+    "operation_ticket_check": 10881,
+    "regulation_compliance_check": 24767,
+    "regulation_qa": 4205
+  },
+  "record_evidence_tiers": {
+    "contract_and_provenance": {
+      "records": 95479,
+      "definition": "Schema, identifier, rule-link, task-contract, and split-relevant fields are machine-checkable; this tier does not imply independent physical replay or human judgement."
+    },
+    "scenario_and_rule_contract": {
+      "records": 80393,
+      "definition": "The row carries both a scenario/simulation link and at least one rule-card link; released labels remain bound to the stored contract."
+    },
+    "rule_only_contract": {
+      "records": 15086,
+      "definition": "The row carries rule evidence without a simulation-case link, as expected for operation-ticket and rule-question records."
+    },
+    "auxiliary_decision_contract": {
+      "records": 18087,
+      "definition": "Auxiliary responses, tool plans, preference pairs, and reversible-review language are checked at record level."
+    },
+    "auxiliary_opf_closed_loop": {
+      "records": 320,
+      "definition": "Only OPF-tagged auxiliary rows carry executable controls, post-action replay fields, and the embedded OPF contract receipt."
+    }
+  },
+  "row_field_counts_within_opf_tier": {
+    "closed_loop_validation": 320,
+    "physical_source": 320,
+    "executable_control_target": 320,
+    "target_replay_validation": 320
+  },
+  "external_replay_tiers": {
+    "native_fixed_control_replay": {
+      "cases": 160,
+      "passed": 160,
+      "status": "pass",
+      "definition": "A separately registered native-source replay of fixed controls; it does not expand to all auxiliary rows."
+    },
+    "independent_opf_envelope": {
+      "solves": 9,
+      "status": "scoped_selected_cases",
+      "definition": "Selected independent AC-OPF solves used as an envelope check."
+    },
+    "registered_network_family_envelope": {
+      "attempted": 33,
+      "converged": 26,
+      "network_families": 11,
+      "status": "pass_partial_coverage",
+      "definition": "Three pinned AC operating points per registered network family; coverage diagnostic, not a complete-population certificate."
+    }
+  },
+  "human_review_tiers": {
+    "core_assignment_package": {
+      "selected_samples": 800,
+      "assignment_rows": 1600,
+      "completed_rows": 0,
+      "status": "external_human_review_ready",
+      "definition": "External human review protocol; no human judgement is present in the local snapshot."
+    },
+    "international_assignment_package": {
+      "sample_count": 128,
+      "assignment_count": 256,
+      "human_results_present": false,
+      "status": "ready_for_independent_review",
+      "definition": "Source-grounding assignment artifact for the international probe; blank fields are excluded from metrics."
+    }
+  },
+  "scope_statement": "Record-level contract checks cover the full table. The executable-control claim is restricted to 320 OPF-tagged auxiliary rows, the fixed-control replay is restricted to its registered cases, and human-review statistics remain unavailable until external reviewers complete the assigned ledger.",
+  "source_reports": {
+    "opf": "reports/current_opf_closed_loop_audit_v1.2_sd_core.json",
+    "native_replay": "reports/independent_solver_validation_v1.2_sd_core_rebound.json",
+    "human_review": "reports/expert_review_execution_check_v1.2_sd_core.json",
+    "international_review": "reports/international_rule_review_assignments_v1.json",
+    "network_envelope": "reports/pglib_network_envelope_replay_v1.2_sd_core.json"
+  },
+  "checks": {
+    "record_count": true,
+    "scenario_grounded": true,
+    "rule_grounded": true,
+    "auxiliary": true,
+    "opf_rows": true,
+    "opf_report_pass": true,
+    "opf_fields": true,
+    "human_rows_are_zero": true,
+    "international_human_results_absent": true,
+    "network_family_envelope_scope": true
+  }
+}

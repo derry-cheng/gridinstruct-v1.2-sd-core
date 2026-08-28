@@ -1,14 +1,12 @@
 {
   "generated_at": "1970-01-01T00:00:00+00:00",
   "timestamp_policy": "deterministic SOURCE_DATE_EPOCH=0 archive metadata",
-  "title": "GridInstruct v1.2-sd-core public review package",
+  "title": "GridInstruct v1.2-sd-core release candidate",
   "version": "1.2-sd-core",
-  "release_type": "public GitHub review package pending formal data accession",
+  "release_type": "local release candidate for external repository deposition",
   "license_data": "See LICENSE-DATA",
   "license_code": "See LICENSE-CODE",
   "public_repository_url": "https://github.com/derry-cheng/gridinstruct-v1.2-sd-core",
-  "public_repository_visibility": "public",
-  "review_archive_url": "https://github.com/derry-cheng/gridinstruct-v1.2-sd-core/releases/download/v1.2-sd-core/GridInstruct_v1.2_sd_core_data_only.tar.gz",
   "data_doi": "pending",
   "archived_code_release_doi": "https://doi.org/10.5281/zenodo.21921745",
   "keywords": [

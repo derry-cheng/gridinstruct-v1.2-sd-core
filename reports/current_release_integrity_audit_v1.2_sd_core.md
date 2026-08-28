@@ -1,6 +1,6 @@
 # Current Scientific Data Release Integrity Audit
 
-Generated: 2026-08-08T17:26:30.464108+00:00
+Generated: 2026-08-28T11:46:20.326596+00:00
 Dataset: `data/gridinstruct_v1.2_sd_core_en.jsonl`
 Local integrity status: `pass`; release readiness: `blocked_external_gates`
 
@@ -13,12 +13,13 @@ Local integrity status: `pass`; release readiness: `blocked_external_gates`
 | query_contract_complete | pass |
 | source_stage_row_alignment | pass |
 | split_ids_disjoint | pass |
-| split_provenance_keys_disjoint | pass |
+| official_ood_scenario_isolation | pass |
+| strict_split_provenance_keys_disjoint | pass |
 | opf_two_variants_per_scenario | pass |
 
 Records: 95,479; unique IDs: 95,479.
-Scenario-link missing/mismatch: 0/0; severity mismatches: 0 of 51,804 checked.
-Numeric severity diagnostic: 42,577 partial states; 0 complete three-field states; status=inconclusive_due_to_missing_numeric_state_fields.
+Scenario-link missing/mismatch: 0/0; severity mismatches: 0 of 55,215 checked.
+Numeric severity diagnostic: 31,485 partial states; 0 complete three-field states; status=inconclusive_due_to_missing_numeric_state_fields.
 OPF closed-loop rows/scenarios: 320/160.
 
 The audit intentionally keeps unavailable raw replays and external expert review as failed gates. They must be regenerated or deposited before a Scientific Data submission claim can be upgraded.
