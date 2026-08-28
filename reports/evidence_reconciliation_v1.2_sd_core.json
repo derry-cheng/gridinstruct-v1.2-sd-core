@@ -15,7 +15,7 @@
     {
       "check": "explicit severity labels",
       "legacy_result": "severity_metadata_consistent reported fail with mismatch=22437",
-      "current_result": "severity_checked=51804; severity_mismatch_count=0",
+      "current_result": "severity_checked=55215; severity_mismatch_count=0",
       "explanation": "The legacy check compared a prior source-stage representation with the promoted release representation. The current receipt checks the explicit severity field against the current released truth contract.",
       "current_claim_boundary": "Explicit severity consistency passes for the checked release field; it is separate from the incomplete numeric-state diagnostic."
     },

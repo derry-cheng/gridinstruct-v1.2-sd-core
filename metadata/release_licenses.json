@@ -1,6 +1,6 @@
 {
   "generated_at": "2026-07-23T18:00:30+00:00",
-  "status": "local_licenses_and_fixed_pglib_terms_verified_external_submission_inputs_pending",
+  "status": "local_licenses_and_fixed_pglib_terms_verified_data_doi_and_author_metadata_pending",
   "code_license": {
     "spdx": "MIT",
     "file": "LICENSE-CODE",
@@ -46,14 +46,14 @@
   },
   "citation_placeholders": {
     "data_doi": "pending",
-    "code_repository_url": "pending",
-    "archived_code_release_doi": "pending",
+    "code_repository_url": "https://github.com/derry-cheng/gridinstruct-v1.2-sd-core",
+    "archived_code_release_doi": "https://doi.org/10.5281/zenodo.21921745",
     "third_party_case_redistribution_confirmation": "verified_for_fixed_pglib_v23.07_inputs_and_derived_states"
   },
   "remaining_external_submission_inputs": [
     "final author identities and author-contribution declarations",
-    "public repository URL",
-    "data DOI",
-    "archived code-release DOI or equivalent permanent identifier"
+    "formal data citation and data DOI",
+    "final funding and competing-interest metadata",
+    "third-party case redistribution confirmation for any changed upstream revision"
   ]
 }

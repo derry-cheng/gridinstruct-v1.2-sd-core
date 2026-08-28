@@ -49,7 +49,10 @@ def main() -> None:
     for axis in axes:
         axis.spines["top"].set_visible(False)
         axis.spines["right"].set_visible(False)
-    output_paths = [ROOT / "figures/sd_core_publication/fig_near_neighbor_free_audit.png", ROOT / "paper/scientific_data_latex/fig_near_neighbor_free_audit.png"]
+    output_paths = [
+        ROOT / "figures/sd_core_publication/fig_near_neighbor_free_audit.png",
+        ROOT / "paper/scientific_data_latex/figures/generated/article/fig_near_neighbor_free_audit.png",
+    ]
     for output in output_paths:
         output.parent.mkdir(parents=True, exist_ok=True)
         fig.savefig(output, dpi=240, bbox_inches="tight")

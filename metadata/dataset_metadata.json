@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-28T11:45:42.298032+00:00",
+  "generated_at": "2026-08-28T16:57:40.332726+00:00",
   "dataset": {
     "title": "GridInstruct v1.2",
     "description": "Topology-grounded instruction dataset for power dispatch assistance and benchmark evaluation.",
@@ -2364,6 +2364,8 @@
       "errors": []
     },
     "clause_matrix_status": "pass",
+    "transaction_scope": "historical_rule_taxonomy_transaction_pre_current_direct_english_materialization",
+    "current_release_binding": "metadata/current_revision_manifest_v1.2_sd_core.json",
     "transaction": {
       "committed": true,
       "artifacts": {
@@ -3189,9 +3191,9 @@
     {
       "path": "docs/LICENSES_AND_CITATION.md",
       "exists": true,
-      "bytes": 4718,
+      "bytes": 4979,
       "records": null,
-      "sha256": "12d0ef62b1ba908c4701faf3f6c84df5f90cae1836ac8c1b2cb61118bd20e004"
+      "sha256": "938a80fee21c4b6d8bbdbef00670c9ff74c98ee34670498ef02799d5845e5ab9"
     },
     {
       "path": "docs/PROJECT_STRUCTURE.md",
@@ -3205,7 +3207,7 @@
       "exists": true,
       "bytes": 2986,
       "records": null,
-      "sha256": "c732dad7cd4f0f764a9879e5b185b9f9784a296379c7ed27d99956cc80fd8c85"
+      "sha256": "544d8b65f7deeb9b0554000dc13fb6b687695ecfc8ba524c38e5d572e5610afc"
     },
     {
       "path": "docs/SCIENTIFIC_DATA_READINESS_CHECKLIST.md",
@@ -3247,7 +3249,7 @@
       "exists": true,
       "bytes": 34294,
       "records": null,
-      "sha256": "3741fe9bf4c7f6350c07f1a5791b26f4427b9410a88ca0c5e57880880e9befa6"
+      "sha256": "a1370435fe67e3ffb1034c740ea023c599b87303d79189934d18e3e70065da1e"
     },
     {
       "path": "metadata/data_descriptor_audit.json",
@@ -3280,9 +3282,9 @@
     {
       "path": "metadata/release_licenses.json",
       "exists": true,
-      "bytes": 2692,
+      "bytes": 2842,
       "records": null,
-      "sha256": "166b8618fc16f16479c6cbccde73e0dab7f598c68559c0d0c4c3045cf223535a"
+      "sha256": "02331b04431887468c673b74ff88f71a7ef858a32d610972ac2f13908f71c899"
     },
     {
       "path": "metadata/runtime_environment.json",
@@ -3441,9 +3443,9 @@
     {
       "path": "scripts/write_compact_bundle_validation.py",
       "exists": true,
-      "bytes": 6690,
+      "bytes": 7089,
       "records": null,
-      "sha256": "ea156e52a64a43f4c42d741aa0eed6b86a541d76ecc5f0f1067d75fa0216db6c"
+      "sha256": "4914fac67df524b4ab86d4a9ba3e31f508d6dce2ad6da4762cf3724c2c0e7235"
     }
   ],
   "evidence_tiers": {

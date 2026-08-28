@@ -191,7 +191,6 @@ def main() -> None:
                 print(json.dumps(progress, ensure_ascii=False), flush=True)
 
     attempts = bound_secure + computed
-    attempt_by_id = {item["scenario_id"]: item for item in attempts}
     complete_by_id = dict(existing_by_id)
     for item in attempts:
         if item.get("status") == "pass" and item.get("row"):

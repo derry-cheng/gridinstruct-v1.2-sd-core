@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-28T11:46:20.326596+00:00",
+  "generated_at": "2026-08-28T16:46:34.494367+00:00",
   "dataset": "data/gridinstruct_v1.2_sd_core_en.jsonl",
   "dataset_sha256": "882dc4960dcf14d5b6e6465ced25051c860f1b360ffdb58770c3b68d6e7b60b3",
   "records": 95479,
@@ -136,6 +136,11 @@
   },
   "query_contract_error_count": 0,
   "query_error_examples": [],
+  "solver_bound_query_record_count": 2,
+  "solver_bound_query_record_ids": [
+    "gridinstruct_v12_equipment1_query_ieee30_n1_transformer_outage_load100_trafoidx_2_603efc0d4551_v00",
+    "gridinstruct_v12_equipment1_query_ieee30_n1_transformer_outage_load100_trafoidx_2_603efc0d4551_v01"
+  ],
   "opf_closed_loop_rows": 320,
   "opf_closed_loop_unique_scenarios": 160,
   "opf_status": {

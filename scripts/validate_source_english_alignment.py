@@ -110,10 +110,21 @@ def stable_projection_on_source_schema(
 
 
 def discover_source_splits(data_dir: Path, pattern: str) -> list[Path]:
+    # The default pattern also matches ID-only diagnostic manifests (for
+    # example exact-surface and near-neighbour splits) and stress views that
+    # deliberately have no source-language projection.  The source/English
+    # alignment gate is defined for the four official source splits; callers
+    # can still pass any additional closed split explicitly with ``--split``.
+    official = {
+        "v1.2_sd_core_train.jsonl",
+        "v1.2_sd_core_validation.jsonl",
+        "v1.2_sd_core_test.jsonl",
+        "v1.2_sd_core_ood_test.jsonl",
+    }
     return [
         path
         for path in sorted(data_dir.glob(pattern))
-        if not path.name.endswith("_en.jsonl") and not path.name.startswith("gridinstruct_")
+        if path.name in official
     ]
 
 

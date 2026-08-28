@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-13T04:10:24.363803+00:00",
+  "generated_at": "2026-08-28T16:30:46.339509+00:00",
   "status": "pass",
   "contract": "released_opf_structural_denominators_v1",
   "input": {
     "path": "data/gridinstruct_v1.2_sd_core_en.jsonl",
-    "sha256": "75ffc5c5386e331eed6c7f4092d186e042be8a020a936993f5220a78c1fd058e"
+    "sha256": "882dc4960dcf14d5b6e6465ced25051c860f1b360ffdb58770c3b68d6e7b60b3"
   },
   "record_count": 320,
   "unique_scenario_count": 160,

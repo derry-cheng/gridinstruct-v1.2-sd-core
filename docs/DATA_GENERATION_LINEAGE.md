@@ -27,7 +27,7 @@ the release contract, not an undocumented deletion.
 | Independent OPF envelope | `reports/independent_opf_envelope_v1.2_sd_core.json` | Pass for 9/9 selected pandapower AC-OPF solves; diagnostic only |
 | PGLib family envelope | `reports/pglib_network_envelope_replay_v1.2_sd_core.json` | 26/33 attempts converge across 11 pinned families; seven non-convergent attempts retained in the denominator |
 | Template-family holdout | `reports/template_family_holdout_v1.2_sd_core.json` | Pass; 38,775/5,557/11,089 records with zero task--family group overlap and compliance macro-F1 0.961 |
-| LaTeX package | `paper/scientific_data_latex/LATEX_BUILD_REPORT.json` | Pass; matched 34-page main/embedded PDFs, 41 bibliography entries, zero hard TeX errors |
+| LaTeX package | `paper/scientific_data_latex/LATEX_BUILD_REPORT.json` | Pass; matched 33-page main/embedded PDFs, 41 bibliography entries, zero hard TeX errors |
 | Human review | `reports/expert_review_package_v1.2_sd_core.json` | 1,600 assignments prepared; 0 completed |
 
 Reconstruction of deleted intermediate stages is possible only from the

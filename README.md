@@ -10,9 +10,9 @@ The current local snapshot contains the promoted 95,479-row core table, a separa
 international rule probe, split definitions, validation evidence, a jurisdiction-held-out
 retrieval diagnostic, a two-reviewer assignment package, independent OPF and network-envelope
 diagnostics, a template-family holdout, and the Scientific Data manuscript.
-The code repository URL and software archive are recorded, but anonymous public repository
-access is still being checked. The raw population-level solver ledgers, completed expert review,
-final data accession, and named author metadata remain explicit external gates. The compact reviewer map is
+The code repository is publicly reachable and the software archive DOI is recorded. The raw
+population-level solver ledgers, completed expert review, persistent data accession, and named
+author metadata remain explicit external gates. The compact reviewer map is
 `release/reviewer_access_manifest_2026-08-13.json`.
 The dated remediation ledger is `reports/sd_closeout_status_2026-08-13.json`; it records the
 C1--C5 scope without treating external inputs as completed.
@@ -124,7 +124,7 @@ The full local suite additionally covers PGLib source binding, scenario-link mig
 complete control vectors, OPF security boundaries, transformer contracts, independent-solver
 manifests, and deterministic pipeline fingerprints.
 
-The current local regression run is `162 passed, 1 skipped`; the exact count is recorded in
+The current local regression run is `163 passed, 1 skipped`; the exact count is recorded in
 the terminal output and should be refreshed before each release build.
 
 ## Evidence policy

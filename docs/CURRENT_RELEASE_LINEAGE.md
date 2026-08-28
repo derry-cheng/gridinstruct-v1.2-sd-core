@@ -14,7 +14,7 @@ retained as diagnostics. The strict source-group split supplies the five-key
 provenance isolation used for the stronger stress evaluation. Those gates pass
 for the file
 whose SHA-256 is
-`75ffc5c5386e331eed6c7f4092d186e042be8a020a936993f5220a78c1fd058e`.
+`882dc4960dcf14d5b6e6465ced25051c860f1b360ffdb58770c3b68d6e7b60b3`.
 
 The OPF subset contains 320 records over 160 unique IEEE14/IEEE118 scenarios.
 The current embedded closed-loop audit verifies the three-step tool sequence,

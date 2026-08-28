@@ -74,8 +74,8 @@
     },
     {
       "path": "scripts/audit_current_sd_release.py",
-      "bytes": 27288,
-      "sha256": "e235275878a9ae9e8f8e80ff39252ec1c1c1156b61c85f6826f1a7b2260bb820"
+      "bytes": 27754,
+      "sha256": "7894df74aab160befd11dcf48396ed61da802d1edbc4abc6e349467750a67453"
     },
     {
       "path": "scripts/audit_dataset_distribution_risk.py",
@@ -84,8 +84,8 @@
     },
     {
       "path": "scripts/audit_english_splits.py",
-      "bytes": 8283,
-      "sha256": "566fda8d447bda6b158ac5fcfe48f1c5fa252cceedfde9cf147fe243da458acf"
+      "bytes": 8673,
+      "sha256": "3dcedcd23ec318fe6a93664b25c13a6be95e69868b1b9ac1573f069253db90b0"
     },
     {
       "path": "scripts/audit_english_translation.py",
@@ -134,8 +134,8 @@
     },
     {
       "path": "scripts/audit_gaiav2_figures.py",
-      "bytes": 1264,
-      "sha256": "c2a304ad0efb4857dd0c5d5e4c02454058626bb3561596593566d1de4eed546c"
+      "bytes": 1430,
+      "sha256": "a6daafdb7398307790c55cb2575b5a2489bf0ee9f8dc0f7e151518d042368ea9"
     },
     {
       "path": "scripts/audit_generation_grounding.py",
@@ -204,13 +204,13 @@
     },
     {
       "path": "scripts/audit_scientific_data_submission.py",
-      "bytes": 18301,
-      "sha256": "2145f2936cd94cf64d987898b774cdc1c015cdf48e8b5299e24c9e200227f0ea"
+      "bytes": 19496,
+      "sha256": "ce86093a9a9f8fde8a7c997ad954bec83c360612d5ee30db81a852f4292e8f66"
     },
     {
       "path": "scripts/audit_sd_submission_readiness.py",
-      "bytes": 9214,
-      "sha256": "777c045954a259a191d7e0a3fcabbba5221621b5fef3ac79c3cdc6b06f70f9cb"
+      "bytes": 9220,
+      "sha256": "ad37ef4b661d89baf1cd5f7ee6fd652f0d605de89f09caab4171388a1b413e12"
     },
     {
       "path": "scripts/audit_sd_visualization_completeness.py",
@@ -289,8 +289,8 @@
     },
     {
       "path": "scripts/build_current_revision_manifest.py",
-      "bytes": 14338,
-      "sha256": "637671ac7f136b28a4d6542c3fc4d23cd3a244d7c6a2865539728080a0c84e27"
+      "bytes": 14365,
+      "sha256": "9c63b0d8e80af7a5649eba421daadda4068928de036989d26213f69907d2482e"
     },
     {
       "path": "scripts/build_data_lineage_manifest.py",
@@ -339,8 +339,8 @@
     },
     {
       "path": "scripts/build_release_bundle.py",
-      "bytes": 49539,
-      "sha256": "d20f03ff1e8b9e9ea1acde46b7246a0d9a894f6af7618ef0846128dd8ca12fb2"
+      "bytes": 49603,
+      "sha256": "7bf9ced399ef66ff91dccaea90f292f4668372236e121db21416307bba72be7d"
     },
     {
       "path": "scripts/build_reproducibility_manifests.py",
@@ -354,8 +354,8 @@
     },
     {
       "path": "scripts/build_scoped_evidence_binding_manifest.py",
-      "bytes": 15296,
-      "sha256": "4c2dec0e126e6d58ba6e69993ed2a2a6f6db7eb05cf129052ebb536d617f5e0b"
+      "bytes": 15696,
+      "sha256": "8faa3091591caeca4ca21c7f49e02960a882baa946fdd0fd8e6ad7e80be385fc"
     },
     {
       "path": "scripts/build_sd_closeout_manifest.py",
@@ -449,8 +449,8 @@
     },
     {
       "path": "scripts/create_instruction_surface_balanced_splits.py",
-      "bytes": 7088,
-      "sha256": "56650053bf3ce0d3396116cb7294ea620422e918efbb459f872c2c16814f1bd1"
+      "bytes": 7063,
+      "sha256": "87d2796a6176055f484233e11c794b3146b229c636aa88439b0aa496dc11b4fc"
     },
     {
       "path": "scripts/create_international_rule_probe_splits.py",
@@ -509,8 +509,8 @@
     },
     {
       "path": "scripts/evidence_contract.py",
-      "bytes": 63147,
-      "sha256": "04df79e78a22635c4493652fff1f3b674a81ceb3388629de505e0444c9b19d73"
+      "bytes": 62707,
+      "sha256": "ccb0e26e01e092baf2f0c9e602debd326b2f7e75fdf391e3cea464dcd6beb581"
     },
     {
       "path": "scripts/expand_rule_taxonomy_and_links.py",
@@ -564,8 +564,8 @@
     },
     {
       "path": "scripts/generate_publication_sd_figures.py",
-      "bytes": 48107,
-      "sha256": "c5ffcb46bbb0e76dde210061551eb202f3297599736a0cee04e0854c7aec7bc0"
+      "bytes": 48245,
+      "sha256": "5e11f2e584718f10f3eef8e463bd346e5642c96644bd7668c7970cf46513258d"
     },
     {
       "path": "scripts/generate_sd_figures.py",
@@ -589,8 +589,8 @@
     },
     {
       "path": "scripts/mark_complete_query_truth.py",
-      "bytes": 1943,
-      "sha256": "699b3a8cedb8b046ca30099e7840f483cc9c800233c8d734ad371856ae91cd8d"
+      "bytes": 1918,
+      "sha256": "61276ac891c69b92bb7c600e2d37bf3f0dbeb3686b9617f87c017f8005d9b614"
     },
     {
       "path": "scripts/materialize_english_splits.py",
@@ -629,8 +629,8 @@
     },
     {
       "path": "scripts/plot_near_neighbor_audit.py",
-      "bytes": 2680,
-      "sha256": "8b523dc0f1f5738ca1424c9641ce097187b1cb60a5bd03388563c04627bb00f7"
+      "bytes": 2729,
+      "sha256": "c0e6cd858ff28529791aa17dbccfe54df9a582292e3de9e3a51f82a372fff330"
     },
     {
       "path": "scripts/power_evidence_common.py",
@@ -694,8 +694,8 @@
     },
     {
       "path": "scripts/reconstruct_missing_scenario_truth.py",
-      "bytes": 14261,
-      "sha256": "edbed6c72c34f95697b8829550bc8b2848d96ca37f67c1f22688cf90d3b7e890"
+      "bytes": 14192,
+      "sha256": "2723ca2b6991789583bc99fd4e9811b266979ba7390e3f28cc58c74687999173"
     },
     {
       "path": "scripts/refresh_current_snapshot_metadata.py",
@@ -719,8 +719,8 @@
     },
     {
       "path": "scripts/regenerate_direct_english_splits.py",
-      "bytes": 3700,
-      "sha256": "d1c91e9afcc8551086f21d2b316ec214431cfa65c98b35f7d09342a48a854159"
+      "bytes": 3675,
+      "sha256": "38db7c3f1d949525b54cc37c17be51c8704e945d90f2baac5c78aa84aabab732"
     },
     {
       "path": "scripts/rematerialize_english_release_v15.py",
@@ -949,8 +949,8 @@
     },
     {
       "path": "scripts/validate_source_english_alignment.py",
-      "bytes": 12621,
-      "sha256": "bed0b2bd4979c76620b6cedcca8282d46e846f049dd69ebe4de3e6e71736fdd3"
+      "bytes": 13115,
+      "sha256": "1f591192f959e828260a7081360741a6f03b6727804b908077d3ea3c05937769"
     },
     {
       "path": "scripts/visualize_classification_results.py",
@@ -959,8 +959,8 @@
     },
     {
       "path": "scripts/write_compact_bundle_validation.py",
-      "bytes": 6690,
-      "sha256": "ea156e52a64a43f4c42d741aa0eed6b86a541d76ecc5f0f1067d75fa0216db6c"
+      "bytes": 7089,
+      "sha256": "4914fac67df524b4ab86d4a9ba3e31f508d6dce2ad6da4762cf3724c2c0e7235"
     },
     {
       "path": "scripts/write_current_latex_build_report.py",
@@ -969,8 +969,8 @@
     },
     {
       "path": "scripts/write_sd_final_assessment.py",
-      "bytes": 98667,
-      "sha256": "e49962a13dd4600359088a41b967067604fb26401ef3c094478fd83ad20bf007"
+      "bytes": 99030,
+      "sha256": "3fd8249cefcfb1ffcf885d3e91cc3c9ea95fbdc5c4718aac8ec7f30004720ed0"
     }
   ]
 }

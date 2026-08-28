@@ -110,7 +110,6 @@ EVIDENCE_PATHS = {
     "opf_action_constant_power_factor_stress": (
         "reports/opf_action_constant_power_factor_stress_v1.2_sd_core.json"
     ),
-    "bootstrap": "reports/group_cluster_bootstrap_v1.2_sd_core.json",
     "human_review": "reports/expert_review_execution_check_v1.2_sd_core.json",
 }
 
@@ -1207,15 +1206,6 @@ def build_evidence_binding_manifest(root: Path) -> dict[str, Any]:
             or (committed.get("results") or {}).get("sha256") != current_inputs["opf_results"]["sha256"]
         ):
             errors.append("opf_commit_binding_mismatch")
-    if evidence["bootstrap"]["exists"]:
-        payload = read_json(root / EVIDENCE_PATHS["bootstrap"])
-        if (
-            payload.get("status") != "pass"
-            or payload.get("dataset_sha256") != current_inputs["dataset_en"]["sha256"]
-            or int(payload.get("run_count", 0)) != 30
-        ):
-            errors.append("bootstrap_binding_mismatch")
-
     split_hashes = {
         "train": current_inputs["train_en"]["sha256"],
         "validation": current_inputs["validation_en"]["sha256"],

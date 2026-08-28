@@ -39,13 +39,18 @@ def output_path_for_split(split_path: Path) -> Path:
 
 
 def discover_source_splits(data_dir: Path, pattern: str) -> list[Path]:
-    paths = []
-    for path in sorted(data_dir.glob(pattern)):
-        name = path.name
-        if name.endswith("_en.jsonl") or name.startswith("gridinstruct_"):
-            continue
-        paths.append(path)
-    return paths
+    # The release also contains ID-only lexical diagnostics and stress views.
+    # They have no source-language counterpart and must not be interpreted as
+    # missing English materialisations.  The default audit is defined for the
+    # four official source splits; callers can provide a different closed set
+    # through a narrower pattern when needed.
+    official = {
+        "v1.2_sd_core_train.jsonl",
+        "v1.2_sd_core_validation.jsonl",
+        "v1.2_sd_core_test.jsonl",
+        "v1.2_sd_core_ood_test.jsonl",
+    }
+    return [path for path in sorted(data_dir.glob(pattern)) if path.name in official]
 
 
 def write_json(path: Path, value: Any) -> None:

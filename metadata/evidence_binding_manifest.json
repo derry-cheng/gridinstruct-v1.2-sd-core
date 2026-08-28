@@ -1,6 +1,6 @@
 {
   "schema_version": "gridinstruct-scoped-evidence-v2",
-  "generated_at": "2026-08-28T11:46:04.286827+00:00",
+  "generated_at": "2026-08-28T16:58:13.663643+00:00",
   "status": "pass",
   "scope": "local_hash_bound_release_candidate",
   "runtime_policy": "local CPU/MPS only; no remote GPU execution",
@@ -56,8 +56,8 @@
     },
     "reports/current_release_integrity_audit_v1.2_sd_core.json": {
       "path": "reports/current_release_integrity_audit_v1.2_sd_core.json",
-      "sha256": "286d68aae2cb12aa72c254e4d7330449b1871d42577da452585505ba36cf2ab6",
-      "bytes": 10415,
+      "sha256": "73a9b99da0642c0a4eb3ca62a95c5c6b80dd5ddb413d39043a70c6339c12063a",
+      "bytes": 10708,
       "reported_status": "pass",
       "bound": true
     },
@@ -77,8 +77,8 @@
     },
     "reports/current_quality_snapshot_v1.2_sd_core.json": {
       "path": "reports/current_quality_snapshot_v1.2_sd_core.json",
-      "sha256": "e9976657d2b1141964fa9db617e16eb13a4110b21274a1213ed1a357a13b8be2",
-      "bytes": 2332,
+      "sha256": "11676726826559e56a228b57f45b9db0210efe0a646f7b678ef525f9807783c8",
+      "bytes": 2358,
       "reported_status": "scoped_pass_with_external_gates_pending",
       "bound": true
     },
@@ -86,13 +86,6 @@
       "path": "reports/high_score_plausibility_audit_v1.2_sd_core.json",
       "sha256": "1bb8011bf2dad14ad042c3e0db9b497db4b44f181d753f6c0a93d94bb3e79429",
       "bytes": 2696,
-      "reported_status": "pass",
-      "bound": true
-    },
-    "reports/group_cluster_bootstrap_v1.2_sd_core.json": {
-      "path": "reports/group_cluster_bootstrap_v1.2_sd_core.json",
-      "sha256": "ddce76ad13211173cfb37d2d2aa090edd25c2d6a31776f355e209a6de641bb88",
-      "bytes": 55385,
       "reported_status": "pass",
       "bound": true
     },
@@ -306,24 +299,17 @@
       "reported_status": null,
       "bound": true
     },
-    "reports/near_neighbor_balanced_surface_audit_v1.2_sd_core.json": {
-      "path": "reports/near_neighbor_balanced_surface_audit_v1.2_sd_core.json",
-      "sha256": "fb2683849aedfa4ef119b6cd2aef57d91fe9c0993f2d59f8c30c3f7ab43b32ec",
-      "bytes": 6106,
-      "reported_status": "fail",
-      "bound": true
-    },
     "reports/exact_surface_component_split_v1.2_sd_core.json": {
       "path": "reports/exact_surface_component_split_v1.2_sd_core.json",
-      "sha256": "1a17f429bca73f40ca47172624f67a3350399cca998bf2dba73aecfc1c70db0d",
-      "bytes": 3309,
+      "sha256": "d5caf6329970ebccaa3a937d29cb82e47147b11b5ef66805f06ab262ae10063f",
+      "bytes": 3430,
       "reported_status": "pass",
       "bound": true
     },
     "reports/exact_surface_target_hidden_classification_v1.2_sd_core.json": {
       "path": "reports/exact_surface_target_hidden_classification_v1.2_sd_core.json",
-      "sha256": "9b243ff73dd44c8e58942ce8874c738096d1c446afb0100fccd6479a73e6417f",
-      "bytes": 9376,
+      "sha256": "457424028463ac07d0510337381f993f50616f5e726f66d9506ce07d4a8b0e20",
+      "bytes": 9506,
       "reported_status": "pass",
       "bound": true
     },
@@ -413,7 +399,7 @@
     },
     "reports/opf_structural_contract_audit_v1.2_sd_core.json": {
       "path": "reports/opf_structural_contract_audit_v1.2_sd_core.json",
-      "sha256": "c8816f4ebc5fc02335e3e1620e742ac294bcc1895aa18419a44b5ea446ecf7bf",
+      "sha256": "b8b8734e76740a956fdbfaf10d42c906e291b9491a0685ec14de113a8df55cae",
       "bytes": 861,
       "reported_status": "pass",
       "bound": true
@@ -483,7 +469,7 @@
     },
     "reports/evidence_reconciliation_v1.2_sd_core.json": {
       "path": "reports/evidence_reconciliation_v1.2_sd_core.json",
-      "sha256": "28bb38db5f2cce2ec5c9106a96ec159ca233cd7d5aa199cec0707ce54e0aa368",
+      "sha256": "53d28f0cf8e5a9d5fbb484473de085f1e9952e53bfe90bae16cdf39a00afe5f2",
       "bytes": 3569,
       "reported_status": null,
       "bound": true
@@ -497,14 +483,14 @@
     },
     "reports/manuscript_final_audit_20260812.json": {
       "path": "reports/manuscript_final_audit_20260812.json",
-      "sha256": "0784feadcd49578a45ed14f3c12125b22a72ce23a772b01f131e4fe1f3cd3cb4",
-      "bytes": 1461,
+      "sha256": "6be8903520a3a85fb1fdaeb11794f4e3a2d2b9a19b203d79dc6f5863eca14598",
+      "bytes": 1399,
       "reported_status": "pass",
       "bound": true
     },
     "reports/manuscript_metric_bindings_v1.2_sd_core.json": {
       "path": "reports/manuscript_metric_bindings_v1.2_sd_core.json",
-      "sha256": "ae58cd68b95bb8e20b6a7cc064b3eb7eb93fd52ed93f937ffc131498176e9ac4",
+      "sha256": "f967c519714611f58a75d0c71575824e67bafde9f7252561d7b14f1b99fbe853",
       "bytes": 5997,
       "reported_status": "pass",
       "bound": true
@@ -532,64 +518,64 @@
     },
     "paper/scientific_data_latex/PAPER_CLAIM_AUDIT.json": {
       "path": "paper/scientific_data_latex/PAPER_CLAIM_AUDIT.json",
-      "sha256": "428184d2163a2421c23ddb82a2129062b66d3dbf84549626f48dab02cad8b836",
+      "sha256": "8719de29775984c24622487e883a9c0091dd3014343dc3e7a3138597dba1d4e1",
       "bytes": 1890,
       "reported_status": "WARN_SCOPED_EXTERNAL_GATES_PENDING",
       "bound": true
     },
     "paper/scientific_data_latex/main.pdf": {
       "path": "paper/scientific_data_latex/main.pdf",
-      "sha256": "0e1ea466384a7a4f0cc81c6e3a3940595e1607e01305981185786533099c41e4",
-      "bytes": 893818,
+      "sha256": "c16cee353ff9fccfd40cd606e39f6093d68f7ba9d6ba9bd026a29709f4331270",
+      "bytes": 894717,
       "reported_status": null,
       "bound": true
     },
     "paper/scientific_data_latex/LATEX_BUILD_REPORT.json": {
       "path": "paper/scientific_data_latex/LATEX_BUILD_REPORT.json",
-      "sha256": "84bee6d75052595d05e8033b4041f24c704431cf569e21c9aa7d853de7afd192",
+      "sha256": "bb65308989755ef5183d3fcc0be0d44de90b51fd1b131b753fcbf3b593497c95",
       "bytes": 12350,
       "reported_status": "pass",
       "bound": true
     },
     "paper/scientific_data_latex/LATEX_BUILD_REPORT.md": {
       "path": "paper/scientific_data_latex/LATEX_BUILD_REPORT.md",
-      "sha256": "8bc80a80ebb15886ada5ae4ce54c5fe57187e6f9d6518a309c14aa1f4bb82907",
+      "sha256": "81a811c89e721357e8acf4878660c81bc4055b707d288236aa805d237b854934",
       "bytes": 496,
       "reported_status": null,
       "bound": true
     },
     "paper/scientific_data_latex/build/main.pdf": {
       "path": "paper/scientific_data_latex/build/main.pdf",
-      "sha256": "0e1ea466384a7a4f0cc81c6e3a3940595e1607e01305981185786533099c41e4",
-      "bytes": 893818,
+      "sha256": "c16cee353ff9fccfd40cd606e39f6093d68f7ba9d6ba9bd026a29709f4331270",
+      "bytes": 894717,
       "reported_status": null,
       "bound": true
     },
     "paper/scientific_data_latex/build_embedded/main_with_bbl.pdf": {
       "path": "paper/scientific_data_latex/build_embedded/main_with_bbl.pdf",
-      "sha256": "b8fee89e8ece7db22b767f69e7a8b9970c5882733128ba291f807999da57db41",
-      "bytes": 893818,
+      "sha256": "353a4bf65899c3e002499b706128748e422351c1c2519938225da97414c0bf05",
+      "bytes": 894717,
       "reported_status": null,
       "bound": true
     },
     "paper/scientific_data_latex/GridInstruct_SD_scientific_data_official_template.pdf": {
       "path": "paper/scientific_data_latex/GridInstruct_SD_scientific_data_official_template.pdf",
-      "sha256": "0e1ea466384a7a4f0cc81c6e3a3940595e1607e01305981185786533099c41e4",
-      "bytes": 893818,
+      "sha256": "c16cee353ff9fccfd40cd606e39f6093d68f7ba9d6ba9bd026a29709f4331270",
+      "bytes": 894717,
       "reported_status": null,
       "bound": true
     },
     "paper/scientific_data_latex/GridInstruct_SD_scientific_data_latex_source.zip": {
       "path": "paper/scientific_data_latex/GridInstruct_SD_scientific_data_latex_source.zip",
-      "sha256": "0f57b4b79407f5e04e21d00dbf1d2e06e21a0bb601f5857efbc0001a315e688a",
-      "bytes": 9173082,
+      "sha256": "f5c762352d29c6b8cfafd27117a5c8cd5c9f98537fad6ee1f82a84d3540a0b32",
+      "bytes": 9173390,
       "reported_status": null,
       "bound": true
     },
     "figures/sd_core_quality/fig_exact_surface_target_hidden.png": {
       "path": "figures/sd_core_quality/fig_exact_surface_target_hidden.png",
-      "sha256": "535ca7269bf77e74a382ff309720a2503f2d02d1ffc095c8ca77faa45e0a1f03",
-      "bytes": 86073,
+      "sha256": "15dbeb0cb1ecb972d850b2fe78074afd4553d779ebf6b699b6a8f6f700e7c1fc",
+      "bytes": 86986,
       "reported_status": null,
       "bound": true
     },
@@ -714,15 +700,15 @@
     },
     "metadata/dataset_metadata.json": {
       "path": "metadata/dataset_metadata.json",
-      "sha256": "c27cfa9350c8047a849f9aa3d5467bab8010c2db62b92cd49670a1e1cefa2537",
-      "bytes": 160742,
+      "sha256": "e7a6a86d13270856436e3b6a7b821a1bc202e8473507ff2ac228693f94c30eb2",
+      "bytes": 160937,
       "reported_status": null,
       "bound": true
     },
     "metadata/data_lineage_manifest.json": {
       "path": "metadata/data_lineage_manifest.json",
-      "sha256": "b438383acb14603c9ae8f16858b9ffb239df0971eb2bf95ac192158e418d6a8c",
-      "bytes": 1778,
+      "sha256": "6ea34bf6491f83cd303306fe52bb831efa1bcb6f08b3ae03b963931ca4e7d30a",
+      "bytes": 2036,
       "reported_status": "pass",
       "bound": true
     },
@@ -735,8 +721,8 @@
     },
     "paper/scientific_data_latex/main.tex": {
       "path": "paper/scientific_data_latex/main.tex",
-      "sha256": "8d0876613cafa5c5baf55ac2c85cd30a102f8c9c48bae78e3cfb11edf93ae730",
-      "bytes": 83863,
+      "sha256": "565f52ee3606533b636d43ac161f1b0adfea198a836880015ad47ecd9a7d8ee6",
+      "bytes": 84403,
       "reported_status": null,
       "bound": true
     },
@@ -769,8 +755,8 @@
       "bound": true
     }
   },
-  "total_evidence": 108,
-  "evidence_bound": 108,
+  "total_evidence": 106,
+  "evidence_bound": 106,
   "missing_local_bindings": [],
   "invalid_evidence_count": 0,
   "local_gate_summary": {
@@ -813,8 +799,8 @@
     "isolated_archive_replay_package": {
       "passed": false,
       "kind": "external",
-      "status": "pending_archive_materialization",
-      "scope": "compressed release archive replay; kept outside the working tree to respect the 4 GB project budget"
+      "status": "pass_scoped_local_replay_external_deposition_pending",
+      "scope": "local compact archive replay passes; public data deposition and persistent data DOI remain external"
     },
     "raw_scenario_replay_ledger": {
       "passed": false,
@@ -831,8 +817,8 @@
     "public_repository_and_doi": {
       "passed": false,
       "kind": "external",
-      "status": "pending_deposition",
-      "scope": "versioned public data and code accession"
+      "status": "pass_code_repository_and_software_doi_data_doi_pending",
+      "scope": "public code repository and software DOI verified; persistent data accession remains external"
     },
     "final_author_funding_metadata": {
       "passed": false,
@@ -841,5 +827,9 @@
       "scope": "named contributions and final funding declaration"
     }
   },
-  "claim_boundary": "Local hash-bound audits support data integrity, provenance-controlled splits, embedded OPF closure, target-hidden learnability diagnostics, and 160 retained native-source fixed-control replays. They do not establish full-population raw scenario replay, human agreement, or public accession."
+  "claim_boundary": "Local hash-bound audits support data integrity, provenance-controlled splits, embedded OPF closure, target-hidden learnability diagnostics, and 160 retained native-source fixed-control replays. They do not establish full-population raw scenario replay, human agreement, or public accession.",
+  "historical_not_bound": {
+    "reports/group_cluster_bootstrap_v1.2_sd_core.json": "multiseed bootstrap bound to a superseded pre-direct-English split; retained for history",
+    "reports/near_neighbor_balanced_surface_audit_v1.2_sd_core.json": "balanced diagnostic split is no longer shipped; current manuscript uses the regenerated instruction-surface split"
+  }
 }

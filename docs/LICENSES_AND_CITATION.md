@@ -52,9 +52,10 @@ and state PGLib-OPF release `v23.07`.
 - Installed pandapower, lightsim2grid, and power-grid-model source code is excluded.
 - The current archive builder requires `third_party/pglib-opf-v23.07/LICENSE`
   and excludes every other file under that directory.
-- The checked archive manifest dated 10 July 2026 predates this contract and
-  does not contain the PGLib `LICENSE`; the final archive must be rebuilt and
-  replay-validated before deposition.
+- The current compact archive includes the pinned PGLib `LICENSE`; its member
+  manifest and SHA-256 sidecar are regenerated and replay-validated with each
+  package rebuild. Any change to the upstream revision or the derived-state
+  scope requires a new archive and a new license audit.
 
 The technical audit confirms the fixed-source license text, file identities,
 attribution, citations, and release handling. It is not an independent legal
@@ -63,9 +64,10 @@ opinion.
 ## External submission fields still required
 
 - Final author identities and author-contribution declarations.
-- Public repository URL.
-- Data DOI.
-- Archived code-release DOI or equivalent permanent identifier.
-- Final release tag or commit SHA and access date.
+- Formal data citation and a persistent data DOI.
+- Final funding and competing-interest metadata.
+- Confirmation of upstream benchmark-case attribution and redistribution terms
+  if the pinned upstream revision changes.
 
-Only real archival values may replace these fields.
+The public repository and software archive DOI are recorded above and in the
+manuscript. Only real archival values may replace the remaining fields.

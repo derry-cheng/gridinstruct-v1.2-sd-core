@@ -31,7 +31,6 @@ LOCAL_BINDINGS = [
     "reports/current_source_group_map_audit_v1.2_sd_core.json",
     "reports/current_quality_snapshot_v1.2_sd_core.json",
     "reports/high_score_plausibility_audit_v1.2_sd_core.json",
-    "reports/group_cluster_bootstrap_v1.2_sd_core.json",
     "reports/linear_seed_stability_audit_v1.2_sd_core.json",
     "reports/model_score_quality_audit_v1.2_sd_core.json",
     "reports/near_duplicate_audit_v1.2_sd_core.json",
@@ -62,7 +61,6 @@ LOCAL_BINDINGS = [
     "reports/target_leakage_audit_v1.2_sd_core.json",
     "reports/target_leakage_audit_v1.2_sd_core_en.json",
     "reports/group_aware_split_current_v1.2_sd_core.json",
-    "reports/near_neighbor_balanced_surface_audit_v1.2_sd_core.json",
     "reports/exact_surface_component_split_v1.2_sd_core.json",
     "reports/exact_surface_target_hidden_classification_v1.2_sd_core.json",
     "reports/independent_opf_envelope_v1.2_sd_core.json",
@@ -130,6 +128,11 @@ LOCAL_BINDINGS = [
     "figures/sd_core_publication/fig0_framework.drawio",
     "figures/sd_core_publication/fig_opf_detail.drawio",
 ]
+
+HISTORICAL_NOT_BOUND = {
+    "reports/group_cluster_bootstrap_v1.2_sd_core.json": "multiseed bootstrap bound to a superseded pre-direct-English split; retained for history",
+    "reports/near_neighbor_balanced_surface_audit_v1.2_sd_core.json": "balanced diagnostic split is no longer shipped; current manuscript uses the regenerated instruction-surface split",
+}
 
 
 def sha256(path: Path) -> str:
@@ -233,8 +236,8 @@ def main() -> None:
         "isolated_archive_replay_package": {
             "passed": False,
             "kind": "external",
-            "status": "pending_archive_materialization",
-            "scope": "compressed release archive replay; kept outside the working tree to respect the 4 GB project budget",
+            "status": "pass_scoped_local_replay_external_deposition_pending",
+            "scope": "local compact archive replay passes; public data deposition and persistent data DOI remain external",
         },
         "raw_scenario_replay_ledger": {
             "passed": False,
@@ -251,8 +254,8 @@ def main() -> None:
         "public_repository_and_doi": {
             "passed": False,
             "kind": "external",
-            "status": "pending_deposition",
-            "scope": "versioned public data and code accession",
+            "status": "pass_code_repository_and_software_doi_data_doi_pending",
+            "scope": "public code repository and software DOI verified; persistent data accession remains external",
         },
         "final_author_funding_metadata": {
             "passed": False,
@@ -313,6 +316,7 @@ def main() -> None:
             "native-source fixed-control replays. They do not establish full-population raw "
             "scenario replay, human agreement, or public accession."
         ),
+        "historical_not_bound": HISTORICAL_NOT_BOUND,
     }
     output = root / args.output
     output.parent.mkdir(parents=True, exist_ok=True)

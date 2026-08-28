@@ -18,7 +18,7 @@ from pathlib import Path
 from typing import Any
 
 from create_balanced_near_neighbor_splits import solve_assignment
-from create_group_aware_splits import OOD_NETWORKS, OOD_SCENARIO_TAGS, OOD_TASKS, ood_reason
+from create_group_aware_splits import OOD_SCENARIO_TAGS, ood_reason
 from audit_near_duplicates import normalize_template
 from gridinstruct_utils import ROOT, ensure_dirs, read_jsonl, write_json, write_jsonl
 

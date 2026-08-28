@@ -9,8 +9,9 @@ excluded from ordinary Git history by the root `.gitignore`.
 
 The repository must not contain `.env` files, access tokens, local caches,
 installed dependency trees, model checkpoints, build directories, or temporary
-archives. The final README must show the public repository URL, the data DOI,
-the archived code-release DOI, the release tag, and the data/code licenses.
+archives. The current README records the public repository URL and archived
+code-release DOI; the data DOI, release tag, and access date must be added or
+updated when the formal data deposition is completed.
 
 Before publishing, inspect the staged file list and verify that no file larger
 than GitHub's ordinary per-file limit is included. The release archive itself

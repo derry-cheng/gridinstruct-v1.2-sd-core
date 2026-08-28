@@ -228,7 +228,7 @@ def main() -> None:
     baseline_ok = all(baseline_artifact_ok(path, item) for path, item in baseline_json)
     manifest = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
-        "revision": "v1.2-sd-core-current-2026-08-05",
+        "revision": "v1.2-sd-core-current-2026-08-28",
         "runtime_policy": "local CPU/MPS; no remote GPU execution",
         "dataset": {path: required_artifacts.pop(path) for path in inputs},
         "required_artifacts": required_artifacts,
@@ -276,11 +276,11 @@ def main() -> None:
         "metric_policy": "classification reports macro-F1, accuracy, and balanced accuracy; generation reports exact match and token-F1; structured baselines report schema-field exactness separately",
         "status": "scoped_pass_with_external_gates_pending",
         "external_gates": {
-            "isolated_archive_replay_package": "pending_archive_materialization_outside_working_tree",
+            "isolated_archive_replay_package": "pass_scoped_local_replay_external_deposition_pending",
             "raw_scenario_replay": "pending_missing_local_artifact",
             "independent_solver_case_manifest": "pass_scoped_fixed_control_160_cases_raw_population_ledger_external",
             "external_human_review": "pending_0_of_1600_assignments",
-            "public_repository_and_doi": "pending_external_deposition",
+            "public_repository_and_doi": "pass_code_repository_and_software_doi_data_doi_pending",
         },
     }
     output = root / args.output

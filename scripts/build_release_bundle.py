@@ -891,7 +891,10 @@ def main() -> None:
     checklist = ["# Deposition Checklist", "", f"Generated: {deposition['generated_at']}", f"Status: `{deposition['status']}`", "", "## Local Package Items", ""]
     for key, ok in deposition_items.items():
         checklist.append(f"- `{key}`: {'complete' if ok else 'pending'}")
-    checklist.extend(["", "## Blocking External Items", "", "- Public repository URL: pending external deposition.", "- Data DOI: pending external deposition.", "- Archived code-release DOI: pending external deposition."])
+    checklist.extend(["", "## External identifiers", ""])
+    for key in ("public_repository_url", "data_doi", "archived_code_release_doi"):
+        state = "recorded" if external_metadata_complete[key] else "pending external deposition"
+        checklist.append(f"- `{key}`: {state}.")
     (ROOT / args.deposition_md).write_text(chr(10).join(checklist) + chr(10), encoding="utf-8")
 
     if not successful_archive_status(archive_status):

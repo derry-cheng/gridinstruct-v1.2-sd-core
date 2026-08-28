@@ -9,9 +9,9 @@ excludes installed dependency source, pretrained weights, raw upstream case
 files, and unbound historical ledgers.
 
 The current local evidence boundary is recorded in
-`metadata/evidence_binding_manifest.json`. The archive is a release candidate;
-anonymous repository access, the data DOI, completed expert review, and author
-metadata remain external submission inputs until they are verified by the authors.
+`metadata/evidence_binding_manifest.json`. The code repository and software DOI are public;
+the persistent data DOI, completed expert review, and final author metadata remain external
+submission inputs until they are verified by the authors.
 
 The compact review archive is available from the public GitHub release at
 https://github.com/derry-cheng/gridinstruct-v1.2-sd-core/releases/download/v1.2-sd-core/GridInstruct_v1.2_sd_core_data_only.tar.gz.

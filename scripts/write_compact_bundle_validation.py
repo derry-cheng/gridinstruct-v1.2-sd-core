@@ -78,7 +78,12 @@ def main() -> None:
         "compact_archive_replay_pass": True,
         "canonical_english_table_present": "data/gridinstruct_v1.2_sd_core_en.jsonl" in {member.name for member in members},
         "review_package_geometry_present": replay.get("review_sample_count") == 800 and replay.get("review_assignment_count") == 1600,
-        "review_rows_completed": replay.get("review_completed_rows") == 0,
+        # This item is a completion gate, so it is true only when every
+        # assigned slot has a completed human row.  Keep the exact count in a
+        # separate field to make the zero-row state explicit rather than
+        # accidentally treating an empty ledger as complete.
+        "review_rows_completed": replay.get("review_completed_rows") == replay.get("review_assignment_count"),
+        "review_rows_completed_count": replay.get("review_completed_rows", 0),
         "pglib_license_present": validation["pglib_license_in_archive"],
         "public_repository_url_inserted": True,
         "data_doi_inserted": False,

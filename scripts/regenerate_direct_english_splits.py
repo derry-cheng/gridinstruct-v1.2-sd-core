@@ -5,7 +5,6 @@ from __future__ import annotations
 
 import argparse
 import json
-from pathlib import Path
 
 from gridinstruct_utils import ROOT
 from regenerate_direct_english_core import read_jsonl, render_row, write_jsonl_atomic

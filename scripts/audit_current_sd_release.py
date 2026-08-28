@@ -338,6 +338,7 @@ def main() -> None:
     numeric_missing_fields: Counter[str] = Counter()
     numeric_complete_state = 0
     query_errors: list[dict[str, Any]] = []
+    solver_bound_query_ids: list[str] = []
     opf_rows = 0
     opf_scenarios: set[str] = set()
     opf_status = Counter()
@@ -412,6 +413,8 @@ def main() -> None:
             errors = query_row_errors(row)
             if errors and len(query_errors) < 100:
                 query_errors.append({"id": record_id, "errors": errors})
+            if (row.get("metadata") or {}).get("query_truth_status") == "solver_failed_state_bound":
+                solver_bound_query_ids.append(record_id)
         if (row.get("metadata") or {}).get("opf_closed_loop"):
             opf_rows += 1
             opf_scenarios.add(str(row.get("scenario_id") or ""))
@@ -514,6 +517,8 @@ def main() -> None:
         },
         "query_contract_error_count": sum(len(item["errors"]) for item in query_errors),
         "query_error_examples": query_errors[:20],
+        "solver_bound_query_record_count": len(solver_bound_query_ids),
+        "solver_bound_query_record_ids": solver_bound_query_ids,
         "opf_closed_loop_rows": opf_rows,
         "opf_closed_loop_unique_scenarios": len(opf_scenarios),
         "opf_status": dict(opf_status),
@@ -560,6 +565,7 @@ def main() -> None:
         f"Records: {payload['records']:,}; unique IDs: {payload['unique_ids']:,}.",
         f"Scenario-link missing/mismatch: {payload['scenario_link_missing_count']}/{payload['scenario_id_mismatch_count']}; severity mismatches: {payload['severity_mismatch_count']} of {payload['severity_checked']:,} checked.",
         f"Numeric severity diagnostic: {payload['numeric_severity_diagnostic']['checked']:,} partial states; {payload['numeric_severity_diagnostic']['complete_numeric_state_rows']:,} complete three-field states; status={payload['numeric_severity_diagnostic']['status']}.",
+        f"Solver-bound query records: {payload['solver_bound_query_record_count']} (retained with incomplete scenario truth).",
         f"OPF closed-loop rows/scenarios: {payload['opf_closed_loop_rows']}/{payload['opf_closed_loop_unique_scenarios']}.",
         "",
         "The audit intentionally keeps unavailable raw replays and external expert review as failed gates. They must be regenerated or deposited before a Scientific Data submission claim can be upgraded.",

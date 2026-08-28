@@ -5,7 +5,6 @@ from __future__ import annotations
 
 import json
 from collections import Counter
-from pathlib import Path
 
 from gridinstruct_utils import ROOT
 from recompute_scenario_truth import validate_complete
