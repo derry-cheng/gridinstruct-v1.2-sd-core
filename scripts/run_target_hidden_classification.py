@@ -264,7 +264,7 @@ def plot(rows: list[dict[str, Any]], path: Path) -> None:
         "regulation_compliance_check": "Compliance check",
     }
     split_labels = {
-        "standard": "Standard",
+        "standard": "Official",
         "strict_source_group": "Strict source-group",
         "template_holdout": "Template-family holdout",
     }
