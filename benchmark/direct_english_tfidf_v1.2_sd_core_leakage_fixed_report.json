@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-28T21:04:54.441830+00:00",
+  "generated_at": "2026-08-29T07:08:22.350268+00:00",
   "code_sha256": "8438a8718212650cc594a0e42f4bc6abf261ac6423ab6644fa38abb312d7badf",
   "train": "data/v1.2_sd_core_train_en.jsonl",
   "validation": "data/v1.2_sd_core_validation_en.jsonl",
@@ -13,10 +13,10 @@
   "test_records": 3894,
   "ood_records": 61479,
   "input_sha256": {
-    "train": "81fb662da56a2685b9edabde8843b277600832345ae438fd23674ade0bc95283",
-    "validation": "ee3e73c1c70afc000b473ad4268d8eea905461005f1242f8394d465100a94465",
-    "test": "8c9c6e9f87209aa356aaea4c8e707c30fb5608ab5a5a968f83ecab0c5d73e988",
-    "ood": "146c23fc751f6d9003b62407a4e921f5d5742638f114ddd854dd264bd28d6343",
+    "train": "2fffd5d0b7d1cb417a4dd919af39aba859f736d3f2da2d3f52340169388b3ac9",
+    "validation": "03a4f3126a1ae181524610cf6ef6efd60774f61b78a31e8fb9e9d232a3abc06f",
+    "test": "83576760eb091531d08ae6a7b6bf95d52b8266a6e5fe4aa9c2875c3eccd56110",
+    "ood": "a7a75d1a0551cfe8f688b90af32b535cb54767944fbf319a4a8c53e64b2adb17",
     "canonical": "18a4d36153f9d77ae9b26744978a7bea27138aee048d1b12906335797e908013"
   },
   "validation_metrics": {

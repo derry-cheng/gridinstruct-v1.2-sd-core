@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-28T21:45:24.398094+00:00",
+  "generated_at": "2026-08-29T07:59:28.154517+00:00",
   "revision": "v1.2-sd-core-current-2026-08-28",
   "runtime_policy": "local CPU/MPS; no remote GPU execution",
   "dataset": {
@@ -42,7 +42,7 @@
       "bytes": 525
     },
     "reports/current_quality_snapshot_v1.2_sd_core.json": {
-      "sha256": "6ed0b9b991d8af62c8d8d1e98d832668b70977b783f80c760fbaf9ac1e1d2143",
+      "sha256": "70634a2e1f4b75774d8cf83b6e918e044ae5531ee4f0c1ccd01ad9189039f37c",
       "bytes": 2358
     },
     "reports/current_latex_build_v1.2_sd_core.json": {
@@ -70,12 +70,12 @@
       "bytes": 946
     },
     "reports/release_claim_alignment_audit_v1.2_sd_core.json": {
-      "sha256": "eb82eb3932170e15d15ee7c544fbb1effbea85619ffa85d4f5e7a9e738f750fc",
+      "sha256": "520194d14d0aeed9393cabafeebd507dba703b7c0489512cc92cf67e7738c056",
       "bytes": 5880
     },
     "reports/sd_submission_readiness.json": {
-      "sha256": "5705a37972ae1cef64793409303b93ec101415bd45ac7b64bb313b6265adf763",
-      "bytes": 4841
+      "sha256": "935702a35ca0d78616ed342aa9a0184ecdf7eaf15d72ac9eb79fc4f103d3d094",
+      "bytes": 4839
     },
     "reports/english_split_audit_v1.2_sd_core.json": {
       "sha256": "b403991d042dddcfa633479cb5485e14fbbc53333eef4b333d9f10e3fbd9e2dc",
@@ -90,7 +90,7 @@
       "bytes": 3537
     },
     "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_report.json": {
-      "sha256": "1cda8635ffa1dbaa025932d4ad40b3172b95696a8a9ce21df284e0f46e833655",
+      "sha256": "b372a871bf985ce0ad8ba5ba140e0e417928f8cf42c1d94a3815d11ebf32ae5d",
       "bytes": 8342
     },
     "benchmark/v1.2_sd_core_proxyreduced_tfidf_report.json": {
@@ -138,12 +138,12 @@
       "bytes": 6266
     },
     "paper/scientific_data_latex/main.tex": {
-      "sha256": "24149a1cd9c536e9e84ccc77ee2e37208be0ce2771283d75ac999a382943b458",
-      "bytes": 86492
+      "sha256": "2fd15f1ad902540f90f9c6826d3255af7ecd1e75a489033d388f2107c6c3d30a",
+      "bytes": 87550
     },
     "paper/scientific_data_latex/main.pdf": {
-      "sha256": "cc222a714c6484f4de5c1fde7ea828753a08c5b567bba0a2427bfd1fa2cbce51",
-      "bytes": 896600
+      "sha256": "c8b4b96b0800c69c3284c25a3fa134c7dacc6a5ce4791bb6eb9a2e6632c3c8e4",
+      "bytes": 937443
     },
     "paper/scientific_data_latex/generated/gridinstruct_claims.tex": {
       "sha256": "500dc60ec39a1fed712f90b7981ab9411e82948cfa3f0ea0c67bfff2f000046d",
@@ -482,24 +482,24 @@
   },
   "metadata": {
     "metadata/dataset_metadata.json": {
-      "sha256": "c9f6ec7133d4d17847c4365e2fe5334248c0500324d8acd9b715ffb4001d3403",
-      "bytes": 164251
+      "sha256": "eec17f791a97faeae259e0cd1ad8b89373fdab5e1929efcef9a9c3b28473db64",
+      "bytes": 164713
     },
     "metadata/data_lineage_manifest.json": {
-      "sha256": "210354e003e4f494b4d239a534c50ab4a224bd8837c1ab6c41512a4a89477f32",
+      "sha256": "b6dd712ec4f4f4fc43b072161241b9dc116990eadbc7cc23999f4a02e64c526b",
       "bytes": 2043
     },
     "metadata/canonical_dataset_promotion_manifest.json": {
-      "sha256": "c81ba4ddc6bbba7d6dccd16ba74918450680f3d53f03df08ca0a07c75bc05408",
+      "sha256": "07975e7609784ad3652bdf1da9a1b82c2780a72539524e322e763566d1adf900",
       "bytes": 795
     },
     "metadata/evidence_binding_manifest.json": {
-      "sha256": "7b481453f876fc1c8499d1447f8a9533b91ff86460e3eb87d25d3b7cdc55c705",
+      "sha256": "b3155577245e2e64545e17dc554f25694078c102df9da68261da6526f2e12d50",
       "bytes": 38825
     },
     "metadata/file_manifest.csv": {
-      "sha256": "3fde3c7fe8cc33fb1aa9f55447a09d4be4be1fb0483d157bf69889289dcc849b",
-      "bytes": 25943
+      "sha256": "3e6c8dcdc0f04b6c3965b071896b05b96657e6692eee16ee844370bb923014bb",
+      "bytes": 25944
     },
     "metadata/formal_runtime_environment.json": {
       "sha256": "1a27a4feb3804cbface77d26f360b5bb30bed24b624c302aa0a62ffad0ddfc76",
@@ -584,8 +584,8 @@
       "bytes": 10425
     },
     "scripts/run_tfidf_task_baselines.py": {
-      "sha256": "8438a8718212650cc594a0e42f4bc6abf261ac6423ab6644fa38abb312d7badf",
-      "bytes": 14057
+      "sha256": "8429f7bf73687c6870a85b30716543ba3ce7dd7ee063df3f0474e132b7857945",
+      "bytes": 14117
     },
     "scripts/write_current_latex_build_report.py": {
       "sha256": "c94236de8079e7e3e8d6b17659fb8ac99f1fc509cb642a395ea4759efb74d90d",

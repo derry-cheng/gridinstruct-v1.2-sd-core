@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-28T20:06:16.999360+00:00",
+  "generated_at": "2026-08-29T07:11:07.744242+00:00",
   "status": "pass",
   "objective": "calibrated_probability_tfidf_classification",
   "train": "data/v1.2_sd_core_instruction_surface_balanced_train_en.jsonl",
@@ -17,12 +17,12 @@
     "canonical": "18a4d36153f9d77ae9b26744978a7bea27138aee048d1b12906335797e908013"
   },
   "prediction_sha256": {
-    "operation_ticket_check_test": "0a256082fb00ef0c2f48b6284761b5dae3570511b559cd2fad378a39063ae315",
-    "operation_ticket_check_ood": "bf630fbafbf30dcbe8607d8786b4da0ef2a7f9a553957b983ef1d591ed275485",
-    "regulation_compliance_check_test": "561f803aaf438a6aee4ea490495f46483ef0610e5fb7350eb6f689e6832af3db",
-    "regulation_compliance_check_ood": "c33757257f5b7f7fed78b3823cd8083c2fa6bea5f4c091a32e46ac9fae5751f4",
-    "dispatcher_intent_tool_call_test": "7c43830bbb4b5032244d10e096ffdb8374fb7f47734795cf2165564ba07052f9",
-    "dispatcher_intent_tool_call_ood": "5050710851739c0eaf7df22fa99ef3d90ed470a3306bd8ad800c21a0105992a3"
+    "operation_ticket_check_test": "77c6a75c094c6376f8f021375d1e9b426b47f488cae3378b5bc7838f1cd1589d",
+    "operation_ticket_check_ood": "7532b2852a71ed69a520609cc532e8b22711d807fcaddb3483ed81d3f36a9275",
+    "regulation_compliance_check_test": "5c0c39fe92ed91a380ec249860f9f9fad41ee7d0028536d6887a1c1e41c70d10",
+    "regulation_compliance_check_ood": "7562a4412998ce38bfa947750fdbd54fb73a7568e6abf67dee8d7b2420a4973e",
+    "dispatcher_intent_tool_call_test": "2f5f0ffe35694546634e16bc580a242296ff8504cb5a65e09a8f3d70e01fbc23",
+    "dispatcher_intent_tool_call_ood": "19a32c79c93a5bf33b7190dd62ab426db5413f07e8e0c82cead8507e5028d1e3"
   },
   "metrics": {
     "operation_ticket_check": {
@@ -34,8 +34,8 @@
           "non_compliant"
         ],
         "macro_f1": 0.9960769961954202,
-        "ece_10bin": 0.0840895280351946,
-        "brier_multiclass": 0.024154833203221444,
+        "ece_10bin": 0.08408952803519273,
+        "brier_multiclass": 0.024154833203220604,
         "probability_finite": true,
         "probability_nonnegative": true,
         "probability_rows_sum_to_one": true
@@ -48,8 +48,8 @@
           "non_compliant"
         ],
         "macro_f1": 1.0,
-        "ece_10bin": 0.08555511400900324,
-        "brier_multiclass": 0.01974128965549724,
+        "ece_10bin": 0.08555511400900243,
+        "brier_multiclass": 0.019741289655496975,
         "probability_finite": true,
         "probability_nonnegative": true,
         "probability_rows_sum_to_one": true
@@ -64,8 +64,8 @@
           "non_compliant"
         ],
         "macro_f1": 0.7659095282133972,
-        "ece_10bin": 0.055322421136288484,
-        "brier_multiclass": 0.2626666779562189,
+        "ece_10bin": 0.05532242113626949,
+        "brier_multiclass": 0.26266667795621446,
         "probability_finite": true,
         "probability_nonnegative": true,
         "probability_rows_sum_to_one": true
@@ -78,8 +78,8 @@
           "non_compliant"
         ],
         "macro_f1": 0.6449636608222673,
-        "ece_10bin": 0.11378529331840087,
-        "brier_multiclass": 0.3666466648086096,
+        "ece_10bin": 0.11378529331841002,
+        "brier_multiclass": 0.3666466648086469,
         "probability_finite": true,
         "probability_nonnegative": true,
         "probability_rows_sum_to_one": true
@@ -94,8 +94,8 @@
           "security_check_and_redispatch"
         ],
         "macro_f1": 1.0,
-        "ece_10bin": 0.20957491649535084,
-        "brier_multiclass": 0.06899448883755523,
+        "ece_10bin": 0.20957491649535095,
+        "brier_multiclass": 0.0689944888375553,
         "probability_finite": true,
         "probability_nonnegative": true,
         "probability_rows_sum_to_one": true
@@ -108,8 +108,8 @@
           "security_check_and_redispatch"
         ],
         "macro_f1": 1.0,
-        "ece_10bin": 0.21052138238370774,
-        "brier_multiclass": 0.06828521423134883,
+        "ece_10bin": 0.21052138238370796,
+        "brier_multiclass": 0.0682852142313489,
         "probability_finite": true,
         "probability_nonnegative": true,
         "probability_rows_sum_to_one": true

@@ -1,11 +1,11 @@
 # GridInstruct v1.2-sd-core public review package
 
 This package description was refreshed on 29 August 2026. The compact archive
-contains 107 dereferenced members and is rebuilt from the current local files;
+contains 135 dereferenced members and is rebuilt from the current local files;
 its exact member list and receipts are recorded in
 `compact_archive_manifest_v1.2_sd_core.json`.
 
-This directory contains a compact, hash-bound local review candidate. The canonical 95,479-record JSONL table is stored once under `data/`; the official English projections and the full strict source-group projections are available for reuse, while near-neighbour and surface stress partitions remain ID-only manifests. The historical access map `reviewer_access_manifest_2026-08-13.json` is retained for provenance; the current member list is `compact_archive_manifest_v1.2_sd_core.json`. A compact data-only archive is available anonymously from the public GitHub release at https://github.com/derry-cheng/gridinstruct-v1.2-sd-core/releases/download/v1.2-sd-core/GridInstruct_v1.2_sd_core_data_only.tar.gz; its SHA-256 companion is uploaded beside it. This review route is public, but it is not a formal DOI-backed data accession.
+This directory contains a compact, hash-bound local review candidate. The canonical 95,479-record JSONL table is stored once under `data/`; the archive includes the full official and strict source-group English projections and the full development projections for the instruction-surface split, while near-neighbour and large surface-stress partitions remain ID-only manifests. The converged scenario registry and bounded OPF evidence tables are included so the stated physical checks can be replayed after extraction. The historical access map `reviewer_access_manifest_2026-08-13.json` is retained for provenance; the current member list is `compact_archive_manifest_v1.2_sd_core.json`. A compact data-only archive is available anonymously from the public GitHub release at https://github.com/derry-cheng/gridinstruct-v1.2-sd-core/releases/download/v1.2-sd-core/GridInstruct_v1.2_sd_core_data_only.tar.gz; its SHA-256 companion is uploaded beside it. This review route is public, but it is not a formal DOI-backed data accession.
 
 The current issue-by-issue closure is summarized in `../docs/REVIEW_ISSUE_CLOSURE_2026-08-28.md` and the machine-readable gate reports under `../reports/`. The compact review archive is public; raw scenario and candidate ledgers, completed double reviews, the formal data DOI, and final author, CRediT, and funding metadata still require release-owner action.
 

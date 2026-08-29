@@ -1,6 +1,6 @@
 # Current split five-seed stability audit
 
-Generated: 2026-08-28T20:11:06.128611+00:00
+Generated: 2026-08-29T07:16:14.779019+00:00
 Status: `pass`
 
 The stochastic linear reference is evaluated on the frozen instruction-surface test and OOD splits.

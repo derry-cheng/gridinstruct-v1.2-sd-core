@@ -27,15 +27,41 @@ COMPACT_REQUIRED_FILES = {
     "MANIFEST.md",
     "README.md",
     "data/gridinstruct_v1.2_sd_core_en.jsonl",
+    "data/v1.2_sd_core_train_en.jsonl",
+    "data/v1.2_sd_core_validation_en.jsonl",
+    "data/v1.2_sd_core_test_en.jsonl",
+    "data/v1.2_sd_core_ood_test_en.jsonl",
+    "data/v1.2_sd_core_strict_train.jsonl",
+    "data/v1.2_sd_core_strict_validation.jsonl",
+    "data/v1.2_sd_core_strict_test.jsonl",
+    "data/v1.2_sd_core_instruction_surface_balanced_train_en.jsonl",
+    "data/v1.2_sd_core_instruction_surface_balanced_validation_en.jsonl",
+    "data/v1.2_sd_core_instruction_surface_balanced_test_en.jsonl",
+    "data/v1.2_sd_core_instruction_surface_balanced_ood_test_ids.jsonl",
     "metadata/schema.json",
     "metadata/data_dictionary.csv",
     "metadata/data_lineage_manifest.json",
     "metadata/evidence_binding_manifest.json",
+    "metadata/source_group_map.csv",
+    "metadata/source_traceability.csv",
+    "metadata/independent_solver_case_manifest_v1.json",
     "metadata/archive_metadata.json",
     "reports/direct_english_canonical_materialization_v1.2_sd_core.json",
+    "reports/direct_english_split_materialization_v1.2_sd_core.json",
+    "reports/data_validation_direct_english_v1.2_sd_core.json",
+    "reports/independent_query_truth_validation_v1.2_sd_core.json",
+    "reports/query_truth_completeness_gate_v1.2_sd_core.json",
+    "reports/split_independence_audit_current_v1.2_sd_core.json",
+    "reports/strict_source_group_split_v1.2_sd_core.json",
+    "reports/template_family_holdout_v1.2_sd_core.json",
     "reports/current_surface_seed_stability_v1.2_sd_core.json",
     "reports/compliance_label_current_audit_v1.2_sd_core.json",
     "data/international_rule_probe_v1.jsonl",
+    "simulation_outputs/contingency/scenarios_converged.json",
+    "simulation_outputs/opf_closed_loop/ieee14_ieee118_source_scenarios_v1.json",
+    "simulation_outputs/opf_closed_loop/auxiliary_opf_results.json",
+    "simulation_outputs/opf_closed_loop/opf_action_uncertainty_stress_cases_v1.json",
+    "simulation_outputs/opf_closed_loop/opf_action_constant_power_factor_stress_cases_v1.json",
     "rules/international_rule_profiles.json",
     "metadata/international_rule_probe_splits_v1.json",
     "metadata/international_rule_probe_schema.json",
@@ -82,11 +108,12 @@ def safe_members(archive: tarfile.TarFile) -> tuple[list[tarfile.TarInfo], list[
 def compact_archive_audit(bundle: Path, members: list[tarfile.TarInfo]) -> dict[str, Any]:
     """Audit the compact public review package without treating it as the full bundle.
 
-    The compact package intentionally contains the English table, ID-only split
-    manifests, schemas, and selected receipts. It excludes the raw scenario
-    ledger and the complete code tree, so this check verifies package safety,
-    required-file presence, JSONL parseability, duplicate IDs, and the two
-    current evidence receipts only.
+    The compact package contains the canonical table, the full projections used
+    by the headline split geometries, the converged scenario registry, and the
+    bounded OPF evidence. It still excludes the full construction-attempt
+    ledger and complete human-review archive. This check therefore verifies
+    package safety, required-file presence, split denominators, registry and
+    OPF counts, JSONL parseability, duplicate IDs, and the current receipts.
     """
     errors: list[str] = []
     member_names = {member.name for member in members}
@@ -102,6 +129,11 @@ def compact_archive_audit(bundle: Path, members: list[tarfile.TarInfo]) -> dict[
     review_sample_count = None
     review_assignment_count = None
     review_completed_rows = None
+    split_counts: dict[str, int] = {}
+    scenario_registry_count = None
+    opf_record_count = None
+    opf_scenario_count = None
+    independent_case_count = None
     with tempfile.TemporaryDirectory(prefix="gridinstruct_compact_replay_") as temp_dir:
         extracted = Path(temp_dir)
         with tarfile.open(bundle, "r:gz") as archive:
@@ -157,6 +189,51 @@ def compact_archive_audit(bundle: Path, members: list[tarfile.TarInfo]) -> dict[
         errors.append(f"review_assignment_count:{review_assignment_count}")
     if review_completed_rows != 0:
         errors.append(f"review_completed_rows_unexpected:{review_completed_rows}")
+    with tempfile.TemporaryDirectory(prefix="gridinstruct_compact_counts_") as temp_dir:
+        extracted = Path(temp_dir)
+        with tarfile.open(bundle, "r:gz") as archive:
+            archive.extractall(extracted, filter="data")
+        expected_split_files = {
+            "train": ("data/v1.2_sd_core_train_en.jsonl", 26545),
+            "validation": ("data/v1.2_sd_core_validation_en.jsonl", 3561),
+            "test": ("data/v1.2_sd_core_test_en.jsonl", 3894),
+            "ood_test": ("data/v1.2_sd_core_ood_test_en.jsonl", 61479),
+            "strict_train": ("data/v1.2_sd_core_strict_train.jsonl", 76378),
+            "strict_validation": ("data/v1.2_sd_core_strict_validation.jsonl", 9558),
+            "strict_test": ("data/v1.2_sd_core_strict_test.jsonl", 9543),
+            "surface_train": ("data/v1.2_sd_core_instruction_surface_balanced_train_en.jsonl", 10689),
+            "surface_validation": ("data/v1.2_sd_core_instruction_surface_balanced_validation_en.jsonl", 5118),
+            "surface_test": ("data/v1.2_sd_core_instruction_surface_balanced_test_en.jsonl", 4432),
+        }
+        for name, (relative, expected) in expected_split_files.items():
+            path = extracted / relative
+            count = sum(1 for _ in path.open(encoding="utf-8")) if path.is_file() else None
+            split_counts[name] = count if count is not None else -1
+            if count != expected:
+                errors.append(f"split_count_{name}:{count}")
+        scenario_path = extracted / "simulation_outputs/contingency/scenarios_converged.json"
+        if scenario_path.is_file():
+            scenario_registry_count = len(json.loads(scenario_path.read_text(encoding="utf-8")))
+            if scenario_registry_count != 2822:
+                errors.append(f"scenario_registry_count:{scenario_registry_count}")
+        else:
+            errors.append("scenario_registry_missing")
+        opf_path = extracted / "simulation_outputs/opf_closed_loop/auxiliary_opf_results.json"
+        if opf_path.is_file():
+            opf_payload = json.loads(opf_path.read_text(encoding="utf-8"))
+            opf_record_count = len(opf_payload.get("results") or [])
+            opf_scenario_count = len({str(item.get("scenario_id")) for item in (opf_payload.get("results") or [])})
+            if opf_record_count != 160 or opf_scenario_count != 160:
+                errors.append(f"opf_evidence_counts:{opf_record_count}/{opf_scenario_count}")
+        else:
+            errors.append("opf_evidence_missing")
+        case_manifest = extracted / "metadata/independent_solver_case_manifest_v1.json"
+        if case_manifest.is_file():
+            independent_case_count = json.loads(case_manifest.read_text(encoding="utf-8")).get("case_count")
+            if independent_case_count != 160:
+                errors.append(f"independent_case_count:{independent_case_count}")
+        else:
+            errors.append("independent_case_manifest_missing")
     return {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "status": "pass" if not errors else "fail",
@@ -173,6 +250,11 @@ def compact_archive_audit(bundle: Path, members: list[tarfile.TarInfo]) -> dict[
         "review_sample_count": review_sample_count,
         "review_assignment_count": review_assignment_count,
         "review_completed_rows": review_completed_rows,
+        "split_counts": split_counts,
+        "scenario_registry_count": scenario_registry_count,
+        "opf_record_count": opf_record_count,
+        "opf_scenario_count": opf_scenario_count,
+        "independent_case_count": independent_case_count,
         "isolated_validators": [
             {
                 "dataset": "data/gridinstruct_v1.2_sd_core_en.jsonl",
@@ -191,7 +273,7 @@ def compact_archive_audit(bundle: Path, members: list[tarfile.TarInfo]) -> dict[
         "evidence_binding_errors": [],
         "external_truth_scope": {
             "deferred": True,
-            "reason": "Compact package excludes raw scenario arrays, the full construction ledger, and the complete human-review archive.",
+            "reason": "Compact package includes the converged scenario registry and bounded OPF evidence but excludes raw scenario arrays, the full construction-attempt ledger, and the complete human-review archive.",
         },
         "errors": errors,
     }
@@ -337,7 +419,7 @@ def main() -> None:
             f"Required files checked: {report['required_file_count']}",
             f"English records parsed: {report['record_count']}",
             "",
-            "The compact public package defers raw scenario, full construction, and human-review ledgers.",
+            "The compact public package includes the converged scenario registry and bounded OPF evidence; raw arrays, full construction attempts, and human-review ledgers remain external.",
         ]
         (ROOT / args.output_md).write_text("\n".join(lines) + "\n", encoding="utf-8")
         print(json.dumps({"status": report["status"], "errors": report["errors"], "validators": report["isolated_validators"]}, ensure_ascii=False, indent=2))

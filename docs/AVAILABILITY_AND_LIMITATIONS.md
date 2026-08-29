@@ -2,7 +2,7 @@
 
 ## Data Availability
 
-The current release snapshot is `data/gridinstruct_v1.2_sd_core_en.jsonl`. The construction-source table is retained as `None` for provenance and auditability. The public code repository is https://github.com/derry-cheng/gridinstruct-v1.2-sd-core and the software archive is available at https://doi.org/10.5281/zenodo.21921745. Before external submission, deposit the data package in a stable public repository and add the repository name, data DOI, version identifier, and access date.
+The current release snapshot is the directly rendered English table `data/gridinstruct_v1.2_sd_core_en.jsonl`. The construction-source table is retained locally for provenance and auditability; no translation service is part of the release-facing generation path. The review archive also contains the full official and strict English projections, the instruction-surface development projections, the converged scenario registry, and the bounded OPF evidence tables. The public code repository is https://github.com/derry-cheng/gridinstruct-v1.2-sd-core and the software archive is available at https://doi.org/10.5281/zenodo.21921745. Before external submission, deposit this data package in a stable public repository and add the repository name, data DOI, version identifier, and access date.
 
 ## Code Availability
 

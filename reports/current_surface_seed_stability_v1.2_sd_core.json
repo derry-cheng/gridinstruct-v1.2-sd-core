@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-28T20:11:06.128611+00:00",
+  "generated_at": "2026-08-29T07:16:14.779019+00:00",
   "status": "pass",
   "objective": "current_split_five_seed_linear_tfidf_stability",
   "model": {

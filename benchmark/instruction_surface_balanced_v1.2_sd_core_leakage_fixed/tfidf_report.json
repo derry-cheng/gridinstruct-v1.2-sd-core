@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-28T20:05:09.739956+00:00",
-  "code_sha256": "8438a8718212650cc594a0e42f4bc6abf261ac6423ab6644fa38abb312d7badf",
+  "generated_at": "2026-08-29T07:26:20.211051+00:00",
+  "code_sha256": "8429f7bf73687c6870a85b30716543ba3ce7dd7ee063df3f0474e132b7857945",
   "train": "data/v1.2_sd_core_instruction_surface_balanced_train_en.jsonl",
   "validation": "data/v1.2_sd_core_instruction_surface_balanced_validation_en.jsonl",
   "test": "data/v1.2_sd_core_instruction_surface_balanced_test_en.jsonl",

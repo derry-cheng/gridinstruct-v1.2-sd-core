@@ -115,6 +115,22 @@ def main() -> None:
     metadata["record_summary"] = summary
     metadata["source_traceability"] = traceability(rows)
     metadata["split_integrity"] = split_summary(split_paths)
+    scenario_registry_path = ROOT / "simulation_outputs/contingency/scenarios_converged.json"
+    if scenario_registry_path.is_file():
+        registry_rows = json.loads(scenario_registry_path.read_text(encoding="utf-8"))
+        status_counts = Counter(str(row.get("solver_status", "")) for row in registry_rows)
+        metadata["scenario_registry"] = {
+            "path": str(scenario_registry_path.relative_to(ROOT)),
+            "records": len(registry_rows),
+            "solver_status_counts": dict(sorted(status_counts.items())),
+            "converged_records": status_counts.get("converged", 0),
+            "explicit_boundary_records": len(registry_rows) - status_counts.get("converged", 0),
+            "sha256": sha256(scenario_registry_path),
+        }
+        if isinstance(metadata.get("simulation"), dict):
+            metadata["simulation"]["scope"] = (
+                "core four-network generator report; broader release registry is recorded separately"
+            )
     validation_report_path = ROOT / "reports/data_validation_direct_english_v1.2_sd_core.json"
     validation_report = json.loads(validation_report_path.read_text(encoding="utf-8"))
     validation = metadata.setdefault("validation", {})

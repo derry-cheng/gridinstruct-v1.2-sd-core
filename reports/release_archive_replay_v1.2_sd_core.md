@@ -1,9 +1,9 @@
 # Release Archive Isolation Replay
 
 Status: `pass`
-Bundle SHA-256: `f4ea21167160f52e2330a040d5dc42e72dbb292306bb9e9ab7353cf1b2e6ff50`
+Bundle SHA-256: `52c6546f78773abd622d7c56905f5ceb9a654b356a436e82610cbaeebfda480d`
 Archive layout: `compact_public_review_package`
-Required files checked: 34
+Required files checked: 60
 English records parsed: 95479
 
-The compact public package defers raw scenario, full construction, and human-review ledgers.
+The compact public package includes the converged scenario registry and bounded OPF evidence; raw arrays, full construction attempts, and human-review ledgers remain external.

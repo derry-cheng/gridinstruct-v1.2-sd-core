@@ -281,7 +281,10 @@ def main() -> None:
     parser.add_argument("--test", default="data/v1.2_sd_core_test_en.jsonl")
     parser.add_argument("--ood", default="data/v1.2_sd_core_ood_test_en.jsonl")
     parser.add_argument("--canonical", default="data/gridinstruct_v1.2_sd_core_en.jsonl")
-    parser.add_argument("--output-prefix", default="benchmark/v1.2_tfidf")
+    parser.add_argument(
+        "--output-prefix",
+        default="benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed",
+    )
     parser.add_argument("--nearest-batch-size", type=int, default=2048)
     args = parser.parse_args()
 

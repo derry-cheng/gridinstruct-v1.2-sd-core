@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-08-28T21:45:22.606749+00:00",
+  "generated_at": "2026-08-29T08:00:30.345467+00:00",
   "status": "pass",
   "bundle": "/Users/lemon/Desktop/project/gaiav2/release/GridInstruct_v1.2_sd_core_data_only.tar.gz",
-  "bundle_sha256": "f4ea21167160f52e2330a040d5dc42e72dbb292306bb9e9ab7353cf1b2e6ff50",
+  "bundle_sha256": "52c6546f78773abd622d7c56905f5ceb9a654b356a436e82610cbaeebfda480d",
   "archive_layout": "compact_public_review_package",
-  "safe_archive_member_count": 107,
-  "required_file_count": 34,
+  "safe_archive_member_count": 135,
+  "required_file_count": 60,
   "record_count": 95479,
   "duplicate_or_missing_id_count": 0,
   "jsonl_parse_error_count": 0,
@@ -14,6 +14,22 @@
   "review_sample_count": 800,
   "review_assignment_count": 1600,
   "review_completed_rows": 0,
+  "split_counts": {
+    "train": 26545,
+    "validation": 3561,
+    "test": 3894,
+    "ood_test": 61479,
+    "strict_train": 76378,
+    "strict_validation": 9558,
+    "strict_test": 9543,
+    "surface_train": 10689,
+    "surface_validation": 5118,
+    "surface_test": 4432
+  },
+  "scenario_registry_count": 2822,
+  "opf_record_count": 160,
+  "opf_scenario_count": 160,
+  "independent_case_count": 160,
   "isolated_validators": [
     {
       "dataset": "data/gridinstruct_v1.2_sd_core_en.jsonl",
@@ -32,7 +48,7 @@
   "evidence_binding_errors": [],
   "external_truth_scope": {
     "deferred": true,
-    "reason": "Compact package excludes raw scenario arrays, the full construction ledger, and the complete human-review archive."
+    "reason": "Compact package includes the converged scenario registry and bounded OPF evidence but excludes raw scenario arrays, the full construction-attempt ledger, and the complete human-review archive."
   },
   "errors": []
 }

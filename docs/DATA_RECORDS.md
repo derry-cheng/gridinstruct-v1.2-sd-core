@@ -9,10 +9,10 @@ GridInstruct v1.2 contains 95,479 instruction records. Records are stored as UTF
 | path | records | bytes | sha256 |
 | --- | ---: | ---: | --- |
 | data/gridinstruct_v1.2_sd_core_en.jsonl | 95479 | 593841086 | 18a4d36153f9d77ae9b26744978a7bea27138aee048d1b12906335797e908013 |
-| data/v1.2_sd_core_train_en.jsonl | 26545 | 147932029 | 81fb662da56a2685b9edabde8843b277600832345ae438fd23674ade0bc95283 |
-| data/v1.2_sd_core_validation_en.jsonl | 3561 | 19735811 | ee3e73c1c70afc000b473ad4268d8eea905461005f1242f8394d465100a94465 |
-| data/v1.2_sd_core_test_en.jsonl | 3894 | 21169452 | 8c9c6e9f87209aa356aaea4c8e707c30fb5608ab5a5a968f83ecab0c5d73e988 |
-| data/v1.2_sd_core_ood_test_en.jsonl | 61479 | 405003794 | 146c23fc751f6d9003b62407a4e921f5d5742638f114ddd854dd264bd28d6343 |
+| data/v1.2_sd_core_train_en.jsonl | 26545 | 151419585 | 2fffd5d0b7d1cb417a4dd919af39aba859f736d3f2da2d3f52340169388b3ac9 |
+| data/v1.2_sd_core_validation_en.jsonl | 3561 | 20200172 | 03a4f3126a1ae181524610cf6ef6efd60774f61b78a31e8fb9e9d232a3abc06f |
+| data/v1.2_sd_core_test_en.jsonl | 3894 | 21668841 | 83576760eb091531d08ae6a7b6bf95d52b8266a6e5fe4aa9c2875c3eccd56110 |
+| data/v1.2_sd_core_ood_test_en.jsonl | 61479 | 417267736 | a7a75d1a0551cfe8f688b90af32b535cb54767944fbf319a4a8c53e64b2adb17 |
 | data/v1.2_sd_core_strict_train.jsonl | 76378 | 476844445 | 4ea2d05b59ff253fd44c00f8f69a978159b7548b72a5016822c0fcc7520f0153 |
 | data/v1.2_sd_core_strict_validation.jsonl | 9558 | 57778166 | 52f5da72bf071c27bc8d842de55f8a46d2ed5cb4d33f567b9e4ce3d597cc7152 |
 | data/v1.2_sd_core_strict_test.jsonl | 9543 | 59218475 | 753734fe89bf899592591cf863b56bfcbc6219b5735aaadd4c5980dbcb2458ed |

@@ -1,6 +1,6 @@
 {
   "schema_version": "gridinstruct-scoped-evidence-v2",
-  "generated_at": "2026-08-28T21:43:52.345119+00:00",
+  "generated_at": "2026-08-29T07:59:26.982053+00:00",
   "status": "pass",
   "scope": "local_hash_bound_release_candidate",
   "runtime_policy": "local CPU/MPS only; no remote GPU execution",
@@ -77,7 +77,7 @@
     },
     "reports/current_quality_snapshot_v1.2_sd_core.json": {
       "path": "reports/current_quality_snapshot_v1.2_sd_core.json",
-      "sha256": "6ed0b9b991d8af62c8d8d1e98d832668b70977b783f80c760fbaf9ac1e1d2143",
+      "sha256": "70634a2e1f4b75774d8cf83b6e918e044ae5531ee4f0c1ccd01ad9189039f37c",
       "bytes": 2358,
       "reported_status": "scoped_pass_with_external_gates_pending",
       "bound": true
@@ -518,35 +518,35 @@
     },
     "reports/manuscript_final_audit_20260812.json": {
       "path": "reports/manuscript_final_audit_20260812.json",
-      "sha256": "3b48f2c2026bf974fb9f9f9074044ed70f3a28a6e3f0a171fd26d7b7a58fdc38",
+      "sha256": "f3c30853bcc44026585f52d8e5a6103ca03bc6d118f46f4462d00290ee72290b",
       "bytes": 1399,
       "reported_status": "pass",
       "bound": true
     },
     "reports/manuscript_metric_bindings_v1.2_sd_core.json": {
       "path": "reports/manuscript_metric_bindings_v1.2_sd_core.json",
-      "sha256": "5841ac901e335dae5e88e87ba0d609160ad24864cefc0b5655d96d3e53e2f459",
-      "bytes": 6570,
+      "sha256": "aebecb4168f485d5a2ba59887c3cb80a955b635a542e01c367e58cc1c35909ec",
+      "bytes": 6989,
       "reported_status": "pass",
       "bound": true
     },
     "reports/manuscript_metric_bindings_v1.2_sd_core.md": {
       "path": "reports/manuscript_metric_bindings_v1.2_sd_core.md",
-      "sha256": "cfc99cf8f691c78bfb2e77d6b61bffb8cec45977ab8d746f8e82c37b1df46f82",
-      "bytes": 3340,
+      "sha256": "df80315c19fe7c8689e13dfa67ecebaa6110e3ad6b82e5ccc7894e95efdd8c37",
+      "bytes": 3636,
       "reported_status": null,
       "bound": true
     },
     "reports/current_surface_seed_stability_v1.2_sd_core.json": {
       "path": "reports/current_surface_seed_stability_v1.2_sd_core.json",
-      "sha256": "0c6beeadbed412b6d2b28b7fe445759c236f65607a8e0b9ab0f3ca2642c09528",
+      "sha256": "e3c9dd2c32e6025601dd4c113d41457b5e327da02a7d5fe3e0d62db531f5b939",
       "bytes": 10677,
       "reported_status": "pass",
       "bound": true
     },
     "reports/current_surface_seed_stability_v1.2_sd_core.md": {
       "path": "reports/current_surface_seed_stability_v1.2_sd_core.md",
-      "sha256": "af52c3e92a067d166de9302bab249910f006fe5b7cf50ece5d47f46b032c7d35",
+      "sha256": "2535203d0416c58507983fc828077564423a7b564494c88c4394b5efbfab3cc6",
       "bytes": 973,
       "reported_status": null,
       "bound": true
@@ -560,50 +560,50 @@
     },
     "paper/scientific_data_latex/main.pdf": {
       "path": "paper/scientific_data_latex/main.pdf",
-      "sha256": "cc222a714c6484f4de5c1fde7ea828753a08c5b567bba0a2427bfd1fa2cbce51",
-      "bytes": 896600,
+      "sha256": "c8b4b96b0800c69c3284c25a3fa134c7dacc6a5ce4791bb6eb9a2e6632c3c8e4",
+      "bytes": 937443,
       "reported_status": null,
       "bound": true
     },
     "paper/scientific_data_latex/LATEX_BUILD_REPORT.json": {
       "path": "paper/scientific_data_latex/LATEX_BUILD_REPORT.json",
-      "sha256": "4982a2304841af4af60506e5d4389cadc14f31c28de37885465108b745cbb1f1",
-      "bytes": 12350,
+      "sha256": "4f664626fc2c115dbb97cd322d64293c63794be03f61b90d62ecf7e466530dba",
+      "bytes": 14017,
       "reported_status": "pass",
       "bound": true
     },
     "paper/scientific_data_latex/LATEX_BUILD_REPORT.md": {
       "path": "paper/scientific_data_latex/LATEX_BUILD_REPORT.md",
-      "sha256": "e6b199da0b924a63f0c976d3610e1a25a71973654242ceb1a3d47c70826743be",
+      "sha256": "1a9c39ecee031ef04f33bdc8e9cd2d04a669f5a018144e5fba09cbed38490848",
       "bytes": 496,
       "reported_status": null,
       "bound": true
     },
     "paper/scientific_data_latex/build/main.pdf": {
       "path": "paper/scientific_data_latex/build/main.pdf",
-      "sha256": "cc222a714c6484f4de5c1fde7ea828753a08c5b567bba0a2427bfd1fa2cbce51",
-      "bytes": 896600,
+      "sha256": "c8b4b96b0800c69c3284c25a3fa134c7dacc6a5ce4791bb6eb9a2e6632c3c8e4",
+      "bytes": 937443,
       "reported_status": null,
       "bound": true
     },
     "paper/scientific_data_latex/build_embedded/main_with_bbl.pdf": {
       "path": "paper/scientific_data_latex/build_embedded/main_with_bbl.pdf",
-      "sha256": "69b9b1f759945a6936f6acd7dd14cb325733d0e446422848343a9cf18bcab8ae",
-      "bytes": 896600,
+      "sha256": "d888f33cd141e7e201262eb6e90fa9d5b0a812d2cc27c05be5f1ff56811f7fbb",
+      "bytes": 937443,
       "reported_status": null,
       "bound": true
     },
     "paper/scientific_data_latex/GridInstruct_SD_scientific_data_official_template.pdf": {
       "path": "paper/scientific_data_latex/GridInstruct_SD_scientific_data_official_template.pdf",
-      "sha256": "cc222a714c6484f4de5c1fde7ea828753a08c5b567bba0a2427bfd1fa2cbce51",
-      "bytes": 896600,
+      "sha256": "c8b4b96b0800c69c3284c25a3fa134c7dacc6a5ce4791bb6eb9a2e6632c3c8e4",
+      "bytes": 937443,
       "reported_status": null,
       "bound": true
     },
     "paper/scientific_data_latex/GridInstruct_SD_scientific_data_latex_source.zip": {
       "path": "paper/scientific_data_latex/GridInstruct_SD_scientific_data_latex_source.zip",
-      "sha256": "e5bf86fa779f33d84572aed5930592c34fb8ab16ac01005df4f65199246711a5",
-      "bytes": 9174030,
+      "sha256": "74e957f297ef16ec176df2e8da869451b8ca47b99f797c6a2f4e03681ef24f8b",
+      "bytes": 9205786,
       "reported_status": null,
       "bound": true
     },
@@ -616,22 +616,22 @@
     },
     "benchmark/instruction_surface_balanced_v1.2_sd_core_leakage_fixed/tfidf_report.json": {
       "path": "benchmark/instruction_surface_balanced_v1.2_sd_core_leakage_fixed/tfidf_report.json",
-      "sha256": "678b36d0e6954a7b77ab49e366a1c110fa13b053958047376f1c518629b1bac6",
+      "sha256": "8be6bb5afbd94330200d6707d30f7299eac3099bb6044d2a40539ac32cc86b68",
       "bytes": 8556,
       "reported_status": "pass",
       "bound": true
     },
     "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_report.json": {
       "path": "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_report.json",
-      "sha256": "1cda8635ffa1dbaa025932d4ad40b3172b95696a8a9ce21df284e0f46e833655",
+      "sha256": "b372a871bf985ce0ad8ba5ba140e0e417928f8cf42c1d94a3815d11ebf32ae5d",
       "bytes": 8342,
       "reported_status": "pass",
       "bound": true
     },
     "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_calibrated_report.json": {
       "path": "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_calibrated_report.json",
-      "sha256": "79523ec943ee635ebe112694281dae6101eae0cf36ae9c3d7819ce4636a51593",
-      "bytes": 4332,
+      "sha256": "4e3da2645ba28fee4b493c2f8b8004825da9902b95ce224a3313738028a2d5f3",
+      "bytes": 4336,
       "reported_status": "pass",
       "bound": true
     },
@@ -651,7 +651,7 @@
     },
     "benchmark/instruction_surface_balanced_v1.2_sd_core_leakage_fixed/calibrated_tfidf_report.json": {
       "path": "benchmark/instruction_surface_balanced_v1.2_sd_core_leakage_fixed/calibrated_tfidf_report.json",
-      "sha256": "18db9e280bbded4aa0128ca7a1de4a88c2021b2c18c8b73f52a41d1201f6ef8b",
+      "sha256": "2f0f34d7c0e2e31769ab12c571bf3207496b22344c9325c6d1f951f905ba3f99",
       "bytes": 4417,
       "reported_status": "pass",
       "bound": true
@@ -728,14 +728,14 @@
     },
     "metadata/dataset_metadata.json": {
       "path": "metadata/dataset_metadata.json",
-      "sha256": "c9f6ec7133d4d17847c4365e2fe5334248c0500324d8acd9b715ffb4001d3403",
-      "bytes": 164251,
+      "sha256": "eec17f791a97faeae259e0cd1ad8b89373fdab5e1929efcef9a9c3b28473db64",
+      "bytes": 164713,
       "reported_status": null,
       "bound": true
     },
     "metadata/data_lineage_manifest.json": {
       "path": "metadata/data_lineage_manifest.json",
-      "sha256": "210354e003e4f494b4d239a534c50ab4a224bd8837c1ab6c41512a4a89477f32",
+      "sha256": "b6dd712ec4f4f4fc43b072161241b9dc116990eadbc7cc23999f4a02e64c526b",
       "bytes": 2043,
       "reported_status": "pass",
       "bound": true
@@ -749,8 +749,8 @@
     },
     "paper/scientific_data_latex/main.tex": {
       "path": "paper/scientific_data_latex/main.tex",
-      "sha256": "24149a1cd9c536e9e84ccc77ee2e37208be0ce2771283d75ac999a382943b458",
-      "bytes": 86492,
+      "sha256": "2fd15f1ad902540f90f9c6826d3255af7ecd1e75a489033d388f2107c6c3d30a",
+      "bytes": 87550,
       "reported_status": null,
       "bound": true
     },

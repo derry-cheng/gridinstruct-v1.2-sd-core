@@ -37,8 +37,10 @@ C1--C5 scope without treating external inputs as completed.
 The LaTeX package is kept under `paper/scientific_data_latex/`: `main.tex` is the source,
 `build/main.pdf` is the main compilation, `build_embedded/main_with_bbl.pdf` is the embedded-
 bibliography compilation, and `LATEX_BUILD_REPORT.json` records the current build. Editable
-Drawio sources are under `figures/editable`, while article and supporting exports are separated
-under `figures/generated`. Build outputs remain separate from benchmark tables and raw data.
+Drawio sources are under `figures/sd_core_publication/`, while synchronized manuscript copies are
+kept under `paper/scientific_data_latex/figures/editable/` and article exports under
+`paper/scientific_data_latex/figures/generated/article/`. Build outputs remain separate from
+benchmark tables and raw data.
 
 All commands in this repository use the local snapshot. No remote workspace, GPU job, or
 untracked checkpoint is required for the published local audits.

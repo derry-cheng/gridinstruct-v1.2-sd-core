@@ -174,8 +174,8 @@
     },
     {
       "path": "scripts/audit_manuscript_metric_bindings.py",
-      "bytes": 9112,
-      "sha256": "42aeb1dadbf87f4f62547219fa54c9f2caacf20b201247cce60ed069ca191456"
+      "bytes": 11982,
+      "sha256": "05847eee1db0301b315b951e0283f2b870da7625b44a2e676dffb19668084a77"
     },
     {
       "path": "scripts/audit_model_score_quality.py",
@@ -284,8 +284,8 @@
     },
     {
       "path": "scripts/build_compact_public_archive.py",
-      "bytes": 9672,
-      "sha256": "70e10d342a5f5a6da80819da3848a032e578e472d1e65893908dc5663527b6f6"
+      "bytes": 11688,
+      "sha256": "90d6769bd3abc909484d570d84afe42599b80051122a707139abe7be86d06727"
     },
     {
       "path": "scripts/build_current_file_manifest.py",
@@ -669,8 +669,8 @@
     },
     {
       "path": "scripts/rebuild_latex_submission_package.py",
-      "bytes": 9891,
-      "sha256": "d9f494b9f284c7bc28736e814a6f30f4b8656a435ccd0f277d2504f63763ffc2"
+      "bytes": 12303,
+      "sha256": "e0fa4b02d5e454f96a3c60c85a3b7a5159d30ce0dc1393f53463dab449f7c7ea"
     },
     {
       "path": "scripts/rebuild_opf_replay_inputs.py",
@@ -704,8 +704,8 @@
     },
     {
       "path": "scripts/refresh_current_snapshot_metadata.py",
-      "bytes": 14002,
-      "sha256": "85e0dcda130b9232964626348667237cb8c39a412e1239219fe744cf3fcbc177"
+      "bytes": 14991,
+      "sha256": "c4e5238eb3c9c2c9108d2d909855b7093c8e4948d4957452ceb3a7b4cdaf2ff0"
     },
     {
       "path": "scripts/refresh_opf_secure_candidate_report_schema.py",
@@ -894,8 +894,8 @@
     },
     {
       "path": "scripts/run_tfidf_task_baselines.py",
-      "bytes": 14057,
-      "sha256": "8438a8718212650cc594a0e42f4bc6abf261ac6423ab6644fa38abb312d7badf"
+      "bytes": 14117,
+      "sha256": "8429f7bf73687c6870a85b30716543ba3ce7dd7ee063df3f0474e132b7857945"
     },
     {
       "path": "scripts/run_transformer_classifier_baseline.py",
@@ -959,8 +959,8 @@
     },
     {
       "path": "scripts/validate_release_archive_replay.py",
-      "bytes": 20351,
-      "sha256": "8ce360917ca3f348a5c35a666465baa242b85396b71caf4b47aa1b81cef4c80f"
+      "bytes": 25563,
+      "sha256": "6523dcfb76f1da76e75daf67d298fc90b94c6e7bca4d8809b2bec35b219fb41b"
     },
     {
       "path": "scripts/validate_source_english_alignment.py",

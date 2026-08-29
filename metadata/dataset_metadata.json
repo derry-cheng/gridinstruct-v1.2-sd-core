@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-28T21:43:29.565654+00:00",
+  "generated_at": "2026-08-29T07:58:53.755354+00:00",
   "dataset": {
     "title": "GridInstruct v1.2",
     "description": "Topology-grounded instruction dataset for power dispatch assistance and benchmark evaluation.",
@@ -1661,7 +1661,8 @@
       "numerical_nonconvergence": 234
     },
     "state_gate_failure_count": 0,
-    "state_gate_failures": []
+    "state_gate_failures": [],
+    "scope": "core four-network generator report; broader release registry is recorded separately"
   },
   "review_pipeline": {
     "machine_screen_report_path": "reports/expert_review_agreement_v1.2_paper_cumulative_current.json",
@@ -3199,23 +3200,23 @@
     {
       "path": "docs/PROJECT_STRUCTURE.md",
       "exists": true,
-      "bytes": 1768,
+      "bytes": 1998,
       "records": null,
-      "sha256": "4f0bff4b73781f9645ca9f3c2f104ffd6c51d3d08e5807bdce0a04d4153d5e0c"
+      "sha256": "3f154b6384c886efd9a95ad4ba5eda9a9f8ce2d0c7161aa6183d9d7aacf6a4d0"
     },
     {
       "path": "docs/REVIEW_ISSUE_CLOSURE_2026-08-28.md",
       "exists": true,
-      "bytes": 2987,
+      "bytes": 3151,
       "records": null,
-      "sha256": "c700db12f826ddf18893b2bc9ea13054edf33f06a35f499b07174a143d2d6241"
+      "sha256": "4e321b5d74f2db2a398a375959d2ed45425255328044d8953bb250a1de24727a"
     },
     {
       "path": "docs/SCIENTIFIC_DATA_READINESS_CHECKLIST.md",
       "exists": true,
-      "bytes": 2738,
+      "bytes": 2826,
       "records": null,
-      "sha256": "e6c9fc927c12734abde7d0e20c1525b12aed37f2e53dfb93f86caf282dec5720"
+      "sha256": "ac208e6be5e1b420cc3d4e88e32ddb2f8f746616be4d9416bbd30e663b9e038e"
     },
     {
       "path": "docs/THIRD_PARTY_ASSETS.md",
@@ -3248,9 +3249,9 @@
     {
       "path": "metadata/code_manifest.json",
       "exists": true,
-      "bytes": 34836,
+      "bytes": 34839,
       "records": null,
-      "sha256": "9f36b92c7f0236c2df0f1b37144903a0f1cd0d59b337845bd85524afe6f0fbca"
+      "sha256": "fa24f499c4233ecbb9ea4050a4f03f2c9b19d67358fd79766ec2ed34823f497c"
     },
     {
       "path": "metadata/data_descriptor_audit.json",
@@ -3514,16 +3515,16 @@
     {
       "path": "scripts/build_compact_public_archive.py",
       "exists": true,
-      "bytes": 9672,
+      "bytes": 11688,
       "records": null,
-      "sha256": "70e10d342a5f5a6da80819da3848a032e578e472d1e65893908dc5663527b6f6"
+      "sha256": "90d6769bd3abc909484d570d84afe42599b80051122a707139abe7be86d06727"
     },
     {
       "path": "scripts/refresh_current_snapshot_metadata.py",
       "exists": true,
-      "bytes": 14002,
+      "bytes": 14991,
       "records": null,
-      "sha256": "85e0dcda130b9232964626348667237cb8c39a412e1239219fe744cf3fcbc177"
+      "sha256": "c4e5238eb3c9c2c9108d2d909855b7093c8e4948d4957452ceb3a7b4cdaf2ff0"
     },
     {
       "path": "scripts/repair_official_exact_content_overlap.py",
@@ -3535,9 +3536,9 @@
     {
       "path": "scripts/validate_release_archive_replay.py",
       "exists": true,
-      "bytes": 20351,
+      "bytes": 25563,
       "records": null,
-      "sha256": "8ce360917ca3f348a5c35a666465baa242b85396b71caf4b47aa1b81cef4c80f"
+      "sha256": "6523dcfb76f1da76e75daf67d298fc90b94c6e7bca4d8809b2bec35b219fb41b"
     },
     {
       "path": "scripts/write_compact_bundle_validation.py",
@@ -3644,5 +3645,16 @@
       "international_human_results_absent": true,
       "network_family_envelope_scope": true
     }
+  },
+  "scenario_registry": {
+    "path": "simulation_outputs/contingency/scenarios_converged.json",
+    "records": 2822,
+    "solver_status_counts": {
+      "converged": 2821,
+      "unsupplied_island": 1
+    },
+    "converged_records": 2821,
+    "explicit_boundary_records": 1,
+    "sha256": "8f97a66cb91fea81fd495931b2af2e5eb4e5a5027a989c315c5523694fee93af"
   }
 }
