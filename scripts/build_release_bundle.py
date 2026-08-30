@@ -267,7 +267,7 @@ def should_include(path: Path) -> bool:
             "extended_topology_stress_attempts_v1.2_sd_core", "dataset_scenario_link_migration_v1.2_sd_core",
             "frozen_external_topology_v1_append", "equipment_contingency_instruction_expansion_v1.2_sd_core",
             "independent_query_truth_validation_v1.2_sd_core", "cross_solver_power_flow_v1.2_sd_core",
-            "operation_ticket_state_consistency_v1.2_sd_core", "ood_stratified_metrics_v1.2_sd_core",
+            "operation_ticket_state_consistency_v1.2_sd_core", "ood_stratified_metrics_v1.2_sd_core", "typed_semantic_pattern_audit_v1.2_sd_core",
             "near_duplicate_audit_v1.2_sd_core", "group_cluster_bootstrap_v1.2_sd_core",
             "current_quality_snapshot_v1.2_sd_core", "release_claim_alignment_audit_v1.2_sd_core",
             "core_n1_denominator_v1.2_sd_core",

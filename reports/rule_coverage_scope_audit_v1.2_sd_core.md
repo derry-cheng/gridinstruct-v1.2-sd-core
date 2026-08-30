@@ -1,6 +1,6 @@
 # Rule Coverage and Scope Audit
 
-- Generated: 2026-08-28T19:59:41.722580+00:00
+- Generated: 2026-08-30T02:49:23.331301+00:00
 - Status: `pass`
 - Rule cards: 17
 - Records with rule links: 95479
@@ -31,3 +31,14 @@
 ## Scope Statement
 
 The release uses 17 traceable rule cards as modeling abstractions over public power-grid operating documents. This audit verifies link integrity and record-level coverage of those rule cards; it does not claim that GridInstruct is a complete regulatory corpus.
+
+## Source-kind coverage
+
+Record counts in this table are non-exclusive because one record can link to more than one rule card.
+
+| Source kind | Rule cards | Unique records | Rule links |
+| --- | ---: | ---: | ---: |
+| dataset_policy_with_formal_regulatory_principle | 6 | 57000 | 167604 |
+| formal_clause_plus_dataset_procedure | 3 | 11722 | 33482 |
+| formal_clause_plus_internal_tool_contract | 5 | 41058 | 89854 |
+| internal_data_contract | 3 | 18712 | 49952 |

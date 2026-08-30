@@ -47,8 +47,20 @@ def write_markdown(report: dict[str, Any], path: Path) -> None:
             "## Scope Statement",
             "",
             report["scope_statement"],
+            "",
+            "## Source-kind coverage",
+            "",
+            "Record counts in this table are non-exclusive because one record can link to more than one rule card.",
+            "",
+            "| Source kind | Rule cards | Unique records | Rule links |",
+            "| --- | ---: | ---: | ---: |",
         ]
     )
+    for row in report["source_kind_summary"]:
+        lines.append(
+            f"| {row['source_kind']} | {row['rule_card_count']} | "
+            f"{row['unique_record_count']} | {row['record_link_count']} |"
+        )
     path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
@@ -64,6 +76,10 @@ def main() -> None:
     rule_ids = {row["rule_id"] for row in rules}
     by_rule: Counter[str] = Counter()
     by_task_rule: dict[str, Counter[str]] = defaultdict(Counter)
+    rule_by_id = {row["rule_id"]: row for row in rules}
+    source_kind_links: Counter[str] = Counter()
+    source_kind_record_ids: dict[str, set[str]] = defaultdict(set)
+    source_kind_rule_ids: dict[str, set[str]] = defaultdict(set)
     invalid_links = []
     records_with_rule_links = 0
     total_records = 0
@@ -79,6 +95,10 @@ def main() -> None:
                 continue
             by_rule[rule_id] += 1
             by_task_rule[row.get("task_type")][rule_id] += 1
+            source_kind = str(rule_by_id[rule_id].get("source_kind") or "unspecified")
+            source_kind_links[source_kind] += 1
+            source_kind_record_ids[source_kind].add(str(row.get("id") or f"line-{line_no}"))
+            source_kind_rule_ids[source_kind].add(rule_id)
 
     rule_rows = []
     missing_fields = []
@@ -115,6 +135,15 @@ def main() -> None:
         "unlinked_rules": unlinked_rules,
         "rules": rule_rows,
         "task_rule_matrix": {task: dict(counter) for task, counter in sorted(by_task_rule.items())},
+        "source_kind_summary": [
+            {
+                "source_kind": source_kind,
+                "rule_card_count": len(source_kind_rule_ids[source_kind]),
+                "unique_record_count": len(source_kind_record_ids[source_kind]),
+                "record_link_count": source_kind_links[source_kind],
+            }
+            for source_kind in sorted(source_kind_rule_ids)
+        ],
         "scope_statement": (
             f"The release uses {len(rules)} traceable rule cards as modeling abstractions over public power-grid operating documents. "
             "This audit verifies link integrity and record-level coverage of those rule cards; it does not claim that GridInstruct is a complete regulatory corpus."

@@ -1,7 +1,7 @@
 # GridInstruct v1.2-sd-core public review package
 
-This package description was refreshed on 29 August 2026. The compact archive
-contains 135 dereferenced members and is rebuilt from the current local files;
+This package description was refreshed on 30 August 2026. The compact archive
+contains 144 dereferenced members and is rebuilt from the current local files;
 its exact member list and receipts are recorded in
 `compact_archive_manifest_v1.2_sd_core.json`.
 

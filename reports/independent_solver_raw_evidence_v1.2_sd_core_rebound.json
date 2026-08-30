@@ -1,6 +1,6 @@
 {
   "contract_version": "gridinstruct-independent-solver-evidence-v1",
-  "generated_at": "2026-08-19T11:46:09.364721+00:00",
+  "generated_at": "2026-08-30T03:06:33.512282+00:00",
   "solver": {
     "name": "LightSim2Grid",
     "version": "0.10.3",
@@ -14,7 +14,7 @@
   },
   "case_manifest": {
     "path": "metadata/independent_solver_case_manifest_v1.json",
-    "sha256": "eb483e504efd668f3b1bf1dba766434108de273099b2df019a22e5f9f90b3edc",
+    "sha256": "93066c920a783a5b5f64062b773c6c5b6b1637b07e1ec7ab75b5cb6c620ff79f",
     "derivation": "rebound to a local manifest derived from the retained evidence rows"
   },
   "tolerances": {
@@ -5156,7 +5156,7 @@
   },
   "dataset_binding": {
     "path": "data/gridinstruct_v1.2_sd_core_en.jsonl",
-    "sha256": "882dc4960dcf14d5b6e6465ced25051c860f1b360ffdb58770c3b68d6e7b60b3",
+    "sha256": "18a4d36153f9d77ae9b26744978a7bea27138aee048d1b12906335797e908013",
     "scope": "current released English table; fixed-control case IDs are drawn from its registered OPF scenario IDs"
   }
 }

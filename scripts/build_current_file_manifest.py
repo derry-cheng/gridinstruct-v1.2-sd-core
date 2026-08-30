@@ -22,7 +22,7 @@ def main() -> None:
                 continue
             rows[path] = record
     with OUTPUT.open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.writer(handle)
+        writer = csv.writer(handle, lineterminator="\n")
         writer.writerow(["bytes", "exists", "path", "records", "sha256"])
         for path in sorted(rows):
             record = rows[path]

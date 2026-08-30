@@ -86,6 +86,11 @@ def main() -> None:
         "reports/compliance_label_current_audit_v1.2_sd_core.json",
         "reports/official_exact_content_overlap_repair_v1.2_sd_core.json",
         "reports/strict_exact_content_overlap_repair_v1.2_sd_core.json",
+        "reports/ood_stratified_metrics_v1.2_sd_core.json",
+        "reports/rule_coverage_scope_audit_v1.2_sd_core.json",
+        "reports/typed_semantic_pattern_audit_v1.2_sd_core.json",
+        "reports/cross_solver_power_flow_v1.2_sd_core.json",
+        "reports/core_n1_denominator_v1.2_sd_core.json",
     ]
     required_predictions = sorted(
         str(path.relative_to(root))
@@ -193,6 +198,11 @@ def main() -> None:
         "scripts/validate_query_truth_independent.py",
         "scripts/audit_compliance_labels_current.py",
         "scripts/repair_official_exact_content_overlap.py",
+        "scripts/audit_manuscript_metric_bindings.py",
+        "scripts/audit_rule_coverage_and_scope.py",
+        "scripts/audit_typed_semantic_patterns.py",
+        "scripts/build_compact_public_archive.py",
+        "scripts/validate_release_archive_replay.py",
     ]
     local_required = inputs + required_reports + required_predictions + required_manuscript + figure_files
     required_artifacts = collect_required(root, local_required)

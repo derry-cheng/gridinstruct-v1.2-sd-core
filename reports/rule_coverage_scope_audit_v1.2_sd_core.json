@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-28T19:59:41.722580+00:00",
+  "generated_at": "2026-08-30T02:49:23.331301+00:00",
   "status": "pass",
   "dataset": "data/gridinstruct_v1.2_sd_core_en.jsonl",
   "rule_count": 17,
@@ -325,5 +325,31 @@
       "REG_QUERY_001": 946
     }
   },
+  "source_kind_summary": [
+    {
+      "source_kind": "dataset_policy_with_formal_regulatory_principle",
+      "rule_card_count": 6,
+      "unique_record_count": 57000,
+      "record_link_count": 167604
+    },
+    {
+      "source_kind": "formal_clause_plus_dataset_procedure",
+      "rule_card_count": 3,
+      "unique_record_count": 11722,
+      "record_link_count": 33482
+    },
+    {
+      "source_kind": "formal_clause_plus_internal_tool_contract",
+      "rule_card_count": 5,
+      "unique_record_count": 41058,
+      "record_link_count": 89854
+    },
+    {
+      "source_kind": "internal_data_contract",
+      "rule_card_count": 3,
+      "unique_record_count": 18712,
+      "record_link_count": 49952
+    }
+  ],
   "scope_statement": "The release uses 17 traceable rule cards as modeling abstractions over public power-grid operating documents. This audit verifies link integrity and record-level coverage of those rule cards; it does not claim that GridInstruct is a complete regulatory corpus."
 }

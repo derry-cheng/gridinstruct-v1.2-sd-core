@@ -1,6 +1,6 @@
 # Technical Validation
 
-Generated: 2026-08-29
+Generated: 2026-08-30
 
 ## International Rule-Probe Extension
 
@@ -8,7 +8,7 @@ The separate jurisdictional extension passes its local contract gate for 8 offic
 
 The companion manifest contains two cross-jurisdiction 256/256 folds and two within-jurisdiction 192/64 variant-holdout folds, all with zero train/test ID overlap. A CPU character TF--IDF nearest-neighbour output-copy diagnostic completes all four folds with macro exact match 0.0000, cross-jurisdiction token-F1 0.5303, within-jurisdiction token-F1 0.9756, and structured field scores of 0.0000/1.0000 for the same two fold groups. An explicit-input contract-copy control reaches 1.000 on the five structured fields by construction and is retained only to expose input leakage. These are lexical-transfer diagnostics; they do not establish held-out-jurisdiction semantic generalization. The international review artifact contains 128 stratified records with two blank reviewer assignments per record; it is excluded from metrics and human agreement remains pending.
 
-The current compact review archive was extracted in an isolated temporary directory and replayed. Its 135 dereferenced members, canonical English table, full official and strict projections, selected physical registries, receipts, and review-package geometry pass the declared checks; the isolated validator reports zero duplicate-ID and JSONL parse errors. The converged scenario registry and bounded OPF evidence are included, while the full construction-attempt ledger and a separate query-truth ledger remain outside the compact boundary.
+The current compact review archive was extracted in an isolated temporary directory and replayed. Its 144 dereferenced members, canonical English table, full official and strict projections, selected physical registries, receipts, and review-package geometry pass the declared checks; the isolated validator reports zero duplicate-ID and JSONL parse errors. The OOD-stratum, rule-source, typed-configuration, cross-solver, and core N--1 denominator reports used by the manuscript are included. The converged scenario registry and bounded OPF evidence are included, while the full construction-attempt ledger and a separate query-truth ledger remain outside the compact boundary.
 
 ## Dataset Integrity
 
@@ -56,6 +56,12 @@ The resulting request surface explicitly states the operator's requested
 dispatch route in natural language; consequently, the closed-label intent
 baseline is expected to be highly separable and is reported as a learnability
 diagnostic rather than evidence of dispatch competence.
+
+The wording-independent typed-configuration audit excludes user-facing wording,
+free-text targets, and record identifiers. It counts 8,823 structured
+configurations and 4,968 abstract operating/task patterns across the core table;
+these counts quantify variant fan-out and do not establish semantic correctness,
+linguistic naturalness, or expert agreement.
 
 The large instruction-surface OOD view is stored as an ID-only manifest and is
 materialised from the canonical table on demand. This avoids a second copy of

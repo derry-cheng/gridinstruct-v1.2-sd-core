@@ -1,0 +1,71 @@
+{
+  "generated_at": "2026-08-30T02:55:32.499270+00:00",
+  "status": "pass",
+  "dataset": "data/gridinstruct_v1.2_sd_core_en.jsonl",
+  "total_records": 95479,
+  "aggregate": {
+    "typed_configuration": {
+      "records": 95479,
+      "unique_signatures": 8823,
+      "unique_rate": 0.09240775,
+      "singleton_signatures": 3932,
+      "median_records_per_signature": 2,
+      "p95_records_per_signature": 45,
+      "max_records_per_signature": 2879
+    },
+    "abstract_operating_task_pattern": {
+      "records": 95479,
+      "unique_signatures": 4968,
+      "unique_rate": 0.05203238,
+      "singleton_signatures": 2694,
+      "median_records_per_signature": 1.0,
+      "p95_records_per_signature": 66,
+      "max_records_per_signature": 3798
+    }
+  },
+  "task_summary": {
+    "auxiliary_decision": {
+      "records": 18087,
+      "typed_configurations": 2015,
+      "abstract_patterns": 475,
+      "typed_unique_rate": 0.11140598,
+      "abstract_unique_rate": 0.02626196
+    },
+    "dispatcher_intent_tool_call": {
+      "records": 19773,
+      "typed_configurations": 1355,
+      "abstract_patterns": 300,
+      "typed_unique_rate": 0.06852779,
+      "abstract_unique_rate": 0.0151722
+    },
+    "intelligent_data_query": {
+      "records": 17766,
+      "typed_configurations": 1261,
+      "abstract_patterns": 228,
+      "typed_unique_rate": 0.07097827,
+      "abstract_unique_rate": 0.0128335
+    },
+    "operation_ticket_check": {
+      "records": 10881,
+      "typed_configurations": 582,
+      "abstract_patterns": 582,
+      "typed_unique_rate": 0.05348773,
+      "abstract_unique_rate": 0.05348773
+    },
+    "regulation_compliance_check": {
+      "records": 24767,
+      "typed_configurations": 312,
+      "abstract_patterns": 85,
+      "typed_unique_rate": 0.01259741,
+      "abstract_unique_rate": 0.00343199
+    },
+    "regulation_qa": {
+      "records": 4205,
+      "typed_configurations": 3298,
+      "abstract_patterns": 3298,
+      "typed_unique_rate": 0.7843044,
+      "abstract_unique_rate": 0.7843044
+    }
+  },
+  "scope_statement": "This audit counts structured configuration signatures from the released table. Instruction, rationale, free-text output, and record identifiers are excluded. The result measures configuration multiplicity and template fan-out; it is not a human semantic or linguistic validation."
+}
