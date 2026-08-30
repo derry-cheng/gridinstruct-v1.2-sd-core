@@ -4,7 +4,7 @@
   "timestamp_policy": "deterministic SOURCE_DATE_EPOCH=0 archive metadata",
   "archive_layout": "compact_public_review_package",
   "bundle": "release/GridInstruct_v1.2_sd_core_data_only.tar.gz",
-  "bundle_sha256": "d77687717d3c01e3a46133840279207f215449b01a7531efabf7fb3a1f1f43f8",
+  "bundle_sha256": "31ae6f320a5b91d894be661703038dce0e778941ea01e4e9d87252f57d09b779",
   "member_count": 144,
   "members": [
     {
@@ -239,13 +239,13 @@
     },
     {
       "path": "figures/sd_core_publication/fig_opf_detail.drawio",
-      "bytes": 14088,
-      "sha256": "bcbedd6b7ca7d613252d6c3bdf6c3a7f0cea119f5d1ce48f5b49cd0eb6698e8d"
+      "bytes": 14086,
+      "sha256": "6ea8db16817154e5f5004a324fe4707a888d49552b812604d7a5559345747a11"
     },
     {
       "path": "figures/sd_core_publication/fig_opf_detail.png",
-      "bytes": 513214,
-      "sha256": "699f20d40582e872b5b3bf1ef083a71d308635c13b3988cf4937d694d10a7ef4"
+      "bytes": 472903,
+      "sha256": "0804fcc1191984266283e82616d2ceb83d17f7f613710ddd5260c1e9c2168928"
     },
     {
       "path": "metadata/archive_metadata.json",
@@ -280,7 +280,7 @@
     {
       "path": "metadata/evidence_binding_manifest.json",
       "bytes": 40005,
-      "sha256": "9838de21ee09e1053dcc0c05e25e24dfabf50f18a5f6b5abe863ab8a6bfbe7ff"
+      "sha256": "e826d86d2d1d0858f74190cba12f663376cc22f083219cb73c66a4e246881b27"
     },
     {
       "path": "metadata/expert_review_protocol.json",
@@ -339,8 +339,8 @@
     },
     {
       "path": "paper/scientific_data_latex/PAPER_CLAIM_AUDIT.json",
-      "bytes": 2306,
-      "sha256": "bb9a20790ac5388bb4507644aec8e78908070f1e332a1c95bfd389b6a0feb604"
+      "bytes": 2587,
+      "sha256": "e87adb3ef5231e0ea899d141a1ad526e8d1caa6e2d3f60d38020b738cd0401e5"
     },
     {
       "path": "release/README.md",
@@ -565,7 +565,7 @@
     {
       "path": "reports/manuscript_metric_bindings_v1.2_sd_core.json",
       "bytes": 8873,
-      "sha256": "10b809069c64bbfe646d6513d53d77ed2e89d8364c211a03ac918d10f06619b7"
+      "sha256": "ee6cdc90f3f9b15d023d334a68d9b1fda045c21a1e5255e0c4622493ee2a40cc"
     },
     {
       "path": "reports/manuscript_metric_bindings_v1.2_sd_core.md",
@@ -600,7 +600,7 @@
     {
       "path": "reports/release_claim_alignment_audit_v1.2_sd_core.json",
       "bytes": 5880,
-      "sha256": "d61773efb6789530798aacdc1ae42f87fecda878986aa93e59a3279357cb12a9"
+      "sha256": "8d0f1631631ad17b446541ee89138d528dc1620128e37b12d0cd95e397244030"
     },
     {
       "path": "reports/rule_coverage_scope_audit_v1.2_sd_core.json",

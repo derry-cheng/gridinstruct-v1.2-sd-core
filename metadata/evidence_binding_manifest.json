@@ -1,6 +1,6 @@
 {
   "schema_version": "gridinstruct-scoped-evidence-v2",
-  "generated_at": "2026-08-30T03:13:23.655284+00:00",
+  "generated_at": "2026-08-30T13:26:02.035149+00:00",
   "status": "pass",
   "scope": "local_hash_bound_release_candidate",
   "runtime_policy": "local CPU/MPS only; no remote GPU execution",
@@ -546,14 +546,14 @@
     },
     "reports/manuscript_final_audit_20260812.json": {
       "path": "reports/manuscript_final_audit_20260812.json",
-      "sha256": "adef3df96e949792a027016ea370a8390452b9e38175ea8374fc594784ae3369",
+      "sha256": "6929aa67e80dba12bce03fea65233a2e42e9b6882020f3a3009c4f28249012be",
       "bytes": 1399,
       "reported_status": "pass",
       "bound": true
     },
     "reports/manuscript_metric_bindings_v1.2_sd_core.json": {
       "path": "reports/manuscript_metric_bindings_v1.2_sd_core.json",
-      "sha256": "10b809069c64bbfe646d6513d53d77ed2e89d8364c211a03ac918d10f06619b7",
+      "sha256": "cc1532310eef44b9653191b42677ff9e5f1aa81946ce24d25fdaaea5afd9201b",
       "bytes": 8873,
       "reported_status": "pass",
       "bound": true
@@ -581,57 +581,57 @@
     },
     "paper/scientific_data_latex/PAPER_CLAIM_AUDIT.json": {
       "path": "paper/scientific_data_latex/PAPER_CLAIM_AUDIT.json",
-      "sha256": "bb9a20790ac5388bb4507644aec8e78908070f1e332a1c95bfd389b6a0feb604",
-      "bytes": 2306,
+      "sha256": "e87adb3ef5231e0ea899d141a1ad526e8d1caa6e2d3f60d38020b738cd0401e5",
+      "bytes": 2587,
       "reported_status": "WARN_SCOPED_EXTERNAL_GATES_PENDING",
       "bound": true
     },
     "paper/scientific_data_latex/main.pdf": {
       "path": "paper/scientific_data_latex/main.pdf",
-      "sha256": "1a9169b8b659de31fe0ab72762b87ad4d7505bc8231e848eec31f81914f18b5b",
-      "bytes": 867858,
+      "sha256": "dd2542355c77636f5b9fa18defb2f7b51ab8f133a218eba758edb456125fe543",
+      "bytes": 863670,
       "reported_status": null,
       "bound": true
     },
     "paper/scientific_data_latex/LATEX_BUILD_REPORT.json": {
       "path": "paper/scientific_data_latex/LATEX_BUILD_REPORT.json",
-      "sha256": "807acc319ab23129dfe3ec94a834bcb840e163992020a136d28346564d569303",
+      "sha256": "af6f9bf17ccfb4d8a199891f4f45f38d723cdaf9921e09a462eff4300a7182be",
       "bytes": 14376,
       "reported_status": "pass",
       "bound": true
     },
     "paper/scientific_data_latex/LATEX_BUILD_REPORT.md": {
       "path": "paper/scientific_data_latex/LATEX_BUILD_REPORT.md",
-      "sha256": "6d350f56958adaf12e8147f566f0547de50989f6903396ec6a72ff984401e0e8",
+      "sha256": "bd18821cd551134929543743c892a989ae75f4c1f50915131f220b774b2ec348",
       "bytes": 496,
       "reported_status": null,
       "bound": true
     },
     "paper/scientific_data_latex/build/main.pdf": {
       "path": "paper/scientific_data_latex/build/main.pdf",
-      "sha256": "1a9169b8b659de31fe0ab72762b87ad4d7505bc8231e848eec31f81914f18b5b",
-      "bytes": 867858,
+      "sha256": "dd2542355c77636f5b9fa18defb2f7b51ab8f133a218eba758edb456125fe543",
+      "bytes": 863670,
       "reported_status": null,
       "bound": true
     },
     "paper/scientific_data_latex/build_embedded/main_with_bbl.pdf": {
       "path": "paper/scientific_data_latex/build_embedded/main_with_bbl.pdf",
-      "sha256": "bd1ee84b5739cef3c986e35bafed57f526abe1ac983306474f8952d80253e4f9",
-      "bytes": 867858,
+      "sha256": "4d40c45e13c9634b207fe29db6ccb61ffc2a088e94e6e2782c0d40f7c4cf85f6",
+      "bytes": 863670,
       "reported_status": null,
       "bound": true
     },
     "paper/scientific_data_latex/GridInstruct_SD_scientific_data_official_template.pdf": {
       "path": "paper/scientific_data_latex/GridInstruct_SD_scientific_data_official_template.pdf",
-      "sha256": "1a9169b8b659de31fe0ab72762b87ad4d7505bc8231e848eec31f81914f18b5b",
-      "bytes": 867858,
+      "sha256": "dd2542355c77636f5b9fa18defb2f7b51ab8f133a218eba758edb456125fe543",
+      "bytes": 863670,
       "reported_status": null,
       "bound": true
     },
     "paper/scientific_data_latex/GridInstruct_SD_scientific_data_latex_source.zip": {
       "path": "paper/scientific_data_latex/GridInstruct_SD_scientific_data_latex_source.zip",
-      "sha256": "afc7ac6dbbbc1c329ef3437ebe455841f3338b8c4a4ee39c5bd767f0db3726e3",
-      "bytes": 9470185,
+      "sha256": "aa702dfdf36084c902fa10636778b082c133e3e6033b525d73efdcee6f7b567e",
+      "bytes": 9466167,
       "reported_status": null,
       "bound": true
     },
@@ -777,8 +777,8 @@
     },
     "paper/scientific_data_latex/main.tex": {
       "path": "paper/scientific_data_latex/main.tex",
-      "sha256": "cdbb42ae558fa7e60a8bfd513a203484ff200678562bdb6a621a400b9a2e3e04",
-      "bytes": 82309,
+      "sha256": "aedba5369c875779e3af53c6d95b2c97624a9262f086adfc83686d39b8f58f82",
+      "bytes": 82968,
       "reported_status": null,
       "bound": true
     },
@@ -805,8 +805,8 @@
     },
     "figures/sd_core_publication/fig_opf_detail.drawio": {
       "path": "figures/sd_core_publication/fig_opf_detail.drawio",
-      "sha256": "bcbedd6b7ca7d613252d6c3bdf6c3a7f0cea119f5d1ce48f5b49cd0eb6698e8d",
-      "bytes": 14088,
+      "sha256": "6ea8db16817154e5f5004a324fe4707a888d49552b812604d7a5559345747a11",
+      "bytes": 14086,
       "reported_status": null,
       "bound": true
     }
