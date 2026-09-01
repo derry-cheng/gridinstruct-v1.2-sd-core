@@ -4,7 +4,7 @@
   "timestamp_policy": "deterministic SOURCE_DATE_EPOCH=0 archive metadata",
   "archive_layout": "compact_public_review_package",
   "bundle": "release/GridInstruct_v1.2_sd_core_data_only.tar.gz",
-  "bundle_sha256": "31ae6f320a5b91d894be661703038dce0e778941ea01e4e9d87252f57d09b779",
+  "bundle_sha256": "40b814a05457c7775eef3716ec796d78bebaa0323071588f4c6217a8dc864203",
   "member_count": 144,
   "members": [
     {
@@ -229,23 +229,23 @@
     },
     {
       "path": "figures/sd_core_publication/fig0_framework.drawio",
-      "bytes": 21398,
-      "sha256": "1562927b887c2cf9de2b6ceba61faa238c248c7a90589b96172a5c72d8b3860f"
+      "bytes": 24286,
+      "sha256": "7e849c305e133ce8ea899d20505750f8c98bced22faacecd3e32b0d9acb5367b"
     },
     {
       "path": "figures/sd_core_publication/fig0_framework.png",
-      "bytes": 686970,
-      "sha256": "4391b9f82469d5611b536d97f274d5f11a5125b5deb1bc90bcd5f0f13491dd9c"
+      "bytes": 355138,
+      "sha256": "7b7cc3a1b9c3e968af3d22de3a5ba000fa1e96a4537df96c5760ed594dbd0d4e"
     },
     {
       "path": "figures/sd_core_publication/fig_opf_detail.drawio",
-      "bytes": 14086,
-      "sha256": "6ea8db16817154e5f5004a324fe4707a888d49552b812604d7a5559345747a11"
+      "bytes": 16537,
+      "sha256": "0298e6da05bcdf444155084dbab2043d924a9fed25c0694da427c89027877467"
     },
     {
       "path": "figures/sd_core_publication/fig_opf_detail.png",
-      "bytes": 472903,
-      "sha256": "0804fcc1191984266283e82616d2ceb83d17f7f613710ddd5260c1e9c2168928"
+      "bytes": 401183,
+      "sha256": "9c2dcf3cda2a78c34a7514f446e8883064258acfbba1db2cb49a2ad3b5fa985d"
     },
     {
       "path": "metadata/archive_metadata.json",
@@ -280,7 +280,7 @@
     {
       "path": "metadata/evidence_binding_manifest.json",
       "bytes": 40005,
-      "sha256": "e826d86d2d1d0858f74190cba12f663376cc22f083219cb73c66a4e246881b27"
+      "sha256": "9ec12b9c29b2767912434ebd5b835de99c70b1e33d280702898aba1f5d0226a1"
     },
     {
       "path": "metadata/expert_review_protocol.json",
@@ -339,8 +339,8 @@
     },
     {
       "path": "paper/scientific_data_latex/PAPER_CLAIM_AUDIT.json",
-      "bytes": 2587,
-      "sha256": "e87adb3ef5231e0ea899d141a1ad526e8d1caa6e2d3f60d38020b738cd0401e5"
+      "bytes": 2705,
+      "sha256": "b45dd75bb235ee0dac03c043c769e10a5ac940e29f4d8026bdda0fcdb0b16527"
     },
     {
       "path": "release/README.md",
@@ -565,7 +565,7 @@
     {
       "path": "reports/manuscript_metric_bindings_v1.2_sd_core.json",
       "bytes": 8873,
-      "sha256": "ee6cdc90f3f9b15d023d334a68d9b1fda045c21a1e5255e0c4622493ee2a40cc"
+      "sha256": "a1dc5d4a3b160e97a82794a886e9756140592a448f3a3788d1af0a60d0b64502"
     },
     {
       "path": "reports/manuscript_metric_bindings_v1.2_sd_core.md",
@@ -600,7 +600,7 @@
     {
       "path": "reports/release_claim_alignment_audit_v1.2_sd_core.json",
       "bytes": 5880,
-      "sha256": "8d0f1631631ad17b446541ee89138d528dc1620128e37b12d0cd95e397244030"
+      "sha256": "5f9c85823ab4d686e29e532f621afdafd7c76f0b72e8dea935f8fa0081d12d48"
     },
     {
       "path": "reports/rule_coverage_scope_audit_v1.2_sd_core.json",
