@@ -1,0 +1,364 @@
+{
+  "generated_at": "2026-09-01T11:06:00.467244+00:00",
+  "status": "pass",
+  "objective": "C3 compositional shortcut control for operation-ticket review and dispatch-tool routing",
+  "construction_contract": {
+    "label_before_language": true,
+    "split_key": "template_family",
+    "split_assignment_uses_labels": false,
+    "model_score_used_in_generation_or_split": false,
+    "similarity_candidate_sampling": false,
+    "label_contracts": [
+      "ticket_temporal_identity_watch_v1",
+      "route_operating_margin_priority_v1"
+    ]
+  },
+  "counts": {
+    "test": {
+      "records": 480,
+      "task_counts": {
+        "dispatcher_intent_tool_call": 240,
+        "operation_ticket_check": 240
+      },
+      "label_counts": {
+        "operation_ticket_check": {
+          "compliant": 80,
+          "compliant_with_monitoring": 80,
+          "non_compliant": 80
+        },
+        "dispatcher_intent_tool_call": {
+          "diagnose_and_dispatch": 80,
+          "mitigate_violations": 80,
+          "security_check_and_redispatch": 80
+        }
+      },
+      "template_families": [
+        10,
+        11
+      ]
+    },
+    "train": {
+      "records": 1920,
+      "task_counts": {
+        "dispatcher_intent_tool_call": 960,
+        "operation_ticket_check": 960
+      },
+      "label_counts": {
+        "operation_ticket_check": {
+          "compliant": 320,
+          "compliant_with_monitoring": 320,
+          "non_compliant": 320
+        },
+        "dispatcher_intent_tool_call": {
+          "diagnose_and_dispatch": 320,
+          "mitigate_violations": 320,
+          "security_check_and_redispatch": 320
+        }
+      },
+      "template_families": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    "validation": {
+      "records": 480,
+      "task_counts": {
+        "dispatcher_intent_tool_call": 240,
+        "operation_ticket_check": 240
+      },
+      "label_counts": {
+        "operation_ticket_check": {
+          "compliant": 80,
+          "compliant_with_monitoring": 80,
+          "non_compliant": 80
+        },
+        "dispatcher_intent_tool_call": {
+          "diagnose_and_dispatch": 80,
+          "mitigate_violations": 80,
+          "security_check_and_redispatch": 80
+        }
+      },
+      "template_families": [
+        8,
+        9
+      ]
+    }
+  },
+  "normalized_surface": {
+    "normalization": "lowercase, mask identifiers and numeric values, retain operational wording",
+    "records": 2880,
+    "unique": 2880,
+    "unique_rate": 1.0,
+    "cross_split_collisions": {
+      "train_validation": 0,
+      "train_test": 0,
+      "validation_test": 0
+    }
+  },
+  "tasks": {
+    "operation_ticket_check": {
+      "train": {
+        "records": 960,
+        "task_counts": {
+          "operation_ticket_check": 960
+        },
+        "label_counts": {
+          "operation_ticket_check": {
+            "compliant": 320,
+            "compliant_with_monitoring": 320,
+            "non_compliant": 320
+          },
+          "dispatcher_intent_tool_call": {}
+        },
+        "template_families": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      "validation": {
+        "records": 240,
+        "task_counts": {
+          "operation_ticket_check": 240
+        },
+        "label_counts": {
+          "operation_ticket_check": {
+            "compliant": 80,
+            "compliant_with_monitoring": 80,
+            "non_compliant": 80
+          },
+          "dispatcher_intent_tool_call": {}
+        },
+        "template_families": [
+          8,
+          9
+        ]
+      },
+      "test": {
+        "records": 240,
+        "task_counts": {
+          "operation_ticket_check": 240
+        },
+        "label_counts": {
+          "operation_ticket_check": {
+            "compliant": 80,
+            "compliant_with_monitoring": 80,
+            "non_compliant": 80
+          },
+          "dispatcher_intent_tool_call": {}
+        },
+        "template_families": [
+          10,
+          11
+        ]
+      },
+      "tfidf_test": {
+        "model": "character_tfidf_3_5_linear_svc",
+        "input_profile": "full_instruction",
+        "n_train": 960,
+        "n_test": 240,
+        "vocabulary_size": 14221,
+        "accuracy": 0.275,
+        "balanced_accuracy": 0.27499999999999997,
+        "macro_f1": 0.26373947220662547,
+        "gold_counts": {
+          "compliant": 80,
+          "compliant_with_monitoring": 80,
+          "non_compliant": 80
+        },
+        "prediction_counts": {
+          "compliant": 57,
+          "compliant_with_monitoring": 120,
+          "non_compliant": 63
+        }
+      },
+      "value_masked_tfidf_test": {
+        "model": "character_tfidf_3_5_linear_svc",
+        "input_profile": "value_masked_surface",
+        "n_train": 960,
+        "n_test": 240,
+        "vocabulary_size": 3995,
+        "accuracy": 0.3333333333333333,
+        "balanced_accuracy": 0.3333333333333333,
+        "macro_f1": 0.3351953659883418,
+        "gold_counts": {
+          "compliant": 80,
+          "compliant_with_monitoring": 80,
+          "non_compliant": 80
+        },
+        "prediction_counts": {
+          "compliant": 77,
+          "compliant_with_monitoring": 64,
+          "non_compliant": 99
+        }
+      },
+      "contract_test": {
+        "model": "typed_relation_contract_evaluator",
+        "n": 240,
+        "accuracy": 1.0,
+        "balanced_accuracy": 1.0,
+        "macro_f1": 1.0
+      },
+      "train_test_surface_similarity": {
+        "comparison": "full_exhaustive_binary_character_5gram",
+        "pair_count": 230400,
+        "max_jaccard": 0.3706070287539936,
+        "max_cosine": 0.5412176453922413,
+        "max_jaccard_pair_index": [
+          643,
+          149
+        ],
+        "max_cosine_pair_index": [
+          643,
+          149
+        ]
+      }
+    },
+    "dispatcher_intent_tool_call": {
+      "train": {
+        "records": 960,
+        "task_counts": {
+          "dispatcher_intent_tool_call": 960
+        },
+        "label_counts": {
+          "operation_ticket_check": {},
+          "dispatcher_intent_tool_call": {
+            "diagnose_and_dispatch": 320,
+            "mitigate_violations": 320,
+            "security_check_and_redispatch": 320
+          }
+        },
+        "template_families": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      "validation": {
+        "records": 240,
+        "task_counts": {
+          "dispatcher_intent_tool_call": 240
+        },
+        "label_counts": {
+          "operation_ticket_check": {},
+          "dispatcher_intent_tool_call": {
+            "diagnose_and_dispatch": 80,
+            "mitigate_violations": 80,
+            "security_check_and_redispatch": 80
+          }
+        },
+        "template_families": [
+          8,
+          9
+        ]
+      },
+      "test": {
+        "records": 240,
+        "task_counts": {
+          "dispatcher_intent_tool_call": 240
+        },
+        "label_counts": {
+          "operation_ticket_check": {},
+          "dispatcher_intent_tool_call": {
+            "diagnose_and_dispatch": 80,
+            "mitigate_violations": 80,
+            "security_check_and_redispatch": 80
+          }
+        },
+        "template_families": [
+          10,
+          11
+        ]
+      },
+      "tfidf_test": {
+        "model": "character_tfidf_3_5_linear_svc",
+        "input_profile": "full_instruction",
+        "n_train": 960,
+        "n_test": 240,
+        "vocabulary_size": 9821,
+        "accuracy": 0.8791666666666667,
+        "balanced_accuracy": 0.8791666666666668,
+        "macro_f1": 0.8793718169148009,
+        "gold_counts": {
+          "diagnose_and_dispatch": 80,
+          "mitigate_violations": 80,
+          "security_check_and_redispatch": 80
+        },
+        "prediction_counts": {
+          "diagnose_and_dispatch": 83,
+          "mitigate_violations": 80,
+          "security_check_and_redispatch": 77
+        }
+      },
+      "value_masked_tfidf_test": {
+        "model": "character_tfidf_3_5_linear_svc",
+        "input_profile": "value_masked_surface",
+        "n_train": 960,
+        "n_test": 240,
+        "vocabulary_size": 3944,
+        "accuracy": 0.3625,
+        "balanced_accuracy": 0.3625,
+        "macro_f1": 0.35399529964747356,
+        "gold_counts": {
+          "diagnose_and_dispatch": 80,
+          "mitigate_violations": 80,
+          "security_check_and_redispatch": 80
+        },
+        "prediction_counts": {
+          "diagnose_and_dispatch": 104,
+          "mitigate_violations": 68,
+          "security_check_and_redispatch": 68
+        }
+      },
+      "contract_test": {
+        "model": "typed_relation_contract_evaluator",
+        "n": 240,
+        "accuracy": 1.0,
+        "balanced_accuracy": 1.0,
+        "macro_f1": 1.0
+      },
+      "train_test_surface_similarity": {
+        "comparison": "full_exhaustive_binary_character_5gram",
+        "pair_count": 230400,
+        "max_jaccard": 0.3745928338762215,
+        "max_cosine": 0.5464061578738573,
+        "max_jaccard_pair_index": [
+          936,
+          102
+        ],
+        "max_cosine_pair_index": [
+          936,
+          102
+        ]
+      }
+    }
+  },
+  "figure": "figures/sd_core_quality/fig_c3_compositional_shortcut_control.png",
+  "hard_gates": {
+    "all_rows_retained": true,
+    "template_families_disjoint": true,
+    "all_labels_in_every_split": true,
+    "zero_normalized_surface_collisions": true,
+    "normalized_surface_unique_rate_at_least_0_95": true,
+    "full_cross_split_max_jaccard_below_0_85": true,
+    "typed_contract_macro_f1_equals_1": true,
+    "value_masked_tfidf_macro_f1_at_most_0_50": true
+  },
+  "interpretation": "This controlled benchmark tests compositional relation use under fully held-out wording families. The typed evaluator validates the published task contracts; the TF-IDF score measures residual lexical predictability and is not an operational-capability score."
+}

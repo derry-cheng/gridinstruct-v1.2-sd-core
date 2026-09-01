@@ -1,0 +1,37 @@
+{
+  "status": "pass_for_c3_compositional_control",
+  "scope": "operation-ticket review and dispatcher-tool routing compositional shortcut control",
+  "pre_fix_findings": {
+    "canonical_template_normalized_unique_rate": 0.41004828286848416,
+    "instruction_surface_sampled_max_character_5gram_jaccard": 0.9901153212520593,
+    "exact_component_minhash_candidate_recall_gate_complete": false,
+    "ticket_and_routing_tfidf_near_perfect": true
+  },
+  "repair": {
+    "records": 2880,
+    "tasks": 2,
+    "label_generation": "typed relations are evaluated before language rendering",
+    "split_assignment": "12 wording families are assigned atomically without reading labels or model scores",
+    "similarity_evaluation": "all train-test binary character-5-gram pairs are evaluated exactly",
+    "minhash_used": false
+  },
+  "post_fix_evidence": {
+    "normalized_surface_unique_rate": 1.0,
+    "normalized_cross_split_collisions": 0,
+    "operation_ticket": {
+      "full_instruction_tfidf_macro_f1": 0.26373947220662547,
+      "value_masked_tfidf_macro_f1": 0.3351953659883418,
+      "typed_contract_macro_f1": 1.0,
+      "max_train_test_character_5gram_jaccard": 0.3706070287539936,
+      "max_train_test_character_5gram_cosine": 0.5412176453922413
+    },
+    "dispatcher_tool_routing": {
+      "full_instruction_tfidf_macro_f1": 0.8793718169148009,
+      "value_masked_tfidf_macro_f1": 0.35399529964747356,
+      "typed_contract_macro_f1": 1.0,
+      "max_train_test_character_5gram_jaccard": 0.3745928338762215,
+      "max_train_test_character_5gram_cosine": 0.5464061578738573
+    }
+  },
+  "claim_boundary": "The new projection supports compositional relation use under held-out wording families. The 41.0% statistic remains a corpus-wide template-normalized diagnostic and is not reused as evidence of semantic diversity."
+}
