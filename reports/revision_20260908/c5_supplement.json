@@ -1,0 +1,80 @@
+{
+  "status": "packaged_and_structurally_verified",
+  "archive": "release/revision_20260908/GridInstruct_OPF_evidence_supplement.tar.gz",
+  "compressed_bytes": 7803273,
+  "member_count": 46,
+  "files": [
+    "LICENSE-CODE",
+    "LICENSE-DATA",
+    "metadata/international_rule_profile_matrix.csv",
+    "metadata/pglib_opf_v23_07_case_registry.json",
+    "metadata/release_licenses.json",
+    "metadata/requirements-lock.txt",
+    "metadata/rule_clause_matrix.json",
+    "metadata/source_traceability.csv",
+    "network_cases/ieee118/ieee118_base.json",
+    "network_cases/ieee14/ieee14_base.json",
+    "network_cases/ieee30/ieee30_base.json",
+    "network_cases/ieee57/ieee57_base.json",
+    "reports/ieee14_opf_secure_candidate_augmentation_v1.2_sd_core.json",
+    "reports/opf_candidate_register_v1.2_sd_core.json",
+    "rules/international_rule_profiles.json",
+    "rules/regulation_rules.json",
+    "scripts/append_opf_closed_loop_auxiliary_records.py",
+    "scripts/generate_grid_scenarios.py",
+    "scripts/generate_instruction_data.py",
+    "scripts/generate_opf_secure_candidate_augmentation.py",
+    "scripts/gridinstruct_utils.py",
+    "scripts/pglib_network_loader.py",
+    "scripts/power_evidence_common.py",
+    "scripts/query_contract.py",
+    "scripts/validate_opf_action_constant_power_factor_stress.py",
+    "scripts/validate_opf_action_uncertainty_stress.py",
+    "simulation_outputs/contingency/scenario_reconstruction_attempts.json",
+    "simulation_outputs/opf_closed_loop/auxiliary_opf_results.json",
+    "simulation_outputs/opf_closed_loop/ieee14_ieee118_source_scenarios_v1.json",
+    "simulation_outputs/opf_closed_loop/ieee14_secure_candidate_scenarios_v1.json",
+    "simulation_outputs/opf_closed_loop/opf_action_constant_power_factor_stress_cases_v1.json",
+    "simulation_outputs/opf_closed_loop/opf_action_uncertainty_stress_cases_v1.json",
+    "third_party/pglib-opf-v23.07/LICENSE",
+    "third_party/pglib-opf-v23.07/UPSTREAM_COMMIT",
+    "third_party/pglib-opf-v23.07/pglib_opf_case118_ieee.m",
+    "third_party/pglib-opf-v23.07/pglib_opf_case1354_pegase.m",
+    "third_party/pglib-opf-v23.07/pglib_opf_case14_ieee.m",
+    "third_party/pglib-opf-v23.07/pglib_opf_case1888_rte.m",
+    "third_party/pglib-opf-v23.07/pglib_opf_case200_activ.m",
+    "third_party/pglib-opf-v23.07/pglib_opf_case2848_rte.m",
+    "third_party/pglib-opf-v23.07/pglib_opf_case2869_pegase.m",
+    "third_party/pglib-opf-v23.07/pglib_opf_case300_ieee.m",
+    "third_party/pglib-opf-v23.07/pglib_opf_case30_ieee.m",
+    "third_party/pglib-opf-v23.07/pglib_opf_case57_ieee.m",
+    "third_party/pglib-opf-v23.07/pglib_opf_case89_pegase.m"
+  ],
+  "checks": {
+    "opf_results": 160,
+    "source_definitions_cover_all_160": true,
+    "stress_ledgers": {
+      "opf_action_uncertainty_stress_cases_v1.json": {
+        "rows": 7680,
+        "scenarios": 160,
+        "states_per_scenario": 48
+      },
+      "opf_action_constant_power_factor_stress_cases_v1.json": {
+        "rows": 7680,
+        "scenarios": 160,
+        "states_per_scenario": 48
+      }
+    },
+    "candidate_screening_rows": 136,
+    "selected_candidate_ids": 120,
+    "international_source_cards": 8
+  },
+  "verification_scope": "Independent extraction, JSON parsing, identities and denominator coverage only; no numerical solver rerun.",
+  "remaining_gaps": [
+    "Full per-candidate power-flow ledger for all 35200 registered candidates is unavailable; 136 screening rows and the generation grid are included.",
+    "Full construction-attempt ledger for the core scenario generator is unavailable; the one existing island reconstruction entry is included and is not a complete ledger.",
+    "Raw core scenario arrays and 95479 instruction records remain in separate project/release inputs, not this supplement.",
+    "International regulation full texts are not present locally; source metadata and authored summaries are included.",
+    "Completed independent human review records, public data deposit and final author metadata remain external deliverables."
+  ]
+}

@@ -109,7 +109,7 @@ TICKET_TEMPLATES = (
     "Process a {scope} in the {context} queue supplied by {channel}. Evidence {phase}: planned time {start}; permit time {permit}; declared object {ticket_code}; observed object {state_code}; watch minimum {required} min; watch allocation {assigned} min.",
     "For the {scope} under {context}, the {channel} records permit {permit} and action {start}. It also records state object {state_code}, ticket object {ticket_code}, assigned observation {assigned} min, and required observation {required} min {phase}.",
     "A {channel} entry in {context} requests review of a {scope}. Inspect {phase}: object pair {state_code}/{ticket_code}, timing pair {permit}/{start}, and observation pair {assigned}/{required} minutes.",
-    "At {phase}, examine the {scope} listed by {channel} for {context}. The evidence tuple is action time {start}, authority time {permit}, listed device {ticket_code}, state device {state_code}, watch need {required} min, watch plan {assigned} min.",
+    "{phase}, examine the {scope} listed by {channel} for {context}. The evidence tuple is action time {start}, authority time {permit}, listed device {ticket_code}, state device {state_code}, watch need {required} min, watch plan {assigned} min.",
     "The {context} record for a {scope} arrived through {channel}. Complete the gate {phase} using authority/action times {permit}/{start}, state/ticket devices {state_code}/{ticket_code}, and planned/required observation {assigned}/{required} minutes.",
 )
 
@@ -124,7 +124,7 @@ ROUTE_TEMPLATES = (
     "The {channel} record asks for {scope} routing during {context}. Read {phase}: thermal pair {thermal},{thermal_limit}; voltage pair {voltage},{voltage_limit}; security pair {risk},{reserve}.",
     "During {context}, a {scope} reaches the dispatcher by {channel}. The route gate {phase} compares reserve {reserve} with exposure {risk}, thermal ceiling {thermal_limit}% with state {thermal}%, and voltage floor {voltage_limit} with state {voltage} p.u.",
     "A {channel} item for {scope} is open in {context}. {phase}, evaluate exposure/reserve {risk}/{reserve}, voltage/floor {voltage}/{voltage_limit}, and loading/limit {thermal}/{thermal_limit}%.",
-    "At {phase}, route the {scope} logged through {channel} for {context}. Evidence gives reserve {reserve}, contingency exposure {risk}, lower-voltage boundary {voltage_limit}, measured voltage {voltage}, thermal boundary {thermal_limit}, and measured loading {thermal}.",
+    "{phase}, route the {scope} logged through {channel} for {context}. Evidence gives reserve {reserve}, contingency exposure {risk}, lower-voltage boundary {voltage_limit}, measured voltage {voltage}, thermal boundary {thermal_limit}, and measured loading {thermal}.",
     "The {context} routing record concerns {scope} and originates in {channel}. Apply the gate {phase} to the ordered values reserve-exposure {reserve}-{risk}, floor-voltage {voltage_limit}-{voltage}, and limit-loading {thermal_limit}-{thermal}.",
 )
 
@@ -242,7 +242,9 @@ def make_ticket(label: str, label_index: int, i: int) -> dict[str, Any]:
         "ticket_object": base_code,
         "state_object": state_code,
         "required_watch_min": required,
-        "assigned_watch_min": required + watch_margin,
+        # Observation duration is nonnegative. A zero allocation still violates
+        # every positive required duration in these under-allocation cases.
+        "assigned_watch_min": max(0, required + watch_margin),
     }
     derived = ticket_label(fields)
     if derived != label:
@@ -471,10 +473,10 @@ def plot_report(task_reports: dict[str, Any], path: Path) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--per-label", type=int, default=480)
-    parser.add_argument("--data-dir", default="data/c3_compositional_v1")
-    parser.add_argument("--benchmark-dir", default="benchmark/c3_compositional_v1")
-    parser.add_argument("--report", default="reports/c3/compositional_shortcut_control_v1.json")
-    parser.add_argument("--figure", default="figures/sd_core_quality/fig_c3_compositional_shortcut_control.png")
+    parser.add_argument("--data-dir", default="data/revision_20260908/c3_compositional_v2")
+    parser.add_argument("--benchmark-dir", default="results/revision_20260908/c3_generated_v2")
+    parser.add_argument("--report", default="reports/revision_20260908/c3_generator_self_check_v2.json")
+    parser.add_argument("--figure", default="figures/revision_20260908/c3_generator_self_check_v2.png")
     args = parser.parse_args()
 
     rows = build_rows(args.per_label)

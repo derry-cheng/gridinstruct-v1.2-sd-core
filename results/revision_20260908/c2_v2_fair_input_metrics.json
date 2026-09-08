@@ -1,0 +1,118 @@
+{
+  "data_origin": "Independent synthetic diagnostic set, not a projection of the 95,479-row core dataset.",
+  "total_rows": 2880,
+  "protocol": {
+    "fit_split": "train only",
+    "test_families": [
+      10,
+      11
+    ],
+    "grammar_scope": "Hand-specified named fields and ordered-pair formats, authored after inspecting published template definitions. No claim of blind unseen-template generalization. No iterative test tuning.",
+    "model_selection": "Fixed LinearSVC C=1 and decision tree max_depth=4; no test-based hyperparameter selection.",
+    "text_inputs": [
+      "instruction",
+      "task_type"
+    ],
+    "structured_inputs": "The same six observations supplied to the existing typed contract, converted into three explicit relation features for a trained tree.",
+    "threads": 1
+  },
+  "tasks": {
+    "operation_ticket_check": {
+      "n_train": 960,
+      "n_test": 240,
+      "text_tfidf": {
+        "n": 240,
+        "accuracy": 0.275,
+        "macro_f1": 0.2619541680242085
+      },
+      "text_parser_rule": {
+        "n": 240,
+        "accuracy": 1.0,
+        "macro_f1": 1.0
+      },
+      "structured_relation_tree": {
+        "n": 240,
+        "accuracy": 1.0,
+        "macro_f1": 1.0
+      },
+      "field_extraction": {
+        "complete": 240,
+        "all_fields_exact": 240,
+        "total_fields": 1440,
+        "correct_fields": 1440,
+        "per_field_correct": {
+          "start_minute": 240,
+          "permit_minute": 240,
+          "ticket_object": 240,
+          "state_object": 240,
+          "required_watch_min": 240,
+          "assigned_watch_min": 240
+        }
+      },
+      "per_family": {
+        "10": {
+          "n": 120,
+          "accuracy": 1.0,
+          "macro_f1": 1.0
+        },
+        "11": {
+          "n": 120,
+          "accuracy": 1.0,
+          "macro_f1": 1.0
+        }
+      }
+    },
+    "dispatcher_intent_tool_call": {
+      "n_train": 960,
+      "n_test": 240,
+      "text_tfidf": {
+        "n": 240,
+        "accuracy": 0.8791666666666667,
+        "macro_f1": 0.8793718169148009
+      },
+      "text_parser_rule": {
+        "n": 240,
+        "accuracy": 1.0,
+        "macro_f1": 1.0
+      },
+      "structured_relation_tree": {
+        "n": 240,
+        "accuracy": 1.0,
+        "macro_f1": 1.0
+      },
+      "field_extraction": {
+        "complete": 240,
+        "all_fields_exact": 240,
+        "total_fields": 1440,
+        "correct_fields": 1440,
+        "per_field_correct": {
+          "thermal_loading_pct": 240,
+          "thermal_limit_pct": 240,
+          "voltage_pu": 240,
+          "voltage_lower_bound_pu": 240,
+          "contingency_exposure": 240,
+          "redispatch_reserve": 240
+        }
+      },
+      "per_family": {
+        "10": {
+          "n": 120,
+          "accuracy": 1.0,
+          "macro_f1": 1.0
+        },
+        "11": {
+          "n": 120,
+          "accuracy": 1.0,
+          "macro_f1": 1.0
+        }
+      }
+    }
+  },
+  "elapsed_seconds": 1.2514654591213912,
+  "data_directory": "data/revision_20260908/c3_compositional_v2",
+  "domain_findings": {
+    "train": [],
+    "validation": [],
+    "test": []
+  }
+}

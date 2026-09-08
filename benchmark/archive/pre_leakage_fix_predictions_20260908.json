@@ -1,0 +1,20 @@
+{
+  "archive": "benchmark/archive/pre_leakage_fix_predictions_20260908.tar.gz",
+  "files": {
+    "benchmark/direct_english_tfidf_v1.2_sd_core_validation_predictions.jsonl": 1614144,
+    "benchmark/direct_english_tfidf_v1.2_sd_core_test_predictions.jsonl": 1656760,
+    "benchmark/direct_english_tfidf_v1.2_sd_core_ood_predictions.jsonl": 39456039
+  },
+  "original_bytes": 42726943,
+  "archive_bytes": 2815624,
+  "net_saved_bytes": 39911319,
+  "verification": "Every archived member compared byte-for-byte with its original before removal.",
+  "current_reference_sources_checked": [
+    "metadata/evidence_binding_manifest.json",
+    "metadata/current_revision_manifest_v1.2_sd_core.json",
+    "scripts/generate_publication_sd_figures.py",
+    "scripts/audit_manuscript_metric_bindings.py",
+    "paper/scientific_data_latex/main.tex"
+  ],
+  "scope": "Only three superseded pre-leakage-fix direct-English TF-IDF predictions; current, strict, and other registered evidence retained."
+}
