@@ -5,7 +5,7 @@ Generated: 2026-08-29
 The current local package is a promoted, hash-bound release. The authoritative
 record table is `data/gridinstruct_v1.2_sd_core_en.jsonl`; official and stress
 split files are the English projections under `data/`. The current revision
-manifest records the exact hashes used by the paper:
+manifest records the exact hashes used by the release:
 `metadata/current_revision_manifest_v1.2_sd_core.json`.
 
 The intermediate construction JSONL stages, raw scenario arrays, and completed
@@ -28,8 +28,7 @@ the release contract, not an undocumented deletion.
 | Independent OPF envelope | `reports/independent_opf_envelope_v1.2_sd_core.json` | Pass for 9/9 selected pandapower AC-OPF solves; diagnostic only |
 | PGLib family envelope | `reports/pglib_network_envelope_replay_v1.2_sd_core.json` | 26/33 attempts converge across 11 pinned families; seven non-convergent attempts retained in the denominator |
 | Template-family holdout | `reports/template_family_holdout_v1.2_sd_core.json` | Pass; 38,775/5,557/11,089 records with zero task--family group overlap and compliance macro-F1 0.944 |
-| LaTeX package | `paper/scientific_data_latex/LATEX_BUILD_REPORT.json` | Pass; matched 34-page main/embedded PDFs, 41 bibliography entries, zero hard TeX errors |
-| Human review | `reports/expert_review_package_v1.2_sd_core.json` | 1,600 assignments prepared; 0 completed |
+| External review | Submission-side review records are maintained outside the code/data repository | No row-level human judgments are distributed in this release |
 
 Reconstruction of deleted intermediate stages is possible only from the
 original external inputs and the generator scripts. Rebuilding those stages

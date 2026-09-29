@@ -38,4 +38,4 @@ The upstream case data license is CC BY 4.0. Every derived record must:
 - Derived scenario and instruction records included: `true`.
 - Final archive rebuild required after this inventory update: `true`.
 
-See `docs/LICENSES_AND_CITATION.md` and `review-stage/SD_V16_PGLIB_LICENSE_ATTRIBUTION_AUDIT_20260724.md` for the audit decision and reusable citation text.
+See `docs/LICENSES_AND_CITATION.md` for the audit decision and reusable citation text.

@@ -14,10 +14,9 @@ required for the current submission route. The population screening receipt is i
 raw solver arrays and submission-only material remain outside this repository. Author metadata
 and any external review records are maintained with the submission package rather than mixed
 with the reproducibility release.
-The compact reviewer map is
-`release/reviewer_access_manifest_2026-08-13.json`.
-The dated remediation ledger is `reports/sd_closeout_status_2026-08-13.json`; it records the
-C1--C5 scope without treating external inputs as completed.
+Release membership is defined by the versioned data and metadata files under `release/`,
+`metadata/`, and `data/`; no manuscript or reviewer-access map is required to run the local
+checks.
 
 ## Repository layout
 

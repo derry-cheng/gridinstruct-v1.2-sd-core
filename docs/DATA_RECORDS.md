@@ -35,8 +35,7 @@ The core table keeps its original 95,479 records and 17 domestic rule cards. A s
 | reports/international_rule_probe_splits_v1.json | split receipt | 848af2e7204c64df36ff0e50d4c6e504fe2a0e0ae24653a6c9883340b01c5903 |
 | benchmark/international_rule_probe_v1/nearest_neighbor_report.json | four-fold CPU retrieval diagnostic | 5e366e7ccf78cb069ddf09e8da2501e767b4238ebaef7fcb67368c6261ac7364 |
 | reports/international_rule_probe_controls_v1.json | explicit-input leakage control receipt | 31b80495a106c1df4e22dedda0892e74c62968909c53f81c6c58eb2f887d8907 |
-| reports/international_rule_review_assignments_v1.json | 128-record, two-reviewer assignment receipt | 261abcd4279681251efce5d54e0183329ee5f15144c3e2ea21599e2a4a85cafa |
-| review_packages/stratified_expert_review_v1.2_sd_core/ | 800-record blinded sample, 1,600 empty assignment slots, and blank review-log schema | Generated locally; no completed human judgments |
+| External review package | International and core review assignments are maintained outside the code/data repository | No row-level human judgments are distributed in this release |
 
 The evidence-tier receipt separates the 95,479-row contract layer, 80,393 scenario-and-rule rows, 18,087 auxiliary-decision contracts, 320 OPF-tagged auxiliary rows, 160 fixed-control replay cases, and nine selected independent OPF solves. The remaining 17,767 auxiliary rows carry contract-level decision evidence and are not counted as executable-control replays. The core human-review ledger currently has 0 completed rows out of 1,600 assignments; the international assignment artifact has no human results.
 

@@ -3198,27 +3198,6 @@
       "sha256": "938a80fee21c4b6d8bbdbef00670c9ff74c98ee34670498ef02799d5845e5ab9"
     },
     {
-      "path": "docs/PROJECT_STRUCTURE.md",
-      "exists": true,
-      "bytes": 1998,
-      "records": null,
-      "sha256": "3f154b6384c886efd9a95ad4ba5eda9a9f8ce2d0c7161aa6183d9d7aacf6a4d0"
-    },
-    {
-      "path": "docs/REVIEW_ISSUE_CLOSURE_2026-08-28.md",
-      "exists": true,
-      "bytes": 3151,
-      "records": null,
-      "sha256": "4e321b5d74f2db2a398a375959d2ed45425255328044d8953bb250a1de24727a"
-    },
-    {
-      "path": "docs/SCIENTIFIC_DATA_READINESS_CHECKLIST.md",
-      "exists": true,
-      "bytes": 2826,
-      "records": null,
-      "sha256": "ac208e6be5e1b420cc3d4e88e32ddb2f8f746616be4d9416bbd30e663b9e038e"
-    },
-    {
       "path": "docs/THIRD_PARTY_ASSETS.md",
       "exists": true,
       "bytes": 7681,
@@ -3231,13 +3210,6 @@
       "bytes": 31728,
       "records": 6,
       "sha256": "bf6a75af33b8edcc7b5553741c980b402f8c7e2db95701d2eeade89b2ab579fa"
-    },
-    {
-      "path": "figures/sd_core/fig_hard_boundary_benchmark.png",
-      "exists": true,
-      "bytes": 57949,
-      "records": null,
-      "sha256": "cbd7a3fd66dc48da288eabc1c1594f6252893c2b92f7fbdef660ba836209ff26"
     },
     {
       "path": "metadata/annotation_policy.json",
@@ -3268,25 +3240,11 @@
       "sha256": "37d473c9bbd5c29fc2a9811bde90e377e9ec5c2b2a92b312c407943373b30ac9"
     },
     {
-      "path": "metadata/expert_review_protocol.json",
-      "exists": true,
-      "bytes": 2058,
-      "records": null,
-      "sha256": "eb42cf0ed5d68761a796a6a01ef948dec97db9947ec9fd012703989176f7d6c3"
-    },
-    {
       "path": "metadata/international_rule_probe_schema.json",
       "exists": true,
       "bytes": 3004,
       "records": null,
       "sha256": "44bc99e037697493178795991d9e23d20c9a8d0fdf36bc5c8e3b6a8078ea1658"
-    },
-    {
-      "path": "metadata/paper_outline_alignment.json",
-      "exists": true,
-      "bytes": 1178,
-      "records": null,
-      "sha256": "dca80cadad6d0a0d8110f8acf43cf9ea907042f9f8e2a918f3ccfcb873ad28de"
     },
     {
       "path": "metadata/release_licenses.json",
@@ -3415,20 +3373,6 @@
       "sha256": "004e9e479438bbbf6ea2b20ca3228e17b3c1f2fcf79aa2765f1e340794a7d2eb"
     },
     {
-      "path": "reports/sd_core_distribution_risk_audit.json",
-      "exists": true,
-      "bytes": 44738,
-      "records": null,
-      "sha256": "c290b665fb11323af420b99f827a8f1687de24fc71cdfcf7264aa577cbf92b60"
-    },
-    {
-      "path": "reports/sd_core_distribution_risk_audit.md",
-      "exists": true,
-      "bytes": 2595,
-      "records": null,
-      "sha256": "0c57bc8a362f033e03f02471f7662911377f4075f8a53c8876163c20234a39a0"
-    },
-    {
       "path": "reports/simulation_report.json",
       "exists": true,
       "bytes": 2153,
@@ -3448,48 +3392,6 @@
       "bytes": 447,
       "records": null,
       "sha256": "1229971e1f109f088d80136da8259b6fc17d50091cc4a7f0988a84b7d1d2aed0"
-    },
-    {
-      "path": "review_packages/stratified_expert_review_v1.2_sd_core/README.md",
-      "exists": true,
-      "bytes": 867,
-      "records": null,
-      "sha256": "8ed778d7ef1c11148ec937f01e425d65bdb43621cbc50b4b993d94058a5180e7"
-    },
-    {
-      "path": "review_packages/stratified_expert_review_v1.2_sd_core/human_review_log_template.csv",
-      "exists": true,
-      "bytes": 231,
-      "records": null,
-      "sha256": "201f718f68359d917545d9cdd0e814d205dd0e4dfcf8887f7757b24c506d390f"
-    },
-    {
-      "path": "review_packages/stratified_expert_review_v1.2_sd_core/review_assignments.csv",
-      "exists": true,
-      "bytes": 162659,
-      "records": null,
-      "sha256": "95af0aa63e247be1edcd8173eefc18f6296fc5e5357f763290bdcaf0fc643eb4"
-    },
-    {
-      "path": "review_packages/stratified_expert_review_v1.2_sd_core/review_packet_blinded.jsonl",
-      "exists": true,
-      "bytes": 2685364,
-      "records": 800,
-      "sha256": "7377532324f0333f82621152957f04f4574d1dde5d5289d53a82c498830a53f5"
-    },
-    {
-      "path": "review_packages/stratified_expert_review_v1.2_sd_core/sample_manifest.csv",
-      "exists": true,
-      "bytes": 436404,
-      "records": null,
-      "sha256": "5161013ac70ff169d48ee7611c39e1f367d699a540b240e8d7a14dbf694261e8"
-    },
-    {
-      "path": "review_packages/stratified_expert_review_v1.2_sd_core/sampling_frame.jsonl",
-      "exists": true,
-      "bytes": 63524226,
-      "records": 95479,
-      "sha256": "58650dd3e67d7600be4758998d422586e66cefc1d19cd8782ccaeff1b526af3f"
     },
     {
       "path": "rules/regulation_rules.json",

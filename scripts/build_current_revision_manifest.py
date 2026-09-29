@@ -62,15 +62,9 @@ def main() -> None:
         "reports/current_release_integrity_audit_v1.2_sd_core.json",
         "reports/current_opf_closed_loop_audit_v1.2_sd_core.json",
         "reports/current_source_group_map_audit_v1.2_sd_core.json",
-        "reports/current_quality_snapshot_v1.2_sd_core.json",
-        "reports/current_latex_build_v1.2_sd_core.json",
         "reports/EXPERIMENT_AUDIT.json",
         "reports/cleanup_inventory_v1.2_sd_core.json",
         "reports/stale_report_cleanup_inventory_v1.2_sd_core.json",
-        "reports/latex_cleanup_inventory_v1.2_sd_core.json",
-        "reports/deposition_checklist_v1.2_sd_core.json",
-        "reports/release_claim_alignment_audit_v1.2_sd_core.json",
-        "reports/sd_submission_readiness.json",
         "reports/english_split_audit_v1.2_sd_core.json",
         "benchmark/direct_english_structured_query_v1.2_sd_core_leakage_fixed_report.json",
         "benchmark/direct_english_structured_auxiliary_v1.2_sd_core_leakage_fixed_report.json",
@@ -95,21 +89,6 @@ def main() -> None:
     required_predictions = sorted(
         str(path.relative_to(root))
         for path in (root / "benchmark/current_v1.2_sd_core").glob("*_predictions.jsonl")
-    )
-    required_manuscript = [
-        "paper/scientific_data_latex/main.tex",
-        "paper/scientific_data_latex/main.pdf",
-        "paper/scientific_data_latex/generated/gridinstruct_claims.tex",
-        "paper/scientific_data_latex/references.bib",
-        "paper/scientific_data_latex/PAPER_CLAIM_AUDIT.json",
-        "paper/scientific_data_latex/PAPER_CLAIM_AUDIT.md",
-        "reports/EXPERIMENT_AUDIT.md",
-        "reports/deposition_checklist_v1.2_sd_core.md",
-    ]
-    figure_files = sorted(
-        str(path.relative_to(root))
-        for path in (root / "figures/sd_core_publication").iterdir()
-        if path.is_file() and path.suffix.lower() in {".png", ".svg", ".drawio"}
     )
     relevant_evidence = [
         "reports/action_level_validation_audit_v1.2_sd_core.json",
@@ -146,8 +125,6 @@ def main() -> None:
         "reports/official_exact_content_overlap_repair_v1.2_sd_core.json",
         "reports/strict_exact_content_overlap_repair_v1.2_sd_core.json",
         "reports/translation_glossary_audit_v1.2_sd_core.json",
-        "reports/expert_review_execution_check_v1.2_sd_core.json",
-        "reports/expert_review_package_v1.2_sd_core.json",
         "reports/target_hidden_classification_v1.2_sd_core.json",
     ]
     relevant_metadata = [
@@ -174,51 +151,40 @@ def main() -> None:
         "scripts/append_opf_closed_loop_auxiliary_records.py",
         "scripts/materialize_english_splits.py",
         "scripts/recompute_compliance_labels_from_truth.py",
-        "scripts/sync_manuscript_claims_from_evidence.py",
-        "scripts/generate_publication_sd_figures.py",
         "scripts/run_structured_query_filter_baseline.py",
         "scripts/run_structured_auxiliary_tool_baseline.py",
         "scripts/run_tfidf_task_baselines.py",
-        "scripts/write_current_latex_build_report.py",
         "scripts/build_current_revision_manifest.py",
         "scripts/build_cleanup_inventory.py",
         "scripts/apply_cleanup_inventory.py",
         "scripts/build_stale_report_inventory.py",
         "scripts/apply_stale_report_inventory.py",
         "scripts/build_current_file_manifest.py",
-        "scripts/remove_obsolete_latex_build.py",
-        "scripts/build_latex_cleanup_inventory.py",
-        "scripts/apply_latex_cleanup_inventory.py",
         "scripts/run_target_hidden_classification.py",
         "scripts/rebind_independent_solver_evidence.py",
         "scripts/build_scoped_evidence_binding_manifest.py",
         "scripts/audit_release_claim_alignment.py",
-        "scripts/audit_sd_submission_readiness.py",
         "scripts/audit_english_splits.py",
         "scripts/validate_query_truth_independent.py",
         "scripts/audit_compliance_labels_current.py",
         "scripts/repair_official_exact_content_overlap.py",
-        "scripts/audit_manuscript_metric_bindings.py",
         "scripts/audit_rule_coverage_and_scope.py",
         "scripts/audit_typed_semantic_patterns.py",
         "scripts/build_compact_public_archive.py",
         "scripts/validate_release_archive_replay.py",
     ]
-    local_required = inputs + required_reports + required_predictions + required_manuscript + figure_files
+    # Submission manuscripts and publication artwork are intentionally outside
+    # the public code/data repository. The revision manifest binds only
+    # reproducible data, reports, metadata, and executable evaluation assets.
+    local_required = inputs + required_reports + required_predictions
     required_artifacts = collect_required(root, local_required)
     evidence, missing_evidence = collect_optional(root, relevant_evidence)
     metadata, missing_metadata = collect_optional(root, relevant_metadata)
     scripts, missing_scripts = collect_optional(root, relevant_scripts)
     audit = json.loads((root / "reports/current_release_integrity_audit_v1.2_sd_core.json").read_text())
     opf = json.loads((root / "reports/current_opf_closed_loop_audit_v1.2_sd_core.json").read_text())
-    snapshot = json.loads((root / "reports/current_quality_snapshot_v1.2_sd_core.json").read_text())
-    latex = json.loads((root / "reports/current_latex_build_v1.2_sd_core.json").read_text())
     if audit.get("status") != "pass" or opf.get("status") != "pass":
         raise ValueError("current release or OPF audit is not pass")
-    if snapshot.get("status") != "scoped_pass_with_external_gates_pending":
-        raise ValueError("quality snapshot status is not the explicit scoped status")
-    if latex.get("status") != "pass":
-        raise ValueError("LaTeX build is not pass")
     baseline_json = [
         (path, json.loads((root / path).read_text()))
         for path in required_reports
@@ -281,7 +247,6 @@ def main() -> None:
                     (root / "reports/independent_solver_validation_v1.2_sd_core_rebound.json").read_text()
                 ).get("status") == "pass"
             ),
-            "latex_build": latex.get("status") == "pass",
         },
         "task_count": 6,
         "baseline_families": [

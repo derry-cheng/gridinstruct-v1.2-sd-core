@@ -11,7 +11,7 @@ those paths.
 | Audits and evidence | `validate_dataset.py`, `validate_cross_solver_power_flow.py`, `validate_independent_solver_evidence.py`, `run_linear_seed_stability_audit.py`, `run_current_surface_seed_stability.py`, `run_international_rule_probe_controls.py`, `run_shortcut_ablation_audit.py`, `run_project_milestone_audit.py` |
 | Baselines | `run_tfidf_task_baselines.py`, `run_transformer_classifier_baseline.py`, `run_target_hidden_classification.py`, `run_exact_surface_target_hidden.py`, `run_calibrated_tfidf_baseline.py`, `run_structured_query_filter_baseline.py`, `run_structured_auxiliary_tool_baseline.py` |
 | C3 compositional control | `c3/build_compositional_shortcut_control.py` (label-sealed relation contracts, wording-family isolation, exhaustive character-5-gram audit, lexical and typed baselines) |
-| Figures and manuscript | `generate_publication_sd_figures.py`, `generate_sd_figures.py`, `sync_manuscript_claims_from_evidence.py`, `build_reviewer_access_manifest.py` |
+| Release packaging | `build_compact_public_archive.py`, `validate_release_archive_replay.py`, `write_compact_bundle_validation.py` |
 
 Temporary split materializations, stopped checkpoints, and scratch solver outputs belong
 under `/tmp` and are excluded from the project tree. The canonical table is stored once

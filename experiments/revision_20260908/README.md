@@ -14,7 +14,7 @@ python scripts/revision_20260908/c5_build_supplement.py
 python scripts/revision_20260908/plot_evaluations.py
 ```
 
-Code is under `scripts/revision_20260908`, data under `data/revision_20260908`, row-level predictions and replay outcomes under `results/revision_20260908`, reports under `reports/revision_20260908`, and manuscript sources under `paper/scientific_data_latex`.
+Code is under `scripts/revision_20260908`, data under `data/revision_20260908`, row-level predictions and replay outcomes under `results/revision_20260908`, and reports under `reports/revision_20260908`. Submission manuscripts are maintained outside this repository.
 
 The C1 test applies each published base control to all eight registered topologies and six demand levels under both demand models. It does not substitute contingency-specific corrective controls. Its complete denominator is 160 × 8 × 6 × 2 = 15,360 states. It enforces existing electrical criteria and the 0.001 p.u. voltage margin and records deviations between commanded and realized generator voltage under reactive-limit saturation. A complete run does not imply the acceptance claim passes.
 
