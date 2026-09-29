@@ -32,6 +32,10 @@ def main() -> None:
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     manifest_files = [ROOT / item["path"] for item in manifest.get("files", [])]
     missing_code = [str(path.relative_to(ROOT)) for path in manifest_files if not path.is_file()]
+    population_path = ROOT / "reports/opf_candidate_register_v1.2_sd_core.json"
+    population = json.loads(population_path.read_text(encoding="utf-8")) if population_path.is_file() else {}
+    attestation_path = ROOT / "reports/energy_ai_external_review_attestation_20260929.json"
+    attestation = json.loads(attestation_path.read_text(encoding="utf-8")) if attestation_path.is_file() else {}
     compile_run = subprocess.run(
         ["/opt/homebrew/Caskroom/miniconda/base/bin/python", "-m", "compileall", "-q", "scripts"],
         cwd=ROOT,
@@ -61,6 +65,26 @@ def main() -> None:
             "missing_files": missing_code,
             "all_declared_files_present": not missing_code,
         },
+        "population_screening_receipt": {
+            "path": str(population_path.relative_to(ROOT)),
+            "present": population_path.is_file(),
+            "status": population.get("status"),
+            "registered_candidates": population.get("denominator", {}).get("registered_candidates"),
+            "power_flow_converged": population.get("denominator", {}).get("power_flow_converged"),
+            "eligible_violation_candidates": population.get("denominator", {}).get("eligible_violation_candidates"),
+            "screened_candidates": population.get("denominator", {}).get("screened_candidates"),
+            "screened_passes": population.get("denominator", {}).get("screened_passes"),
+            "raw_solver_arrays_present": population.get("scope_boundary", {}).get("raw_solver_arrays_present"),
+            "receipt_status": "pass" if population.get("status") == "pass" else "missing_or_unverified",
+        },
+        "external_review_attestation": {
+            "path": str(attestation_path.relative_to(ROOT)),
+            "present": attestation_path.is_file(),
+            "status": attestation.get("status", "not_attested"),
+            "reviewer_count": attestation.get("reviewer_count"),
+            "row_level_ledger_present": attestation.get("row_level_ledger_present"),
+            "local_reproducibility": "not_claimed",
+        },
         "syntax_check": {"returncode": compile_run.returncode, "stderr": compile_run.stderr[-2000:]},
         "regression_suite": {
             "returncode": pytest_run.returncode,
@@ -70,10 +94,11 @@ def main() -> None:
         "release_boundary": {
             "data_and_code_published_by_github": True,
             "zenodo_required": False,
-            "raw_population_solver_ledgers": "external_gate",
-            "completed_human_review": "external_gate",
+            "population_screening_receipt": "included",
+            "raw_population_solver_arrays": "external_gate",
+            "external_human_review": "author_attested_outside_repository",
         },
-        "status": "pass" if data_path.is_file() and not missing_code and compile_run.returncode == 0 and pytest_run.returncode == 0 else "fail",
+        "status": "pass" if data_path.is_file() and not missing_code and compile_run.returncode == 0 and pytest_run.returncode == 0 and population.get("status") == "pass" else "fail",
     }
     out_json = ROOT / "reports/energy_ai_repository_audit_20260929.json"
     out_md = ROOT / "reports/energy_ai_repository_audit_20260929.md"
@@ -84,10 +109,15 @@ def main() -> None:
         f"- Canonical data SHA-256: `{report['data']['sha256']}`\n"
         f"- Declared code files present: {report['code_manifest']['all_declared_files_present']}\n"
         f"- Syntax check return code: {compile_run.returncode}\n"
-        f"- Regression suite: {report['regression_suite']['summary']}\n\n"
+        f"- Regression suite: {report['regression_suite']['summary']}\n"
+        f"- Population screening receipt: {report['population_screening_receipt']['registered_candidates']} registered, "
+        f"{report['population_screening_receipt']['screened_passes']} passed\n"
+        f"- External review: author-attested completion by {report['external_review_attestation']['reviewer_count']} reviewers; "
+        "row-level ledger is not in this repository\n\n"
         "The GitHub repository is the release boundary for this Energy & AI version. "
-        "Zenodo is not required. Raw population-level solver ledgers and completed human review "
-        "remain explicitly external evidence gates.\n",
+        "Zenodo is not required. The population screening receipt is included; raw solver arrays "
+        "remain outside the compact release, and the external review is reported as an author attestation "
+        "without a local reproducibility claim.\n",
         encoding="utf-8",
     )
     print(json.dumps(report, ensure_ascii=False, indent=2))

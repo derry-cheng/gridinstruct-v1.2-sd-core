@@ -18,7 +18,7 @@ The dataset uses public IEEE benchmark systems and synthetic simulation states. 
 
 ## Known Limitations
 
-0. External human review status is `external_human_review_ready` with 0/1600 complete assignments; machine-assisted screening is not counted as human expert evidence.
+0. The authors attest that five PhD-level reviewers completed an external assessment. The row-level review ledger and reviewer identities are outside this GitHub release, so no local agreement statistic is claimed.
 1. 保持 GitHub release 与稿件版本一致；如期刊后续要求独立数据 DOI，再单独建立数据归档并更新引用。
 2. IEEE benchmark systems and synthetic scenarios do not establish real-grid operational safety.
 3. The current rule dictionary only covers 17 publicly linked rule summaries and should not be described as comprehensive national or provincial regulation coverage.

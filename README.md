@@ -11,9 +11,11 @@ international rule probe, split definitions, validation evidence, a jurisdiction
 retrieval diagnostic, a two-reviewer assignment package, independent OPF and network-envelope
 diagnostics, a template-family holdout, and both the historical Scientific Data source and the
 current Energy & AI source. The GitHub repository is the intended data and code access point;
-Zenodo is not required for the current submission route. The raw population-level solver ledgers,
-completed expert review, persistent data accession, and named author metadata remain explicit
-external gates. The compact reviewer map is
+Zenodo is not required for the current submission route. The population screening receipt is
+included, while raw solver arrays remain an external release item. The authors have attested
+completion of a five-reviewer external assessment, but its row-level ledger is outside this
+repository. Persistent data accession and final author metadata remain external release items.
+The compact reviewer map is
 `release/reviewer_access_manifest_2026-08-13.json`.
 The dated remediation ledger is `reports/sd_closeout_status_2026-08-13.json`; it records the
 C1--C5 scope without treating external inputs as completed.
