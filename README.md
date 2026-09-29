@@ -9,10 +9,11 @@ provenance-controlled evaluation regimes.
 The current local snapshot contains the promoted 95,479-row core table, a separate 512-record
 international rule probe, split definitions, validation evidence, a jurisdiction-held-out
 retrieval diagnostic, a two-reviewer assignment package, independent OPF and network-envelope
-diagnostics, a template-family holdout, and the Scientific Data manuscript.
-The code repository is publicly reachable and the software archive DOI is recorded. The raw
-population-level solver ledgers, completed expert review, persistent data accession, and named
-author metadata remain explicit external gates. The compact reviewer map is
+diagnostics, a template-family holdout, and both the historical Scientific Data source and the
+current Energy & AI source. The GitHub repository is the intended data and code access point;
+Zenodo is not required for the current submission route. The raw population-level solver ledgers,
+completed expert review, persistent data accession, and named author metadata remain explicit
+external gates. The compact reviewer map is
 `release/reviewer_access_manifest_2026-08-13.json`.
 The dated remediation ledger is `reports/sd_closeout_status_2026-08-13.json`; it records the
 C1--C5 scope without treating external inputs as completed.
@@ -34,7 +35,10 @@ C1--C5 scope without treating external inputs as completed.
 | `review-stage/` | Reviewer action ledger, claim controls, numerical occurrence audit, and cleanup plan |
 | `release/` | Compact release boundary, reviewer-access manifest, and deposition checklist |
 
-The LaTeX package is kept under `paper/scientific_data_latex/`: `main.tex` is the source,
+The historical LaTeX package is kept under `paper/scientific_data_latex/`, while the current
+Elsevier source is under `paper/energy_ai/`. In the current package, `paper/energy_ai/main.tex`
+is the source and `paper/energy_ai/main.pdf` is the compiled manuscript. The historical package's
+`main.tex` is retained for provenance, while
 `build/main.pdf` is the main compilation, `build_embedded/main_with_bbl.pdf` is the embedded-
 bibliography compilation, and `LATEX_BUILD_REPORT.json` records the current build. Editable
 Drawio sources are under `figures/sd_core_publication/`, while synchronized manuscript copies are

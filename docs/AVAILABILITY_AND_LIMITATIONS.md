@@ -2,11 +2,11 @@
 
 ## Data Availability
 
-The current release snapshot is the directly rendered English table `data/gridinstruct_v1.2_sd_core_en.jsonl`. The construction-source table is retained locally for provenance and auditability; no translation service is part of the release-facing generation path. The review archive also contains the full official and strict English projections, the instruction-surface development projections, the converged scenario registry, and the bounded OPF evidence tables. The public code repository is https://github.com/derry-cheng/gridinstruct-v1.2-sd-core and the software archive is available at https://doi.org/10.5281/zenodo.21921745. Before external submission, deposit this data package in a stable public repository and add the repository name, data DOI, version identifier, and access date.
+The current release snapshot is the directly rendered English table `data/gridinstruct_v1.2_sd_core_en.jsonl`. The review archive also contains the full official and strict projections, the instruction-surface development projections, the converged scenario registry, and the bounded OPF evidence tables. The public GitHub repository is https://github.com/derry-cheng/gridinstruct-v1.2-sd-core and is the data and code access point for the Energy & AI submission route.
 
 ## Code Availability
 
-The code repository, MIT licence, and archived code-release DOI are recorded in the manuscript and release metadata. The data DOI remains pending until the external deposition is completed.
+The code repository and MIT licence are recorded in the manuscript and release metadata. No archive DOI is required for the current GitHub-based submission route.
 
 ## License
 
@@ -19,6 +19,6 @@ The dataset uses public IEEE benchmark systems and synthetic simulation states. 
 ## Known Limitations
 
 0. External human review status is `external_human_review_ready` with 0/1600 complete assignments; machine-assisted screening is not counted as human expert evidence.
-1. 完成数据仓库存档并补充数据 DOI；代码仓库和软件 DOI 已在稿件及发布元数据中给出。
+1. 保持 GitHub release 与稿件版本一致；如期刊后续要求独立数据 DOI，再单独建立数据归档并更新引用。
 2. IEEE benchmark systems and synthetic scenarios do not establish real-grid operational safety.
 3. The current rule dictionary only covers 17 publicly linked rule summaries and should not be described as comprehensive national or provincial regulation coverage.
