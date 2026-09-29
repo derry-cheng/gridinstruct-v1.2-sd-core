@@ -6,15 +6,14 @@ states, traceable rule cards, structured queries and tool actions, and task-spec
 evaluation evidence. The release covers six registered task families and several
 provenance-controlled evaluation regimes.
 
-The current local snapshot contains the promoted 95,479-row core table, a separate 512-record
-international rule probe, split definitions, validation evidence, a jurisdiction-held-out
-retrieval diagnostic, a two-reviewer assignment package, independent OPF and network-envelope
-diagnostics, a template-family holdout, and both the historical Scientific Data source and the
-current Energy & AI source. The GitHub repository is the intended data and code access point;
-Zenodo is not required for the current submission route. The population screening receipt is
-included, while raw solver arrays remain an external release item. The authors have attested
-completion of a five-reviewer external assessment, but its row-level ledger is outside this
-repository. Persistent data accession and final author metadata remain external release items.
+The current snapshot contains the promoted 95,479-row core table, a separate 512-record
+international rule probe, split definitions, validation evidence, jurisdiction-held-out
+retrieval diagnostics, independent OPF and network-envelope diagnostics, and the compact
+reproduction assets. The GitHub repository is the code and data access point; Zenodo is not
+required for the current submission route. The population screening receipt is included, while
+raw solver arrays and submission-only material remain outside this repository. Author metadata
+and any external review records are maintained with the submission package rather than mixed
+with the reproducibility release.
 The compact reviewer map is
 `release/reviewer_access_manifest_2026-08-13.json`.
 The dated remediation ledger is `reports/sd_closeout_status_2026-08-13.json`; it records the
@@ -31,22 +30,13 @@ C1--C5 scope without treating external inputs as completed.
 | `rules/` | Task-oriented rule cards with source metadata |
 | `benchmark/` | Task definitions, predictions, per-seed metrics, and aggregate results |
 | `reports/` | Physical, query, rule, OPF, split, model, statistical, review, and archive audits |
-| `figures/` | Main article panels and supporting validation figures |
-| `paper/` | Synchronized Markdown and Scientific Data LaTeX manuscripts |
 | `docs/` | Data records, technical validation, reproduction, expert review, availability, licence, and reuse notes |
-| `review-stage/` | Reviewer action ledger, claim controls, numerical occurrence audit, and cleanup plan |
 | `release/` | Compact release boundary, reviewer-access manifest, and deposition checklist |
 
-The historical LaTeX package is kept under `paper/scientific_data_latex/`, while the current
-Elsevier source is under `paper/energy_ai/`. In the current package, `paper/energy_ai/main.tex`
-is the source and `paper/energy_ai/main.pdf` is the compiled manuscript. The historical package's
-`main.tex` is retained for provenance, while
-`build/main.pdf` is the main compilation, `build_embedded/main_with_bbl.pdf` is the embedded-
-bibliography compilation, and `LATEX_BUILD_REPORT.json` records the current build. Editable
-Drawio sources are under `figures/sd_core_publication/`, while synchronized manuscript copies are
-kept under `paper/scientific_data_latex/figures/editable/` and article exports under
-`paper/scientific_data_latex/figures/generated/article/`. Build outputs remain separate from
-benchmark tables and raw data.
+Submission manuscripts, publication figures, and reviewer packages are deliberately kept
+outside Git. The local working copy may contain these materials for editing, but they are
+ignored and are not part of the public history. Reproduction code, canonical data, validation
+receipts, and release metadata remain versioned under the directories above.
 
 All commands in this repository use the local snapshot. No remote workspace, GPU job, or
 untracked checkpoint is required for the published local audits.

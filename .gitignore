@@ -50,3 +50,42 @@ reports/*_attempts_*.json
 # Full sampling frames are local audit inputs; the compact review package
 # publishes the blinded packet, sample manifest, and assignment schema.
 review_packages/**/sampling_frame.jsonl
+
+# Submission materials are maintained outside the code/data repository.
+# Keep the local manuscript and editable artwork available without tracking
+# them in Git or retaining them in future commits.
+/paper/
+/figures/
+/review_packages/
+/review-stage/
+/docs/PAPER_*
+/docs/SCIENTIFIC_DATA*
+/docs/SD_*
+/docs/REVIEW_ISSUE*
+/docs/gridinstruct_scientific_data_outline.md
+/reports/energy_ai_*
+/reports/manuscript_*
+/reports/scientific_data_*
+/reports/expert_review*
+/reports/human_expert*
+/reports/llm_review*
+/reports/sd_*
+/reports/SD_*
+/reports/claim_evidence*
+/reports/release_claim_alignment*
+/reports/current_quality_snapshot*
+/metadata/manuscript_claim_contract.json
+/metadata/paper_outline_alignment.json
+/metadata/expert_review_protocol.json
+/scripts/audit_manuscript*.py
+/scripts/audit_scientific_data_submission.py
+/scripts/sync_manuscript_claims_from_evidence.py
+/scripts/audit_expert_review*.py
+/scripts/compute_expert_review_stats.py
+/scripts/run_llm_review_pipeline.py
+/scripts/sample_stratified_expert_review.py
+/scripts/create_international_rule_review_assignments.py
+/scripts/build_reviewer_access_manifest.py
+/scripts/finalize_external_deposition.py
+/tests/test_manuscript*.py
+/tests/test_scientific_data_submission*.py
