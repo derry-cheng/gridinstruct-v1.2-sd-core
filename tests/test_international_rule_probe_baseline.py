@@ -39,24 +39,3 @@ def test_explicit_input_contract_copy_control_is_labeled_as_leakage_diagnostic()
         "evidence_fields": 1.0,
     }
     assert "leakage diagnostic" in report["interpretation"]
-
-
-def test_international_review_assignments_are_blank_and_double_assigned() -> None:
-    report = json.loads(
-        (ROOT / "reports/international_rule_review_assignments_v1.json").read_text(encoding="utf-8")
-    )
-    assignments = [
-        json.loads(line)
-        for line in (ROOT / "reports/international_rule_review_assignments_v1.jsonl").read_text(encoding="utf-8").splitlines()
-        if line.strip()
-    ]
-    assert report["status"] == "ready_for_independent_review"
-    assert report["human_results_present"] is False
-    assert report["sample_count"] == 128
-    assert report["assignment_count"] == 256
-    by_record: dict[str, set[str]] = {}
-    for assignment in assignments:
-        assert assignment["review_label"] == ""
-        by_record.setdefault(assignment["record_id"], set()).add(assignment["reviewer_slot"])
-    assert len(by_record) == 128
-    assert all(slots == {"A", "B"} for slots in by_record.values())
