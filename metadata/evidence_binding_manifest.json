@@ -1,6 +1,6 @@
 {
   "schema_version": "gridinstruct-scoped-evidence-v2",
-  "generated_at": "2026-09-01T10:35:15.210142+00:00",
+  "generated_at": "2026-09-30T14:32:40.739211+00:00",
   "status": "pass",
   "scope": "local_hash_bound_release_candidate",
   "runtime_policy": "local CPU/MPS only; no remote GPU execution",
@@ -73,13 +73,6 @@
       "sha256": "d257aa579ffc47425da02f114f87b6ef3692652b9b02fe9ee07739804a52d8c6",
       "bytes": 525,
       "reported_status": "pass",
-      "bound": true
-    },
-    "reports/current_quality_snapshot_v1.2_sd_core.json": {
-      "path": "reports/current_quality_snapshot_v1.2_sd_core.json",
-      "sha256": "afa6cbd0634dc6bb0a42c0ac9d1dd0bdd5eb13ea2831f3c8d95b2b709da3f8a9",
-      "bytes": 2358,
-      "reported_status": "scoped_pass_with_external_gates_pending",
       "bound": true
     },
     "reports/high_score_plausibility_audit_v1.2_sd_core.json": {
@@ -198,13 +191,6 @@
       "path": "reports/dispatcher_request_contract_repair_v1.2_sd_core.json",
       "sha256": "ff9f1c08b1e2168b6b0d0ea3c789da949b9c388567818d0075bd2a2e33a5bc14",
       "bytes": 932,
-      "reported_status": "pass",
-      "bound": true
-    },
-    "reports/sd_core_distribution_risk_audit.json": {
-      "path": "reports/sd_core_distribution_risk_audit.json",
-      "sha256": "c290b665fb11323af420b99f827a8f1687de24fc71cdfcf7264aa577cbf92b60",
-      "bytes": 44738,
       "reported_status": "pass",
       "bound": true
     },
@@ -439,27 +425,6 @@
       "reported_status": "pass",
       "bound": true
     },
-    "reports/international_rule_review_assignments_v1.json": {
-      "path": "reports/international_rule_review_assignments_v1.json",
-      "sha256": "261abcd4279681251efce5d54e0183329ee5f15144c3e2ea21599e2a4a85cafa",
-      "bytes": 1109,
-      "reported_status": "ready_for_independent_review",
-      "bound": true
-    },
-    "reports/international_rule_review_assignments_v1.csv": {
-      "path": "reports/international_rule_review_assignments_v1.csv",
-      "sha256": "60c8cdf59cd1e60bd8d1c082150a8c09b6f89e54bd7508816b15764f4967d92e",
-      "bytes": 314981,
-      "reported_status": null,
-      "bound": true
-    },
-    "reports/international_rule_review_assignments_v1.jsonl": {
-      "path": "reports/international_rule_review_assignments_v1.jsonl",
-      "sha256": "6e2b5cdf1bf33391796d634226e44dd12e3e82a3b30b52540157a0b7477b2474",
-      "bytes": 383588,
-      "reported_status": null,
-      "bound": true
-    },
     "reports/opf_structural_contract_audit_v1.2_sd_core.json": {
       "path": "reports/opf_structural_contract_audit_v1.2_sd_core.json",
       "sha256": "b8b8734e76740a956fdbfaf10d42c906e291b9491a0685ec14de113a8df55cae",
@@ -509,6 +474,20 @@
       "reported_status": "pass",
       "bound": true
     },
+    "reports/opf_selection_mapping_v1.2_sd_core.json": {
+      "path": "reports/opf_selection_mapping_v1.2_sd_core.json",
+      "sha256": "c328c8c6e86608e462dbdd8f029706259d49d9ebf153e7bed94d5f78ba6cefc9",
+      "bytes": 1021,
+      "reported_status": "pass",
+      "bound": true
+    },
+    "reports/compliance_contrast_pairs_v1.2_sd_core.json": {
+      "path": "reports/compliance_contrast_pairs_v1.2_sd_core.json",
+      "sha256": "71fc5b8136a1b2696108a6f1054580df089cf02bb041caa239557c11fd6703c4",
+      "bytes": 2246,
+      "reported_status": "pass",
+      "bound": true
+    },
     "reports/ieee14_opf_secure_candidate_augmentation_v1.2_sd_core.json": {
       "path": "reports/ieee14_opf_secure_candidate_augmentation_v1.2_sd_core.json",
       "sha256": "33bec4b495cef937aaa41b4d6c5f9d23a48c5b4e76b055d13c11fade644a0456",
@@ -534,34 +513,6 @@
       "path": "reports/evidence_reconciliation_v1.2_sd_core.json",
       "sha256": "53d28f0cf8e5a9d5fbb484473de085f1e9952e53bfe90bae16cdf39a00afe5f2",
       "bytes": 3569,
-      "reported_status": null,
-      "bound": true
-    },
-    "reports/claim_evidence_delta_2026-08-12.json": {
-      "path": "reports/claim_evidence_delta_2026-08-12.json",
-      "sha256": "93f1cf57a8fa610726b4e36db5a59772678bca38d365c75a69f15751c32352aa",
-      "bytes": 2503,
-      "reported_status": null,
-      "bound": true
-    },
-    "reports/manuscript_final_audit_20260812.json": {
-      "path": "reports/manuscript_final_audit_20260812.json",
-      "sha256": "163029e16659f9f016e5b3d06d6af3756443617e178972b01cda96be82bbcc66",
-      "bytes": 1399,
-      "reported_status": "pass",
-      "bound": true
-    },
-    "reports/manuscript_metric_bindings_v1.2_sd_core.json": {
-      "path": "reports/manuscript_metric_bindings_v1.2_sd_core.json",
-      "sha256": "a1dc5d4a3b160e97a82794a886e9756140592a448f3a3788d1af0a60d0b64502",
-      "bytes": 8873,
-      "reported_status": "pass",
-      "bound": true
-    },
-    "reports/manuscript_metric_bindings_v1.2_sd_core.md": {
-      "path": "reports/manuscript_metric_bindings_v1.2_sd_core.md",
-      "sha256": "2b208bee4f3e3b44beea1f4dda363d97508db4c8dd4977bdd23bf6708c2d8c5a",
-      "bytes": 4513,
       "reported_status": null,
       "bound": true
     },
@@ -693,8 +644,8 @@
     },
     "metadata/dataset_metadata.json": {
       "path": "metadata/dataset_metadata.json",
-      "sha256": "eec17f791a97faeae259e0cd1ad8b89373fdab5e1929efcef9a9c3b28473db64",
-      "bytes": 164713,
+      "sha256": "91ecb7817f9dda0920cc441fe33e7ebd5a384ee0a43a6736b0e54e896d122bbb",
+      "bytes": 161419,
       "reported_status": null,
       "bound": true
     },
@@ -713,8 +664,8 @@
       "bound": true
     }
   },
-  "total_evidence": 114,
-  "evidence_bound": 114,
+  "total_evidence": 93,
+  "evidence_bound": 93,
   "missing_local_bindings": [],
   "invalid_evidence_count": 0,
   "local_gate_summary": {
@@ -729,7 +680,6 @@
     "scenario_truth_reconstruction": true,
     "compliance_label_current": true,
     "dispatcher_request_contract": true,
-    "distribution_risk": true,
     "near_neighbor_surface_diagnostic": true,
     "dataset_validation": true,
     "target_hidden_classification": true,
@@ -762,8 +712,8 @@
     "isolated_archive_replay_package": {
       "passed": false,
       "kind": "external",
-      "status": "pass_scoped_local_replay_external_deposition_pending",
-      "scope": "local compact archive replay passes; public data deposition and persistent data DOI remain external"
+      "status": "pass_scoped_local_replay_anonymous_access_unverified",
+      "scope": "local archive replay passes; anonymous access is a separate repository-visibility check"
     },
     "raw_scenario_replay_ledger": {
       "passed": false,
@@ -774,14 +724,14 @@
     "external_human_review": {
       "passed": false,
       "kind": "external",
-      "status": "pending_0_of_1600_assignments",
-      "scope": "double independent review of the registered sample"
+      "status": "author_attested_review_without_public_row_ledger",
+      "scope": "five-reviewer completion is author-attested; public row-level outcomes and agreement statistics are absent"
     },
     "public_repository_and_doi": {
       "passed": false,
       "kind": "external",
-      "status": "pass_code_repository_and_software_doi_data_doi_pending",
-      "scope": "public code repository and software DOI verified; persistent data accession remains external"
+      "status": "anonymous_repository_access_not_established",
+      "scope": "GitHub source and release exist for authorized access; anonymous access requires repository publication"
     },
     "final_author_funding_metadata": {
       "passed": false,

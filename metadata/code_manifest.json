@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "file_count": 182,
+  "file_count": 184,
   "files": [
     {
       "path": "scripts/analyze_data_quality.py",
@@ -84,8 +84,8 @@
     },
     {
       "path": "scripts/audit_energy_ai_repository.py",
-      "bytes": 6445,
-      "sha256": "3319211d3baadbd91c35b7feac3b5088d6b4c6a89b4572727fb0167a1b23cdef"
+      "bytes": 6500,
+      "sha256": "cbfdf95c4b6d3abef9db9ccc5a3d5e08f3c5258de79464fff4248bf398f0a20b"
     },
     {
       "path": "scripts/audit_english_splits.py",
@@ -166,6 +166,11 @@
       "path": "scripts/audit_opf_closed_loop_assumptions.py",
       "bytes": 20694,
       "sha256": "71e09ce60ff4978be6325b53d52bfd34b3799fb5af3070aaa1489717d1994522"
+    },
+    {
+      "path": "scripts/audit_opf_selection_mapping.py",
+      "bytes": 4161,
+      "sha256": "4c0134d40c43ba97c2d428dbae882638f5927ee014aa0a5abe8b2ffa92f0940a"
     },
     {
       "path": "scripts/audit_opf_structural_contract.py",
@@ -249,8 +254,8 @@
     },
     {
       "path": "scripts/build_compact_public_archive.py",
-      "bytes": 12198,
-      "sha256": "53810c3f5e3ec0d2159e433a7a5a427fcc6e9db98a87bb0ac18b59864ccfcb61"
+      "bytes": 10932,
+      "sha256": "af061dff486d6100421b4db8051a67e70a43afaafa2f8d206597867d95963646"
     },
     {
       "path": "scripts/build_current_file_manifest.py",
@@ -259,8 +264,8 @@
     },
     {
       "path": "scripts/build_current_revision_manifest.py",
-      "bytes": 13753,
-      "sha256": "b880ed6381acb29ba575ec6425ceef6dc1be73cc6076843086ab0583d989f67e"
+      "bytes": 13975,
+      "sha256": "ec867a8d9aca2df289b307ea11c66fd9ee7adc471969aaa5294a286198a147f1"
     },
     {
       "path": "scripts/build_data_lineage_manifest.py",
@@ -319,8 +324,8 @@
     },
     {
       "path": "scripts/build_scoped_evidence_binding_manifest.py",
-      "bytes": 17952,
-      "sha256": "69ac38187960c8a615ffaf12f42e5d39cc15ba4e28b0201ef6f14a5b0eb0daeb"
+      "bytes": 16609,
+      "sha256": "168d6715e850c13ab1321f14b004d9b69456adc349af33d3e413509f54acb354"
     },
     {
       "path": "scripts/build_sd_core_snapshot.py",
@@ -446,6 +451,11 @@
       "path": "scripts/evaluate_api_baseline.py",
       "bytes": 21034,
       "sha256": "af0dd598325035ad66181e4d3ebe8c93fcbb4721ca4d40a92318d2c713017c28"
+    },
+    {
+      "path": "scripts/evaluate_compliance_contrast_pairs.py",
+      "bytes": 4651,
+      "sha256": "280f95f27861f23f7e5780040729182fd821b6615af05a3a6a0e27f6ae8d68f0"
     },
     {
       "path": "scripts/evaluate_ood_strata.py",
@@ -894,8 +904,8 @@
     },
     {
       "path": "scripts/validate_release_archive_replay.py",
-      "bytes": 26073,
-      "sha256": "7420681f325e6cc906190ff38df66a7a08182155fd41301a298a2bc354ec28dd"
+      "bytes": 26246,
+      "sha256": "423aa8529ea11692b54bc3d1ab27a28b3bee4dd74786a364ead934250fd86ce1"
     },
     {
       "path": "scripts/validate_source_english_alignment.py",

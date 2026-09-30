@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-29T09:58:34.090578+00:00",
+  "generated_at": "2026-09-30T14:57:16.807425+00:00",
   "revision": "v1.2-sd-core-current-2026-08-28",
   "runtime_policy": "local CPU/MPS; no remote GPU execution",
   "dataset": {
@@ -88,6 +88,14 @@
     "reports/target_hidden_classification_v1.2_sd_core.json": {
       "sha256": "0d2ff5ae19428e2545808695672419d83837887fca93e3226dd66350839331fd",
       "bytes": 31264
+    },
+    "reports/opf_selection_mapping_v1.2_sd_core.json": {
+      "sha256": "c328c8c6e86608e462dbdd8f029706259d49d9ebf153e7bed94d5f78ba6cefc9",
+      "bytes": 1021
+    },
+    "reports/compliance_contrast_pairs_v1.2_sd_core.json": {
+      "sha256": "71fc5b8136a1b2696108a6f1054580df089cf02bb041caa239557c11fd6703c4",
+      "bytes": 2246
     },
     "reports/independent_solver_raw_evidence_v1.2_sd_core_rebound.json": {
       "sha256": "328c96372f69d5c55efbce4c7168043487d06e2be10503baa7d5dd4044b98850",
@@ -278,7 +286,7 @@
   },
   "metadata": {
     "metadata/dataset_metadata.json": {
-      "sha256": "586847c12701e4cecb1ef16b7635bb1fb38ded0c75e2290d4824d6ecc17afeb1",
+      "sha256": "91ecb7817f9dda0920cc441fe33e7ebd5a384ee0a43a6736b0e54e896d122bbb",
       "bytes": 161419
     },
     "metadata/data_lineage_manifest.json": {
@@ -290,12 +298,12 @@
       "bytes": 795
     },
     "metadata/evidence_binding_manifest.json": {
-      "sha256": "4bc2925076cfd18f885d6357eb342aff6fdbaa3b378d3c06f36febea5b6ba401",
-      "bytes": 35816
+      "sha256": "9136fdc8ca251500705249c541bec25533a50d29949aa946f8bbcc98c77889a6",
+      "bytes": 33749
     },
     "metadata/file_manifest.csv": {
-      "sha256": "ca001fa48e6f6bcafc1611bc68999b1bd1504d8e118f5c176fea6a89b3c9e7d9",
-      "bytes": 12150
+      "sha256": "9ff151954a76428bfeb16908bcf43ee1a0441a8642377fc81db52c93164b53e6",
+      "bytes": 12639
     },
     "metadata/formal_runtime_environment.json": {
       "sha256": "1a27a4feb3804cbface77d26f360b5bb30bed24b624c302aa0a62ffad0ddfc76",
@@ -376,8 +384,8 @@
       "bytes": 14117
     },
     "scripts/build_current_revision_manifest.py": {
-      "sha256": "b880ed6381acb29ba575ec6425ceef6dc1be73cc6076843086ab0583d989f67e",
-      "bytes": 13753
+      "sha256": "ec867a8d9aca2df289b307ea11c66fd9ee7adc471969aaa5294a286198a147f1",
+      "bytes": 13975
     },
     "scripts/build_cleanup_inventory.py": {
       "sha256": "1a2fb0bd6112afedaf648060a6513a1dc023e3a8d34378538b2993578038b249",
@@ -408,8 +416,8 @@
       "bytes": 4506
     },
     "scripts/build_scoped_evidence_binding_manifest.py": {
-      "sha256": "69ac38187960c8a615ffaf12f42e5d39cc15ba4e28b0201ef6f14a5b0eb0daeb",
-      "bytes": 17952
+      "sha256": "168d6715e850c13ab1321f14b004d9b69456adc349af33d3e413509f54acb354",
+      "bytes": 16609
     },
     "scripts/audit_release_claim_alignment.py": {
       "sha256": "6b8e686c12ca4d67f4955746bffff32be7a8c0e64c53107853d5d2566a77dd88",
@@ -440,12 +448,20 @@
       "bytes": 12145
     },
     "scripts/build_compact_public_archive.py": {
-      "sha256": "75dc4abfdc045880de2b02c5ece17e42367eba7affc0a5d2a656b7809cf90cee",
-      "bytes": 10465
+      "sha256": "af061dff486d6100421b4db8051a67e70a43afaafa2f8d206597867d95963646",
+      "bytes": 10932
     },
     "scripts/validate_release_archive_replay.py": {
-      "sha256": "7420681f325e6cc906190ff38df66a7a08182155fd41301a298a2bc354ec28dd",
-      "bytes": 26073
+      "sha256": "423aa8529ea11692b54bc3d1ab27a28b3bee4dd74786a364ead934250fd86ce1",
+      "bytes": 26246
+    },
+    "scripts/audit_opf_selection_mapping.py": {
+      "sha256": "4c0134d40c43ba97c2d428dbae882638f5927ee014aa0a5abe8b2ffa92f0940a",
+      "bytes": 4161
+    },
+    "scripts/evaluate_compliance_contrast_pairs.py": {
+      "sha256": "280f95f27861f23f7e5780040729182fd821b6615af05a3a6a0e27f6ae8d68f0",
+      "bytes": 4651
     }
   },
   "optional_missing": {
@@ -477,10 +493,10 @@
   "metric_policy": "classification reports macro-F1, accuracy, and balanced accuracy; generation reports exact match and token-F1; structured baselines report schema-field exactness separately",
   "status": "scoped_pass_with_external_gates_pending",
   "external_gates": {
-    "isolated_archive_replay_package": "pass_scoped_local_replay_external_deposition_pending",
+    "isolated_archive_replay_package": "pass_scoped_local_replay_anonymous_access_unverified",
     "raw_scenario_replay": "pending_missing_local_artifact",
     "independent_solver_case_manifest": "pass_scoped_fixed_control_160_cases_raw_population_ledger_external",
-    "external_human_review": "pending_0_of_1600_assignments",
-    "public_repository_and_doi": "pass_code_repository_and_software_doi_data_doi_pending"
+    "external_human_review": "author_attested_without_public_row_ledger",
+    "repository_access": "restricted_anonymous_access_not_established"
   }
 }

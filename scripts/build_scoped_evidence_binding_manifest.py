@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the hash-bound local evidence manifest for the current SD candidate.
+"""Build the hash-bound local evidence manifest for the code/data release.
 
 The manifest deliberately separates local reproducibility from external
 submission inputs.  It never upgrades a missing raw scenario ledger, human
@@ -29,7 +29,6 @@ LOCAL_BINDINGS = [
     "reports/current_release_integrity_audit_v1.2_sd_core.json",
     "reports/current_opf_closed_loop_audit_v1.2_sd_core.json",
     "reports/current_source_group_map_audit_v1.2_sd_core.json",
-    "reports/current_quality_snapshot_v1.2_sd_core.json",
     "reports/high_score_plausibility_audit_v1.2_sd_core.json",
     "reports/linear_seed_stability_audit_v1.2_sd_core.json",
     "reports/model_score_quality_audit_v1.2_sd_core.json",
@@ -47,7 +46,6 @@ LOCAL_BINDINGS = [
     "reports/independent_query_truth_validation_v1.2_sd_core.json",
     "reports/compliance_label_current_audit_v1.2_sd_core.json",
     "reports/dispatcher_request_contract_repair_v1.2_sd_core.json",
-    "reports/sd_core_distribution_risk_audit.json",
     "reports/official_exact_content_overlap_repair_v1.2_sd_core.json",
     "reports/strict_exact_content_overlap_repair_v1.2_sd_core.json",
     "reports/query_truth_completeness_gate_v1.2_sd_core.json",
@@ -81,9 +79,6 @@ LOCAL_BINDINGS = [
     "reports/international_rule_probe_splits_v1.json",
     "benchmark/international_rule_probe_v1/nearest_neighbor_report.json",
     "reports/international_rule_probe_controls_v1.json",
-    "reports/international_rule_review_assignments_v1.json",
-    "reports/international_rule_review_assignments_v1.csv",
-    "reports/international_rule_review_assignments_v1.jsonl",
     "reports/opf_structural_contract_audit_v1.2_sd_core.json",
     "data/v1.2_sd_core_template_family_holdout_train_ids.jsonl",
     "data/v1.2_sd_core_template_family_holdout_validation_ids.jsonl",
@@ -92,25 +87,14 @@ LOCAL_BINDINGS = [
     "reports/equipment_rating_provenance_v1.2_sd_core.json",
     "reports/extended_topology_stress_attempts_v1.2_sd_core.json",
     "reports/opf_candidate_register_v1.2_sd_core.json",
+    "reports/opf_selection_mapping_v1.2_sd_core.json",
+    "reports/compliance_contrast_pairs_v1.2_sd_core.json",
     "reports/ieee14_opf_secure_candidate_augmentation_v1.2_sd_core.json",
     "reports/core_n1_denominator_v1.2_sd_core.json",
     "reports/shortcut_ablation_v1.2_sd_core.json",
     "reports/evidence_reconciliation_v1.2_sd_core.json",
-    "reports/claim_evidence_delta_2026-08-12.json",
-    "reports/manuscript_final_audit_20260812.json",
-    "reports/manuscript_metric_bindings_v1.2_sd_core.json",
-    "reports/manuscript_metric_bindings_v1.2_sd_core.md",
     "reports/current_surface_seed_stability_v1.2_sd_core.json",
     "reports/current_surface_seed_stability_v1.2_sd_core.md",
-    "paper/scientific_data_latex/PAPER_CLAIM_AUDIT.json",
-    "paper/scientific_data_latex/main.pdf",
-    "paper/scientific_data_latex/LATEX_BUILD_REPORT.json",
-    "paper/scientific_data_latex/LATEX_BUILD_REPORT.md",
-    "paper/scientific_data_latex/build/main.pdf",
-    "paper/scientific_data_latex/build_embedded/main_with_bbl.pdf",
-    "paper/scientific_data_latex/GridInstruct_SD_scientific_data_official_template.pdf",
-    "paper/scientific_data_latex/GridInstruct_SD_scientific_data_latex_source.zip",
-    "figures/sd_core_quality/fig_exact_surface_target_hidden.png",
     "benchmark/instruction_surface_balanced_v1.2_sd_core_leakage_fixed/tfidf_report.json",
     "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_report.json",
     "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_calibrated_report.json",
@@ -130,11 +114,6 @@ LOCAL_BINDINGS = [
     "metadata/dataset_metadata.json",
     "metadata/data_lineage_manifest.json",
     "metadata/third_party_asset_inventory.json",
-    "paper/scientific_data_latex/main.tex",
-    "paper/scientific_data_latex/references.bib",
-    "figures/sd_core/fig_target_hidden_classification.png",
-    "figures/sd_core_publication/fig0_framework.drawio",
-    "figures/sd_core_publication/fig_opf_detail.drawio",
 ]
 
 HISTORICAL_NOT_BOUND = {
@@ -244,10 +223,6 @@ def main() -> None:
             "reports/dispatcher_request_contract_repair_v1.2_sd_core.json", {}
         ).get("reported_status")
         == "pass",
-        "distribution_risk": bindings.get(
-            "reports/sd_core_distribution_risk_audit.json", {}
-        ).get("reported_status")
-        == "pass",
         "near_neighbor_surface_diagnostic": bindings.get(
             "reports/near_neighbor_free_surface_audit_v1.2_sd_core.json", {}
         ).get("reported_status")
@@ -270,8 +245,8 @@ def main() -> None:
         "isolated_archive_replay_package": {
             "passed": False,
             "kind": "external",
-            "status": "pass_scoped_local_replay_external_deposition_pending",
-            "scope": "local compact archive replay passes; public data deposition and persistent data DOI remain external",
+            "status": "pass_scoped_local_replay_anonymous_access_unverified",
+            "scope": "local archive replay passes; anonymous access is a separate repository-visibility check",
         },
         "raw_scenario_replay_ledger": {
             "passed": False,
@@ -282,14 +257,14 @@ def main() -> None:
         "external_human_review": {
             "passed": False,
             "kind": "external",
-            "status": "pending_0_of_1600_assignments",
-            "scope": "double independent review of the registered sample",
+            "status": "author_attested_review_without_public_row_ledger",
+            "scope": "five-reviewer completion is author-attested; public row-level outcomes and agreement statistics are absent",
         },
         "public_repository_and_doi": {
             "passed": False,
             "kind": "external",
-            "status": "pass_code_repository_and_software_doi_data_doi_pending",
-            "scope": "public code repository and software DOI verified; persistent data accession remains external",
+            "status": "anonymous_repository_access_not_established",
+            "scope": "GitHub source and release exist for authorized access; anonymous access requires repository publication",
         },
         "final_author_funding_metadata": {
             "passed": False,

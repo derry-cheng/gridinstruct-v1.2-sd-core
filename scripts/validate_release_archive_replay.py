@@ -59,6 +59,7 @@ COMPACT_REQUIRED_FILES = {
     "data/international_rule_probe_v1.jsonl",
     "simulation_outputs/contingency/scenarios_converged.json",
     "simulation_outputs/opf_closed_loop/ieee14_ieee118_source_scenarios_v1.json",
+    "simulation_outputs/opf_closed_loop/ieee14_secure_candidate_scenarios_v1.json",
     "simulation_outputs/opf_closed_loop/auxiliary_opf_results.json",
     "simulation_outputs/opf_closed_loop/opf_action_uncertainty_stress_cases_v1.json",
     "simulation_outputs/opf_closed_loop/opf_action_constant_power_factor_stress_cases_v1.json",
@@ -69,7 +70,6 @@ COMPACT_REQUIRED_FILES = {
     "reports/international_rule_probe_splits_v1.json",
     "benchmark/international_rule_probe_v1/nearest_neighbor_report.json",
     "reports/international_rule_probe_controls_v1.json",
-    "reports/international_rule_review_assignments_v1.json",
     "reports/ood_stratified_metrics_v1.2_sd_core.json",
     "reports/rule_coverage_scope_audit_v1.2_sd_core.json",
     "reports/rule_coverage_scope_audit_v1.2_sd_core.md",
@@ -79,18 +79,16 @@ COMPACT_REQUIRED_FILES = {
     "reports/cross_solver_power_flow_v1.2_sd_core.md",
     "reports/core_n1_denominator_v1.2_sd_core.json",
     "reports/core_n1_denominator_v1.2_sd_core.md",
-    "paper/scientific_data_latex/PAPER_CLAIM_AUDIT.json",
     "docs/DATA_RECORDS.md",
-    "docs/EXPERT_REVIEW_PROTOCOL.md",
     "docs/TECHNICAL_VALIDATION.md",
     "reports/evidence_tiers_v1.2_sd_core.json",
-    "reports/expert_review_execution_check_v1.2_sd_core.json",
+    "reports/opf_selection_mapping_v1.2_sd_core.json",
+    "reports/opf_candidate_register_v1.2_sd_core.json",
+    "reports/compliance_contrast_pairs_v1.2_sd_core.json",
+    "scripts/audit_opf_selection_mapping.py",
+    "scripts/evaluate_compliance_contrast_pairs.py",
     "reports/official_exact_content_overlap_repair_v1.2_sd_core.json",
     "reports/strict_exact_content_overlap_repair_v1.2_sd_core.json",
-    "review_packages/stratified_expert_review_v1.2_sd_core/review_packet_blinded.jsonl",
-    "review_packages/stratified_expert_review_v1.2_sd_core/sample_manifest.csv",
-    "review_packages/stratified_expert_review_v1.2_sd_core/review_assignments.csv",
-    "review_packages/stratified_expert_review_v1.2_sd_core/human_review_log_template.csv",
 }
 
 
@@ -135,9 +133,8 @@ def compact_archive_audit(bundle: Path, members: list[tarfile.TarInfo]) -> dict[
     parse_errors = 0
     seed_status = None
     direct_status = None
-    review_sample_count = None
-    review_assignment_count = None
-    review_completed_rows = None
+    selection_mapping_status = None
+    contrast_pair_status = None
     split_counts: dict[str, int] = {}
     scenario_registry_count = None
     opf_record_count = None
@@ -169,19 +166,31 @@ def compact_archive_audit(bundle: Path, members: list[tarfile.TarInfo]) -> dict[
             direct_status = json.loads(direct_report.read_text(encoding="utf-8")).get("status")
         if seed_report.is_file():
             seed_status = json.loads(seed_report.read_text(encoding="utf-8")).get("status")
-        sample_manifest = extracted / "review_packages/stratified_expert_review_v1.2_sd_core/sample_manifest.csv"
-        assignments = extracted / "review_packages/stratified_expert_review_v1.2_sd_core/review_assignments.csv"
-        execution_report = extracted / "reports/expert_review_execution_check_v1.2_sd_core.json"
-        if sample_manifest.is_file():
-            with sample_manifest.open(encoding="utf-8", newline="") as handle:
-                review_sample_count = max(0, sum(1 for _ in handle) - 1)
-        if assignments.is_file():
-            with assignments.open(encoding="utf-8", newline="") as handle:
-                review_assignment_count = max(0, sum(1 for _ in handle) - 1)
-        if execution_report.is_file():
-            review_completed_rows = json.loads(execution_report.read_text(encoding="utf-8")).get(
-                "complete_human_review_rows", 0
+        selection_path = extracted / "reports/opf_selection_mapping_v1.2_sd_core.json"
+        original_selection = None
+        if selection_path.is_file():
+            selection = json.loads(selection_path.read_text(encoding="utf-8"))
+            original_selection = selection
+        contrast_path = extracted / "reports/compliance_contrast_pairs_v1.2_sd_core.json"
+        original_contrast = json.loads(contrast_path.read_text(encoding="utf-8")) if contrast_path.is_file() else None
+        for script, artifact, original, error_name in (
+            ("audit_opf_selection_mapping.py", selection_path, original_selection, "opf_selection_mapping"),
+            ("evaluate_compliance_contrast_pairs.py", contrast_path, original_contrast, "compliance_contrast_pairs"),
+        ):
+            if original is None:
+                continue
+            rerun = subprocess.run(
+                [sys.executable, str(extracted / "scripts" / script)],
+                cwd=extracted,
+                capture_output=True,
+                text=True,
             )
+            if rerun.returncode != 0 or json.loads(artifact.read_text(encoding="utf-8")) != original:
+                errors.append(f"{error_name}_replay_mismatch")
+        if original_selection is not None:
+            selection_mapping_status = original_selection.get("status")
+        if original_contrast is not None:
+            contrast_pair_status = original_contrast.get("status")
     if record_count != 95479:
         errors.append(f"english_record_count:{record_count}")
     if duplicate_ids:
@@ -192,12 +201,10 @@ def compact_archive_audit(bundle: Path, members: list[tarfile.TarInfo]) -> dict[
         errors.append(f"direct_english_receipt_status:{direct_status}")
     if seed_status != "pass":
         errors.append(f"surface_seed_receipt_status:{seed_status}")
-    if review_sample_count != 800:
-        errors.append(f"review_sample_count:{review_sample_count}")
-    if review_assignment_count != 1600:
-        errors.append(f"review_assignment_count:{review_assignment_count}")
-    if review_completed_rows != 0:
-        errors.append(f"review_completed_rows_unexpected:{review_completed_rows}")
+    if selection_mapping_status != "pass":
+        errors.append(f"opf_selection_mapping_status:{selection_mapping_status}")
+    if contrast_pair_status != "pass":
+        errors.append(f"compliance_contrast_pair_status:{contrast_pair_status}")
     with tempfile.TemporaryDirectory(prefix="gridinstruct_compact_counts_") as temp_dir:
         extracted = Path(temp_dir)
         with tarfile.open(bundle, "r:gz") as archive:
@@ -248,7 +255,7 @@ def compact_archive_audit(bundle: Path, members: list[tarfile.TarInfo]) -> dict[
         "status": "pass" if not errors else "fail",
         "bundle": str(bundle),
         "bundle_sha256": sha256(bundle),
-        "archive_layout": "compact_public_review_package",
+        "archive_layout": "compact_public_data_package",
         "safe_archive_member_count": len(members),
         "required_file_count": len(COMPACT_REQUIRED_FILES),
         "record_count": record_count,
@@ -256,9 +263,8 @@ def compact_archive_audit(bundle: Path, members: list[tarfile.TarInfo]) -> dict[
         "jsonl_parse_error_count": parse_errors,
         "direct_english_receipt_status": direct_status,
         "surface_seed_receipt_status": seed_status,
-        "review_sample_count": review_sample_count,
-        "review_assignment_count": review_assignment_count,
-        "review_completed_rows": review_completed_rows,
+        "opf_selection_mapping_status": selection_mapping_status,
+        "compliance_contrast_pair_status": contrast_pair_status,
         "split_counts": split_counts,
         "scenario_registry_count": scenario_registry_count,
         "opf_record_count": opf_record_count,

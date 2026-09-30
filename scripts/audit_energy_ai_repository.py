@@ -92,13 +92,14 @@ def main() -> None:
             "stderr": pytest_run.stderr[-2000:],
         },
         "release_boundary": {
-            "data_and_code_published_by_github": True,
+            "data_and_code_published_by_github": None,
+            "repository_visibility": "not_checked_by_this_local_audit",
             "zenodo_required": False,
             "population_screening_receipt": "included",
             "raw_population_solver_arrays": "external_gate",
-            "external_human_review": "author_attested_outside_repository",
+            "external_human_review": "author_attested_outside_repository_without_local_record",
         },
-        "status": "pass" if data_path.is_file() and not missing_code and compile_run.returncode == 0 and pytest_run.returncode == 0 and population.get("status") == "pass" else "fail",
+        "status": "pass_local_publication_pending" if data_path.is_file() and not missing_code and compile_run.returncode == 0 and pytest_run.returncode == 0 and population.get("status") == "pass" else "fail",
     }
     out_json = ROOT / "reports/energy_ai_repository_audit_20260929.json"
     out_md = ROOT / "reports/energy_ai_repository_audit_20260929.md"
@@ -112,12 +113,12 @@ def main() -> None:
         f"- Regression suite: {report['regression_suite']['summary']}\n"
         f"- Population screening receipt: {report['population_screening_receipt']['registered_candidates']} registered, "
         f"{report['population_screening_receipt']['screened_passes']} passed\n"
-        f"- External review: author-attested completion by {report['external_review_attestation']['reviewer_count']} reviewers; "
-        "row-level ledger is not in this repository\n\n"
-        "The GitHub repository is the release boundary for this Energy & AI version. "
-        "Zenodo is not required. The population screening receipt is included; raw solver arrays "
-        "remain outside the compact release, and the external review is reported as an author attestation "
-        "without a local reproducibility claim.\n",
+        "- External review: the manuscript reports author-attested completion; "
+        "the repository has no supporting row-level ledger or attestation record\n"
+        "- Anonymous repository access: not established\n\n"
+        "The local code/data audit passes, while repository publication remains pending. "
+        "The population screening receipt is included; raw solver arrays and external-review records "
+        "remain outside the compact release.\n",
         encoding="utf-8",
     )
     print(json.dumps(report, ensure_ascii=False, indent=2))

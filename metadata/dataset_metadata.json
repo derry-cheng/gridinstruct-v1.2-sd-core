@@ -3221,9 +3221,9 @@
     {
       "path": "metadata/code_manifest.json",
       "exists": true,
-      "bytes": 34839,
+      "bytes": 32646,
       "records": null,
-      "sha256": "fa24f499c4233ecbb9ea4050a4f03f2c9b19d67358fd79766ec2ed34823f497c"
+      "sha256": "f2f393b3fa49535d22e82ccf3412e1681629056dcea379a458c137630400470a"
     },
     {
       "path": "metadata/data_descriptor_audit.json",
@@ -3417,9 +3417,9 @@
     {
       "path": "scripts/build_compact_public_archive.py",
       "exists": true,
-      "bytes": 11688,
+      "bytes": 10932,
       "records": null,
-      "sha256": "90d6769bd3abc909484d570d84afe42599b80051122a707139abe7be86d06727"
+      "sha256": "af061dff486d6100421b4db8051a67e70a43afaafa2f8d206597867d95963646"
     },
     {
       "path": "scripts/refresh_current_snapshot_metadata.py",
@@ -3438,9 +3438,9 @@
     {
       "path": "scripts/validate_release_archive_replay.py",
       "exists": true,
-      "bytes": 25563,
+      "bytes": 26246,
       "records": null,
-      "sha256": "6523dcfb76f1da76e75daf67d298fc90b94c6e7bca4d8809b2bec35b219fb41b"
+      "sha256": "423aa8529ea11692b54bc3d1ab27a28b3bee4dd74786a364ead934250fd86ce1"
     },
     {
       "path": "scripts/write_compact_bundle_validation.py",

@@ -74,6 +74,8 @@ def main() -> None:
         "benchmark/v1.2_sd_core_strict_tfidf_report.json",
         "benchmark/v1.2_sd_core_challenge_tfidf_report.json",
         "reports/target_hidden_classification_v1.2_sd_core.json",
+        "reports/opf_selection_mapping_v1.2_sd_core.json",
+        "reports/compliance_contrast_pairs_v1.2_sd_core.json",
         "reports/independent_solver_raw_evidence_v1.2_sd_core_rebound.json",
         "reports/independent_solver_validation_v1.2_sd_core_rebound.json",
         "reports/independent_query_truth_validation_v1.2_sd_core.json",
@@ -172,6 +174,8 @@ def main() -> None:
         "scripts/audit_typed_semantic_patterns.py",
         "scripts/build_compact_public_archive.py",
         "scripts/validate_release_archive_replay.py",
+        "scripts/audit_opf_selection_mapping.py",
+        "scripts/evaluate_compliance_contrast_pairs.py",
     ]
     # Submission manuscripts and publication artwork are intentionally outside
     # the public code/data repository. The revision manifest binds only
@@ -262,11 +266,11 @@ def main() -> None:
         "metric_policy": "classification reports macro-F1, accuracy, and balanced accuracy; generation reports exact match and token-F1; structured baselines report schema-field exactness separately",
         "status": "scoped_pass_with_external_gates_pending",
         "external_gates": {
-            "isolated_archive_replay_package": "pass_scoped_local_replay_external_deposition_pending",
+            "isolated_archive_replay_package": "pass_scoped_local_replay_anonymous_access_unverified",
             "raw_scenario_replay": "pending_missing_local_artifact",
             "independent_solver_case_manifest": "pass_scoped_fixed_control_160_cases_raw_population_ledger_external",
-            "external_human_review": "pending_0_of_1600_assignments",
-            "public_repository_and_doi": "pass_code_repository_and_software_doi_data_doi_pending",
+            "external_human_review": "author_attested_without_public_row_ledger",
+            "repository_access": "restricted_anonymous_access_not_established",
         },
     }
     output = root / args.output

@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Build the small, current public-review archive.
+"""Build the compact code-and-data release archive.
 
 The full local evidence tree contains raw ledgers and duplicated stress
 projections that are useful for reconstruction but are not required for the
-anonymous review package.  This script selects the current compact surface,
+public data package.  This script selects the current compact surface,
 dereferences every member, and writes deterministic tar/gzip metadata.  It
 does not create human judgements or assign a data DOI.
 """
@@ -73,6 +73,9 @@ BASE_MEMBERS = {
     "third_party/pglib-opf-v23.07/LICENSE",
     "third_party/pglib-opf-v23.07/UPSTREAM_COMMIT",
     "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_report.json",
+    "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_test_predictions.jsonl",
+    "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_ood_predictions.jsonl",
+    "benchmark/instruction_surface_balanced_v1.2_sd_core_leakage_fixed/tfidf_test_predictions.jsonl",
     "benchmark/instruction_surface_balanced_v1.2_sd_core_leakage_fixed/tfidf_report.json",
     "benchmark/international_rule_probe_v1/nearest_neighbor_report.json",
     "benchmark/international_rule_probe_v1/nearest_neighbor_report.md",
@@ -122,6 +125,11 @@ BASE_MEMBERS = {
     "reports/cross_solver_power_flow_v1.2_sd_core.md",
     "reports/core_n1_denominator_v1.2_sd_core.json",
     "reports/core_n1_denominator_v1.2_sd_core.md",
+    "reports/opf_selection_mapping_v1.2_sd_core.json",
+    "reports/opf_candidate_register_v1.2_sd_core.json",
+    "reports/compliance_contrast_pairs_v1.2_sd_core.json",
+    "scripts/audit_opf_selection_mapping.py",
+    "scripts/evaluate_compliance_contrast_pairs.py",
     "rules/international_rule_profiles.json",
     "rules/regulation_rules.json",
 }
@@ -138,6 +146,7 @@ CURRENT_DOCUMENTS = {
     # bounded electrical checks described in the Data Descriptor.
     "simulation_outputs/contingency/scenarios_converged.json",
     "simulation_outputs/opf_closed_loop/ieee14_ieee118_source_scenarios_v1.json",
+    "simulation_outputs/opf_closed_loop/ieee14_secure_candidate_scenarios_v1.json",
     "simulation_outputs/opf_closed_loop/auxiliary_opf_results.json",
     "simulation_outputs/opf_closed_loop/opf_action_uncertainty_stress_cases_v1.json",
     "simulation_outputs/opf_closed_loop/opf_action_constant_power_factor_stress_cases_v1.json",
@@ -186,7 +195,7 @@ def main() -> None:
         "schema_version": "1.0",
         "generated_at": "1970-01-01T00:00:00+00:00",
         "timestamp_policy": "deterministic SOURCE_DATE_EPOCH=0 archive metadata",
-        "archive_layout": "compact_public_review_package",
+        "archive_layout": "compact_public_data_package",
         "bundle": str(bundle.relative_to(ROOT)),
         "bundle_sha256": bundle_hash,
         "member_count": len(members),
@@ -197,10 +206,10 @@ def main() -> None:
         "scope": {
             "canonical_records": 95479,
             "international_probe_records": 512,
-            "core_review_samples": 800,
-            "core_review_assignment_slots": 1600,
-            "core_review_completed_rows": 0,
-            "planned_reviewer_pool_size": 5,
+            "released_opf_scenarios": 160,
+            "released_opf_records": 320,
+            "robust_screened_candidates": 136,
+            "robust_passed_candidates": 120,
             "strict_source_group_projections": "retained in the local evidence tree; the compact archive exposes their receipt, not duplicate full projections",
             "raw_scenario_and_full_candidate_ledgers": "deferred outside compact package",
             "data_doi": "pending",

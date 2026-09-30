@@ -1,22 +1,21 @@
 # GridInstruct v1.2-sd-core release manifest
 
-This directory contains the English-language canonical instruction table, its
-official split files, the data-generation and validation code, source and
-license provenance, and the evidence-bound reports used by the Scientific Data
-descriptor. The international rule probe includes its jurisdiction-held-out
-retrieval diagnostic and blank two-reviewer assignment package. The release
-excludes installed dependency source, pretrained weights, raw upstream case
-files, and unbound historical ledgers.
+This directory contains the canonical instruction table, its official split
+files, data-generation and validation code, source and licence provenance,
+and bounded electrical and task-evaluation reports. The international rule
+probe includes a jurisdiction-held-out retrieval diagnostic. Submission
+manuscripts, publication figures, and reviewer assignment records are kept
+outside this code/data release. Installed dependencies, pretrained weights,
+raw upstream case files, and full construction-attempt ledgers are excluded.
 
 The current local evidence boundary is recorded in
-`metadata/evidence_binding_manifest.json`. The code repository and software DOI are public;
-the persistent data DOI, completed expert review, and final author metadata remain external
-submission inputs until they are verified by the authors.
+`metadata/evidence_binding_manifest.json`. This GitHub repository currently has
+restricted access; author declarations and external review records remain with the submission.
 
-The compact review archive is available from the public GitHub release at
+The compact data archive is attached to the GitHub release at
 https://github.com/derry-cheng/gridinstruct-v1.2-sd-core/releases/download/v1.2-sd-core/GridInstruct_v1.2_sd_core_data_only.tar.gz.
-Its SHA-256 companion is uploaded beside the archive; this URL provides reviewer access
-while the formal data DOI remains pending.
+The release is not a formal DOI-backed data accession. Anonymous access depends on the
+repository's visibility setting and is not established by local replay.
 
 ## Planning artifacts
 

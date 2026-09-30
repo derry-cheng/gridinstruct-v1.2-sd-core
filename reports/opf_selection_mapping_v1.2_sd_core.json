@@ -1,0 +1,31 @@
+{
+  "status": "pass",
+  "registered_candidates": 35200,
+  "power_flow_converged": 30800,
+  "eligible_violation_candidates": 8508,
+  "robust_screened_candidates": 136,
+  "robust_passed_candidates": 120,
+  "eligible_not_screened_after_target": 8372,
+  "selected_ieee14_pool": 120,
+  "released_scenarios": 160,
+  "released_scenarios_by_system": {
+    "ieee118": 80,
+    "ieee14": 80
+  },
+  "released_from_selected_ieee14_pool": 80,
+  "selected_ieee14_not_released": 40,
+  "released_from_ieee118_source_pool": 80,
+  "released_instruction_variants": 320,
+  "checks": {
+    "released_scenarios_unique": true,
+    "released_sources_complete": true,
+    "source_groups_disjoint": true,
+    "released_system_balance": true,
+    "screening_denominator_consistent": true,
+    "selected_pool_consistent": true,
+    "released_ieee14_drawn_from_selected_pool": true,
+    "released_ieee118_drawn_from_source_pool": true,
+    "opf_record_scenarios_match_released_scenarios": true,
+    "two_opf_records_per_released_scenario": true
+  }
+}
