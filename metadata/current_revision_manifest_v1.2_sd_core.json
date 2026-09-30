@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-30T14:57:16.807425+00:00",
+  "generated_at": "2026-09-30T15:58:04.470272+00:00",
   "revision": "v1.2-sd-core-current-2026-08-28",
   "runtime_policy": "local CPU/MPS; no remote GPU execution",
   "dataset": {
@@ -286,7 +286,7 @@
   },
   "metadata": {
     "metadata/dataset_metadata.json": {
-      "sha256": "91ecb7817f9dda0920cc441fe33e7ebd5a384ee0a43a6736b0e54e896d122bbb",
+      "sha256": "4c794202bfde60369b84ee70bffd753dd787361e7c515f55ffe304dc9d0bbaee",
       "bytes": 161419
     },
     "metadata/data_lineage_manifest.json": {
@@ -298,11 +298,11 @@
       "bytes": 795
     },
     "metadata/evidence_binding_manifest.json": {
-      "sha256": "9136fdc8ca251500705249c541bec25533a50d29949aa946f8bbcc98c77889a6",
+      "sha256": "c4f8634e024ce4421db5d9552b3b02fdd0c49e5638495b1f91e29753c28fe0af",
       "bytes": 33749
     },
     "metadata/file_manifest.csv": {
-      "sha256": "9ff151954a76428bfeb16908bcf43ee1a0441a8642377fc81db52c93164b53e6",
+      "sha256": "233b0dd87da5d6ecaea6a5c47b65c73f07f81f32bc904910b5b768efb78fa824",
       "bytes": 12639
     },
     "metadata/formal_runtime_environment.json": {
@@ -448,8 +448,8 @@
       "bytes": 12145
     },
     "scripts/build_compact_public_archive.py": {
-      "sha256": "af061dff486d6100421b4db8051a67e70a43afaafa2f8d206597867d95963646",
-      "bytes": 10932
+      "sha256": "ad6f99ef9f1ec2400a84877eb9e69256ffc425d8bd2a81267a3ce41584848991",
+      "bytes": 10902
     },
     "scripts/validate_release_archive_replay.py": {
       "sha256": "423aa8529ea11692b54bc3d1ab27a28b3bee4dd74786a364ead934250fd86ce1",

@@ -3223,7 +3223,7 @@
       "exists": true,
       "bytes": 32646,
       "records": null,
-      "sha256": "f2f393b3fa49535d22e82ccf3412e1681629056dcea379a458c137630400470a"
+      "sha256": "19f319e9a8433065d08a2e07a801b9586b1401b0b4a7d0ea6dadea533520d858"
     },
     {
       "path": "metadata/data_descriptor_audit.json",
@@ -3417,9 +3417,9 @@
     {
       "path": "scripts/build_compact_public_archive.py",
       "exists": true,
-      "bytes": 10932,
+      "bytes": 10902,
       "records": null,
-      "sha256": "af061dff486d6100421b4db8051a67e70a43afaafa2f8d206597867d95963646"
+      "sha256": "ad6f99ef9f1ec2400a84877eb9e69256ffc425d8bd2a81267a3ce41584848991"
     },
     {
       "path": "scripts/refresh_current_snapshot_metadata.py",

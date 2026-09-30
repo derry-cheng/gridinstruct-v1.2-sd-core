@@ -254,8 +254,8 @@
     },
     {
       "path": "scripts/build_compact_public_archive.py",
-      "bytes": 10932,
-      "sha256": "af061dff486d6100421b4db8051a67e70a43afaafa2f8d206597867d95963646"
+      "bytes": 10902,
+      "sha256": "ad6f99ef9f1ec2400a84877eb9e69256ffc425d8bd2a81267a3ce41584848991"
     },
     {
       "path": "scripts/build_current_file_manifest.py",

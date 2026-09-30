@@ -4,7 +4,7 @@
   "timestamp_policy": "deterministic SOURCE_DATE_EPOCH=0 archive metadata",
   "archive_layout": "compact_public_data_package",
   "bundle": "release/GridInstruct_v1.2_sd_core_data_only.tar.gz",
-  "bundle_sha256": "534b7b46064c326ac4df2c481b45350051e84be16f537f02d684978af5983abe",
+  "bundle_sha256": "de7c916fe49cae2da9125d7b078ce6b0f3c554ed757fcaa4594b889eefb9acef",
   "member_count": 121,
   "members": [
     {
@@ -245,12 +245,12 @@
     {
       "path": "metadata/dataset_metadata.json",
       "bytes": 161419,
-      "sha256": "91ecb7817f9dda0920cc441fe33e7ebd5a384ee0a43a6736b0e54e896d122bbb"
+      "sha256": "4c794202bfde60369b84ee70bffd753dd787361e7c515f55ffe304dc9d0bbaee"
     },
     {
       "path": "metadata/evidence_binding_manifest.json",
       "bytes": 33749,
-      "sha256": "9136fdc8ca251500705249c541bec25533a50d29949aa946f8bbcc98c77889a6"
+      "sha256": "c4f8634e024ce4421db5d9552b3b02fdd0c49e5638495b1f91e29753c28fe0af"
     },
     {
       "path": "metadata/independent_solver_case_manifest_v1.json",
@@ -620,7 +620,7 @@
     "released_opf_records": 320,
     "robust_screened_candidates": 136,
     "robust_passed_candidates": 120,
-    "strict_source_group_projections": "retained in the local evidence tree; the compact archive exposes their receipt, not duplicate full projections",
+    "strict_source_group_projections": "full train, validation, and test projections are included in the compact archive",
     "raw_scenario_and_full_candidate_ledgers": "deferred outside compact package",
     "data_doi": "pending"
   }

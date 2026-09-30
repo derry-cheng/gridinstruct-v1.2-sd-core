@@ -1,6 +1,6 @@
 {
   "schema_version": "gridinstruct-scoped-evidence-v2",
-  "generated_at": "2026-09-30T14:32:40.739211+00:00",
+  "generated_at": "2026-09-30T15:55:10.097269+00:00",
   "status": "pass",
   "scope": "local_hash_bound_release_candidate",
   "runtime_policy": "local CPU/MPS only; no remote GPU execution",
@@ -644,7 +644,7 @@
     },
     "metadata/dataset_metadata.json": {
       "path": "metadata/dataset_metadata.json",
-      "sha256": "91ecb7817f9dda0920cc441fe33e7ebd5a384ee0a43a6736b0e54e896d122bbb",
+      "sha256": "4c794202bfde60369b84ee70bffd753dd787361e7c515f55ffe304dc9d0bbaee",
       "bytes": 161419,
       "reported_status": null,
       "bound": true

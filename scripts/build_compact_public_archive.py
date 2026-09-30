@@ -210,7 +210,7 @@ def main() -> None:
             "released_opf_records": 320,
             "robust_screened_candidates": 136,
             "robust_passed_candidates": 120,
-            "strict_source_group_projections": "retained in the local evidence tree; the compact archive exposes their receipt, not duplicate full projections",
+            "strict_source_group_projections": "full train, validation, and test projections are included in the compact archive",
             "raw_scenario_and_full_candidate_ledgers": "deferred outside compact package",
             "data_doi": "pending",
         },
