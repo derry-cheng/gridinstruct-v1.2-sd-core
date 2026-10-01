@@ -1,6 +1,6 @@
 {
   "schema_version": "gridinstruct-scoped-evidence-v2",
-  "generated_at": "2026-09-30T15:55:10.097269+00:00",
+  "generated_at": "2026-10-01T04:20:34.870483+00:00",
   "status": "pass",
   "scope": "local_hash_bound_release_candidate",
   "runtime_policy": "local CPU/MPS only; no remote GPU execution",
@@ -644,8 +644,8 @@
     },
     "metadata/dataset_metadata.json": {
       "path": "metadata/dataset_metadata.json",
-      "sha256": "4c794202bfde60369b84ee70bffd753dd787361e7c515f55ffe304dc9d0bbaee",
-      "bytes": 161419,
+      "sha256": "3089dcae3ea8cc879d6e4ac201cc951b8bd56d833a163f74edd37ceceb7b6801",
+      "bytes": 161563,
       "reported_status": null,
       "bound": true
     },
@@ -662,10 +662,52 @@
       "bytes": 24534,
       "reported_status": "pass",
       "bound": true
+    },
+    "reports/local_instruction_transfer_20261001.json": {
+      "path": "reports/local_instruction_transfer_20261001.json",
+      "sha256": "d840ac5bd396fd4a49cebfa13146b765f488608efad51a3155e81d4eebab53ca",
+      "bytes": 7614,
+      "reported_status": "complete",
+      "bound": true
+    },
+    "reports/local_instruction_transfer_replay_20261001.json": {
+      "path": "reports/local_instruction_transfer_replay_20261001.json",
+      "sha256": "7bc0b671966041c040eb071f0dfceb4fb33e89cea86d9666d0fe01132911847a",
+      "bytes": 759,
+      "reported_status": "pass",
+      "bound": true
+    },
+    "reports/local_instruction_transfer_audit_20261001.json": {
+      "path": "reports/local_instruction_transfer_audit_20261001.json",
+      "sha256": "8e9cc8a5bee4966bcf44f444389c0e0ace43e167d01fcd668c404dbe52c91d02",
+      "bytes": 3866,
+      "reported_status": null,
+      "bound": true
+    },
+    "experiments/revision_20261001/protocol.json": {
+      "path": "experiments/revision_20261001/protocol.json",
+      "sha256": "1edc76f4616c91a4fd2d6cc9e30934b3e9f2ca96a19fc7bc3850aa56df5c68b4",
+      "bytes": 1627,
+      "reported_status": null,
+      "bound": true
+    },
+    "experiments/revision_20261001/request_variant_protocol.json": {
+      "path": "experiments/revision_20261001/request_variant_protocol.json",
+      "sha256": "7edb491f66b45101c5dfa3dc3a2a064e1da138db3373a10f805f323deca7bff3",
+      "bytes": 1104,
+      "reported_status": null,
+      "bound": true
+    },
+    "reports/public_repository_access_20261001.json": {
+      "path": "reports/public_repository_access_20261001.json",
+      "sha256": "9cc395830790ed50d1ee262c7e0f504c1d010478de0d1cc808de0f8f8d0661ca",
+      "bytes": 331,
+      "reported_status": null,
+      "bound": true
     }
   },
-  "total_evidence": 93,
-  "evidence_bound": 93,
+  "total_evidence": 99,
+  "evidence_bound": 99,
   "missing_local_bindings": [],
   "invalid_evidence_count": 0,
   "local_gate_summary": {
@@ -727,11 +769,11 @@
       "status": "author_attested_review_without_public_row_ledger",
       "scope": "five-reviewer completion is author-attested; public row-level outcomes and agreement statistics are absent"
     },
-    "public_repository_and_doi": {
-      "passed": false,
+    "public_repository": {
+      "passed": true,
       "kind": "external",
-      "status": "anonymous_repository_access_not_established",
-      "scope": "GitHub source and release exist for authorized access; anonymous access requires repository publication"
+      "status": "public_anonymous_http_200_confirmed_20261001",
+      "scope": "repository visibility verified by anonymous HTTP request; immutable release download is checked separately"
     },
     "final_author_funding_metadata": {
       "passed": false,

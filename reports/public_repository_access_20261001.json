@@ -1,0 +1,9 @@
+{
+  "date": "2026-10-01",
+  "repository": "https://github.com/derry-cheng/gridinstruct-v1.2-sd-core",
+  "visibility": "PUBLIC",
+  "is_private": false,
+  "anonymous_http_status": 200,
+  "checks": "gh repo view and unauthenticated curl GET",
+  "scope": "repository access only; versioned release asset access checked after upload"
+}

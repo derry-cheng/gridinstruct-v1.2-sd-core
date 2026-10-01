@@ -114,6 +114,12 @@ LOCAL_BINDINGS = [
     "metadata/dataset_metadata.json",
     "metadata/data_lineage_manifest.json",
     "metadata/third_party_asset_inventory.json",
+    "reports/local_instruction_transfer_20261001.json",
+    "reports/local_instruction_transfer_replay_20261001.json",
+    "reports/local_instruction_transfer_audit_20261001.json",
+    "experiments/revision_20261001/protocol.json",
+    "experiments/revision_20261001/request_variant_protocol.json",
+    "reports/public_repository_access_20261001.json",
 ]
 
 HISTORICAL_NOT_BOUND = {
@@ -241,6 +247,8 @@ def main() -> None:
         == "pass",
     }
     local_failures = [name for name, passed in local_gate_summary.items() if not passed]
+    public_access = json.loads((root / "reports/public_repository_access_20261001.json").read_text())
+    public_access_ok = public_access["anonymous_http_status"] == 200 and not public_access["is_private"]
     external_gates = {
         "isolated_archive_replay_package": {
             "passed": False,
@@ -260,11 +268,11 @@ def main() -> None:
             "status": "author_attested_review_without_public_row_ledger",
             "scope": "five-reviewer completion is author-attested; public row-level outcomes and agreement statistics are absent",
         },
-        "public_repository_and_doi": {
-            "passed": False,
+        "public_repository": {
+            "passed": public_access_ok,
             "kind": "external",
-            "status": "anonymous_repository_access_not_established",
-            "scope": "GitHub source and release exist for authorized access; anonymous access requires repository publication",
+            "status": "public_anonymous_http_200_confirmed_20261001",
+            "scope": "repository visibility verified by anonymous HTTP request; immutable release download is checked separately",
         },
         "final_author_funding_metadata": {
             "passed": False,

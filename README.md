@@ -20,6 +20,14 @@ checks.
 
 ## Repository layout
 
+The current immutable snapshot is GitHub release `v1.2-eai-20261001`.
+The local instruction-model experiment is documented in
+`experiments/revision_20261001/README.md`. It uses three seeds and a
+source-isolated, label-balanced compliance test: macro-F1 rises from 0.161
+to 0.823 (sample standard deviation 0.046). Its matched TF-IDF baseline
+scores 0.912; these are agreement scores for synthetic contract labels,
+not free-form control or operational deployment metrics.
+
 | Path | Purpose |
 | --- | --- |
 | `scripts/` | Physical construction, dataset stages, validation, baselines, figures, packaging, and the unified pipeline |
@@ -88,7 +96,6 @@ The current bounded validation additions are reproducible on the local CPU:
 python scripts/run_independent_opf_envelope.py
 python scripts/replay_pglib_network_envelope.py
 python scripts/create_template_family_holdout.py
-python scripts/rebuild_latex_submission_package.py
 ```
 
 The independent OPF envelope covers nine selected solves; the all-family parser envelope keeps

@@ -1,18 +1,20 @@
 # Public repository scope
 
-The public GitHub repository is the code and provenance companion to the data
-archive. It should contain the generation and audit scripts, synchronized
-manuscript sources, figures, schemas, rule metadata, licenses, documentation,
-machine-readable receipts, and the release instructions. The complete JSONL
-tables and solver arrays belong in the separately archived data record and are
-excluded from ordinary Git history by the root `.gitignore`.
+The GitHub repository contains generation and validation code, experiment
+protocols, schemas, rule and source registries, licences, documentation, and
+numerical reports. Complete record tables, prediction files, and selected
+solver arrays are distributed in the data-only release attachment and excluded
+from ordinary Git history. Submission manuscripts, publication artwork, author
+declarations, and human-review records remain local.
 
 The repository must not contain `.env` files, access tokens, local caches,
 installed dependency trees, model checkpoints, build directories, or temporary
-archives. The current README records the public repository URL and archived
-code-release DOI; the data DOI, release tag, and access date must be added or
-updated when the formal data deposition is completed.
+archives. Each release uses an immutable Git tag and an associated data-only
+archive. Repository visibility and successful anonymous downloads are checked
+before a release is described as publicly available. Zenodo and a data DOI are
+outside the selected GitHub publication route.
 
 Before publishing, inspect the staged file list and verify that no file larger
 than GitHub's ordinary per-file limit is included. The release archive itself
-is retained locally for DOI deposition and is ignored by Git.
+is rebuilt from its declared member list and uploaded as a GitHub release
+attachment. Local archive copies are reproducible build products ignored by Git.

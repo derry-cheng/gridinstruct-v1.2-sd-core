@@ -1,0 +1,13 @@
+{
+  "purpose": "same-state request-variant diagnostic, added after the source-partition audit found no exact-context request pairs",
+  "selection": "32 unique strict-test scenarios, round-robin across canonical labels, selection seed 20261001",
+  "targets": "unchanged synthetic compliance-contract labels from canonical strict-test records; no prediction-derived references",
+  "instructions": [
+    "Assess the proposed dispatch action using the supplied operating context and return its compliance classification.",
+    "For this operating state and proposed action, identify whether the applicable requirements are satisfied, including any monitoring condition."
+  ],
+  "held_constant": "complete input object, proposed action, operating state, operator goal, and reference label",
+  "models": "same pinned base model and the three saved adapters; no additional training or checkpoint selection",
+  "metrics": "label agreement and both predictions correct on 32 pairs",
+  "scope": "controlled request rendering for the compliance contract; no claim of unrestricted dispatcher-language equivalence"
+}

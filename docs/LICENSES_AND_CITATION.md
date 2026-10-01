@@ -1,6 +1,6 @@
 # Licenses and Citation
 
-This note records the license, attribution, and citation contract for the GridInstruct Scientific Data release package.
+This note records the licence, attribution, and citation contract for the GridInstruct code and data release.
 
 ## GridInstruct licenses
 
@@ -50,8 +50,9 @@ and state PGLib-OPF release `v23.07`.
 - Raw PGLib `.m` case files are excluded.
 - Derived numerical states and instruction records are included as attributed adaptations.
 - Installed pandapower, lightsim2grid, and power-grid-model source code is excluded.
-- The current archive builder requires `third_party/pglib-opf-v23.07/LICENSE`
-  and excludes every other file under that directory.
+- The compact archive includes `third_party/pglib-opf-v23.07/LICENSE` and
+  `third_party/pglib-opf-v23.07/UPSTREAM_COMMIT`; raw case files remain outside
+  that archive. The repository retains the attributed pinned case files.
 - The current compact archive includes the pinned PGLib `LICENSE`; its member
   manifest and SHA-256 sidecar are regenerated and replay-validated with each
   package rebuild. Any change to the upstream revision or the derived-state
@@ -64,10 +65,11 @@ opinion.
 ## External submission fields still required
 
 - Final author identities and author-contribution declarations.
-- Formal data citation and a persistent data DOI.
+- Final citation of the fixed Git tag, code revision, and data-only release attachment.
 - Final funding and competing-interest metadata.
 - Confirmation of upstream benchmark-case attribution and redistribution terms
   if the pinned upstream revision changes.
 
-The public repository and software archive DOI are recorded above and in the
-manuscript. Only real archival values may replace the remaining fields.
+The repository URL is https://github.com/derry-cheng/gridinstruct-v1.2-sd-core.
+The current release route uses a fixed Git tag and its associated data-only
+archive. Historical Zenodo identifiers do not identify this version.

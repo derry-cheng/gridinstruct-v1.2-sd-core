@@ -1,18 +1,20 @@
 {
   "generated_at": "1970-01-01T00:00:00+00:00",
   "timestamp_policy": "deterministic SOURCE_DATE_EPOCH=0 archive metadata",
-  "title": "GridInstruct v1.2-sd-core release candidate",
+  "title": "GridInstruct code and data generation release",
   "version": "1.2-sd-core",
-  "release_type": "local release candidate for external repository deposition",
+  "release_type": "versioned GitHub code and data archive",
   "license_data": "See LICENSE-DATA",
   "license_code": "See LICENSE-CODE",
   "public_repository_url": "https://github.com/derry-cheng/gridinstruct-v1.2-sd-core",
-  "data_doi": "pending",
-  "archived_code_release_doi": "https://doi.org/10.5281/zenodo.21921745",
+  "data_doi": null,
+  "archived_code_release_doi": null,
+  "release_tag": "v1.2-eai-20261001",
   "keywords": [
     "power dispatch",
     "instruction dataset",
     "IEEE test systems",
-    "Scientific Data"
+    "data generation",
+    "energy AI"
   ]
 }

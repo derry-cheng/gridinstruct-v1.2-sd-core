@@ -1,0 +1,224 @@
+{
+  "status": "complete",
+  "scope": "supervised transfer for one compact pretrained instruction model on a simulated compliance contract; no claim of live dispatch or executable-control improvement",
+  "protocol": {
+    "experiment": "local_instruction_transfer",
+    "model": "HuggingFaceTB/SmolLM2-135M-Instruct",
+    "model_revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+    "task": "regulation_compliance_check",
+    "split": "released strict five-key source-group partition",
+    "selection_seed": 20261001,
+    "train_per_label": 256,
+    "validation_per_label": 64,
+    "test_per_label": 96,
+    "pair_probe": "up to 32 exact-request state-change pairs and 32 exact-context request-variant pairs, one pair per group, sampled from the strict test partition before inference",
+    "training_seeds": [
+      13,
+      29,
+      42
+    ],
+    "epochs": 2,
+    "batch_size": 8,
+    "learning_rate": 0.0003,
+    "adaptation": "LoRA query and value projections, rank 8, alpha 16, dropout 0.05; frozen pretrained weights",
+    "max_tokens": 384,
+    "checkpoint_selection": "highest validation macro-F1, then lowest validation target-token loss",
+    "prediction": "maximum summed conditional log probability of a complete canonical label and end token",
+    "primary_metric": "macro-F1 on the same label-balanced held-out sample before and after training",
+    "additional_metrics": "accuracy, per-label F1, both-correct state pairs, exact-context request variants, instruction-only ablation",
+    "inference_policy": "identical candidate labels, prompt template, tokenizer, and inference rule before and after tuning",
+    "scope": "supervised transfer for one compact pretrained instruction model on a simulated compliance contract; no claim of live dispatch or executable-control improvement",
+    "resource_policy": "local MPS or CPU; at most 8 CPU threads; retain small adapter checkpoints only"
+  },
+  "runtime_versions": {
+    "torch": "2.3.0",
+    "transformers": "4.40.1",
+    "peft": "0.11.1",
+    "accelerate": "0.30.1",
+    "scikit-learn": "1.4.2"
+  },
+  "sample_provenance_overlap": {
+    "train--validation": [],
+    "train--test": [],
+    "validation--test": []
+  },
+  "saved_adapter_replay": [
+    {
+      "seed": 13,
+      "records": 350,
+      "changed_labels": 0,
+      "maximum_label_log_probability_difference": 4.76837158203125e-07
+    },
+    {
+      "seed": 29,
+      "records": 350,
+      "changed_labels": 0,
+      "maximum_label_log_probability_difference": 4.76837158203125e-07
+    },
+    {
+      "seed": 42,
+      "records": 350,
+      "changed_labels": 0,
+      "maximum_label_log_probability_difference": 9.5367431640625e-07
+    }
+  ],
+  "target_provenance": "released synthetic compliance-contract labels; no prediction-derived reference",
+  "test_record_review_status": {
+    "generated_pending_expert_review": 286,
+    "llm_augmented_pending_expert_review": 1,
+    "llm_dual_review_accepted": 1
+  },
+  "test_records": 288,
+  "test_scenarios": 164,
+  "base": {
+    "n": 288,
+    "accuracy": 0.2708333333333333,
+    "macro_f1": 0.16098484848484848,
+    "per_label_f1": {
+      "compliant": 0.42045454545454547,
+      "compliant_with_monitoring": 0.0,
+      "non_compliant": 0.0625
+    },
+    "scenario_count": 164,
+    "state_change": {
+      "pairs": 3,
+      "both_correct": 0,
+      "both_correct_rate": 0.0
+    },
+    "request_variant": {
+      "pairs": 0,
+      "both_correct": 0,
+      "both_correct_rate": null
+    }
+  },
+  "same_sample_tfidf": {
+    "n": 288,
+    "accuracy": 0.9131944444444444,
+    "macro_f1": 0.911586422431518,
+    "per_label_f1": {
+      "compliant": 0.9458128078817734,
+      "compliant_with_monitoring": 0.8666666666666667,
+      "non_compliant": 0.9222797927461139
+    },
+    "scenario_count": 164,
+    "state_change": {
+      "pairs": 3,
+      "both_correct": 1,
+      "both_correct_rate": 0.3333333333333333
+    },
+    "request_variant": {
+      "pairs": 0,
+      "both_correct": 0,
+      "both_correct_rate": null
+    }
+  },
+  "tuned_macro_f1_mean": 0.8234226247029304,
+  "tuned_macro_f1_sd": 0.045677539514647,
+  "instruction_only_macro_f1_mean": 0.39124934730046046,
+  "scenario_cluster_bootstrap_delta_95_intervals": {
+    "13": [
+      0.5531068930900044,
+      0.6707425630577795
+    ],
+    "29": [
+      0.6441034779541777,
+      0.7560313057861391
+    ],
+    "42": [
+      0.607905962391231,
+      0.7526426047586818
+    ]
+  },
+  "bootstrap_policy": "1000 paired resamples of entire scenario clusters within the fixed label-balanced test sample; seeds remain separate",
+  "state_change_pairs": {
+    "base": {
+      "pairs": 32,
+      "both_correct": 0,
+      "both_correct_rate": 0.0,
+      "prediction_agreement": 0.90625
+    },
+    "tuned": [
+      {
+        "pairs": 32,
+        "both_correct": 2,
+        "both_correct_rate": 0.0625,
+        "prediction_agreement": 0.78125
+      },
+      {
+        "pairs": 32,
+        "both_correct": 0,
+        "both_correct_rate": 0.0,
+        "prediction_agreement": 0.84375
+      },
+      {
+        "pairs": 32,
+        "both_correct": 5,
+        "both_correct_rate": 0.15625,
+        "prediction_agreement": 0.71875
+      }
+    ]
+  },
+  "request_variant_protocol": {
+    "purpose": "same-state request-variant diagnostic, added after the source-partition audit found no exact-context request pairs",
+    "selection": "32 unique strict-test scenarios, round-robin across canonical labels, selection seed 20261001",
+    "targets": "unchanged synthetic compliance-contract labels from canonical strict-test records; no prediction-derived references",
+    "instructions": [
+      "Assess the proposed dispatch action using the supplied operating context and return its compliance classification.",
+      "For this operating state and proposed action, identify whether the applicable requirements are satisfied, including any monitoring condition."
+    ],
+    "held_constant": "complete input object, proposed action, operating state, operator goal, and reference label",
+    "models": "same pinned base model and the three saved adapters; no additional training or checkpoint selection",
+    "metrics": "label agreement and both predictions correct on 32 pairs",
+    "scope": "controlled request rendering for the compliance contract; no claim of unrestricted dispatcher-language equivalence"
+  },
+  "request_variants": [
+    {
+      "model": "base",
+      "request_variant": {
+        "pairs": 32,
+        "both_correct": 11,
+        "both_correct_rate": 0.34375,
+        "prediction_agreement": 1.0
+      }
+    },
+    {
+      "model": "seed_13",
+      "request_variant": {
+        "pairs": 32,
+        "both_correct": 14,
+        "both_correct_rate": 0.4375,
+        "prediction_agreement": 0.78125
+      }
+    },
+    {
+      "model": "seed_29",
+      "request_variant": {
+        "pairs": 32,
+        "both_correct": 22,
+        "both_correct_rate": 0.6875,
+        "prediction_agreement": 0.8125
+      }
+    },
+    {
+      "model": "seed_42",
+      "request_variant": {
+        "pairs": 32,
+        "both_correct": 16,
+        "both_correct_rate": 0.5,
+        "prediction_agreement": 0.84375
+      }
+    }
+  ],
+  "request_probe_source_records": 32,
+  "request_probe_rendered_records": 64,
+  "request_probe_source_review_status": {
+    "generated_pending_expert_review": 32
+  },
+  "request_probe_source_provenance_overlap": {
+    "train--validation": [],
+    "train--test": [],
+    "validation--test": []
+  },
+  "sample_provenance_scope": "selected training and validation records versus primary test and controlled request-probe source records",
+  "macro_f1_gain": 0.6624377762180819
+}

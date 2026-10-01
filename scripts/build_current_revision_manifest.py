@@ -87,11 +87,17 @@ def main() -> None:
         "reports/typed_semantic_pattern_audit_v1.2_sd_core.json",
         "reports/cross_solver_power_flow_v1.2_sd_core.json",
         "reports/core_n1_denominator_v1.2_sd_core.json",
+        "reports/local_instruction_transfer_20261001.json",
+        "reports/local_instruction_transfer_replay_20261001.json",
+        "reports/local_instruction_transfer_audit_20261001.json",
+        "experiments/revision_20261001/protocol.json",
+        "experiments/revision_20261001/request_variant_protocol.json",
     ]
-    required_predictions = sorted(
-        str(path.relative_to(root))
-        for path in (root / "benchmark/current_v1.2_sd_core").glob("*_predictions.jsonl")
-    )
+    required_predictions = [
+        "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_test_predictions.jsonl",
+        "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_ood_predictions.jsonl",
+    ] + sorted(str(path.relative_to(root)) for path in
+               (root / "benchmark/local_instruction_transfer_20261001").glob("*_predictions.jsonl"))
     relevant_evidence = [
         "reports/action_level_validation_audit_v1.2_sd_core.json",
         "reports/core_n1_denominator_v1.2_sd_core.json",
@@ -176,6 +182,9 @@ def main() -> None:
         "scripts/validate_release_archive_replay.py",
         "scripts/audit_opf_selection_mapping.py",
         "scripts/evaluate_compliance_contrast_pairs.py",
+        "scripts/run_local_instruction_transfer.py",
+        "scripts/evaluate_local_request_variants.py",
+        "scripts/validate_local_instruction_transfer.py",
     ]
     # Submission manuscripts and publication artwork are intentionally outside
     # the public code/data repository. The revision manifest binds only
@@ -219,7 +228,7 @@ def main() -> None:
     baseline_ok = all(baseline_artifact_ok(path, item) for path, item in baseline_json)
     manifest = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
-        "revision": "v1.2-sd-core-current-2026-08-28",
+        "revision": "v1.2-eai-20261001",
         "runtime_policy": "local CPU/MPS; no remote GPU execution",
         "dataset": {path: required_artifacts.pop(path) for path in inputs},
         "required_artifacts": required_artifacts,
@@ -270,7 +279,7 @@ def main() -> None:
             "raw_scenario_replay": "pending_missing_local_artifact",
             "independent_solver_case_manifest": "pass_scoped_fixed_control_160_cases_raw_population_ledger_external",
             "external_human_review": "author_attested_without_public_row_ledger",
-            "repository_access": "restricted_anonymous_access_not_established",
+            "repository_access": "public_anonymous_http_200_confirmed_20261001",
         },
     }
     output = root / args.output

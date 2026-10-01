@@ -140,39 +140,55 @@ def compact_archive_audit(bundle: Path, members: list[tarfile.TarInfo]) -> dict[
     opf_record_count = None
     opf_scenario_count = None
     independent_case_count = None
-    with tempfile.TemporaryDirectory(prefix="gridinstruct_compact_replay_") as temp_dir:
+    with tarfile.open(bundle, "r:gz") as archive, tempfile.TemporaryDirectory(
+        prefix="gridinstruct_compact_replay_"
+    ) as temp_dir:
         extracted = Path(temp_dir)
-        with tarfile.open(bundle, "r:gz") as archive:
-            safe = [member for member in members if member.name in member_names]
-            archive.extractall(extracted, members=safe, filter="data")
-        english = extracted / "data/gridinstruct_v1.2_sd_core_en.jsonl"
+
+        def payload(relative: str) -> Any:
+            if relative not in member_names:
+                return None
+            with archive.extractfile(relative) as handle:
+                return json.load(handle)
+
+        # Large tables stay in the compressed archive; only the standalone
+        # audit programs and their newly computed receipts occupy temporary disk.
+        scripts = {
+            "scripts/audit_opf_selection_mapping.py",
+            "scripts/evaluate_compliance_contrast_pairs.py",
+        }
+        archive.extractall(
+            extracted,
+            members=[member for member in members if member.name in scripts],
+            filter="data",
+        )
+        (extracted / "reports").mkdir()
+        english = "data/gridinstruct_v1.2_sd_core_en.jsonl"
         seen: set[str] = set()
-        if english.is_file():
-            for line in english.open(encoding="utf-8"):
-                try:
-                    row = json.loads(line)
-                    record_count += 1
-                    row_id = str(row.get("id") or "")
-                    if not row_id or row_id in seen:
-                        duplicate_ids += 1
-                    seen.add(row_id)
-                except json.JSONDecodeError:
-                    parse_errors += 1
+        if english in member_names:
+            with archive.extractfile(english) as handle:
+                for line in handle:
+                    try:
+                        row = json.loads(line)
+                        record_count += 1
+                        row_id = str(row.get("id") or "")
+                        if not row_id or row_id in seen:
+                            duplicate_ids += 1
+                        seen.add(row_id)
+                    except json.JSONDecodeError:
+                        parse_errors += 1
         else:
             errors.append("english_table_missing")
-        direct_report = extracted / "reports/direct_english_canonical_materialization_v1.2_sd_core.json"
-        seed_report = extracted / "reports/current_surface_seed_stability_v1.2_sd_core.json"
-        if direct_report.is_file():
-            direct_status = json.loads(direct_report.read_text(encoding="utf-8")).get("status")
-        if seed_report.is_file():
-            seed_status = json.loads(seed_report.read_text(encoding="utf-8")).get("status")
+        direct_report = payload("reports/direct_english_canonical_materialization_v1.2_sd_core.json")
+        seed_report = payload("reports/current_surface_seed_stability_v1.2_sd_core.json")
+        if direct_report is not None:
+            direct_status = direct_report.get("status")
+        if seed_report is not None:
+            seed_status = seed_report.get("status")
         selection_path = extracted / "reports/opf_selection_mapping_v1.2_sd_core.json"
-        original_selection = None
-        if selection_path.is_file():
-            selection = json.loads(selection_path.read_text(encoding="utf-8"))
-            original_selection = selection
+        original_selection = payload("reports/opf_selection_mapping_v1.2_sd_core.json")
         contrast_path = extracted / "reports/compliance_contrast_pairs_v1.2_sd_core.json"
-        original_contrast = json.loads(contrast_path.read_text(encoding="utf-8")) if contrast_path.is_file() else None
+        original_contrast = payload("reports/compliance_contrast_pairs_v1.2_sd_core.json")
         for script, artifact, original, error_name in (
             ("audit_opf_selection_mapping.py", selection_path, original_selection, "opf_selection_mapping"),
             ("evaluate_compliance_contrast_pairs.py", contrast_path, original_contrast, "compliance_contrast_pairs"),
@@ -180,17 +196,63 @@ def compact_archive_audit(bundle: Path, members: list[tarfile.TarInfo]) -> dict[
             if original is None:
                 continue
             rerun = subprocess.run(
-                [sys.executable, str(extracted / "scripts" / script)],
+                [sys.executable, str(extracted / "scripts" / script), "--archive", str(bundle.resolve())],
                 cwd=extracted,
                 capture_output=True,
                 text=True,
             )
-            if rerun.returncode != 0 or json.loads(artifact.read_text(encoding="utf-8")) != original:
+            if (
+                rerun.returncode != 0
+                or not artifact.is_file()
+                or json.loads(artifact.read_text(encoding="utf-8")) != original
+            ):
                 errors.append(f"{error_name}_replay_mismatch")
         if original_selection is not None:
             selection_mapping_status = original_selection.get("status")
         if original_contrast is not None:
             contrast_pair_status = original_contrast.get("status")
+        expected_split_files = {
+            "train": ("data/v1.2_sd_core_train_en.jsonl", 26545),
+            "validation": ("data/v1.2_sd_core_validation_en.jsonl", 3561),
+            "test": ("data/v1.2_sd_core_test_en.jsonl", 3894),
+            "ood_test": ("data/v1.2_sd_core_ood_test_en.jsonl", 61479),
+            "strict_train": ("data/v1.2_sd_core_strict_train.jsonl", 76378),
+            "strict_validation": ("data/v1.2_sd_core_strict_validation.jsonl", 9558),
+            "strict_test": ("data/v1.2_sd_core_strict_test.jsonl", 9543),
+            "surface_train": ("data/v1.2_sd_core_instruction_surface_balanced_train_en.jsonl", 10689),
+            "surface_validation": ("data/v1.2_sd_core_instruction_surface_balanced_validation_en.jsonl", 5118),
+            "surface_test": ("data/v1.2_sd_core_instruction_surface_balanced_test_en.jsonl", 4432),
+        }
+        for name, (relative, expected) in expected_split_files.items():
+            count = None
+            if relative in member_names:
+                with archive.extractfile(relative) as handle:
+                    count = sum(1 for _ in handle)
+            split_counts[name] = count if count is not None else -1
+            if count != expected:
+                errors.append(f"split_count_{name}:{count}")
+        scenarios = payload("simulation_outputs/contingency/scenarios_converged.json")
+        if scenarios is not None:
+            scenario_registry_count = len(scenarios)
+            if scenario_registry_count != 2822:
+                errors.append(f"scenario_registry_count:{scenario_registry_count}")
+        else:
+            errors.append("scenario_registry_missing")
+        opf_payload = payload("simulation_outputs/opf_closed_loop/auxiliary_opf_results.json")
+        if opf_payload is not None:
+            opf_record_count = len(opf_payload.get("results") or [])
+            opf_scenario_count = len({str(item.get("scenario_id")) for item in (opf_payload.get("results") or [])})
+            if opf_record_count != 160 or opf_scenario_count != 160:
+                errors.append(f"opf_evidence_counts:{opf_record_count}/{opf_scenario_count}")
+        else:
+            errors.append("opf_evidence_missing")
+        case_manifest = payload("metadata/independent_solver_case_manifest_v1.json")
+        if case_manifest is not None:
+            independent_case_count = case_manifest.get("case_count")
+            if independent_case_count != 160:
+                errors.append(f"independent_case_count:{independent_case_count}")
+        else:
+            errors.append("independent_case_manifest_missing")
     if record_count != 95479:
         errors.append(f"english_record_count:{record_count}")
     if duplicate_ids:
@@ -205,51 +267,6 @@ def compact_archive_audit(bundle: Path, members: list[tarfile.TarInfo]) -> dict[
         errors.append(f"opf_selection_mapping_status:{selection_mapping_status}")
     if contrast_pair_status != "pass":
         errors.append(f"compliance_contrast_pair_status:{contrast_pair_status}")
-    with tempfile.TemporaryDirectory(prefix="gridinstruct_compact_counts_") as temp_dir:
-        extracted = Path(temp_dir)
-        with tarfile.open(bundle, "r:gz") as archive:
-            archive.extractall(extracted, filter="data")
-        expected_split_files = {
-            "train": ("data/v1.2_sd_core_train_en.jsonl", 26545),
-            "validation": ("data/v1.2_sd_core_validation_en.jsonl", 3561),
-            "test": ("data/v1.2_sd_core_test_en.jsonl", 3894),
-            "ood_test": ("data/v1.2_sd_core_ood_test_en.jsonl", 61479),
-            "strict_train": ("data/v1.2_sd_core_strict_train.jsonl", 76378),
-            "strict_validation": ("data/v1.2_sd_core_strict_validation.jsonl", 9558),
-            "strict_test": ("data/v1.2_sd_core_strict_test.jsonl", 9543),
-            "surface_train": ("data/v1.2_sd_core_instruction_surface_balanced_train_en.jsonl", 10689),
-            "surface_validation": ("data/v1.2_sd_core_instruction_surface_balanced_validation_en.jsonl", 5118),
-            "surface_test": ("data/v1.2_sd_core_instruction_surface_balanced_test_en.jsonl", 4432),
-        }
-        for name, (relative, expected) in expected_split_files.items():
-            path = extracted / relative
-            count = sum(1 for _ in path.open(encoding="utf-8")) if path.is_file() else None
-            split_counts[name] = count if count is not None else -1
-            if count != expected:
-                errors.append(f"split_count_{name}:{count}")
-        scenario_path = extracted / "simulation_outputs/contingency/scenarios_converged.json"
-        if scenario_path.is_file():
-            scenario_registry_count = len(json.loads(scenario_path.read_text(encoding="utf-8")))
-            if scenario_registry_count != 2822:
-                errors.append(f"scenario_registry_count:{scenario_registry_count}")
-        else:
-            errors.append("scenario_registry_missing")
-        opf_path = extracted / "simulation_outputs/opf_closed_loop/auxiliary_opf_results.json"
-        if opf_path.is_file():
-            opf_payload = json.loads(opf_path.read_text(encoding="utf-8"))
-            opf_record_count = len(opf_payload.get("results") or [])
-            opf_scenario_count = len({str(item.get("scenario_id")) for item in (opf_payload.get("results") or [])})
-            if opf_record_count != 160 or opf_scenario_count != 160:
-                errors.append(f"opf_evidence_counts:{opf_record_count}/{opf_scenario_count}")
-        else:
-            errors.append("opf_evidence_missing")
-        case_manifest = extracted / "metadata/independent_solver_case_manifest_v1.json"
-        if case_manifest.is_file():
-            independent_case_count = json.loads(case_manifest.read_text(encoding="utf-8")).get("case_count")
-            if independent_case_count != 160:
-                errors.append(f"independent_case_count:{independent_case_count}")
-        else:
-            errors.append("independent_case_manifest_missing")
     return {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "status": "pass" if not errors else "fail",

@@ -13,7 +13,8 @@ __pycache__/
 .ruff_cache/
 .mypy_cache/
 
-# Large release data are deposited through the data DOI, not ordinary Git history
+# Large data and prediction files are distributed in the GitHub release archive.
+# Keep reproducible scripts and compact reports in ordinary Git history.
 data/*.jsonl
 data/**/*.jsonl
 data/*.csv
@@ -47,8 +48,8 @@ tmp/
 release/*.tar.gz
 reports/*_attempts_*.json
 
-# Full sampling frames are local audit inputs; the compact review package
-# publishes the blinded packet, sample manifest, and assignment schema.
+# Human-review materials and sampling frames remain local submission materials.
+# Author confirmation of review does not create a published row-level ledger.
 review_packages/**/sampling_frame.jsonl
 
 # Submission materials are maintained outside the code/data repository.

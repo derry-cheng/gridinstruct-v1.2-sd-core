@@ -1,0 +1,33 @@
+{
+  "status": "pass",
+  "test_records": 288,
+  "raw_evaluation_records": 350,
+  "test_scenarios": 164,
+  "provenance_overlap": 0,
+  "reference_mismatches": 0,
+  "controlled_request_sources": 32,
+  "controlled_request_records": 64,
+  "metrics": {
+    "base": {
+      "macro_f1": 0.16098484848484848,
+      "accuracy": 0.2708333333333333
+    },
+    "tfidf": {
+      "macro_f1": 0.911586422431518,
+      "accuracy": 0.9131944444444444
+    },
+    "13": {
+      "macro_f1": 0.7719916815071256,
+      "accuracy": 0.7951388888888888
+    },
+    "29": {
+      "macro_f1": 0.8592663329491622,
+      "accuracy": 0.8611111111111112
+    },
+    "42": {
+      "macro_f1": 0.8390098596525034,
+      "accuracy": 0.84375
+    }
+  },
+  "tuned_macro_f1_mean": 0.8234226247029304
+}

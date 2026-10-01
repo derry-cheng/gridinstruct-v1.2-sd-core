@@ -1669,9 +1669,11 @@
     "machine_screened_records": 548,
     "machine_accepted_augmentations": 0,
     "machine_decision_agreement_rate": 0.7646,
-    "human_execution_report_path": "reports/expert_review_execution_check_v1.2_sd_core.json",
-    "human_execution_status": "external_human_review_ready",
-    "human_complete_assignments": 0
+    "human_execution_report_path": null,
+    "human_execution_status": "author_confirmed_external_review_completed",
+    "author_reported_reviewer_count": 5,
+    "human_complete_assignments": null,
+    "human_review_evidence_scope": "author confirmation; per-record judgments and agreement statistics are not supplied"
   },
   "model_evidence": {
     "tfidf": {
@@ -1972,9 +1974,10 @@
     }
   },
   "availability": {
-    "data_doi": "pending",
+    "data_doi": null,
     "code_repository_url": "https://github.com/derry-cheng/gridinstruct-v1.2-sd-core",
-    "archived_code_release_doi": "https://doi.org/10.5281/zenodo.21921745",
+    "archived_code_release_doi": null,
+    "release_tag": "v1.2-eai-20261001",
     "data_license": "CC-BY-4.0",
     "code_license": "MIT"
   },
@@ -3193,16 +3196,16 @@
     {
       "path": "docs/LICENSES_AND_CITATION.md",
       "exists": true,
-      "bytes": 4979,
+      "bytes": 5178,
       "records": null,
-      "sha256": "938a80fee21c4b6d8bbdbef00670c9ff74c98ee34670498ef02799d5845e5ab9"
+      "sha256": "b8a632fb014167cb15f4f74d0b358b421440b75597e3aab44e1f8bf7340adab1"
     },
     {
       "path": "docs/THIRD_PARTY_ASSETS.md",
       "exists": true,
-      "bytes": 7681,
+      "bytes": 7611,
       "records": null,
-      "sha256": "2616cd437dcf6d1a36ce95456c6a130fcb2ab715e25c7ff5fb87d7568bad2ab8"
+      "sha256": "550919c4cdc9ab765e9489157ffc79a3e6c3e909f7d331b201e478656395669f"
     },
     {
       "path": "examples/sample_records.jsonl",
@@ -3221,9 +3224,9 @@
     {
       "path": "metadata/code_manifest.json",
       "exists": true,
-      "bytes": 32646,
+      "bytes": 41453,
       "records": null,
-      "sha256": "19f319e9a8433065d08a2e07a801b9586b1401b0b4a7d0ea6dadea533520d858"
+      "sha256": "33ba5161b3036ce60525bebec06f57248181b81bac79df858fe31388fc5ede08"
     },
     {
       "path": "metadata/data_descriptor_audit.json",
@@ -3249,9 +3252,9 @@
     {
       "path": "metadata/release_licenses.json",
       "exists": true,
-      "bytes": 2842,
+      "bytes": 2855,
       "records": null,
-      "sha256": "02331b04431887468c673b74ff88f71a7ef858a32d610972ac2f13908f71c899"
+      "sha256": "8d26adcc1591c561735704dadced00b7263d29fd48d917601ab906d90bcb4637"
     },
     {
       "path": "metadata/runtime_environment.json",
@@ -3417,9 +3420,9 @@
     {
       "path": "scripts/build_compact_public_archive.py",
       "exists": true,
-      "bytes": 10902,
+      "bytes": 13201,
       "records": null,
-      "sha256": "ad6f99ef9f1ec2400a84877eb9e69256ffc425d8bd2a81267a3ce41584848991"
+      "sha256": "ade195b23d5eb64158c09506906d34804df8948a7541d2b4ccb276dd695fb3d4"
     },
     {
       "path": "scripts/refresh_current_snapshot_metadata.py",
@@ -3438,9 +3441,9 @@
     {
       "path": "scripts/validate_release_archive_replay.py",
       "exists": true,
-      "bytes": 26246,
+      "bytes": 26446,
       "records": null,
-      "sha256": "423aa8529ea11692b54bc3d1ab27a28b3bee4dd74786a364ead934250fd86ce1"
+      "sha256": "1c54ed31041429c5caf7b85e4d4faae94248045d5a0919751f3919ead21a58bb"
     },
     {
       "path": "scripts/write_compact_bundle_validation.py",
@@ -3527,7 +3530,7 @@
         "definition": "Source-grounding assignment artifact for the international probe; blank fields are excluded from metrics."
       }
     },
-    "scope_statement": "Record-level contract checks cover the full table. The executable-control claim is restricted to 320 OPF-tagged auxiliary rows, the fixed-control replay is restricted to its registered cases, and human-review statistics remain unavailable until external reviewers complete the assigned ledger.",
+    "scope_statement": "Record-level contract checks cover the full table. Executable-control evidence covers 320 OPF-tagged auxiliary rows and their registered fixed-control cases. The authors confirm completed external review by five PhD-level reviewers; row-level judgments and agreement statistics are not available in this release.",
     "source_reports": {
       "opf": "reports/current_opf_closed_loop_audit_v1.2_sd_core.json",
       "native_replay": "reports/independent_solver_validation_v1.2_sd_core_rebound.json",

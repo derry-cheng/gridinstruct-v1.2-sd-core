@@ -1,0 +1,86 @@
+{
+  "date": "2026-10-01",
+  "audit_mode": "independent read-only integrity audit",
+  "auditor": {
+    "system": "Codex",
+    "requested_model_override": "gpt-5.6-sol",
+    "model_detail": "The independent reviewer was spawned with this model override; the reviewer runtime did not expose an additional deployment identifier."
+  },
+  "evaluated_model": {
+    "name": "HuggingFaceTB/SmolLM2-135M-Instruct",
+    "revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+    "recorded_device": "local Apple MPS"
+  },
+  "overall_verdict": "warn",
+  "integrity_status": "pass_with_scope_warning",
+  "audit_history": {
+    "initial_verdict": "fail",
+    "initial_blocker": "Saved float32 LoRA weights were loaded into float16 adapter parameters before being converted back to float32, changing predictions after reload.",
+    "repair_status": "closed",
+    "final_verdict": "warn"
+  },
+  "checks": {
+    "target_label_provenance": {
+      "status": "warn",
+      "finding": "Targets are released synthetic compliance-contract labels, not prediction-derived references; most evaluated records remain pending expert review."
+    },
+    "self_normalization": {
+      "status": "pass",
+      "finding": "Prediction uses the maximum summed conditional log probability of the complete canonical label and end token, with no model-output normalization denominator."
+    },
+    "raw_prediction_recomputation": {
+      "status": "pass",
+      "finding": "Stored row-level predictions reproduce reported classification, pair, seed-summary and clustered-bootstrap metrics."
+    },
+    "before_after_fairness": {
+      "status": "pass",
+      "finding": "Base and tuned models use the same fixed records, prompts, tokenizer, candidate labels and scoring rule."
+    },
+    "checkpoint_selection": {
+      "status": "pass",
+      "finding": "Epoch selection uses validation macro-F1 and validation target loss; all three declared seeds are retained."
+    },
+    "saved_adapter_reload": {
+      "status": "pass",
+      "finding": "LoRA parameters are converted to float32 before saved weights are loaded; all three 350-record replays have zero changed labels.",
+      "maximum_label_log_probability_difference": 9.5367431640625e-07
+    },
+    "five_key_provenance_isolation": {
+      "status": "pass",
+      "finding": "No selected-sample or controlled-probe-source overlap was found across source_group, source_record_id, scenario_id, source_simulation_case_id and operation_group."
+    },
+    "scientific_scope": {
+      "status": "warn",
+      "finding": "The result is limited to a synthetic, label-balanced, closed-set compliance contract. Probe-source review status is explicitly reported for 32 source records and 64 rendered records."
+    }
+  },
+  "verified_counts": {
+    "main_test_records": 288,
+    "main_test_scenarios": 164,
+    "main_test_records_per_label": 96,
+    "training_seeds": 3,
+    "saved_adapter_replay_records_per_seed": 350,
+    "saved_adapter_changed_labels": 0,
+    "state_change_pairs": 32,
+    "request_probe_source_records": 32,
+    "request_probe_rendered_records": 64
+  },
+  "main_test_review_status": {
+    "generated_pending_expert_review": 286,
+    "llm_augmented_pending_expert_review": 1,
+    "llm_dual_review_accepted": 1
+  },
+  "request_probe_source_review_status": {
+    "generated_pending_expert_review": 32
+  },
+  "scientific_scope_limits": [
+    "No expert-validated regulatory correctness claim.",
+    "No physical or executable-control improvement claim.",
+    "No live, online or production performance claim.",
+    "No unrestricted free-generation claim.",
+    "No superiority claim over the same-sample character n-gram TF-IDF baseline.",
+    "State-change and request-variant results remain small controlled diagnostics."
+  ],
+  "human_review_records_created": 0,
+  "trace": ".aris/traces/experiment-audit/2026-10-01_run01/response.md"
+}

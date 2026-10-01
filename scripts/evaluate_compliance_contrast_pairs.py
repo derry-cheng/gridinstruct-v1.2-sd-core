@@ -3,8 +3,12 @@
 
 from __future__ import annotations
 
+import argparse
+import io
 import json
+import tarfile
 from collections import defaultdict
+from contextlib import ExitStack
 from itertools import combinations
 from pathlib import Path
 
@@ -26,23 +30,27 @@ SETS = {
 }
 
 
-def jsonl(path: str):
-    with (ROOT / path).open(encoding="utf-8") as handle:
+def jsonl(path: str, archive: tarfile.TarFile | None = None):
+    handle = (
+        io.TextIOWrapper(archive.extractfile(path), encoding="utf-8")
+        if archive is not None else (ROOT / path).open(encoding="utf-8")
+    )
+    with handle:
         for line in handle:
             if line.strip():
                 yield json.loads(line)
 
 
-def evaluate(data_path: str, predictions_path: str) -> dict:
+def evaluate(data_path: str, predictions_path: str, archive: tarfile.TarFile | None = None) -> dict:
     predictions = {
         row["id"]: row["prediction"]
-        for row in jsonl(predictions_path)
+        for row in jsonl(predictions_path, archive)
         if row.get("task_type") == "regulation_compliance_check"
     }
     by_instruction = defaultdict(list)
     by_state_action = defaultdict(list)
     used = 0
-    for row in jsonl(data_path):
+    for row in jsonl(data_path, archive):
         if row.get("task_type") != "regulation_compliance_check":
             continue
         row_id = row["id"]
@@ -109,14 +117,25 @@ def evaluate(data_path: str, predictions_path: str) -> dict:
     }
 
 
+def build_report(archive_path: Path | None = None) -> dict:
+    with ExitStack() as stack:
+        archive = stack.enter_context(tarfile.open(archive_path, "r:gz")) if archive_path else None
+        return {
+            "status": "pass",
+            "model": "previously fitted TF-IDF linear-SVC predictions; no retraining",
+            "pair_policy": "all unordered pairs within each exact-match grouping; pair counts are not independent samples",
+            "splits": {name: evaluate(*paths, archive=archive) for name, paths in SETS.items()},
+        }
+
+
 def main() -> None:
-    report = {
-        "status": "pass",
-        "model": "previously fitted TF-IDF linear-SVC predictions; no retraining",
-        "pair_policy": "all unordered pairs within each exact-match grouping; pair counts are not independent samples",
-        "splits": {name: evaluate(*paths) for name, paths in SETS.items()},
-    }
-    output = ROOT / "reports/compliance_contrast_pairs_v1.2_sd_core.json"
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--archive", type=Path, help="Read inputs directly from the compact archive")
+    parser.add_argument("--output", default="reports/compliance_contrast_pairs_v1.2_sd_core.json")
+    args = parser.parse_args()
+    report = build_report(args.archive)
+    output = ROOT / args.output
+    output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(report, indent=2))
 

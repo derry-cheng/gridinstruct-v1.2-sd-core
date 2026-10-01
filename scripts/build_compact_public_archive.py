@@ -152,6 +152,41 @@ CURRENT_DOCUMENTS = {
     "simulation_outputs/opf_closed_loop/opf_action_constant_power_factor_stress_cases_v1.json",
 }
 
+TRANSFER_MEMBERS = {
+    "experiments/revision_20261001/protocol.json",
+    "experiments/revision_20261001/request_variant_protocol.json",
+    "experiments/revision_20261001/README.md",
+    "experiments/revision_20261001/requirements.txt",
+    "reports/local_instruction_transfer_20261001.json",
+    "reports/local_instruction_transfer_replay_20261001.json",
+    "reports/local_instruction_transfer_audit_20261001.json",
+    "data/revision_20261001/request_variant_probe.jsonl",
+    "scripts/run_local_instruction_transfer.py",
+    "scripts/evaluate_local_request_variants.py",
+    "scripts/validate_local_instruction_transfer.py",
+    "scripts/create_strict_source_group_splits.py",
+    "scripts/gridinstruct_utils.py",
+    "benchmark/local_instruction_transfer_20261001/sample_ids.json",
+    "benchmark/local_instruction_transfer_20261001/pair_ids.json",
+    "benchmark/local_instruction_transfer_20261001/report.json",
+    "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_calibrated_report.json",
+    "benchmark/instruction_surface_balanced_v1.2_sd_core_leakage_fixed/calibrated_tfidf_report.json",
+    "reports/revision_20260908/c1_fixed_control.json",
+    "release/revision_20260908/GridInstruct_OPF_evidence_supplement.tar.gz",
+}
+TRANSFER_MEMBERS.update(
+    f"benchmark/local_instruction_transfer_20261001/{name}"
+    for name in ["base_predictions.jsonl", "tfidf_predictions.jsonl", "base_request_variant_predictions.jsonl"]
+)
+for seed in (13, 29, 42):
+    TRANSFER_MEMBERS.update({
+        f"benchmark/local_instruction_transfer_20261001/seed_{seed}_predictions.jsonl",
+        f"benchmark/local_instruction_transfer_20261001/seed_{seed}_instruction_only_predictions.jsonl",
+        f"benchmark/local_instruction_transfer_20261001/seed_{seed}_request_variant_predictions.jsonl",
+        f"benchmark/local_instruction_transfer_20261001/checkpoints/seed_{seed}/adapter_config.json",
+        f"benchmark/local_instruction_transfer_20261001/checkpoints/seed_{seed}/adapter_model.safetensors",
+    })
+
 
 def sha256(path: Path) -> str:
     digest = hashlib.sha256()
@@ -167,7 +202,7 @@ def main() -> None:
     parser.add_argument("--manifest", default="release/compact_archive_manifest_v1.2_sd_core.json")
     args = parser.parse_args()
     bundle = ROOT / args.bundle
-    members = sorted(BASE_MEMBERS | CURRENT_DOCUMENTS)
+    members = sorted(BASE_MEMBERS | CURRENT_DOCUMENTS | TRANSFER_MEMBERS)
     missing = [relative for relative in members if not (ROOT / relative).is_file()]
     if missing:
         raise SystemExit("missing compact archive members: " + ", ".join(missing))
@@ -212,7 +247,10 @@ def main() -> None:
             "robust_passed_candidates": 120,
             "strict_source_group_projections": "full train, validation, and test projections are included in the compact archive",
             "raw_scenario_and_full_candidate_ledgers": "deferred outside compact package",
-            "data_doi": "pending",
+            "data_doi": None,
+            "release_tag": "v1.2-eai-20261001",
+            "instruction_transfer": "288 strict-source test records; three seeds; raw predictions and adapters included",
+            "full_fixed_control_stress_ledgers": "included in the nested OPF evidence supplement",
         },
     }
     (ROOT / args.manifest).write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

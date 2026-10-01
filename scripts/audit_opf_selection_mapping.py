@@ -4,23 +4,35 @@
 from __future__ import annotations
 
 import argparse
+import io
 import json
+import tarfile
 from collections import Counter
+from contextlib import ExitStack
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def load_json(relative: str):
+def load_json(relative: str, archive: tarfile.TarFile | None = None):
+    if archive is not None:
+        with archive.extractfile(relative) as handle:
+            return json.load(handle)
     return json.loads((ROOT / relative).read_text(encoding="utf-8"))
 
 
-def build_report() -> dict:
-    register = load_json("reports/opf_candidate_register_v1.2_sd_core.json")
-    released = load_json("simulation_outputs/opf_closed_loop/auxiliary_opf_results.json")["results"]
-    selected = load_json("simulation_outputs/opf_closed_loop/ieee14_secure_candidate_scenarios_v1.json")
-    source = load_json("simulation_outputs/opf_closed_loop/ieee14_ieee118_source_scenarios_v1.json")
+def build_report(archive_path: Path | None = None) -> dict:
+    with ExitStack() as stack:
+        archive = stack.enter_context(tarfile.open(archive_path, "r:gz")) if archive_path else None
+        return _build_report(archive)
+
+
+def _build_report(archive: tarfile.TarFile | None) -> dict:
+    register = load_json("reports/opf_candidate_register_v1.2_sd_core.json", archive)
+    released = load_json("simulation_outputs/opf_closed_loop/auxiliary_opf_results.json", archive)["results"]
+    selected = load_json("simulation_outputs/opf_closed_loop/ieee14_secure_candidate_scenarios_v1.json", archive)
+    source = load_json("simulation_outputs/opf_closed_loop/ieee14_ieee118_source_scenarios_v1.json", archive)
 
     released_ids = [row["scenario_id"] for row in released]
     selected_ids = {row["scenario_id"] for row in selected}
@@ -29,7 +41,12 @@ def build_report() -> dict:
     by_system = dict(sorted(Counter(row["system"] for row in released).items()))
     denominator = register["denominator"]
     opf_rows_by_scenario: Counter[str] = Counter()
-    with (ROOT / "data/gridinstruct_v1.2_sd_core_en.jsonl").open(encoding="utf-8") as handle:
+    relative = "data/gridinstruct_v1.2_sd_core_en.jsonl"
+    handle = (
+        io.TextIOWrapper(archive.extractfile(relative), encoding="utf-8")
+        if archive is not None else (ROOT / relative).open(encoding="utf-8")
+    )
+    with handle:
         for line in handle:
             row = json.loads(line)
             if row.get("task_type") == "auxiliary_decision" and isinstance(
@@ -75,11 +92,12 @@ def build_report() -> dict:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
+    parser.add_argument("--archive", type=Path, help="Read inputs directly from the compact archive")
     parser.add_argument(
         "--output", default="reports/opf_selection_mapping_v1.2_sd_core.json"
     )
     args = parser.parse_args()
-    report = build_report()
+    report = build_report(args.archive)
     output = ROOT / args.output
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")

@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "file_count": 184,
+  "file_count": 234,
   "files": [
     {
       "path": "scripts/analyze_data_quality.py",
@@ -169,8 +169,8 @@
     },
     {
       "path": "scripts/audit_opf_selection_mapping.py",
-      "bytes": 4161,
-      "sha256": "4c0134d40c43ba97c2d428dbae882638f5927ee014aa0a5abe8b2ffa92f0940a"
+      "bytes": 4943,
+      "sha256": "59be9900301e7da0d318ef9412cb203533a79540aae346e1e88ac5e8052e7e4b"
     },
     {
       "path": "scripts/audit_opf_structural_contract.py",
@@ -254,8 +254,8 @@
     },
     {
       "path": "scripts/build_compact_public_archive.py",
-      "bytes": 10902,
-      "sha256": "ad6f99ef9f1ec2400a84877eb9e69256ffc425d8bd2a81267a3ce41584848991"
+      "bytes": 13201,
+      "sha256": "ade195b23d5eb64158c09506906d34804df8948a7541d2b4ccb276dd695fb3d4"
     },
     {
       "path": "scripts/build_current_file_manifest.py",
@@ -264,8 +264,8 @@
     },
     {
       "path": "scripts/build_current_revision_manifest.py",
-      "bytes": 13975,
-      "sha256": "ec867a8d9aca2df289b307ea11c66fd9ee7adc471969aaa5294a286198a147f1"
+      "bytes": 14647,
+      "sha256": "9992a4edb14bb9e8d4a3a5c1eca1db75df8919181926fc606a9bd619028cf421"
     },
     {
       "path": "scripts/build_data_lineage_manifest.py",
@@ -324,8 +324,8 @@
     },
     {
       "path": "scripts/build_scoped_evidence_binding_manifest.py",
-      "bytes": 16609,
-      "sha256": "168d6715e850c13ab1321f14b004d9b69456adc349af33d3e413509f54acb354"
+      "bytes": 17176,
+      "sha256": "16377178a419339356601a433408642b6714d959e3a0485d56de73b8db0f5d8c"
     },
     {
       "path": "scripts/build_sd_core_snapshot.py",
@@ -454,8 +454,13 @@
     },
     {
       "path": "scripts/evaluate_compliance_contrast_pairs.py",
-      "bytes": 4651,
-      "sha256": "280f95f27861f23f7e5780040729182fd821b6615af05a3a6a0e27f6ae8d68f0"
+      "bytes": 5501,
+      "sha256": "5355bb2eec682b6851a501bce765a5709e63a33432ed3132bba6f91d15346d08"
+    },
+    {
+      "path": "scripts/evaluate_local_request_variants.py",
+      "bytes": 9946,
+      "sha256": "986d30b46437254ad8e2909c65fc696b8bcaa4e90d40abf2e3a0f077a37ef491"
     },
     {
       "path": "scripts/evaluate_ood_strata.py",
@@ -628,6 +633,11 @@
       "sha256": "2723ca2b6991789583bc99fd4e9811b266979ba7390e3f28cc58c74687999173"
     },
     {
+      "path": "scripts/refresh_code_release_manifest.py",
+      "bytes": 1491,
+      "sha256": "97e2e2177fca9899161cbdd707105a7461e2770448761b9393fc8a2bf915ab99"
+    },
+    {
       "path": "scripts/refresh_current_snapshot_metadata.py",
       "bytes": 14991,
       "sha256": "c4e5238eb3c9c2c9108d2d909855b7093c8e4948d4957452ceb3a7b4cdaf2ff0"
@@ -788,6 +798,11 @@
       "sha256": "9ab4b1fc0543acfe7b35533476db41f3fdb3af1018d7b4737a1487fb8328b234"
     },
     {
+      "path": "scripts/run_local_instruction_transfer.py",
+      "bytes": 16884,
+      "sha256": "cdbb4fa8b5a06be2b5e8c0206bdbd96efa7bbfca60c0e1c829bc3ff7720bef18"
+    },
+    {
       "path": "scripts/run_project_milestone_audit.py",
       "bytes": 30025,
       "sha256": "d64b2cff9e1bd08b3ddd6ec8bdbceab7a8c498cdd8f75bbedf9326ae235dcaef"
@@ -888,6 +903,11 @@
       "sha256": "f61d5ab0159b0602b1bc9ea2099bc0d6884681c483222bfb5f4078df54459f9d"
     },
     {
+      "path": "scripts/validate_local_instruction_transfer.py",
+      "bytes": 8229,
+      "sha256": "b6b4fd5ce80f722cb68ab579053765e1086f3b00b64d9a09a0ba2e515cb853fb"
+    },
+    {
       "path": "scripts/validate_opf_action_constant_power_factor_stress.py",
       "bytes": 21175,
       "sha256": "c30522e10e2f4c4b64a50adb65bfc6f7fc77e6011e97bd5b8594afb54b54afd9"
@@ -904,8 +924,8 @@
     },
     {
       "path": "scripts/validate_release_archive_replay.py",
-      "bytes": 26246,
-      "sha256": "423aa8529ea11692b54bc3d1ab27a28b3bee4dd74786a364ead934250fd86ce1"
+      "bytes": 26446,
+      "sha256": "1c54ed31041429c5caf7b85e4d4faae94248045d5a0919751f3919ead21a58bb"
     },
     {
       "path": "scripts/validate_source_english_alignment.py",
@@ -921,6 +941,236 @@
       "path": "scripts/write_compact_bundle_validation.py",
       "bytes": 7089,
       "sha256": "4914fac67df524b4ab86d4a9ba3e31f508d6dce2ad6da4762cf3724c2c0e7235"
+    },
+    {
+      "path": "tests/c3/test_compositional_shortcut_control.py",
+      "bytes": 1756,
+      "sha256": "fad65f1d0ca8c33f9c42e86ca5fe5d0563d9b43484a8d474ed20a5f5fbec77a8"
+    },
+    {
+      "path": "tests/run_transformer_contract_regression.py",
+      "bytes": 3695,
+      "sha256": "bb4c02489220b61162fc4e4ea24fdd0959aeb67ec54476716b99256dc78816ba"
+    },
+    {
+      "path": "tests/test_build_third_party_asset_inventory.py",
+      "bytes": 5879,
+      "sha256": "76065a395431c98d3e75048771c188b7999981a92cc2684ac9156da9956deb9c"
+    },
+    {
+      "path": "tests/test_capture_formal_runtime_environment.py",
+      "bytes": 964,
+      "sha256": "6002a4c5f8f747feecb631067038a6dc231f99b5f4d26a28eb29d5ff2e9534a3"
+    },
+    {
+      "path": "tests/test_core_n1_denominator_audit.py",
+      "bytes": 7605,
+      "sha256": "4dec1842e73df54187a20cf41784ac1651a162f1f2b028c4802259fc8072f558"
+    },
+    {
+      "path": "tests/test_create_splits.py",
+      "bytes": 2285,
+      "sha256": "6ec9716902aaa73a7916cdc8f8d7b0e534f94e02682cecf303acdfcd7e441681"
+    },
+    {
+      "path": "tests/test_dataset_scenario_link_migration.py",
+      "bytes": 8205,
+      "sha256": "8bf3d837e4086279b37e1a897afbd5919787419d747595d8cc9140cc02ee16b8"
+    },
+    {
+      "path": "tests/test_deterministic_surface_components.py",
+      "bytes": 2059,
+      "sha256": "2339074c0d2e061b3158d1edf76a659222047eada9599540ef28f9b2fee20d1a"
+    },
+    {
+      "path": "tests/test_direct_english_renderer.py",
+      "bytes": 2216,
+      "sha256": "9f813d8e28e0803ad60eeacf0c6c5a9d220f8abbe9309f9c7bf810a1e0a25694"
+    },
+    {
+      "path": "tests/test_evidence_contract.py",
+      "bytes": 26586,
+      "sha256": "bf63eb66a980bd9e8d70d744d85bee58714131010742b6f2b07de388e6222363"
+    },
+    {
+      "path": "tests/test_frozen_augmentation_contract.py",
+      "bytes": 2199,
+      "sha256": "65b0c5c32f623f0dd7d437812b1b2bd3d61f035d697f78946c8954455c6d638d"
+    },
+    {
+      "path": "tests/test_generate_extended_topology_stress.py",
+      "bytes": 6812,
+      "sha256": "9eccbe2df5840c518a4197ac15421111b166d60558e66feaadb981d5711261a8"
+    },
+    {
+      "path": "tests/test_generate_grid_scenarios.py",
+      "bytes": 3778,
+      "sha256": "f72fd6568e14530cec66fcbf3163f3ede503d2736f08b2e3886b4cfc2f078cc6"
+    },
+    {
+      "path": "tests/test_independent_solver_source_contract.py",
+      "bytes": 2064,
+      "sha256": "319ac2ec256661821ad18af532b87386f3da3b57aa75685c9ce75a0a07248ca3"
+    },
+    {
+      "path": "tests/test_international_rule_probe.py",
+      "bytes": 1824,
+      "sha256": "2b1d848f607c33e75a3caeab532fcb354c90129292351d5af2f5a9f941810acc"
+    },
+    {
+      "path": "tests/test_international_rule_probe_baseline.py",
+      "bytes": 1610,
+      "sha256": "66d5bfbb60fce0d63556fa4b3bb9cdb202666edf250a18038b727adba97bd31c"
+    },
+    {
+      "path": "tests/test_international_rule_probe_splits.py",
+      "bytes": 828,
+      "sha256": "6f7d686163f9508eab1319d3d638d096ec177df1e76ce26e060cdad74cc9d717"
+    },
+    {
+      "path": "tests/test_lightsim_native_replay_contract.py",
+      "bytes": 2953,
+      "sha256": "dca4de702986cecbae932965969f1bbb8e04398510e4dbf76ccbd3db71f07b0f"
+    },
+    {
+      "path": "tests/test_materialize_english_splits.py",
+      "bytes": 4934,
+      "sha256": "509093d98a305d4c6b2df62e08e99176919f77f3420d80f5a166d8ee2b499eba"
+    },
+    {
+      "path": "tests/test_merge_scenario_sources.py",
+      "bytes": 2215,
+      "sha256": "0dd9cf06e152f2e1d6ba2a2ff36cf5d9fcd0852c58c43b20666320f328d811fb"
+    },
+    {
+      "path": "tests/test_migrate_frozen_external_topology.py",
+      "bytes": 1879,
+      "sha256": "ba150c7e7078ec0d5d81345821c9ff32c578c83e0ee579dc290919eb156bd7b8"
+    },
+    {
+      "path": "tests/test_near_duplicate_backend.py",
+      "bytes": 1141,
+      "sha256": "21bb8d01d7157aa09996a72169c3bf9fc63ecb0ebcd0d3c37d6e952f07696dd1"
+    },
+    {
+      "path": "tests/test_opf_action_uncertainty_stress.py",
+      "bytes": 20661,
+      "sha256": "ecedd8513b14647ab084ee27f4de3a8690e221f21ae6eb363c6d36017a51015c"
+    },
+    {
+      "path": "tests/test_opf_constant_power_factor_stress.py",
+      "bytes": 5097,
+      "sha256": "f9e7a5d94fceee1e3bb0efc9a765ae4bfb57386ac59a84d91f4cd18497b3afe0"
+    },
+    {
+      "path": "tests/test_opf_scenario_projection.py",
+      "bytes": 1438,
+      "sha256": "95e4ada125825d04183cfa126b76179d9511bf11e5439320152a3ebdda7f1e6f"
+    },
+    {
+      "path": "tests/test_opf_secure_candidate_augmentation.py",
+      "bytes": 9807,
+      "sha256": "c3d205802a97a61bf054f40478805c1b33901c9c5a7eab2fdb8cd9d576c135b2"
+    },
+    {
+      "path": "tests/test_opf_security_boundary.py",
+      "bytes": 20251,
+      "sha256": "a30d2ea59a042ab4939c723cda997ae856e4e387eb839137d585e88b001ad6dd"
+    },
+    {
+      "path": "tests/test_opf_selection_mapping.py",
+      "bytes": 859,
+      "sha256": "36ba6623965b4000090e0f5f6128da93bc696f7ad873fd95828c49942d94423b"
+    },
+    {
+      "path": "tests/test_pipeline_v17_contract.py",
+      "bytes": 9690,
+      "sha256": "1abae0da31029babe95d58f299d1644d602672872e5604f33fbdb3b86c6cf4a9"
+    },
+    {
+      "path": "tests/test_power_evidence_hardening.py",
+      "bytes": 10861,
+      "sha256": "dea91d35c98fa5d28f8cf04443c8cc1c5ba0887016f9ade103abbaf11dc483bf"
+    },
+    {
+      "path": "tests/test_preaudit_dataset_metadata.py",
+      "bytes": 1086,
+      "sha256": "80d557009fabcb02cb0ec23b50ec999a5a4bb91d62cbea478b9849bc6116dec3"
+    },
+    {
+      "path": "tests/test_promote_dataset_stage.py",
+      "bytes": 2500,
+      "sha256": "a866ac8bcff6dc5bf2d3b6bba3c64ec13d02bc3e1f22304029fb6e14b70f8062"
+    },
+    {
+      "path": "tests/test_proxy_stress_fixed_split_contract.py",
+      "bytes": 5081,
+      "sha256": "989a9547dca823fad71e4b6856d32b4bc45b21fb05265c870e10af521eba7a4c"
+    },
+    {
+      "path": "tests/test_query_contract.py",
+      "bytes": 8178,
+      "sha256": "b1e1133b85396b33c3fb67176852be6a8fd02573fc1e0225c0ca71989fadacda"
+    },
+    {
+      "path": "tests/test_recompute_compliance_labels_from_truth.py",
+      "bytes": 3218,
+      "sha256": "05fc7ae76697d99d7eb7c6d791fcb881cc411a6ab03e375fced1467d0522fe6b"
+    },
+    {
+      "path": "tests/test_recompute_scenario_truth_source_binding.py",
+      "bytes": 3849,
+      "sha256": "8a7843b1e485337bed3e556ef597a0fdf2f48910683ed77f89892a7d260141ca"
+    },
+    {
+      "path": "tests/test_release_archive_evidence_binding.py",
+      "bytes": 1347,
+      "sha256": "4f2c77debfade7988508f938f362ce19b1588d18959fe49663b0cd7455082c47"
+    },
+    {
+      "path": "tests/test_release_archive_metadata.py",
+      "bytes": 6252,
+      "sha256": "9d12306d6c60c01a5f8c7dbdd25b9f904866452d1e196d5b057ad0e2d2f2d86e"
+    },
+    {
+      "path": "tests/test_release_claim_alignment.py",
+      "bytes": 1157,
+      "sha256": "b79ab315a67182e7bfd32642f37c75f3e2d09df077da90441c0caa7f479648fb"
+    },
+    {
+      "path": "tests/test_revision_c2_duration_domain.py",
+      "bytes": 914,
+      "sha256": "835d66a73eaabb38466f7721587faf5f689c8ff68a97756fb0b6deeabadb443f"
+    },
+    {
+      "path": "tests/test_revision_c2_text_inputs.py",
+      "bytes": 1352,
+      "sha256": "301840393d23b4e7a54f82bb7884da458b9146d56b7711ae5f0838565ad8b559"
+    },
+    {
+      "path": "tests/test_revision_c4_source_card.py",
+      "bytes": 2139,
+      "sha256": "f064c6346c18826bdbd1db2a06d572050ab841da8c0f57b97c612a34f6f39352"
+    },
+    {
+      "path": "tests/test_run_sd_core_pipeline_manifests.py",
+      "bytes": 3275,
+      "sha256": "e3eb4da45aefd67e78d444ad4d0eadd7c99d7005b14d35e24db25a242db27311"
+    },
+    {
+      "path": "tests/test_source_english_alignment.py",
+      "bytes": 4826,
+      "sha256": "266220cb58bdbcfe674c3bad692f4344ad7281dea1b044558601e1117f75f691"
+    },
+    {
+      "path": "tests/test_structured_query_baseline_import.py",
+      "bytes": 402,
+      "sha256": "69080153cbd768a1ed8fdf131d46c66db7f6f285bdca3df371009ba84e3cbfec"
+    },
+    {
+      "path": "tests/test_template_family_holdout.py",
+      "bytes": 1145,
+      "sha256": "24037a0778e7d3fab62fa93b9010023d75611ec89f44d2e12086d100ec40f46d"
     }
   ]
 }
