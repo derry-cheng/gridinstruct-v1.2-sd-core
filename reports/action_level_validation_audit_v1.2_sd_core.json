@@ -1,0 +1,18 @@
+{
+  "generated_at": "2026-08-08T17:26:36.303178+00:00",
+  "status": "warn_no_independent_scenario_recompute",
+  "dataset": "data/gridinstruct_v1.2_sd_core_en.jsonl",
+  "scenarios": "simulation_outputs/contingency/scenarios_converged.json",
+  "scenario_lookup_available": false,
+  "compliance_recompute_source": "release_integrity_vs_current_release_rows",
+  "auxiliary_decision_records": 18087,
+  "auxiliary_records_passing": 18087,
+  "auxiliary_pass_rate": 1.0,
+  "compliance_records": 24767,
+  "compliance_recomputed_records": 24767,
+  "compliance_label_agreement_count": 24767,
+  "compliance_label_agreement_rate": 1.0,
+  "issue_counts": {},
+  "issue_examples": [],
+  "scope_statement": "This audit verifies that action recommendations are tied to simulation scenarios, required validation tools, reversible-review wording, and recomputable compliance labels. When the authoritative scenarios file is mirrored locally, compliance labels are recomputed from the independently reconstructed scenario state; otherwise, the audit compares released labels with the selected local release-integrity source and does not claim an independent physical recomputation. It is not a closed-loop physical dispatch execution test."
+}

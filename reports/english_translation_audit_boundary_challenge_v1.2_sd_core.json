@@ -1,0 +1,25 @@
+{
+  "generated_at": "2026-07-08T17:14:44.113294+00:00",
+  "source": "data/v1.2_sd_core_boundary_challenge_test.jsonl",
+  "translated": "data/v1.2_sd_core_boundary_challenge_test_en.jsonl",
+  "source_records": 4800,
+  "translated_records": 4800,
+  "record_count_match": true,
+  "id_order_aligned": true,
+  "missing_ids": [],
+  "extra_ids": [],
+  "records_with_cjk": 0,
+  "records_with_cjk_rate": 0.0,
+  "cjk_by_field_top": [],
+  "cjk_examples": [],
+  "classification_output_mismatch_count": 0,
+  "classification_output_mismatch_examples": [],
+  "language_metadata": {
+    "en": 4800
+  },
+  "task_counts": {
+    "operation_ticket_check": 3000,
+    "dispatcher_intent_tool_call": 1800
+  },
+  "status": "pass"
+}

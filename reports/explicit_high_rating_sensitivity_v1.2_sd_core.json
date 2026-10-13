@@ -1,0 +1,777 @@
+{
+  "contract_version": "gridinstruct-explicit-high-rating-sensitivity-v1",
+  "generated_at": "2026-07-31T08:11:31.351745+00:00",
+  "status": "pass",
+  "pglib_repository": {
+    "repository": "https://github.com/power-grid-lib/pglib-opf",
+    "commit": "dc6be4b2f85ca0e776952ec22cbd4c22396ea5a3",
+    "license": "CC-BY-4.0 for data; MIT for software",
+    "license_path": "third_party/pglib-opf-v23.07/LICENSE",
+    "license_sha256": "95b1cd9fee1676221d74f7c0cbba622d98ac098e9b317b3848113ef4356ab4fd"
+  },
+  "scenario_sources": [
+    {
+      "path": "/data/gaiav2/simulation_outputs/topology_stress/extended_topology_scenarios.json",
+      "sha256": "5341c7850889358eff243b6dcaabb9cdea6e1f95825b37874e8a8b856fca7c19"
+    }
+  ],
+  "quantiles": [
+    0.1,
+    0.25,
+    0.5
+  ],
+  "explicit_high_components": [
+    {
+      "network": "ieee300",
+      "element": "line",
+      "index": 147,
+      "voltage_class_kv": 115.0,
+      "source_rating_mva": 9900.0,
+      "finite_same_voltage_pool_count": 177,
+      "replacement_rating_mva": {
+        "0.1": 79.0,
+        "0.25": 144.0,
+        "0.5": 295.0
+      }
+    },
+    {
+      "network": "ieee300",
+      "element": "line",
+      "index": 228,
+      "voltage_class_kv": 345.0,
+      "source_rating_mva": 9900.0,
+      "finite_same_voltage_pool_count": 30,
+      "replacement_rating_mva": {
+        "0.1": 560.8000000000001,
+        "0.25": 807.75,
+        "0.5": 1020.0
+      }
+    },
+    {
+      "network": "ieee300",
+      "element": "line",
+      "index": 259,
+      "voltage_class_kv": 345.0,
+      "source_rating_mva": 9900.0,
+      "finite_same_voltage_pool_count": 30,
+      "replacement_rating_mva": {
+        "0.1": 560.8000000000001,
+        "0.25": 807.75,
+        "0.5": 1020.0
+      }
+    },
+    {
+      "network": "ieee300",
+      "element": "line",
+      "index": 263,
+      "voltage_class_kv": 138.0,
+      "source_rating_mva": 9900.0,
+      "finite_same_voltage_pool_count": 21,
+      "replacement_rating_mva": {
+        "0.1": 401.0,
+        "0.25": 605.0,
+        "0.5": 994.0000000000001
+      }
+    },
+    {
+      "network": "ieee300",
+      "element": "line",
+      "index": 269,
+      "voltage_class_kv": 345.0,
+      "source_rating_mva": 9900.0,
+      "finite_same_voltage_pool_count": 30,
+      "replacement_rating_mva": {
+        "0.1": 560.8000000000001,
+        "0.25": 807.75,
+        "0.5": 1020.0
+      }
+    },
+    {
+      "network": "ieee300",
+      "element": "line",
+      "index": 271,
+      "voltage_class_kv": 138.0,
+      "source_rating_mva": 9900.0,
+      "finite_same_voltage_pool_count": 21,
+      "replacement_rating_mva": {
+        "0.1": 401.0,
+        "0.25": 605.0,
+        "0.5": 994.0000000000001
+      }
+    },
+    {
+      "network": "ieee300",
+      "element": "trafo",
+      "index": 0,
+      "voltage_class_kv": 115.0,
+      "source_rating_mva": 9900.0,
+      "finite_same_voltage_pool_count": 177,
+      "replacement_rating_mva": {
+        "0.1": 79.0,
+        "0.25": 144.0,
+        "0.5": 295.0
+      }
+    }
+  ],
+  "expected_component_count": 7,
+  "covered_component_count": 7,
+  "comparison_count": 26,
+  "thermal_label_flip_count": 0,
+  "hard_gates": {
+    "all_explicit_high_components_covered": true,
+    "no_label_flip_under_same_voltage_quantiles": true,
+    "all_branch_ratings_source_bound": true
+  },
+  "comparisons": [
+    {
+      "scenario_id": "ieee300_sdv2_base_power_flow_load95",
+      "network": "ieee300",
+      "baseline_thermal_violation": true,
+      "substitutions": [
+        {
+          "quantile": 0.1,
+          "max_branch_loading_percent": 735.7688050592933,
+          "thermal_violation": true,
+          "label_stable": true
+        },
+        {
+          "quantile": 0.25,
+          "max_branch_loading_percent": 403.6509416644734,
+          "thermal_violation": true,
+          "label_stable": true
+        },
+        {
+          "quantile": 0.5,
+          "max_branch_loading_percent": 197.03639186333618,
+          "thermal_violation": true,
+          "label_stable": true
+        }
+      ]
+    },
+    {
+      "scenario_id": "ieee300_sdv2_n1_branch_outage_load95_line141",
+      "network": "ieee300",
+      "baseline_thermal_violation": true,
+      "substitutions": [
+        {
+          "quantile": 0.1,
+          "max_branch_loading_percent": 735.7500360143762,
+          "thermal_violation": true,
+          "label_stable": true
+        },
+        {
+          "quantile": 0.25,
+          "max_branch_loading_percent": 403.64064475788695,
+          "thermal_violation": true,
+          "label_stable": true
+        },
+        {
+          "quantile": 0.5,
+          "max_branch_loading_percent": 197.03136557673125,
+          "thermal_violation": true,
+          "label_stable": true
+        }
+      ]
+    },
+    {
+      "scenario_id": "ieee300_sdv2_n1_branch_outage_load95_line282",
+      "network": "ieee300",
+      "baseline_thermal_violation": true,
+      "substitutions": [
+        {
+          "quantile": 0.1,
+          "max_branch_loading_percent": 735.7699593574102,
+          "thermal_violation": true,
+          "label_stable": true
+        },
+        {
+          "quantile": 0.25,
+          "max_branch_loading_percent": 403.6515749252459,
+          "thermal_violation": true,
+          "label_stable": true
+        },
+        {
+          "quantile": 0.5,
+          "max_branch_loading_percent": 197.036700980459,
+          "thermal_violation": true,
+          "label_stable": true
+        }
+      ]
+    },
+    {
+      "scenario_id": "ieee300_sdv2_n1_branch_outage_load95_line261",
+      "network": "ieee300",
+      "baseline_thermal_violation": true,
+      "substitutions": [
+        {
+          "quantile": 0.1,
+          "max_branch_loading_percent": 735.768800071218,
+          "thermal_violation": true,
+          "label_stable": true
+        },
+        {
+          "quantile": 0.25,
+          "max_branch_loading_percent": 403.6509389279599,
+          "thermal_violation": true,
+          "label_stable": true
+        },
+        {
+          "quantile": 0.5,
+          "max_branch_loading_percent": 197.03639052754653,
+          "thermal_violation": true,
+          "label_stable": true
+        }
+      ]
+    },
+    {
+      "scenario_id": "ieee300_sdv2_n1_branch_outage_load95_line243",
+      "network": "ieee300",
+      "baseline_thermal_violation": true,
+      "substitutions": [
+        {
+          "quantile": 0.1,
+          "max_branch_loading_percent": 735.7687126725003,
+          "thermal_violation": true,
+          "label_stable": true
+        },
+        {
+          "quantile": 0.25,
+          "max_branch_loading_percent": 403.6508909800523,
+          "thermal_violation": true,
+          "label_stable": true
+        },
+        {
+          "quantile": 0.5,
+          "max_branch_loading_percent": 197.0363671224662,
+          "thermal_violation": true,
+          "label_stable": true
+        }
+      ]
+    },
+    {
+      "scenario_id": "ieee300_sdv2_n1_branch_outage_load95_line212",
+      "network": "ieee300",
+      "baseline_thermal_violation": true,
+      "substitutions": [
+        {
+          "quantile": 0.1,
+          "max_branch_loading_percent": 735.7755333069364,
+          "thermal_violation": true,
+          "label_stable": true
+        },
+        {
+          "quantile": 0.25,
+          "max_branch_loading_percent": 403.6546328558887,
+          "thermal_violation": true,
+          "label_stable": true
+        },
+        {
+          "quantile": 0.5,
+          "max_branch_loading_percent": 197.03819366524738,
+          "thermal_violation": true,
+          "label_stable": true
+        }
+      ]
+    },
+    {
+      "scenario_id": "ieee300_sdv2_n1_branch_outage_load95_line20",
+      "network": "ieee300",
+      "baseline_thermal_violation": true,
+      "substitutions": [
+        {
+          "quantile": 0.1,
+          "max_branch_loading_percent": 734.7806420758494,
+          "thermal_violation": true,
+          "label_stable": true
+        },
+        {
+          "quantile": 0.25,
+          "max_branch_loading_percent": 403.1088244721674,
+          "thermal_violation": true,
+          "label_stable": true
+        },
+        {
+          "quantile": 0.5,
+          "max_branch_loading_percent": 196.7717651660749,
+          "thermal_violation": true,
+          "label_stable": true
+        }
+      ]
+    },
+    {
+      "scenario_id": "ieee300_sdv2_n1_branch_outage_load95_line194",
+      "network": "ieee300",
+      "baseline_thermal_violation": true,
+      "substitutions": [
+        {
+          "quantile": 0.1,
+          "max_branch_loading_percent": 735.7594618409403,
+          "thermal_violation": true,
+          "label_stable": true
+        },
+        {
+          "quantile": 0.25,
+          "max_branch_loading_percent": 403.64581587107136,
+          "thermal_violation": true,
+          "label_stable": true
+        },
+        {
+          "quantile": 0.5,
+          "max_branch_loading_percent": 197.03388978113315,
+          "thermal_violation": true,
+          "label_stable": true
+        }
+      ]
+    },
+    {
+      "scenario_id": "ieee300_sdv2_n1_branch_outage_load95_line35",
+      "network": "ieee300",
+      "baseline_thermal_violation": true,
+      "substitutions": [
+        {
+          "quantile": 0.1,
+          "max_branch_loading_percent": 735.8015161046523,
+          "thermal_violation": true,
+          "label_stable": true
+        },
+        {
+          "quantile": 0.25,
+          "max_branch_loading_percent": 403.66888730741334,
+          "thermal_violation": true,
+          "label_stable": true
+        },
+        {
+          "quantile": 0.5,
+          "max_branch_loading_percent": 197.04515177039838,
+          "thermal_violation": true,
+          "label_stable": true
+        }
+      ]
+    },
+    {
+      "scenario_id": "ieee300_sdv2_n1_branch_outage_load95_line192",
+      "network": "ieee300",
+      "baseline_thermal_violation": true,
+      "substitutions": [
+        {
+          "quantile": 0.1,
+          "max_branch_loading_percent": 735.764039931105,
+          "thermal_violation": true,
+          "label_stable": true
+        },
+        {
+          "quantile": 0.25,
+          "max_branch_loading_percent": 403.64832746220344,
+          "thermal_violation": true,
+          "label_stable": true
+        },
+        {
+          "quantile": 0.5,
+          "max_branch_loading_percent": 197.0351157781603,
+          "thermal_violation": true,
+          "label_stable": true
+        }
+      ]
+    },
+    {
+      "scenario_id": "ieee300_sdv2_n1_branch_outage_load95_line244",
+      "network": "ieee300",
+      "baseline_thermal_violation": true,
+      "substitutions": [
+        {
+          "quantile": 0.1,
+          "max_branch_loading_percent": 735.7742053517749,
+          "thermal_violation": true,
+          "label_stable": true
+        },
+        {
+          "quantile": 0.25,
+          "max_branch_loading_percent": 403.65390432493206,
+          "thermal_violation": true,
+          "label_stable": true
+        },
+        {
+          "quantile": 0.5,
+          "max_branch_loading_percent": 197.0378380433567,
+          "thermal_violation": true,
+          "label_stable": true
+        }
+      ]
+    },
+    {
+      "scenario_id": "ieee300_sdv2_n1_branch_outage_load95_line197",
+      "network": "ieee300",
+      "baseline_thermal_violation": true,
+      "substitutions": [
+        {
+          "quantile": 0.1,
+          "max_branch_loading_percent": 735.4755883573574,
+          "thermal_violation": true,
+          "label_stable": true
+        },
+        {
+          "quantile": 0.25,
+          "max_branch_loading_percent": 403.49007972382805,
+          "thermal_violation": true,
+          "label_stable": true
+        },
+        {
+          "quantile": 0.5,
+          "max_branch_loading_percent": 196.95786942451267,
+          "thermal_violation": true,
+          "label_stable": true
+        }
+      ]
+    },
+    {
+      "scenario_id": "ieee300_sdv2_n1_branch_outage_load95_line200",
+      "network": "ieee300",
+      "baseline_thermal_violation": true,
+      "substitutions": [
+        {
+          "quantile": 0.1,
+          "max_branch_loading_percent": 735.5228105172047,
+          "thermal_violation": true,
+          "label_stable": true
+        },
+        {
+          "quantile": 0.25,
+          "max_branch_loading_percent": 403.51598632541095,
+          "thermal_violation": true,
+          "label_stable": true
+        },
+        {
+          "quantile": 0.5,
+          "max_branch_loading_percent": 196.97051535884466,
+          "thermal_violation": true,
+          "label_stable": true
+        }
+      ]
+    },
+    {
+      "scenario_id": "ieee300_sdv2_base_power_flow_load0p955",
+      "network": "ieee300",
+      "baseline_thermal_violation": true,
+      "substitutions": [
+        {
+          "quantile": 0.1,
+          "max_branch_loading_percent": 731.5390223630764,
+          "thermal_violation": true,
+          "label_stable": true
+        },
+        {
+          "quantile": 0.25,
+          "max_branch_loading_percent": 401.3304358797433,
+          "thermal_violation": true,
+          "label_stable": true
+        },
+        {
+          "quantile": 0.5,
+          "max_branch_loading_percent": 195.9036703955357,
+          "thermal_violation": true,
+          "label_stable": true
+        }
+      ]
+    },
+    {
+      "scenario_id": "ieee300_sdv2_n1_branch_outage_load0p955_line141",
+      "network": "ieee300",
+      "baseline_thermal_violation": true,
+      "substitutions": [
+        {
+          "quantile": 0.1,
+          "max_branch_loading_percent": 731.5299373020404,
+          "thermal_violation": true,
+          "label_stable": true
+        },
+        {
+          "quantile": 0.25,
+          "max_branch_loading_percent": 401.32545171431383,
+          "thermal_violation": true,
+          "label_stable": true
+        },
+        {
+          "quantile": 0.5,
+          "max_branch_loading_percent": 195.90123744698707,
+          "thermal_violation": true,
+          "label_stable": true
+        }
+      ]
+    },
+    {
+      "scenario_id": "ieee300_sdv2_n1_branch_outage_load0p955_line282",
+      "network": "ieee300",
+      "baseline_thermal_violation": true,
+      "substitutions": [
+        {
+          "quantile": 0.1,
+          "max_branch_loading_percent": 731.5392131093575,
+          "thermal_violation": true,
+          "label_stable": true
+        },
+        {
+          "quantile": 0.25,
+          "max_branch_loading_percent": 401.3305405252725,
+          "thermal_violation": true,
+          "label_stable": true
+        },
+        {
+          "quantile": 0.5,
+          "max_branch_loading_percent": 195.90372147674321,
+          "thermal_violation": true,
+          "label_stable": true
+        }
+      ]
+    },
+    {
+      "scenario_id": "ieee300_sdv2_n1_branch_outage_load0p955_line244",
+      "network": "ieee300",
+      "baseline_thermal_violation": true,
+      "substitutions": [
+        {
+          "quantile": 0.1,
+          "max_branch_loading_percent": 731.5416575610781,
+          "thermal_violation": true,
+          "label_stable": true
+        },
+        {
+          "quantile": 0.25,
+          "max_branch_loading_percent": 401.331881578647,
+          "thermal_violation": true,
+          "label_stable": true
+        },
+        {
+          "quantile": 0.5,
+          "max_branch_loading_percent": 195.9043760926277,
+          "thermal_violation": true,
+          "label_stable": true
+        }
+      ]
+    },
+    {
+      "scenario_id": "ieee300_sdv2_n1_branch_outage_load0p955_line251",
+      "network": "ieee300",
+      "baseline_thermal_violation": true,
+      "substitutions": [
+        {
+          "quantile": 0.1,
+          "max_branch_loading_percent": 731.5408302438341,
+          "thermal_violation": true,
+          "label_stable": true
+        },
+        {
+          "quantile": 0.25,
+          "max_branch_loading_percent": 401.33142770321456,
+          "thermal_violation": true,
+          "label_stable": true
+        },
+        {
+          "quantile": 0.5,
+          "max_branch_loading_percent": 195.9041545398742,
+          "thermal_violation": true,
+          "label_stable": true
+        }
+      ]
+    },
+    {
+      "scenario_id": "ieee300_sdv2_n1_branch_outage_load0p955_line273",
+      "network": "ieee300",
+      "baseline_thermal_violation": true,
+      "substitutions": [
+        {
+          "quantile": 0.1,
+          "max_branch_loading_percent": 731.5406367078184,
+          "thermal_violation": true,
+          "label_stable": true
+        },
+        {
+          "quantile": 0.25,
+          "max_branch_loading_percent": 401.33132152720594,
+          "thermal_violation": true,
+          "label_stable": true
+        },
+        {
+          "quantile": 0.5,
+          "max_branch_loading_percent": 195.90410271158527,
+          "thermal_violation": true,
+          "label_stable": true
+        }
+      ]
+    },
+    {
+      "scenario_id": "ieee300_sdv2_n1_branch_outage_load0p955_line274",
+      "network": "ieee300",
+      "baseline_thermal_violation": true,
+      "substitutions": [
+        {
+          "quantile": 0.1,
+          "max_branch_loading_percent": 731.5397025556813,
+          "thermal_violation": true,
+          "label_stable": true
+        },
+        {
+          "quantile": 0.25,
+          "max_branch_loading_percent": 401.330809040964,
+          "thermal_violation": true,
+          "label_stable": true
+        },
+        {
+          "quantile": 0.5,
+          "max_branch_loading_percent": 195.90385254880957,
+          "thermal_violation": true,
+          "label_stable": true
+        }
+      ]
+    },
+    {
+      "scenario_id": "ieee300_sdv2_n1_branch_outage_load0p955_line128",
+      "network": "ieee300",
+      "baseline_thermal_violation": true,
+      "substitutions": [
+        {
+          "quantile": 0.1,
+          "max_branch_loading_percent": 731.5388075723616,
+          "thermal_violation": true,
+          "label_stable": true
+        },
+        {
+          "quantile": 0.25,
+          "max_branch_loading_percent": 401.3303180431706,
+          "thermal_violation": true,
+          "label_stable": true
+        },
+        {
+          "quantile": 0.5,
+          "max_branch_loading_percent": 195.90361287531042,
+          "thermal_violation": true,
+          "label_stable": true
+        }
+      ]
+    },
+    {
+      "scenario_id": "ieee300_sdv2_n1_branch_outage_load0p955_line123",
+      "network": "ieee300",
+      "baseline_thermal_violation": true,
+      "substitutions": [
+        {
+          "quantile": 0.1,
+          "max_branch_loading_percent": 731.5356007482204,
+          "thermal_violation": true,
+          "label_stable": true
+        },
+        {
+          "quantile": 0.25,
+          "max_branch_loading_percent": 401.3285587438154,
+          "thermal_violation": true,
+          "label_stable": true
+        },
+        {
+          "quantile": 0.5,
+          "max_branch_loading_percent": 195.90275409867598,
+          "thermal_violation": true,
+          "label_stable": true
+        }
+      ]
+    },
+    {
+      "scenario_id": "ieee300_sdv2_n1_branch_outage_load0p955_line231",
+      "network": "ieee300",
+      "baseline_thermal_violation": true,
+      "substitutions": [
+        {
+          "quantile": 0.1,
+          "max_branch_loading_percent": 731.5379344055849,
+          "thermal_violation": true,
+          "label_stable": true
+        },
+        {
+          "quantile": 0.25,
+          "max_branch_loading_percent": 401.3298390141751,
+          "thermal_violation": true,
+          "label_stable": true
+        },
+        {
+          "quantile": 0.5,
+          "max_branch_loading_percent": 195.9033790442075,
+          "thermal_violation": true,
+          "label_stable": true
+        }
+      ]
+    },
+    {
+      "scenario_id": "ieee300_sdv2_n1_branch_outage_load0p955_line144",
+      "network": "ieee300",
+      "baseline_thermal_violation": true,
+      "substitutions": [
+        {
+          "quantile": 0.1,
+          "max_branch_loading_percent": 731.540433648888,
+          "thermal_violation": true,
+          "label_stable": true
+        },
+        {
+          "quantile": 0.25,
+          "max_branch_loading_percent": 401.33121012682045,
+          "thermal_violation": true,
+          "label_stable": true
+        },
+        {
+          "quantile": 0.5,
+          "max_branch_loading_percent": 195.90404833309202,
+          "thermal_violation": true,
+          "label_stable": true
+        }
+      ]
+    },
+    {
+      "scenario_id": "ieee300_sdv2_n1_branch_outage_load0p955_line20",
+      "network": "ieee300",
+      "baseline_thermal_violation": true,
+      "substitutions": [
+        {
+          "quantile": 0.1,
+          "max_branch_loading_percent": 730.5688787463337,
+          "thermal_violation": true,
+          "label_stable": true
+        },
+        {
+          "quantile": 0.25,
+          "max_branch_loading_percent": 400.79820431222475,
+          "thermal_violation": true,
+          "label_stable": true
+        },
+        {
+          "quantile": 0.5,
+          "max_branch_loading_percent": 195.64386922359446,
+          "thermal_violation": true,
+          "label_stable": true
+        }
+      ]
+    },
+    {
+      "scenario_id": "ieee300_sdv2_n1_branch_outage_load0p955_line42",
+      "network": "ieee300",
+      "baseline_thermal_violation": true,
+      "substitutions": [
+        {
+          "quantile": 0.1,
+          "max_branch_loading_percent": 731.3577082839312,
+          "thermal_violation": true,
+          "label_stable": true
+        },
+        {
+          "quantile": 0.25,
+          "max_branch_loading_percent": 401.2309649613233,
+          "thermal_violation": true,
+          "label_stable": true
+        },
+        {
+          "quantile": 0.5,
+          "max_branch_loading_percent": 195.85511509976462,
+          "thermal_violation": true,
+          "label_stable": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-08-13T04:39:25.717865+00:00",
+  "status": "pass",
+  "removed_count": 3,
+  "removed_paths": [
+    ".pytest_cache",
+    "scripts/__pycache__",
+    "tests/__pycache__"
+  ],
+  "bytes_before": 2228651,
+  "bytes_after": 0,
+  "bytes_reclaimed": 2228651,
+  "prior_cleanup": {
+    "generated_at": "2026-08-06T11:18:29.689225+00:00",
+    "removed_count": 16,
+    "bytes_reclaimed": 8855102929,
+    "scope": "legacy experiment directory and 15 transformer checkpoint directories"
+  },
+  "retained": [
+    "canonical data and ID-only split manifests",
+    "all benchmark reports, predictions, and training logs",
+    "paper sources, figures, release manifest, and audit scripts"
+  ]
+}

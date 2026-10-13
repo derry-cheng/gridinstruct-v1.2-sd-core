@@ -1,0 +1,14 @@
+{
+  "generated_at": "2026-07-10T10:25:06.134941+00:00",
+  "status": "pass",
+  "dataset": "data/gridinstruct_v1.2_sd_core.jsonl",
+  "augmentation_tag": "extended_topology_instruction_v1",
+  "records": 1136,
+  "unique_scenarios": 71,
+  "missing_scenarios": [],
+  "incomplete_truth_scenarios": [],
+  "checksums": {
+    "data/frozen_sources/extended_topology_instruction_v1.jsonl": "6578d6538f6ccad618b23bf7cac95f96cba8c82c4b196df99c961dd643dade02",
+    "simulation_outputs/topology_stress/legacy_topology_scenarios_v1.json": "03da20b82d290d32f9f05388c1585cbce66c71af8350db66875bd53a30ef3d33"
+  }
+}

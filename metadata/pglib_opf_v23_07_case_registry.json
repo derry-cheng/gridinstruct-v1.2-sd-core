@@ -1,0 +1,53 @@
+{
+  "repository": "https://github.com/power-grid-lib/pglib-opf",
+  "commit": "dc6be4b2f85ca0e776952ec22cbd4c22396ea5a3",
+  "release": "v23.07",
+  "license": "CC-BY-4.0 for data; MIT for software",
+  "license_sha256": "95b1cd9fee1676221d74f7c0cbba622d98ac098e9b317b3848113ef4356ab4fd",
+  "cases": {
+    "ieee14": {
+      "file": "pglib_opf_case14_ieee.m",
+      "sha256": "bd5c568621de65e4b0922317010868bc7fa94173807faa10ea8fdbbe77c28106"
+    },
+    "ieee30": {
+      "file": "pglib_opf_case30_ieee.m",
+      "sha256": "cae3290639d989731d32428aacf30c0b918bc91db73bc54791f3aa62d3f76c70"
+    },
+    "ieee57": {
+      "file": "pglib_opf_case57_ieee.m",
+      "sha256": "aa3b48f7cbaade2afd69cb3790ef72be981db8494dcef9277bee460f754bdb22"
+    },
+    "ieee118": {
+      "file": "pglib_opf_case118_ieee.m",
+      "sha256": "b1af0833849040c04babc3700631cff0d9afa66b79c5d3e13ae79bdf516cec78"
+    },
+    "ieee300": {
+      "file": "pglib_opf_case300_ieee.m",
+      "sha256": "7ecf056d5942135765200ad7ae8791c28f0d35fb1dc888ba2c32dfc950f3c2f5"
+    },
+    "illinois200": {
+      "file": "pglib_opf_case200_activ.m",
+      "sha256": "676e6f54a3b6726b199b531e7758ad8bf75ba2b076ea3fee86dc3f5cf5846f6b"
+    },
+    "pegase89": {
+      "file": "pglib_opf_case89_pegase.m",
+      "sha256": "0c2ca484db566e587df8565141dbbf053c275e9246968391cc2f560fb4e995ca"
+    },
+    "pegase1354": {
+      "file": "pglib_opf_case1354_pegase.m",
+      "sha256": "cd6d27dff4a56684f1e4f82cfa346b36d84c4e90733228aa88331cd550e17652"
+    },
+    "rte1888": {
+      "file": "pglib_opf_case1888_rte.m",
+      "sha256": "f4bc237298ed7c2e9291070f3c3a0983319565c12b801114a1e29641d0b5bff0"
+    },
+    "rte2848": {
+      "file": "pglib_opf_case2848_rte.m",
+      "sha256": "9d1ec26a6aef3e47bc23707a6c81db8d0528ff6ad90068b2f92df3d6e76ef591"
+    },
+    "pegase2869": {
+      "file": "pglib_opf_case2869_pegase.m",
+      "sha256": "6c8e80fba6fc2fa78d65fce64cf4801425b01a0aa093661caf581b6551d4a7ac"
+    }
+  }
+}

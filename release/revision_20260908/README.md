@@ -1,0 +1,13 @@
+# OPF evidence supplement
+
+This archive complements the existing core-data archive. It contains the original 160 OPF result records, both original 7,680-row load-stress ledgers, source scenario definitions covering all 160 cases, the 136 recorded candidate-screening outcomes, source network cases, and the local reconstruction scripts with their local Python dependencies. Paths preserve the repository layout. No instruction dataset is duplicated.
+
+The controls in the archived results include contingency-specific corrective actions. The accompanying historical stress scripts implement that policy. The archive does not establish that one base-case control vector remains secure for every contingency. The reported construction limits are case-specific and must be read from each result.
+
+Extract with `tar -xzf GridInstruct_OPF_evidence_supplement.tar.gz -C <working-directory>`. For numerical replay, install the recorded dependencies and use the scripts with the required core-data companion inputs. Existing scripts can expect committed input receipts and core records; this supplement is an evidence archive, not a claimed self-contained numerical reproducer. The packaging check only verifies extraction, JSON readability, unique state identities and the 160 × 48 denominator in each stress model. It does not execute AC power flow or confirm numerical results independently.
+
+Candidate metadata specifies a grid of 35,200 registered candidates, but the retained attempt-level screening results cover 136 candidates, of which 120 were selected. The complete per-candidate power-flow attempt ledger is not available locally. The included `scenario_reconstruction_attempts.json` contains one island-boundary reconstruction entry and must not be described as a complete core construction-attempt ledger.
+
+Regulation materials include authored rule summaries, clause mappings and official source URLs. Full source regulation PDFs are not present locally and are not included. The fixed PGLib source files retain their original attribution and upstream license. The included historical release-license metadata describes the earlier compact archive; the supplement additionally includes those fixed source cases under their upstream terms. Project code is MIT licensed; project-derived data is CC-BY-4.0. See the included license files and PGLib license for exact scope.
+
+Before a complete public release, provide the missing attempt ledgers or regenerate and identify a new reproducible construction run, supply completed real independent review records, finalize authorship and repository metadata, and archive the data with its formal citation. This local supplement creates no DOI and performs no external publication.

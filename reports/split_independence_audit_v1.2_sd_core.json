@@ -1,0 +1,248 @@
+{
+  "generated_at": "2026-08-04T04:26:15.709761+00:00",
+  "status": "pass",
+  "scope_statement": "Record-id and OOD scenario isolation are hard gates; standard scenario/source-group overlaps are reported as diagnostics.",
+  "split_summary": {
+    "train": {
+      "records": 28684,
+      "scenario_ids": 550,
+      "source_record_ids": 20790,
+      "source_groups": 9195,
+      "task_counts": {
+        "auxiliary_decision": 3602,
+        "dispatcher_intent_tool_call": 3910,
+        "intelligent_data_query": 3476,
+        "operation_ticket_check": 8675,
+        "regulation_compliance_check": 5655,
+        "regulation_qa": 3366
+      },
+      "network_counts": {
+        "IEEE14": 2494,
+        "IEEE30": 6121,
+        "IEEE57": 8028,
+        "no_network": 12041
+      },
+      "severity_counts": {
+        "alert": 971,
+        "emergency": 13140,
+        "normal": 2532,
+        "unknown": 12041
+      }
+    },
+    "validation": {
+      "records": 3598,
+      "scenario_ids": 65,
+      "source_record_ids": 2576,
+      "source_groups": 1094,
+      "task_counts": {
+        "auxiliary_decision": 451,
+        "dispatcher_intent_tool_call": 490,
+        "intelligent_data_query": 434,
+        "operation_ticket_check": 1096,
+        "regulation_compliance_check": 707,
+        "regulation_qa": 420
+      },
+      "network_counts": {
+        "IEEE14": 411,
+        "IEEE30": 811,
+        "IEEE57": 860,
+        "no_network": 1516
+      },
+      "severity_counts": {
+        "alert": 223,
+        "emergency": 1437,
+        "normal": 422,
+        "unknown": 1516
+      }
+    },
+    "test": {
+      "records": 3609,
+      "scenario_ids": 66,
+      "source_record_ids": 2585,
+      "source_groups": 1114,
+      "task_counts": {
+        "auxiliary_decision": 448,
+        "dispatcher_intent_tool_call": 494,
+        "intelligent_data_query": 437,
+        "operation_ticket_check": 1110,
+        "regulation_compliance_check": 701,
+        "regulation_qa": 419
+      },
+      "network_counts": {
+        "IEEE14": 229,
+        "IEEE30": 1043,
+        "IEEE57": 808,
+        "no_network": 1529
+      },
+      "severity_counts": {
+        "alert": 84,
+        "emergency": 1700,
+        "normal": 296,
+        "unknown": 1529
+      }
+    },
+    "ood_test": {
+      "records": 59588,
+      "scenario_ids": 1915,
+      "source_record_ids": 53847,
+      "source_groups": 6557,
+      "task_counts": {
+        "auxiliary_decision": 13586,
+        "dispatcher_intent_tool_call": 14879,
+        "intelligent_data_query": 13419,
+        "regulation_compliance_check": 17704
+      },
+      "network_counts": {
+        "IEEE118": 38159,
+        "IEEE14": 3567,
+        "IEEE30": 4430,
+        "IEEE300": 560,
+        "IEEE57": 5640,
+        "ILLINOIS200": 2912,
+        "PEGASE1354": 1056,
+        "PEGASE2869": 624,
+        "PEGASE89": 1472,
+        "RTE1888": 544,
+        "RTE2848": 624
+      },
+      "severity_counts": {
+        "alert": 18281,
+        "emergency": 39259,
+        "normal": 2048
+      }
+    },
+    "challenge_train": {
+      "records": 44339,
+      "scenario_ids": 2453,
+      "source_record_ids": 36248,
+      "source_groups": 9343,
+      "task_counts": {
+        "dispatcher_intent_tool_call": 17851,
+        "operation_ticket_check": 1840,
+        "regulation_compliance_check": 24648
+      },
+      "network_counts": {
+        "IEEE118": 19728,
+        "IEEE14": 3572,
+        "IEEE30": 6941,
+        "IEEE300": 280,
+        "IEEE57": 8362,
+        "ILLINOIS200": 1456,
+        "PEGASE1354": 528,
+        "PEGASE2869": 312,
+        "PEGASE89": 736,
+        "RTE1888": 272,
+        "RTE2848": 312,
+        "no_network": 1840
+      },
+      "severity_counts": {
+        "alert": 10045,
+        "emergency": 29420,
+        "normal": 3034,
+        "unknown": 1840
+      }
+    },
+    "challenge_validation": {
+      "records": 5745,
+      "scenario_ids": 217,
+      "source_record_ids": 2223,
+      "source_groups": 2223,
+      "task_counts": {
+        "dispatcher_intent_tool_call": 522,
+        "operation_ticket_check": 5171,
+        "regulation_compliance_check": 52
+      },
+      "network_counts": {
+        "IEEE118": 296,
+        "IEEE14": 42,
+        "IEEE30": 142,
+        "IEEE57": 94,
+        "no_network": 5171
+      },
+      "severity_counts": {
+        "alert": 22,
+        "emergency": 531,
+        "normal": 21,
+        "unknown": 5171
+      }
+    },
+    "challenge_test": {
+      "records": 5337,
+      "scenario_ids": 494,
+      "source_record_ids": 2029,
+      "source_groups": 2029,
+      "task_counts": {
+        "dispatcher_intent_tool_call": 1400,
+        "operation_ticket_check": 3870,
+        "regulation_compliance_check": 67
+      },
+      "network_counts": {
+        "IEEE118": 832,
+        "IEEE14": 127,
+        "IEEE30": 165,
+        "IEEE57": 343,
+        "no_network": 3870
+      },
+      "severity_counts": {
+        "alert": 556,
+        "emergency": 871,
+        "normal": 40,
+        "unknown": 3870
+      }
+    }
+  },
+  "overlaps": {
+    "record_id_standard": {
+      "ood_test__test": 0,
+      "ood_test__train": 0,
+      "ood_test__validation": 0,
+      "test__train": 0,
+      "test__validation": 0,
+      "train__validation": 0
+    },
+    "scenario_id_standard": {
+      "ood_test__test": 0,
+      "ood_test__train": 0,
+      "ood_test__validation": 0,
+      "test__train": 0,
+      "test__validation": 0,
+      "train__validation": 0
+    },
+    "source_record_id_standard": {
+      "ood_test__test": 0,
+      "ood_test__train": 0,
+      "ood_test__validation": 0,
+      "test__train": 0,
+      "test__validation": 0,
+      "train__validation": 0
+    },
+    "source_group_standard": {
+      "ood_test__test": 0,
+      "ood_test__train": 0,
+      "ood_test__validation": 0,
+      "test__train": 0,
+      "test__validation": 0,
+      "train__validation": 0
+    },
+    "record_id_challenge": {
+      "challenge_test__challenge_train": 0,
+      "challenge_test__challenge_validation": 0,
+      "challenge_train__challenge_validation": 0
+    },
+    "scenario_id_challenge": {
+      "challenge_test__challenge_train": 494,
+      "challenge_test__challenge_validation": 34,
+      "challenge_train__challenge_validation": 217
+    }
+  },
+  "ood_scenario_overlap_with_standard": 0,
+  "hard_gates": {
+    "standard_record_id_disjoint": true,
+    "challenge_record_id_disjoint": true,
+    "ood_scenario_disjoint_from_standard": true,
+    "all_released_splits_nonempty": true
+  },
+  "figures": {
+    "overlap_diagnostics": "figures/sd_core/fig_split_independence_overlap.png"
+  }
+}

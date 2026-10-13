@@ -1,0 +1,53 @@
+{
+  "audit_date": "2026-08-29",
+  "auditor": "independent cross-model experiment-integrity review",
+  "overall_verdict": "warn",
+  "integrity_status": "pass_with_scope",
+  "checks": {
+    "gt_provenance": {
+      "status": "pass",
+      "details": "Scenario truth comes from deterministic pandapower construction and independent query replay; English fields are rendered from typed contracts."
+    },
+    "score_normalization": {
+      "status": "pass",
+      "details": "Classification, generation, structured, ECE, and Brier metrics use released targets and fixed evaluation denominators; no prediction-self normalization or best-seed selection."
+    },
+    "result_existence": {
+      "status": "pass",
+      "details": "Current reports and manuscript values match after the dispatcher-request contract repair; 20/20 manuscript metric-binding checks pass."
+    },
+    "dead_code": {
+      "status": "pass",
+      "details": "Current TF-IDF, calibrated, structured, and target-hidden metrics are called and their prediction receipts are retained."
+    },
+    "scope": {
+      "status": "warn",
+      "details": "Evidence is simulation- or contract-grounded; 17,764/17,766 query rows are independently replayed, 2 remain solver-bound, and human review is 0/1,600."
+    },
+    "eval_type": {
+      "status": "pass",
+      "details": "Tasks are classified as simulation_only, synthetic_proxy, self_supervised_proxy, or human_eval with no human result inferred."
+    }
+  },
+  "claims": [
+    {
+      "id": "dataset_schema_and_contract_integrity",
+      "impact": "supported"
+    },
+    {
+      "id": "bounded_electrical_replay",
+      "impact": "supported_with_scope"
+    },
+    {
+      "id": "semantic_or_expert_correctness",
+      "impact": "unsupported_without_external_review"
+    }
+  ],
+  "external_gates": [
+    "raw population-level scenario and candidate ledgers",
+    "persistent data DOI and final deposition metadata",
+    "completed independent double human review for 1600 assignments",
+    "full-population independent scenario-array replay"
+  ],
+  "submission_ready": false
+}

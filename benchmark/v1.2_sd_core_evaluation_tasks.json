@@ -1,0 +1,590 @@
+{
+  "generated_at": "2026-08-19T10:55:13.673001+00:00",
+  "source": "data/gridinstruct_v1.2_sd_core.jsonl",
+  "split_policy": "task-scoped connected components; classification tasks use whole semantic challenge groups as the supervised unit, while scenario-grounded non-classification tasks use source_record_id/original id plus scenario_id; label-aware assignment and whole-component movement for classification tasks; OOD by IEEE118/high-load/N-2 policy",
+  "split_paths": {
+    "train": "data/v1.2_sd_core_train.jsonl",
+    "validation": "data/v1.2_sd_core_validation.jsonl",
+    "test": "data/v1.2_sd_core_test.jsonl",
+    "ood_test": "data/v1.2_sd_core_ood_test.jsonl"
+  },
+  "splits": {
+    "train": {
+      "records": 31805,
+      "task_counts": {
+        "dispatcher_intent_tool_call": 3607,
+        "intelligent_data_query": 5050,
+        "operation_ticket_check": 8061,
+        "auxiliary_decision": 5365,
+        "regulation_qa": 2632,
+        "regulation_compliance_check": 7090
+      },
+      "classification_label_counts": {
+        "dispatcher_intent_tool_call": {
+          "diagnose_and_dispatch": 1209,
+          "mitigate_violations": 1198,
+          "security_check_and_redispatch": 1200
+        },
+        "operation_ticket_check": {
+          "compliant": 2023,
+          "compliant_with_monitoring": 3730,
+          "non_compliant": 2308
+        },
+        "regulation_compliance_check": {
+          "compliant": 809,
+          "compliant_with_monitoring": 3219,
+          "non_compliant": 3062
+        }
+      }
+    },
+    "validation": {
+      "records": 4735,
+      "task_counts": {
+        "auxiliary_decision": 603,
+        "operation_ticket_check": 974,
+        "dispatcher_intent_tool_call": 1171,
+        "regulation_compliance_check": 1046,
+        "regulation_qa": 319,
+        "intelligent_data_query": 622
+      },
+      "classification_label_counts": {
+        "dispatcher_intent_tool_call": {
+          "security_check_and_redispatch": 383,
+          "diagnose_and_dispatch": 399,
+          "mitigate_violations": 389
+        },
+        "operation_ticket_check": {
+          "compliant_with_monitoring": 451,
+          "non_compliant": 279,
+          "compliant": 244
+        },
+        "regulation_compliance_check": {
+          "non_compliant": 556,
+          "compliant_with_monitoring": 390,
+          "compliant": 100
+        }
+      }
+    },
+    "test": {
+      "records": 5252,
+      "task_counts": {
+        "intelligent_data_query": 623,
+        "dispatcher_intent_tool_call": 2064,
+        "operation_ticket_check": 901,
+        "auxiliary_decision": 481,
+        "regulation_compliance_check": 875,
+        "regulation_qa": 308
+      },
+      "classification_label_counts": {
+        "dispatcher_intent_tool_call": {
+          "mitigate_violations": 678,
+          "diagnose_and_dispatch": 704,
+          "security_check_and_redispatch": 682
+        },
+        "operation_ticket_check": {
+          "compliant": 235,
+          "compliant_with_monitoring": 397,
+          "non_compliant": 269
+        },
+        "regulation_compliance_check": {
+          "compliant_with_monitoring": 371,
+          "non_compliant": 378,
+          "compliant": 126
+        }
+      }
+    },
+    "ood_test": {
+      "records": 53687,
+      "task_counts": {
+        "auxiliary_decision": 11638,
+        "intelligent_data_query": 11471,
+        "regulation_compliance_check": 15756,
+        "regulation_qa": 946,
+        "dispatcher_intent_tool_call": 12931,
+        "operation_ticket_check": 945
+      },
+      "classification_label_counts": {
+        "dispatcher_intent_tool_call": {
+          "diagnose_and_dispatch": 4301,
+          "security_check_and_redispatch": 4306,
+          "mitigate_violations": 4324
+        },
+        "operation_ticket_check": {
+          "compliant": 269,
+          "compliant_with_monitoring": 371,
+          "non_compliant": 305
+        },
+        "regulation_compliance_check": {
+          "compliant_with_monitoring": 6758,
+          "non_compliant": 8979,
+          "compliant": 19
+        }
+      }
+    }
+  },
+  "overlap_report": {
+    "record_id": {
+      "train__validation": {
+        "count": 0,
+        "examples": []
+      },
+      "train__test": {
+        "count": 0,
+        "examples": []
+      },
+      "train__ood_test": {
+        "count": 0,
+        "examples": []
+      },
+      "validation__test": {
+        "count": 0,
+        "examples": []
+      },
+      "validation__ood_test": {
+        "count": 0,
+        "examples": []
+      },
+      "test__ood_test": {
+        "count": 0,
+        "examples": []
+      }
+    },
+    "scenario_id": {
+      "train__validation": {
+        "count": 502,
+        "examples": [
+          "ieee14_base_power_flow_load100",
+          "ieee14_base_power_flow_load70",
+          "ieee14_base_power_flow_load80",
+          "ieee14_base_power_flow_load90",
+          "ieee14_generator_perturbation_load100_gen85",
+          "ieee14_generator_perturbation_load100_gen95",
+          "ieee14_generator_perturbation_load110_gen105",
+          "ieee14_generator_perturbation_load110_gen85",
+          "ieee14_generator_perturbation_load110_gen90",
+          "ieee14_generator_perturbation_load70_gen85"
+        ]
+      },
+      "train__test": {
+        "count": 582,
+        "examples": [
+          "ieee14_base_power_flow_load70",
+          "ieee14_generator_perturbation_load110_gen85",
+          "ieee14_generator_perturbation_load70_gen95",
+          "ieee14_generator_perturbation_load80_gen105",
+          "ieee14_generator_perturbation_load80_gen85",
+          "ieee14_generator_perturbation_load90_gen85",
+          "ieee14_generator_perturbation_load90_gen90",
+          "ieee14_generator_perturbation_load90_gen95",
+          "ieee14_n1_branch_outage_load100_branchidx_13_8_13",
+          "ieee14_n1_branch_outage_load100_branchidx_14_9_10"
+        ]
+      },
+      "train__ood_test": {
+        "count": 0,
+        "examples": []
+      },
+      "validation__test": {
+        "count": 226,
+        "examples": [
+          "ieee14_base_power_flow_load70",
+          "ieee14_generator_perturbation_load110_gen85",
+          "ieee14_generator_perturbation_load70_gen95",
+          "ieee14_generator_perturbation_load80_gen85",
+          "ieee14_generator_perturbation_load90_gen85",
+          "ieee14_generator_perturbation_load90_gen95",
+          "ieee14_n1_branch_outage_load100_branchidx_14_9_10",
+          "ieee14_n1_branch_outage_load100_branchidx_4_1_4",
+          "ieee14_n1_branch_outage_load110_branchidx_11_6_8",
+          "ieee14_n1_branch_outage_load110_branchidx_1_0_4"
+        ]
+      },
+      "validation__ood_test": {
+        "count": 0,
+        "examples": []
+      },
+      "test__ood_test": {
+        "count": 0,
+        "examples": []
+      }
+    },
+    "source_group": {
+      "train__validation": {
+        "count": 1336,
+        "examples": [
+          "gridinstruct_v01_compliance_00019",
+          "gridinstruct_v01_compliance_00035",
+          "gridinstruct_v01_compliance_00045",
+          "gridinstruct_v01_compliance_00057",
+          "gridinstruct_v01_compliance_00061",
+          "gridinstruct_v01_compliance_00075",
+          "gridinstruct_v01_compliance_00083",
+          "gridinstruct_v01_compliance_00099",
+          "gridinstruct_v01_compliance_00100",
+          "gridinstruct_v01_compliance_00131"
+        ]
+      },
+      "train__test": {
+        "count": 1124,
+        "examples": [
+          "gridinstruct_v01_compliance_00165",
+          "gridinstruct_v01_compliance_00205",
+          "gridinstruct_v01_compliance_00253",
+          "gridinstruct_v01_compliance_00316",
+          "gridinstruct_v01_compliance_00331",
+          "gridinstruct_v01_compliance_00413",
+          "gridinstruct_v01_compliance_00469",
+          "gridinstruct_v01_compliance_00501",
+          "gridinstruct_v01_compliance_00517",
+          "gridinstruct_v01_compliance_00521"
+        ]
+      },
+      "train__ood_test": {
+        "count": 662,
+        "examples": [
+          "gridinstruct_v01_ticket_00003",
+          "gridinstruct_v01_ticket_00014",
+          "gridinstruct_v01_ticket_00019",
+          "gridinstruct_v01_ticket_00024",
+          "gridinstruct_v01_ticket_00028",
+          "gridinstruct_v01_ticket_00030",
+          "gridinstruct_v01_ticket_00031",
+          "gridinstruct_v01_ticket_00035",
+          "gridinstruct_v01_ticket_00040",
+          "gridinstruct_v01_ticket_00045"
+        ]
+      },
+      "validation__test": {
+        "count": 277,
+        "examples": [
+          "gridinstruct_v01_compliance_00316",
+          "gridinstruct_v01_compliance_00331",
+          "gridinstruct_v01_compliance_00521",
+          "gridinstruct_v01_compliance_00860",
+          "gridinstruct_v01_compliance_00939",
+          "gridinstruct_v01_compliance_01145",
+          "gridinstruct_v01_compliance_01284",
+          "gridinstruct_v01_compliance_01459",
+          "gridinstruct_v01_compliance_01613",
+          "gridinstruct_v01_compliance_01636"
+        ]
+      },
+      "validation__ood_test": {
+        "count": 162,
+        "examples": [
+          "gridinstruct_v01_ticket_00017",
+          "gridinstruct_v01_ticket_00019",
+          "gridinstruct_v01_ticket_00037",
+          "gridinstruct_v01_ticket_00051",
+          "gridinstruct_v01_ticket_00066",
+          "gridinstruct_v01_ticket_00069",
+          "gridinstruct_v01_ticket_00103",
+          "gridinstruct_v01_ticket_00109",
+          "gridinstruct_v01_ticket_00132",
+          "gridinstruct_v01_ticket_00142"
+        ]
+      },
+      "test__ood_test": {
+        "count": 111,
+        "examples": [
+          "gridinstruct_v01_ticket_00037",
+          "gridinstruct_v01_ticket_00058",
+          "gridinstruct_v01_ticket_00069",
+          "gridinstruct_v01_ticket_00128",
+          "gridinstruct_v01_ticket_00131",
+          "gridinstruct_v01_ticket_00134",
+          "gridinstruct_v01_ticket_00149",
+          "gridinstruct_v01_ticket_00186",
+          "gridinstruct_v01_ticket_00222",
+          "gridinstruct_v01_ticket_00224"
+        ]
+      }
+    },
+    "task_scenario_id": {
+      "train__validation": {
+        "count": 191,
+        "examples": [
+          "dispatcher_intent_tool_call::ieee30_n1_branch_outage_load70_branchidx_0_0_1",
+          "dispatcher_intent_tool_call::ieee30_n1_branch_outage_load70_branchidx_1_0_2",
+          "dispatcher_intent_tool_call::ieee30_n1_branch_outage_load70_branchidx_3_2_3",
+          "dispatcher_intent_tool_call::ieee30_n1_branch_outage_load70_branchidx_4_1_4",
+          "dispatcher_intent_tool_call::ieee30_n1_branch_outage_load80_branchidx_4_1_4",
+          "dispatcher_intent_tool_call::ieee30_n1_branch_outage_load80_branchidx_5_1_5",
+          "dispatcher_intent_tool_call::ieee30_n1_branch_outage_load80_branchidx_6_3_5",
+          "dispatcher_intent_tool_call::ieee30_n1_branch_outage_load80_branchidx_7_4_6",
+          "operation_ticket_check::NA",
+          "regulation_compliance_check::ieee14_base_power_flow_load100"
+        ]
+      },
+      "train__test": {
+        "count": 344,
+        "examples": [
+          "dispatcher_intent_tool_call::ieee30_n1_branch_outage_load100_branchidx_1_0_2",
+          "dispatcher_intent_tool_call::ieee30_n1_branch_outage_load100_branchidx_2_1_3",
+          "dispatcher_intent_tool_call::ieee30_n1_branch_outage_load100_branchidx_3_2_3",
+          "dispatcher_intent_tool_call::ieee30_n1_branch_outage_load100_branchidx_4_1_4",
+          "dispatcher_intent_tool_call::ieee30_n1_branch_outage_load100_branchidx_5_1_5",
+          "dispatcher_intent_tool_call::ieee30_n1_branch_outage_load100_branchidx_7_4_6",
+          "dispatcher_intent_tool_call::ieee30_n1_branch_outage_load110_branchidx_3_2_3",
+          "dispatcher_intent_tool_call::ieee30_n1_branch_outage_load90_branchidx_8_5_6",
+          "dispatcher_intent_tool_call::ieee57_n1_branch_outage_load100_branchidx_7_7_8",
+          "operation_ticket_check::NA"
+        ]
+      },
+      "train__ood_test": {
+        "count": 2,
+        "examples": [
+          "operation_ticket_check::NA",
+          "regulation_qa::NA"
+        ]
+      },
+      "validation__test": {
+        "count": 52,
+        "examples": [
+          "dispatcher_intent_tool_call::ieee30_n1_branch_outage_load80_branchidx_0_0_1",
+          "dispatcher_intent_tool_call::ieee30_n1_branch_outage_load80_branchidx_1_0_2",
+          "dispatcher_intent_tool_call::ieee30_n1_branch_outage_load80_branchidx_3_2_3",
+          "dispatcher_intent_tool_call::ieee30_n1_branch_outage_load80_branchidx_8_5_6",
+          "dispatcher_intent_tool_call::ieee30_n1_branch_outage_load80_branchidx_9_5_7",
+          "dispatcher_intent_tool_call::ieee30_n1_branch_outage_load90_branchidx_1_0_2",
+          "dispatcher_intent_tool_call::ieee30_n1_branch_outage_load90_branchidx_2_1_3",
+          "dispatcher_intent_tool_call::ieee30_n1_branch_outage_load90_branchidx_3_2_3",
+          "dispatcher_intent_tool_call::ieee30_n1_branch_outage_load90_branchidx_4_1_4",
+          "dispatcher_intent_tool_call::ieee30_n1_branch_outage_load90_branchidx_5_1_5"
+        ]
+      },
+      "validation__ood_test": {
+        "count": 2,
+        "examples": [
+          "operation_ticket_check::NA",
+          "regulation_qa::NA"
+        ]
+      },
+      "test__ood_test": {
+        "count": 2,
+        "examples": [
+          "operation_ticket_check::NA",
+          "regulation_qa::NA"
+        ]
+      }
+    },
+    "task_source_group": {
+      "train__validation": {
+        "count": 1336,
+        "examples": [
+          "operation_ticket_check::gridinstruct_v01_ticket_00000",
+          "operation_ticket_check::gridinstruct_v01_ticket_00013",
+          "operation_ticket_check::gridinstruct_v01_ticket_00015",
+          "operation_ticket_check::gridinstruct_v01_ticket_00016",
+          "operation_ticket_check::gridinstruct_v01_ticket_00019",
+          "operation_ticket_check::gridinstruct_v01_ticket_00021",
+          "operation_ticket_check::gridinstruct_v01_ticket_00027",
+          "operation_ticket_check::gridinstruct_v01_ticket_00029",
+          "operation_ticket_check::gridinstruct_v01_ticket_00033",
+          "operation_ticket_check::gridinstruct_v01_ticket_00034"
+        ]
+      },
+      "train__test": {
+        "count": 1124,
+        "examples": [
+          "operation_ticket_check::gridinstruct_v01_ticket_00007",
+          "operation_ticket_check::gridinstruct_v01_ticket_00013",
+          "operation_ticket_check::gridinstruct_v01_ticket_00016",
+          "operation_ticket_check::gridinstruct_v01_ticket_00021",
+          "operation_ticket_check::gridinstruct_v01_ticket_00026",
+          "operation_ticket_check::gridinstruct_v01_ticket_00034",
+          "operation_ticket_check::gridinstruct_v01_ticket_00036",
+          "operation_ticket_check::gridinstruct_v01_ticket_00039",
+          "operation_ticket_check::gridinstruct_v01_ticket_00046",
+          "operation_ticket_check::gridinstruct_v01_ticket_00048"
+        ]
+      },
+      "train__ood_test": {
+        "count": 662,
+        "examples": [
+          "operation_ticket_check::gridinstruct_v01_ticket_00003",
+          "operation_ticket_check::gridinstruct_v01_ticket_00014",
+          "operation_ticket_check::gridinstruct_v01_ticket_00019",
+          "operation_ticket_check::gridinstruct_v01_ticket_00024",
+          "operation_ticket_check::gridinstruct_v01_ticket_00028",
+          "operation_ticket_check::gridinstruct_v01_ticket_00030",
+          "operation_ticket_check::gridinstruct_v01_ticket_00031",
+          "operation_ticket_check::gridinstruct_v01_ticket_00035",
+          "operation_ticket_check::gridinstruct_v01_ticket_00040",
+          "operation_ticket_check::gridinstruct_v01_ticket_00045"
+        ]
+      },
+      "validation__test": {
+        "count": 277,
+        "examples": [
+          "operation_ticket_check::gridinstruct_v01_ticket_00013",
+          "operation_ticket_check::gridinstruct_v01_ticket_00016",
+          "operation_ticket_check::gridinstruct_v01_ticket_00021",
+          "operation_ticket_check::gridinstruct_v01_ticket_00034",
+          "operation_ticket_check::gridinstruct_v01_ticket_00037",
+          "operation_ticket_check::gridinstruct_v01_ticket_00039",
+          "operation_ticket_check::gridinstruct_v01_ticket_00069",
+          "operation_ticket_check::gridinstruct_v01_ticket_00093",
+          "operation_ticket_check::gridinstruct_v01_ticket_00120",
+          "operation_ticket_check::gridinstruct_v01_ticket_00123"
+        ]
+      },
+      "validation__ood_test": {
+        "count": 162,
+        "examples": [
+          "operation_ticket_check::gridinstruct_v01_ticket_00017",
+          "operation_ticket_check::gridinstruct_v01_ticket_00019",
+          "operation_ticket_check::gridinstruct_v01_ticket_00037",
+          "operation_ticket_check::gridinstruct_v01_ticket_00051",
+          "operation_ticket_check::gridinstruct_v01_ticket_00066",
+          "operation_ticket_check::gridinstruct_v01_ticket_00069",
+          "operation_ticket_check::gridinstruct_v01_ticket_00103",
+          "operation_ticket_check::gridinstruct_v01_ticket_00109",
+          "operation_ticket_check::gridinstruct_v01_ticket_00132",
+          "operation_ticket_check::gridinstruct_v01_ticket_00142"
+        ]
+      },
+      "test__ood_test": {
+        "count": 111,
+        "examples": [
+          "operation_ticket_check::gridinstruct_v01_ticket_00037",
+          "operation_ticket_check::gridinstruct_v01_ticket_00058",
+          "operation_ticket_check::gridinstruct_v01_ticket_00069",
+          "operation_ticket_check::gridinstruct_v01_ticket_00128",
+          "operation_ticket_check::gridinstruct_v01_ticket_00131",
+          "operation_ticket_check::gridinstruct_v01_ticket_00134",
+          "operation_ticket_check::gridinstruct_v01_ticket_00149",
+          "operation_ticket_check::gridinstruct_v01_ticket_00186",
+          "operation_ticket_check::gridinstruct_v01_ticket_00222",
+          "operation_ticket_check::gridinstruct_v01_ticket_00224"
+        ]
+      }
+    },
+    "split_group_key": {
+      "train__validation": {
+        "count": 0,
+        "examples": []
+      },
+      "train__test": {
+        "count": 0,
+        "examples": []
+      },
+      "train__ood_test": {
+        "count": 96,
+        "examples": [
+          "task_classification::dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator requests dispatch analysis for the current operating condition and a reviewable recommendation.|policy:Follow the declared dispatch review sequence and retain a post-action power-flow check.|priority:The current shift supervisor requires a safe dispatch analysis followed by a reviewable recommendation.|issue:voltage",
+          "task_classification::regulation_compliance_check::action_category:None|surface:Adjust output of nearby generators to reduce section load|issue:voltage",
+          "task_classification::regulation_compliance_check::action_category:None|surface:Continue increasing power flow on constrained cross-section|issue:combined",
+          "task_classification::regulation_compliance_check::action_category:None|surface:Continue increasing power flow on constrained cross-section|issue:voltage",
+          "task_classification::regulation_compliance_check::action_category:None|surface:Do not verify equipment status before restoring faulted line operation.|issue:combined",
+          "task_classification::regulation_compliance_check::action_category:None|surface:Do not verify equipment status before restoring faulted line operation.|issue:voltage",
+          "task_classification::regulation_compliance_check::action_category:None|surface:Execute phased load transfer and continue monitoring.|issue:combined",
+          "task_classification::regulation_compliance_check::action_category:None|surface:Execute phased load transfer and continue monitoring.|issue:voltage",
+          "task_classification::regulation_compliance_check::action_category:None|surface:Execute reactive power support first, then recheck power flow|issue:combined",
+          "task_classification::regulation_compliance_check::action_category:None|surface:Execute reactive power support first, then recheck power flow|issue:voltage"
+        ]
+      },
+      "validation__test": {
+        "count": 0,
+        "examples": []
+      },
+      "validation__ood_test": {
+        "count": 5,
+        "examples": [
+          "task_classification::regulation_compliance_check::action_category:corrective_redispatch|surface:Adjust output of nearby generators to reduce section load|issue:normal",
+          "task_classification::regulation_compliance_check::action_category:corrective_redispatch|surface:Adjust output of nearby generators to reduce section load|issue:voltage",
+          "task_classification::regulation_compliance_check::action_category:corrective_redispatch|surface:Release section margin through unit rescheduling|issue:combined",
+          "task_classification::regulation_compliance_check::action_category:corrective_topology|surface:First switch local topology then check if limit violation is eliminated|issue:normal",
+          "task_classification::regulation_compliance_check::action_category:risky_increase|surface:Continue increasing power flow on constrained cross-section|issue:voltage"
+        ]
+      },
+      "test__ood_test": {
+        "count": 7,
+        "examples": [
+          "task_classification::dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator requests dispatch analysis for the current operating condition and a reviewable recommendation.|policy:Follow the declared dispatch review sequence and retain a post-action power-flow check.|priority:The current shift supervisor requires a safe dispatch analysis followed by a reviewable recommendation.|issue:combined",
+          "task_classification::regulation_compliance_check::action_category:None|surface:Adjust output of nearby generators to reduce section load|issue:combined",
+          "task_classification::regulation_compliance_check::action_category:None|surface:Maintain current power flow and start monitoring|issue:combined",
+          "task_classification::regulation_compliance_check::action_category:corrective_redispatch|surface:Adjust generation output combination to alleviate overloaded sections|issue:combined",
+          "task_classification::regulation_compliance_check::action_category:corrective_redispatch|surface:First reduce output of constrained section and then recalculate power flow|issue:normal",
+          "task_classification::regulation_compliance_check::action_category:corrective_topology|surface:First switch local topology then check if limit violation is eliminated|issue:voltage",
+          "task_classification::regulation_compliance_check::action_category:corrective_voltage|surface:First arrange reactive power regulation and verify voltage violations.|issue:voltage"
+        ]
+      }
+    },
+    "classification_group": {
+      "train__validation": {
+        "count": 0,
+        "examples": []
+      },
+      "train__test": {
+        "count": 0,
+        "examples": []
+      },
+      "train__ood_test": {
+        "count": 96,
+        "examples": [
+          "dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator requests dispatch analysis for the current operating condition and a reviewable recommendation.|policy:Follow the declared dispatch review sequence and retain a post-action power-flow check.|priority:The current shift supervisor requires a safe dispatch analysis followed by a reviewable recommendation.|issue:voltage",
+          "regulation_compliance_check::action_category:None|surface:Adjust output of nearby generators to reduce section load|issue:voltage",
+          "regulation_compliance_check::action_category:None|surface:Continue increasing power flow on constrained cross-section|issue:combined",
+          "regulation_compliance_check::action_category:None|surface:Continue increasing power flow on constrained cross-section|issue:voltage",
+          "regulation_compliance_check::action_category:None|surface:Do not verify equipment status before restoring faulted line operation.|issue:combined",
+          "regulation_compliance_check::action_category:None|surface:Do not verify equipment status before restoring faulted line operation.|issue:voltage",
+          "regulation_compliance_check::action_category:None|surface:Execute phased load transfer and continue monitoring.|issue:combined",
+          "regulation_compliance_check::action_category:None|surface:Execute phased load transfer and continue monitoring.|issue:voltage",
+          "regulation_compliance_check::action_category:None|surface:Execute reactive power support first, then recheck power flow|issue:combined",
+          "regulation_compliance_check::action_category:None|surface:Execute reactive power support first, then recheck power flow|issue:voltage"
+        ]
+      },
+      "validation__test": {
+        "count": 0,
+        "examples": []
+      },
+      "validation__ood_test": {
+        "count": 5,
+        "examples": [
+          "regulation_compliance_check::action_category:corrective_redispatch|surface:Adjust output of nearby generators to reduce section load|issue:normal",
+          "regulation_compliance_check::action_category:corrective_redispatch|surface:Adjust output of nearby generators to reduce section load|issue:voltage",
+          "regulation_compliance_check::action_category:corrective_redispatch|surface:Release section margin through unit rescheduling|issue:combined",
+          "regulation_compliance_check::action_category:corrective_topology|surface:First switch local topology then check if limit violation is eliminated|issue:normal",
+          "regulation_compliance_check::action_category:risky_increase|surface:Continue increasing power flow on constrained cross-section|issue:voltage"
+        ]
+      },
+      "test__ood_test": {
+        "count": 7,
+        "examples": [
+          "dispatcher_intent_tool_call::dispatcher_surface:utterance:The operator requests dispatch analysis for the current operating condition and a reviewable recommendation.|policy:Follow the declared dispatch review sequence and retain a post-action power-flow check.|priority:The current shift supervisor requires a safe dispatch analysis followed by a reviewable recommendation.|issue:combined",
+          "regulation_compliance_check::action_category:None|surface:Adjust output of nearby generators to reduce section load|issue:combined",
+          "regulation_compliance_check::action_category:None|surface:Maintain current power flow and start monitoring|issue:combined",
+          "regulation_compliance_check::action_category:corrective_redispatch|surface:Adjust generation output combination to alleviate overloaded sections|issue:combined",
+          "regulation_compliance_check::action_category:corrective_redispatch|surface:First reduce output of constrained section and then recalculate power flow|issue:normal",
+          "regulation_compliance_check::action_category:corrective_topology|surface:First switch local topology then check if limit violation is eliminated|issue:voltage",
+          "regulation_compliance_check::action_category:corrective_voltage|surface:First arrange reactive power regulation and verify voltage violations.|issue:voltage"
+        ]
+      }
+    }
+  },
+  "ood_design": [
+    "topology transfer to IEEE118",
+    "scenario transfer to high-load (120% and 130%) and selected N-2 events",
+    "operation-ticket construction-family holdout with deterministic group assignment",
+    "regulation-QA rule-card holdout for REG_QUERY_001"
+  ],
+  "split_limitations": {
+    "train": {
+      "missing_tasks": [],
+      "low_count_tasks_below_5": []
+    },
+    "validation": {
+      "missing_tasks": [],
+      "low_count_tasks_below_5": []
+    },
+    "test": {
+      "missing_tasks": [],
+      "low_count_tasks_below_5": []
+    },
+    "ood_test": {
+      "missing_tasks": [],
+      "low_count_tasks_below_5": []
+    }
+  }
+}

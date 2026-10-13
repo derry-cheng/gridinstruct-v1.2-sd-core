@@ -1,0 +1,6 @@
+task_type,metric,applicability,value
+regulation_qa,token_f1,primary text-overlap metric,
+auxiliary_decision,char_f1/canonical_json_exact/schema_valid/tool_set_exact/tool_set_jaccard,applies to tool-plan style auxiliary targets,
+intelligent_data_query,char_f1/canonical_json_exact/schema_valid/structured_query_exact/field_accuracy,applies to structured query targets,
+intelligent_data_query,tool_set_exact/tool_set_jaccard,not a tool-plan target; reported as not applicable for query claims,0.0
+auxiliary_decision,structured_query_exact/field_accuracy,not a structured-query target; reported as not applicable for auxiliary claims,0.0

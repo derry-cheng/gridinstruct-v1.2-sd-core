@@ -1,0 +1,181 @@
+{
+  "generated_at": "2026-08-18T14:39:56.067883+00:00",
+  "scenarios": "simulation_outputs/contingency/scenarios_converged.json",
+  "files_scanned": 1,
+  "rows_repaired": 5675,
+  "query_rows_checked": 17766,
+  "query_rows_executed": 17766,
+  "missing_scenario_count": 0,
+  "incomplete_truth_count": 0,
+  "invalid_row_count": 0,
+  "transactional_preflight_pass": true,
+  "files_written_after_global_preflight": 1,
+  "truth_completeness_required": false,
+  "contract_schema_version": "query-contract-v3",
+  "scenario_truth_sha256": "8f97a66cb91fea81fd495931b2af2e5eb4e5a5027a989c315c5523694fee93af",
+  "candidate_reread_validation_pass": true,
+  "atomic_commit_performed": true,
+  "status": "pass",
+  "files": [
+    {
+      "path": "data/gridinstruct_v1.2_sd_core.jsonl",
+      "input_sha256": "b748f9791e0bfd1388c049d24525d11de7c3014ee934ab5406526fb875f3f450",
+      "output_sha256": "be01d6b22b0868bfc47d3a8510c390e64aeb42d1d42e97273ce2198a71937fcb",
+      "records": 95479,
+      "query_rows": 17766,
+      "executed_query_rows": 17766,
+      "changed": 5675,
+      "missing_scenario_count": 0,
+      "incomplete_truth_count": 0,
+      "missing_scenario_examples": [],
+      "incomplete_truth_examples": [],
+      "invalid_row_count": 0,
+      "invalid_row_examples": [],
+      "examples": [
+        {
+          "id": "gridinstruct_v01_query_00000",
+          "filter": "loading_percent > 100",
+          "scenario_id": "ieee118_n1_branch_outage_load120_branchidx_146_95_96",
+          "old_preview": "{\"count\":14,\"equipment_scope\":\"all\",\"max_loading_percent\":246.386559,\"records\":[{\"branch_id\":\"22-23\",\"equipment_id\":\"22-23\",\"equipment_type\":\"line\",\"line\":28,\"loading_percent\":113.58581},{\"branch_id\":\"23-69\",\"equipment_id\":\"23-69\",\"equipment_type\":\"line\",\"line\":100,\"loading_percent\":157.833819},{\"br",
+          "new_preview": "{\"count\":14,\"equipment_scope\":\"all\",\"max_loading_percent\":246.386623,\"records\":[{\"branch_id\":\"22-23\",\"equipment_id\":\"22-23\",\"equipment_type\":\"line\",\"line\":28,\"loading_percent\":113.585435},{\"branch_id\":\"23-69\",\"equipment_id\":\"23-69\",\"equipment_type\":\"line\",\"line\":100,\"loading_percent\":157.833306},{\"b"
+        },
+        {
+          "id": "gridinstruct_v01_query_00001",
+          "filter": "vm_pu < 0.95",
+          "scenario_id": "ieee118_n1_branch_outage_load120_branchidx_35_16_30",
+          "old_preview": "[{\"bus\":0,\"vm_pu\":0.945127},{\"bus\":19,\"vm_pu\":0.949711},{\"bus\":20,\"vm_pu\":0.94599},{\"bus\":37,\"vm_pu\":0.908362},{\"bus\":42,\"vm_pu\":0.897613},{\"bus\":43,\"vm_pu\":0.844147},{\"bus\":44,\"vm_pu\":0.837029},{\"bus\":45,\"vm_pu\":0.864967},{\"bus\":46,\"vm_pu\":0.878623},{\"bus\":47,\"vm_pu\":0.894424},{\"bus\":48,\"vm_pu\":0.9",
+          "new_preview": "[{\"bus\":0,\"vm_pu\":0.945127},{\"bus\":19,\"vm_pu\":0.949711},{\"bus\":20,\"vm_pu\":0.94599},{\"bus\":37,\"vm_pu\":0.908363},{\"bus\":42,\"vm_pu\":0.897614},{\"bus\":43,\"vm_pu\":0.84415},{\"bus\":44,\"vm_pu\":0.837032},{\"bus\":45,\"vm_pu\":0.86497},{\"bus\":46,\"vm_pu\":0.878625},{\"bus\":47,\"vm_pu\":0.894426},{\"bus\":48,\"vm_pu\":0.907"
+        },
+        {
+          "id": "gridinstruct_v01_query_00003",
+          "filter": "loading_percent > 100",
+          "scenario_id": "ieee118_n1_branch_outage_load110_branchidx_46_33_36",
+          "old_preview": "{\"count\":10,\"equipment_scope\":\"line\",\"max_loading_percent\":218.422429,\"records\":[{\"branch_id\":\"22-23\",\"equipment_id\":\"22-23\",\"equipment_type\":\"line\",\"line\":28,\"loading_percent\":101.000395},{\"branch_id\":\"23-69\",\"equipment_id\":\"23-69\",\"equipment_type\":\"line\",\"line\":100,\"loading_percent\":137.5867},{\"br",
+          "new_preview": "{\"count\":10,\"equipment_scope\":\"line\",\"max_loading_percent\":218.422674,\"records\":[{\"branch_id\":\"22-23\",\"equipment_id\":\"22-23\",\"equipment_type\":\"line\",\"line\":28,\"loading_percent\":101.000273},{\"branch_id\":\"23-69\",\"equipment_id\":\"23-69\",\"equipment_type\":\"line\",\"line\":100,\"loading_percent\":137.586537},{\""
+        },
+        {
+          "id": "gridinstruct_v01_query_00004",
+          "filter": "vm_pu < 0.95",
+          "scenario_id": "ieee57_generator_perturbation_load120_gen95",
+          "old_preview": "[{\"bus\":8,\"vm_pu\":0.947496},{\"bus\":9,\"vm_pu\":0.938999},{\"bus\":10,\"vm_pu\":0.930823},{\"bus\":12,\"vm_pu\":0.932565},{\"bus\":13,\"vm_pu\":0.92252},{\"bus\":14,\"vm_pu\":0.945697},{\"bus\":18,\"vm_pu\":0.918369},{\"bus\":19,\"vm_pu\":0.906124},{\"bus\":20,\"vm_pu\":0.944179},{\"bus\":21,\"vm_pu\":0.944717},{\"bus\":22,\"vm_pu\":0.94",
+          "new_preview": "[{\"bus\":2,\"vm_pu\":0.943718},{\"bus\":3,\"vm_pu\":0.943992},{\"bus\":8,\"vm_pu\":0.941001},{\"bus\":9,\"vm_pu\":0.924733},{\"bus\":10,\"vm_pu\":0.920023},{\"bus\":11,\"vm_pu\":0.948717},{\"bus\":12,\"vm_pu\":0.918065},{\"bus\":13,\"vm_pu\":0.90787},{\"bus\":14,\"vm_pu\":0.932374},{\"bus\":15,\"vm_pu\":0.943324},{\"bus\":18,\"vm_pu\":0.9039"
+        },
+        {
+          "id": "gridinstruct_v01_query_00006",
+          "filter": "loading_percent > 100",
+          "scenario_id": "ieee118_n1_branch_outage_load120_branchidx_64_47_48",
+          "old_preview": "{\"count\":14,\"equipment_scope\":\"all\",\"max_loading_percent\":245.247407,\"records\":[{\"branch_id\":\"22-23\",\"equipment_id\":\"22-23\",\"equipment_type\":\"line\",\"line\":28,\"loading_percent\":115.128079},{\"branch_id\":\"23-69\",\"equipment_id\":\"23-69\",\"equipment_type\":\"line\",\"line\":100,\"loading_percent\":159.858302},{\"b",
+          "new_preview": "{\"count\":14,\"equipment_scope\":\"all\",\"max_loading_percent\":245.247433,\"records\":[{\"branch_id\":\"22-23\",\"equipment_id\":\"22-23\",\"equipment_type\":\"line\",\"line\":28,\"loading_percent\":115.127664},{\"branch_id\":\"23-69\",\"equipment_id\":\"23-69\",\"equipment_type\":\"line\",\"line\":100,\"loading_percent\":159.857733},{\"b"
+        },
+        {
+          "id": "gridinstruct_v01_query_00013",
+          "filter": "loading_percent > 100",
+          "scenario_id": "ieee118_n1_branch_outage_load110_branchidx_162_107_108",
+          "old_preview": "{\"count\":1,\"equipment_scope\":\"transformer\",\"max_loading_percent\":115.406731,\"records\":[{\"equipment_id\":\"67-68\",\"equipment_type\":\"transformer\",\"loading_percent\":115.406731,\"transformer\":7,\"transformer_id\":\"67-68\"}]}",
+          "new_preview": "{\"count\":1,\"equipment_scope\":\"transformer\",\"max_loading_percent\":115.406896,\"records\":[{\"equipment_id\":\"67-68\",\"equipment_type\":\"transformer\",\"loading_percent\":115.406896,\"transformer\":7,\"transformer_id\":\"67-68\"}]}"
+        },
+        {
+          "id": "gridinstruct_v01_query_00014",
+          "filter": "loading_percent > 100",
+          "scenario_id": "ieee118_n1_branch_outage_load110_branchidx_124_84_87",
+          "old_preview": "{\"count\":10,\"equipment_scope\":\"all\",\"max_loading_percent\":218.103326,\"records\":[{\"branch_id\":\"23-69\",\"equipment_id\":\"23-69\",\"equipment_type\":\"line\",\"line\":100,\"loading_percent\":135.991525},{\"branch_id\":\"37-64\",\"equipment_id\":\"37-64\",\"equipment_type\":\"line\",\"line\":89,\"loading_percent\":152.530327},{\"b",
+          "new_preview": "{\"count\":10,\"equipment_scope\":\"all\",\"max_loading_percent\":218.103589,\"records\":[{\"branch_id\":\"23-69\",\"equipment_id\":\"23-69\",\"equipment_type\":\"line\",\"line\":100,\"loading_percent\":135.991364},{\"branch_id\":\"37-64\",\"equipment_id\":\"37-64\",\"equipment_type\":\"line\",\"line\":89,\"loading_percent\":152.530297},{\"b"
+        },
+        {
+          "id": "gridinstruct_v01_query_00018",
+          "filter": "loading_percent > 100",
+          "scenario_id": "ieee118_n1_branch_outage_load80_branchidx_57_44_45",
+          "old_preview": "{\"count\":6,\"equipment_scope\":\"all\",\"max_loading_percent\":151.811201,\"records\":[{\"branch_id\":\"37-64\",\"equipment_id\":\"37-64\",\"equipment_type\":\"line\",\"line\":89,\"loading_percent\":107.196433},{\"branch_id\":\"46-68\",\"equipment_id\":\"46-68\",\"equipment_type\":\"line\",\"line\":97,\"loading_percent\":114.590348},{\"bra",
+          "new_preview": "{\"count\":6,\"equipment_scope\":\"all\",\"max_loading_percent\":151.811581,\"records\":[{\"branch_id\":\"37-64\",\"equipment_id\":\"37-64\",\"equipment_type\":\"line\",\"line\":89,\"loading_percent\":107.196448},{\"branch_id\":\"46-68\",\"equipment_id\":\"46-68\",\"equipment_type\":\"line\",\"line\":97,\"loading_percent\":114.59034},{\"bran"
+        },
+        {
+          "id": "gridinstruct_v01_query_00021",
+          "filter": "loading_percent > 100",
+          "scenario_id": "ieee118_n1_branch_outage_load110_branchidx_72_53_54",
+          "old_preview": "{\"count\":10,\"equipment_scope\":\"all\",\"max_loading_percent\":218.097277,\"records\":[{\"branch_id\":\"23-69\",\"equipment_id\":\"23-69\",\"equipment_type\":\"line\",\"line\":100,\"loading_percent\":136.027535},{\"branch_id\":\"37-64\",\"equipment_id\":\"37-64\",\"equipment_type\":\"line\",\"line\":89,\"loading_percent\":152.548852},{\"b",
+          "new_preview": "{\"count\":10,\"equipment_scope\":\"all\",\"max_loading_percent\":218.097525,\"records\":[{\"branch_id\":\"23-69\",\"equipment_id\":\"23-69\",\"equipment_type\":\"line\",\"line\":100,\"loading_percent\":136.027375},{\"branch_id\":\"37-64\",\"equipment_id\":\"37-64\",\"equipment_type\":\"line\",\"line\":89,\"loading_percent\":152.548822},{\"b"
+        },
+        {
+          "id": "gridinstruct_v01_query_00024",
+          "filter": "loading_percent > 100",
+          "scenario_id": "ieee118_n1_branch_outage_load110_branchidx_18_11_15",
+          "old_preview": "{\"count\":10,\"equipment_scope\":\"all\",\"max_loading_percent\":218.100081,\"records\":[{\"branch_id\":\"23-69\",\"equipment_id\":\"23-69\",\"equipment_type\":\"line\",\"line\":100,\"loading_percent\":135.885336},{\"branch_id\":\"37-64\",\"equipment_id\":\"37-64\",\"equipment_type\":\"line\",\"line\":89,\"loading_percent\":152.646981},{\"b",
+          "new_preview": "{\"count\":10,\"equipment_scope\":\"all\",\"max_loading_percent\":218.100329,\"records\":[{\"branch_id\":\"23-69\",\"equipment_id\":\"23-69\",\"equipment_type\":\"line\",\"line\":100,\"loading_percent\":135.885176},{\"branch_id\":\"37-64\",\"equipment_id\":\"37-64\",\"equipment_type\":\"line\",\"line\":89,\"loading_percent\":152.646951},{\"b"
+        },
+        {
+          "id": "gridinstruct_v01_query_00025",
+          "filter": "vm_pu < 0.95",
+          "scenario_id": "ieee118_n1_branch_outage_load120_branchidx_46_33_36",
+          "old_preview": "[{\"bus\":0,\"vm_pu\":0.944212},{\"bus\":19,\"vm_pu\":0.942469},{\"bus\":20,\"vm_pu\":0.939874},{\"bus\":32,\"vm_pu\":0.948306},{\"bus\":33,\"vm_pu\":0.918564},{\"bus\":34,\"vm_pu\":0.932767},{\"bus\":35,\"vm_pu\":0.928954},{\"bus\":37,\"vm_pu\":0.905623},{\"bus\":42,\"vm_pu\":0.855105},{\"bus\":43,\"vm_pu\":0.811698},{\"bus\":44,\"vm_pu\":0.",
+          "new_preview": "[{\"bus\":0,\"vm_pu\":0.944212},{\"bus\":19,\"vm_pu\":0.942469},{\"bus\":20,\"vm_pu\":0.939874},{\"bus\":32,\"vm_pu\":0.948307},{\"bus\":33,\"vm_pu\":0.918565},{\"bus\":34,\"vm_pu\":0.932768},{\"bus\":35,\"vm_pu\":0.928955},{\"bus\":37,\"vm_pu\":0.905624},{\"bus\":42,\"vm_pu\":0.855107},{\"bus\":43,\"vm_pu\":0.811701},{\"bus\":44,\"vm_pu\":0."
+        },
+        {
+          "id": "gridinstruct_v01_query_00029",
+          "filter": "vm_pu < 0.95",
+          "scenario_id": "ieee118_n1_branch_outage_load110_branchidx_60_46_48",
+          "old_preview": "[{\"bus\":37,\"vm_pu\":0.934393},{\"bus\":42,\"vm_pu\":0.93588},{\"bus\":43,\"vm_pu\":0.897936},{\"bus\":44,\"vm_pu\":0.892442},{\"bus\":45,\"vm_pu\":0.9027},{\"bus\":46,\"vm_pu\":0.889085},{\"bus\":47,\"vm_pu\":0.949907},{\"bus\":49,\"vm_pu\":0.949909},{\"bus\":50,\"vm_pu\":0.926631},{\"bus\":51,\"vm_pu\":0.919114},{\"bus\":52,\"vm_pu\":0.91",
+          "new_preview": "[{\"bus\":37,\"vm_pu\":0.934394},{\"bus\":42,\"vm_pu\":0.935881},{\"bus\":43,\"vm_pu\":0.897936},{\"bus\":44,\"vm_pu\":0.892442},{\"bus\":45,\"vm_pu\":0.902701},{\"bus\":46,\"vm_pu\":0.889086},{\"bus\":47,\"vm_pu\":0.949907},{\"bus\":49,\"vm_pu\":0.949909},{\"bus\":50,\"vm_pu\":0.926631},{\"bus\":51,\"vm_pu\":0.919115},{\"bus\":52,\"vm_pu\":0"
+        },
+        {
+          "id": "gridinstruct_v01_query_00031",
+          "filter": "loading_percent > 100",
+          "scenario_id": "ieee118_n1_branch_outage_load110_branchidx_71_48_53",
+          "old_preview": "{\"count\":9,\"equipment_scope\":\"line\",\"max_loading_percent\":218.530431,\"records\":[{\"branch_id\":\"23-69\",\"equipment_id\":\"23-69\",\"equipment_type\":\"line\",\"line\":100,\"loading_percent\":136.058334},{\"branch_id\":\"37-64\",\"equipment_id\":\"37-64\",\"equipment_type\":\"line\",\"line\":89,\"loading_percent\":151.993144},{\"b",
+          "new_preview": "{\"count\":9,\"equipment_scope\":\"line\",\"max_loading_percent\":218.530676,\"records\":[{\"branch_id\":\"23-69\",\"equipment_id\":\"23-69\",\"equipment_type\":\"line\",\"line\":100,\"loading_percent\":136.058172},{\"branch_id\":\"37-64\",\"equipment_id\":\"37-64\",\"equipment_type\":\"line\",\"line\":89,\"loading_percent\":151.993115},{\"b"
+        },
+        {
+          "id": "gridinstruct_v01_query_00032",
+          "filter": "vm_pu < 0.95",
+          "scenario_id": "ieee118_n1_branch_outage_load100_branchidx_99_68_69",
+          "old_preview": "[{\"bus\":37,\"vm_pu\":0.940751},{\"bus\":43,\"vm_pu\":0.929232},{\"bus\":44,\"vm_pu\":0.925863},{\"bus\":45,\"vm_pu\":0.947069},{\"bus\":46,\"vm_pu\":0.949904},{\"bus\":50,\"vm_pu\":0.943514},{\"bus\":51,\"vm_pu\":0.937284},{\"bus\":52,\"vm_pu\":0.937708},{\"bus\":57,\"vm_pu\":0.946266},{\"bus\":69,\"vm_pu\":0.928401},{\"bus\":73,\"vm_pu\":0",
+          "new_preview": "[{\"bus\":37,\"vm_pu\":0.940751},{\"bus\":43,\"vm_pu\":0.929232},{\"bus\":44,\"vm_pu\":0.925864},{\"bus\":45,\"vm_pu\":0.947069},{\"bus\":46,\"vm_pu\":0.949905},{\"bus\":50,\"vm_pu\":0.943515},{\"bus\":51,\"vm_pu\":0.937284},{\"bus\":52,\"vm_pu\":0.937709},{\"bus\":57,\"vm_pu\":0.946266},{\"bus\":69,\"vm_pu\":0.928401},{\"bus\":73,\"vm_pu\":0"
+        },
+        {
+          "id": "gridinstruct_v01_query_00034",
+          "filter": "loading_percent > 100",
+          "scenario_id": "ieee118_n1_branch_outage_load120_branchidx_100_23_69",
+          "old_preview": "{\"count\":1,\"equipment_scope\":\"transformer\",\"max_loading_percent\":136.348938,\"records\":[{\"equipment_id\":\"67-68\",\"equipment_type\":\"transformer\",\"loading_percent\":136.348938,\"transformer\":7,\"transformer_id\":\"67-68\"}]}",
+          "new_preview": "{\"count\":1,\"equipment_scope\":\"transformer\",\"max_loading_percent\":136.348932,\"records\":[{\"equipment_id\":\"67-68\",\"equipment_type\":\"transformer\",\"loading_percent\":136.348932,\"transformer\":7,\"transformer_id\":\"67-68\"}]}"
+        },
+        {
+          "id": "gridinstruct_v01_query_00035",
+          "filter": "loading_percent > 100",
+          "scenario_id": "ieee118_generator_perturbation_load100_gen105",
+          "old_preview": "{\"count\":9,\"equipment_scope\":\"all\",\"max_loading_percent\":174.970304,\"records\":[{\"branch_id\":\"23-69\",\"equipment_id\":\"23-69\",\"equipment_type\":\"line\",\"line\":100,\"loading_percent\":108.369744},{\"branch_id\":\"37-64\",\"equipment_id\":\"37-64\",\"equipment_type\":\"line\",\"line\":89,\"loading_percent\":128.991226},{\"br",
+          "new_preview": "{\"count\":9,\"equipment_scope\":\"all\",\"max_loading_percent\":174.970632,\"records\":[{\"branch_id\":\"23-69\",\"equipment_id\":\"23-69\",\"equipment_type\":\"line\",\"line\":100,\"loading_percent\":108.369669},{\"branch_id\":\"37-64\",\"equipment_id\":\"37-64\",\"equipment_type\":\"line\",\"line\":89,\"loading_percent\":128.991225},{\"br"
+        },
+        {
+          "id": "gridinstruct_v01_query_00038",
+          "filter": "loading_percent > 100",
+          "scenario_id": "ieee118_n1_branch_outage_load120_branchidx_1_0_2",
+          "old_preview": "{\"count\":13,\"equipment_scope\":\"line\",\"max_loading_percent\":245.056937,\"records\":[{\"branch_id\":\"22-23\",\"equipment_id\":\"22-23\",\"equipment_type\":\"line\",\"line\":28,\"loading_percent\":114.463107},{\"branch_id\":\"23-69\",\"equipment_id\":\"23-69\",\"equipment_type\":\"line\",\"line\":100,\"loading_percent\":158.98046},{\"b",
+          "new_preview": "{\"count\":13,\"equipment_scope\":\"line\",\"max_loading_percent\":245.056986,\"records\":[{\"branch_id\":\"22-23\",\"equipment_id\":\"22-23\",\"equipment_type\":\"line\",\"line\":28,\"loading_percent\":114.462724},{\"branch_id\":\"23-69\",\"equipment_id\":\"23-69\",\"equipment_type\":\"line\",\"line\":100,\"loading_percent\":158.979935},{\""
+        },
+        {
+          "id": "gridinstruct_v01_query_00043",
+          "filter": "vm_pu < 0.95",
+          "scenario_id": "ieee118_n1_branch_outage_load110_branchidx_147_97_99",
+          "old_preview": "[{\"bus\":37,\"vm_pu\":0.934524},{\"bus\":42,\"vm_pu\":0.940374},{\"bus\":43,\"vm_pu\":0.906564},{\"bus\":44,\"vm_pu\":0.901816},{\"bus\":45,\"vm_pu\":0.92513},{\"bus\":46,\"vm_pu\":0.931685},{\"bus\":47,\"vm_pu\":0.948183},{\"bus\":49,\"vm_pu\":0.942717},{\"bus\":50,\"vm_pu\":0.91998},{\"bus\":51,\"vm_pu\":0.912597},{\"bus\":52,\"vm_pu\":0.9",
+          "new_preview": "[{\"bus\":37,\"vm_pu\":0.934524},{\"bus\":42,\"vm_pu\":0.940374},{\"bus\":43,\"vm_pu\":0.906564},{\"bus\":44,\"vm_pu\":0.901816},{\"bus\":45,\"vm_pu\":0.92513},{\"bus\":46,\"vm_pu\":0.931685},{\"bus\":47,\"vm_pu\":0.948184},{\"bus\":49,\"vm_pu\":0.942717},{\"bus\":50,\"vm_pu\":0.91998},{\"bus\":51,\"vm_pu\":0.912597},{\"bus\":52,\"vm_pu\":0.9"
+        },
+        {
+          "id": "gridinstruct_v01_query_00046",
+          "filter": "vm_pu < 0.95",
+          "scenario_id": "ieee118_n1_branch_outage_load120_branchidx_22_17_18",
+          "old_preview": "[{\"bus\":0,\"vm_pu\":0.944313},{\"bus\":18,\"vm_pu\":0.949581},{\"bus\":19,\"vm_pu\":0.938601},{\"bus\":20,\"vm_pu\":0.937279},{\"bus\":32,\"vm_pu\":0.948514},{\"bus\":37,\"vm_pu\":0.906167},{\"bus\":42,\"vm_pu\":0.894421},{\"bus\":43,\"vm_pu\":0.841649},{\"bus\":44,\"vm_pu\":0.834916},{\"bus\":45,\"vm_pu\":0.863255},{\"bus\":46,\"vm_pu\":0.",
+          "new_preview": "[{\"bus\":0,\"vm_pu\":0.944313},{\"bus\":18,\"vm_pu\":0.949581},{\"bus\":19,\"vm_pu\":0.938601},{\"bus\":20,\"vm_pu\":0.93728},{\"bus\":32,\"vm_pu\":0.948514},{\"bus\":37,\"vm_pu\":0.906168},{\"bus\":42,\"vm_pu\":0.894423},{\"bus\":43,\"vm_pu\":0.841652},{\"bus\":44,\"vm_pu\":0.834919},{\"bus\":45,\"vm_pu\":0.863257},{\"bus\":46,\"vm_pu\":0.8"
+        },
+        {
+          "id": "gridinstruct_v01_query_00048",
+          "filter": "loading_percent > 100",
+          "scenario_id": "ieee118_n1_branch_outage_load110_branchidx_42_34_35",
+          "old_preview": "{\"count\":1,\"equipment_scope\":\"transformer\",\"max_loading_percent\":115.395455,\"records\":[{\"equipment_id\":\"67-68\",\"equipment_type\":\"transformer\",\"loading_percent\":115.395455,\"transformer\":7,\"transformer_id\":\"67-68\"}]}",
+          "new_preview": "{\"count\":1,\"equipment_scope\":\"transformer\",\"max_loading_percent\":115.395621,\"records\":[{\"equipment_id\":\"67-68\",\"equipment_type\":\"transformer\",\"loading_percent\":115.395621,\"transformer\":7,\"transformer_id\":\"67-68\"}]}"
+        }
+      ],
+      "input_query_projection_sha256": "7feaa8e7253c4fbf57a5b058ec13efe6e40eb02e9b00f42ba227e0a1e0873e40",
+      "output_query_projection_sha256": "fb9d260b2887942d02bd9b3d72426b7051ac887a887fbf714f8e0ae71dd3ad06",
+      "output_path": "data/stages/gridinstruct_v1.2_sd_core_query_recomputed_stage.jsonl"
+    }
+  ]
+}

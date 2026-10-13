@@ -1,0 +1,139 @@
+{
+  "generated_at": "2026-07-31T12:53:18.542485+00:00",
+  "train": "data/v1.2_sd_core_train_en.jsonl",
+  "validation": "data/v1.2_sd_core_validation_en.jsonl",
+  "test": "data/v1.2_sd_core_test_en.jsonl",
+  "task_types": [
+    "regulation_qa"
+  ],
+  "objective": "pretrained_seq2seq_generation",
+  "model_name": "t5-small",
+  "run_kind": "heldout_evaluation",
+  "device": "cuda",
+  "determinism_contract": {
+    "python_hash_seed": null,
+    "cublas_workspace_config": ":4096:8",
+    "numpy_seeded": true,
+    "torch_seeded": true,
+    "cuda_seeded": true,
+    "deterministic_algorithms": true,
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": true,
+    "cuda_matmul_tf32": false,
+    "cudnn_tf32": false
+  },
+  "train_records": 3366,
+  "validation_records": 420,
+  "test_records": 419,
+  "truncation_audit": {
+    "train": {
+      "records": 3366,
+      "max_source_tokens": 693,
+      "max_target_tokens": 295,
+      "source_truncated_records": 3366,
+      "target_truncated_records": 0,
+      "source_truncation_rate": 1.0,
+      "target_truncation_rate": 0.0
+    },
+    "validation": {
+      "records": 420,
+      "max_source_tokens": 680,
+      "max_target_tokens": 165,
+      "source_truncated_records": 420,
+      "target_truncated_records": 0,
+      "source_truncation_rate": 1.0,
+      "target_truncation_rate": 0.0
+    },
+    "test": {
+      "records": 419,
+      "max_source_tokens": 681,
+      "max_target_tokens": 182,
+      "source_truncated_records": 419,
+      "target_truncated_records": 0,
+      "source_truncation_rate": 1.0,
+      "target_truncation_rate": 0.0
+    }
+  },
+  "input_sha256": {
+    "train": "ff09925aacb7767dc303eebd4d4089c69f7216977bd9c0e76198788660c9ed3a",
+    "validation": "bbb8fab5478b7a4cc8b0b729180d3225cafc081ea56c5e30938f021b28b1e4a5",
+    "test": "982e6bef11f3cbc8fa8e3e280c447aadbb22bd26e708fd070957042f436755c0"
+  },
+  "prediction_sha256": {
+    "validation": "3361eb2b9e4491601fed88176cc5c5effd2a4b3320c528a5ef5d7ce8cf8b34e2",
+    "test": "936b85c6532874e35360f5fe47b163d7b6a3fe8f025e92de3d4dd0cf5eee954f"
+  },
+  "config": {
+    "output_prefix": "benchmark/v1.2_sd_core_seq2seq_regqa",
+    "experiment_dir": "experiments/05_seq2seq_generation/sd_core_regqa_highlr",
+    "training_log": "experiments/05_seq2seq_generation/sd_core_regqa_highlr/logs/training_log.jsonl",
+    "epochs": 10,
+    "batch_size": 32,
+    "learning_rate": 0.0005,
+    "weight_decay": 0.01,
+    "seed": 43,
+    "max_source_len": 384,
+    "max_target_len": 320,
+    "target_mode": "full",
+    "prompt_mode": "fielded",
+    "num_beams": 1,
+    "use_slow_tokenizer": false,
+    "local_files_only": false,
+    "cpu": false,
+    "json_constrained_decoding": false,
+    "json_schema": null
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.6730453194874637,
+      "validation_exact_match": 0.0,
+      "validation_selection_f1": 0.8081261526470378
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.3006386014650453,
+      "validation_exact_match": 0.002380952380952381,
+      "validation_selection_f1": 0.8060927850937777
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.26555133118944346,
+      "validation_exact_match": 0.002380952380952381,
+      "validation_selection_f1": 0.8089169933658947
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.24145061747645433,
+      "validation_exact_match": 0.004761904761904762,
+      "validation_selection_f1": 0.8045201029340959
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.22745176025156705,
+      "validation_exact_match": 0.009523809523809525,
+      "validation_selection_f1": 0.8032535345692959
+    }
+  ],
+  "best_epoch": 3,
+  "best_validation": {
+    "exact_match": 0.002380952380952381,
+    "token_f1": 0.8089169933658947,
+    "selection_f1": 0.8089169933658947,
+    "n": 420
+  },
+  "final_validation": {
+    "exact_match": 0.002380952380952381,
+    "token_f1": 0.8089169933658947,
+    "selection_f1": 0.8089169933658947,
+    "n": 420
+  },
+  "test_evaluation": {
+    "exact_match": 0.0,
+    "token_f1": 0.8072746532282353,
+    "selection_f1": 0.8072746532282353,
+    "n": 419
+  },
+  "metric_definition": "whitespace-token F1 for natural-language QA; character F1 is separately named for structured JSON and accompanied by canonical JSON, schema-validity, and typed required-field metrics",
+  "note": "Pretrained seq2seq generation baseline with held-out evaluation and saved checkpoints. In actionable mode, intelligent_data_query targets the executable structured_query; query_result remains validated as a dataset/simulation field rather than generated from hidden simulation records."
+}

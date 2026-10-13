@@ -1,0 +1,307 @@
+{
+  "generated_at": "2026-07-31T12:49:31.214281+00:00",
+  "status": "pass",
+  "train": "data/proxy_stress/regulation_compliance_check/train_en.jsonl",
+  "validation": "data/proxy_stress/regulation_compliance_check/validation_en.jsonl",
+  "test": "data/proxy_stress/regulation_compliance_check/test_en.jsonl",
+  "task_type": "regulation_compliance_check",
+  "objective": "transformer_sequence_classification",
+  "model_name": "distilbert-base-uncased",
+  "model_source": "distilbert-base-uncased",
+  "resolved_model_source": "distilbert-base-uncased",
+  "resolved_model_name": "distilbert-base-uncased",
+  "eval_only_model": null,
+  "run_kind": "heldout_evaluation",
+  "device": "cuda",
+  "device_details": {
+    "device": "cuda",
+    "cuda_visible_devices": "1",
+    "cuda_device_name": "NVIDIA H20",
+    "cuda_device_count": 1
+  },
+  "determinism_contract": {
+    "python_hash_seed": null,
+    "cublas_workspace_config": ":4096:8",
+    "numpy_seeded": true,
+    "torch_seeded": true,
+    "cuda_seeded": true,
+    "deterministic_algorithms": true,
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": true,
+    "cuda_matmul_tf32": false,
+    "cudnn_tf32": false
+  },
+  "train_records": 15822,
+  "validation_records": 2953,
+  "test_records": 5992,
+  "input_sha256": {
+    "train": "1a952e7413667375e85620ed1403fdb67bc134ac1a97a67438be71d1d07572d5",
+    "validation": "207e451c2d727b470baa8d55cabf91c8e4cf813ab8cda04fa21d2368489f9ee9",
+    "test": "58649ca2dd55040cf3cc526b59a860c22446416153e89f297892c079d1dc44b7"
+  },
+  "prediction_sha256": {
+    "validation": "0a709536487687339d8f1b0320f4ab521b33426c2799bcbec9ac11f7a766b095",
+    "test": "b2b36e5b35ac7389fa338de1558c4e7833908a340644534f313d84801e811efb"
+  },
+  "label_space": [
+    "compliant",
+    "compliant_with_monitoring",
+    "non_compliant"
+  ],
+  "config": {
+    "output_prefix": "benchmark/v1.2_sd_core_transformer_proxy_stress_full_w_regulation_compliance_check",
+    "epochs": 8,
+    "batch_size": 64,
+    "learning_rate": 2e-05,
+    "weight_decay": 0.01,
+    "max_length": 256,
+    "seed": 13,
+    "use_rationale": false,
+    "input_profile": "full",
+    "eval_only_model": null,
+    "local_files_only": true,
+    "cpu": false,
+    "class_weighting": "inverse_frequency",
+    "experiment_dir": "experiments/04_transformer_classification/proxy_stress_regulation_full_w",
+    "training_log": "experiments/04_transformer_classification/proxy_stress_regulation_full_w/logs/training_log.jsonl",
+    "class_weights": {
+      "compliant": 5.321897073662966,
+      "compliant_with_monitoring": 1.0588235294117647,
+      "non_compliant": 0.5354314720812183
+    },
+    "skip_latest_alias": true
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.47576217954197236,
+      "validation_accuracy": 0.9779884862851338,
+      "validation_macro_f1": 0.9281480758720839,
+      "validation_balanced_accuracy": 0.8882515685045552
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.11053014900760665,
+      "validation_accuracy": 0.987470369116153,
+      "validation_macro_f1": 0.8139101517533689,
+      "validation_balanced_accuracy": 0.7631890499072509
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.058699857830370385,
+      "validation_accuracy": 0.998306806637318,
+      "validation_macro_f1": 0.9988561647132226,
+      "validation_balanced_accuracy": 0.9988397482936299
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.036435520213994856,
+      "validation_accuracy": 0.9979681679647816,
+      "validation_macro_f1": 0.9986273254500264,
+      "validation_balanced_accuracy": 0.9985945186226282
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.03431099522089015,
+      "validation_accuracy": 0.9976295292922451,
+      "validation_macro_f1": 0.9893627842268876,
+      "validation_balanced_accuracy": 0.9808107475008389
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.011272886508278691,
+      "validation_accuracy": 0.9989840839823908,
+      "validation_macro_f1": 0.9993136988279336,
+      "validation_balanced_accuracy": 0.9992972593113141
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.01584997177797636,
+      "validation_accuracy": 0.9972908906197088,
+      "validation_macro_f1": 0.9586615984653827,
+      "validation_balanced_accuracy": 0.9279279279279279
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.00742526997530677,
+      "validation_accuracy": 0.998306806637318,
+      "validation_macro_f1": 0.9988561248687985,
+      "validation_balanced_accuracy": 0.9988287655188568
+    }
+  ],
+  "best_epoch": 6,
+  "best_validation": {
+    "accuracy": 0.9989840839823908,
+    "macro_f1": 0.9993136988279336,
+    "balanced_accuracy": 0.9992972593113141,
+    "n": 2953
+  },
+  "final_validation": {
+    "accuracy": 0.9989840839823908,
+    "macro_f1": 0.9993136988279336,
+    "balanced_accuracy": 0.9992972593113141,
+    "n": 2953
+  },
+  "validation_diagnostics": {
+    "gold_counts": {
+      "compliant_with_monitoring": 1423,
+      "non_compliant": 1493,
+      "compliant": 37
+    },
+    "prediction_counts": {
+      "compliant_with_monitoring": 1420,
+      "non_compliant": 1496,
+      "compliant": 37
+    },
+    "error_count": 3,
+    "confusion_matrix": {
+      "labels": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ],
+      "by_gold": {
+        "compliant": {
+          "compliant": 37,
+          "compliant_with_monitoring": 0,
+          "non_compliant": 0
+        },
+        "compliant_with_monitoring": {
+          "compliant": 0,
+          "compliant_with_monitoring": 1420,
+          "non_compliant": 3
+        },
+        "non_compliant": {
+          "compliant": 0,
+          "compliant_with_monitoring": 0,
+          "non_compliant": 1493
+        }
+      },
+      "matrix": [
+        [
+          37,
+          0,
+          0
+        ],
+        [
+          0,
+          1420,
+          3
+        ],
+        [
+          0,
+          0,
+          1493
+        ]
+      ]
+    },
+    "per_class": {
+      "compliant": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 37,
+        "predicted": 37
+      },
+      "compliant_with_monitoring": {
+        "precision": 1.0,
+        "recall": 0.9978917779339423,
+        "f1": 0.9989447766443897,
+        "support": 1423,
+        "predicted": 1420
+      },
+      "non_compliant": {
+        "precision": 0.9979946524064172,
+        "recall": 1.0,
+        "f1": 0.9989963198394112,
+        "support": 1493,
+        "predicted": 1496
+      }
+    }
+  },
+  "test_evaluation": {
+    "accuracy": 0.9853137516688919,
+    "macro_f1": 0.9881287661660919,
+    "balanced_accuracy": 0.9931671713642363,
+    "n": 5992
+  },
+  "test_diagnostics": {
+    "gold_counts": {
+      "non_compliant": 1698,
+      "compliant_with_monitoring": 4293,
+      "compliant": 1
+    },
+    "prediction_counts": {
+      "non_compliant": 1786,
+      "compliant_with_monitoring": 4205,
+      "compliant": 1
+    },
+    "error_count": 88,
+    "confusion_matrix": {
+      "labels": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ],
+      "by_gold": {
+        "compliant": {
+          "compliant": 1,
+          "compliant_with_monitoring": 0,
+          "non_compliant": 0
+        },
+        "compliant_with_monitoring": {
+          "compliant": 0,
+          "compliant_with_monitoring": 4205,
+          "non_compliant": 88
+        },
+        "non_compliant": {
+          "compliant": 0,
+          "compliant_with_monitoring": 0,
+          "non_compliant": 1698
+        }
+      },
+      "matrix": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          4205,
+          88
+        ],
+        [
+          0,
+          0,
+          1698
+        ]
+      ]
+    },
+    "per_class": {
+      "compliant": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 1,
+        "predicted": 1
+      },
+      "compliant_with_monitoring": {
+        "precision": 1.0,
+        "recall": 0.979501514092709,
+        "f1": 0.9896446222640621,
+        "support": 4293,
+        "predicted": 4205
+      },
+      "non_compliant": {
+        "precision": 0.9507278835386338,
+        "recall": 1.0,
+        "f1": 0.9747416762342135,
+        "support": 1698,
+        "predicted": 1786
+      }
+    }
+  },
+  "runtime_seconds": 417.509295463562,
+  "note": "Local Transformer classification baseline with held-out evaluation."
+}

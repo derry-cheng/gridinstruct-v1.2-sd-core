@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-07-08T17:07:41.008388+00:00",
+  "input": "data/v1.2_sd_core_boundary_challenge_test.jsonl",
+  "cache": "metadata/translation_cache_v1.jsonl",
+  "log": "experiments/sd_core_full_pipeline/10_english_translation/logs/01_translate_full.stderr.log",
+  "records": 4800,
+  "records_with_cjk": 4800,
+  "total_cjk_fields": 54200,
+  "unique_source_strings": 5603,
+  "cached_unique_translations": 1981,
+  "remaining_unique_strings": 3622,
+  "cache_coverage": 0.3535605925397109,
+  "cache_valid_lines": 49862,
+  "cache_invalid_lines": 0,
+  "cache_size_bytes": 35301077,
+  "cache_age_seconds": 287.7078652381897,
+  "log_age_seconds": 1273.7047362327576,
+  "latest_progress": {
+    "log_bytes": 0
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "splits": {
+    "train": {
+      "total_records": 28684,
+      "by_stage": {
+        "real-time": 16533,
+        "pre-event": 8675,
+        "post-event": 3476
+      },
+      "by_task": {
+        "regulation_qa": 3366,
+        "operation_ticket_check": 8675,
+        "dispatcher_intent_tool_call": 3910,
+        "intelligent_data_query": 3476,
+        "regulation_compliance_check": 5655,
+        "auxiliary_decision": 3602
+      },
+      "by_network": {
+        "null": 12041,
+        "IEEE57": 8028,
+        "IEEE14": 2494,
+        "IEEE30": 6121
+      },
+      "with_rationale": 28684,
+      "with_preference": 3602
+    },
+    "validation": {
+      "total_records": 3598,
+      "by_stage": {
+        "real-time": 2068,
+        "pre-event": 1096,
+        "post-event": 434
+      },
+      "by_task": {
+        "regulation_compliance_check": 707,
+        "regulation_qa": 420,
+        "dispatcher_intent_tool_call": 490,
+        "operation_ticket_check": 1096,
+        "auxiliary_decision": 451,
+        "intelligent_data_query": 434
+      },
+      "by_network": {
+        "IEEE57": 860,
+        "IEEE30": 811,
+        "null": 1516,
+        "IEEE14": 411
+      },
+      "with_rationale": 3598,
+      "with_preference": 451
+    },
+    "test": {
+      "total_records": 3609,
+      "by_stage": {
+        "real-time": 2062,
+        "post-event": 437,
+        "pre-event": 1110
+      },
+      "by_task": {
+        "dispatcher_intent_tool_call": 494,
+        "regulation_compliance_check": 701,
+        "auxiliary_decision": 448,
+        "regulation_qa": 419,
+        "intelligent_data_query": 437,
+        "operation_ticket_check": 1110
+      },
+      "by_network": {
+        "IEEE30": 1043,
+        "null": 1529,
+        "IEEE57": 808,
+        "IEEE14": 229
+      },
+      "with_rationale": 3609,
+      "with_preference": 448
+    },
+    "ood_test": {
+      "total_records": 59588,
+      "by_stage": {
+        "real-time": 46169,
+        "post-event": 13419
+      },
+      "by_task": {
+        "dispatcher_intent_tool_call": 14879,
+        "regulation_compliance_check": 17704,
+        "intelligent_data_query": 13419,
+        "auxiliary_decision": 13586
+      },
+      "by_network": {
+        "IEEE14": 3567,
+        "IEEE118": 38159,
+        "ILLINOIS200": 2912,
+        "PEGASE1354": 1056,
+        "IEEE300": 560,
+        "IEEE57": 5640,
+        "PEGASE89": 1472,
+        "IEEE30": 4430,
+        "RTE2848": 624,
+        "PEGASE2869": 624,
+        "RTE1888": 544
+      },
+      "with_rationale": 59588,
+      "with_preference": 13586
+    }
+  },
+  "overlaps": {
+    "train__validation": {
+      "record_id_overlap": [],
+      "scenario_id_overlap": []
+    },
+    "train__test": {
+      "record_id_overlap": [],
+      "scenario_id_overlap": []
+    },
+    "train__ood_test": {
+      "record_id_overlap": [],
+      "scenario_id_overlap": []
+    },
+    "validation__test": {
+      "record_id_overlap": [],
+      "scenario_id_overlap": []
+    },
+    "validation__ood_test": {
+      "record_id_overlap": [],
+      "scenario_id_overlap": []
+    },
+    "test__ood_test": {
+      "record_id_overlap": [],
+      "scenario_id_overlap": []
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "generated_at": "2026-08-18T14:49:24.410432+00:00",
+  "scenarios": "simulation_outputs/contingency/scenarios_converged.json",
+  "files_scanned": 1,
+  "rows_repaired": 0,
+  "query_rows_checked": 17766,
+  "query_rows_executed": 17766,
+  "missing_scenario_count": 0,
+  "incomplete_truth_count": 0,
+  "invalid_row_count": 0,
+  "transactional_preflight_pass": true,
+  "files_written_after_global_preflight": 1,
+  "truth_completeness_required": false,
+  "contract_schema_version": "query-contract-v3",
+  "scenario_truth_sha256": "8f97a66cb91fea81fd495931b2af2e5eb4e5a5027a989c315c5523694fee93af",
+  "candidate_reread_validation_pass": true,
+  "atomic_commit_performed": true,
+  "status": "pass",
+  "files": [
+    {
+      "path": "data/gridinstruct_v1.2_sd_core.jsonl",
+      "input_sha256": "0b870168dca11910a526be288e5448151bed45f8809c333c9d4ed8f5f9295b8e",
+      "output_sha256": "05e6a2ed0bafa9ba6958e712a4d715da1f6dc85b0838f1ec966c9f335a88b40b",
+      "records": 95479,
+      "query_rows": 17766,
+      "executed_query_rows": 17766,
+      "changed": 0,
+      "missing_scenario_count": 0,
+      "incomplete_truth_count": 0,
+      "missing_scenario_examples": [],
+      "incomplete_truth_examples": [],
+      "invalid_row_count": 0,
+      "invalid_row_examples": [],
+      "examples": [],
+      "input_query_projection_sha256": "fb9d260b2887942d02bd9b3d72426b7051ac887a887fbf714f8e0ae71dd3ad06",
+      "output_query_projection_sha256": "fb9d260b2887942d02bd9b3d72426b7051ac887a887fbf714f8e0ae71dd3ad06",
+      "output_path": "data/stages/gridinstruct_v1.2_sd_core_query_final_stage.jsonl"
+    }
+  ]
+}

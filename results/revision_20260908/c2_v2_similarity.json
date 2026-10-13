@@ -1,0 +1,70 @@
+{
+  "data_directory": "data/revision_20260908/c3_compositional_v2",
+  "algorithm": "Unmodified normalized_surface and exhaustive_similarity from scripts/c3/build_compositional_shortcut_control.py; exhaustive binary character 5-grams; no sampling.",
+  "normalized_surface": {
+    "records": 2880,
+    "unique": 2880,
+    "unique_rate": 1.0,
+    "cross_split_collisions": {
+      "train_validation": 0,
+      "train_test": 0,
+      "validation_test": 0
+    },
+    "split_unique": {
+      "train": 1920,
+      "validation": 480,
+      "test": 480
+    }
+  },
+  "tasks": {
+    "dispatcher_intent_tool_call": {
+      "train_test_surface_similarity": {
+        "comparison": "full_exhaustive_binary_character_5gram",
+        "pair_count": 230400,
+        "max_jaccard": 0.3770491803278688,
+        "max_cosine": 0.5488400503558715,
+        "max_jaccard_pair_index": [
+          936,
+          102
+        ],
+        "max_cosine_pair_index": [
+          936,
+          102
+        ],
+        "max_jaccard_pair_id": [
+          "c3-route-2-00444",
+          "c3-route-1-00142"
+        ],
+        "max_cosine_pair_id": [
+          "c3-route-2-00444",
+          "c3-route-1-00142"
+        ]
+      }
+    },
+    "operation_ticket_check": {
+      "train_test_surface_similarity": {
+        "comparison": "full_exhaustive_binary_character_5gram",
+        "pair_count": 230400,
+        "max_jaccard": 0.3706070287539936,
+        "max_cosine": 0.5412176453922413,
+        "max_jaccard_pair_index": [
+          643,
+          149
+        ],
+        "max_cosine_pair_index": [
+          643,
+          149
+        ],
+        "max_jaccard_pair_id": [
+          "c3-ticket-2-00003",
+          "c3-ticket-1-00419"
+        ],
+        "max_cosine_pair_id": [
+          "c3-ticket-2-00003",
+          "c3-ticket-1-00419"
+        ]
+      }
+    }
+  },
+  "elapsed_seconds": 0.7368324580602348
+}

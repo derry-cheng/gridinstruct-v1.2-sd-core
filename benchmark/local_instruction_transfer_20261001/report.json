@@ -1,0 +1,361 @@
+{
+  "status": "complete",
+  "protocol": {
+    "experiment": "local_instruction_transfer",
+    "model": "HuggingFaceTB/SmolLM2-135M-Instruct",
+    "model_revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+    "task": "regulation_compliance_check",
+    "split": "released strict five-key source-group partition",
+    "selection_seed": 20261001,
+    "train_per_label": 256,
+    "validation_per_label": 64,
+    "test_per_label": 96,
+    "pair_probe": "up to 32 exact-request state-change pairs and 32 exact-context request-variant pairs, one pair per group, sampled from the strict test partition before inference",
+    "training_seeds": [
+      13,
+      29,
+      42
+    ],
+    "epochs": 2,
+    "batch_size": 8,
+    "learning_rate": 0.0003,
+    "adaptation": "LoRA query and value projections, rank 8, alpha 16, dropout 0.05; frozen pretrained weights",
+    "max_tokens": 384,
+    "checkpoint_selection": "highest validation macro-F1, then lowest validation target-token loss",
+    "prediction": "maximum summed conditional log probability of a complete canonical label and end token",
+    "primary_metric": "macro-F1 on the same label-balanced held-out sample before and after training",
+    "additional_metrics": "accuracy, per-label F1, both-correct state pairs, exact-context request variants, instruction-only ablation",
+    "inference_policy": "identical candidate labels, prompt template, tokenizer, and inference rule before and after tuning",
+    "scope": "supervised transfer for one compact pretrained instruction model on a simulated compliance contract; no claim of live dispatch or executable-control improvement",
+    "resource_policy": "local MPS or CPU; at most 8 CPU threads; retain small adapter checkpoints only"
+  },
+  "device": "mps",
+  "base": {
+    "n": 288,
+    "accuracy": 0.2708333333333333,
+    "macro_f1": 0.16098484848484848,
+    "per_label_f1": {
+      "compliant": 0.42045454545454547,
+      "compliant_with_monitoring": 0.0,
+      "non_compliant": 0.0625
+    },
+    "scenario_count": 164,
+    "state_change": {
+      "pairs": 3,
+      "both_correct": 0,
+      "both_correct_rate": 0.0
+    },
+    "request_variant": {
+      "pairs": 0,
+      "both_correct": 0,
+      "both_correct_rate": null
+    }
+  },
+  "base_pairs": {
+    "state_change": {
+      "pairs": 32,
+      "both_correct": 0,
+      "both_correct_rate": 0.0,
+      "prediction_agreement": 0.90625
+    },
+    "request_variant": {
+      "pairs": 0,
+      "both_correct": 0,
+      "both_correct_rate": null,
+      "prediction_agreement": null
+    }
+  },
+  "runs": [
+    {
+      "seed": 13,
+      "history": [
+        {
+          "epoch": 1,
+          "validation_macro_f1": 0.6080102919473586,
+          "validation_target_loss": 0.1809506935533136
+        },
+        {
+          "epoch": 2,
+          "validation_macro_f1": 0.7578485998083798,
+          "validation_target_loss": 0.11703771622560452
+        }
+      ],
+      "tuned": {
+        "n": 288,
+        "accuracy": 0.7951388888888888,
+        "macro_f1": 0.7719916815071256,
+        "per_label_f1": {
+          "compliant": 0.8584474885844748,
+          "compliant_with_monitoring": 0.60431654676259,
+          "non_compliant": 0.8532110091743119
+        },
+        "scenario_count": 164,
+        "state_change": {
+          "pairs": 3,
+          "both_correct": 0,
+          "both_correct_rate": 0.0
+        },
+        "request_variant": {
+          "pairs": 0,
+          "both_correct": 0,
+          "both_correct_rate": null
+        }
+      },
+      "instruction_only": {
+        "n": 288,
+        "accuracy": 0.5868055555555556,
+        "macro_f1": 0.48359023526808764,
+        "per_label_f1": {
+          "compliant": 0.6375838926174496,
+          "compliant_with_monitoring": 0.0,
+          "non_compliant": 0.8131868131868132
+        },
+        "scenario_count": 164,
+        "state_change": {
+          "pairs": 3,
+          "both_correct": 0,
+          "both_correct_rate": 0.0
+        },
+        "request_variant": {
+          "pairs": 0,
+          "both_correct": 0,
+          "both_correct_rate": null
+        }
+      },
+      "tuned_pairs": {
+        "state_change": {
+          "pairs": 32,
+          "both_correct": 2,
+          "both_correct_rate": 0.0625,
+          "prediction_agreement": 0.78125
+        },
+        "request_variant": {
+          "pairs": 0,
+          "both_correct": 0,
+          "both_correct_rate": null,
+          "prediction_agreement": null
+        }
+      },
+      "instruction_only_pairs": {
+        "state_change": {
+          "pairs": 32,
+          "both_correct": 0,
+          "both_correct_rate": 0.0,
+          "prediction_agreement": 1.0
+        },
+        "request_variant": {
+          "pairs": 0,
+          "both_correct": 0,
+          "both_correct_rate": null,
+          "prediction_agreement": null
+        }
+      }
+    },
+    {
+      "seed": 29,
+      "history": [
+        {
+          "epoch": 1,
+          "validation_macro_f1": 0.446619797081459,
+          "validation_target_loss": 0.18234507112453383
+        },
+        {
+          "epoch": 2,
+          "validation_macro_f1": 0.8471891780790829,
+          "validation_target_loss": 0.08822423698147759
+        }
+      ],
+      "tuned": {
+        "n": 288,
+        "accuracy": 0.8611111111111112,
+        "macro_f1": 0.8592663329491622,
+        "per_label_f1": {
+          "compliant": 0.8609865470852018,
+          "compliant_with_monitoring": 0.7928994082840237,
+          "non_compliant": 0.9239130434782609
+        },
+        "scenario_count": 164,
+        "state_change": {
+          "pairs": 3,
+          "both_correct": 0,
+          "both_correct_rate": 0.0
+        },
+        "request_variant": {
+          "pairs": 0,
+          "both_correct": 0,
+          "both_correct_rate": null
+        }
+      },
+      "instruction_only": {
+        "n": 288,
+        "accuracy": 0.5451388888888888,
+        "macro_f1": 0.45614173021988097,
+        "per_label_f1": {
+          "compliant": 0.5962732919254659,
+          "compliant_with_monitoring": 0.0,
+          "non_compliant": 0.7721518987341772
+        },
+        "scenario_count": 164,
+        "state_change": {
+          "pairs": 3,
+          "both_correct": 0,
+          "both_correct_rate": 0.0
+        },
+        "request_variant": {
+          "pairs": 0,
+          "both_correct": 0,
+          "both_correct_rate": null
+        }
+      },
+      "tuned_pairs": {
+        "state_change": {
+          "pairs": 32,
+          "both_correct": 0,
+          "both_correct_rate": 0.0,
+          "prediction_agreement": 0.84375
+        },
+        "request_variant": {
+          "pairs": 0,
+          "both_correct": 0,
+          "both_correct_rate": null,
+          "prediction_agreement": null
+        }
+      },
+      "instruction_only_pairs": {
+        "state_change": {
+          "pairs": 32,
+          "both_correct": 0,
+          "both_correct_rate": 0.0,
+          "prediction_agreement": 1.0
+        },
+        "request_variant": {
+          "pairs": 0,
+          "both_correct": 0,
+          "both_correct_rate": null,
+          "prediction_agreement": null
+        }
+      }
+    },
+    {
+      "seed": 42,
+      "history": [
+        {
+          "epoch": 1,
+          "validation_macro_f1": 0.40085667756900634,
+          "validation_target_loss": 0.1866023999483635
+        },
+        {
+          "epoch": 2,
+          "validation_macro_f1": 0.7466329199854439,
+          "validation_target_loss": 0.11204461828068209
+        }
+      ],
+      "tuned": {
+        "n": 288,
+        "accuracy": 0.84375,
+        "macro_f1": 0.8390098596525034,
+        "per_label_f1": {
+          "compliant": 0.9072164948453608,
+          "compliant_with_monitoring": 0.75,
+          "non_compliant": 0.8598130841121495
+        },
+        "scenario_count": 164,
+        "state_change": {
+          "pairs": 3,
+          "both_correct": 0,
+          "both_correct_rate": 0.0
+        },
+        "request_variant": {
+          "pairs": 0,
+          "both_correct": 0,
+          "both_correct_rate": null
+        }
+      },
+      "instruction_only": {
+        "n": 288,
+        "accuracy": 0.3680555555555556,
+        "macro_f1": 0.2340160764134127,
+        "per_label_f1": {
+          "compliant": 0.5133689839572193,
+          "compliant_with_monitoring": 0.0,
+          "non_compliant": 0.18867924528301888
+        },
+        "scenario_count": 164,
+        "state_change": {
+          "pairs": 3,
+          "both_correct": 0,
+          "both_correct_rate": 0.0
+        },
+        "request_variant": {
+          "pairs": 0,
+          "both_correct": 0,
+          "both_correct_rate": null
+        }
+      },
+      "tuned_pairs": {
+        "state_change": {
+          "pairs": 32,
+          "both_correct": 5,
+          "both_correct_rate": 0.15625,
+          "prediction_agreement": 0.71875
+        },
+        "request_variant": {
+          "pairs": 0,
+          "both_correct": 0,
+          "both_correct_rate": null,
+          "prediction_agreement": null
+        }
+      },
+      "instruction_only_pairs": {
+        "state_change": {
+          "pairs": 32,
+          "both_correct": 0,
+          "both_correct_rate": 0.0,
+          "prediction_agreement": 1.0
+        },
+        "request_variant": {
+          "pairs": 0,
+          "both_correct": 0,
+          "both_correct_rate": null,
+          "prediction_agreement": null
+        }
+      }
+    }
+  ],
+  "same_sample_tfidf": {
+    "n": 288,
+    "accuracy": 0.9131944444444444,
+    "macro_f1": 0.911586422431518,
+    "per_label_f1": {
+      "compliant": 0.9458128078817734,
+      "compliant_with_monitoring": 0.8666666666666667,
+      "non_compliant": 0.9222797927461139
+    },
+    "scenario_count": 164,
+    "state_change": {
+      "pairs": 3,
+      "both_correct": 1,
+      "both_correct_rate": 0.3333333333333333
+    },
+    "request_variant": {
+      "pairs": 0,
+      "both_correct": 0,
+      "both_correct_rate": null
+    }
+  },
+  "same_sample_tfidf_pairs": {
+    "state_change": {
+      "pairs": 32,
+      "both_correct": 8,
+      "both_correct_rate": 0.25,
+      "prediction_agreement": 0.6875
+    },
+    "request_variant": {
+      "pairs": 0,
+      "both_correct": 0,
+      "both_correct_rate": null,
+      "prediction_agreement": null
+    }
+  },
+  "elapsed_seconds": 1279.5688259159942
+}

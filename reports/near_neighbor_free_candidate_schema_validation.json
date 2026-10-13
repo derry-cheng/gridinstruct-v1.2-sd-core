@@ -1,0 +1,33 @@
+{
+  "generated_at": "2026-08-06T10:52:02.525982+00:00",
+  "input": "/Users/lemon/Desktop/project/gaiav2/data/gridinstruct_v1.2_sd_core_en.jsonl",
+  "total_records": 95479,
+  "schema_errors": [],
+  "schema_pass_rate": 1.0,
+  "duplicate_ids": [],
+  "id_unique_rate": 1.0,
+  "near_duplicate_count": 344,
+  "near_duplicate_rate": 0.0036028864986017866,
+  "near_duplicate_threshold": 0.02,
+  "invalid_rule_links": [],
+  "invalid_scenario_links": [],
+  "topology_record_count": 80393,
+  "topology_link_valid_rate": 1.0,
+  "tool_plan_errors": [],
+  "task_field_errors": [],
+  "semantic_errors": [],
+  "task_counts": {
+    "auxiliary_decision": 18087,
+    "regulation_compliance_check": 24767,
+    "dispatcher_intent_tool_call": 19773,
+    "intelligent_data_query": 17766,
+    "regulation_qa": 4205,
+    "operation_ticket_check": 10881
+  },
+  "stage_counts": {
+    "real-time": 66832,
+    "post-event": 17766,
+    "pre-event": 10881
+  },
+  "passed": true
+}

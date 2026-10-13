@@ -1,0 +1,64 @@
+{
+  "status": "pass",
+  "model": "previously fitted TF-IDF linear-SVC predictions; no retraining",
+  "pair_policy": "all unordered pairs within each exact-match grouping; pair counts are not independent samples",
+  "splits": {
+    "official_test": {
+      "compliance_rows": 921,
+      "state_change": {
+        "definition": "identical instruction; distinct scenario; different gold label",
+        "groups": 10,
+        "pairs": 3907,
+        "both_predictions_correct": 3859,
+        "both_correct_rate": 0.987714
+      },
+      "wording_change": {
+        "definition": "same scenario, proposed action, observed issues, and gold label; distinct instruction; operator goal may vary",
+        "groups": 148,
+        "pairs": 1950,
+        "prediction_agreement": 1943,
+        "agreement_rate": 0.99641,
+        "both_predictions_correct": 1929,
+        "both_correct_rate": 0.989231
+      }
+    },
+    "official_ood": {
+      "compliance_rows": 17704,
+      "state_change": {
+        "definition": "identical instruction; distinct scenario; different gold label",
+        "groups": 80,
+        "pairs": 11465,
+        "both_predictions_correct": 6764,
+        "both_correct_rate": 0.589969
+      },
+      "wording_change": {
+        "definition": "same scenario, proposed action, observed issues, and gold label; distinct instruction; operator goal may vary",
+        "groups": 2542,
+        "pairs": 29797,
+        "prediction_agreement": 29743,
+        "agreement_rate": 0.998188,
+        "both_predictions_correct": 28861,
+        "both_correct_rate": 0.968587
+      }
+    },
+    "surface_test": {
+      "compliance_rows": 454,
+      "state_change": {
+        "definition": "identical instruction; distinct scenario; different gold label",
+        "groups": 13,
+        "pairs": 355,
+        "both_predictions_correct": 43,
+        "both_correct_rate": 0.121127
+      },
+      "wording_change": {
+        "definition": "same scenario, proposed action, observed issues, and gold label; distinct instruction; operator goal may vary",
+        "groups": 35,
+        "pairs": 47,
+        "prediction_agreement": 47,
+        "agreement_rate": 1.0,
+        "both_predictions_correct": 45,
+        "both_correct_rate": 0.957447
+      }
+    }
+  }
+}

@@ -1,0 +1,318 @@
+{
+  "status": "completed",
+  "candidate_count": 8,
+  "index_text": "curated rule-card summary only; official full source text is not indexed",
+  "algorithm": "character 2-4 gram TF-IDF cosine; IDF fitted on eight source cards only; no training answers or test fitting",
+  "tie_break": "lexicographic source ID, independent of gold",
+  "existing_record_count": 512,
+  "authored_record_count": 32,
+  "metrics": {
+    "summary_removed": {
+      "overall": {
+        "n": 512,
+        "top1_accuracy": 0.125,
+        "mean_reciprocal_rank": 0.33973214285714287,
+        "mean_gold_rank": 4.5,
+        "candidate_coverage": 1.0,
+        "top_score_tie_rows": 0
+      },
+      "per_card": {
+        "INTL_NERC_TOP_001_6_ACTION": {
+          "n": 64,
+          "top1_accuracy": 0.015625,
+          "mean_reciprocal_rank": 0.22306547619047618,
+          "mean_gold_rank": 5.65625,
+          "candidate_coverage": 1.0,
+          "top_score_tie_rows": 0
+        },
+        "INTL_NERC_TOP_002_5_PLAN": {
+          "n": 64,
+          "top1_accuracy": 0.15625,
+          "mean_reciprocal_rank": 0.35438988095238094,
+          "mean_gold_rank": 4.140625,
+          "candidate_coverage": 1.0,
+          "top_score_tie_rows": 0
+        },
+        "INTL_NERC_FAC_011_4_SOL": {
+          "n": 64,
+          "top1_accuracy": 0.3125,
+          "mean_reciprocal_rank": 0.5569196428571429,
+          "mean_gold_rank": 2.671875,
+          "candidate_coverage": 1.0,
+          "top_score_tie_rows": 0
+        },
+        "INTL_NERC_VAR_001_5_VOLTAGE": {
+          "n": 64,
+          "top1_accuracy": 0.265625,
+          "mean_reciprocal_rank": 0.45013020833333334,
+          "mean_gold_rank": 4.140625,
+          "candidate_coverage": 1.0,
+          "top_score_tie_rows": 0
+        },
+        "INTL_EU_SOGL_ART18_STATE": {
+          "n": 64,
+          "top1_accuracy": 0.0,
+          "mean_reciprocal_rank": 0.25425967261904764,
+          "mean_gold_rank": 4.609375,
+          "candidate_coverage": 1.0,
+          "top_score_tie_rows": 0
+        },
+        "INTL_EU_SOGL_ART25_LIMITS": {
+          "n": 64,
+          "top1_accuracy": 0.0,
+          "mean_reciprocal_rank": 0.15874255952380953,
+          "mean_gold_rank": 6.640625,
+          "candidate_coverage": 1.0,
+          "top_score_tie_rows": 0
+        },
+        "INTL_EU_SOGL_ART33_CONTINGENCY": {
+          "n": 64,
+          "top1_accuracy": 0.046875,
+          "mean_reciprocal_rank": 0.303125,
+          "mean_gold_rank": 4.453125,
+          "candidate_coverage": 1.0,
+          "top_score_tie_rows": 0
+        },
+        "INTL_EU_SOGL_ART72_ANALYSIS": {
+          "n": 64,
+          "top1_accuracy": 0.203125,
+          "mean_reciprocal_rank": 0.4172247023809524,
+          "mean_gold_rank": 3.6875,
+          "candidate_coverage": 1.0,
+          "top_score_tie_rows": 0
+        }
+      },
+      "existing_folds": {
+        "train_european_union_test_nerc_north_america": {
+          "n": 256,
+          "top1_accuracy": 0.1875,
+          "mean_reciprocal_rank": 0.3961263020833333,
+          "mean_gold_rank": 4.15234375,
+          "candidate_coverage": 1.0,
+          "top_score_tie_rows": 0
+        },
+        "train_nerc_north_america_test_european_union": {
+          "n": 256,
+          "top1_accuracy": 0.0625,
+          "mean_reciprocal_rank": 0.28333798363095236,
+          "mean_gold_rank": 4.84765625,
+          "candidate_coverage": 1.0,
+          "top_score_tie_rows": 0
+        },
+        "within_european_union_variant_holdout": {
+          "n": 64,
+          "top1_accuracy": 0.09375,
+          "mean_reciprocal_rank": 0.28880208333333335,
+          "mean_gold_rank": 5.0,
+          "candidate_coverage": 1.0,
+          "top_score_tie_rows": 0
+        },
+        "within_nerc_north_america_variant_holdout": {
+          "n": 64,
+          "top1_accuracy": 0.15625,
+          "mean_reciprocal_rank": 0.3906622023809524,
+          "mean_gold_rank": 4.0,
+          "candidate_coverage": 1.0,
+          "top_score_tie_rows": 0
+        }
+      }
+    },
+    "summary_supplied": {
+      "overall": {
+        "n": 512,
+        "top1_accuracy": 1.0,
+        "mean_reciprocal_rank": 1.0,
+        "mean_gold_rank": 1.0,
+        "candidate_coverage": 1.0,
+        "top_score_tie_rows": 0
+      },
+      "per_card": {
+        "INTL_NERC_TOP_001_6_ACTION": {
+          "n": 64,
+          "top1_accuracy": 1.0,
+          "mean_reciprocal_rank": 1.0,
+          "mean_gold_rank": 1.0,
+          "candidate_coverage": 1.0,
+          "top_score_tie_rows": 0
+        },
+        "INTL_NERC_TOP_002_5_PLAN": {
+          "n": 64,
+          "top1_accuracy": 1.0,
+          "mean_reciprocal_rank": 1.0,
+          "mean_gold_rank": 1.0,
+          "candidate_coverage": 1.0,
+          "top_score_tie_rows": 0
+        },
+        "INTL_NERC_FAC_011_4_SOL": {
+          "n": 64,
+          "top1_accuracy": 1.0,
+          "mean_reciprocal_rank": 1.0,
+          "mean_gold_rank": 1.0,
+          "candidate_coverage": 1.0,
+          "top_score_tie_rows": 0
+        },
+        "INTL_NERC_VAR_001_5_VOLTAGE": {
+          "n": 64,
+          "top1_accuracy": 1.0,
+          "mean_reciprocal_rank": 1.0,
+          "mean_gold_rank": 1.0,
+          "candidate_coverage": 1.0,
+          "top_score_tie_rows": 0
+        },
+        "INTL_EU_SOGL_ART18_STATE": {
+          "n": 64,
+          "top1_accuracy": 1.0,
+          "mean_reciprocal_rank": 1.0,
+          "mean_gold_rank": 1.0,
+          "candidate_coverage": 1.0,
+          "top_score_tie_rows": 0
+        },
+        "INTL_EU_SOGL_ART25_LIMITS": {
+          "n": 64,
+          "top1_accuracy": 1.0,
+          "mean_reciprocal_rank": 1.0,
+          "mean_gold_rank": 1.0,
+          "candidate_coverage": 1.0,
+          "top_score_tie_rows": 0
+        },
+        "INTL_EU_SOGL_ART33_CONTINGENCY": {
+          "n": 64,
+          "top1_accuracy": 1.0,
+          "mean_reciprocal_rank": 1.0,
+          "mean_gold_rank": 1.0,
+          "candidate_coverage": 1.0,
+          "top_score_tie_rows": 0
+        },
+        "INTL_EU_SOGL_ART72_ANALYSIS": {
+          "n": 64,
+          "top1_accuracy": 1.0,
+          "mean_reciprocal_rank": 1.0,
+          "mean_gold_rank": 1.0,
+          "candidate_coverage": 1.0,
+          "top_score_tie_rows": 0
+        }
+      },
+      "existing_folds": {
+        "train_european_union_test_nerc_north_america": {
+          "n": 256,
+          "top1_accuracy": 1.0,
+          "mean_reciprocal_rank": 1.0,
+          "mean_gold_rank": 1.0,
+          "candidate_coverage": 1.0,
+          "top_score_tie_rows": 0
+        },
+        "train_nerc_north_america_test_european_union": {
+          "n": 256,
+          "top1_accuracy": 1.0,
+          "mean_reciprocal_rank": 1.0,
+          "mean_gold_rank": 1.0,
+          "candidate_coverage": 1.0,
+          "top_score_tie_rows": 0
+        },
+        "within_european_union_variant_holdout": {
+          "n": 64,
+          "top1_accuracy": 1.0,
+          "mean_reciprocal_rank": 1.0,
+          "mean_gold_rank": 1.0,
+          "candidate_coverage": 1.0,
+          "top_score_tie_rows": 0
+        },
+        "within_nerc_north_america_variant_holdout": {
+          "n": 64,
+          "top1_accuracy": 1.0,
+          "mean_reciprocal_rank": 1.0,
+          "mean_gold_rank": 1.0,
+          "candidate_coverage": 1.0,
+          "top_score_tie_rows": 0
+        }
+      }
+    },
+    "authored_business_question": {
+      "overall": {
+        "n": 32,
+        "top1_accuracy": 0.9375,
+        "mean_reciprocal_rank": 0.95703125,
+        "mean_gold_rank": 1.25,
+        "candidate_coverage": 1.0,
+        "top_score_tie_rows": 0
+      },
+      "per_card": {
+        "INTL_NERC_TOP_001_6_ACTION": {
+          "n": 4,
+          "top1_accuracy": 1.0,
+          "mean_reciprocal_rank": 1.0,
+          "mean_gold_rank": 1.0,
+          "candidate_coverage": 1.0,
+          "top_score_tie_rows": 0
+        },
+        "INTL_NERC_TOP_002_5_PLAN": {
+          "n": 4,
+          "top1_accuracy": 0.5,
+          "mean_reciprocal_rank": 0.65625,
+          "mean_gold_rank": 3.0,
+          "candidate_coverage": 1.0,
+          "top_score_tie_rows": 0
+        },
+        "INTL_NERC_FAC_011_4_SOL": {
+          "n": 4,
+          "top1_accuracy": 1.0,
+          "mean_reciprocal_rank": 1.0,
+          "mean_gold_rank": 1.0,
+          "candidate_coverage": 1.0,
+          "top_score_tie_rows": 0
+        },
+        "INTL_NERC_VAR_001_5_VOLTAGE": {
+          "n": 4,
+          "top1_accuracy": 1.0,
+          "mean_reciprocal_rank": 1.0,
+          "mean_gold_rank": 1.0,
+          "candidate_coverage": 1.0,
+          "top_score_tie_rows": 0
+        },
+        "INTL_EU_SOGL_ART18_STATE": {
+          "n": 4,
+          "top1_accuracy": 1.0,
+          "mean_reciprocal_rank": 1.0,
+          "mean_gold_rank": 1.0,
+          "candidate_coverage": 1.0,
+          "top_score_tie_rows": 0
+        },
+        "INTL_EU_SOGL_ART25_LIMITS": {
+          "n": 4,
+          "top1_accuracy": 1.0,
+          "mean_reciprocal_rank": 1.0,
+          "mean_gold_rank": 1.0,
+          "candidate_coverage": 1.0,
+          "top_score_tie_rows": 0
+        },
+        "INTL_EU_SOGL_ART33_CONTINGENCY": {
+          "n": 4,
+          "top1_accuracy": 1.0,
+          "mean_reciprocal_rank": 1.0,
+          "mean_gold_rank": 1.0,
+          "candidate_coverage": 1.0,
+          "top_score_tie_rows": 0
+        },
+        "INTL_EU_SOGL_ART72_ANALYSIS": {
+          "n": 4,
+          "top1_accuracy": 1.0,
+          "mean_reciprocal_rank": 1.0,
+          "mean_gold_rank": 1.0,
+          "candidate_coverage": 1.0,
+          "top_score_tie_rows": 0
+        }
+      }
+    }
+  },
+  "query_identifiability": {
+    "distinct_summary_removed_queries": 64,
+    "queries_with_multiple_gold_cards": 64,
+    "empirical_best_single_answer_accuracy": 0.125
+  },
+  "summary_overlap": {
+    "existing_rows_containing_exact_card_summary_in_question": 512,
+    "authored_queries_containing_exact_card_summary": 0
+  },
+  "scope": "Source-card selection among eight available curated cards. Existing folds are reporting strata; all eight candidates are accessible in every fold. No claim of unseen-source, cross-jurisdiction semantic generalization or independent legal correctness.",
+  "authored_scope": "32 author-written business questions, four per card, selected before scores. Gold follows intended source-card construction, pending independent review. No selection or wording revision after scoring."
+}

@@ -1,0 +1,97 @@
+{
+  "generated_at": "2026-07-31T08:09:30.215665+00:00",
+  "status": "pass",
+  "systems": [
+    "pegase1354"
+  ],
+  "config": {
+    "seed": 20260723,
+    "load_levels": [
+      0.85
+    ],
+    "system_load_levels": {
+      "pegase1354": [
+        0.85
+      ]
+    },
+    "max_lines_per_system": 12,
+    "max_attempts_per_stratum": 64,
+    "required_envelope_counts": {
+      "normal-envelope": 13
+    },
+    "scenario_namespace": "matched_normal_v2_pegase1354",
+    "scale_generation_with_load": false,
+    "generator_voltage_factors": [
+      1.0
+    ],
+    "dispatch_policy": "normal_ac_opf"
+  },
+  "publication_transaction": {
+    "output_path": "simulation_outputs/topology_stress/matched_normal_pool_pegase1354.json",
+    "output_written_by_this_run": true,
+    "output_sha256": "5b93cce12bb7246b08a81d4753319678e8e312736311399c3393947da1d8ae01",
+    "prior_output_sha256": "5b93cce12bb7246b08a81d4753319678e8e312736311399c3393947da1d8ae01",
+    "attempt_ledger_path": "reports/matched_normal_attempts_pegase1354.json",
+    "attempt_ledger_sha256": "1d17f99278e0eb38c402604530400097388dfddb9733404c7607094595977133"
+  },
+  "scenario_record_count": 13,
+  "converged_record_count": 13,
+  "convergence_rate": 1.0,
+  "solver_status_counts": {
+    "converged": 13
+  },
+  "candidate_attempt_count": 19,
+  "candidate_attempt_status_counts": {
+    "converged": 13,
+    "failed": 6
+  },
+  "candidate_attempt_failure_class_counts": {
+    "unsupplied_island": 6
+  },
+  "envelope_counts": {
+    "normal-envelope": 13
+  },
+  "stratum_coverage": {
+    "pegase1354|base_power_flow|load=85|vm=100|dispatch=normal_ac_opf": {
+      "attempted": 1,
+      "accepted": 1,
+      "failed": 0,
+      "required_accepted": 1,
+      "acceptance_quota_met": true
+    },
+    "pegase1354|n1_branch_outage|load=85|vm=100|dispatch=normal_ac_opf": {
+      "attempted": 18,
+      "accepted": 12,
+      "failed": 6,
+      "required_accepted": 12,
+      "acceptance_quota_met": true
+    }
+  },
+  "hard_gates": {
+    "scenario_ids_unique": true,
+    "all_base_strata_filled": true,
+    "all_n1_strata_filled": true,
+    "all_published_scenarios_converged": true,
+    "all_systems_have_convergence": true,
+    "required_envelope_coverage": true,
+    "all_published_states_complete_and_finite": true,
+    "all_published_power_balance_residuals_within_1e_minus_3_mw": true,
+    "all_failed_attempts_classified": true
+  },
+  "network_summaries": [
+    {
+      "system": "pegase1354",
+      "bus_count": 1354,
+      "line_count": 1751,
+      "scenario_count": 13,
+      "converged_count": 13,
+      "max_loading": 99.75000005685781,
+      "min_voltage": 0.95,
+      "max_voltage": 1.05,
+      "envelope_counts": {
+        "normal-envelope": 13
+      }
+    }
+  ],
+  "scope": "external topology validation and candidate source for formal OOD instruction records; envelope quotas are global and per-network envelope counts are reported without implying every network covers every envelope"
+}

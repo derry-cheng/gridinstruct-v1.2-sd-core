@@ -1,0 +1,38 @@
+{
+  "generated_at": "2026-07-09T16:03:07.623495+00:00",
+  "status": "pass",
+  "strict_split_status": "pass",
+  "strict_split_paths": {
+    "train": "data/v1.2_sd_core_strict_train.jsonl",
+    "validation": "data/v1.2_sd_core_strict_validation.jsonl",
+    "test": "data/v1.2_sd_core_strict_test.jsonl"
+  },
+  "standard_tfidf_classification": {
+    "regulation_compliance_check": 0.9297307776140528,
+    "operation_ticket_check": 1.0,
+    "dispatcher_intent_tool_call": 1.0
+  },
+  "strict_tfidf_classification": {
+    "dispatcher_intent_tool_call": 1.0,
+    "operation_ticket_check": 1.0,
+    "regulation_compliance_check": 0.9735196275929239
+  },
+  "proxy_reduced_standard": {
+    "dispatcher_intent_tool_call": 1.0,
+    "operation_ticket_check": 1.0,
+    "regulation_compliance_check": 0.5935012372109187
+  },
+  "proxy_reduced_strict": {
+    "dispatcher_intent_tool_call": 0.9994287279357179,
+    "operation_ticket_check": 1.0,
+    "regulation_compliance_check": 0.9250716363106543
+  },
+  "tasks": [
+    "dispatcher_intent_tool_call",
+    "operation_ticket_check",
+    "regulation_compliance_check"
+  ],
+  "figures": {
+    "strict_split_scores": "figures/sd_core/fig_strict_split_scores.png"
+  }
+}

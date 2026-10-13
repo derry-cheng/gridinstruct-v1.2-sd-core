@@ -1,0 +1,293 @@
+{
+  "schema_version": "2.0",
+  "expected_task_count": 6,
+  "task_count": 6,
+  "current_split_sha256": {
+    "train": "27087a599f1a3b78cf69e27ae2f8ed71e513fb50c4e140025d3b6cb1efe33c95",
+    "validation": "ec1e2a0fa019f169e7317267c02bea6f3aaeb3531a0b79b2fa841c3dda0fd765",
+    "test": "d64dd5c72721b0f6bb0fda7911722d76dfba2bef9596fac10bd9bae227c9b401"
+  },
+  "status": "pass",
+  "validation_errors": [],
+  "environment_drift": {
+    "chardet": {
+      "expected": "7.4.3",
+      "actual": null
+    },
+    "datasketch": {
+      "expected": "1.10.0",
+      "actual": "2.0.0"
+    },
+    "jsonschema": {
+      "expected": "4.26.0",
+      "actual": "4.22.0"
+    },
+    "lightsim2grid": {
+      "expected": "0.10.3",
+      "actual": null
+    },
+    "lm-format-enforcer": {
+      "expected": "0.11.3",
+      "actual": null
+    },
+    "matplotlib": {
+      "expected": "3.10.8",
+      "actual": "3.8.4"
+    },
+    "numpy": {
+      "expected": "2.3.5",
+      "actual": "1.26.4"
+    },
+    "openai": {
+      "expected": "2.30.0",
+      "actual": "1.55.0"
+    },
+    "pandas": {
+      "expected": "2.3.3",
+      "actual": "2.2.2"
+    },
+    "pandapower": {
+      "expected": "3.3.2",
+      "actual": "2.14.11"
+    },
+    "power-grid-model": {
+      "expected": "1.12.110",
+      "actual": null
+    },
+    "pypower": {
+      "expected": "5.1.19",
+      "actual": "5.1.17"
+    },
+    "pytest": {
+      "expected": "9.0.2",
+      "actual": "9.1.0"
+    },
+    "PyYAML": {
+      "expected": "6.0.2",
+      "actual": "6.0.1"
+    },
+    "requests": {
+      "expected": "2.34.2",
+      "actual": "2.31.0"
+    },
+    "scikit-learn": {
+      "expected": "1.8.0",
+      "actual": "1.4.2"
+    },
+    "scipy": {
+      "expected": "1.16.3",
+      "actual": "1.13.0"
+    },
+    "sentence-transformers": {
+      "expected": "5.4.1",
+      "actual": "2.7.0"
+    },
+    "torch": {
+      "expected": "2.10.0",
+      "actual": "2.3.0"
+    },
+    "tqdm": {
+      "expected": "4.67.1",
+      "actual": "4.65.0"
+    },
+    "transformers": {
+      "expected": "5.5.3",
+      "actual": "4.40.1"
+    }
+  },
+  "active_evidence": "direct_cpu_tfidf_diagnostic",
+  "models": [
+    {
+      "summary": "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_report.json",
+      "summary_sha256": "a84771361f3542e5c660e58bbe0791fb84f3db22a8dc644afab7d532d154dfd3",
+      "task": "auxiliary_decision",
+      "family": "direct_cpu_tfidf_diagnostic",
+      "input_sha256": {
+        "train": "27087a599f1a3b78cf69e27ae2f8ed71e513fb50c4e140025d3b6cb1efe33c95",
+        "validation": "ec1e2a0fa019f169e7317267c02bea6f3aaeb3531a0b79b2fa841c3dda0fd765",
+        "test": "d64dd5c72721b0f6bb0fda7911722d76dfba2bef9596fac10bd9bae227c9b401",
+        "ood": "c8bcdf784892728b7b981e5aaad76d7c3780b14ed4a8a06e58466d87ee021038"
+      },
+      "model_revision": {
+        "model_name": "character-ngram TF-IDF with LinearSVC/nearest-neighbour retrieval",
+        "snapshot": "scripts/run_tfidf_task_baselines.py",
+        "sha256": "7467f57d27c1c466e7ca1548b48d713c93738ef2a9bc79da9ce8250cfca158fe"
+      },
+      "suite_script_sha256": "7467f57d27c1c466e7ca1548b48d713c93738ef2a9bc79da9ce8250cfca158fe",
+      "artifacts": [
+        {
+          "seed": "deterministic",
+          "artifacts": {
+            "report": "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_report.json",
+            "predictions": "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_test_predictions.jsonl"
+          },
+          "sha256": {
+            "report": "a84771361f3542e5c660e58bbe0791fb84f3db22a8dc644afab7d532d154dfd3",
+            "predictions": "69dfd46cd3f4b8f5697f47d27759160dc5ffa88f1897d35bf50688b15e6b6f9e"
+          }
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "summary": "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_report.json",
+      "summary_sha256": "a84771361f3542e5c660e58bbe0791fb84f3db22a8dc644afab7d532d154dfd3",
+      "task": "dispatcher_intent_tool_call",
+      "family": "direct_cpu_tfidf_diagnostic",
+      "input_sha256": {
+        "train": "27087a599f1a3b78cf69e27ae2f8ed71e513fb50c4e140025d3b6cb1efe33c95",
+        "validation": "ec1e2a0fa019f169e7317267c02bea6f3aaeb3531a0b79b2fa841c3dda0fd765",
+        "test": "d64dd5c72721b0f6bb0fda7911722d76dfba2bef9596fac10bd9bae227c9b401",
+        "ood": "c8bcdf784892728b7b981e5aaad76d7c3780b14ed4a8a06e58466d87ee021038"
+      },
+      "model_revision": {
+        "model_name": "character-ngram TF-IDF with LinearSVC/nearest-neighbour retrieval",
+        "snapshot": "scripts/run_tfidf_task_baselines.py",
+        "sha256": "7467f57d27c1c466e7ca1548b48d713c93738ef2a9bc79da9ce8250cfca158fe"
+      },
+      "suite_script_sha256": "7467f57d27c1c466e7ca1548b48d713c93738ef2a9bc79da9ce8250cfca158fe",
+      "artifacts": [
+        {
+          "seed": "deterministic",
+          "artifacts": {
+            "report": "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_report.json",
+            "predictions": "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_test_predictions.jsonl"
+          },
+          "sha256": {
+            "report": "a84771361f3542e5c660e58bbe0791fb84f3db22a8dc644afab7d532d154dfd3",
+            "predictions": "69dfd46cd3f4b8f5697f47d27759160dc5ffa88f1897d35bf50688b15e6b6f9e"
+          }
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "summary": "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_report.json",
+      "summary_sha256": "a84771361f3542e5c660e58bbe0791fb84f3db22a8dc644afab7d532d154dfd3",
+      "task": "intelligent_data_query",
+      "family": "direct_cpu_tfidf_diagnostic",
+      "input_sha256": {
+        "train": "27087a599f1a3b78cf69e27ae2f8ed71e513fb50c4e140025d3b6cb1efe33c95",
+        "validation": "ec1e2a0fa019f169e7317267c02bea6f3aaeb3531a0b79b2fa841c3dda0fd765",
+        "test": "d64dd5c72721b0f6bb0fda7911722d76dfba2bef9596fac10bd9bae227c9b401",
+        "ood": "c8bcdf784892728b7b981e5aaad76d7c3780b14ed4a8a06e58466d87ee021038"
+      },
+      "model_revision": {
+        "model_name": "character-ngram TF-IDF with LinearSVC/nearest-neighbour retrieval",
+        "snapshot": "scripts/run_tfidf_task_baselines.py",
+        "sha256": "7467f57d27c1c466e7ca1548b48d713c93738ef2a9bc79da9ce8250cfca158fe"
+      },
+      "suite_script_sha256": "7467f57d27c1c466e7ca1548b48d713c93738ef2a9bc79da9ce8250cfca158fe",
+      "artifacts": [
+        {
+          "seed": "deterministic",
+          "artifacts": {
+            "report": "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_report.json",
+            "predictions": "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_test_predictions.jsonl"
+          },
+          "sha256": {
+            "report": "a84771361f3542e5c660e58bbe0791fb84f3db22a8dc644afab7d532d154dfd3",
+            "predictions": "69dfd46cd3f4b8f5697f47d27759160dc5ffa88f1897d35bf50688b15e6b6f9e"
+          }
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "summary": "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_report.json",
+      "summary_sha256": "a84771361f3542e5c660e58bbe0791fb84f3db22a8dc644afab7d532d154dfd3",
+      "task": "operation_ticket_check",
+      "family": "direct_cpu_tfidf_diagnostic",
+      "input_sha256": {
+        "train": "27087a599f1a3b78cf69e27ae2f8ed71e513fb50c4e140025d3b6cb1efe33c95",
+        "validation": "ec1e2a0fa019f169e7317267c02bea6f3aaeb3531a0b79b2fa841c3dda0fd765",
+        "test": "d64dd5c72721b0f6bb0fda7911722d76dfba2bef9596fac10bd9bae227c9b401",
+        "ood": "c8bcdf784892728b7b981e5aaad76d7c3780b14ed4a8a06e58466d87ee021038"
+      },
+      "model_revision": {
+        "model_name": "character-ngram TF-IDF with LinearSVC/nearest-neighbour retrieval",
+        "snapshot": "scripts/run_tfidf_task_baselines.py",
+        "sha256": "7467f57d27c1c466e7ca1548b48d713c93738ef2a9bc79da9ce8250cfca158fe"
+      },
+      "suite_script_sha256": "7467f57d27c1c466e7ca1548b48d713c93738ef2a9bc79da9ce8250cfca158fe",
+      "artifacts": [
+        {
+          "seed": "deterministic",
+          "artifacts": {
+            "report": "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_report.json",
+            "predictions": "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_test_predictions.jsonl"
+          },
+          "sha256": {
+            "report": "a84771361f3542e5c660e58bbe0791fb84f3db22a8dc644afab7d532d154dfd3",
+            "predictions": "69dfd46cd3f4b8f5697f47d27759160dc5ffa88f1897d35bf50688b15e6b6f9e"
+          }
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "summary": "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_report.json",
+      "summary_sha256": "a84771361f3542e5c660e58bbe0791fb84f3db22a8dc644afab7d532d154dfd3",
+      "task": "regulation_compliance_check",
+      "family": "direct_cpu_tfidf_diagnostic",
+      "input_sha256": {
+        "train": "27087a599f1a3b78cf69e27ae2f8ed71e513fb50c4e140025d3b6cb1efe33c95",
+        "validation": "ec1e2a0fa019f169e7317267c02bea6f3aaeb3531a0b79b2fa841c3dda0fd765",
+        "test": "d64dd5c72721b0f6bb0fda7911722d76dfba2bef9596fac10bd9bae227c9b401",
+        "ood": "c8bcdf784892728b7b981e5aaad76d7c3780b14ed4a8a06e58466d87ee021038"
+      },
+      "model_revision": {
+        "model_name": "character-ngram TF-IDF with LinearSVC/nearest-neighbour retrieval",
+        "snapshot": "scripts/run_tfidf_task_baselines.py",
+        "sha256": "7467f57d27c1c466e7ca1548b48d713c93738ef2a9bc79da9ce8250cfca158fe"
+      },
+      "suite_script_sha256": "7467f57d27c1c466e7ca1548b48d713c93738ef2a9bc79da9ce8250cfca158fe",
+      "artifacts": [
+        {
+          "seed": "deterministic",
+          "artifacts": {
+            "report": "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_report.json",
+            "predictions": "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_test_predictions.jsonl"
+          },
+          "sha256": {
+            "report": "a84771361f3542e5c660e58bbe0791fb84f3db22a8dc644afab7d532d154dfd3",
+            "predictions": "69dfd46cd3f4b8f5697f47d27759160dc5ffa88f1897d35bf50688b15e6b6f9e"
+          }
+        }
+      ],
+      "status": "pass"
+    },
+    {
+      "summary": "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_report.json",
+      "summary_sha256": "a84771361f3542e5c660e58bbe0791fb84f3db22a8dc644afab7d532d154dfd3",
+      "task": "regulation_qa",
+      "family": "direct_cpu_tfidf_diagnostic",
+      "input_sha256": {
+        "train": "27087a599f1a3b78cf69e27ae2f8ed71e513fb50c4e140025d3b6cb1efe33c95",
+        "validation": "ec1e2a0fa019f169e7317267c02bea6f3aaeb3531a0b79b2fa841c3dda0fd765",
+        "test": "d64dd5c72721b0f6bb0fda7911722d76dfba2bef9596fac10bd9bae227c9b401",
+        "ood": "c8bcdf784892728b7b981e5aaad76d7c3780b14ed4a8a06e58466d87ee021038"
+      },
+      "model_revision": {
+        "model_name": "character-ngram TF-IDF with LinearSVC/nearest-neighbour retrieval",
+        "snapshot": "scripts/run_tfidf_task_baselines.py",
+        "sha256": "7467f57d27c1c466e7ca1548b48d713c93738ef2a9bc79da9ce8250cfca158fe"
+      },
+      "suite_script_sha256": "7467f57d27c1c466e7ca1548b48d713c93738ef2a9bc79da9ce8250cfca158fe",
+      "artifacts": [
+        {
+          "seed": "deterministic",
+          "artifacts": {
+            "report": "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_report.json",
+            "predictions": "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_test_predictions.jsonl"
+          },
+          "sha256": {
+            "report": "a84771361f3542e5c660e58bbe0791fb84f3db22a8dc644afab7d532d154dfd3",
+            "predictions": "69dfd46cd3f4b8f5697f47d27759160dc5ffa88f1897d35bf50688b15e6b6f9e"
+          }
+        }
+      ],
+      "status": "pass"
+    }
+  ]
+}

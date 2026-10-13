@@ -1,0 +1,38 @@
+{
+  "generated_at": "2026-08-04T04:26:24.260490+00:00",
+  "status": "fail",
+  "source_policy": "current pre-release reports only; no final-assessment or release-bundle dependency",
+  "dataset": {
+    "record_count": 95479
+  },
+  "validation": {
+    "schema_errors": [],
+    "duplicate_ids": [],
+    "semantic_errors": [],
+    "near_duplicate_rate": 0.0036028864986017866
+  },
+  "local_gates": {
+    "data_scale": true,
+    "data_quality": true,
+    "data_quality_optimization": true,
+    "generation_grounding": false,
+    "query_result_consistency": true,
+    "source_group_map_ready": true,
+    "split_independence_audited": true,
+    "strict_source_group_split_ready": true,
+    "template_holdout_ready": true,
+    "score_quality_audited": true,
+    "strict_split_evidence_ready": true,
+    "proxy_reduced_input_audited": true,
+    "rule_context_baseline_ready": true,
+    "statistical_quality_audited": true,
+    "calibration_audited": true,
+    "linear_seed_stability_audited": true,
+    "expert_review_package_ready": true,
+    "expert_review_readiness_audited": true,
+    "expert_review_execution_ready": true,
+    "evidence_binding_ready": true,
+    "metadata_consistency": true,
+    "stale_release_files": true
+  }
+}

@@ -1,0 +1,224 @@
+{
+  "generated_at": "2026-07-09T15:13:48.449555+00:00",
+  "input": "data/gridinstruct_v1.2_sd_core.jsonl",
+  "split_paths": {
+    "train": "data/v1.2_sd_core_challenge_train.jsonl",
+    "validation": "data/v1.2_sd_core_challenge_validation.jsonl",
+    "test": "data/v1.2_sd_core_challenge_test.jsonl"
+  },
+  "design": {
+    "operation_ticket_check": "hold out operation context/object groups",
+    "regulation_compliance_check": "hold out proposed_action surface groups within each semantic action category",
+    "dispatcher_intent_tool_call": "hold out scenario groups"
+  },
+  "task_summaries": {
+    "dispatcher_intent_tool_call": {
+      "records": 18207,
+      "groups": 678,
+      "label_counts": {
+        "mitigate_violations": 6070,
+        "diagnose_and_dispatch": 6070,
+        "security_check_and_redispatch": 6067
+      },
+      "split_counts": {
+        "train": 12755,
+        "validation": 2154,
+        "test": 3298
+      },
+      "split_label_counts": {
+        "train": {
+          "diagnose_and_dispatch": 4912,
+          "security_check_and_redispatch": 4402,
+          "mitigate_violations": 3441
+        },
+        "validation": {
+          "security_check_and_redispatch": 608,
+          "mitigate_violations": 1334,
+          "diagnose_and_dispatch": 212
+        },
+        "test": {
+          "security_check_and_redispatch": 1057,
+          "mitigate_violations": 1295,
+          "diagnose_and_dispatch": 946
+        }
+      },
+      "split_group_purity": {
+        "train": {
+          "groups": 454,
+          "records": 12755,
+          "weighted_group_purity": 1.0,
+          "pure_group_count": 454
+        },
+        "validation": {
+          "groups": 97,
+          "records": 2154,
+          "weighted_group_purity": 1.0,
+          "pure_group_count": 97
+        },
+        "test": {
+          "groups": 127,
+          "records": 3298,
+          "weighted_group_purity": 0.9996967859308672,
+          "pure_group_count": 126
+        }
+      },
+      "group_overlap": {
+        "train_validation": [],
+        "train_test": [],
+        "validation_test": []
+      }
+    },
+    "operation_ticket_check": {
+      "records": 10881,
+      "groups": 1546,
+      "label_counts": {
+        "non_compliant": 3161,
+        "compliant_with_monitoring": 4949,
+        "compliant": 2771
+      },
+      "split_counts": {
+        "train": 7619,
+        "validation": 1090,
+        "test": 2172
+      },
+      "split_label_counts": {
+        "train": {
+          "compliant_with_monitoring": 3434,
+          "non_compliant": 2123,
+          "compliant": 2062
+        },
+        "validation": {
+          "compliant_with_monitoring": 498,
+          "non_compliant": 369,
+          "compliant": 223
+        },
+        "test": {
+          "non_compliant": 669,
+          "compliant_with_monitoring": 1017,
+          "compliant": 486
+        }
+      },
+      "split_group_purity": {
+        "train": {
+          "groups": 1051,
+          "records": 7619,
+          "weighted_group_purity": 0.9997374983593648,
+          "pure_group_count": 1049
+        },
+        "validation": {
+          "groups": 153,
+          "records": 1090,
+          "weighted_group_purity": 1.0,
+          "pure_group_count": 153
+        },
+        "test": {
+          "groups": 342,
+          "records": 2172,
+          "weighted_group_purity": 1.0,
+          "pure_group_count": 342
+        }
+      },
+      "group_overlap": {
+        "train_validation": [],
+        "train_test": [],
+        "validation_test": []
+      }
+    },
+    "regulation_compliance_check": {
+      "records": 23201,
+      "groups": 131,
+      "action_categories": {
+        "corrective_redispatch": 21,
+        "corrective_topology": 21,
+        "corrective_voltage": 19,
+        "monitor_only": 24,
+        "premature_restore": 14,
+        "risky_increase": 32
+      },
+      "unknown_category_records": 0,
+      "label_counts": {
+        "non_compliant": 13082,
+        "compliant_with_monitoring": 8696,
+        "compliant": 1423
+      },
+      "split_counts": {
+        "train": 14688,
+        "validation": 4792,
+        "test": 3721
+      },
+      "split_label_counts": {
+        "train": {
+          "compliant": 1052,
+          "non_compliant": 8107,
+          "compliant_with_monitoring": 5529
+        },
+        "validation": {
+          "compliant": 218,
+          "compliant_with_monitoring": 1897,
+          "non_compliant": 2677
+        },
+        "test": {
+          "non_compliant": 2298,
+          "compliant_with_monitoring": 1270,
+          "compliant": 153
+        }
+      },
+      "missing_labels": {
+        "train": [],
+        "validation": [],
+        "test": []
+      },
+      "split_action_category_counts": {
+        "train": {
+          "corrective_redispatch": 4988,
+          "corrective_topology": 2816,
+          "corrective_voltage": 773,
+          "monitor_only": 2138,
+          "premature_restore": 1866,
+          "risky_increase": 2107
+        },
+        "validation": {
+          "corrective_redispatch": 155,
+          "corrective_topology": 445,
+          "corrective_voltage": 1721,
+          "monitor_only": 219,
+          "premature_restore": 3,
+          "risky_increase": 2249
+        },
+        "test": {
+          "corrective_redispatch": 394,
+          "corrective_topology": 2042,
+          "corrective_voltage": 95,
+          "monitor_only": 76,
+          "premature_restore": 88,
+          "risky_increase": 1026
+        }
+      },
+      "split_group_purity": {
+        "train": {
+          "groups": 85,
+          "records": 14688,
+          "weighted_group_purity": 0.8014025054466231,
+          "pure_group_count": 64
+        },
+        "validation": {
+          "groups": 20,
+          "records": 4792,
+          "weighted_group_purity": 0.9791318864774624,
+          "pure_group_count": 14
+        },
+        "test": {
+          "groups": 26,
+          "records": 3721,
+          "weighted_group_purity": 0.7868852459016393,
+          "pure_group_count": 21
+        }
+      },
+      "group_overlap": {
+        "train_validation": [],
+        "train_test": [],
+        "validation_test": []
+      }
+    }
+  }
+}

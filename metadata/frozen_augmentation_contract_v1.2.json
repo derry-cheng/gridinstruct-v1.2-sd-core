@@ -1,0 +1,27 @@
+{
+  "generated_at": "2026-07-31T07:59:10.064142+00:00",
+  "contract": "frozen_reviewed_plus11_plus_deterministic_plus12_14_plus_frozen_llm_plus15",
+  "input": "data/gridinstruct_v1.2_paper_candidate_actionable_plus15.jsonl",
+  "input_sha256": "3ce6ad0983b34a2c6bf42d9dd7d0c0ff1790ea7a275001ee93c87a3725b48c15",
+  "plus11_full": "data/frozen_sources/gridinstruct_v1.2_plus11_full.jsonl",
+  "plus11_full_sha256": "00f0f2a94c4ec4d03d1ea9a6408d23aea7dcd9ed66a25294095d1cc6e19d473f",
+  "frozen_implicit_rows": "data/frozen_sources/operation_implicit_ticket_llm_v1.jsonl",
+  "frozen_implicit_rows_sha256": "a38de7920252da8eb06c3b220d399d7b2b74d6316fea8b45fd8eb18764495a5a",
+  "replay_scripts": [
+    "scripts/augment_operation_dispatcher_counterfactuals.py",
+    "scripts/augment_operation_monitoring_counterfactuals.py",
+    "scripts/augment_operation_plain_ticket_adversarial.py",
+    "scripts/replay_frozen_implicit_ticket_rows.py"
+  ],
+  "summary": {
+    "input_records": 140370,
+    "plus11_full_records": 94689,
+    "plus12_added_records": 11400,
+    "plus13_added_records": 16800,
+    "plus14_added_records": 16800,
+    "frozen_implicit_records": 681,
+    "duplicate_ids": [],
+    "stage_append_order_matches": true
+  },
+  "passed": true
+}

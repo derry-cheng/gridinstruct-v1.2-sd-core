@@ -1,0 +1,8 @@
+{
+  "status": "pass",
+  "registered_candidate_count": 35200,
+  "eligible_violation_candidate_count": 8508,
+  "screened_candidate_count": 136,
+  "screened_pass_count": 120,
+  "robust_gate_pass_count": 120
+}

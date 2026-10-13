@@ -1,0 +1,12 @@
+{
+  "status": "complete",
+  "screened_scenarios": 270,
+  "accepted_scenarios_by_system": {
+    "ieee118": 80,
+    "ieee14": 80
+  },
+  "accepted_scenarios": 160,
+  "rejected_result_count": 110,
+  "screening_solver_error_count": 0,
+  "target_scenarios_per_system": 80
+}

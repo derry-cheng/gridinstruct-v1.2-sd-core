@@ -1,0 +1,110 @@
+{
+  "generated_at": "2026-07-08T10:49:46.175236+00:00",
+  "train": "data/v1.2_sd_core_train.jsonl",
+  "validation": "data/v1.2_sd_core_validation.jsonl",
+  "test": "data/v1.2_sd_core_boundary_challenge_test.jsonl",
+  "ood": "",
+  "objective": "task_specific_tfidf_baselines",
+  "train_records": 28305,
+  "validation_records": 3570,
+  "test_records": 4800,
+  "ood_records": 0,
+  "validation_metrics": {
+    "intelligent_data_query": {
+      "task_type": "intelligent_data_query",
+      "model_family": "tfidf_nearest_neighbor",
+      "n": 418,
+      "exact_match": 0.0,
+      "token_f1": 0.8382280512700089,
+      "avg_nearest_similarity": 0.8829546860323089
+    },
+    "dispatcher_intent_tool_call": {
+      "task_type": "dispatcher_intent_tool_call",
+      "model_family": "tfidf_linear_svc",
+      "n": 473,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
+      "label_space": [
+        "diagnose_and_dispatch",
+        "mitigate_violations",
+        "security_check_and_redispatch"
+      ]
+    },
+    "operation_ticket_check": {
+      "task_type": "operation_ticket_check",
+      "model_family": "tfidf_linear_svc",
+      "n": 1082,
+      "accuracy": 0.9990757855822551,
+      "macro_f1": 0.9988595021250758,
+      "balanced_accuracy": 0.9989350372736955,
+      "label_space": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ]
+    },
+    "regulation_qa": {
+      "task_type": "regulation_qa",
+      "model_family": "tfidf_nearest_neighbor",
+      "n": 416,
+      "exact_match": 0.07692307692307693,
+      "token_f1": 0.7138784917414707,
+      "avg_nearest_similarity": 0.9004661526978887
+    },
+    "auxiliary_decision": {
+      "task_type": "auxiliary_decision",
+      "model_family": "tfidf_nearest_neighbor",
+      "n": 416,
+      "exact_match": 0.34134615384615385,
+      "token_f1": 0.34134615384615385,
+      "avg_nearest_similarity": 0.7614403843452233
+    },
+    "regulation_compliance_check": {
+      "task_type": "regulation_compliance_check",
+      "model_family": "tfidf_linear_svc",
+      "n": 765,
+      "accuracy": 0.4823529411764706,
+      "macro_f1": 0.527571596114416,
+      "balanced_accuracy": 0.6141368720569664,
+      "label_space": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ]
+    }
+  },
+  "test_metrics": {
+    "operation_ticket_check": {
+      "task_type": "operation_ticket_check",
+      "model_family": "tfidf_linear_svc",
+      "n": 3000,
+      "accuracy": 0.866,
+      "macro_f1": 0.8603583371804264,
+      "balanced_accuracy": 0.866,
+      "label_space": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ]
+    },
+    "dispatcher_intent_tool_call": {
+      "task_type": "dispatcher_intent_tool_call",
+      "model_family": "tfidf_linear_svc",
+      "n": 1800,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
+      "label_space": [
+        "diagnose_and_dispatch",
+        "mitigate_violations",
+        "security_check_and_redispatch"
+      ]
+    }
+  },
+  "ood_metrics": {},
+  "validation_macro_score": 0.7291469039360597,
+  "test_macro_score": 0.933,
+  "ood_macro_score": NaN,
+  "note": "Classification tasks use TF-IDF + LinearSVC; generation tasks use TF-IDF nearest-neighbor retrieval within task."
+}

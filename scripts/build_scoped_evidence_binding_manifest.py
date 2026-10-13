@@ -1,0 +1,353 @@
+#!/usr/bin/env python3
+"""Build the hash-bound local evidence manifest for the code/data release.
+
+The manifest deliberately separates local reproducibility from external
+submission inputs.  It never upgrades a missing raw scenario ledger, human
+review assignment, or public accession from a summary report.
+"""
+
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Any
+
+
+ROOT = Path(__file__).resolve().parents[1]
+
+
+LOCAL_BINDINGS = [
+    "data/gridinstruct_v1.2_sd_core.jsonl",
+    "data/gridinstruct_v1.2_sd_core_en.jsonl",
+    "data/v1.2_sd_core_train_en.jsonl",
+    "data/v1.2_sd_core_validation_en.jsonl",
+    "data/v1.2_sd_core_test_en.jsonl",
+    "data/v1.2_sd_core_ood_test_en.jsonl",
+    "reports/current_release_integrity_audit_v1.2_sd_core.json",
+    "reports/current_opf_closed_loop_audit_v1.2_sd_core.json",
+    "reports/current_source_group_map_audit_v1.2_sd_core.json",
+    "reports/high_score_plausibility_audit_v1.2_sd_core.json",
+    "reports/linear_seed_stability_audit_v1.2_sd_core.json",
+    "reports/model_score_quality_audit_v1.2_sd_core.json",
+    "reports/near_duplicate_audit_v1.2_sd_core.json",
+    "reports/near_neighbor_free_surface_audit_v1.2_sd_core.json",
+    "reports/split_independence_audit_current_v1.2_sd_core.json",
+    "reports/strict_source_group_split_v1.2_sd_core.json",
+    "reports/template_family_holdout_v1.2_sd_core.json",
+    "reports/action_level_validation_audit_v1.2_sd_core.json",
+    "reports/evidence_tiers_v1.2_sd_core.json",
+    "reports/direct_english_materialization_v1.2_sd_core.json",
+    "reports/direct_english_canonical_materialization_v1.2_sd_core.json",
+    "reports/direct_english_split_materialization_v1.2_sd_core.json",
+    "reports/data_validation_direct_english_v1.2_sd_core.json",
+    "reports/independent_query_truth_validation_v1.2_sd_core.json",
+    "reports/compliance_label_current_audit_v1.2_sd_core.json",
+    "reports/dispatcher_request_contract_repair_v1.2_sd_core.json",
+    "reports/official_exact_content_overlap_repair_v1.2_sd_core.json",
+    "reports/strict_exact_content_overlap_repair_v1.2_sd_core.json",
+    "reports/query_truth_completeness_gate_v1.2_sd_core.json",
+    "reports/scenario_truth_reconstruction_v1.2_sd_core.json",
+    "simulation_outputs/contingency/scenarios_converged.json",
+    "simulation_outputs/contingency/scenario_reconstruction_attempts.json",
+    "reports/opf_action_uncertainty_stress_v1.2_sd_core.json",
+    "reports/opf_action_constant_power_factor_stress_v1.2_sd_core.json",
+    "reports/ood_stratified_metrics_v1.2_sd_core.json",
+    "reports/rule_coverage_scope_audit_v1.2_sd_core.json",
+    "reports/typed_semantic_pattern_audit_v1.2_sd_core.json",
+    "reports/cross_solver_power_flow_v1.2_sd_core.json",
+    "reports/independent_solver_raw_evidence_v1.2_sd_core_rebound.json",
+    "reports/independent_solver_validation_v1.2_sd_core_rebound.json",
+    "reports/target_hidden_classification_v1.2_sd_core.json",
+    "reports/target_hidden_classification_replay_20260812.json",
+    "reports/instruction_surface_balanced_split_v1.2_sd_core.json",
+    "reports/instruction_surface_balanced_surface_audit_v1.2_sd_core.json",
+    "reports/scenario_grounding_repair_v1.2_sd_core.json",
+    "reports/target_leakage_audit_v1.2_sd_core.json",
+    "reports/target_leakage_audit_v1.2_sd_core_en.json",
+    "reports/group_aware_split_current_v1.2_sd_core.json",
+    "reports/exact_surface_component_split_v1.2_sd_core.json",
+    "reports/exact_surface_target_hidden_classification_v1.2_sd_core.json",
+    "reports/independent_opf_envelope_v1.2_sd_core.json",
+    "reports/pglib_network_envelope_replay_v1.2_sd_core.json",
+    "data/international_rule_probe_v1.jsonl",
+    "metadata/international_rule_probe_splits_v1.json",
+    "metadata/international_rule_probe_schema.json",
+    "reports/international_rule_probe_v1.json",
+    "reports/international_rule_probe_splits_v1.json",
+    "benchmark/international_rule_probe_v1/nearest_neighbor_report.json",
+    "reports/international_rule_probe_controls_v1.json",
+    "reports/opf_structural_contract_audit_v1.2_sd_core.json",
+    "data/v1.2_sd_core_template_family_holdout_train_ids.jsonl",
+    "data/v1.2_sd_core_template_family_holdout_validation_ids.jsonl",
+    "data/v1.2_sd_core_template_family_holdout_test_ids.jsonl",
+    "reports/near_duplicate_audit_v1.2_sd_core.json",
+    "reports/equipment_rating_provenance_v1.2_sd_core.json",
+    "reports/extended_topology_stress_attempts_v1.2_sd_core.json",
+    "reports/opf_candidate_register_v1.2_sd_core.json",
+    "reports/opf_selection_mapping_v1.2_sd_core.json",
+    "reports/compliance_contrast_pairs_v1.2_sd_core.json",
+    "reports/ieee14_opf_secure_candidate_augmentation_v1.2_sd_core.json",
+    "reports/core_n1_denominator_v1.2_sd_core.json",
+    "reports/shortcut_ablation_v1.2_sd_core.json",
+    "reports/evidence_reconciliation_v1.2_sd_core.json",
+    "reports/current_surface_seed_stability_v1.2_sd_core.json",
+    "reports/current_surface_seed_stability_v1.2_sd_core.md",
+    "benchmark/instruction_surface_balanced_v1.2_sd_core_leakage_fixed/tfidf_report.json",
+    "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_report.json",
+    "benchmark/direct_english_tfidf_v1.2_sd_core_leakage_fixed_calibrated_report.json",
+    "benchmark/direct_english_structured_query_v1.2_sd_core_leakage_fixed_report.json",
+    "benchmark/direct_english_structured_auxiliary_v1.2_sd_core_leakage_fixed_report.json",
+    "benchmark/instruction_surface_balanced_v1.2_sd_core_leakage_fixed/calibrated_tfidf_report.json",
+    "benchmark/instruction_surface_balanced_v1.2_sd_core_leakage_fixed/structured_query_report.json",
+    "benchmark/instruction_surface_balanced_v1.2_sd_core_leakage_fixed/structured_auxiliary_report.json",
+    "benchmark/instruction_surface_balanced_v1.2_sd_core_leakage_fixed/query_report.json",
+    "benchmark/instruction_surface_balanced_v1.2_sd_core_leakage_fixed/auxiliary_report.json",
+    "benchmark/v1.2_sd_core_boundary_challenge_tfidf_report.json",
+    "benchmark/v1.2_sd_core_challenge_proxyreduced_tfidf_report.json",
+    "benchmark/v1.2_sd_core_rule_context_tfidf_report.json",
+    "benchmark/v1.2_sd_core_tfidf_report.json",
+    "benchmark/v1.2_sd_core_strict_tfidf_report.json",
+    "metadata/independent_solver_case_manifest_v1.json",
+    "metadata/dataset_metadata.json",
+    "metadata/data_lineage_manifest.json",
+    "metadata/third_party_asset_inventory.json",
+    "reports/local_instruction_transfer_20261001.json",
+    "reports/local_instruction_transfer_replay_20261001.json",
+    "reports/local_instruction_transfer_audit_20261001.json",
+    "experiments/revision_20261001/protocol.json",
+    "experiments/revision_20261001/request_variant_protocol.json",
+    "reports/public_repository_access_20261001.json",
+]
+
+HISTORICAL_NOT_BOUND = {
+    "reports/group_cluster_bootstrap_v1.2_sd_core.json": "multiseed bootstrap bound to a superseded pre-direct-English split; retained for history",
+    "reports/near_neighbor_balanced_surface_audit_v1.2_sd_core.json": "balanced diagnostic split is no longer shipped; current manuscript uses the regenerated instruction-surface split",
+    "reports/template_holdout_split_v1.2_sd_core.json": "legacy full template-surface projections were removed; current release retains atomic template-family ID-only manifests",
+    "benchmark/v1.2_sd_core_template_holdout_tfidf_report.json": "legacy baseline references removed full template-surface files; current release uses the atomic template-family diagnostic",
+    "reports/query_result_consistency_repair_final_v1.2_sd_core.json": "historical staged repair receipt points to an unshipped derived JSONL stage; current release uses the independent in-memory query replay receipt",
+    "reports/compliance_label_recompute_direct_v1.2_sd_core.json": "historical staged recomputation receipt is bound to a superseded canonical hash and an unshipped derived JSONL stage; current release uses the in-memory compliance audit",
+}
+
+
+def sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def payload_status(path: Path) -> str | None:
+    if path.suffix.lower() != ".json":
+        return None
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
+    if not isinstance(payload, dict):
+        return None
+    return str(payload.get("status") or payload.get("verdict") or "") or None
+
+
+def bind(root: Path, relative: str) -> dict[str, Any] | None:
+    path = root / relative
+    if not path.is_file():
+        return None
+    return {
+        "path": relative,
+        "sha256": sha256(path),
+        "bytes": path.stat().st_size,
+        "reported_status": payload_status(path),
+        "bound": True,
+    }
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--output", default="metadata/evidence_binding_manifest.json"
+    )
+    args = parser.parse_args()
+    root = ROOT
+
+    bindings: dict[str, dict[str, Any]] = {}
+    missing: list[str] = []
+    for relative in LOCAL_BINDINGS:
+        record = bind(root, relative)
+        if record is None:
+            missing.append(relative)
+        else:
+            bindings[relative] = record
+
+    local_gate_summary = {
+        "row_integrity": bindings.get(
+            "reports/current_release_integrity_audit_v1.2_sd_core.json", {}
+        ).get("reported_status")
+        == "pass",
+        "severity_registry_consistency": (
+            bindings.get(
+                "reports/current_release_integrity_audit_v1.2_sd_core.json", {}
+            ).get("reported_status")
+            == "pass"
+        ),
+        "embedded_opf": bindings.get(
+            "reports/current_opf_closed_loop_audit_v1.2_sd_core.json", {}
+        ).get("reported_status")
+        == "pass",
+        "source_group_provenance": bindings.get(
+            "reports/current_source_group_map_audit_v1.2_sd_core.json", {}
+        ).get("reported_status")
+        == "pass",
+        "split_independence": bindings.get(
+            "reports/split_independence_audit_current_v1.2_sd_core.json", {}
+        ).get("reported_status")
+        == "pass",
+        "template_family_holdout": bindings.get(
+            "reports/template_family_holdout_v1.2_sd_core.json", {}
+        ).get("reported_status")
+        == "pass",
+        "independent_query_truth": bindings.get(
+            "reports/independent_query_truth_validation_v1.2_sd_core.json", {}
+        ).get("reported_status")
+        == "pass",
+        "direct_english_render": bindings.get(
+            "reports/direct_english_materialization_v1.2_sd_core.json", {}
+        ).get("reported_status")
+        == "pass",
+        "scenario_truth_reconstruction": bindings.get(
+            "reports/scenario_truth_reconstruction_v1.2_sd_core.json", {}
+        ).get("reported_status")
+        == "pass",
+        "compliance_label_current": bindings.get(
+            "reports/compliance_label_current_audit_v1.2_sd_core.json", {}
+        ).get("reported_status")
+        == "pass",
+        "dispatcher_request_contract": bindings.get(
+            "reports/dispatcher_request_contract_repair_v1.2_sd_core.json", {}
+        ).get("reported_status")
+        == "pass",
+        "near_neighbor_surface_diagnostic": bindings.get(
+            "reports/near_neighbor_free_surface_audit_v1.2_sd_core.json", {}
+        ).get("reported_status")
+        == "pass",
+        "dataset_validation": bindings.get(
+            "reports/data_validation_direct_english_v1.2_sd_core.json", {}
+        ).get("reported_status")
+        == "pass",
+        "target_hidden_classification": bindings.get(
+            "reports/target_hidden_classification_v1.2_sd_core.json", {}
+        ).get("reported_status")
+        == "pass",
+        "native_fixed_control_replay": bindings.get(
+            "reports/independent_solver_validation_v1.2_sd_core_rebound.json", {}
+        ).get("reported_status")
+        == "pass",
+    }
+    local_failures = [name for name, passed in local_gate_summary.items() if not passed]
+    public_access = json.loads((root / "reports/public_repository_access_20261001.json").read_text())
+    public_access_ok = public_access["anonymous_http_status"] == 200 and not public_access["is_private"]
+    external_gates = {
+        "isolated_archive_replay_package": {
+            "passed": False,
+            "kind": "external",
+            "status": "pass_scoped_local_replay_anonymous_access_unverified",
+            "scope": "local archive replay passes; anonymous access is a separate repository-visibility check",
+        },
+        "raw_scenario_replay_ledger": {
+            "passed": False,
+            "kind": "external",
+            "status": "pending_raw_scenario_arrays_and_construction_ledger",
+            "scope": "full scenario-generation population; not inferred from fixed-control summaries",
+        },
+        "external_human_review": {
+            "passed": False,
+            "kind": "external",
+            "status": "author_attested_review_without_public_row_ledger",
+            "scope": "five-reviewer completion is author-attested; public row-level outcomes and agreement statistics are absent",
+        },
+        "public_repository": {
+            "passed": public_access_ok,
+            "kind": "external",
+            "status": "public_anonymous_http_200_confirmed_20261001",
+            "scope": "repository visibility verified by anonymous HTTP request; immutable release download is checked separately",
+        },
+        "final_author_funding_metadata": {
+            "passed": True,
+            "kind": "external",
+            "status": "author_confirmed_20261013",
+            "scope": "contributions, funding, conflicts and manuscript review confirmed by the author; declarations remain outside the public code/data repository",
+        },
+    }
+    native_validation = bindings.get(
+        "reports/independent_solver_validation_v1.2_sd_core_rebound.json", {}
+    )
+    native_manifest = bindings.get(
+        "metadata/independent_solver_case_manifest_v1.json", {}
+    )
+    power_evidence_gates = {
+        "embedded_opf": {
+            "passed": local_gate_summary["embedded_opf"],
+            "path": "reports/current_opf_closed_loop_audit_v1.2_sd_core.json",
+            "scope": "320 released records over 160 registered scenarios",
+        },
+        "native_independent_solver": {
+            "passed": local_gate_summary["native_fixed_control_replay"],
+            "path": "reports/independent_solver_validation_v1.2_sd_core_rebound.json",
+            "case_count": 160,
+            "raw_scenario_arrays_present": False,
+            "manifest_sha256": native_manifest.get("sha256"),
+            "validation_sha256": native_validation.get("sha256"),
+            "scope": "retained native-source fixed-control evidence bound to a local case manifest",
+        },
+        "raw_scenario_replay": external_gates["raw_scenario_replay_ledger"],
+    }
+    manifest = {
+        "schema_version": "gridinstruct-scoped-evidence-v2",
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "status": "pass" if not missing and not local_failures else "fail",
+        "scope": "local_hash_bound_release_candidate",
+        "runtime_policy": "local CPU/MPS only; no remote GPU execution",
+        "dataset_sha256": bindings.get(
+            "data/gridinstruct_v1.2_sd_core_en.jsonl", {}
+        ).get("sha256"),
+        "split_sha256": {
+            path: bindings[path]["sha256"]
+            for path in bindings
+            if path.startswith("data/v1.2_sd_core_") and path.endswith("_en.jsonl")
+        },
+        "evidence_bindings": bindings,
+        "total_evidence": len(set(LOCAL_BINDINGS)),
+        "evidence_bound": len(bindings),
+        "missing_local_bindings": missing,
+        "invalid_evidence_count": len(missing) + len(local_failures),
+        "local_gate_summary": local_gate_summary,
+        "local_gate_failures": local_failures,
+        "power_evidence_gates": power_evidence_gates,
+        "external_gates": external_gates,
+        "claim_boundary": (
+            "Local hash-bound audits support data integrity, provenance-controlled splits, "
+            "embedded OPF closure, target-hidden learnability diagnostics, and 160 retained "
+            "native-source fixed-control replays. They do not establish full-population raw "
+            "scenario replay, human agreement, or public accession."
+        ),
+        "historical_not_bound": HISTORICAL_NOT_BOUND,
+    }
+    output = root / args.output
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(json.dumps({
+        "status": manifest["status"],
+        "bound": len(bindings),
+        "missing": missing,
+        "local_failures": local_failures,
+        "output": str(output),
+    }, ensure_ascii=False))
+    if manifest["status"] != "pass":
+        raise SystemExit(1)
+
+
+if __name__ == "__main__":
+    main()

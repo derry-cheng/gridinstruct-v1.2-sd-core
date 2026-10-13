@@ -1,0 +1,1279 @@
+{
+  "contract_version": "gridinstruct-external-matched-strata-v2",
+  "generated_at": "2026-07-31T08:11:00.679650+00:00",
+  "status": "pass",
+  "source": {
+    "path": "/data/gaiav2/reports/extended_topology_stress_attempts_v1.2_sd_core.json",
+    "sha256": "a7b2013527278bd03190fbc5f666b6730c7dbd5cd693c236d6ec213cd1cbf169"
+  },
+  "seed": 20260723,
+  "target_per_network_severity_cell": 13,
+  "networks": [
+    "ieee300",
+    "illinois200",
+    "pegase89",
+    "pegase1354",
+    "rte1888",
+    "rte2848",
+    "pegase2869"
+  ],
+  "severity_classes": [
+    "normal-envelope",
+    "operational-stress",
+    "emergency-stress",
+    "extreme-stress"
+  ],
+  "raw_converged_scenario_count": 429,
+  "rating_indeterminate_converged_scenario_count": 0,
+  "source_bound_rating_coverage": {
+    "ieee300": {
+      "expected_in_service_branches": 411,
+      "source_bound_ratings": 411,
+      "missing_ratings": []
+    },
+    "illinois200": {
+      "expected_in_service_branches": 179,
+      "source_bound_ratings": 179,
+      "missing_ratings": []
+    },
+    "pegase89": {
+      "expected_in_service_branches": 195,
+      "source_bound_ratings": 195,
+      "missing_ratings": []
+    },
+    "pegase1354": {
+      "expected_in_service_branches": 1991,
+      "source_bound_ratings": 1991,
+      "missing_ratings": []
+    },
+    "rte1888": {
+      "expected_in_service_branches": 2385,
+      "source_bound_ratings": 2385,
+      "missing_ratings": []
+    },
+    "rte2848": {
+      "expected_in_service_branches": 3557,
+      "source_bound_ratings": 3557,
+      "missing_ratings": []
+    },
+    "pegase2869": {
+      "expected_in_service_branches": 4556,
+      "source_bound_ratings": 4556,
+      "missing_ratings": []
+    }
+  },
+  "source_bound_rating_gate_applicable": true,
+  "unique_input_scenario_count": 547,
+  "raw_matrix": [
+    [
+      0,
+      0,
+      0,
+      26
+    ],
+    [
+      128,
+      37,
+      17,
+      0
+    ],
+    [
+      0,
+      63,
+      1,
+      1
+    ],
+    [
+      13,
+      12,
+      27,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      26
+    ],
+    [
+      0,
+      0,
+      0,
+      39
+    ],
+    [
+      0,
+      0,
+      26,
+      13
+    ]
+  ],
+  "raw_association": {
+    "cramers_v": 0.7462867126389727,
+    "mutual_information_bits": 1.1771770889680593
+  },
+  "network_reachability": [
+    {
+      "network": "ieee300",
+      "attempted_scenario_count": 35,
+      "converged_scenario_count": 26,
+      "explored_load_levels": [
+        0.95,
+        0.955
+      ],
+      "construction_families": [
+        "fixed_power_flow"
+      ],
+      "severity_support": {
+        "normal-envelope": {
+          "observed_count": 0,
+          "observed_load_levels": []
+        },
+        "operational-stress": {
+          "observed_count": 0,
+          "observed_load_levels": []
+        },
+        "emergency-stress": {
+          "observed_count": 0,
+          "observed_load_levels": []
+        },
+        "extreme-stress": {
+          "observed_count": 26,
+          "observed_load_levels": [
+            0.95,
+            0.955
+          ]
+        }
+      },
+      "interpretation": "observed support under the preregistered construction families; zero cells are not mathematical impossibility claims"
+    },
+    {
+      "network": "illinois200",
+      "attempted_scenario_count": 207,
+      "converged_scenario_count": 182,
+      "explored_load_levels": [
+        0.5,
+        0.6,
+        0.68,
+        0.72,
+        0.76,
+        0.8,
+        0.82,
+        0.84,
+        0.86,
+        0.88,
+        0.92,
+        0.96,
+        0.98,
+        1.0
+      ],
+      "construction_families": [
+        "fixed_power_flow"
+      ],
+      "severity_support": {
+        "normal-envelope": {
+          "observed_count": 128,
+          "observed_load_levels": [
+            0.72,
+            0.76,
+            0.8,
+            0.82,
+            0.84,
+            0.86,
+            0.88,
+            0.92,
+            0.96,
+            0.98,
+            1.0
+          ]
+        },
+        "operational-stress": {
+          "observed_count": 37,
+          "observed_load_levels": [
+            0.6,
+            0.68,
+            0.72,
+            0.76,
+            1.0
+          ]
+        },
+        "emergency-stress": {
+          "observed_count": 17,
+          "observed_load_levels": [
+            0.5,
+            0.6,
+            0.68
+          ]
+        },
+        "extreme-stress": {
+          "observed_count": 0,
+          "observed_load_levels": []
+        }
+      },
+      "interpretation": "observed support under the preregistered construction families; zero cells are not mathematical impossibility claims"
+    },
+    {
+      "network": "pegase89",
+      "attempted_scenario_count": 73,
+      "converged_scenario_count": 65,
+      "explored_load_levels": [
+        0.75,
+        0.85,
+        0.95,
+        1.0,
+        1.05
+      ],
+      "construction_families": [
+        "fixed_power_flow"
+      ],
+      "severity_support": {
+        "normal-envelope": {
+          "observed_count": 0,
+          "observed_load_levels": []
+        },
+        "operational-stress": {
+          "observed_count": 63,
+          "observed_load_levels": [
+            0.75,
+            0.85,
+            0.95,
+            1.0,
+            1.05
+          ]
+        },
+        "emergency-stress": {
+          "observed_count": 1,
+          "observed_load_levels": [
+            1.0
+          ]
+        },
+        "extreme-stress": {
+          "observed_count": 1,
+          "observed_load_levels": [
+            1.05
+          ]
+        }
+      },
+      "interpretation": "observed support under the preregistered construction families; zero cells are not mathematical impossibility claims"
+    },
+    {
+      "network": "pegase1354",
+      "attempted_scenario_count": 68,
+      "converged_scenario_count": 52,
+      "explored_load_levels": [
+        0.85,
+        0.95,
+        1.0
+      ],
+      "construction_families": [
+        "fixed_power_flow",
+        "normal_ac_opf"
+      ],
+      "severity_support": {
+        "normal-envelope": {
+          "observed_count": 13,
+          "observed_load_levels": [
+            0.85
+          ]
+        },
+        "operational-stress": {
+          "observed_count": 12,
+          "observed_load_levels": [
+            0.95
+          ]
+        },
+        "emergency-stress": {
+          "observed_count": 27,
+          "observed_load_levels": [
+            0.85,
+            0.95,
+            1.0
+          ]
+        },
+        "extreme-stress": {
+          "observed_count": 0,
+          "observed_load_levels": []
+        }
+      },
+      "interpretation": "observed support under the preregistered construction families; zero cells are not mathematical impossibility claims"
+    },
+    {
+      "network": "rte1888",
+      "attempted_scenario_count": 48,
+      "converged_scenario_count": 26,
+      "explored_load_levels": [
+        0.95,
+        1.0
+      ],
+      "construction_families": [
+        "fixed_power_flow"
+      ],
+      "severity_support": {
+        "normal-envelope": {
+          "observed_count": 0,
+          "observed_load_levels": []
+        },
+        "operational-stress": {
+          "observed_count": 0,
+          "observed_load_levels": []
+        },
+        "emergency-stress": {
+          "observed_count": 0,
+          "observed_load_levels": []
+        },
+        "extreme-stress": {
+          "observed_count": 26,
+          "observed_load_levels": [
+            0.95,
+            1.0
+          ]
+        }
+      },
+      "interpretation": "observed support under the preregistered construction families; zero cells are not mathematical impossibility claims"
+    },
+    {
+      "network": "rte2848",
+      "attempted_scenario_count": 64,
+      "converged_scenario_count": 39,
+      "explored_load_levels": [
+        0.95,
+        1.0,
+        1.05
+      ],
+      "construction_families": [
+        "fixed_power_flow"
+      ],
+      "severity_support": {
+        "normal-envelope": {
+          "observed_count": 0,
+          "observed_load_levels": []
+        },
+        "operational-stress": {
+          "observed_count": 0,
+          "observed_load_levels": []
+        },
+        "emergency-stress": {
+          "observed_count": 0,
+          "observed_load_levels": []
+        },
+        "extreme-stress": {
+          "observed_count": 39,
+          "observed_load_levels": [
+            0.95,
+            1.0,
+            1.05
+          ]
+        }
+      },
+      "interpretation": "observed support under the preregistered construction families; zero cells are not mathematical impossibility claims"
+    },
+    {
+      "network": "pegase2869",
+      "attempted_scenario_count": 52,
+      "converged_scenario_count": 39,
+      "explored_load_levels": [
+        0.9,
+        0.95,
+        1.0
+      ],
+      "construction_families": [
+        "fixed_power_flow"
+      ],
+      "severity_support": {
+        "normal-envelope": {
+          "observed_count": 0,
+          "observed_load_levels": []
+        },
+        "operational-stress": {
+          "observed_count": 0,
+          "observed_load_levels": []
+        },
+        "emergency-stress": {
+          "observed_count": 26,
+          "observed_load_levels": [
+            0.9,
+            0.95
+          ]
+        },
+        "extreme-stress": {
+          "observed_count": 13,
+          "observed_load_levels": [
+            1.0
+          ]
+        }
+      },
+      "interpretation": "observed support under the preregistered construction families; zero cells are not mathematical impossibility claims"
+    }
+  ],
+  "full_factorial_diagnostic": {
+    "status": "incomplete",
+    "filled_cell_count": 11,
+    "total_cell_count": 28,
+    "shortage_to_target": 207,
+    "claim": "diagnostic only; the report does not claim that all 28 cells are physically reachable or filled"
+  },
+  "common_support": {
+    "networks": [
+      "illinois200",
+      "pegase1354"
+    ],
+    "severities": [
+      "normal-envelope",
+      "emergency-stress"
+    ],
+    "available_matrix": [
+      [
+        128,
+        17
+      ],
+      [
+        13,
+        27
+      ]
+    ],
+    "selected_matrix": [
+      [
+        13,
+        13
+      ],
+      [
+        13,
+        13
+      ]
+    ],
+    "target_per_cell": 13,
+    "association": {
+      "cramers_v": 0.0,
+      "mutual_information_bits": 0.0
+    },
+    "interpretation": "conditional network-severity association inside the fully observed support block; structural-zero cells are excluded, reported, and never imputed"
+  },
+  "severity_conditioned_maximum_network_support": {
+    "strata": [
+      {
+        "severity": "normal-envelope",
+        "maximum_supported_networks": [
+          "illinois200",
+          "pegase1354"
+        ],
+        "network_count": 2,
+        "target_per_network": 13,
+        "selected_per_network": {
+          "illinois200": 13,
+          "pegase1354": 13
+        },
+        "selected_scenario_ids": {
+          "illinois200": [
+            "illinois200_sdv2_n1_branch_outage_load88_line108",
+            "illinois200_sdv2_n1_branch_outage_load100_line178",
+            "illinois200_sdv2_n1_branch_outage_load100_line89",
+            "illinois200_sdv2_n1_branch_outage_load84_line178",
+            "illinois200_sdv2_n1_branch_outage_load76_line178",
+            "illinois200_sdv2_base_power_flow_load88",
+            "illinois200_sdv2_n1_branch_outage_load100_line2",
+            "illinois200_sdv2_n1_branch_outage_load82_line132",
+            "illinois200_sdv2_n1_branch_outage_load88_line32",
+            "illinois200_sdv2_n1_branch_outage_load76_line170",
+            "illinois200_sdv2_n1_branch_outage_load84_line113",
+            "illinois200_sdv2_n1_branch_outage_load96_line66",
+            "illinois200_sdv2_n1_branch_outage_load98_line178"
+          ],
+          "pegase1354": [
+            "pegase1354_matched_normal_v2_pegase1354_n1_branch_outage_load85_normal_ac_opf_line281",
+            "pegase1354_matched_normal_v2_pegase1354_n1_branch_outage_load85_normal_ac_opf_line212",
+            "pegase1354_matched_normal_v2_pegase1354_n1_branch_outage_load85_normal_ac_opf_line286",
+            "pegase1354_matched_normal_v2_pegase1354_n1_branch_outage_load85_normal_ac_opf_line1254",
+            "pegase1354_matched_normal_v2_pegase1354_n1_branch_outage_load85_normal_ac_opf_line941",
+            "pegase1354_matched_normal_v2_pegase1354_n1_branch_outage_load85_normal_ac_opf_line1588",
+            "pegase1354_matched_normal_v2_pegase1354_n1_branch_outage_load85_normal_ac_opf_line46",
+            "pegase1354_matched_normal_v2_pegase1354_n1_branch_outage_load85_normal_ac_opf_line1690",
+            "pegase1354_matched_normal_v2_pegase1354_n1_branch_outage_load85_normal_ac_opf_line989",
+            "pegase1354_matched_normal_v2_pegase1354_n1_branch_outage_load85_normal_ac_opf_line754",
+            "pegase1354_matched_normal_v2_pegase1354_base_power_flow_load85_normal_ac_opf",
+            "pegase1354_matched_normal_v2_pegase1354_n1_branch_outage_load85_normal_ac_opf_line1750",
+            "pegase1354_matched_normal_v2_pegase1354_n1_branch_outage_load85_normal_ac_opf_line875"
+          ]
+        },
+        "exactly_balanced": true
+      },
+      {
+        "severity": "operational-stress",
+        "maximum_supported_networks": [
+          "illinois200",
+          "pegase89"
+        ],
+        "network_count": 2,
+        "target_per_network": 13,
+        "selected_per_network": {
+          "illinois200": 13,
+          "pegase89": 13
+        },
+        "selected_scenario_ids": {
+          "illinois200": [
+            "illinois200_sdv2_n1_branch_outage_load60_line98",
+            "illinois200_sdv2_n1_branch_outage_load68_line74",
+            "illinois200_sdv2_n1_branch_outage_load68_line89",
+            "illinois200_sdv2_n1_branch_outage_load60_line178",
+            "illinois200_sdv2_base_power_flow_load60",
+            "illinois200_sdv2_n1_branch_outage_load68_line117",
+            "illinois200_sdv2_n1_branch_outage_load76_line70",
+            "illinois200_sdv2_n1_branch_outage_load72_line35",
+            "illinois200_sdv2_n1_branch_outage_load60_line167",
+            "illinois200_sdv2_n1_branch_outage_load60_line89",
+            "illinois200_sdv2_n1_branch_outage_load60_line55",
+            "illinois200_sdv2_n1_branch_outage_load68_line112",
+            "illinois200_sdv2_n1_branch_outage_load72_line89"
+          ],
+          "pegase89": [
+            "pegase89_sdv2_base_power_flow_load105",
+            "pegase89_sdv2_n1_branch_outage_load85_line11",
+            "pegase89_sdv2_n1_branch_outage_load105_line53",
+            "pegase89_sdv2_n1_branch_outage_load75_line21",
+            "pegase89_sdv2_n1_branch_outage_load105_line55",
+            "pegase89_sdv2_n1_branch_outage_load75_line8",
+            "pegase89_sdv2_n1_branch_outage_load85_line51",
+            "pegase89_sdv2_n1_branch_outage_load75_line107",
+            "pegase89_sdv2_n1_branch_outage_load85_line35",
+            "pegase89_sdv2_n1_branch_outage_load75_line60",
+            "pegase89_sdv2_n1_branch_outage_load105_line159",
+            "pegase89_sdv2_n1_branch_outage_load100_line47",
+            "pegase89_sdv2_base_power_flow_load100"
+          ]
+        },
+        "exactly_balanced": true
+      },
+      {
+        "severity": "emergency-stress",
+        "maximum_supported_networks": [
+          "illinois200",
+          "pegase1354",
+          "pegase2869"
+        ],
+        "network_count": 3,
+        "target_per_network": 13,
+        "selected_per_network": {
+          "illinois200": 13,
+          "pegase1354": 13,
+          "pegase2869": 13
+        },
+        "selected_scenario_ids": {
+          "illinois200": [
+            "illinois200_sdv2_n1_branch_outage_load50_line70",
+            "illinois200_sdv2_n1_branch_outage_load50_line120",
+            "illinois200_sdv2_n1_branch_outage_load50_line11",
+            "illinois200_sdv2_n1_branch_outage_load50_line163",
+            "illinois200_sdv2_n1_branch_outage_load50_line32",
+            "illinois200_sdv2_n1_branch_outage_load50_line94",
+            "illinois200_sdv2_n1_branch_outage_load60_line83",
+            "illinois200_sdv2_n1_branch_outage_load50_line178",
+            "illinois200_sdv2_n1_branch_outage_load50_line81",
+            "illinois200_sdv2_base_power_flow_load50",
+            "illinois200_sdv2_n1_branch_outage_load50_line69",
+            "illinois200_sdv2_n1_branch_outage_load50_line83",
+            "illinois200_sdv2_n1_branch_outage_load60_line119"
+          ],
+          "pegase1354": [
+            "pegase1354_sdv2_n1_branch_outage_load100_line1750",
+            "pegase1354_sdv2_n1_branch_outage_load85_line594",
+            "pegase1354_sdv2_n1_branch_outage_load85_line767",
+            "pegase1354_sdv2_n1_branch_outage_load85_line604",
+            "pegase1354_sdv2_n1_branch_outage_load100_line724",
+            "pegase1354_sdv2_n1_branch_outage_load85_line1750",
+            "pegase1354_sdv2_n1_branch_outage_load100_line875",
+            "pegase1354_sdv2_n1_branch_outage_load100_line1013",
+            "pegase1354_sdv2_n1_branch_outage_load100_line644",
+            "pegase1354_sdv2_n1_branch_outage_load100_line557",
+            "pegase1354_sdv2_n1_branch_outage_load85_line1066",
+            "pegase1354_sdv2_base_power_flow_load100",
+            "pegase1354_sdv2_n1_branch_outage_load95_line297"
+          ],
+          "pegase2869": [
+            "pegase2869_sdv2_n1_branch_outage_load95_line3961",
+            "pegase2869_sdv2_n1_branch_outage_load95_line0",
+            "pegase2869_sdv2_n1_branch_outage_load95_line999",
+            "pegase2869_sdv2_n1_branch_outage_load90_line1503",
+            "pegase2869_sdv2_n1_branch_outage_load95_line2742",
+            "pegase2869_sdv2_n1_branch_outage_load95_line3120",
+            "pegase2869_sdv2_n1_branch_outage_load95_line940",
+            "pegase2869_sdv2_n1_branch_outage_load90_line602",
+            "pegase2869_sdv2_base_power_flow_load90",
+            "pegase2869_sdv2_n1_branch_outage_load90_line3503",
+            "pegase2869_sdv2_n1_branch_outage_load90_line127",
+            "pegase2869_sdv2_base_power_flow_load95",
+            "pegase2869_sdv2_n1_branch_outage_load90_line0"
+          ]
+        },
+        "exactly_balanced": true
+      },
+      {
+        "severity": "extreme-stress",
+        "maximum_supported_networks": [
+          "ieee300",
+          "rte1888",
+          "rte2848",
+          "pegase2869"
+        ],
+        "network_count": 4,
+        "target_per_network": 13,
+        "selected_per_network": {
+          "ieee300": 13,
+          "rte1888": 13,
+          "rte2848": 13,
+          "pegase2869": 13
+        },
+        "selected_scenario_ids": {
+          "ieee300": [
+            "ieee300_sdv2_n1_branch_outage_load0p955_line42",
+            "ieee300_sdv2_n1_branch_outage_load95_line244",
+            "ieee300_sdv2_n1_branch_outage_load0p955_line274",
+            "ieee300_sdv2_n1_branch_outage_load95_line20",
+            "ieee300_sdv2_n1_branch_outage_load0p955_line144",
+            "ieee300_sdv2_n1_branch_outage_load95_line282",
+            "ieee300_sdv2_n1_branch_outage_load95_line35",
+            "ieee300_sdv2_n1_branch_outage_load95_line261",
+            "ieee300_sdv2_n1_branch_outage_load95_line212",
+            "ieee300_sdv2_n1_branch_outage_load95_line194",
+            "ieee300_sdv2_n1_branch_outage_load0p955_line273",
+            "ieee300_sdv2_n1_branch_outage_load0p955_line231",
+            "ieee300_sdv2_n1_branch_outage_load0p955_line128"
+          ],
+          "rte1888": [
+            "rte1888_sdv2_n1_branch_outage_load100_line1691",
+            "rte1888_sdv2_n1_branch_outage_load100_line405",
+            "rte1888_sdv2_n1_branch_outage_load95_line570",
+            "rte1888_sdv2_base_power_flow_load95",
+            "rte1888_sdv2_n1_branch_outage_load100_line1406",
+            "rte1888_sdv2_n1_branch_outage_load100_line1360",
+            "rte1888_sdv2_n1_branch_outage_load100_line388",
+            "rte1888_sdv2_n1_branch_outage_load100_line1891",
+            "rte1888_sdv2_n1_branch_outage_load95_line1489",
+            "rte1888_sdv2_n1_branch_outage_load100_line195",
+            "rte1888_sdv2_n1_branch_outage_load100_line1772",
+            "rte1888_sdv2_n1_branch_outage_load95_line1093",
+            "rte1888_sdv2_n1_branch_outage_load95_line1076"
+          ],
+          "rte2848": [
+            "rte2848_sdv2_n1_branch_outage_load95_line2790",
+            "rte2848_sdv2_n1_branch_outage_load100_line2036",
+            "rte2848_sdv2_n1_branch_outage_load95_line2328",
+            "rte2848_sdv2_n1_branch_outage_load100_line1474",
+            "rte2848_sdv2_n1_branch_outage_load100_line925",
+            "rte2848_sdv2_n1_branch_outage_load105_line2366",
+            "rte2848_sdv2_base_power_flow_load100",
+            "rte2848_sdv2_n1_branch_outage_load105_line941",
+            "rte2848_sdv2_n1_branch_outage_load105_line2692",
+            "rte2848_sdv2_n1_branch_outage_load95_line2546",
+            "rte2848_sdv2_n1_branch_outage_load105_line1716",
+            "rte2848_sdv2_n1_branch_outage_load95_line2842",
+            "rte2848_sdv2_base_power_flow_load105"
+          ],
+          "pegase2869": [
+            "pegase2869_sdv2_n1_branch_outage_load100_line3762",
+            "pegase2869_sdv2_n1_branch_outage_load100_line3786",
+            "pegase2869_sdv2_n1_branch_outage_load100_line3871",
+            "pegase2869_sdv2_base_power_flow_load100",
+            "pegase2869_sdv2_n1_branch_outage_load100_line3736",
+            "pegase2869_sdv2_n1_branch_outage_load100_line602",
+            "pegase2869_sdv2_n1_branch_outage_load100_line3805",
+            "pegase2869_sdv2_n1_branch_outage_load100_line1330",
+            "pegase2869_sdv2_n1_branch_outage_load100_line2719",
+            "pegase2869_sdv2_n1_branch_outage_load100_line3042",
+            "pegase2869_sdv2_n1_branch_outage_load100_line2941",
+            "pegase2869_sdv2_n1_branch_outage_load100_line0",
+            "pegase2869_sdv2_n1_branch_outage_load100_line3479"
+          ]
+        },
+        "exactly_balanced": true
+      }
+    ],
+    "selected_scenario_count": 143,
+    "covered_networks": [
+      "ieee300",
+      "illinois200",
+      "pegase1354",
+      "pegase2869",
+      "pegase89",
+      "rte1888",
+      "rte2848"
+    ],
+    "interpretation": "Within each fixed severity, every network with at least the preregistered target count is retained and downsampled to the same count. No absent network-severity cell is imputed."
+  },
+  "matched_scenario_count": 52,
+  "matched_matrix": [
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      13,
+      0,
+      13,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      13,
+      0,
+      13,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "matched_association": {
+    "cramers_v": 0.0,
+    "mutual_information_bits": 0.0
+  },
+  "cells": [
+    {
+      "network": "ieee300",
+      "severity": "normal-envelope",
+      "available": 0,
+      "selected": 0,
+      "target": 13,
+      "full_factorial_shortage": 13,
+      "in_common_support_block": false,
+      "common_support_shortage": null,
+      "candidate_load_levels": [
+        0.7,
+        0.76,
+        0.82,
+        0.88
+      ]
+    },
+    {
+      "network": "ieee300",
+      "severity": "operational-stress",
+      "available": 0,
+      "selected": 0,
+      "target": 13,
+      "full_factorial_shortage": 13,
+      "in_common_support_block": false,
+      "common_support_shortage": null,
+      "candidate_load_levels": [
+        0.88,
+        0.94,
+        1.0,
+        1.06
+      ]
+    },
+    {
+      "network": "ieee300",
+      "severity": "emergency-stress",
+      "available": 0,
+      "selected": 0,
+      "target": 13,
+      "full_factorial_shortage": 13,
+      "in_common_support_block": false,
+      "common_support_shortage": null,
+      "candidate_load_levels": [
+        1.0,
+        1.08,
+        1.16,
+        1.24
+      ]
+    },
+    {
+      "network": "ieee300",
+      "severity": "extreme-stress",
+      "available": 26,
+      "selected": 0,
+      "target": 13,
+      "full_factorial_shortage": 0,
+      "in_common_support_block": false,
+      "common_support_shortage": null,
+      "candidate_load_levels": []
+    },
+    {
+      "network": "illinois200",
+      "severity": "normal-envelope",
+      "available": 128,
+      "selected": 13,
+      "target": 13,
+      "full_factorial_shortage": 0,
+      "in_common_support_block": true,
+      "common_support_shortage": 0,
+      "candidate_load_levels": []
+    },
+    {
+      "network": "illinois200",
+      "severity": "operational-stress",
+      "available": 37,
+      "selected": 0,
+      "target": 13,
+      "full_factorial_shortage": 0,
+      "in_common_support_block": false,
+      "common_support_shortage": null,
+      "candidate_load_levels": []
+    },
+    {
+      "network": "illinois200",
+      "severity": "emergency-stress",
+      "available": 17,
+      "selected": 13,
+      "target": 13,
+      "full_factorial_shortage": 0,
+      "in_common_support_block": true,
+      "common_support_shortage": 0,
+      "candidate_load_levels": []
+    },
+    {
+      "network": "illinois200",
+      "severity": "extreme-stress",
+      "available": 0,
+      "selected": 0,
+      "target": 13,
+      "full_factorial_shortage": 13,
+      "in_common_support_block": false,
+      "common_support_shortage": null,
+      "candidate_load_levels": [
+        1.12,
+        1.2,
+        1.28,
+        1.36
+      ]
+    },
+    {
+      "network": "pegase89",
+      "severity": "normal-envelope",
+      "available": 0,
+      "selected": 0,
+      "target": 13,
+      "full_factorial_shortage": 13,
+      "in_common_support_block": false,
+      "common_support_shortage": null,
+      "candidate_load_levels": [
+        0.7,
+        0.76,
+        0.82,
+        0.88
+      ]
+    },
+    {
+      "network": "pegase89",
+      "severity": "operational-stress",
+      "available": 63,
+      "selected": 0,
+      "target": 13,
+      "full_factorial_shortage": 0,
+      "in_common_support_block": false,
+      "common_support_shortage": null,
+      "candidate_load_levels": []
+    },
+    {
+      "network": "pegase89",
+      "severity": "emergency-stress",
+      "available": 1,
+      "selected": 0,
+      "target": 13,
+      "full_factorial_shortage": 12,
+      "in_common_support_block": false,
+      "common_support_shortage": null,
+      "candidate_load_levels": [
+        1.0,
+        1.08,
+        1.16,
+        1.24
+      ]
+    },
+    {
+      "network": "pegase89",
+      "severity": "extreme-stress",
+      "available": 1,
+      "selected": 0,
+      "target": 13,
+      "full_factorial_shortage": 12,
+      "in_common_support_block": false,
+      "common_support_shortage": null,
+      "candidate_load_levels": [
+        1.12,
+        1.2,
+        1.28,
+        1.36
+      ]
+    },
+    {
+      "network": "pegase1354",
+      "severity": "normal-envelope",
+      "available": 13,
+      "selected": 13,
+      "target": 13,
+      "full_factorial_shortage": 0,
+      "in_common_support_block": true,
+      "common_support_shortage": 0,
+      "candidate_load_levels": []
+    },
+    {
+      "network": "pegase1354",
+      "severity": "operational-stress",
+      "available": 12,
+      "selected": 0,
+      "target": 13,
+      "full_factorial_shortage": 1,
+      "in_common_support_block": false,
+      "common_support_shortage": null,
+      "candidate_load_levels": [
+        0.88,
+        0.94,
+        1.0,
+        1.06
+      ]
+    },
+    {
+      "network": "pegase1354",
+      "severity": "emergency-stress",
+      "available": 27,
+      "selected": 13,
+      "target": 13,
+      "full_factorial_shortage": 0,
+      "in_common_support_block": true,
+      "common_support_shortage": 0,
+      "candidate_load_levels": []
+    },
+    {
+      "network": "pegase1354",
+      "severity": "extreme-stress",
+      "available": 0,
+      "selected": 0,
+      "target": 13,
+      "full_factorial_shortage": 13,
+      "in_common_support_block": false,
+      "common_support_shortage": null,
+      "candidate_load_levels": [
+        1.12,
+        1.2,
+        1.28,
+        1.36
+      ]
+    },
+    {
+      "network": "rte1888",
+      "severity": "normal-envelope",
+      "available": 0,
+      "selected": 0,
+      "target": 13,
+      "full_factorial_shortage": 13,
+      "in_common_support_block": false,
+      "common_support_shortage": null,
+      "candidate_load_levels": [
+        0.7,
+        0.76,
+        0.82,
+        0.88
+      ]
+    },
+    {
+      "network": "rte1888",
+      "severity": "operational-stress",
+      "available": 0,
+      "selected": 0,
+      "target": 13,
+      "full_factorial_shortage": 13,
+      "in_common_support_block": false,
+      "common_support_shortage": null,
+      "candidate_load_levels": [
+        0.88,
+        0.94,
+        1.0,
+        1.06
+      ]
+    },
+    {
+      "network": "rte1888",
+      "severity": "emergency-stress",
+      "available": 0,
+      "selected": 0,
+      "target": 13,
+      "full_factorial_shortage": 13,
+      "in_common_support_block": false,
+      "common_support_shortage": null,
+      "candidate_load_levels": [
+        1.0,
+        1.08,
+        1.16,
+        1.24
+      ]
+    },
+    {
+      "network": "rte1888",
+      "severity": "extreme-stress",
+      "available": 26,
+      "selected": 0,
+      "target": 13,
+      "full_factorial_shortage": 0,
+      "in_common_support_block": false,
+      "common_support_shortage": null,
+      "candidate_load_levels": []
+    },
+    {
+      "network": "rte2848",
+      "severity": "normal-envelope",
+      "available": 0,
+      "selected": 0,
+      "target": 13,
+      "full_factorial_shortage": 13,
+      "in_common_support_block": false,
+      "common_support_shortage": null,
+      "candidate_load_levels": [
+        0.7,
+        0.76,
+        0.82,
+        0.88
+      ]
+    },
+    {
+      "network": "rte2848",
+      "severity": "operational-stress",
+      "available": 0,
+      "selected": 0,
+      "target": 13,
+      "full_factorial_shortage": 13,
+      "in_common_support_block": false,
+      "common_support_shortage": null,
+      "candidate_load_levels": [
+        0.88,
+        0.94,
+        1.0,
+        1.06
+      ]
+    },
+    {
+      "network": "rte2848",
+      "severity": "emergency-stress",
+      "available": 0,
+      "selected": 0,
+      "target": 13,
+      "full_factorial_shortage": 13,
+      "in_common_support_block": false,
+      "common_support_shortage": null,
+      "candidate_load_levels": [
+        1.0,
+        1.08,
+        1.16,
+        1.24
+      ]
+    },
+    {
+      "network": "rte2848",
+      "severity": "extreme-stress",
+      "available": 39,
+      "selected": 0,
+      "target": 13,
+      "full_factorial_shortage": 0,
+      "in_common_support_block": false,
+      "common_support_shortage": null,
+      "candidate_load_levels": []
+    },
+    {
+      "network": "pegase2869",
+      "severity": "normal-envelope",
+      "available": 0,
+      "selected": 0,
+      "target": 13,
+      "full_factorial_shortage": 13,
+      "in_common_support_block": false,
+      "common_support_shortage": null,
+      "candidate_load_levels": [
+        0.7,
+        0.76,
+        0.82,
+        0.88
+      ]
+    },
+    {
+      "network": "pegase2869",
+      "severity": "operational-stress",
+      "available": 0,
+      "selected": 0,
+      "target": 13,
+      "full_factorial_shortage": 13,
+      "in_common_support_block": false,
+      "common_support_shortage": null,
+      "candidate_load_levels": [
+        0.88,
+        0.94,
+        1.0,
+        1.06
+      ]
+    },
+    {
+      "network": "pegase2869",
+      "severity": "emergency-stress",
+      "available": 26,
+      "selected": 0,
+      "target": 13,
+      "full_factorial_shortage": 0,
+      "in_common_support_block": false,
+      "common_support_shortage": null,
+      "candidate_load_levels": []
+    },
+    {
+      "network": "pegase2869",
+      "severity": "extreme-stress",
+      "available": 13,
+      "selected": 0,
+      "target": 13,
+      "full_factorial_shortage": 0,
+      "in_common_support_block": false,
+      "common_support_shortage": null,
+      "candidate_load_levels": []
+    }
+  ],
+  "total_shortage": 207,
+  "common_support_shortage": 0,
+  "resampling_commands": [
+    {
+      "network": "ieee300",
+      "target_severities": [
+        "normal-envelope"
+      ],
+      "construction_family": "normal_ac_opf",
+      "command": "python scripts/generate_extended_topology_stress.py --systems ieee300 --pglib-root third_party/pglib-opf-v23.07 --load-levels 0.70 0.76 0.82 0.88 --dispatch-policy normal_ac_opf --max-lines-per-system 13 --max-attempts-per-stratum 128 --seed 20260723 --scenario-namespace matched_normal_v2_ieee300 --output-json simulation_outputs/topology_stress/matched_normal_pool_ieee300.json --attempts-json reports/matched_normal_attempts_ieee300.json --report-json reports/matched_normal_audit_ieee300.json --report-md reports/matched_normal_audit_ieee300.md"
+    },
+    {
+      "network": "ieee300",
+      "target_severities": [
+        "operational-stress",
+        "emergency-stress"
+      ],
+      "construction_family": "load_generation_linked_voltage_setpoint_sweep",
+      "command": "python scripts/generate_extended_topology_stress.py --systems ieee300 --pglib-root third_party/pglib-opf-v23.07 --load-levels 0.88 0.94 1.00 1.06 1.08 1.16 1.24 --scale-generation-with-load --generator-voltage-factors 0.98 1.00 1.02 --max-lines-per-system 13 --max-attempts-per-stratum 128 --seed 20260723 --scenario-namespace matched_stress_v2_ieee300 --output-json simulation_outputs/topology_stress/matched_stress_pool_ieee300.json --attempts-json reports/matched_stress_attempts_ieee300.json --report-json reports/matched_stress_audit_ieee300.json --report-md reports/matched_stress_audit_ieee300.md"
+    },
+    {
+      "network": "illinois200",
+      "target_severities": [
+        "extreme-stress"
+      ],
+      "construction_family": "load_generation_linked_voltage_setpoint_sweep",
+      "command": "python scripts/generate_extended_topology_stress.py --systems illinois200 --pglib-root third_party/pglib-opf-v23.07 --load-levels 1.12 1.20 1.28 1.36 --scale-generation-with-load --generator-voltage-factors 0.98 1.00 1.02 --max-lines-per-system 13 --max-attempts-per-stratum 128 --seed 20260723 --scenario-namespace matched_stress_v2_illinois200 --output-json simulation_outputs/topology_stress/matched_stress_pool_illinois200.json --attempts-json reports/matched_stress_attempts_illinois200.json --report-json reports/matched_stress_audit_illinois200.json --report-md reports/matched_stress_audit_illinois200.md"
+    },
+    {
+      "network": "pegase89",
+      "target_severities": [
+        "normal-envelope"
+      ],
+      "construction_family": "normal_ac_opf",
+      "command": "python scripts/generate_extended_topology_stress.py --systems pegase89 --pglib-root third_party/pglib-opf-v23.07 --load-levels 0.70 0.76 0.82 0.88 --dispatch-policy normal_ac_opf --max-lines-per-system 13 --max-attempts-per-stratum 128 --seed 20260723 --scenario-namespace matched_normal_v2_pegase89 --output-json simulation_outputs/topology_stress/matched_normal_pool_pegase89.json --attempts-json reports/matched_normal_attempts_pegase89.json --report-json reports/matched_normal_audit_pegase89.json --report-md reports/matched_normal_audit_pegase89.md"
+    },
+    {
+      "network": "pegase89",
+      "target_severities": [
+        "emergency-stress",
+        "extreme-stress"
+      ],
+      "construction_family": "load_generation_linked_voltage_setpoint_sweep",
+      "command": "python scripts/generate_extended_topology_stress.py --systems pegase89 --pglib-root third_party/pglib-opf-v23.07 --load-levels 1.00 1.08 1.12 1.16 1.20 1.24 1.28 1.36 --scale-generation-with-load --generator-voltage-factors 0.98 1.00 1.02 --max-lines-per-system 13 --max-attempts-per-stratum 128 --seed 20260723 --scenario-namespace matched_stress_v2_pegase89 --output-json simulation_outputs/topology_stress/matched_stress_pool_pegase89.json --attempts-json reports/matched_stress_attempts_pegase89.json --report-json reports/matched_stress_audit_pegase89.json --report-md reports/matched_stress_audit_pegase89.md"
+    },
+    {
+      "network": "pegase1354",
+      "target_severities": [
+        "operational-stress",
+        "extreme-stress"
+      ],
+      "construction_family": "load_generation_linked_voltage_setpoint_sweep",
+      "command": "python scripts/generate_extended_topology_stress.py --systems pegase1354 --pglib-root third_party/pglib-opf-v23.07 --load-levels 0.88 0.94 1.00 1.06 1.12 1.20 1.28 1.36 --scale-generation-with-load --generator-voltage-factors 0.98 1.00 1.02 --max-lines-per-system 13 --max-attempts-per-stratum 128 --seed 20260723 --scenario-namespace matched_stress_v2_pegase1354 --output-json simulation_outputs/topology_stress/matched_stress_pool_pegase1354.json --attempts-json reports/matched_stress_attempts_pegase1354.json --report-json reports/matched_stress_audit_pegase1354.json --report-md reports/matched_stress_audit_pegase1354.md"
+    },
+    {
+      "network": "rte1888",
+      "target_severities": [
+        "normal-envelope"
+      ],
+      "construction_family": "normal_ac_opf",
+      "command": "python scripts/generate_extended_topology_stress.py --systems rte1888 --pglib-root third_party/pglib-opf-v23.07 --load-levels 0.70 0.76 0.82 0.88 --dispatch-policy normal_ac_opf --max-lines-per-system 13 --max-attempts-per-stratum 128 --seed 20260723 --scenario-namespace matched_normal_v2_rte1888 --output-json simulation_outputs/topology_stress/matched_normal_pool_rte1888.json --attempts-json reports/matched_normal_attempts_rte1888.json --report-json reports/matched_normal_audit_rte1888.json --report-md reports/matched_normal_audit_rte1888.md"
+    },
+    {
+      "network": "rte1888",
+      "target_severities": [
+        "operational-stress",
+        "emergency-stress"
+      ],
+      "construction_family": "load_generation_linked_voltage_setpoint_sweep",
+      "command": "python scripts/generate_extended_topology_stress.py --systems rte1888 --pglib-root third_party/pglib-opf-v23.07 --load-levels 0.88 0.94 1.00 1.06 1.08 1.16 1.24 --scale-generation-with-load --generator-voltage-factors 0.98 1.00 1.02 --max-lines-per-system 13 --max-attempts-per-stratum 128 --seed 20260723 --scenario-namespace matched_stress_v2_rte1888 --output-json simulation_outputs/topology_stress/matched_stress_pool_rte1888.json --attempts-json reports/matched_stress_attempts_rte1888.json --report-json reports/matched_stress_audit_rte1888.json --report-md reports/matched_stress_audit_rte1888.md"
+    },
+    {
+      "network": "rte2848",
+      "target_severities": [
+        "normal-envelope"
+      ],
+      "construction_family": "normal_ac_opf",
+      "command": "python scripts/generate_extended_topology_stress.py --systems rte2848 --pglib-root third_party/pglib-opf-v23.07 --load-levels 0.70 0.76 0.82 0.88 --dispatch-policy normal_ac_opf --max-lines-per-system 13 --max-attempts-per-stratum 128 --seed 20260723 --scenario-namespace matched_normal_v2_rte2848 --output-json simulation_outputs/topology_stress/matched_normal_pool_rte2848.json --attempts-json reports/matched_normal_attempts_rte2848.json --report-json reports/matched_normal_audit_rte2848.json --report-md reports/matched_normal_audit_rte2848.md"
+    },
+    {
+      "network": "rte2848",
+      "target_severities": [
+        "operational-stress",
+        "emergency-stress"
+      ],
+      "construction_family": "load_generation_linked_voltage_setpoint_sweep",
+      "command": "python scripts/generate_extended_topology_stress.py --systems rte2848 --pglib-root third_party/pglib-opf-v23.07 --load-levels 0.88 0.94 1.00 1.06 1.08 1.16 1.24 --scale-generation-with-load --generator-voltage-factors 0.98 1.00 1.02 --max-lines-per-system 13 --max-attempts-per-stratum 128 --seed 20260723 --scenario-namespace matched_stress_v2_rte2848 --output-json simulation_outputs/topology_stress/matched_stress_pool_rte2848.json --attempts-json reports/matched_stress_attempts_rte2848.json --report-json reports/matched_stress_audit_rte2848.json --report-md reports/matched_stress_audit_rte2848.md"
+    },
+    {
+      "network": "pegase2869",
+      "target_severities": [
+        "normal-envelope"
+      ],
+      "construction_family": "normal_ac_opf",
+      "command": "python scripts/generate_extended_topology_stress.py --systems pegase2869 --pglib-root third_party/pglib-opf-v23.07 --load-levels 0.70 0.76 0.82 0.88 --dispatch-policy normal_ac_opf --max-lines-per-system 13 --max-attempts-per-stratum 128 --seed 20260723 --scenario-namespace matched_normal_v2_pegase2869 --output-json simulation_outputs/topology_stress/matched_normal_pool_pegase2869.json --attempts-json reports/matched_normal_attempts_pegase2869.json --report-json reports/matched_normal_audit_pegase2869.json --report-md reports/matched_normal_audit_pegase2869.md"
+    },
+    {
+      "network": "pegase2869",
+      "target_severities": [
+        "operational-stress"
+      ],
+      "construction_family": "load_generation_linked_voltage_setpoint_sweep",
+      "command": "python scripts/generate_extended_topology_stress.py --systems pegase2869 --pglib-root third_party/pglib-opf-v23.07 --load-levels 0.88 0.94 1.00 1.06 --scale-generation-with-load --generator-voltage-factors 0.98 1.00 1.02 --max-lines-per-system 13 --max-attempts-per-stratum 128 --seed 20260723 --scenario-namespace matched_stress_v2_pegase2869 --output-json simulation_outputs/topology_stress/matched_stress_pool_pegase2869.json --attempts-json reports/matched_stress_attempts_pegase2869.json --report-json reports/matched_stress_audit_pegase2869.json --report-md reports/matched_stress_audit_pegase2869.md"
+    }
+  ],
+  "hard_gates": {
+    "all_seven_external_networks_observed": true,
+    "all_four_severity_classes_observed_globally": true,
+    "common_support_has_at_least_two_networks": true,
+    "common_support_has_at_least_two_severities": true,
+    "common_support_cells_reach_preregistered_target": true,
+    "common_support_selection_exactly_balanced": true,
+    "conditional_network_severity_cramers_v_zero": true,
+    "every_severity_has_at_least_two_supported_networks": true,
+    "severity_conditioned_selections_exactly_balanced": true,
+    "all_seven_networks_covered_across_severity_conditioned_support": true,
+    "all_external_branch_ratings_source_bound": true,
+    "all_converged_severities_use_source_bound_ratings": true
+  },
+  "claim_boundary": "Seven-network external coverage and four global severity classes are preserved. Deconfounding is claimed only inside the reported common-support block, not across unobserved network-severity cells.",
+  "additional_sources": [
+    {
+      "path": "/data/gaiav2/simulation_outputs/topology_stress/matched_normal_pool_pegase1354.json",
+      "sha256": "5b93cce12bb7246b08a81d4753319678e8e312736311399c3393947da1d8ae01"
+    }
+  ],
+  "pglib_repository": {
+    "repository": "https://github.com/power-grid-lib/pglib-opf",
+    "commit": "dc6be4b2f85ca0e776952ec22cbd4c22396ea5a3",
+    "license": "CC-BY-4.0 for data; MIT for software",
+    "license_path": "third_party/pglib-opf-v23.07/LICENSE",
+    "license_sha256": "95b1cd9fee1676221d74f7c0cbba622d98ac098e9b317b3848113ef4356ab4fd"
+  },
+  "rating_override": null
+}

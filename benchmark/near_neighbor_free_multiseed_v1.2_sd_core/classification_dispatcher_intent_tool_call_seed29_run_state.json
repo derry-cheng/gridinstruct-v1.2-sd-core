@@ -1,0 +1,66 @@
+{
+  "generated_at": "2026-08-06T11:11:51.935828+00:00",
+  "run_spec": {
+    "task": "dispatcher_intent_tool_call",
+    "family": "classification",
+    "seed": 29,
+    "command": [
+      "/opt/homebrew/Caskroom/miniconda/base/bin/python",
+      "scripts/run_transformer_classifier_baseline.py",
+      "--task-type",
+      "dispatcher_intent_tool_call",
+      "--train",
+      "/tmp/gaiav2_near_neighbor_free.qCa31e/train.jsonl",
+      "--validation",
+      "/tmp/gaiav2_near_neighbor_free.qCa31e/validation.jsonl",
+      "--test",
+      "/tmp/gaiav2_near_neighbor_free.qCa31e/test.jsonl",
+      "--model-name",
+      "/Users/lemon/.cache/huggingface/hub/models--distilbert-base-uncased/snapshots/12040accade4e8a0f71eabdb258fecc2e7e948be",
+      "--epochs",
+      "1",
+      "--batch-size",
+      "128",
+      "--learning-rate",
+      "5e-5",
+      "--max-length",
+      "128",
+      "--seed",
+      "29",
+      "--input-profile",
+      "natural",
+      "--local-files-only",
+      "--skip-latest-alias",
+      "--output-prefix",
+      "benchmark/near_neighbor_free_multiseed_v1.2_sd_core/classification_dispatcher_intent_tool_call_seed29",
+      "--experiment-dir",
+      "experiments/near_neighbor_free_multiseed_v1.2_sd_core/classification_dispatcher_intent_tool_call/seed29"
+    ],
+    "input_sha256": {
+      "train": "e636bee84de0c4a492bfd0de5117d1a23617d462ded02ee621554e213c84f6f3",
+      "validation": "db714117ba820cb0eaf3d99a829250238364d98e6277b34cc8d127ded1b8c149",
+      "test": "894453180029e16508561612ce839e367dfb3d055d82b82a45a572e32cbb8708"
+    },
+    "suite_script_sha256": "6486036f9773c678728104b0fd5fc42acc3b26c1b2f9fe37689530283efdae61",
+    "runner_script_sha256": "e46680684ebac62f1843242b90034a8f175b92a3367ad7f8edb7e2720f8639f7",
+    "model_revision": {
+      "model_name": "distilbert-base-uncased",
+      "snapshot": "/Users/lemon/.cache/huggingface/hub/models--distilbert-base-uncased/snapshots/12040accade4e8a0f71eabdb258fecc2e7e948be",
+      "member_count": 5,
+      "sha256": "ad1adf0a5b06cf01a40d74eb6b0b382192a451fe804596147865bd4051b5ff42"
+    },
+    "environment_versions": {
+      "python": "3.12.2",
+      "torch": "2.3.0",
+      "transformers": "4.40.1",
+      "scikit-learn": "1.4.2",
+      "pandapower": "2.14.11",
+      "lm-format-enforcer": null
+    }
+  },
+  "run_spec_sha256": "bd6809be11c53eed45ddd623a3f43db923fe79b0a1d1ff48ff55f101364b5832",
+  "prediction_sha256": "aea3dfd8477300f668254a9b21f546356795bd8164db2865d5b6d76d7b9c084d",
+  "prediction_count": 207,
+  "unique_prediction_count": 207,
+  "report_sha256": "bca305820f53aca6e081caf0e5909196d4253cfbf530453157dbcd0b879dbad4"
+}

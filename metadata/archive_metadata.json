@@ -1,0 +1,20 @@
+{
+  "generated_at": "1970-01-01T00:00:00+00:00",
+  "timestamp_policy": "deterministic SOURCE_DATE_EPOCH=0 archive metadata",
+  "title": "GridInstruct code and data generation release",
+  "version": "1.0",
+  "release_type": "versioned GitHub code and data archive",
+  "license_data": "See LICENSE-DATA",
+  "license_code": "See LICENSE-CODE",
+  "public_repository_url": "https://github.com/derry-cheng/gridinstruct-v1.2-sd-core",
+  "data_doi": null,
+  "archived_code_release_doi": null,
+  "release_tag": "v1.0",
+  "keywords": [
+    "power dispatch",
+    "instruction dataset",
+    "IEEE test systems",
+    "data generation",
+    "power-grid dispatch"
+  ]
+}

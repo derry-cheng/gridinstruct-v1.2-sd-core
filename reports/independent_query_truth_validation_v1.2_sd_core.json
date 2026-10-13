@@ -1,0 +1,54 @@
+{
+  "generated_at": "2026-08-28T20:59:33.726033+00:00",
+  "status": "pass",
+  "implementation_independence": "separate parser and query executor that do not import generator/repair functions; electrical recomputation still uses the same pandapower case family and is an implementation-branch check",
+  "dataset": "data/gridinstruct_v1.2_sd_core_en.jsonl",
+  "scenarios": "simulation_outputs/contingency/scenarios_converged.json",
+  "query_records": 17766,
+  "checked_query_records": 17764,
+  "unique_query_scenarios": 2453,
+  "recomputed_scenarios": 2452,
+  "unreplayed_scenario_count": 1,
+  "unreplayed_scenarios": [
+    {
+      "scenario_id": "ieee30_n1_transformer_outage_load100_trafoidx_2",
+      "reason": "scenario_registry_marks_query_truth_incomplete",
+      "solver_status": "unsupplied_island",
+      "failure_class": "unsupplied_island"
+    }
+  ],
+  "unreplayed_query_record_count": 2,
+  "simulation_error_count": 0,
+  "simulation_errors": [],
+  "answer_mismatch_count": 0,
+  "answer_mismatch_examples": [],
+  "replay_solver_counts": {
+    "nr_q_lims": 2414,
+    "iwamoto_nr_no_q_lims": 38
+  },
+  "records_by_filter": {
+    "loading_percent > 100": 6952,
+    "vm_pu < 0.95": 5406,
+    "violation_type != none": 5406
+  },
+  "overload_records_by_equipment_scope": {
+    "all": 3249,
+    "line": 2132,
+    "transformer": 1571
+  },
+  "required_filter_coverage": [
+    "loading_percent > 100",
+    "violation_type != none",
+    "vm_pu < 0.95"
+  ],
+  "required_overload_equipment_scope_coverage": [
+    "all",
+    "line",
+    "transformer"
+  ],
+  "comparison": "complete-set equality with device IDs and values rounded to 1e-5",
+  "contract_schema_version": "query-contract-v3",
+  "dataset_sha256": "18a4d36153f9d77ae9b26744978a7bea27138aee048d1b12906335797e908013",
+  "scenario_truth_sha256": "8f97a66cb91fea81fd495931b2af2e5eb4e5a5027a989c315c5523694fee93af",
+  "query_projection_sha256": "fb9d260b2887942d02bd9b3d72426b7051ac887a887fbf714f8e0ae71dd3ad06"
+}

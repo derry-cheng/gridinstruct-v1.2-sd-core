@@ -1,0 +1,170 @@
+{
+  "generated_at": "2026-08-28T19:56:12.978899+00:00",
+  "status": "pass",
+  "source": "data/gridinstruct_v1.2_sd_core_en.jsonl",
+  "source_sha256": "18a4d36153f9d77ae9b26744978a7bea27138aee048d1b12906335797e908013",
+  "split_prefix": "data/v1.2_sd_core_near_neighbor_free",
+  "threshold": 0.85,
+  "records": 95479,
+  "task_counts": {
+    "train": {
+      "dispatcher_intent_tool_call": 1,
+      "intelligent_data_query": 105,
+      "operation_ticket_check": 3830,
+      "regulation_compliance_check": 70,
+      "regulation_qa": 2548
+    },
+    "validation": {
+      "intelligent_data_query": 5,
+      "operation_ticket_check": 411,
+      "regulation_compliance_check": 8,
+      "regulation_qa": 395
+    },
+    "test": {
+      "intelligent_data_query": 6,
+      "operation_ticket_check": 492,
+      "regulation_compliance_check": 6,
+      "regulation_qa": 316
+    },
+    "ood_test": {
+      "auxiliary_decision": 18087,
+      "dispatcher_intent_tool_call": 19772,
+      "intelligent_data_query": 17650,
+      "operation_ticket_check": 6148,
+      "regulation_compliance_check": 24683,
+      "regulation_qa": 946
+    }
+  },
+  "classification_label_counts": {
+    "operation_ticket_check": {
+      "train": {
+        "compliant": 1553,
+        "compliant_with_monitoring": 752,
+        "non_compliant": 1525
+      },
+      "validation": {
+        "compliant": 196,
+        "compliant_with_monitoring": 79,
+        "non_compliant": 136
+      },
+      "test": {
+        "compliant": 205,
+        "compliant_with_monitoring": 84,
+        "non_compliant": 203
+      },
+      "ood_test": {
+        "compliant": 817,
+        "compliant_with_monitoring": 4034,
+        "non_compliant": 1297
+      }
+    },
+    "regulation_compliance_check": {
+      "train": {
+        "compliant": 5,
+        "compliant_with_monitoring": 58,
+        "non_compliant": 7
+      },
+      "validation": {
+        "compliant": 3,
+        "compliant_with_monitoring": 5
+      },
+      "test": {
+        "compliant_with_monitoring": 4,
+        "non_compliant": 2
+      },
+      "ood_test": {
+        "compliant": 1046,
+        "compliant_with_monitoring": 10671,
+        "non_compliant": 12966
+      }
+    },
+    "dispatcher_intent_tool_call": {
+      "train": {
+        "mitigate_violations": 1
+      },
+      "validation": {},
+      "test": {},
+      "ood_test": {
+        "diagnose_and_dispatch": 6613,
+        "mitigate_violations": 6588,
+        "security_check_and_redispatch": 6571
+      }
+    }
+  },
+  "exact_normalized_surface_collisions": {
+    "train__validation": 0,
+    "train__test": 0,
+    "validation__test": 0
+  },
+  "exact_character_5gram_jaccard_over_candidates": {
+    "train__validation": {
+      "reference_records": 3000,
+      "query_records": 819,
+      "candidate_pairs_examined": 2457000,
+      "candidate_retrieval": "exact sparse binary character-5-gram matrix product over every pair in the deterministic sample",
+      "max_exact_character_5gram_jaccard": 0.9384993849938499,
+      "max_pair": [
+        "gridinstruct_v01_ticket_01919__plus12_operation_cf_1919",
+        "gridinstruct_v01_ticket_00191__plus12_operation_cf_191"
+      ],
+      "query_rows_at_or_above_threshold": 62,
+      "threshold": 0.85
+    },
+    "train__test": {
+      "reference_records": 3000,
+      "query_records": 820,
+      "candidate_pairs_examined": 2460000,
+      "candidate_retrieval": "exact sparse binary character-5-gram matrix product over every pair in the deterministic sample",
+      "max_exact_character_5gram_jaccard": 0.937244201909959,
+      "max_pair": [
+        "gridinstruct_v01_ticket_01910",
+        "gridinstruct_v01_ticket_00470"
+      ],
+      "query_rows_at_or_above_threshold": 77,
+      "threshold": 0.85
+    },
+    "validation__test": {
+      "reference_records": 819,
+      "query_records": 820,
+      "candidate_pairs_examined": 671580,
+      "candidate_retrieval": "exact sparse binary character-5-gram matrix product over every pair in the deterministic sample",
+      "max_exact_character_5gram_jaccard": 0.9629629629629629,
+      "max_pair": [
+        "gridinstruct_v01_regqa_01301",
+        "gridinstruct_v01_regqa_01306"
+      ],
+      "query_rows_at_or_above_threshold": 12,
+      "threshold": 0.85
+    },
+    "train__ood_sample": {
+      "reference_records": 819,
+      "query_records": 10000,
+      "candidate_pairs_examined": 8190000,
+      "candidate_retrieval": "exact sparse binary character-5-gram matrix product over every pair in the deterministic sample",
+      "max_exact_character_5gram_jaccard": 0.9352078239608802,
+      "max_pair": [
+        "gridinstruct_v01_ticket_01901",
+        "gridinstruct_v01_ticket_03053"
+      ],
+      "query_rows_at_or_above_threshold": 11,
+      "threshold": 0.85
+    }
+  },
+  "lexical_similarity_warning_count": 162,
+  "ood_query_sample": {
+    "sample_records": 10000,
+    "selection": "lowest SHA-256 of balanced-pair-sample|record_id",
+    "selection_sha256": "4b4e0391fd2da6f9395769396602e0e421437ebf245ae4e6523a9902f7ac2a1e"
+  },
+  "pair_query_sample": {
+    "train__validation": 819,
+    "train__test": 820,
+    "train__ood": 10000,
+    "selection": "lowest SHA-256 of balanced-pair-sample|record_id"
+  },
+  "pair_reference_sample": {
+    "records_per_pair": 3000,
+    "selection": "lowest SHA-256 of balanced-pair-sample|record_id"
+  },
+  "interpretation": "Exact normalized-surface checks cover all cross-split rows and define the pass gate. Exact character-5-gram Jaccard is evaluated on deterministic query samples and retained as a warning diagnostic; high lexical similarity does not establish semantic dependence or physical-label validity, and it is not silently converted into an exact-overlap failure."
+}

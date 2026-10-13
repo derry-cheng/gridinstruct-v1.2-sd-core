@@ -1,0 +1,95 @@
+# Local credentials and machine-specific state
+.env
+.env.*
+!.env.example
+.DS_Store
+.aris/
+.claude/
+.release-recovery/
+
+# Python and test caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Large data and prediction files are distributed in the GitHub release archive.
+# Keep reproducible scripts and compact reports in ordinary Git history.
+data/*.jsonl
+data/**/*.jsonl
+data/*.csv
+data/**/*.csv
+simulation_outputs/
+benchmark/**/predictions/
+benchmark/**/checkpoints/
+benchmark/**/*.pt
+benchmark/**/*.bin
+benchmark/**/*.safetensors
+benchmark/**/*_predictions.jsonl
+metadata/*source_group*.csv
+
+# Reproducible build products and local logs
+paper/**/build/
+paper/**/build_embedded/
+paper/**/build_embedded_*/
+paper/**/main_with_bbl.tex
+paper/**/*.aux
+paper/**/*.bbl
+paper/**/*.blg
+paper/**/*.fls
+paper/**/*.fdb_latexmk
+paper/**/*.log
+paper/**/*.out
+paper/**/*.synctex.gz
+logs/
+tmp/
+
+# Local archive copies; the release script recreates them deterministically
+release/*.tar.gz
+reports/*_attempts_*.json
+
+# Human-review materials and sampling frames remain local submission materials.
+# Author confirmation of review does not create a published row-level ledger.
+review_packages/**/sampling_frame.jsonl
+
+# Submission materials are maintained outside the code/data repository.
+# Keep the local manuscript and editable artwork available without tracking
+# them in Git or retaining them in future commits.
+/paper/
+/figures/
+/review_packages/
+/review-stage/
+/docs/PAPER_*
+/docs/SCIENTIFIC_DATA*
+/docs/SD_*
+/docs/REVIEW_ISSUE*
+/docs/gridinstruct_scientific_data_outline.md
+/reports/energy_ai_*
+/reports/revision_closeout_20261001.md
+/scripts/audit_energy_ai_repository.py
+/reports/manuscript_*
+/reports/scientific_data_*
+/reports/expert_review*
+/reports/human_expert*
+/reports/llm_review*
+/reports/sd_*
+/reports/SD_*
+/reports/claim_evidence*
+/reports/release_claim_alignment*
+/reports/current_quality_snapshot*
+/metadata/manuscript_claim_contract.json
+/metadata/paper_outline_alignment.json
+/metadata/expert_review_protocol.json
+/scripts/audit_manuscript*.py
+/scripts/audit_scientific_data_submission.py
+/scripts/sync_manuscript_claims_from_evidence.py
+/scripts/audit_expert_review*.py
+/scripts/compute_expert_review_stats.py
+/scripts/run_llm_review_pipeline.py
+/scripts/sample_stratified_expert_review.py
+/scripts/create_international_rule_review_assignments.py
+/scripts/build_reviewer_access_manifest.py
+/scripts/finalize_external_deposition.py
+/tests/test_manuscript*.py
+/tests/test_scientific_data_submission*.py

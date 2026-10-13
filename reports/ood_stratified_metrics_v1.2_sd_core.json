@@ -1,0 +1,311 @@
+{
+  "generated_at": "2026-07-31T10:11:05.123023+00:00",
+  "status": "pass",
+  "ood": "data/v1.2_sd_core_ood_test_en.jsonl",
+  "predictions": "benchmark/v1.2_sd_core_tfidf_ood_predictions.jsonl",
+  "missing_prediction_ids": [],
+  "missing_prediction_id_count": 0,
+  "strata": {
+    "equipment_contingency_only": {
+      "records": 496,
+      "task_metrics": {
+        "auxiliary_decision": {
+          "n": 124,
+          "exact_match": 0.14516129032258066,
+          "token_f1": 0.5552879013026716
+        },
+        "dispatcher_intent_tool_call": {
+          "n": 124,
+          "accuracy": 1.0,
+          "macro_f1": 1.0
+        },
+        "intelligent_data_query": {
+          "n": 124,
+          "exact_match": 0.0,
+          "token_f1": 0.6442715531588257
+        },
+        "regulation_compliance_check": {
+          "n": 124,
+          "accuracy": 0.9193548387096774,
+          "macro_f1": 0.9193338537600833
+        }
+      }
+    },
+    "external_network::IEEE300": {
+      "records": 560,
+      "task_metrics": {
+        "auxiliary_decision": {
+          "n": 140,
+          "exact_match": 0.2571428571428571,
+          "token_f1": 0.5784675808951533
+        },
+        "dispatcher_intent_tool_call": {
+          "n": 140,
+          "accuracy": 1.0,
+          "macro_f1": 1.0
+        },
+        "intelligent_data_query": {
+          "n": 140,
+          "exact_match": 0.0,
+          "token_f1": 0.483083857228423
+        },
+        "regulation_compliance_check": {
+          "n": 140,
+          "accuracy": 0.8071428571428572,
+          "macro_f1": 0.7748793996783991
+        }
+      }
+    },
+    "external_network::ILLINOIS200": {
+      "records": 2912,
+      "task_metrics": {
+        "auxiliary_decision": {
+          "n": 728,
+          "exact_match": 0.19642857142857142,
+          "token_f1": 0.557224784015102
+        },
+        "dispatcher_intent_tool_call": {
+          "n": 728,
+          "accuracy": 1.0,
+          "macro_f1": 1.0
+        },
+        "intelligent_data_query": {
+          "n": 728,
+          "exact_match": 0.0,
+          "token_f1": 0.772694626525163
+        },
+        "regulation_compliance_check": {
+          "n": 728,
+          "accuracy": 0.7129120879120879,
+          "macro_f1": 0.7060031795643488
+        }
+      }
+    },
+    "external_network::PEGASE1354": {
+      "records": 1056,
+      "task_metrics": {
+        "auxiliary_decision": {
+          "n": 264,
+          "exact_match": 0.15151515151515152,
+          "token_f1": 0.5504865811479701
+        },
+        "dispatcher_intent_tool_call": {
+          "n": 264,
+          "accuracy": 1.0,
+          "macro_f1": 1.0
+        },
+        "intelligent_data_query": {
+          "n": 264,
+          "exact_match": 0.0,
+          "token_f1": 0.5072068622179849
+        },
+        "regulation_compliance_check": {
+          "n": 264,
+          "accuracy": 0.8977272727272727,
+          "macro_f1": 0.8793643271785672
+        }
+      }
+    },
+    "external_network::PEGASE2869": {
+      "records": 624,
+      "task_metrics": {
+        "auxiliary_decision": {
+          "n": 156,
+          "exact_match": 0.21794871794871795,
+          "token_f1": 0.564477194869054
+        },
+        "dispatcher_intent_tool_call": {
+          "n": 156,
+          "accuracy": 1.0,
+          "macro_f1": 1.0
+        },
+        "intelligent_data_query": {
+          "n": 156,
+          "exact_match": 0.0,
+          "token_f1": 0.48307042476455436
+        },
+        "regulation_compliance_check": {
+          "n": 156,
+          "accuracy": 0.8653846153846154,
+          "macro_f1": 0.8462765707850406
+        }
+      }
+    },
+    "external_network::PEGASE89": {
+      "records": 1472,
+      "task_metrics": {
+        "auxiliary_decision": {
+          "n": 368,
+          "exact_match": 0.20380434782608695,
+          "token_f1": 0.5656238235941758
+        },
+        "dispatcher_intent_tool_call": {
+          "n": 368,
+          "accuracy": 1.0,
+          "macro_f1": 1.0
+        },
+        "intelligent_data_query": {
+          "n": 368,
+          "exact_match": 0.0,
+          "token_f1": 0.7083596179893327
+        },
+        "regulation_compliance_check": {
+          "n": 368,
+          "accuracy": 0.8369565217391305,
+          "macro_f1": 0.5658508568347517
+        }
+      }
+    },
+    "external_network::RTE1888": {
+      "records": 544,
+      "task_metrics": {
+        "auxiliary_decision": {
+          "n": 136,
+          "exact_match": 0.22058823529411764,
+          "token_f1": 0.575680795571908
+        },
+        "dispatcher_intent_tool_call": {
+          "n": 136,
+          "accuracy": 1.0,
+          "macro_f1": 1.0
+        },
+        "intelligent_data_query": {
+          "n": 136,
+          "exact_match": 0.0,
+          "token_f1": 0.49706019213740843
+        },
+        "regulation_compliance_check": {
+          "n": 136,
+          "accuracy": 0.8823529411764706,
+          "macro_f1": 0.8699497967965575
+        }
+      }
+    },
+    "external_network::RTE2848": {
+      "records": 624,
+      "task_metrics": {
+        "auxiliary_decision": {
+          "n": 156,
+          "exact_match": 0.21153846153846154,
+          "token_f1": 0.5590211017228288
+        },
+        "dispatcher_intent_tool_call": {
+          "n": 156,
+          "accuracy": 1.0,
+          "macro_f1": 1.0
+        },
+        "intelligent_data_query": {
+          "n": 156,
+          "exact_match": 0.0,
+          "token_f1": 0.5056679801097745
+        },
+        "regulation_compliance_check": {
+          "n": 156,
+          "accuracy": 0.8397435897435898,
+          "macro_f1": 0.8278525711763407
+        }
+      }
+    },
+    "external_only": {
+      "records": 7792,
+      "task_metrics": {
+        "auxiliary_decision": {
+          "n": 1948,
+          "exact_match": 0.20071868583162217,
+          "token_f1": 0.5614381165606516
+        },
+        "dispatcher_intent_tool_call": {
+          "n": 1948,
+          "accuracy": 1.0,
+          "macro_f1": 1.0
+        },
+        "intelligent_data_query": {
+          "n": 1948,
+          "exact_match": 0.0,
+          "token_f1": 0.6399259530076992
+        },
+        "regulation_compliance_check": {
+          "n": 1948,
+          "accuracy": 0.8023613963039015,
+          "macro_f1": 0.7907342610472773
+        }
+      }
+    },
+    "high_load_only": {
+      "records": 16076,
+      "task_metrics": {
+        "auxiliary_decision": {
+          "n": 3508,
+          "exact_match": 0.2596921322690992,
+          "token_f1": 0.6113428424342161
+        },
+        "dispatcher_intent_tool_call": {
+          "n": 3937,
+          "accuracy": 1.0,
+          "macro_f1": 1.0
+        },
+        "intelligent_data_query": {
+          "n": 3498,
+          "exact_match": 0.0,
+          "token_f1": 0.6202171661478004
+        },
+        "regulation_compliance_check": {
+          "n": 5133,
+          "accuracy": 0.8573933372296902,
+          "macro_f1": 0.5691200125448418
+        }
+      }
+    },
+    "ieee118_only": {
+      "records": 38159,
+      "task_metrics": {
+        "auxiliary_decision": {
+          "n": 8734,
+          "exact_match": 0.21891458667277308,
+          "token_f1": 0.5858825127284968
+        },
+        "dispatcher_intent_tool_call": {
+          "n": 9657,
+          "accuracy": 1.0,
+          "macro_f1": 1.0
+        },
+        "intelligent_data_query": {
+          "n": 8569,
+          "exact_match": 0.0,
+          "token_f1": 0.5542904605206987
+        },
+        "regulation_compliance_check": {
+          "n": 11199,
+          "accuracy": 0.9071345655862131,
+          "macro_f1": 0.9067650792772521
+        }
+      }
+    },
+    "n2_only": {
+      "records": 7954,
+      "task_metrics": {
+        "auxiliary_decision": {
+          "n": 1728,
+          "exact_match": 0.22453703703703703,
+          "token_f1": 0.5887513171275947
+        },
+        "dispatcher_intent_tool_call": {
+          "n": 1983,
+          "accuracy": 1.0,
+          "macro_f1": 1.0
+        },
+        "intelligent_data_query": {
+          "n": 1729,
+          "exact_match": 0.0,
+          "token_f1": 0.7243076723253321
+        },
+        "regulation_compliance_check": {
+          "n": 2514,
+          "accuracy": 0.9168655529037391,
+          "macro_f1": 0.9130747244097224
+        }
+      }
+    }
+  },
+  "interpretation": "external topology, IEEE118, high-load, N-2, and equipment-contingency results are reported separately"
+}

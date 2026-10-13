@@ -1,0 +1,55 @@
+{
+  "generated_at": "2026-08-29T07:59:13.106584+00:00",
+  "status": "pass",
+  "scope": "current_compact_release_views",
+  "components": {
+    "data/gridinstruct_v1.2_sd_core_en.jsonl": {
+      "sha256": "18a4d36153f9d77ae9b26744978a7bea27138aee048d1b12906335797e908013",
+      "size_bytes": 593841086,
+      "exists": true
+    },
+    "data/v1.2_sd_core_train_en.jsonl": {
+      "sha256": "2fffd5d0b7d1cb417a4dd919af39aba859f736d3f2da2d3f52340169388b3ac9",
+      "size_bytes": 151419585,
+      "exists": true
+    },
+    "data/v1.2_sd_core_validation_en.jsonl": {
+      "sha256": "03a4f3126a1ae181524610cf6ef6efd60774f61b78a31e8fb9e9d232a3abc06f",
+      "size_bytes": 20200172,
+      "exists": true
+    },
+    "data/v1.2_sd_core_test_en.jsonl": {
+      "sha256": "83576760eb091531d08ae6a7b6bf95d52b8266a6e5fe4aa9c2875c3eccd56110",
+      "size_bytes": 21668841,
+      "exists": true
+    },
+    "data/v1.2_sd_core_ood_test_en.jsonl": {
+      "sha256": "a7a75d1a0551cfe8f688b90af32b535cb54767944fbf319a4a8c53e64b2adb17",
+      "size_bytes": 417267736,
+      "exists": true
+    },
+    "metadata/schema.json": {
+      "sha256": "344efb82e99b2c2716f9cecfe8fc5c0f71aa7bc465dee5dc3b03aa95a7e8cfe5",
+      "size_bytes": 4060,
+      "exists": true
+    },
+    "metadata/data_dictionary.csv": {
+      "sha256": "37d473c9bbd5c29fc2a9811bde90e377e9ec5c2b2a92b312c407943373b30ac9",
+      "size_bytes": 5627,
+      "exists": true
+    },
+    "metadata/rule_dictionary.csv": {
+      "sha256": "d6ba23cd7c18a04bb26750350d5214cd81f964b21cd8f3a8d6cde7b7ec243538",
+      "size_bytes": 13204,
+      "exists": true
+    },
+    "rules/regulation_rules.json": {
+      "sha256": "0c834cdf81dc0b10e76d525845111dc5e845ac8a559ef9c21bc02aeb0b4c1a83",
+      "size_bytes": 37019,
+      "exists": true
+    }
+  },
+  "total_components": 9,
+  "components_present": 9,
+  "historical_lineage_note": "Intermediate construction stages and raw scenario arrays are outside the compact release; their historical reports retain their original hashes and are not current-release bindings."
+}

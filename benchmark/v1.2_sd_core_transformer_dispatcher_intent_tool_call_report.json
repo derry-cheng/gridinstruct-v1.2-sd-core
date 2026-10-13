@@ -1,0 +1,307 @@
+{
+  "generated_at": "2026-07-31T10:54:06.863696+00:00",
+  "status": "pass",
+  "train": "data/v1.2_sd_core_train_en.jsonl",
+  "validation": "data/v1.2_sd_core_validation_en.jsonl",
+  "test": "data/v1.2_sd_core_test_en.jsonl",
+  "task_type": "dispatcher_intent_tool_call",
+  "objective": "transformer_sequence_classification",
+  "model_name": "distilbert-base-uncased",
+  "model_source": "distilbert-base-uncased",
+  "resolved_model_source": "distilbert-base-uncased",
+  "resolved_model_name": "distilbert-base-uncased",
+  "eval_only_model": null,
+  "run_kind": "heldout_evaluation",
+  "device": "cuda",
+  "device_details": {
+    "device": "cuda",
+    "cuda_visible_devices": "1",
+    "cuda_device_name": "NVIDIA H20",
+    "cuda_device_count": 1
+  },
+  "determinism_contract": {
+    "python_hash_seed": null,
+    "cublas_workspace_config": ":4096:8",
+    "numpy_seeded": true,
+    "torch_seeded": true,
+    "cuda_seeded": true,
+    "deterministic_algorithms": true,
+    "cudnn_benchmark": false,
+    "cudnn_deterministic": true,
+    "cuda_matmul_tf32": false,
+    "cudnn_tf32": false
+  },
+  "train_records": 3910,
+  "validation_records": 490,
+  "test_records": 494,
+  "input_sha256": {
+    "train": "ff09925aacb7767dc303eebd4d4089c69f7216977bd9c0e76198788660c9ed3a",
+    "validation": "bbb8fab5478b7a4cc8b0b729180d3225cafc081ea56c5e30938f021b28b1e4a5",
+    "test": "982e6bef11f3cbc8fa8e3e280c447aadbb22bd26e708fd070957042f436755c0"
+  },
+  "prediction_sha256": {
+    "validation": "ea75f42d0eecdb36a47d15b1b610b4f08da4ce7b43b5a89adba103348d002ee7",
+    "test": "d9a8910104bce9d3cfdf9f2242bcbc568bfa4433b0cd932678c032548663f929"
+  },
+  "label_space": [
+    "diagnose_and_dispatch",
+    "mitigate_violations",
+    "security_check_and_redispatch"
+  ],
+  "config": {
+    "output_prefix": "benchmark/v1.2_sd_core_transformer_dispatcher_intent_tool_call",
+    "epochs": 8,
+    "batch_size": 64,
+    "learning_rate": 5e-05,
+    "weight_decay": 0.01,
+    "max_length": 256,
+    "seed": 42,
+    "use_rationale": false,
+    "input_profile": "natural",
+    "eval_only_model": null,
+    "local_files_only": true,
+    "cpu": false,
+    "class_weighting": "inverse_frequency",
+    "experiment_dir": "experiments/04_transformer_classification/sd_core_standard_natural/dispatcher_intent_tool_call",
+    "training_log": "experiments/04_transformer_classification/sd_core_standard_natural/dispatcher_intent_tool_call/logs/training_log.jsonl",
+    "class_weights": {
+      "diagnose_and_dispatch": 0.9949109414758269,
+      "mitigate_violations": 1.0010240655401945,
+      "security_check_and_redispatch": 1.0041088854648177
+    },
+    "skip_latest_alias": true
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.31604204697894955,
+      "validation_accuracy": 1.0,
+      "validation_macro_f1": 1.0,
+      "validation_balanced_accuracy": 1.0
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.004415104032358935,
+      "validation_accuracy": 1.0,
+      "validation_macro_f1": 1.0,
+      "validation_balanced_accuracy": 1.0
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.003135735623448366,
+      "validation_accuracy": 1.0,
+      "validation_macro_f1": 1.0,
+      "validation_balanced_accuracy": 1.0
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.0031569808207061742,
+      "validation_accuracy": 1.0,
+      "validation_macro_f1": 1.0,
+      "validation_balanced_accuracy": 1.0
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.002481375538815384,
+      "validation_accuracy": 1.0,
+      "validation_macro_f1": 1.0,
+      "validation_balanced_accuracy": 1.0
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.0023407764524416698,
+      "validation_accuracy": 1.0,
+      "validation_macro_f1": 1.0,
+      "validation_balanced_accuracy": 1.0
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.002812698049726145,
+      "validation_accuracy": 0.9979591836734694,
+      "validation_macro_f1": 0.9979611877484218,
+      "validation_balanced_accuracy": 0.9979550102249489
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.02077813206908045,
+      "validation_accuracy": 1.0,
+      "validation_macro_f1": 1.0,
+      "validation_balanced_accuracy": 1.0
+    }
+  ],
+  "best_epoch": 1,
+  "best_validation": {
+    "accuracy": 1.0,
+    "macro_f1": 1.0,
+    "balanced_accuracy": 1.0,
+    "n": 490
+  },
+  "final_validation": {
+    "accuracy": 1.0,
+    "macro_f1": 1.0,
+    "balanced_accuracy": 1.0,
+    "n": 490
+  },
+  "validation_diagnostics": {
+    "gold_counts": {
+      "security_check_and_redispatch": 163,
+      "mitigate_violations": 163,
+      "diagnose_and_dispatch": 164
+    },
+    "prediction_counts": {
+      "security_check_and_redispatch": 163,
+      "mitigate_violations": 163,
+      "diagnose_and_dispatch": 164
+    },
+    "error_count": 0,
+    "confusion_matrix": {
+      "labels": [
+        "diagnose_and_dispatch",
+        "mitigate_violations",
+        "security_check_and_redispatch"
+      ],
+      "by_gold": {
+        "diagnose_and_dispatch": {
+          "diagnose_and_dispatch": 164,
+          "mitigate_violations": 0,
+          "security_check_and_redispatch": 0
+        },
+        "mitigate_violations": {
+          "diagnose_and_dispatch": 0,
+          "mitigate_violations": 163,
+          "security_check_and_redispatch": 0
+        },
+        "security_check_and_redispatch": {
+          "diagnose_and_dispatch": 0,
+          "mitigate_violations": 0,
+          "security_check_and_redispatch": 163
+        }
+      },
+      "matrix": [
+        [
+          164,
+          0,
+          0
+        ],
+        [
+          0,
+          163,
+          0
+        ],
+        [
+          0,
+          0,
+          163
+        ]
+      ]
+    },
+    "per_class": {
+      "diagnose_and_dispatch": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 164,
+        "predicted": 164
+      },
+      "mitigate_violations": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 163,
+        "predicted": 163
+      },
+      "security_check_and_redispatch": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 163,
+        "predicted": 163
+      }
+    }
+  },
+  "test_evaluation": {
+    "accuracy": 1.0,
+    "macro_f1": 1.0,
+    "balanced_accuracy": 1.0,
+    "n": 494
+  },
+  "test_diagnostics": {
+    "gold_counts": {
+      "security_check_and_redispatch": 164,
+      "mitigate_violations": 166,
+      "diagnose_and_dispatch": 164
+    },
+    "prediction_counts": {
+      "security_check_and_redispatch": 164,
+      "mitigate_violations": 166,
+      "diagnose_and_dispatch": 164
+    },
+    "error_count": 0,
+    "confusion_matrix": {
+      "labels": [
+        "diagnose_and_dispatch",
+        "mitigate_violations",
+        "security_check_and_redispatch"
+      ],
+      "by_gold": {
+        "diagnose_and_dispatch": {
+          "diagnose_and_dispatch": 164,
+          "mitigate_violations": 0,
+          "security_check_and_redispatch": 0
+        },
+        "mitigate_violations": {
+          "diagnose_and_dispatch": 0,
+          "mitigate_violations": 166,
+          "security_check_and_redispatch": 0
+        },
+        "security_check_and_redispatch": {
+          "diagnose_and_dispatch": 0,
+          "mitigate_violations": 0,
+          "security_check_and_redispatch": 164
+        }
+      },
+      "matrix": [
+        [
+          164,
+          0,
+          0
+        ],
+        [
+          0,
+          166,
+          0
+        ],
+        [
+          0,
+          0,
+          164
+        ]
+      ]
+    },
+    "per_class": {
+      "diagnose_and_dispatch": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 164,
+        "predicted": 164
+      },
+      "mitigate_violations": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 166,
+        "predicted": 166
+      },
+      "security_check_and_redispatch": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 164,
+        "predicted": 164
+      }
+    }
+  },
+  "runtime_seconds": 113.95028805732727,
+  "note": "Local Transformer classification baseline with held-out evaluation."
+}

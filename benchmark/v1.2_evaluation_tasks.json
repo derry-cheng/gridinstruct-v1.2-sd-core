@@ -1,0 +1,83 @@
+{
+  "generated_at": "2026-07-09T15:07:22.320662+00:00",
+  "source": "data/gridinstruct_v1.2_sd_core.jsonl",
+  "split_paths": {
+    "train": "data/v1.2_sd_core_train.jsonl",
+    "validation": "data/v1.2_sd_core_validation.jsonl",
+    "test": "data/v1.2_sd_core_test.jsonl",
+    "ood_test": "data/v1.2_sd_core_ood_test.jsonl"
+  },
+  "splits": {
+    "train": {
+      "records": 28454,
+      "task_counts": {
+        "operation_ticket_check": 8704,
+        "regulation_qa": 3364,
+        "regulation_compliance_check": 5692,
+        "intelligent_data_query": 3388,
+        "auxiliary_decision": 3466,
+        "dispatcher_intent_tool_call": 3840
+      }
+    },
+    "validation": {
+      "records": 3563,
+      "task_counts": {
+        "dispatcher_intent_tool_call": 458,
+        "operation_ticket_check": 1088,
+        "auxiliary_decision": 418,
+        "regulation_compliance_check": 770,
+        "regulation_qa": 420,
+        "intelligent_data_query": 409
+      }
+    },
+    "test": {
+      "records": 3525,
+      "task_counts": {
+        "auxiliary_decision": 416,
+        "intelligent_data_query": 412,
+        "regulation_compliance_check": 716,
+        "operation_ticket_check": 1089,
+        "regulation_qa": 421,
+        "dispatcher_intent_tool_call": 471
+      }
+    },
+    "ood_test": {
+      "records": 53673,
+      "task_counts": {
+        "auxiliary_decision": 12221,
+        "intelligent_data_query": 11991,
+        "regulation_compliance_check": 16023,
+        "dispatcher_intent_tool_call": 13438
+      }
+    }
+  },
+  "scenario_overlap_train_test": [],
+  "ood_design": [
+    "topology transfer to IEEE118",
+    "external topology transfer to IEEE300, PEGASE89, PEGASE1354, RTE1888, RTE2848, and PEGASE2869",
+    "scenario transfer to high-load (120% and 130%) and selected N-2 events",
+    "held-out topology/scenario records for compliance, decision, tool-use and query tasks",
+    "operation_ticket_check and regulation_qa have no OOD split because they are not scenario-grounded"
+  ],
+  "split_limitations": {
+    "train": {
+      "missing_tasks": [],
+      "low_count_tasks_below_5": []
+    },
+    "validation": {
+      "missing_tasks": [],
+      "low_count_tasks_below_5": []
+    },
+    "test": {
+      "missing_tasks": [],
+      "low_count_tasks_below_5": []
+    },
+    "ood_test": {
+      "missing_tasks": [
+        "operation_ticket_check",
+        "regulation_qa"
+      ],
+      "low_count_tasks_below_5": []
+    }
+  }
+}

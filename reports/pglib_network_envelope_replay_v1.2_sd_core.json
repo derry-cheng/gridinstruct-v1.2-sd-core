@@ -1,0 +1,528 @@
+{
+  "generated_at": "2026-08-13T04:05:46.055136+00:00",
+  "status": "pass_partial_coverage",
+  "contract": "pinned_pglib_ac_operating_envelope_v1",
+  "systems": [
+    "ieee14",
+    "ieee30",
+    "ieee57",
+    "ieee118",
+    "ieee300",
+    "illinois200",
+    "pegase89",
+    "pegase1354",
+    "rte1888",
+    "rte2848",
+    "pegase2869"
+  ],
+  "load_levels": [
+    0.9,
+    1.0,
+    1.05
+  ],
+  "attempted_cases": 33,
+  "converged_cases": 26,
+  "elapsed_seconds_total": 30.514496,
+  "elapsed_seconds_max_case": 6.17808,
+  "by_system": {
+    "ieee14": {
+      "attempted": 3,
+      "converged": 3
+    },
+    "ieee30": {
+      "attempted": 3,
+      "converged": 3
+    },
+    "ieee57": {
+      "attempted": 3,
+      "converged": 3
+    },
+    "ieee118": {
+      "attempted": 3,
+      "converged": 3
+    },
+    "ieee300": {
+      "attempted": 3,
+      "converged": 0
+    },
+    "illinois200": {
+      "attempted": 3,
+      "converged": 3
+    },
+    "pegase89": {
+      "attempted": 3,
+      "converged": 3
+    },
+    "pegase1354": {
+      "attempted": 3,
+      "converged": 2
+    },
+    "rte1888": {
+      "attempted": 3,
+      "converged": 2
+    },
+    "rte2848": {
+      "attempted": 3,
+      "converged": 2
+    },
+    "pegase2869": {
+      "attempted": 3,
+      "converged": 2
+    }
+  },
+  "severity_counts": {
+    "converged": 26,
+    "solver_nonconvergence": 7
+  },
+  "case_results": [
+    {
+      "case_id": "ieee14_envelope_load0p90",
+      "system": "ieee14",
+      "load_level": 0.9,
+      "status": "converged",
+      "elapsed_seconds": 0.249155,
+      "source_case": "pglib_opf_case14_ieee.m",
+      "source_case_sha256": "bd5c568621de65e4b0922317010868bc7fa94173807faa10ea8fdbbe77c28106",
+      "min_voltage_pu": 0.957360172121141,
+      "max_voltage_pu": 1.0000000000000002,
+      "max_loading_percent": 54.10486822972683,
+      "bus_count": 14,
+      "branch_count": 20
+    },
+    {
+      "case_id": "ieee14_envelope_load1p00",
+      "system": "ieee14",
+      "load_level": 1.0,
+      "status": "converged",
+      "elapsed_seconds": 0.019278,
+      "source_case": "pglib_opf_case14_ieee.m",
+      "source_case_sha256": "bd5c568621de65e4b0922317010868bc7fa94173807faa10ea8fdbbe77c28106",
+      "min_voltage_pu": 0.9480497995174254,
+      "max_voltage_pu": 1.0,
+      "max_loading_percent": 61.25668437963871,
+      "bus_count": 14,
+      "branch_count": 20
+    },
+    {
+      "case_id": "ieee14_envelope_load1p05",
+      "system": "ieee14",
+      "load_level": 1.05,
+      "status": "converged",
+      "elapsed_seconds": 0.018158,
+      "source_case": "pglib_opf_case14_ieee.m",
+      "source_case_sha256": "bd5c568621de65e4b0922317010868bc7fa94173807faa10ea8fdbbe77c28106",
+      "min_voltage_pu": 0.9431241892653052,
+      "max_voltage_pu": 1.0,
+      "max_loading_percent": 64.91602247870338,
+      "bus_count": 14,
+      "branch_count": 20
+    },
+    {
+      "case_id": "ieee30_envelope_load0p90",
+      "system": "ieee30",
+      "load_level": 0.9,
+      "status": "converged",
+      "elapsed_seconds": 0.111669,
+      "source_case": "pglib_opf_case30_ieee.m",
+      "source_case_sha256": "cae3290639d989731d32428aacf30c0b918bc91db73bc54791f3aa62d3f76c70",
+      "min_voltage_pu": 0.9351279974637843,
+      "max_voltage_pu": 1.0,
+      "max_loading_percent": 108.21680149641644,
+      "bus_count": 30,
+      "branch_count": 41
+    },
+    {
+      "case_id": "ieee30_envelope_load1p00",
+      "system": "ieee30",
+      "load_level": 1.0,
+      "status": "converged",
+      "elapsed_seconds": 0.022141,
+      "source_case": "pglib_opf_case30_ieee.m",
+      "source_case_sha256": "cae3290639d989731d32428aacf30c0b918bc91db73bc54791f3aa62d3f76c70",
+      "min_voltage_pu": 0.9102489757292775,
+      "max_voltage_pu": 1.0,
+      "max_loading_percent": 123.37512968145121,
+      "bus_count": 30,
+      "branch_count": 41
+    },
+    {
+      "case_id": "ieee30_envelope_load1p05",
+      "system": "ieee30",
+      "load_level": 1.05,
+      "status": "converged",
+      "elapsed_seconds": 0.02195,
+      "source_case": "pglib_opf_case30_ieee.m",
+      "source_case_sha256": "cae3290639d989731d32428aacf30c0b918bc91db73bc54791f3aa62d3f76c70",
+      "min_voltage_pu": 0.896913138835108,
+      "max_voltage_pu": 1.0,
+      "max_loading_percent": 131.4511062669932,
+      "bus_count": 30,
+      "branch_count": 41
+    },
+    {
+      "case_id": "ieee57_envelope_load0p90",
+      "system": "ieee57",
+      "load_level": 0.9,
+      "status": "converged",
+      "elapsed_seconds": 0.11421,
+      "source_case": "pglib_opf_case57_ieee.m",
+      "source_case_sha256": "aa3b48f7cbaade2afd69cb3790ef72be981db8494dcef9277bee460f754bdb22",
+      "min_voltage_pu": 0.9481235070611503,
+      "max_voltage_pu": 1.0515380730068131,
+      "max_loading_percent": 46.794656933303905,
+      "bus_count": 57,
+      "branch_count": 80
+    },
+    {
+      "case_id": "ieee57_envelope_load1p00",
+      "system": "ieee57",
+      "load_level": 1.0,
+      "status": "converged",
+      "elapsed_seconds": 0.026884,
+      "source_case": "pglib_opf_case57_ieee.m",
+      "source_case_sha256": "aa3b48f7cbaade2afd69cb3790ef72be981db8494dcef9277bee460f754bdb22",
+      "min_voltage_pu": 0.9191360509498993,
+      "max_voltage_pu": 1.0416245085708402,
+      "max_loading_percent": 52.20468454267196,
+      "bus_count": 57,
+      "branch_count": 80
+    },
+    {
+      "case_id": "ieee57_envelope_load1p05",
+      "system": "ieee57",
+      "load_level": 1.05,
+      "status": "converged",
+      "elapsed_seconds": 0.026659,
+      "source_case": "pglib_opf_case57_ieee.m",
+      "source_case_sha256": "aa3b48f7cbaade2afd69cb3790ef72be981db8494dcef9277bee460f754bdb22",
+      "min_voltage_pu": 0.8986104157090554,
+      "max_voltage_pu": 1.0313273330136832,
+      "max_loading_percent": 60.567078802190466,
+      "bus_count": 57,
+      "branch_count": 80
+    },
+    {
+      "case_id": "ieee118_envelope_load0p90",
+      "system": "ieee118",
+      "load_level": 0.9,
+      "status": "converged",
+      "elapsed_seconds": 0.17752,
+      "source_case": "pglib_opf_case118_ieee.m",
+      "source_case_sha256": "b1af0833849040c04babc3700631cff0d9afa66b79c5d3e13ae79bdf516cec78",
+      "min_voltage_pu": 0.9414711620048151,
+      "max_voltage_pu": 1.0292913487905577,
+      "max_loading_percent": 135.09096679907094,
+      "bus_count": 118,
+      "branch_count": 186
+    },
+    {
+      "case_id": "ieee118_envelope_load1p00",
+      "system": "ieee118",
+      "load_level": 1.0,
+      "status": "converged",
+      "elapsed_seconds": 0.026928,
+      "source_case": "pglib_opf_case118_ieee.m",
+      "source_case_sha256": "b1af0833849040c04babc3700631cff0d9afa66b79c5d3e13ae79bdf516cec78",
+      "min_voltage_pu": 0.9174027790562737,
+      "max_voltage_pu": 1.0216540660470244,
+      "max_loading_percent": 194.3731206593064,
+      "bus_count": 118,
+      "branch_count": 186
+    },
+    {
+      "case_id": "ieee118_envelope_load1p05",
+      "system": "ieee118",
+      "load_level": 1.05,
+      "status": "converged",
+      "elapsed_seconds": 0.028394,
+      "source_case": "pglib_opf_case118_ieee.m",
+      "source_case_sha256": "b1af0833849040c04babc3700631cff0d9afa66b79c5d3e13ae79bdf516cec78",
+      "min_voltage_pu": 0.9024811441735447,
+      "max_voltage_pu": 1.020768851005509,
+      "max_loading_percent": 226.34417156917493,
+      "bus_count": 118,
+      "branch_count": 186
+    },
+    {
+      "case_id": "ieee300_envelope_load0p90",
+      "system": "ieee300",
+      "load_level": 0.9,
+      "status": "solver_error",
+      "elapsed_seconds": 0.6848,
+      "source_case": "pglib_opf_case300_ieee.m",
+      "source_case_sha256": "7ecf056d5942135765200ad7ae8791c28f0d35fb1dc888ba2c32dfc950f3c2f5",
+      "error_type": "LoadflowNotConverged"
+    },
+    {
+      "case_id": "ieee300_envelope_load1p00",
+      "system": "ieee300",
+      "load_level": 1.0,
+      "status": "solver_error",
+      "elapsed_seconds": 0.382106,
+      "source_case": "pglib_opf_case300_ieee.m",
+      "source_case_sha256": "7ecf056d5942135765200ad7ae8791c28f0d35fb1dc888ba2c32dfc950f3c2f5",
+      "error_type": "LoadflowNotConverged"
+    },
+    {
+      "case_id": "ieee300_envelope_load1p05",
+      "system": "ieee300",
+      "load_level": 1.05,
+      "status": "solver_error",
+      "elapsed_seconds": 0.371784,
+      "source_case": "pglib_opf_case300_ieee.m",
+      "source_case_sha256": "7ecf056d5942135765200ad7ae8791c28f0d35fb1dc888ba2c32dfc950f3c2f5",
+      "error_type": "LoadflowNotConverged"
+    },
+    {
+      "case_id": "illinois200_envelope_load0p90",
+      "system": "illinois200",
+      "load_level": 0.9,
+      "status": "converged",
+      "elapsed_seconds": 0.150854,
+      "source_case": "pglib_opf_case200_activ.m",
+      "source_case_sha256": "676e6f54a3b6726b199b531e7758ad8bf75ba2b076ea3fee86dc3f5cf5846f6b",
+      "min_voltage_pu": 0.9689894387884079,
+      "max_voltage_pu": 1.0106168410472824,
+      "max_loading_percent": 76.49768080197622,
+      "bus_count": 200,
+      "branch_count": 245
+    },
+    {
+      "case_id": "illinois200_envelope_load1p00",
+      "system": "illinois200",
+      "load_level": 1.0,
+      "status": "converged",
+      "elapsed_seconds": 0.025667,
+      "source_case": "pglib_opf_case200_activ.m",
+      "source_case_sha256": "676e6f54a3b6726b199b531e7758ad8bf75ba2b076ea3fee86dc3f5cf5846f6b",
+      "min_voltage_pu": 0.964791883877737,
+      "max_voltage_pu": 1.0081746101505378,
+      "max_loading_percent": 71.80792124752709,
+      "bus_count": 200,
+      "branch_count": 245
+    },
+    {
+      "case_id": "illinois200_envelope_load1p05",
+      "system": "illinois200",
+      "load_level": 1.05,
+      "status": "converged",
+      "elapsed_seconds": 0.026693,
+      "source_case": "pglib_opf_case200_activ.m",
+      "source_case_sha256": "676e6f54a3b6726b199b531e7758ad8bf75ba2b076ea3fee86dc3f5cf5846f6b",
+      "min_voltage_pu": 0.9625877870287866,
+      "max_voltage_pu": 1.0067454561508404,
+      "max_loading_percent": 71.92087194684487,
+      "bus_count": 200,
+      "branch_count": 245
+    },
+    {
+      "case_id": "pegase89_envelope_load0p90",
+      "system": "pegase89",
+      "load_level": 0.9,
+      "status": "converged",
+      "elapsed_seconds": 0.131208,
+      "source_case": "pglib_opf_case89_pegase.m",
+      "source_case_sha256": "0c2ca484db566e587df8565141dbbf053c275e9246968391cc2f560fb4e995ca",
+      "min_voltage_pu": 0.9369215301748147,
+      "max_voltage_pu": 1.0402205995163605,
+      "max_loading_percent": 102.29665312837417,
+      "bus_count": 89,
+      "branch_count": 210
+    },
+    {
+      "case_id": "pegase89_envelope_load1p00",
+      "system": "pegase89",
+      "load_level": 1.0,
+      "status": "converged",
+      "elapsed_seconds": 0.026742,
+      "source_case": "pglib_opf_case89_pegase.m",
+      "source_case_sha256": "0c2ca484db566e587df8565141dbbf053c275e9246968391cc2f560fb4e995ca",
+      "min_voltage_pu": 0.921731520273784,
+      "max_voltage_pu": 1.0366634419182303,
+      "max_loading_percent": 102.50416410787908,
+      "bus_count": 89,
+      "branch_count": 210
+    },
+    {
+      "case_id": "pegase89_envelope_load1p05",
+      "system": "pegase89",
+      "load_level": 1.05,
+      "status": "converged",
+      "elapsed_seconds": 0.024137,
+      "source_case": "pglib_opf_case89_pegase.m",
+      "source_case_sha256": "0c2ca484db566e587df8565141dbbf053c275e9246968391cc2f560fb4e995ca",
+      "min_voltage_pu": 0.9129893026224151,
+      "max_voltage_pu": 1.0342069142634733,
+      "max_loading_percent": 102.62226394526448,
+      "bus_count": 89,
+      "branch_count": 210
+    },
+    {
+      "case_id": "pegase1354_envelope_load0p90",
+      "system": "pegase1354",
+      "load_level": 0.9,
+      "status": "converged",
+      "elapsed_seconds": 1.840501,
+      "source_case": "pglib_opf_case1354_pegase.m",
+      "source_case_sha256": "cd6d27dff4a56684f1e4f82cfa346b36d84c4e90733228aa88331cd550e17652",
+      "min_voltage_pu": 0.9299470461243179,
+      "max_voltage_pu": 1.0571435204173623,
+      "max_loading_percent": 118.95199880664444,
+      "bus_count": 1354,
+      "branch_count": 1991
+    },
+    {
+      "case_id": "pegase1354_envelope_load1p00",
+      "system": "pegase1354",
+      "load_level": 1.0,
+      "status": "converged",
+      "elapsed_seconds": 0.338438,
+      "source_case": "pglib_opf_case1354_pegase.m",
+      "source_case_sha256": "cd6d27dff4a56684f1e4f82cfa346b36d84c4e90733228aa88331cd550e17652",
+      "min_voltage_pu": 0.8928796285305758,
+      "max_voltage_pu": 1.055855772721388,
+      "max_loading_percent": 114.84950795190083,
+      "bus_count": 1354,
+      "branch_count": 1991
+    },
+    {
+      "case_id": "pegase1354_envelope_load1p05",
+      "system": "pegase1354",
+      "load_level": 1.05,
+      "status": "solver_error",
+      "elapsed_seconds": 2.141199,
+      "source_case": "pglib_opf_case1354_pegase.m",
+      "source_case_sha256": "cd6d27dff4a56684f1e4f82cfa346b36d84c4e90733228aa88331cd550e17652",
+      "error_type": "LoadflowNotConverged"
+    },
+    {
+      "case_id": "rte1888_envelope_load0p90",
+      "system": "rte1888",
+      "load_level": 0.9,
+      "status": "converged",
+      "elapsed_seconds": 1.931714,
+      "source_case": "pglib_opf_case1888_rte.m",
+      "source_case_sha256": "f4bc237298ed7c2e9291070f3c3a0983319565c12b801114a1e29641d0b5bff0",
+      "min_voltage_pu": 0.9678899861880232,
+      "max_voltage_pu": 1.3830712869272006,
+      "max_loading_percent": 349.2427425060768,
+      "bus_count": 1888,
+      "branch_count": 2531
+    },
+    {
+      "case_id": "rte1888_envelope_load1p00",
+      "system": "rte1888",
+      "load_level": 1.0,
+      "status": "converged",
+      "elapsed_seconds": 0.44205,
+      "source_case": "pglib_opf_case1888_rte.m",
+      "source_case_sha256": "f4bc237298ed7c2e9291070f3c3a0983319565c12b801114a1e29641d0b5bff0",
+      "min_voltage_pu": 0.9604886267464179,
+      "max_voltage_pu": 1.3704550232469395,
+      "max_loading_percent": 537.5862064560285,
+      "bus_count": 1888,
+      "branch_count": 2531
+    },
+    {
+      "case_id": "rte1888_envelope_load1p05",
+      "system": "rte1888",
+      "load_level": 1.05,
+      "status": "solver_error",
+      "elapsed_seconds": 1.515949,
+      "source_case": "pglib_opf_case1888_rte.m",
+      "source_case_sha256": "f4bc237298ed7c2e9291070f3c3a0983319565c12b801114a1e29641d0b5bff0",
+      "error_type": "LoadflowNotConverged"
+    },
+    {
+      "case_id": "rte2848_envelope_load0p90",
+      "system": "rte2848",
+      "load_level": 0.9,
+      "status": "solver_error",
+      "elapsed_seconds": 5.499245,
+      "source_case": "pglib_opf_case2848_rte.m",
+      "source_case_sha256": "9d1ec26a6aef3e47bc23707a6c81db8d0528ff6ad90068b2f92df3d6e76ef591",
+      "error_type": "LoadflowNotConverged"
+    },
+    {
+      "case_id": "rte2848_envelope_load1p00",
+      "system": "rte2848",
+      "load_level": 1.0,
+      "status": "converged",
+      "elapsed_seconds": 0.953008,
+      "source_case": "pglib_opf_case2848_rte.m",
+      "source_case_sha256": "9d1ec26a6aef3e47bc23707a6c81db8d0528ff6ad90068b2f92df3d6e76ef591",
+      "min_voltage_pu": 0.930585934483034,
+      "max_voltage_pu": 1.2537814859216936,
+      "max_loading_percent": 228.43604822407855,
+      "bus_count": 2848,
+      "branch_count": 3776
+    },
+    {
+      "case_id": "rte2848_envelope_load1p05",
+      "system": "rte2848",
+      "load_level": 1.05,
+      "status": "converged",
+      "elapsed_seconds": 0.934717,
+      "source_case": "pglib_opf_case2848_rte.m",
+      "source_case_sha256": "9d1ec26a6aef3e47bc23707a6c81db8d0528ff6ad90068b2f92df3d6e76ef591",
+      "min_voltage_pu": 0.9292683908118534,
+      "max_voltage_pu": 1.251036612774719,
+      "max_loading_percent": 227.20282883946646,
+      "bus_count": 2848,
+      "branch_count": 3776
+    },
+    {
+      "case_id": "pegase2869_envelope_load0p90",
+      "system": "pegase2869",
+      "load_level": 0.9,
+      "status": "converged",
+      "elapsed_seconds": 6.17808,
+      "source_case": "pglib_opf_case2869_pegase.m",
+      "source_case_sha256": "6c8e80fba6fc2fa78d65fce64cf4801425b01a0aa093661caf581b6551d4a7ac",
+      "min_voltage_pu": 0.8629091983873757,
+      "max_voltage_pu": 1.0713447013637891,
+      "max_loading_percent": 161.44055075017536,
+      "bus_count": 2869,
+      "branch_count": 4582
+    },
+    {
+      "case_id": "pegase2869_envelope_load1p00",
+      "system": "pegase2869",
+      "load_level": 1.0,
+      "status": "converged",
+      "elapsed_seconds": 1.189361,
+      "source_case": "pglib_opf_case2869_pegase.m",
+      "source_case_sha256": "6c8e80fba6fc2fa78d65fce64cf4801425b01a0aa093661caf581b6551d4a7ac",
+      "min_voltage_pu": 0.793799622724649,
+      "max_voltage_pu": 1.058266808171572,
+      "max_loading_percent": 128.60428470751955,
+      "bus_count": 2869,
+      "branch_count": 4582
+    },
+    {
+      "case_id": "pegase2869_envelope_load1p05",
+      "system": "pegase2869",
+      "load_level": 1.05,
+      "status": "solver_error",
+      "elapsed_seconds": 4.864902,
+      "source_case": "pglib_opf_case2869_pegase.m",
+      "source_case_sha256": "6c8e80fba6fc2fa78d65fce64cf4801425b01a0aa093661caf581b6551d4a7ac",
+      "error_type": "LoadflowNotConverged"
+    }
+  ],
+  "scope": {
+    "full_population_replay": false,
+    "n1_n2_outage_replay": false,
+    "objective_or_opf_claimed": false,
+    "purpose": "independent parser and AC-state envelope diagnostic across the eleven pinned network families"
+  },
+  "hard_gates": {
+    "nonempty_converged_subset": true,
+    "all_attempts_converged": false,
+    "all_networks_attempted": true
+  },
+  "input": {
+    "pglib_root": "/tmp/gaiav2-pglib-v23.07"
+  },
+  "interpretation": "Independent AC power-flow envelope on the pinned PGLib source cases; the case list is a diagnostic grid and is not the released scenario-generation ledger."
+}

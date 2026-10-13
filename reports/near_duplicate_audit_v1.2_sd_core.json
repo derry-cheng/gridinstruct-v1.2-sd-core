@@ -1,0 +1,2372 @@
+{
+  "generated_at": "2026-08-28T20:41:07.701975+00:00",
+  "semantic_backend_preflight": {
+    "requested_model_id": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "c9745ed1d9f207416be6d2e6f8de32d1f16199bf",
+    "local_path": "/Users/lemon/Desktop/project/gaiav2/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf",
+    "expected_sha256": null,
+    "actual_tree_sha256": null,
+    "weight_files": [],
+    "preflight_errors": [
+      "local_model_directory_missing"
+    ],
+    "backend": "deterministic_tfidf_char_ngrams",
+    "fallback": "deterministic_tfidf",
+    "fallback_contract": {
+      "backend": "sklearn_tfidf_nearest_neighbor",
+      "analyzer": "char_wb",
+      "ngram_range": [
+        3,
+        5
+      ],
+      "min_df": 1,
+      "sublinear_tf": true,
+      "norm": "l2",
+      "dtype": "float32",
+      "metric": "cosine",
+      "n_jobs": 1
+    },
+    "fallback_contract_sha256": "f4306958eb5c89186dff08bdafe7a3e126b84eac7985bbf09b0c76d4bf6ac6d1",
+    "network_access_allowed": false
+  },
+  "exact_full": {
+    "records": 95479,
+    "unique_signatures": 94489,
+    "duplicate_records_after_first": 990,
+    "duplicate_rate": 0.010368772190743515,
+    "effective_unique_rate": 0.9896312278092565
+  },
+  "template_normalized_full": {
+    "records": 95479,
+    "unique_signatures": 39151,
+    "duplicate_records_after_first": 56328,
+    "duplicate_rate": 0.5899517171315158,
+    "effective_unique_rate": 0.41004828286848416
+  },
+  "cross_split": {
+    "train_test": {
+      "exact": {
+        "left_records": 26545,
+        "right_records": 3894,
+        "right_records_matching_left": 0,
+        "right_match_rate": 0.0,
+        "examples": []
+      },
+      "template_normalized": {
+        "left_records": 26545,
+        "right_records": 3894,
+        "right_records_matching_left": 562,
+        "right_match_rate": 0.1443246019517206,
+        "examples": [
+          "gridinstruct_v01_aux_13639",
+          "gridinstruct_v01_aux_14310",
+          "gridinstruct_v01_intent_04846",
+          "gridinstruct_v01_aux_12229",
+          "gridinstruct_v01_aux_04217",
+          "gridinstruct_v01_aux_13461",
+          "gridinstruct_v01_aux_10191",
+          "gridinstruct_v01_aux_03908",
+          "gridinstruct_v01_intent_00251__plus12_dispatcher_cf_251_diagnose_and_dispatch",
+          "gridinstruct_v01_query_01495",
+          "gridinstruct_v01_aux_13089",
+          "gridinstruct_v01_query_06107",
+          "gridinstruct_v01_query_00958",
+          "gridinstruct_v01_aux_03963",
+          "gridinstruct_v01_aux_11462",
+          "gridinstruct_v01_aux_01566",
+          "gridinstruct_v01_intent_11942",
+          "gridinstruct_v01_aux_06111",
+          "gridinstruct_v01_query_07060",
+          "gridinstruct_v01_aux_06292",
+          "gridinstruct_v01_intent_00229__plus12_dispatcher_cf_229_diagnose_and_dispatch",
+          "gridinstruct_v01_aux_08274",
+          "gridinstruct_v01_aux_10054",
+          "gridinstruct_v01_query_07089",
+          "gridinstruct_v01_aux_13382",
+          "gridinstruct_v01_query_04645",
+          "gridinstruct_v01_aux_05403",
+          "gridinstruct_v01_aux_06394",
+          "gridinstruct_v01_intent_03132",
+          "gridinstruct_v01_intent_00245",
+          "gridinstruct_v01_aux_07898",
+          "gridinstruct_v01_aux_03801",
+          "gridinstruct_v01_aux_14863",
+          "gridinstruct_v01_aux_13545",
+          "gridinstruct_v01_intent_00414__plus12_dispatcher_cf_414_mitigate_violations",
+          "gridinstruct_v01_aux_11128",
+          "gridinstruct_v01_aux_12832",
+          "gridinstruct_v01_intent_10356",
+          "gridinstruct_v01_aux_10033",
+          "gridinstruct_v01_intent_07666",
+          "gridinstruct_v01_query_12660",
+          "gridinstruct_v01_intent_00229__plus12_dispatcher_cf_229_security_check_and_redispatch",
+          "gridinstruct_v01_aux_01660",
+          "gridinstruct_v01_query_13796",
+          "gridinstruct_v01_aux_13251",
+          "gridinstruct_v01_aux_10728",
+          "gridinstruct_v01_aux_13421",
+          "gridinstruct_v01_query_11173",
+          "gridinstruct_v01_aux_00289",
+          "gridinstruct_v01_aux_09699"
+        ]
+      },
+      "minhash_char5": {
+        "threshold": 0.85,
+        "num_perm": 64,
+        "left_records": 2500,
+        "right_records": 3894,
+        "right_records_with_neighbor": 2054,
+        "right_match_rate": 0.5274781715459682,
+        "examples": [
+          {
+            "id": "gridinstruct_v01_intent_04794",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_00254__plus12_dispatcher_cf_254_diagnose_and_dispatch",
+              "gridinstruct_v01_intent_00387__plus12_dispatcher_cf_387_diagnose_and_dispatch",
+              "gridinstruct_v01_intent_03039",
+              "gridinstruct_v01_intent_03084",
+              "gridinstruct_v01_intent_03297"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_ticket_01106__plus12_operation_cf_1106",
+            "neighbor_ids": [
+              "gridinstruct_v01_ticket_00794__plus12_operation_cf_794"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_06453",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_00015__plus12_dispatcher_cf_15_security_check_and_redispatch",
+              "gridinstruct_v01_intent_00084__plus12_dispatcher_cf_84_security_check_and_redispatch",
+              "gridinstruct_v01_intent_05448",
+              "gridinstruct_v01_intent_05523",
+              "gridinstruct_v01_intent_05571"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_12496",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_12745",
+              "gridinstruct_v01_intent_13084",
+              "gridinstruct_v01_intent_13117",
+              "gridinstruct_v01_intent_14008"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_06087",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_05064",
+              "gridinstruct_v01_intent_05304",
+              "gridinstruct_v01_intent_05841",
+              "gridinstruct_v01_intent_07158"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_13639",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_06942"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_14310",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_01391",
+              "gridinstruct_v01_aux_01643",
+              "gridinstruct_v01_aux_05109",
+              "gridinstruct_v01_aux_05174",
+              "gridinstruct_v01_aux_06342"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_04846",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_04885",
+              "gridinstruct_v01_intent_05392",
+              "gridinstruct_v01_intent_06880",
+              "gridinstruct_v01_intent_07141"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_09217",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_07330",
+              "gridinstruct_v01_intent_07402",
+              "gridinstruct_v01_intent_07555",
+              "gridinstruct_v01_intent_07564",
+              "gridinstruct_v01_intent_07567"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_ticket_01772__plus14_plain_monitoring_1772",
+            "neighbor_ids": [
+              "gridinstruct_v01_ticket_00068__plus14_plain_monitoring_68",
+              "gridinstruct_v01_ticket_00518__plus14_plain_monitoring_518",
+              "gridinstruct_v01_ticket_01010__plus14_plain_monitoring_1010"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_10916",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_11756"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_05298",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_05546_actionpara_01",
+              "gridinstruct_v01_compliance_05666_actionpara_01",
+              "gridinstruct_v01_compliance_06522_actionpara_02"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_12229",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_01270",
+              "gridinstruct_v01_aux_02114",
+              "gridinstruct_v01_aux_02170",
+              "gridinstruct_v01_aux_02198",
+              "gridinstruct_v01_aux_02234"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_05650",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_05546_actionpara_01",
+              "gridinstruct_v01_compliance_05666_actionpara_01",
+              "gridinstruct_v01_compliance_06522_actionpara_02"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_01030",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_00070",
+              "gridinstruct_v01_intent_00310",
+              "gridinstruct_v01_intent_01339"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_06939",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_05064",
+              "gridinstruct_v01_intent_05304",
+              "gridinstruct_v01_intent_05841",
+              "gridinstruct_v01_intent_07158"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_06128",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_01270",
+              "gridinstruct_v01_aux_02114",
+              "gridinstruct_v01_aux_02170",
+              "gridinstruct_v01_aux_02198",
+              "gridinstruct_v01_aux_02234"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_ticket_00044__plus14_plain_monitoring_44",
+            "neighbor_ids": [
+              "gridinstruct_v01_ticket_00068__plus14_plain_monitoring_68",
+              "gridinstruct_v01_ticket_01010__plus14_plain_monitoring_1010"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_06456",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_01270",
+              "gridinstruct_v01_aux_02114",
+              "gridinstruct_v01_aux_02170",
+              "gridinstruct_v01_aux_02198",
+              "gridinstruct_v01_aux_02234"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_04217",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_02573",
+              "gridinstruct_v01_aux_04188",
+              "gridinstruct_v01_aux_10122"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_06788",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_04883",
+              "gridinstruct_v01_intent_05006",
+              "gridinstruct_v01_intent_05453",
+              "gridinstruct_v01_intent_05495",
+              "gridinstruct_v01_intent_05534"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_13738",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_12625",
+              "gridinstruct_v01_intent_13414",
+              "gridinstruct_v01_intent_13852"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_13461",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_01270",
+              "gridinstruct_v01_aux_02114",
+              "gridinstruct_v01_aux_02170",
+              "gridinstruct_v01_aux_02198",
+              "gridinstruct_v01_aux_02234"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_01802",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_00716",
+              "gridinstruct_v01_intent_01592",
+              "gridinstruct_v01_intent_02135"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_10191",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_02534",
+              "gridinstruct_v01_aux_02562",
+              "gridinstruct_v01_aux_04018",
+              "gridinstruct_v01_aux_04354",
+              "gridinstruct_v01_aux_04454"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_03908",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_03243",
+              "gridinstruct_v01_aux_03588",
+              "gridinstruct_v01_aux_04188",
+              "gridinstruct_v01_aux_04708",
+              "gridinstruct_v01_aux_05567"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_06858",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_00015__plus12_dispatcher_cf_15_security_check_and_redispatch",
+              "gridinstruct_v01_intent_00084__plus12_dispatcher_cf_84_security_check_and_redispatch",
+              "gridinstruct_v01_intent_05448",
+              "gridinstruct_v01_intent_05523",
+              "gridinstruct_v01_intent_05571"
+            ]
+          },
+          {
+            "id": "gridinstruct_v12_opf2_aux_ieee14_secure_candidate_n2_load_milli0620_gen_ce_406dbbc0a91f_v01",
+            "neighbor_ids": [
+              "gridinstruct_v12_opf2_aux_ieee14_secure_candidate_n2_load_milli0620_gen_ce_5dea16f8bf57_v00",
+              "gridinstruct_v12_opf2_aux_ieee14_secure_candidate_n2_load_milli0621_gen_ce_c0d1fdd69cd1_v01",
+              "gridinstruct_v12_opf2_aux_ieee14_secure_candidate_n2_load_milli0623_gen_ce_033109a2e2d5_v01"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_ticket_00900__plus14_plain_monitoring_900",
+            "neighbor_ids": [
+              "gridinstruct_v01_ticket_00678__plus14_plain_monitoring_678"
+            ]
+          },
+          {
+            "id": "gridinstruct_v12_equipment1_aux_ieee14_n1_bus_outage_load100_busidx_5_200fdee7887f_v00",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_00282",
+              "gridinstruct_v01_aux_01090",
+              "gridinstruct_v01_aux_01682",
+              "gridinstruct_v01_aux_02114",
+              "gridinstruct_v01_aux_02170"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_00251__plus12_dispatcher_cf_251_diagnose_and_dispatch",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_00248__plus12_dispatcher_cf_248_diagnose_and_dispatch",
+              "gridinstruct_v01_intent_00483__plus12_dispatcher_cf_483_diagnose_and_dispatch",
+              "gridinstruct_v01_intent_00539__plus12_dispatcher_cf_539_diagnose_and_dispatch",
+              "gridinstruct_v01_intent_00550__plus12_dispatcher_cf_550_diagnose_and_dispatch",
+              "gridinstruct_v01_intent_02667"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_01495",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_00767",
+              "gridinstruct_v01_query_01488",
+              "gridinstruct_v01_query_02307"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_03307",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_04511_counterfactual_01"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_08543",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_00282",
+              "gridinstruct_v01_aux_01270",
+              "gridinstruct_v01_aux_01682",
+              "gridinstruct_v01_aux_08047",
+              "gridinstruct_v01_aux_09327"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_15475",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_14767"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_14905",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_14767"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_10958",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_03257",
+              "gridinstruct_v01_aux_03369",
+              "gridinstruct_v01_aux_04045",
+              "gridinstruct_v01_aux_04097",
+              "gridinstruct_v01_aux_04381"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_14878",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_00418",
+              "gridinstruct_v01_compliance_01058"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_04930",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_05546_actionpara_01",
+              "gridinstruct_v01_compliance_05666_actionpara_01",
+              "gridinstruct_v01_compliance_06522_actionpara_02"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_04480",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_02578",
+              "gridinstruct_v01_intent_02668",
+              "gridinstruct_v01_intent_02737",
+              "gridinstruct_v01_intent_03442",
+              "gridinstruct_v01_intent_04294"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_00893",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_00704",
+              "gridinstruct_v01_intent_07373"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_13089",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_01270",
+              "gridinstruct_v01_aux_02114",
+              "gridinstruct_v01_aux_02170",
+              "gridinstruct_v01_aux_02198",
+              "gridinstruct_v01_aux_02234"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_05666",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_05546_actionpara_01",
+              "gridinstruct_v01_compliance_05666_actionpara_01",
+              "gridinstruct_v01_compliance_06522_actionpara_02"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_13912",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_14738"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_08398",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_07288",
+              "gridinstruct_v01_intent_07846",
+              "gridinstruct_v01_intent_08350",
+              "gridinstruct_v01_intent_08971",
+              "gridinstruct_v01_intent_09148"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_ticket_01901__plus14_plain_monitoring_1901",
+            "neighbor_ids": [
+              "gridinstruct_v01_ticket_01853__plus14_plain_monitoring_1853",
+              "gridinstruct_v01_ticket_02087__plus14_plain_monitoring_2087"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_06918",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_06006",
+              "gridinstruct_v01_compliance_06966_actionpara_01"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_ticket_01614__plus13_monitoring_cf_1614",
+            "neighbor_ids": [
+              "gridinstruct_v01_ticket_00966__plus13_monitoring_cf_966",
+              "gridinstruct_v01_ticket_01284__plus13_monitoring_cf_1284",
+              "gridinstruct_v01_ticket_01302__plus13_monitoring_cf_1302",
+              "gridinstruct_v01_ticket_01884__plus13_monitoring_cf_1884"
+            ]
+          },
+          {
+            "id": "gridinstruct_v12_equipment1_query_ieee57_n1_bus_outage_load100_busidx_11_d1c09e897a52_v01",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_02828",
+              "gridinstruct_v01_query_04689",
+              "gridinstruct_v01_query_10623",
+              "gridinstruct_v01_query_10840",
+              "gridinstruct_v01_query_12024"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_00958",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_00792",
+              "gridinstruct_v01_query_01238",
+              "gridinstruct_v01_query_02373",
+              "gridinstruct_v01_query_07595",
+              "gridinstruct_v01_query_09121"
+            ]
+          }
+        ]
+      },
+      "semantic_sample": {
+        "model": "deterministic_tfidf_char_ngrams_3_5",
+        "device": "cpu",
+        "threshold": 0.95,
+        "left_sample_records": 5000,
+        "right_sample_records": 3894,
+        "right_records_with_neighbor": 1674,
+        "right_match_rate": 0.42989214175654855,
+        "examples": [
+          {
+            "id": "gridinstruct_v01_aux_14310",
+            "neighbor_id": "gridinstruct_v01_aux_14366",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_04217",
+            "neighbor_id": "gridinstruct_v01_aux_03489",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_intent_00251__plus12_dispatcher_cf_251_diagnose_and_dispatch",
+            "neighbor_id": "gridinstruct_v01_intent_02910",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_07089",
+            "neighbor_id": "gridinstruct_v01_query_05885",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_05403",
+            "neighbor_id": "gridinstruct_v01_aux_05683",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_intent_00245",
+            "neighbor_id": "gridinstruct_v01_intent_02135",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_03801",
+            "neighbor_id": "gridinstruct_v01_aux_04585",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_11128",
+            "neighbor_id": "gridinstruct_v01_aux_09896",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_10033",
+            "neighbor_id": "gridinstruct_v01_aux_10229",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_intent_00229__plus12_dispatcher_cf_229_security_check_and_redispatch",
+            "neighbor_id": "gridinstruct_v01_intent_00495__plus12_dispatcher_cf_495_security_check_and_redispatch",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_01660",
+            "neighbor_id": "gridinstruct_v01_aux_02192",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_13421",
+            "neighbor_id": "gridinstruct_v01_aux_13057",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_11173",
+            "neighbor_id": "gridinstruct_v01_query_10753",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_00289",
+            "neighbor_id": "gridinstruct_v01_aux_01829",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_11130",
+            "neighbor_id": "gridinstruct_v01_aux_10122",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_03190",
+            "neighbor_id": "gridinstruct_v01_aux_04534",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_11767",
+            "neighbor_id": "gridinstruct_v01_aux_09863",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_05844",
+            "neighbor_id": "gridinstruct_v01_aux_06656",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_01564",
+            "neighbor_id": "gridinstruct_v01_aux_02404",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_14304",
+            "neighbor_id": "gridinstruct_v01_query_12428",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_00775",
+            "neighbor_id": "gridinstruct_v01_aux_00971",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_08708",
+            "neighbor_id": "gridinstruct_v01_query_09100",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_05507",
+            "neighbor_id": "gridinstruct_v01_aux_05367",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_13543",
+            "neighbor_id": "gridinstruct_v01_aux_12311",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_03928",
+            "neighbor_id": "gridinstruct_v01_query_02752",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_10313",
+            "neighbor_id": "gridinstruct_v01_aux_10845",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_intent_00089__plus12_dispatcher_cf_89_security_check_and_redispatch",
+            "neighbor_id": "gridinstruct_v01_intent_00495__plus12_dispatcher_cf_495_security_check_and_redispatch",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_01462",
+            "neighbor_id": "gridinstruct_v01_aux_02386",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_03537",
+            "neighbor_id": "gridinstruct_v01_aux_04097",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_13104",
+            "neighbor_id": "gridinstruct_v01_aux_12740",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_05281",
+            "neighbor_id": "gridinstruct_v01_aux_06961",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_10481",
+            "neighbor_id": "gridinstruct_v01_aux_10453",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_08160",
+            "neighbor_id": "gridinstruct_v01_query_07656",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_06721",
+            "neighbor_id": "gridinstruct_v01_query_06833",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_03406",
+            "neighbor_id": "gridinstruct_v01_query_03490",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_intent_05547",
+            "neighbor_id": "gridinstruct_v01_intent_00495__plus12_dispatcher_cf_495_security_check_and_redispatch",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_08758",
+            "neighbor_id": "gridinstruct_v01_query_09010",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_03689",
+            "neighbor_id": "gridinstruct_v01_aux_04585",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_06663",
+            "neighbor_id": "gridinstruct_v01_query_06495",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_01833",
+            "neighbor_id": "gridinstruct_v01_query_01665",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_11208",
+            "neighbor_id": "gridinstruct_v01_aux_10396",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_intent_04821",
+            "neighbor_id": "gridinstruct_v01_intent_02910",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_10417",
+            "neighbor_id": "gridinstruct_v01_aux_10333",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_08259",
+            "neighbor_id": "gridinstruct_v01_aux_07531",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_05644",
+            "neighbor_id": "gridinstruct_v01_query_05504",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_03861",
+            "neighbor_id": "gridinstruct_v01_aux_03497",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_10337",
+            "neighbor_id": "gridinstruct_v01_aux_10057",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_02569",
+            "neighbor_id": "gridinstruct_v01_aux_04585",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_07639",
+            "neighbor_id": "gridinstruct_v01_aux_08535",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_11153",
+            "neighbor_id": "gridinstruct_v01_aux_10845",
+            "cosine_similarity": 1.0
+          }
+        ]
+      }
+    },
+    "train_ood": {
+      "exact": {
+        "left_records": 26545,
+        "right_records": 61479,
+        "right_records_matching_left": 0,
+        "right_match_rate": 0.0,
+        "examples": []
+      },
+      "template_normalized": {
+        "left_records": 26545,
+        "right_records": 61479,
+        "right_records_matching_left": 21265,
+        "right_match_rate": 0.3458904666634135,
+        "examples": [
+          "gridinstruct_v01_aux_15429",
+          "gridinstruct_v01_aux_06247",
+          "gridinstruct_v01_compliance_10459",
+          "gridinstruct_v01_compliance_15368",
+          "gridinstruct_v01_compliance_02917_counterfactual_01",
+          "gridinstruct_v01_compliance_05524",
+          "gridinstruct_v01_compliance_07484",
+          "gridinstruct_v01_compliance_05386_counterfactual_01",
+          "gridinstruct_v01_compliance_02933",
+          "gridinstruct_v01_compliance_01171_counterfactual_01",
+          "gridinstruct_v01_compliance_04579_counterfactual_01",
+          "gridinstruct_v01_aux_05223",
+          "gridinstruct_v01_compliance_12665",
+          "gridinstruct_v01_compliance_12042",
+          "gridinstruct_v01_aux_14028",
+          "gridinstruct_v01_compliance_02749",
+          "gridinstruct_v01_aux_11989",
+          "gridinstruct_v01_aux_05532",
+          "gridinstruct_v01_aux_15023",
+          "gridinstruct_v01_compliance_01581",
+          "gridinstruct_v01_compliance_00877_actionpara_01",
+          "gridinstruct_v01_aux_01394",
+          "gridinstruct_v01_compliance_07787",
+          "gridinstruct_v12_equipment1_compliance_ieee14_n1_bus_outage_load120_busidx_12_dbe342b112ab_v00",
+          "gridinstruct_v01_aux_07078",
+          "gridinstruct_v01_query_10786",
+          "gridinstruct_v01_aux_04073",
+          "gridinstruct_v01_intent_06093",
+          "gridinstruct_v01_aux_15122",
+          "gridinstruct_v01_compliance_03564_counterfactual_01",
+          "gridinstruct_v01_aux_12498",
+          "gridinstruct_v01_query_11706",
+          "gridinstruct_v01_compliance_00221_counterfactual_01",
+          "gridinstruct_v01_aux_08289",
+          "gridinstruct_v01_compliance_10929",
+          "gridinstruct_v01_intent_00108__plus12_dispatcher_cf_108_mitigate_violations",
+          "gridinstruct_v01_compliance_09140",
+          "gridinstruct_v01_aux_06778",
+          "gridinstruct_v01_compliance_00729",
+          "gridinstruct_v01_compliance_11842",
+          "gridinstruct_v01_compliance_08940",
+          "gridinstruct_v01_compliance_08767_actionpara_03",
+          "gridinstruct_v01_query_08608",
+          "gridinstruct_v01_aux_02225",
+          "gridinstruct_v01_compliance_01238_counterfactual_01",
+          "gridinstruct_v01_aux_04000",
+          "gridinstruct_v01_aux_06192",
+          "gridinstruct_v01_compliance_12953",
+          "gridinstruct_v01_compliance_00073",
+          "gridinstruct_v01_compliance_03549"
+        ]
+      },
+      "minhash_char5": {
+        "threshold": 0.85,
+        "num_perm": 64,
+        "left_records": 2500,
+        "right_records": 12000,
+        "right_records_with_neighbor": 9303,
+        "right_match_rate": 0.77525,
+        "examples": [
+          {
+            "id": "gridinstruct_v01_aux_15429",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_01931",
+              "gridinstruct_v01_aux_07376",
+              "gridinstruct_v01_aux_08040",
+              "gridinstruct_v01_aux_15002",
+              "gridinstruct_v12_equipment1_aux_ieee30_n1_bus_outage_load100_busidx_10_3e34182de043_v00"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_02356",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_00024",
+              "gridinstruct_v01_aux_00808",
+              "gridinstruct_v01_aux_05186",
+              "gridinstruct_v01_aux_05406",
+              "gridinstruct_v01_aux_08405"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_02917_counterfactual_01",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_02893_counterfactual_01"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_10005",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_09927"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_00391__plus12_dispatcher_cf_391_security_check_and_redispatch",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_00042__plus12_dispatcher_cf_42_security_check_and_redispatch",
+              "gridinstruct_v01_intent_00369__plus12_dispatcher_cf_369_security_check_and_redispatch",
+              "gridinstruct_v01_intent_00388__plus12_dispatcher_cf_388_security_check_and_redispatch",
+              "gridinstruct_v01_intent_00463__plus12_dispatcher_cf_463_security_check_and_redispatch",
+              "gridinstruct_v01_intent_00492__plus12_dispatcher_cf_492_security_check_and_redispatch"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_02042",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_11574"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_12536",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_01026",
+              "gridinstruct_v01_query_12836"
+            ]
+          },
+          {
+            "id": "gridinstruct_v12_topology_aux_0052_v00",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_01104",
+              "gridinstruct_v01_aux_07481",
+              "gridinstruct_v01_aux_08437",
+              "gridinstruct_v01_aux_11312",
+              "gridinstruct_v01_aux_15002"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_10276",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_11900"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_04073",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_02573",
+              "gridinstruct_v01_aux_10122",
+              "gridinstruct_v01_aux_12018"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_06093",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_05064",
+              "gridinstruct_v01_intent_05304",
+              "gridinstruct_v01_intent_05841",
+              "gridinstruct_v01_intent_07158"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_14728",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_14692",
+              "gridinstruct_v01_intent_14890",
+              "gridinstruct_v01_intent_15151"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_12498",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_05457",
+              "gridinstruct_v01_aux_05557",
+              "gridinstruct_v01_aux_07376",
+              "gridinstruct_v01_aux_12970",
+              "gridinstruct_v01_aux_13434"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_09519",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_08532"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_06147",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_06287",
+              "gridinstruct_v01_query_15355",
+              "gridinstruct_v01_query_15439"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_00957",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_00781",
+              "gridinstruct_v01_compliance_00821",
+              "gridinstruct_v01_compliance_01941",
+              "gridinstruct_v01_compliance_07603_actionpara_01"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_09140",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_08884"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_02554",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_03214",
+              "gridinstruct_v01_intent_03565",
+              "gridinstruct_v01_intent_03748",
+              "gridinstruct_v01_intent_04192",
+              "gridinstruct_v01_intent_04552"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_00078",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_00242",
+              "gridinstruct_v01_query_02370",
+              "gridinstruct_v01_query_07579"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_15483",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_07821"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_00480",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_01488",
+              "gridinstruct_v01_query_13110"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_04000",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_02756",
+              "gridinstruct_v01_aux_03588",
+              "gridinstruct_v01_aux_04188",
+              "gridinstruct_v01_aux_04708",
+              "gridinstruct_v01_aux_06063"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_11476",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_02659",
+              "gridinstruct_v01_query_10093",
+              "gridinstruct_v01_query_11244"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_03549",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_09703",
+              "gridinstruct_v01_compliance_11255",
+              "gridinstruct_v01_compliance_11783"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_13159",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_05066",
+              "gridinstruct_v01_aux_05910",
+              "gridinstruct_v01_aux_12227",
+              "gridinstruct_v01_aux_12311",
+              "gridinstruct_v01_aux_14143"
+            ]
+          },
+          {
+            "id": "gridinstruct_v12_topology2_query_illinois200_sdv2_n1_branch_outage_load100_line89_2abadec1759f_v02",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_08567",
+              "gridinstruct_v12_equipment1_query_ieee14_n1_bus_outage_load100_busidx_9_c141f4ae6941_v00"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_06900",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_00158",
+              "gridinstruct_v01_aux_04988",
+              "gridinstruct_v01_aux_05228",
+              "gridinstruct_v01_aux_05292",
+              "gridinstruct_v01_aux_05964"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_00598__plus12_dispatcher_cf_598_diagnose_and_dispatch",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_00084__plus12_dispatcher_cf_84_diagnose_and_dispatch",
+              "gridinstruct_v01_intent_00201__plus12_dispatcher_cf_201_diagnose_and_dispatch",
+              "gridinstruct_v01_intent_00296__plus12_dispatcher_cf_296_diagnose_and_dispatch",
+              "gridinstruct_v01_intent_00474__plus12_dispatcher_cf_474_diagnose_and_dispatch",
+              "gridinstruct_v12_equipment1_intent_ieee14_n1_bus_outage_load100_busidx_10_51b5c795a6c6_v01"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_02981_counterfactual_01",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_02893_counterfactual_01"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_14175",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_14343"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_06312",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_06816"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_01379",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_01085",
+              "gridinstruct_v01_query_01575",
+              "gridinstruct_v01_query_15017"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_14416",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_14827"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_13280",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_04843",
+              "gridinstruct_v01_compliance_05028_actionpara_01",
+              "gridinstruct_v01_compliance_05068_actionpara_01",
+              "gridinstruct_v01_compliance_06531",
+              "gridinstruct_v01_compliance_12357"
+            ]
+          },
+          {
+            "id": "gridinstruct_v12_topology2_aux_rte2848_sdv2_n1_branch_outage_load100_line1837_a03e1f23bad8_v02",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_01104",
+              "gridinstruct_v01_aux_05457",
+              "gridinstruct_v01_aux_05557",
+              "gridinstruct_v01_aux_12970",
+              "gridinstruct_v01_aux_13434"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_07495",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_00857",
+              "gridinstruct_v01_compliance_01001",
+              "gridinstruct_v01_compliance_07527",
+              "gridinstruct_v01_compliance_07615",
+              "gridinstruct_v01_compliance_07991"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_04503",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_00254__plus12_dispatcher_cf_254_diagnose_and_dispatch",
+              "gridinstruct_v01_intent_00387__plus12_dispatcher_cf_387_diagnose_and_dispatch",
+              "gridinstruct_v01_intent_03039",
+              "gridinstruct_v01_intent_03084",
+              "gridinstruct_v01_intent_03297"
+            ]
+          },
+          {
+            "id": "gridinstruct_v12_equipment1_intent_ieee14_n1_bus_outage_load120_busidx_10_b44dccc7ffa6_v00",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_00848",
+              "gridinstruct_v01_intent_01463",
+              "gridinstruct_v01_intent_01550",
+              "gridinstruct_v01_intent_02318",
+              "gridinstruct_v12_equipment1_intent_ieee14_n1_bus_outage_load100_busidx_11_ecfd92588d4b_v00"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_13484",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_12257",
+              "gridinstruct_v01_intent_12365",
+              "gridinstruct_v01_intent_12698",
+              "gridinstruct_v01_intent_13013",
+              "gridinstruct_v01_intent_13073"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_06172",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_05636",
+              "gridinstruct_v01_compliance_06708"
+            ]
+          },
+          {
+            "id": "gridinstruct_v12_topology2_intent_pegase1354_sdv2_n1_branch_outage_load85_line58_574062b861c3_v01",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_00084__plus12_dispatcher_cf_84_diagnose_and_dispatch",
+              "gridinstruct_v01_intent_00201__plus12_dispatcher_cf_201_diagnose_and_dispatch",
+              "gridinstruct_v01_intent_00296__plus12_dispatcher_cf_296_diagnose_and_dispatch",
+              "gridinstruct_v01_intent_00474__plus12_dispatcher_cf_474_diagnose_and_dispatch",
+              "gridinstruct_v12_equipment1_intent_ieee14_n1_bus_outage_load100_busidx_10_51b5c795a6c6_v01"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_06883",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_00801",
+              "gridinstruct_v01_aux_01229",
+              "gridinstruct_v01_aux_01361",
+              "gridinstruct_v01_aux_01705",
+              "gridinstruct_v01_aux_03756"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_00618",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_05292",
+              "gridinstruct_v01_aux_05964",
+              "gridinstruct_v01_aux_07403",
+              "gridinstruct_v01_aux_07515",
+              "gridinstruct_v01_aux_13057"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_02378",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_00158",
+              "gridinstruct_v01_aux_02022",
+              "gridinstruct_v01_aux_02386",
+              "gridinstruct_v01_aux_05292",
+              "gridinstruct_v01_aux_05964"
+            ]
+          },
+          {
+            "id": "gridinstruct_v12_topology2_intent_pegase1354_sdv2_n1_branch_outage_load85_line767_25367e638a0b_v01",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_00248__plus12_dispatcher_cf_248_diagnose_and_dispatch",
+              "gridinstruct_v01_intent_00453__plus12_dispatcher_cf_453_diagnose_and_dispatch",
+              "gridinstruct_v01_intent_00483__plus12_dispatcher_cf_483_diagnose_and_dispatch",
+              "gridinstruct_v01_intent_00539__plus12_dispatcher_cf_539_diagnose_and_dispatch",
+              "gridinstruct_v01_intent_00550__plus12_dispatcher_cf_550_diagnose_and_dispatch"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_10969",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_02752"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_00246__plus12_dispatcher_cf_246_diagnose_and_dispatch",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_00084__plus12_dispatcher_cf_84_diagnose_and_dispatch",
+              "gridinstruct_v01_intent_00201__plus12_dispatcher_cf_201_diagnose_and_dispatch",
+              "gridinstruct_v01_intent_00296__plus12_dispatcher_cf_296_diagnose_and_dispatch",
+              "gridinstruct_v01_intent_00474__plus12_dispatcher_cf_474_diagnose_and_dispatch",
+              "gridinstruct_v12_equipment1_intent_ieee14_n1_bus_outage_load100_busidx_10_51b5c795a6c6_v01"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_00308__plus12_dispatcher_cf_308_security_check_and_redispatch",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_05064",
+              "gridinstruct_v01_intent_05304",
+              "gridinstruct_v01_intent_05841",
+              "gridinstruct_v01_intent_07158"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_07066",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_05071",
+              "gridinstruct_v01_query_05568"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_05128",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_04885",
+              "gridinstruct_v01_intent_05392",
+              "gridinstruct_v01_intent_06880",
+              "gridinstruct_v01_intent_07141"
+            ]
+          }
+        ]
+      },
+      "semantic_sample": {
+        "model": "deterministic_tfidf_char_ngrams_3_5",
+        "device": "cpu",
+        "threshold": 0.95,
+        "left_sample_records": 5000,
+        "right_sample_records": 5000,
+        "right_records_with_neighbor": 3676,
+        "right_match_rate": 0.7352,
+        "examples": [
+          {
+            "id": "gridinstruct_v01_query_10786",
+            "neighbor_id": "gridinstruct_v01_query_10898",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_04000",
+            "neighbor_id": "gridinstruct_v01_aux_03076",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_13613",
+            "neighbor_id": "gridinstruct_v01_compliance_13325",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_05144_counterfactual_01",
+            "neighbor_id": "gridinstruct_v01_compliance_05336_counterfactual_01",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_07211",
+            "neighbor_id": "gridinstruct_v01_aux_06063",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_03039",
+            "neighbor_id": "gridinstruct_v01_aux_02759",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_04024",
+            "neighbor_id": "gridinstruct_v01_compliance_02832",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_14149",
+            "neighbor_id": "gridinstruct_v01_aux_13057",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_03074",
+            "neighbor_id": "gridinstruct_v01_aux_03914",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_10671",
+            "neighbor_id": "gridinstruct_v01_compliance_11783",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_03677_counterfactual_01",
+            "neighbor_id": "gridinstruct_v01_compliance_02445_counterfactual_01",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_02220_counterfactual_01",
+            "neighbor_id": "gridinstruct_v01_compliance_01740_counterfactual_01",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_12551",
+            "neighbor_id": "gridinstruct_v01_aux_14175",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_04072",
+            "neighbor_id": "gridinstruct_v01_compliance_02832",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_05460",
+            "neighbor_id": "gridinstruct_v01_compliance_05156",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_14069",
+            "neighbor_id": "gridinstruct_v01_compliance_13325",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_00389",
+            "neighbor_id": "gridinstruct_v01_compliance_00821",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_04587_counterfactual_01",
+            "neighbor_id": "gridinstruct_v01_compliance_04155_counterfactual_01",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_12693",
+            "neighbor_id": "gridinstruct_v01_compliance_13325",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_12697",
+            "neighbor_id": "gridinstruct_v01_query_13313",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_00309",
+            "neighbor_id": "gridinstruct_v01_compliance_00821",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_00244_counterfactual_01",
+            "neighbor_id": "gridinstruct_v01_compliance_00388_counterfactual_01",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_05123",
+            "neighbor_id": "gridinstruct_v01_compliance_05651",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_12038",
+            "neighbor_id": "gridinstruct_v01_compliance_11862",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_00951",
+            "neighbor_id": "gridinstruct_v01_compliance_01167",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_12126",
+            "neighbor_id": "gridinstruct_v01_compliance_13694",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_01257",
+            "neighbor_id": "gridinstruct_v01_aux_00025",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_02487",
+            "neighbor_id": "gridinstruct_v01_aux_03663",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_05420_counterfactual_01",
+            "neighbor_id": "gridinstruct_v01_compliance_06020_counterfactual_01",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_00219",
+            "neighbor_id": "gridinstruct_v01_aux_01731",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_05292",
+            "neighbor_id": "gridinstruct_v01_compliance_05156",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_14395",
+            "neighbor_id": "gridinstruct_v01_aux_14143",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_06391",
+            "neighbor_id": "gridinstruct_v01_compliance_05359",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_05448_counterfactual_01",
+            "neighbor_id": "gridinstruct_v01_compliance_05336_counterfactual_01",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_05472_counterfactual_01",
+            "neighbor_id": "gridinstruct_v01_compliance_05336_counterfactual_01",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_12942",
+            "neighbor_id": "gridinstruct_v01_query_12858",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_04192",
+            "neighbor_id": "gridinstruct_v01_compliance_02832",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_12648",
+            "neighbor_id": "gridinstruct_v01_query_13040",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_01471",
+            "neighbor_id": "gridinstruct_v01_compliance_01167",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_05588",
+            "neighbor_id": "gridinstruct_v01_compliance_05156",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_01741",
+            "neighbor_id": "gridinstruct_v01_compliance_00821",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_02094",
+            "neighbor_id": "gridinstruct_v01_compliance_01542",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_11154",
+            "neighbor_id": "gridinstruct_v01_aux_10482",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_12565",
+            "neighbor_id": "gridinstruct_v01_compliance_13325",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_02226",
+            "neighbor_id": "gridinstruct_v01_compliance_00514",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_04623",
+            "neighbor_id": "gridinstruct_v01_aux_04763",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_02345",
+            "neighbor_id": "gridinstruct_v01_aux_01561",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_01973",
+            "neighbor_id": "gridinstruct_v01_aux_02393",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_03123_counterfactual_01",
+            "neighbor_id": "gridinstruct_v01_compliance_04155_counterfactual_01",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_13517",
+            "neighbor_id": "gridinstruct_v01_compliance_13325",
+            "cosine_similarity": 1.0
+          }
+        ]
+      }
+    },
+    "strict_train_strict_test": {
+      "exact": {
+        "left_records": 76378,
+        "right_records": 9543,
+        "right_records_matching_left": 0,
+        "right_match_rate": 0.0,
+        "examples": []
+      },
+      "template_normalized": {
+        "left_records": 76378,
+        "right_records": 9543,
+        "right_records_matching_left": 6289,
+        "right_match_rate": 0.659017080582626,
+        "examples": [
+          "gridinstruct_v01_compliance_07856",
+          "gridinstruct_v01_aux_10399",
+          "gridinstruct_v01_query_14537",
+          "gridinstruct_v01_aux_04465",
+          "gridinstruct_v01_compliance_05482_actionpara_02",
+          "gridinstruct_v12_topology2_aux_illinois200_sdv2_n1_branch_outage_load72_line58_1227173d5c02_v01",
+          "gridinstruct_v01_aux_06207",
+          "gridinstruct_v01_query_03525",
+          "gridinstruct_v01_aux_05676",
+          "gridinstruct_v01_intent_03257",
+          "gridinstruct_v01_query_13176",
+          "gridinstruct_v01_query_09957",
+          "gridinstruct_v01_intent_05541",
+          "gridinstruct_v01_compliance_00517",
+          "gridinstruct_v01_aux_07579",
+          "gridinstruct_v01_aux_11401",
+          "gridinstruct_v01_compliance_05864_counterfactual_01",
+          "gridinstruct_v01_compliance_01677_counterfactual_01",
+          "gridinstruct_v01_aux_04718",
+          "gridinstruct_v01_compliance_02704",
+          "gridinstruct_v01_aux_03079",
+          "gridinstruct_v01_compliance_08875_actionpara_01",
+          "gridinstruct_v01_query_15477",
+          "gridinstruct_v01_compliance_00125",
+          "gridinstruct_v01_aux_15184",
+          "gridinstruct_v12_topology2_aux_illinois200_sdv2_n1_branch_outage_load76_line69_30c01686720c_v02",
+          "gridinstruct_v01_query_10680",
+          "gridinstruct_v01_query_11622",
+          "gridinstruct_v01_query_01808",
+          "gridinstruct_v01_aux_02403",
+          "gridinstruct_v01_aux_04059",
+          "gridinstruct_v01_query_11083",
+          "gridinstruct_v01_compliance_11136_actionpara_01",
+          "gridinstruct_v12_topology2_aux_illinois200_sdv2_n1_branch_outage_load86_line143_e129b762355d_v00",
+          "gridinstruct_v01_query_13601",
+          "gridinstruct_v01_aux_13310",
+          "gridinstruct_v01_aux_10633",
+          "gridinstruct_v01_compliance_09723",
+          "gridinstruct_v01_intent_12498",
+          "gridinstruct_v01_intent_00809",
+          "gridinstruct_v01_intent_00315__plus12_dispatcher_cf_315_security_check_and_redispatch",
+          "gridinstruct_v01_aux_04904",
+          "gridinstruct_v01_compliance_04848",
+          "gridinstruct_v01_compliance_01575",
+          "gridinstruct_v01_aux_14158",
+          "gridinstruct_v01_aux_05101",
+          "gridinstruct_v01_aux_04527",
+          "gridinstruct_v01_query_11870",
+          "gridinstruct_v01_intent_04817",
+          "gridinstruct_v01_aux_13922"
+        ]
+      },
+      "minhash_char5": {
+        "threshold": 0.85,
+        "num_perm": 64,
+        "left_records": 2500,
+        "right_records": 9543,
+        "right_records_with_neighbor": 7411,
+        "right_match_rate": 0.7765901708058263,
+        "examples": [
+          {
+            "id": "gridinstruct_v01_compliance_07856",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_07624",
+              "gridinstruct_v01_compliance_09408"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_10399",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_03550",
+              "gridinstruct_v01_aux_03622",
+              "gridinstruct_v01_aux_03706",
+              "gridinstruct_v01_aux_11583",
+              "gridinstruct_v01_aux_11807"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_14537",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_09293"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_04465",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_02565",
+              "gridinstruct_v01_aux_02649",
+              "gridinstruct_v01_aux_02721",
+              "gridinstruct_v01_aux_02869",
+              "gridinstruct_v01_aux_03349"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_05482_actionpara_02",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_06034_actionpara_01",
+              "gridinstruct_v01_compliance_06378",
+              "gridinstruct_v01_compliance_06826"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_08051",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_01918"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_06207",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_05640",
+              "gridinstruct_v01_aux_05775",
+              "gridinstruct_v01_aux_12756"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_03525",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_02661",
+              "gridinstruct_v01_query_09983"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_05676",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_05172",
+              "gridinstruct_v01_aux_05640",
+              "gridinstruct_v01_aux_14177"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_03257",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_02471",
+              "gridinstruct_v01_intent_02660",
+              "gridinstruct_v01_intent_02915",
+              "gridinstruct_v01_intent_03209",
+              "gridinstruct_v01_intent_03863"
+            ]
+          },
+          {
+            "id": "gridinstruct_v12_topology2_query_rte2848_sdv2_n1_branch_outage_load95_line994_db1a0fe4a4e8_v01",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_03823",
+              "gridinstruct_v01_query_04435",
+              "gridinstruct_v01_query_04509",
+              "gridinstruct_v01_query_09643",
+              "gridinstruct_v12_topology2_query_pegase2869_sdv2_base_power_flow_load100_d8a3b49ad444_v01"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_13176",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_12392",
+              "gridinstruct_v01_query_12676",
+              "gridinstruct_v01_query_13936",
+              "gridinstruct_v01_query_14408"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_05541",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_00014__plus12_dispatcher_cf_14_security_check_and_redispatch",
+              "gridinstruct_v01_intent_00017__plus12_dispatcher_cf_17_security_check_and_redispatch",
+              "gridinstruct_v01_intent_00228__plus12_dispatcher_cf_228_security_check_and_redispatch",
+              "gridinstruct_v01_intent_00398__plus12_dispatcher_cf_398_security_check_and_redispatch",
+              "gridinstruct_v01_intent_00436__plus12_dispatcher_cf_436_security_check_and_redispatch"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_00517",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_00193_actionpara_01",
+              "gridinstruct_v01_compliance_00433_actionpara_01",
+              "gridinstruct_v01_compliance_07843_actionpara_01",
+              "gridinstruct_v01_compliance_08107",
+              "gridinstruct_v01_compliance_08459"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_00229",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_01237",
+              "gridinstruct_v01_query_08269",
+              "gridinstruct_v01_query_13020"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_07579",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_00294",
+              "gridinstruct_v01_aux_02154",
+              "gridinstruct_v01_aux_06072",
+              "gridinstruct_v01_aux_07192",
+              "gridinstruct_v01_aux_07439"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_11401",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_00173",
+              "gridinstruct_v01_aux_02496",
+              "gridinstruct_v01_aux_02514",
+              "gridinstruct_v01_aux_02731",
+              "gridinstruct_v01_aux_03368"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_05864_counterfactual_01",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_05248_counterfactual_01",
+              "gridinstruct_v01_compliance_05256_counterfactual_01",
+              "gridinstruct_v01_compliance_05320_counterfactual_01",
+              "gridinstruct_v01_compliance_05424_counterfactual_01",
+              "gridinstruct_v01_compliance_05688_counterfactual_01"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_01677_counterfactual_01",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_00269_counterfactual_01",
+              "gridinstruct_v01_compliance_00381_counterfactual_01",
+              "gridinstruct_v01_compliance_00477_counterfactual_01",
+              "gridinstruct_v01_compliance_00637_counterfactual_01",
+              "gridinstruct_v01_compliance_01953_counterfactual_01"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_04718",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_02514",
+              "gridinstruct_v01_aux_02702",
+              "gridinstruct_v01_aux_03262",
+              "gridinstruct_v01_aux_03514",
+              "gridinstruct_v01_aux_03718"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_02704",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_02800",
+              "gridinstruct_v01_compliance_02944",
+              "gridinstruct_v01_compliance_03048",
+              "gridinstruct_v01_compliance_03240",
+              "gridinstruct_v01_compliance_03504"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_03079",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_02475",
+              "gridinstruct_v01_aux_02764",
+              "gridinstruct_v01_aux_03275",
+              "gridinstruct_v01_aux_09852",
+              "gridinstruct_v01_aux_11584"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_08875_actionpara_01",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_00265",
+              "gridinstruct_v01_compliance_00265_actionpara_01",
+              "gridinstruct_v01_compliance_08075_actionpara_01"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_15477",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_08382",
+              "gridinstruct_v01_query_09390",
+              "gridinstruct_v01_query_09397",
+              "gridinstruct_v01_query_14749",
+              "gridinstruct_v01_query_14777"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_00125",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_00237",
+              "gridinstruct_v01_compliance_00509",
+              "gridinstruct_v01_compliance_00637",
+              "gridinstruct_v12_equipment1_compliance_ieee118_n1_bus_outage_load100_busidx_2_d468ea98530d_v00",
+              "gridinstruct_v12_topology2_compliance_pegase89_sdv2_n1_branch_outage_load75_line57_f2585d9eaca2_v00"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_ticket_01858__plus14_plain_monitoring_1858",
+            "neighbor_ids": [
+              "gridinstruct_v01_ticket_00988__plus14_plain_monitoring_988"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_15184",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_00294",
+              "gridinstruct_v01_aux_02154",
+              "gridinstruct_v01_aux_06072",
+              "gridinstruct_v01_aux_07192",
+              "gridinstruct_v01_aux_07439"
+            ]
+          },
+          {
+            "id": "gridinstruct_v12_topology2_aux_illinois200_sdv2_n1_branch_outage_load76_line69_30c01686720c_v02",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_12781",
+              "gridinstruct_v12_topology2_aux_illinois200_sdv2_n1_branch_outage_load100_line12_62915443d11a_v02",
+              "gridinstruct_v12_topology2_aux_illinois200_sdv2_n1_branch_outage_load92_line129_21a263d8daa0_v02",
+              "gridinstruct_v12_topology2_aux_illinois200_sdv2_n1_branch_outage_load98_line55_3c68dd6bae20_v02"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_05666",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_06842",
+              "gridinstruct_v01_aux_12143",
+              "gridinstruct_v01_aux_12491",
+              "gridinstruct_v01_aux_12607",
+              "gridinstruct_v01_aux_12847"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_10680",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_00632",
+              "gridinstruct_v01_query_00800",
+              "gridinstruct_v01_query_04764",
+              "gridinstruct_v01_query_11481",
+              "gridinstruct_v01_query_11904"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_11622",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_02811",
+              "gridinstruct_v01_query_03079",
+              "gridinstruct_v01_query_03823",
+              "gridinstruct_v01_query_04509",
+              "gridinstruct_v01_query_09760"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_01808",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_06642"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_02403",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_00191",
+              "gridinstruct_v01_aux_00675",
+              "gridinstruct_v01_aux_00787",
+              "gridinstruct_v01_aux_01031",
+              "gridinstruct_v01_aux_01039"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_04059",
+            "neighbor_ids": [
+              "gridinstruct_v12_equipment1_aux_ieee30_n1_transformer_outage_load100_trafoidx_2_603efc0d4551_v01"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_11083",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_01571",
+              "gridinstruct_v01_query_02602",
+              "gridinstruct_v01_query_03918",
+              "gridinstruct_v01_query_09760",
+              "gridinstruct_v01_query_11300"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_11136_actionpara_01",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_02474",
+              "gridinstruct_v01_compliance_02626",
+              "gridinstruct_v01_compliance_02738",
+              "gridinstruct_v01_compliance_02906",
+              "gridinstruct_v01_compliance_03050"
+            ]
+          },
+          {
+            "id": "gridinstruct_v12_topology2_aux_illinois200_sdv2_n1_branch_outage_load86_line143_e129b762355d_v00",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_07494",
+              "gridinstruct_v01_aux_13124",
+              "gridinstruct_v12_topology2_aux_illinois200_sdv2_n1_branch_outage_load50_line89_d5c4f819abfb_v03",
+              "gridinstruct_v12_topology2_aux_illinois200_sdv2_n1_branch_outage_load86_line132_b7bd104d5841_v03"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_13601",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_05501",
+              "gridinstruct_v01_query_06677",
+              "gridinstruct_v01_query_06737",
+              "gridinstruct_v01_query_12411",
+              "gridinstruct_v01_query_12707"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_05218",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_05617",
+              "gridinstruct_v01_intent_05896",
+              "gridinstruct_v01_intent_06709",
+              "gridinstruct_v01_intent_06808",
+              "gridinstruct_v01_intent_07240"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_13753",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_02589",
+              "gridinstruct_v01_query_12781",
+              "gridinstruct_v01_query_13921",
+              "gridinstruct_v01_query_13969"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_13310",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_03966",
+              "gridinstruct_v01_aux_04694",
+              "gridinstruct_v01_aux_06045",
+              "gridinstruct_v01_aux_06349",
+              "gridinstruct_v01_aux_06813"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_query_02096",
+            "neighbor_ids": [
+              "gridinstruct_v01_query_00353",
+              "gridinstruct_v01_query_09293",
+              "gridinstruct_v12_topology2_query_pegase2869_sdv2_n1_branch_outage_load100_line602_1f7283574b03_v00",
+              "gridinstruct_v12_topology2_query_pegase2869_sdv2_n1_branch_outage_load95_line3120_7c15e61208d8_v00"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_10633",
+            "neighbor_ids": [
+              "gridinstruct_v12_topology2_aux_illinois200_sdv2_n1_branch_outage_load60_line83_f850416df38e_v01"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_ticket_01218__plus12_operation_cf_1218",
+            "neighbor_ids": [
+              "gridinstruct_v01_ticket_01258__plus12_operation_cf_1258"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_compliance_09723",
+            "neighbor_ids": [
+              "gridinstruct_v01_compliance_02733_actionpara_01",
+              "gridinstruct_v01_compliance_04149_actionpara_01",
+              "gridinstruct_v01_compliance_04693_actionpara_01",
+              "gridinstruct_v01_compliance_10099",
+              "gridinstruct_v01_compliance_10795"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_12498",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_12186",
+              "gridinstruct_v01_intent_12471",
+              "gridinstruct_v01_intent_13398",
+              "gridinstruct_v01_intent_13668",
+              "gridinstruct_v01_intent_13815"
+            ]
+          },
+          {
+            "id": "gridinstruct_v12_topology_intent_0009_v03",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_09261",
+              "gridinstruct_v01_intent_09405",
+              "gridinstruct_v01_intent_09633"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_00809",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_00317",
+              "gridinstruct_v01_intent_00776",
+              "gridinstruct_v01_intent_01394",
+              "gridinstruct_v01_intent_01742",
+              "gridinstruct_v01_intent_01886"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_intent_00315__plus12_dispatcher_cf_315_security_check_and_redispatch",
+            "neighbor_ids": [
+              "gridinstruct_v01_intent_00169__plus12_dispatcher_cf_169_security_check_and_redispatch",
+              "gridinstruct_v01_intent_00231__plus12_dispatcher_cf_231_security_check_and_redispatch",
+              "gridinstruct_v01_intent_00376__plus12_dispatcher_cf_376_security_check_and_redispatch",
+              "gridinstruct_v01_intent_00414__plus12_dispatcher_cf_414_security_check_and_redispatch",
+              "gridinstruct_v01_intent_00458__plus12_dispatcher_cf_458_security_check_and_redispatch"
+            ]
+          },
+          {
+            "id": "gridinstruct_v01_aux_04904",
+            "neighbor_ids": [
+              "gridinstruct_v01_aux_06072",
+              "gridinstruct_v01_aux_06164",
+              "gridinstruct_v01_aux_07192",
+              "gridinstruct_v01_aux_09495",
+              "gridinstruct_v01_aux_13297"
+            ]
+          }
+        ]
+      },
+      "semantic_sample": {
+        "model": "deterministic_tfidf_char_ngrams_3_5",
+        "device": "cpu",
+        "threshold": 0.95,
+        "left_sample_records": 5000,
+        "right_sample_records": 5000,
+        "right_records_with_neighbor": 3695,
+        "right_match_rate": 0.739,
+        "examples": [
+          {
+            "id": "gridinstruct_v01_intent_05541",
+            "neighbor_id": "gridinstruct_v01_intent_07053",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_07579",
+            "neighbor_id": "gridinstruct_v01_aux_09063",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_01677_counterfactual_01",
+            "neighbor_id": "gridinstruct_v01_compliance_02133_counterfactual_01",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_11136_actionpara_01",
+            "neighbor_id": "gridinstruct_v01_compliance_03330",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_intent_05736",
+            "neighbor_id": "gridinstruct_v01_intent_06093",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_intent_02978",
+            "neighbor_id": "gridinstruct_v01_intent_03734",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_04667",
+            "neighbor_id": "gridinstruct_v01_compliance_03979",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_02027",
+            "neighbor_id": "gridinstruct_v01_aux_00907",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_14779",
+            "neighbor_id": "gridinstruct_v01_compliance_15155",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_07440",
+            "neighbor_id": "gridinstruct_v01_compliance_08232",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_11444",
+            "neighbor_id": "gridinstruct_v01_aux_12004",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_12364",
+            "neighbor_id": "gridinstruct_v01_compliance_13300",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_04777_counterfactual_01",
+            "neighbor_id": "gridinstruct_v01_compliance_02713_counterfactual_01",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_06277",
+            "neighbor_id": "gridinstruct_v01_aux_07229",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_02115",
+            "neighbor_id": "gridinstruct_v01_compliance_00171",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v12_topology2_intent_pegase1354_sdv2_n1_branch_outage_load95_line262_03d7cae28088_v03",
+            "neighbor_id": "gridinstruct_v12_topology_intent_0030_v03",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_09785",
+            "neighbor_id": "gridinstruct_v01_compliance_11513",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_10332",
+            "neighbor_id": "gridinstruct_v01_compliance_09980",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_15427",
+            "neighbor_id": "gridinstruct_v01_compliance_15155",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_07002",
+            "neighbor_id": "gridinstruct_v01_compliance_04914",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_06217",
+            "neighbor_id": "gridinstruct_v01_aux_05685",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_15195",
+            "neighbor_id": "gridinstruct_v01_compliance_15395",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_intent_03127",
+            "neighbor_id": "gridinstruct_v01_intent_04282",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v12_topology2_intent_illinois200_sdv2_n1_branch_outage_load100_line56_f098b9d5b0a6_v00",
+            "neighbor_id": "gridinstruct_v12_topology2_intent_illinois200_sdv2_n1_branch_outage_load82_line122_bbf7675d2433_v00",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_intent_01530",
+            "neighbor_id": "gridinstruct_v01_intent_01173",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_intent_10001",
+            "neighbor_id": "gridinstruct_v01_intent_11198",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_intent_00471__plus12_dispatcher_cf_471_diagnose_and_dispatch",
+            "neighbor_id": "gridinstruct_v01_intent_04803",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_05308",
+            "neighbor_id": "gridinstruct_v01_aux_06260",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_01705",
+            "neighbor_id": "gridinstruct_v01_compliance_01729",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_07805",
+            "neighbor_id": "gridinstruct_v01_aux_08085",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v12_topology2_query_illinois200_sdv2_n1_branch_outage_load100_line89_2abadec1759f_v01",
+            "neighbor_id": "gridinstruct_v12_topology2_query_illinois200_sdv2_n1_branch_outage_load98_line56_3513af21c7f0_v01",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v12_topology2_intent_pegase1354_sdv2_n1_branch_outage_load100_line101_3f779a1a4e48_v02",
+            "neighbor_id": "gridinstruct_v12_topology2_intent_rte2848_sdv2_n1_branch_outage_load105_line568_4e4ca0bf96e2_v02",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_02062",
+            "neighbor_id": "gridinstruct_v01_compliance_00174",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_05531",
+            "neighbor_id": "gridinstruct_v01_aux_06007",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_08933",
+            "neighbor_id": "gridinstruct_v01_aux_07533",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_09455",
+            "neighbor_id": "gridinstruct_v01_query_07803",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_06567",
+            "neighbor_id": "gridinstruct_v12_topology2_compliance_pegase89_sdv2_n1_branch_outage_load105_line55_e83940855758_v02",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_05958",
+            "neighbor_id": "gridinstruct_v01_compliance_05830",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_01871",
+            "neighbor_id": "gridinstruct_v01_aux_01955",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_09223",
+            "neighbor_id": "gridinstruct_v01_compliance_07447",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_07048_actionpara_02",
+            "neighbor_id": "gridinstruct_v01_compliance_06672_actionpara_01",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_intent_09385",
+            "neighbor_id": "gridinstruct_v01_intent_07747",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_10193",
+            "neighbor_id": "gridinstruct_v01_compliance_11513",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_09874",
+            "neighbor_id": "gridinstruct_v01_aux_09902",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_02825_counterfactual_01",
+            "neighbor_id": "gridinstruct_v01_compliance_02713_counterfactual_01",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_query_05997",
+            "neighbor_id": "gridinstruct_v01_query_06613",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_aux_02844",
+            "neighbor_id": "gridinstruct_v01_aux_02480",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_02531",
+            "neighbor_id": "gridinstruct_v01_compliance_04779",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_02829",
+            "neighbor_id": "gridinstruct_v01_compliance_04101",
+            "cosine_similarity": 1.0
+          },
+          {
+            "id": "gridinstruct_v01_compliance_03393_counterfactual_01",
+            "neighbor_id": "gridinstruct_v01_compliance_02713_counterfactual_01",
+            "cosine_similarity": 1.0
+          }
+        ]
+      }
+    }
+  },
+  "hard_gates": {
+    "all_splits_nonempty_unique_ids": true,
+    "official_train_test_id_disjoint": true,
+    "official_train_ood_id_disjoint": true,
+    "full_exact_duplicate_rate_within_limit": true,
+    "cross_exact_match_rates_within_limit": true,
+    "sampled_diagnostics_nonempty": true
+  },
+  "threshold_policy": {
+    "max_full_exact_duplicate_rate": 0.02,
+    "max_cross_exact_match_rate": 0.001,
+    "minhash_left_sample": 2500,
+    "minhash_right_sample": 12000
+  },
+  "status": "pass",
+  "interpretation": "Exact, template-normalized, MinHash character-5-gram, and embedding cosine diagnostics are reported separately; sampled diagnostics retain their sample sizes."
+}

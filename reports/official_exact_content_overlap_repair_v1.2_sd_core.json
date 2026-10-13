@@ -1,0 +1,241 @@
+{
+  "generated_at": "2026-08-28T17:50:48.557295+00:00",
+  "status": "pass",
+  "contract": "official_exact_content_single_split_v1",
+  "input_paths": {
+    "train": "data/v1.2_sd_core_train_en.jsonl",
+    "validation": "data/v1.2_sd_core_validation_en.jsonl",
+    "test": "data/v1.2_sd_core_test_en.jsonl"
+  },
+  "source_paths": {
+    "train": "data/v1.2_sd_core_train.jsonl",
+    "validation": "data/v1.2_sd_core_validation.jsonl",
+    "test": "data/v1.2_sd_core_test.jsonl"
+  },
+  "input_sha256": {
+    "train": "27087a599f1a3b78cf69e27ae2f8ed71e513fb50c4e140025d3b6cb1efe33c95",
+    "validation": "ec1e2a0fa019f169e7317267c02bea6f3aaeb3531a0b79b2fa841c3dda0fd765",
+    "test": "d64dd5c72721b0f6bb0fda7911722d76dfba2bef9596fac10bd9bae227c9b401"
+  },
+  "output_sha256": {
+    "train": "54ecfedf11cd16bf242a199a7a05b9d3c4a6754f7108ac6baceff20f39d5b67e",
+    "validation": "2d0a940213c0dff39b6d9251114874b4104978d808eb7bd9a00256a42f8b2cfa",
+    "test": "1d9c5fc2a08b40ceeae3895de709241c8fbe96ae4c454d3ba82ee39d6160194f"
+  },
+  "source_output_sha256": {
+    "train": "54ecfedf11cd16bf242a199a7a05b9d3c4a6754f7108ac6baceff20f39d5b67e",
+    "validation": "2d0a940213c0dff39b6d9251114874b4104978d808eb7bd9a00256a42f8b2cfa",
+    "test": "1d9c5fc2a08b40ceeae3895de709241c8fbe96ae4c454d3ba82ee39d6160194f"
+  },
+  "before_cross_split_exact_signature_overlap": {
+    "train_validation": 23,
+    "train_test": 14,
+    "validation_test": 1
+  },
+  "after_cross_split_exact_signature_overlap": {
+    "train_validation": 0,
+    "train_test": 0,
+    "validation_test": 0
+  },
+  "groups_reassigned": 38,
+  "moved_record_count": 38,
+  "moved_records": [
+    {
+      "id": "gridinstruct_v01_intent_00042__plus12_dispatcher_cf_42_security_check_and_redispatch",
+      "from": "test",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_00335",
+      "from": "test",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_00708",
+      "from": "test",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_00930",
+      "from": "test",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_01212",
+      "from": "test",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_01380",
+      "from": "test",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_01546",
+      "from": "test",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_01713",
+      "from": "test",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_02000",
+      "from": "test",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_02500",
+      "from": "test",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_02730",
+      "from": "test",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_02850",
+      "from": "test",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_03065",
+      "from": "test",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_03290",
+      "from": "test",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_00621",
+      "from": "validation",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_00943",
+      "from": "validation",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_01072",
+      "from": "validation",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_01421",
+      "from": "validation",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_01832",
+      "from": "validation",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_02001",
+      "from": "validation",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_02063",
+      "from": "validation",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_02217",
+      "from": "validation",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_02282",
+      "from": "validation",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_02346",
+      "from": "validation",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_02372",
+      "from": "validation",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_02436",
+      "from": "validation",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_02540",
+      "from": "validation",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_02941",
+      "from": "validation",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_03003",
+      "from": "validation",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_03261",
+      "from": "validation",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_03365",
+      "from": "validation",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_03428",
+      "from": "validation",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_03442",
+      "from": "validation",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_03561",
+      "from": "validation",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_03701",
+      "from": "validation",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_03932",
+      "from": "validation",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_03997",
+      "from": "validation",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_02653",
+      "from": "test",
+      "to": "validation"
+    }
+  ],
+  "split_counts": {
+    "train": 26545,
+    "validation": 3561,
+    "test": 3894
+  },
+  "ood_unchanged": true,
+  "interpretation": "All canonical records are retained. Exact normalized task/instruction/input/output signatures are assigned to the earliest official development split; OOD is unchanged and no semantic similarity claim is made."
+}

@@ -1,0 +1,16 @@
+{
+  "ieee14": {
+    "provider": "MATPOWER",
+    "identifier": "case14",
+    "version": "FILL_WITH_SOURCE_VERSION",
+    "sha256": "FILL_WITH_64_HEX_SHA256_OF_NATIVE_SOURCE_CASE",
+    "download_uri": "FILL_WITH_IMMUTABLE_SOURCE_URI"
+  },
+  "ieee118": {
+    "provider": "MATPOWER",
+    "identifier": "case118",
+    "version": "FILL_WITH_SOURCE_VERSION",
+    "sha256": "FILL_WITH_64_HEX_SHA256_OF_NATIVE_SOURCE_CASE",
+    "download_uri": "FILL_WITH_IMMUTABLE_SOURCE_URI"
+  }
+}

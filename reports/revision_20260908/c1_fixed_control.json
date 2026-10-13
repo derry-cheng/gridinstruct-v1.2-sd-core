@@ -1,0 +1,31 @@
+{
+  "status": "complete",
+  "claim_supported": false,
+  "control_policy": "same_published_base_control_for_every_contingency_and_load_point",
+  "reactive_limit_policy": "enforce_q_lims=True; fixed voltage commands may saturate through PV/PQ switching",
+  "states_with_voltage_target_deviation": 8014,
+  "scenario_count": 160,
+  "expected_rows": 15360,
+  "observed_rows": 15360,
+  "models": {
+    "fixed_q": {
+      "n": 7680,
+      "converged": 7680,
+      "safe": 5457,
+      "fully_secure_scenarios": 0
+    },
+    "constant_pf": {
+      "n": 7680,
+      "converged": 7680,
+      "safe": 5456,
+      "fully_secure_scenarios": 0
+    }
+  },
+  "selected_construction_limits": {
+    "90.0": 156,
+    "80.0": 4
+  },
+  "workers": 6,
+  "blas_threads_per_worker": 1,
+  "elapsed_seconds": 108.06074266694486
+}

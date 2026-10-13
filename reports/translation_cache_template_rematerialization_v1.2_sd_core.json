@@ -1,0 +1,9 @@
+{
+  "generated_at": "2026-07-21T15:36:54.433274+00:00",
+  "status": "pass",
+  "cache": "metadata/translation_cache_v1.jsonl",
+  "missing_before": 3025,
+  "seeded": 1230,
+  "unresolved": 1795,
+  "method": "soft_skeleton_slot_substitution_from_validated_cache"
+}

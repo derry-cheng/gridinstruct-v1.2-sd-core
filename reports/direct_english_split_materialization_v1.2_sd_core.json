@@ -1,0 +1,43 @@
+{
+  "status": "pass",
+  "renderer": "regenerate_direct_english_core.py",
+  "splits": [
+    {
+      "split": "v1.2_sd_core_boundary_challenge_test_en.jsonl",
+      "records": 4800,
+      "source": null,
+      "english": "data/v1.2_sd_core_boundary_challenge_test_en.jsonl",
+      "generation_mode": "direct_english_from_typed_contract",
+      "language_contract_version": "direct-en-v2",
+      "source_language_fields_present": false
+    },
+    {
+      "split": "v1.2_sd_core_proxyreduced_train_en.jsonl",
+      "records": 18240,
+      "source": null,
+      "english": "data/v1.2_sd_core_proxyreduced_train_en.jsonl",
+      "generation_mode": "direct_english_from_typed_contract",
+      "language_contract_version": "direct-en-v2",
+      "source_language_fields_present": false
+    },
+    {
+      "split": "v1.2_sd_core_proxyreduced_validation_en.jsonl",
+      "records": 2293,
+      "source": null,
+      "english": "data/v1.2_sd_core_proxyreduced_validation_en.jsonl",
+      "generation_mode": "direct_english_from_typed_contract",
+      "language_contract_version": "direct-en-v2",
+      "source_language_fields_present": false
+    },
+    {
+      "split": "v1.2_sd_core_proxyreduced_test_en.jsonl",
+      "records": 2305,
+      "source": null,
+      "english": "data/v1.2_sd_core_proxyreduced_test_en.jsonl",
+      "generation_mode": "direct_english_from_typed_contract",
+      "language_contract_version": "direct-en-v2",
+      "source_language_fields_present": false
+    }
+  ],
+  "records": 27638
+}

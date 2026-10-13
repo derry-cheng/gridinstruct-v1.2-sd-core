@@ -1,0 +1,28 @@
+{
+  "generated_at": "2026-07-31T09:45:06.166053+00:00",
+  "input": "data/gridinstruct_v1.2_sd_core.jsonl",
+  "output": "data/gridinstruct_v1.2_sd_core_en.jsonl",
+  "records": 95479,
+  "max_records": null,
+  "total_cjk_fields": 1335820,
+  "unique_cjk_strings": 181589,
+  "cache_entries": 229691,
+  "new_translations": 0,
+  "batch_size": 24,
+  "workers": 3,
+  "endpoint_order": [
+    "sensenova:sensenova-6.7-flash-lite:key1",
+    "sensenova:sensenova-6.7-flash-lite:key2",
+    "sensenova:deepseek-v4-flash:key1",
+    "sensenova:deepseek-v4-flash:key2",
+    "sensenova:sensenova-u1-fast:key1",
+    "sensenova:sensenova-u1-fast:key2",
+    "agnes:agnes-2.0-flash:key1"
+  ],
+  "materialize": {
+    "translated_fields": 1335820,
+    "missing_translations": 0,
+    "records_with_cjk_remaining": 0
+  },
+  "errors_sample": []
+}

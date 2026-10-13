@@ -1,0 +1,576 @@
+{
+  "generated_at": "2026-08-05T10:47:40.497898+00:00",
+  "status": "deleted_after_hash_validation",
+  "reason": "These snapshots encode pre-95,479-row claims or refer to deleted intermediate stages; current evidence is in the revision manifest and current audit reports.",
+  "entries": [
+    {
+      "path": "reports/data_validation_v1.2_sd_core.json.pre_v15_20260721",
+      "bytes": 920,
+      "sha256": "f367c87309cb4e9b62369efd68581ff1af29f691e3b8e4ba3190b8cf786d9b45"
+    },
+    {
+      "path": "reports/sd_readiness_report.json",
+      "bytes": 99896,
+      "sha256": "949d8d99e1c192e7ab9106d8dec46c2c77c4f05f4046ed565c7d9d2264fab2cc"
+    },
+    {
+      "path": "reports/PROJECT_DATA_LINEAGE_AND_DUAL_REVIEW_20260723.md",
+      "bytes": 24848,
+      "sha256": "1e3608ab3cb45bc8f915c2211ce7edea861629eb100a4264d863b8eeb83638c1"
+    },
+    {
+      "path": "reports/full_n1_enumeration_probe_low.json",
+      "bytes": 564530,
+      "sha256": "2ec0a63f96fef1c388b580bdb8688553372170c0388b0b866c1de2a1343795f0"
+    },
+    {
+      "path": "reports/release_bundle_validation_v1.2_sd_core.json",
+      "bytes": 1130,
+      "sha256": "0957c23e0ac41ed3e5d79c18cc6173e27c3435e3657e30d2a4702b6b2c577b51"
+    },
+    {
+      "path": "reports/sd_core_distribution_risk_audit.json",
+      "bytes": 44955,
+      "sha256": "e2985e2e8ce98641853e14b1c51feb17cf2bd416b6f8790680e24c92d63e4c7a"
+    },
+    {
+      "path": "reports/probes/cross_solver_opf_v3_smoke.md",
+      "bytes": 673,
+      "sha256": "6e6f21d0cd8eb9487b16f3ef45f4bece2e361555511fd99303e8f9ccd9b43bcc"
+    },
+    {
+      "path": "reports/probes/illinois200_load086_audit.json",
+      "bytes": 2740,
+      "sha256": "f5bcaf1d9343ca7298e281da3d846344a3c69471fcc286c3654bb804026976c8"
+    },
+    {
+      "path": "reports/probes/illinois200_load082_audit.md",
+      "bytes": 566,
+      "sha256": "3a6bca3939e9d7d18588bbd65ad7aaee1aafd784ce083f7041bc891dcc8cf759"
+    },
+    {
+      "path": "reports/probes/opf_closed_loop_v12_quick.md",
+      "bytes": 495,
+      "sha256": "a21c7b1ab1d606951d07585315bda97cbfdd23f571f53df64cb19abbdf2a5b32"
+    },
+    {
+      "path": "reports/probes/illinois200_load082_attempts.json",
+      "bytes": 1712011,
+      "sha256": "9cb6adba60a9df6f158ca3081fa973a4a616172ed299ad9c8f6a151db44b0173"
+    },
+    {
+      "path": "reports/probes/illinois200_load086_attempts.json",
+      "bytes": 1711406,
+      "sha256": "994058b8b98f8f10da704afab5fc96179d0aecad1c0e060ebde2709bc4c00435"
+    },
+    {
+      "path": "reports/probes/cross_solver_v12_quick2.md",
+      "bytes": 672,
+      "sha256": "bc46000fb3b5e822f9269fb7f6b92249ac8e62de3b632d1ad47efd3931a67553"
+    },
+    {
+      "path": "reports/probes/extended_topology_envelope_probe.json",
+      "bytes": 15685,
+      "sha256": "d48b58397ebbf542c738d98316b4a3d193b40995653090963e685186ef6c4409"
+    },
+    {
+      "path": "reports/probes/opf_v3_state_smoke.md",
+      "bytes": 392,
+      "sha256": "aa5a2d5635a1a2936fd98a1f2f513c3e417b5494a89d0360a5aa602119df6053"
+    },
+    {
+      "path": "reports/probes/opf_v12_quick2_progress.json",
+      "bytes": 260,
+      "sha256": "970f9804eec80446080383cb50677b55ce93724d00af263c9e2401918949f692"
+    },
+    {
+      "path": "reports/probes/pegase_envelope_probe.md",
+      "bytes": 638,
+      "sha256": "03f14ae852b316e5e2e8afc474493ddd744c50cf3de02e4aefee5ea09cf9f787"
+    },
+    {
+      "path": "reports/probes/rule_taxonomy_expansion_v12_rulecheck.md",
+      "bytes": 868,
+      "sha256": "16a17b5e4aaf42d1058c009b43092f686a4d4367d095e8fedc004dc1f33922f8"
+    },
+    {
+      "path": "reports/probes/opf_v3_state_smoke.json",
+      "bytes": 2573,
+      "sha256": "1d097e9e98d6a4dfa0e7be41cd498effa1bb05b5f4b993ddec1fbfdae753e3f3"
+    },
+    {
+      "path": "reports/probes/opf_closed_loop_v12_quick2.json",
+      "bytes": 2964,
+      "sha256": "fafd5417c66f080bdaa49ffb10e023b34ceb1c58a33e40837cab02b2c8569880"
+    },
+    {
+      "path": "reports/probes/opf_closed_loop_v12_quick.json",
+      "bytes": 2627,
+      "sha256": "c2fc263bb9a8b0eccca2bfac28549be0e68506372f3a5efb3e563261a5b3b086"
+    },
+    {
+      "path": "reports/probes/opf_v3_smoke.json",
+      "bytes": 2537,
+      "sha256": "24bbce7fc70f91aaa3f144a090ef63fbe734aa3d968196101bb886f7a622c3ea"
+    },
+    {
+      "path": "reports/probes/opf_v3_smoke.md",
+      "bytes": 395,
+      "sha256": "1b2d85546507942c8f51c398c6806353bc447e51c4db177b5564d4c483bf6ca9"
+    },
+    {
+      "path": "reports/probes/rule_taxonomy_expansion_v13_rulecheck.md",
+      "bytes": 868,
+      "sha256": "da7a2588ba920f9d271bceee9e1bf7623d497da48c48fda56c479f86dd354697"
+    },
+    {
+      "path": "reports/probes/opf_v5_island_safe_smoke.md",
+      "bytes": 531,
+      "sha256": "3801f4207c54a5029836f487c21c39fd1f87235834f9b7514cbdb8970d521756"
+    },
+    {
+      "path": "reports/probes/opf_v5_island_safe_smoke.json",
+      "bytes": 2647,
+      "sha256": "e4e5914951a3721b476fac80368a3cb44a5341b617fbe139b20b5bd8cd876997"
+    },
+    {
+      "path": "reports/probes/cross_solver_opf_v5_island_safe_smoke.md",
+      "bytes": 673,
+      "sha256": "eaf3a54c12902f91ec9559e464be34a82da500362043bc6cea8d627dc3f1d3f8"
+    },
+    {
+      "path": "reports/probes/query_result_consistency_v12_contractcheck.md",
+      "bytes": 2736,
+      "sha256": "5ca7b7c8bb65b95090b388d6652cf9cc1970b3c6523a2b758bb7effe4dff2971"
+    },
+    {
+      "path": "reports/probes/cross_solver_opf_v3_smoke.json",
+      "bytes": 45403,
+      "sha256": "b28b5ef7dd834b833f9c69087b05413bd7b736f90e03ec14706862667e30c394"
+    },
+    {
+      "path": "reports/probes/cross_solver_opf_v6_full_island_safe.md",
+      "bytes": 674,
+      "sha256": "a36e429ab5b7b23201de247c4e4a5be7f569f7808699226359eb56564418d020"
+    },
+    {
+      "path": "reports/probes/opf_v6_full_island_safe.json",
+      "bytes": 2669,
+      "sha256": "9a62802bdfe211115568eae3d92e98633dcd890dec3f7bcde63a1a1333c07708"
+    },
+    {
+      "path": "reports/probes/cross_solver_opf_v6_full_island_safe.json",
+      "bytes": 904321,
+      "sha256": "de3ddfa42ecd5e743193efa98240edd5487aac6bea8b937a41b694f36602cde4"
+    },
+    {
+      "path": "reports/probes/opf_closed_loop_v12_quick2.md",
+      "bytes": 530,
+      "sha256": "667ccd208bae245840c442ffb45cbaa0dbe203ed77e0ac5092ec1b8ed62678c4"
+    },
+    {
+      "path": "reports/probes/rule_taxonomy_expansion_v12_rulecheck.json",
+      "bytes": 2419,
+      "sha256": "6816dc36b0408a0d7336084bd4cfdc404b8492b10da606b91b58ef92bf361ed9"
+    },
+    {
+      "path": "reports/probes/illinois_envelope_probe.json",
+      "bytes": 4742,
+      "sha256": "dddba55afcb6f5ed131b764890e4d202633d2c3e0811cdb6cb60bbfdc2f9e75c"
+    },
+    {
+      "path": "reports/probes/pegase_envelope_probe.json",
+      "bytes": 5176,
+      "sha256": "48cb46d719f4a60d5a9b60a1de4eda3b96b3bdc50d70a722fee105e06ede58cd"
+    },
+    {
+      "path": "reports/probes/opf_v12_quick_progress.json",
+      "bytes": 225,
+      "sha256": "c442f0c3a9b3894954eb88f56a9591fe41c190ad0eb75c551660e7896bbbde09"
+    },
+    {
+      "path": "reports/probes/cross_solver_v12_quick2.json",
+      "bytes": 294995,
+      "sha256": "0fa8467db81e29fa4754a2ec4b4885a207da71c0269738f6fe16d1ac17a796f3"
+    },
+    {
+      "path": "reports/probes/illinois200_load082_audit.json",
+      "bytes": 2739,
+      "sha256": "ecf863afa41ce584ddb498f283358703a27eaf8622f5108614d7e311fcf4c5ab"
+    },
+    {
+      "path": "reports/probes/cross_solver_opf_v3_state_smoke.md",
+      "bytes": 672,
+      "sha256": "3f341baac5220350fa2c34652c091917ca2bdf8ea903336f183e6c529d2f6055"
+    },
+    {
+      "path": "reports/probes/cross_solver_opf_v5_island_safe_smoke.json",
+      "bytes": 60020,
+      "sha256": "1bf6e2724b06a457e36d507f6bdf95a190b938de85e3028cb81966565e47bb8d"
+    },
+    {
+      "path": "reports/probes/opf_v6_full_island_safe.md",
+      "bytes": 538,
+      "sha256": "e0ce1afde8e484768439b6e5b6afca30c0c6449ccd0ca15a244637cccdd3ce89"
+    },
+    {
+      "path": "reports/probes/rule_taxonomy_expansion_v13_rulecheck.json",
+      "bytes": 2419,
+      "sha256": "5f36049feee8f4e7f2af9820e66f3edfd9ad69dc4c16709fd50b5fb99ff3e583"
+    },
+    {
+      "path": "reports/probes/cross_solver_opf_v3_state_smoke.json",
+      "bytes": 15076,
+      "sha256": "b77feee54267b4ec17e222c95ff5a6a736b7158adc86fc4aa6c57eacec7fa239"
+    },
+    {
+      "path": "reports/probes/illinois200_load086_audit.md",
+      "bytes": 567,
+      "sha256": "59253b26893e67ee16cead42b6dc3755de40d01bd63931f8fb921e2419efc268"
+    },
+    {
+      "path": "reports/probes/query_result_consistency_v12_contractcheck.json",
+      "bytes": 11172,
+      "sha256": "d2e003e5fc34556406376666f3c5c07d29ad5bdef87ddf7832f20aa527ac5ae0"
+    },
+    {
+      "path": "reports/probes/extended_topology_envelope_probe.md",
+      "bytes": 958,
+      "sha256": "6255c68e77f6e55ffa0b4ad63d87f60a83ccc709acc8efcff5271ffb53a64ba5"
+    },
+    {
+      "path": "reports/probes/illinois_envelope_probe.md",
+      "bytes": 568,
+      "sha256": "939322cf5fa5ceec702d37f763abe74c118a62e7c562378de3f70b62270587e7"
+    },
+    {
+      "path": "reports/review_chunks/operation_ticket_check_agreement.json",
+      "bytes": 828,
+      "sha256": "da34ca28ab8ad9e7c55c0f714fce6b22d9a24e69cb2f7cd403ab15a04c9ae854"
+    },
+    {
+      "path": "reports/review_chunks/regulation_qa_report.md",
+      "bytes": 561,
+      "sha256": "a903804272fb43863a141f75c2261e67677276e0db9307480d10128ea74b8aca"
+    },
+    {
+      "path": "reports/review_chunks/intelligent_data_query_agreement.json",
+      "bytes": 771,
+      "sha256": "6bdb0375a2c193b302199c8acf546704a82f22928496171f5ea21e068212f78a"
+    },
+    {
+      "path": "reports/review_chunks/dispatcher_intent_tool_call_agreement.json",
+      "bytes": 724,
+      "sha256": "6389460bc07f3c82b9cb4710bd75c42e7bc0133e9c66c8adedf8875c15cd2e3f"
+    },
+    {
+      "path": "reports/review_chunks/auxiliary_decision_raw.jsonl",
+      "bytes": 88055,
+      "sha256": "c1805f17b953e008221516296745918cf466de7c3da07422c7797367f4b611c4"
+    },
+    {
+      "path": "reports/review_chunks/operation_ticket_check_raw.jsonl",
+      "bytes": 83509,
+      "sha256": "49d8e70375ae5bc900c79561ae0333912232b9f69e626d3fe19e7dbd0d26951e"
+    },
+    {
+      "path": "reports/review_chunks/regulation_compliance_check_report.json",
+      "bytes": 2784,
+      "sha256": "9bd16ac6ddc42252e27ae16bcd21124b2ded089f69c2332a3585c11a87fe3a84"
+    },
+    {
+      "path": "reports/review_chunks/regulation_qa_report.json",
+      "bytes": 2745,
+      "sha256": "3a52d843e2616247bb43ee31bba9cac009a5d0ac95c42db05319b244f02db65b"
+    },
+    {
+      "path": "reports/review_chunks/regulation_compliance_check_report.md",
+      "bytes": 589,
+      "sha256": "a7a073b43d0bfd8af83d27c7d631af8484414fca9ae60eaa45a8c09cad600cab"
+    },
+    {
+      "path": "reports/review_chunks/regulation_compliance_check_log.csv",
+      "bytes": 19035,
+      "sha256": "c0ad5b06a9c8d475b63b3c784ef9e6b42a5a5107880f023d19f43026f7e6de00"
+    },
+    {
+      "path": "reports/review_chunks/intelligent_data_query_raw.jsonl",
+      "bytes": 102119,
+      "sha256": "c2f925f4fbe3abea375c91a1fa464177ca0177f081580e994dac72d20a9174cf"
+    },
+    {
+      "path": "reports/review_chunks/regulation_compliance_check_agreement.md",
+      "bytes": 446,
+      "sha256": "414d7b8e18a9246b33da5aa44281d4d97933ad8c88c69f8e4d2d0297f33fbdbe"
+    },
+    {
+      "path": "reports/review_chunks/intelligent_data_query_log.csv",
+      "bytes": 18222,
+      "sha256": "26923ee3f14373cc4e5a0ce5e0e44ad17c166c35d714e0ce69b9222ef661a59d"
+    },
+    {
+      "path": "reports/review_chunks/regulation_qa_log.csv",
+      "bytes": 15754,
+      "sha256": "8b7e42c2ea3544f67e3f7cf793b1b611c8b52c46de0c151157c889f2b80476e6"
+    },
+    {
+      "path": "reports/review_chunks/dispatcher_intent_tool_call_raw.jsonl",
+      "bytes": 111633,
+      "sha256": "58d0cfde90f208097943b0af606c151b97f75af52eed5c730e7be892c39322b9"
+    },
+    {
+      "path": "reports/review_chunks/operation_ticket_check_agreement.md",
+      "bytes": 507,
+      "sha256": "43876afd7d551fd5beb53e83557b072aae6d811121e5e008a8a6b7ae66efc5bd"
+    },
+    {
+      "path": "reports/review_chunks/regulation_qa_agreement.json",
+      "bytes": 792,
+      "sha256": "e3c1f2ae4729fbb87f0565d5b31c39393df0f5aa3c89e53e4272a726af6242c6"
+    },
+    {
+      "path": "reports/review_chunks/regulation_qa_agreement.md",
+      "bytes": 476,
+      "sha256": "c3acd2dfc44484c8820d874771832080d69f2c73fafae557f8648d6030a569a2"
+    },
+    {
+      "path": "reports/review_chunks/operation_ticket_check_report.json",
+      "bytes": 2837,
+      "sha256": "7bdf04963b84dfeaf74130c669c908f59dd38d1254b482eaf8b59419fb54319c"
+    },
+    {
+      "path": "reports/review_chunks/intelligent_data_query_report.json",
+      "bytes": 2794,
+      "sha256": "6f9aedd084ae10cb269d433b40308061b29e6fd2033bf1f9e0b68040893ce528"
+    },
+    {
+      "path": "reports/review_chunks/dispatcher_intent_tool_call_report.json",
+      "bytes": 2757,
+      "sha256": "89e31064a17a7f72a6868ca0df8ad801763ff64db62e3568f474169195cfd560"
+    },
+    {
+      "path": "reports/review_chunks/operation_ticket_check_report.md",
+      "bytes": 579,
+      "sha256": "ba4243547ca8ae24b8a76e9d60a8f9616476178d1fe5b497828d3a3b5fdaecb1"
+    },
+    {
+      "path": "reports/review_chunks/auxiliary_decision_report.json",
+      "bytes": 2797,
+      "sha256": "4da86f1f066a0d12938fb86484cd9bea8462a82223a13dd63343a017c3819323"
+    },
+    {
+      "path": "reports/review_chunks/auxiliary_decision_report.md",
+      "bytes": 583,
+      "sha256": "3bd5c509e7ce93b9fdb5fdc103599ef355bcd158d34fd65eacba313b4265ea49"
+    },
+    {
+      "path": "reports/review_chunks/regulation_qa_raw.jsonl",
+      "bytes": 98237,
+      "sha256": "4624e227ea25e589370f8be2aa705fbc15f5090242d07d24067b5addeeb174f1"
+    },
+    {
+      "path": "reports/review_chunks/auxiliary_decision_log.csv",
+      "bytes": 15800,
+      "sha256": "6549436c3e9fb504cf5f26881fbb4f445924480f20cfccd8f84804aee92b1e69"
+    },
+    {
+      "path": "reports/review_chunks/regulation_compliance_check_agreement.json",
+      "bytes": 752,
+      "sha256": "0c92dfd77c2991b04dbaec05ca0bd3c057c696f9a3a9703e43a4c453bfe0e784"
+    },
+    {
+      "path": "reports/review_chunks/auxiliary_decision_agreement.md",
+      "bytes": 481,
+      "sha256": "6357aad474eb04fcf8820e6198148493ef9b007919a451f78259b9db555a64e1"
+    },
+    {
+      "path": "reports/review_chunks/dispatcher_intent_tool_call_report.md",
+      "bytes": 589,
+      "sha256": "cfcaa3ac9d1e0f196fa40757c99c6cc488fcb6a3d88085d7e49528847d6367f8"
+    },
+    {
+      "path": "reports/review_chunks/operation_ticket_check_log.csv",
+      "bytes": 17024,
+      "sha256": "3c39ddc0350a355b6b45ef64566e00536d45984f0b2f56c84e81e46a58e98c83"
+    },
+    {
+      "path": "reports/review_chunks/dispatcher_intent_tool_call_log.csv",
+      "bytes": 19162,
+      "sha256": "65013e32501b4ac7e3d647b641f215c207cfcd7398ef43c39984ec5b31cbdaa1"
+    },
+    {
+      "path": "reports/review_chunks/intelligent_data_query_report.md",
+      "bytes": 591,
+      "sha256": "c753edac8ad88a1f80d3fdacc7530dea62d46a12cebdfa077cb13087c65b51e1"
+    },
+    {
+      "path": "reports/review_chunks/intelligent_data_query_agreement.md",
+      "bytes": 485,
+      "sha256": "aebe1fcb2971e869bbd2d5676754b6c20f1b58a2e711228e29ddef4c997f14fd"
+    },
+    {
+      "path": "reports/review_chunks/auxiliary_decision_agreement.json",
+      "bytes": 797,
+      "sha256": "a65c914bb853bedf7818aa05b88bfa244ad7e1af3be468b708a7e752c59c5635"
+    },
+    {
+      "path": "reports/review_chunks/regulation_compliance_check_raw.jsonl",
+      "bytes": 92869,
+      "sha256": "3cc3af41071ac95ebe46358708f7252fd9e7a210651c32d5e2b1e8f7e83f6afb"
+    },
+    {
+      "path": "reports/review_chunks/dispatcher_intent_tool_call_agreement.md",
+      "bytes": 446,
+      "sha256": "68c16a9d9e272abca063d97d56b2af17379e7dfa4a4f8a42a1d79810fefdd5f8"
+    }
+  ],
+  "missing_expected": [
+    "reports/SD_FINAL_ASSESSMENT.json",
+    "reports/SD_FINAL_ASSESSMENT.md",
+    "reports/project_milestone_audit_v1.2_sd_core.json",
+    "reports/project_milestone_audit_v1.2_sd_core.md",
+    "reports/release_metadata_snapshot.json",
+    "reports/manuscript_claim_sync_v1.2_sd_core.json",
+    "reports/release_claim_alignment_audit_v1.2_sd_core.json",
+    "reports/release_claim_alignment_audit_v1.2_sd_core.md",
+    "reports/english_rematerialization_progress_v1.2_sd_core.json",
+    "reports/english_rematerialization_v1.2_sd_core.json",
+    "reports/english_split_audit_v1.2_sd_core.json",
+    "reports/english_split_audit_v1.2_sd_core.md",
+    "reports/english_split_materialization_v1.2_sd_core.json",
+    "reports/english_split_materialization_v1.2_sd_core.md",
+    "reports/english_split_materialization_challenge_split_v1.2_sd_core.json",
+    "reports/english_split_materialization_challenge_split_v1.2_sd_core.md",
+    "reports/english_split_materialization_proxy_reduced_splits_v1.2_sd_core.json",
+    "reports/english_split_materialization_proxy_reduced_splits_v1.2_sd_core.md",
+    "reports/english_split_materialization_strict_split_v1.2_sd_core.json",
+    "reports/english_split_materialization_strict_split_v1.2_sd_core.md",
+    "reports/english_split_materialization_template_holdout_split_v1.2_sd_core.json",
+    "reports/english_split_materialization_template_holdout_split_v1.2_sd_core.md",
+    "reports/equipment_contingency_instruction_expansion_v1.2_sd_core.json",
+    "reports/equipment_contingency_instruction_expansion_v1.2_sd_core.md",
+    "reports/topology_instruction_expansion_v1.2_sd_core.json",
+    "reports/topology_instruction_expansion_v1.2_sd_core.md",
+    "reports/frozen_external_topology_v1_append.json",
+    "reports/frozen_external_topology_v1_append.md",
+    "reports/frozen_external_topology_v2_append.json",
+    "reports/frozen_external_topology_v2_append.md",
+    "reports/dataset_scenario_link_migration_v1.2_sd_core.json",
+    "reports/dataset_scenario_link_migration_v1.2_sd_core.md",
+    "reports/operation_ticket_state_consistency_v1.2_sd_core.json",
+    "reports/operation_ticket_state_consistency_v1.2_sd_core.md",
+    "reports/query_result_consistency_migration_v1.2_sd_core.json",
+    "reports/query_result_consistency_migration_v1.2_sd_core.md",
+    "reports/query_result_consistency_repair_v1.2_sd_core.json",
+    "reports/query_result_consistency_repair_v1.2_sd_core.md",
+    "reports/rule_taxonomy_expansion_v1.2_sd_core.json",
+    "reports/rule_taxonomy_expansion_v1.2_sd_core.md",
+    "reports/scenario_truth_rebuild_attempts_v1.2_sd_core.json",
+    "reports/scenario_truth_rebuild_v1.2_sd_core.json",
+    "reports/scenario_truth_rebuild_v1.2_sd_core.md",
+    "reports/sd_core_selection_report.json",
+    "reports/sd_core_selection_report.md",
+    "reports/v16_frozen_implicit_ticket_replay.json",
+    "reports/v16_plus12_dispatcher_counterfactuals.json",
+    "reports/v16_plus12_dispatcher_counterfactuals.md",
+    "reports/v16_plus13_monitoring_counterfactuals.json",
+    "reports/v16_plus13_monitoring_counterfactuals.md",
+    "reports/v16_plus14_plain_ticket_adversarial.json",
+    "reports/v16_plus14_plain_ticket_adversarial.md",
+    "reports/independent_solver_preflight_v16_raw.json",
+    "reports/independent_solver_preflight_v16_ten_native_models_raw.json",
+    "reports/independent_solver_preflight_v16_ten_native_models_validation.json",
+    "reports/independent_solver_preflight_v16_validation.json",
+    "reports/compliance_label_recompute_v1.2_sd_core.json",
+    "reports/opf_closed_loop_auxiliary_audit_v1.2_sd_core.json",
+    "reports/opf_closed_loop_auxiliary_audit_v1.2_sd_core.md"
+  ],
+  "candidate_bytes": 6266249,
+  "removed_count": 84,
+  "removed_paths": [
+    "reports/data_validation_v1.2_sd_core.json.pre_v15_20260721",
+    "reports/sd_readiness_report.json",
+    "reports/PROJECT_DATA_LINEAGE_AND_DUAL_REVIEW_20260723.md",
+    "reports/full_n1_enumeration_probe_low.json",
+    "reports/release_bundle_validation_v1.2_sd_core.json",
+    "reports/sd_core_distribution_risk_audit.json",
+    "reports/probes/cross_solver_opf_v3_smoke.md",
+    "reports/probes/illinois200_load086_audit.json",
+    "reports/probes/illinois200_load082_audit.md",
+    "reports/probes/opf_closed_loop_v12_quick.md",
+    "reports/probes/illinois200_load082_attempts.json",
+    "reports/probes/illinois200_load086_attempts.json",
+    "reports/probes/cross_solver_v12_quick2.md",
+    "reports/probes/extended_topology_envelope_probe.json",
+    "reports/probes/opf_v3_state_smoke.md",
+    "reports/probes/opf_v12_quick2_progress.json",
+    "reports/probes/pegase_envelope_probe.md",
+    "reports/probes/rule_taxonomy_expansion_v12_rulecheck.md",
+    "reports/probes/opf_v3_state_smoke.json",
+    "reports/probes/opf_closed_loop_v12_quick2.json",
+    "reports/probes/opf_closed_loop_v12_quick.json",
+    "reports/probes/opf_v3_smoke.json",
+    "reports/probes/opf_v3_smoke.md",
+    "reports/probes/rule_taxonomy_expansion_v13_rulecheck.md",
+    "reports/probes/opf_v5_island_safe_smoke.md",
+    "reports/probes/opf_v5_island_safe_smoke.json",
+    "reports/probes/cross_solver_opf_v5_island_safe_smoke.md",
+    "reports/probes/query_result_consistency_v12_contractcheck.md",
+    "reports/probes/cross_solver_opf_v3_smoke.json",
+    "reports/probes/cross_solver_opf_v6_full_island_safe.md",
+    "reports/probes/opf_v6_full_island_safe.json",
+    "reports/probes/cross_solver_opf_v6_full_island_safe.json",
+    "reports/probes/opf_closed_loop_v12_quick2.md",
+    "reports/probes/rule_taxonomy_expansion_v12_rulecheck.json",
+    "reports/probes/illinois_envelope_probe.json",
+    "reports/probes/pegase_envelope_probe.json",
+    "reports/probes/opf_v12_quick_progress.json",
+    "reports/probes/cross_solver_v12_quick2.json",
+    "reports/probes/illinois200_load082_audit.json",
+    "reports/probes/cross_solver_opf_v3_state_smoke.md",
+    "reports/probes/cross_solver_opf_v5_island_safe_smoke.json",
+    "reports/probes/opf_v6_full_island_safe.md",
+    "reports/probes/rule_taxonomy_expansion_v13_rulecheck.json",
+    "reports/probes/cross_solver_opf_v3_state_smoke.json",
+    "reports/probes/illinois200_load086_audit.md",
+    "reports/probes/query_result_consistency_v12_contractcheck.json",
+    "reports/probes/extended_topology_envelope_probe.md",
+    "reports/probes/illinois_envelope_probe.md",
+    "reports/review_chunks/operation_ticket_check_agreement.json",
+    "reports/review_chunks/regulation_qa_report.md",
+    "reports/review_chunks/intelligent_data_query_agreement.json",
+    "reports/review_chunks/dispatcher_intent_tool_call_agreement.json",
+    "reports/review_chunks/auxiliary_decision_raw.jsonl",
+    "reports/review_chunks/operation_ticket_check_raw.jsonl",
+    "reports/review_chunks/regulation_compliance_check_report.json",
+    "reports/review_chunks/regulation_qa_report.json",
+    "reports/review_chunks/regulation_compliance_check_report.md",
+    "reports/review_chunks/regulation_compliance_check_log.csv",
+    "reports/review_chunks/intelligent_data_query_raw.jsonl",
+    "reports/review_chunks/regulation_compliance_check_agreement.md",
+    "reports/review_chunks/intelligent_data_query_log.csv",
+    "reports/review_chunks/regulation_qa_log.csv",
+    "reports/review_chunks/dispatcher_intent_tool_call_raw.jsonl",
+    "reports/review_chunks/operation_ticket_check_agreement.md",
+    "reports/review_chunks/regulation_qa_agreement.json",
+    "reports/review_chunks/regulation_qa_agreement.md",
+    "reports/review_chunks/operation_ticket_check_report.json",
+    "reports/review_chunks/intelligent_data_query_report.json",
+    "reports/review_chunks/dispatcher_intent_tool_call_report.json",
+    "reports/review_chunks/operation_ticket_check_report.md",
+    "reports/review_chunks/auxiliary_decision_report.json",
+    "reports/review_chunks/auxiliary_decision_report.md",
+    "reports/review_chunks/regulation_qa_raw.jsonl",
+    "reports/review_chunks/auxiliary_decision_log.csv",
+    "reports/review_chunks/regulation_compliance_check_agreement.json",
+    "reports/review_chunks/auxiliary_decision_agreement.md",
+    "reports/review_chunks/dispatcher_intent_tool_call_report.md",
+    "reports/review_chunks/operation_ticket_check_log.csv",
+    "reports/review_chunks/dispatcher_intent_tool_call_log.csv",
+    "reports/review_chunks/intelligent_data_query_report.md",
+    "reports/review_chunks/intelligent_data_query_agreement.md",
+    "reports/review_chunks/auxiliary_decision_agreement.json",
+    "reports/review_chunks/regulation_compliance_check_raw.jsonl",
+    "reports/review_chunks/dispatcher_intent_tool_call_agreement.md"
+  ]
+}

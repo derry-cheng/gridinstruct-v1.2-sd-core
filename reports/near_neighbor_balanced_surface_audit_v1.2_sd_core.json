@@ -1,0 +1,180 @@
+{
+  "generated_at": "2026-08-08T17:25:44.216240+00:00",
+  "status": "fail",
+  "source": "data/gridinstruct_v1.2_sd_core_en.jsonl",
+  "source_sha256": "75ffc5c5386e331eed6c7f4092d186e042be8a020a936993f5220a78c1fd058e",
+  "split_prefix": "data/v1.2_sd_core_near_neighbor_balanced",
+  "threshold": 0.85,
+  "records": 95479,
+  "task_counts": {
+    "train": {
+      "auxiliary_decision": 631,
+      "dispatcher_intent_tool_call": 85,
+      "intelligent_data_query": 25,
+      "operation_ticket_check": 6543,
+      "regulation_compliance_check": 684,
+      "regulation_qa": 2532
+    },
+    "validation": {
+      "auxiliary_decision": 205,
+      "dispatcher_intent_tool_call": 32,
+      "intelligent_data_query": 11,
+      "operation_ticket_check": 2184,
+      "regulation_compliance_check": 224,
+      "regulation_qa": 832
+    },
+    "test": {
+      "auxiliary_decision": 205,
+      "dispatcher_intent_tool_call": 27,
+      "intelligent_data_query": 10,
+      "operation_ticket_check": 2154,
+      "regulation_compliance_check": 223,
+      "regulation_qa": 841
+    },
+    "ood_test": {
+      "auxiliary_decision": 17046,
+      "dispatcher_intent_tool_call": 19629,
+      "intelligent_data_query": 17720,
+      "regulation_compliance_check": 23636
+    }
+  },
+  "classification_label_counts": {
+    "operation_ticket_check": {
+      "train": {
+        "compliant": 2513,
+        "compliant_with_monitoring": 1131,
+        "non_compliant": 2899
+      },
+      "validation": {
+        "compliant": 119,
+        "compliant_with_monitoring": 1871,
+        "non_compliant": 194
+      },
+      "test": {
+        "compliant": 139,
+        "compliant_with_monitoring": 1947,
+        "non_compliant": 68
+      },
+      "ood_test": {}
+    },
+    "regulation_compliance_check": {
+      "train": {
+        "compliant": 286,
+        "compliant_with_monitoring": 269,
+        "non_compliant": 129
+      },
+      "validation": {
+        "compliant": 101,
+        "compliant_with_monitoring": 72,
+        "non_compliant": 51
+      },
+      "test": {
+        "compliant": 78,
+        "compliant_with_monitoring": 97,
+        "non_compliant": 48
+      },
+      "ood_test": {
+        "compliant": 564,
+        "compliant_with_monitoring": 10259,
+        "non_compliant": 12813
+      }
+    },
+    "dispatcher_intent_tool_call": {
+      "train": {
+        "diagnose_and_dispatch": 31,
+        "mitigate_violations": 35,
+        "security_check_and_redispatch": 19
+      },
+      "validation": {
+        "diagnose_and_dispatch": 8,
+        "mitigate_violations": 15,
+        "security_check_and_redispatch": 9
+      },
+      "test": {
+        "diagnose_and_dispatch": 12,
+        "mitigate_violations": 12,
+        "security_check_and_redispatch": 3
+      },
+      "ood_test": {
+        "diagnose_and_dispatch": 6562,
+        "mitigate_violations": 6527,
+        "security_check_and_redispatch": 6540
+      }
+    }
+  },
+  "exact_normalized_surface_collisions": {
+    "train__validation": 0,
+    "train__test": 0,
+    "validation__test": 0
+  },
+  "exact_character_5gram_jaccard_over_candidates": {
+    "train__validation": {
+      "reference_records": 3000,
+      "query_records": 2000,
+      "candidate_pairs_examined": 6000000,
+      "candidate_retrieval": "exact sparse binary character-5-gram matrix product over every pair in the deterministic sample",
+      "max_exact_character_5gram_jaccard": 0.8997289972899729,
+      "max_pair": [
+        "gridinstruct_v01_query_14397",
+        "gridinstruct_v01_query_02617"
+      ],
+      "query_rows_at_or_above_threshold": 13,
+      "threshold": 0.85
+    },
+    "train__test": {
+      "reference_records": 3000,
+      "query_records": 2000,
+      "candidate_pairs_examined": 6000000,
+      "candidate_retrieval": "exact sparse binary character-5-gram matrix product over every pair in the deterministic sample",
+      "max_exact_character_5gram_jaccard": 0.8699825479930192,
+      "max_pair": [
+        "gridinstruct_v01_ticket_01744__plus13_monitoring_cf_1744",
+        "gridinstruct_v01_ticket_00016__plus13_monitoring_cf_16"
+      ],
+      "query_rows_at_or_above_threshold": 3,
+      "threshold": 0.85
+    },
+    "validation__test": {
+      "reference_records": 2000,
+      "query_records": 2000,
+      "candidate_pairs_examined": 4000000,
+      "candidate_retrieval": "exact sparse binary character-5-gram matrix product over every pair in the deterministic sample",
+      "max_exact_character_5gram_jaccard": 0.851118760757315,
+      "max_pair": [
+        "gridinstruct_v01_ticket_01058__plus13_monitoring_cf_1058",
+        "gridinstruct_v01_ticket_01922__plus13_monitoring_cf_1922"
+      ],
+      "query_rows_at_or_above_threshold": 1,
+      "threshold": 0.85
+    },
+    "train__ood_sample": {
+      "reference_records": 2000,
+      "query_records": 2000,
+      "candidate_pairs_examined": 4000000,
+      "candidate_retrieval": "exact sparse binary character-5-gram matrix product over every pair in the deterministic sample",
+      "max_exact_character_5gram_jaccard": 0.8903345724907064,
+      "max_pair": [
+        "gridinstruct_v01_compliance_01193_counterfactual_01",
+        "gridinstruct_v01_compliance_00465_counterfactual_01"
+      ],
+      "query_rows_at_or_above_threshold": 2,
+      "threshold": 0.85
+    }
+  },
+  "ood_query_sample": {
+    "sample_records": 2000,
+    "selection": "lowest SHA-256 of balanced-pair-sample|record_id",
+    "selection_sha256": "d728f3e99dc4589d6c66868fe8611ee9b0126ed8998db8f6a96df57c697c54f5"
+  },
+  "pair_query_sample": {
+    "train__validation": 2000,
+    "train__test": 2000,
+    "train__ood": 2000,
+    "selection": "lowest SHA-256 of balanced-pair-sample|record_id"
+  },
+  "pair_reference_sample": {
+    "records_per_pair": 3000,
+    "selection": "lowest SHA-256 of balanced-pair-sample|record_id"
+  },
+  "interpretation": "Exact normalized-surface checks cover all cross-split rows. Exact character-5-gram Jaccard is evaluated on deterministic query samples for every pair retrieved by an explicitly reported MinHash-LSH candidate index; this lexical diagnostic does not establish semantic independence or physical-label validity."
+}

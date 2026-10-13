@@ -1,0 +1,18 @@
+{
+  "contract_version": "gridinstruct-equipment-rating-overrides-v1",
+  "ratings": [
+    {
+      "network": "ieee14",
+      "element": "line",
+      "index": 0,
+      "pglib_source_row": 1,
+      "rating_value": 0.0,
+      "rating_unit": "MVA",
+      "source": {
+        "document_id": "FILL_WITH_SOURCE_DOCUMENT_ID",
+        "document_sha256": "FILL_WITH_64_HEX_SHA256",
+        "locator": "FILL_WITH_TABLE_OR_BRANCH_LOCATOR"
+      }
+    }
+  ]
+}

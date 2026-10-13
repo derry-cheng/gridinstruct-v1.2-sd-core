@@ -1,0 +1,255 @@
+{
+  "generated_at": "2026-08-04T03:58:52.020219+00:00",
+  "status": "pass",
+  "input_policy": "instruction plus filtered input; metadata/source/template/explicit label/tool fields excluded",
+  "hard_gates": {
+    "standard_tasks_present": true,
+    "strict_tasks_present": true,
+    "no_empty_eval_sets": true
+  },
+  "rows": [
+    {
+      "task_type": "dispatcher_intent_tool_call",
+      "profile": "instruction_only",
+      "n_train": 3910,
+      "n_eval": 494,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
+      "label_counts": {
+        "security_check_and_redispatch": 164,
+        "mitigate_violations": 166,
+        "diagnose_and_dispatch": 164
+      },
+      "labels": [
+        "diagnose_and_dispatch",
+        "mitigate_violations",
+        "security_check_and_redispatch"
+      ],
+      "split": "standard"
+    },
+    {
+      "task_type": "operation_ticket_check",
+      "profile": "instruction_only",
+      "n_train": 8675,
+      "n_eval": 1110,
+      "accuracy": 0.47387387387387386,
+      "macro_f1": 0.21434392828035861,
+      "balanced_accuracy": 0.3333333333333333,
+      "label_counts": {
+        "compliant_with_monitoring": 526,
+        "non_compliant": 312,
+        "compliant": 272
+      },
+      "labels": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ],
+      "split": "standard"
+    },
+    {
+      "task_type": "regulation_compliance_check",
+      "profile": "instruction_only",
+      "n_train": 5655,
+      "n_eval": 701,
+      "accuracy": 0.7574893009985735,
+      "macro_f1": 0.7368494419768479,
+      "balanced_accuracy": 0.7060431062294251,
+      "label_counts": {
+        "compliant_with_monitoring": 289,
+        "non_compliant": 338,
+        "compliant": 74
+      },
+      "labels": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ],
+      "split": "standard"
+    },
+    {
+      "task_type": "dispatcher_intent_tool_call",
+      "profile": "proxy_reduced",
+      "n_train": 3910,
+      "n_eval": 494,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
+      "label_counts": {
+        "security_check_and_redispatch": 164,
+        "mitigate_violations": 166,
+        "diagnose_and_dispatch": 164
+      },
+      "labels": [
+        "diagnose_and_dispatch",
+        "mitigate_violations",
+        "security_check_and_redispatch"
+      ],
+      "split": "standard"
+    },
+    {
+      "task_type": "operation_ticket_check",
+      "profile": "proxy_reduced",
+      "n_train": 8675,
+      "n_eval": 1110,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
+      "label_counts": {
+        "compliant_with_monitoring": 526,
+        "non_compliant": 312,
+        "compliant": 272
+      },
+      "labels": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ],
+      "split": "standard"
+    },
+    {
+      "task_type": "regulation_compliance_check",
+      "profile": "proxy_reduced",
+      "n_train": 5655,
+      "n_eval": 701,
+      "accuracy": 0.8516405135520685,
+      "macro_f1": 0.8553395066187058,
+      "balanced_accuracy": 0.8431701802742526,
+      "label_counts": {
+        "compliant_with_monitoring": 289,
+        "non_compliant": 338,
+        "compliant": 74
+      },
+      "labels": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ],
+      "split": "standard"
+    },
+    {
+      "task_type": "dispatcher_intent_tool_call",
+      "profile": "instruction_only",
+      "n_train": 15818,
+      "n_eval": 1975,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
+      "label_counts": {
+        "diagnose_and_dispatch": 662,
+        "security_check_and_redispatch": 656,
+        "mitigate_violations": 657
+      },
+      "labels": [
+        "diagnose_and_dispatch",
+        "mitigate_violations",
+        "security_check_and_redispatch"
+      ],
+      "split": "strict_source_group"
+    },
+    {
+      "task_type": "operation_ticket_check",
+      "profile": "instruction_only",
+      "n_train": 8665,
+      "n_eval": 1103,
+      "accuracy": 0.4669084315503173,
+      "macro_f1": 0.21219612690564482,
+      "balanced_accuracy": 0.3333333333333333,
+      "label_counts": {
+        "non_compliant": 314,
+        "compliant": 274,
+        "compliant_with_monitoring": 515
+      },
+      "labels": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ],
+      "split": "strict_source_group"
+    },
+    {
+      "task_type": "regulation_compliance_check",
+      "profile": "instruction_only",
+      "n_train": 19817,
+      "n_eval": 2477,
+      "accuracy": 0.8389180460234155,
+      "macro_f1": 0.7308268655926282,
+      "balanced_accuracy": 0.7018714255789374,
+      "label_counts": {
+        "non_compliant": 1303,
+        "compliant": 104,
+        "compliant_with_monitoring": 1070
+      },
+      "labels": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ],
+      "split": "strict_source_group"
+    },
+    {
+      "task_type": "dispatcher_intent_tool_call",
+      "profile": "proxy_reduced",
+      "n_train": 15818,
+      "n_eval": 1975,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
+      "label_counts": {
+        "diagnose_and_dispatch": 662,
+        "security_check_and_redispatch": 656,
+        "mitigate_violations": 657
+      },
+      "labels": [
+        "diagnose_and_dispatch",
+        "mitigate_violations",
+        "security_check_and_redispatch"
+      ],
+      "split": "strict_source_group"
+    },
+    {
+      "task_type": "operation_ticket_check",
+      "profile": "proxy_reduced",
+      "n_train": 8665,
+      "n_eval": 1103,
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "balanced_accuracy": 1.0,
+      "label_counts": {
+        "non_compliant": 314,
+        "compliant": 274,
+        "compliant_with_monitoring": 515
+      },
+      "labels": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ],
+      "split": "strict_source_group"
+    },
+    {
+      "task_type": "regulation_compliance_check",
+      "profile": "proxy_reduced",
+      "n_train": 19817,
+      "n_eval": 2477,
+      "accuracy": 0.9301574485264433,
+      "macro_f1": 0.9083189037131021,
+      "balanced_accuracy": 0.8840064651997576,
+      "label_counts": {
+        "non_compliant": 1303,
+        "compliant": 104,
+        "compliant_with_monitoring": 1070
+      },
+      "labels": [
+        "compliant",
+        "compliant_with_monitoring",
+        "non_compliant"
+      ],
+      "split": "strict_source_group"
+    }
+  ],
+  "figures": {
+    "proxy_reduced_scores": "figures/sd_core/fig_proxy_reduced_input_scores.png"
+  }
+}

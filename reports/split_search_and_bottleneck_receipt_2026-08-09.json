@@ -1,0 +1,42 @@
+{
+  "generated_at": "2026-08-09",
+  "execution_policy": "local CPU/MPS only",
+  "split_search": [
+    {
+      "configuration": {"num_perm": 64, "lsh_threshold": 0.85},
+      "status": "historical_proxy",
+      "evidence": "reports/near_neighbor_free_split_v1.2_sd_core.json",
+      "finding": "detected components are atomic, yet later exact Jaccard sampling found residual cross-split lexical near-neighbours"
+    },
+    {
+      "configuration": {"num_perm": 128, "lsh_threshold": 0.70, "task_support_milp": true},
+      "status": "infeasible",
+      "finding": "394 components merged task families; explicit six-task count bounds had no feasible allocation"
+    },
+    {
+      "configuration": {"num_perm": 128, "lsh_threshold": 0.80, "task_support_milp": true},
+      "status": "pass_as_lexical_proxy",
+      "evidence": "reports/near_neighbor_balanced_split_v1.2_sd_core.json",
+      "finding": "10,500/3,488/3,460/78,031 records; exact sparse-matrix sample still found residual Jaccard >= 0.85"
+    },
+    {
+      "configuration": {"group": "task_type + normalize_template(instruction)", "task_support_milp": true},
+      "status": "pass_as_instruction_surface_control",
+      "evidence": "reports/instruction_surface_balanced_split_v1.2_sd_core.json",
+      "finding": "14,257/4,735/4,696/71,791 records; zero exact normalized-instruction collisions across train/validation/test"
+    }
+  ],
+  "exact_surface_audit": {
+    "component_balanced_report": "reports/near_neighbor_balanced_surface_audit_v1.2_sd_core.json",
+    "instruction_surface_report": "reports/instruction_surface_balanced_surface_audit_v1.2_sd_core.json",
+    "method": "deterministic sample; exact sparse binary character-5-gram matrix product over every pair in each sample",
+    "interpretation": "lexical residual diagnostic; no semantic-independence claim"
+  },
+  "neural_bottleneck": {
+    "configuration": "DistilBERT compliance, balanced component split, five seeds, three epochs, local MPS",
+    "status": "stopped_before_first_epoch_completion",
+    "observation": "the first seed reached approximately 7 minutes for the second batch at max_length 256; the projected runtime was not acceptable",
+    "action": "no partial metrics copied into benchmark reports; existing near-neighbour-free five-seed references remain the only neural numbers",
+    "optimization_boundary": "future reruns require a registered shorter sequence length or CPU baseline and a pre-measured throughput check"
+  }
+}

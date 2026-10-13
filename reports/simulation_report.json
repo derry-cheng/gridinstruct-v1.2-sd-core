@@ -1,0 +1,126 @@
+{
+  "generated_at": "2026-08-13T07:45:12.553366+00:00",
+  "status": "pass",
+  "scope": "core4_n1_only",
+  "systems": [
+    "ieee14",
+    "ieee30",
+    "ieee57",
+    "ieee118"
+  ],
+  "system_load_levels": {
+    "ieee14": [
+      0.7,
+      0.8,
+      0.9,
+      1.0,
+      1.1,
+      1.2,
+      1.3
+    ],
+    "ieee30": [
+      0.7,
+      0.75,
+      0.8,
+      0.9,
+      1.0,
+      1.1,
+      1.2,
+      1.3
+    ],
+    "ieee57": [
+      0.7,
+      0.8,
+      0.9,
+      1.0,
+      1.1,
+      1.2,
+      1.3
+    ],
+    "ieee118": [
+      0.7,
+      0.8,
+      0.9,
+      1.0,
+      1.1,
+      1.2
+    ]
+  },
+  "total_attempt_count": 1896,
+  "converged_count": 1772,
+  "failed_count": 124,
+  "by_system": {
+    "ieee14": {
+      "attempt_count": 119,
+      "converged_count": 104,
+      "line_count": 17,
+      "load_strata": 7
+    },
+    "ieee30": {
+      "attempt_count": 272,
+      "converged_count": 249,
+      "line_count": 34,
+      "load_strata": 8
+    },
+    "ieee57": {
+      "attempt_count": 455,
+      "converged_count": 424,
+      "line_count": 65,
+      "load_strata": 7
+    },
+    "ieee118": {
+      "attempt_count": 1050,
+      "converged_count": 995,
+      "line_count": 175,
+      "load_strata": 6
+    }
+  },
+  "source": {
+    "kind": "pinned_pglib_matpower_cases_with_pandapower_runner",
+    "pglib_root": "/private/tmp/gaiav2-pglib-v23.07"
+  },
+  "interpretation": "This report is a fresh Core-4 N-1 denominator recomputation. It does not establish the absent broader scenario ledger.",
+  "config": {
+    "system_load_levels": {
+      "ieee14": [
+        0.7,
+        0.8,
+        0.9,
+        1.0,
+        1.1,
+        1.2,
+        1.3
+      ],
+      "ieee30": [
+        0.7,
+        0.75,
+        0.8,
+        0.9,
+        1.0,
+        1.1,
+        1.2,
+        1.3
+      ],
+      "ieee57": [
+        0.7,
+        0.8,
+        0.9,
+        1.0,
+        1.1,
+        1.2,
+        1.3
+      ],
+      "ieee118": [
+        0.7,
+        0.8,
+        0.9,
+        1.0,
+        1.1,
+        1.2
+      ]
+    },
+    "contingency_type": "n1_branch_outage",
+    "scale_generation_with_load": true
+  },
+  "convergence_rate": 0.9345991561181435
+}

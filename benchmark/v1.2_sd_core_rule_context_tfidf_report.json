@@ -1,0 +1,263 @@
+{
+  "generated_at": "2026-07-31T10:32:01.031025+00:00",
+  "train": "data/v1.2_sd_core_train_en.jsonl",
+  "validation": "data/v1.2_sd_core_validation_en.jsonl",
+  "test": "data/v1.2_sd_core_test_en.jsonl",
+  "rules": "rules/regulation_rules.json",
+  "objective": "rule_context_tfidf_classification_baseline",
+  "train_records": 28684,
+  "validation_records": 3598,
+  "test_records": 3609,
+  "profiles": {
+    "natural_no_rule": {
+      "include_rule_context": false,
+      "validation_metrics": {
+        "dispatcher_intent_tool_call": {
+          "task_type": "dispatcher_intent_tool_call",
+          "profile": "natural_no_rule",
+          "model_family": "tfidf_linear_svc",
+          "n": 490,
+          "accuracy": 1.0,
+          "macro_f1": 1.0,
+          "balanced_accuracy": 1.0,
+          "label_counts": {
+            "security_check_and_redispatch": 163,
+            "mitigate_violations": 163,
+            "diagnose_and_dispatch": 164
+          },
+          "label_space": [
+            "diagnose_and_dispatch",
+            "mitigate_violations",
+            "security_check_and_redispatch"
+          ]
+        },
+        "operation_ticket_check": {
+          "task_type": "operation_ticket_check",
+          "profile": "natural_no_rule",
+          "model_family": "tfidf_linear_svc",
+          "n": 1096,
+          "accuracy": 1.0,
+          "macro_f1": 1.0,
+          "balanced_accuracy": 1.0,
+          "label_counts": {
+            "non_compliant": 315,
+            "compliant_with_monitoring": 508,
+            "compliant": 273
+          },
+          "label_space": [
+            "compliant",
+            "compliant_with_monitoring",
+            "non_compliant"
+          ]
+        },
+        "regulation_compliance_check": {
+          "task_type": "regulation_compliance_check",
+          "profile": "natural_no_rule",
+          "model_family": "tfidf_linear_svc",
+          "n": 707,
+          "accuracy": 0.9618104667609618,
+          "macro_f1": 0.9434795883837371,
+          "balanced_accuracy": 0.9253137155700791,
+          "label_counts": {
+            "non_compliant": 339,
+            "compliant_with_monitoring": 291,
+            "compliant": 77
+          },
+          "label_space": [
+            "compliant",
+            "compliant_with_monitoring",
+            "non_compliant"
+          ]
+        }
+      },
+      "test_metrics": {
+        "dispatcher_intent_tool_call": {
+          "task_type": "dispatcher_intent_tool_call",
+          "profile": "natural_no_rule",
+          "model_family": "tfidf_linear_svc",
+          "n": 494,
+          "accuracy": 1.0,
+          "macro_f1": 1.0,
+          "balanced_accuracy": 1.0,
+          "label_counts": {
+            "security_check_and_redispatch": 164,
+            "mitigate_violations": 166,
+            "diagnose_and_dispatch": 164
+          },
+          "label_space": [
+            "diagnose_and_dispatch",
+            "mitigate_violations",
+            "security_check_and_redispatch"
+          ]
+        },
+        "operation_ticket_check": {
+          "task_type": "operation_ticket_check",
+          "profile": "natural_no_rule",
+          "model_family": "tfidf_linear_svc",
+          "n": 1110,
+          "accuracy": 1.0,
+          "macro_f1": 1.0,
+          "balanced_accuracy": 1.0,
+          "label_counts": {
+            "compliant_with_monitoring": 526,
+            "non_compliant": 312,
+            "compliant": 272
+          },
+          "label_space": [
+            "compliant",
+            "compliant_with_monitoring",
+            "non_compliant"
+          ]
+        },
+        "regulation_compliance_check": {
+          "task_type": "regulation_compliance_check",
+          "profile": "natural_no_rule",
+          "model_family": "tfidf_linear_svc",
+          "n": 701,
+          "accuracy": 0.8587731811697575,
+          "macro_f1": 0.8746693657585874,
+          "balanced_accuracy": 0.873063743705213,
+          "label_counts": {
+            "compliant_with_monitoring": 289,
+            "non_compliant": 338,
+            "compliant": 74
+          },
+          "label_space": [
+            "compliant",
+            "compliant_with_monitoring",
+            "non_compliant"
+          ]
+        }
+      },
+      "validation_macro_score": 0.9811598627945791,
+      "test_macro_score": 0.9582231219195291
+    },
+    "natural_with_rule_context": {
+      "include_rule_context": true,
+      "validation_metrics": {
+        "dispatcher_intent_tool_call": {
+          "task_type": "dispatcher_intent_tool_call",
+          "profile": "natural_with_rule_context",
+          "model_family": "tfidf_linear_svc",
+          "n": 490,
+          "accuracy": 1.0,
+          "macro_f1": 1.0,
+          "balanced_accuracy": 1.0,
+          "label_counts": {
+            "security_check_and_redispatch": 163,
+            "mitigate_violations": 163,
+            "diagnose_and_dispatch": 164
+          },
+          "label_space": [
+            "diagnose_and_dispatch",
+            "mitigate_violations",
+            "security_check_and_redispatch"
+          ]
+        },
+        "operation_ticket_check": {
+          "task_type": "operation_ticket_check",
+          "profile": "natural_with_rule_context",
+          "model_family": "tfidf_linear_svc",
+          "n": 1096,
+          "accuracy": 1.0,
+          "macro_f1": 1.0,
+          "balanced_accuracy": 1.0,
+          "label_counts": {
+            "non_compliant": 315,
+            "compliant_with_monitoring": 508,
+            "compliant": 273
+          },
+          "label_space": [
+            "compliant",
+            "compliant_with_monitoring",
+            "non_compliant"
+          ]
+        },
+        "regulation_compliance_check": {
+          "task_type": "regulation_compliance_check",
+          "profile": "natural_with_rule_context",
+          "model_family": "tfidf_linear_svc",
+          "n": 707,
+          "accuracy": 0.9575671852899575,
+          "macro_f1": 0.9403049712942861,
+          "balanced_accuracy": 0.9220394806563951,
+          "label_counts": {
+            "non_compliant": 339,
+            "compliant_with_monitoring": 291,
+            "compliant": 77
+          },
+          "label_space": [
+            "compliant",
+            "compliant_with_monitoring",
+            "non_compliant"
+          ]
+        }
+      },
+      "test_metrics": {
+        "dispatcher_intent_tool_call": {
+          "task_type": "dispatcher_intent_tool_call",
+          "profile": "natural_with_rule_context",
+          "model_family": "tfidf_linear_svc",
+          "n": 494,
+          "accuracy": 1.0,
+          "macro_f1": 1.0,
+          "balanced_accuracy": 1.0,
+          "label_counts": {
+            "security_check_and_redispatch": 164,
+            "mitigate_violations": 166,
+            "diagnose_and_dispatch": 164
+          },
+          "label_space": [
+            "diagnose_and_dispatch",
+            "mitigate_violations",
+            "security_check_and_redispatch"
+          ]
+        },
+        "operation_ticket_check": {
+          "task_type": "operation_ticket_check",
+          "profile": "natural_with_rule_context",
+          "model_family": "tfidf_linear_svc",
+          "n": 1110,
+          "accuracy": 1.0,
+          "macro_f1": 1.0,
+          "balanced_accuracy": 1.0,
+          "label_counts": {
+            "compliant_with_monitoring": 526,
+            "non_compliant": 312,
+            "compliant": 272
+          },
+          "label_space": [
+            "compliant",
+            "compliant_with_monitoring",
+            "non_compliant"
+          ]
+        },
+        "regulation_compliance_check": {
+          "task_type": "regulation_compliance_check",
+          "profile": "natural_with_rule_context",
+          "model_family": "tfidf_linear_svc",
+          "n": 701,
+          "accuracy": 0.8601997146932953,
+          "macro_f1": 0.8717964974316562,
+          "balanced_accuracy": 0.8668461053342608,
+          "label_counts": {
+            "compliant_with_monitoring": 289,
+            "non_compliant": 338,
+            "compliant": 74
+          },
+          "label_space": [
+            "compliant",
+            "compliant_with_monitoring",
+            "non_compliant"
+          ]
+        }
+      },
+      "validation_macro_score": 0.9801016570980954,
+      "test_macro_score": 0.9572654991438854
+    }
+  },
+  "figures": [
+    "figures/sd_core/fig_rule_context_tfidf_macro_f1.png"
+  ],
+  "interpretation": "Rule-card summaries are used as released provenance context, not as handcrafted label heuristics."
+}

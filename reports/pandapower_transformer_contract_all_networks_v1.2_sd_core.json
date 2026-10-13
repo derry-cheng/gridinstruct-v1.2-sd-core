@@ -1,0 +1,725 @@
+{
+  "contract_version": "gridinstruct-transformer-contract-regression-v2",
+  "generated_at": "2026-07-31T08:09:46.895927+00:00",
+  "status": "pass",
+  "systems": [
+    {
+      "network": "ieee14",
+      "two_winding_transformers": 5,
+      "three_winding_transformers": 0,
+      "tap_rows": 3,
+      "phase_shift_rows": 0,
+      "three_winding_scope": "no_three_winding_transformer_in_source_case",
+      "field_preservation": {
+        "trafo": {
+          "tap_side": true,
+          "tap_neutral": true,
+          "tap_min": true,
+          "tap_max": true,
+          "tap_step_percent": true,
+          "tap_step_degree": true,
+          "tap_pos": true,
+          "tap_changer_type": true,
+          "shift_degree": true
+        },
+        "trafo3w": {
+          "tap_side": true,
+          "tap_neutral": true,
+          "tap_min": true,
+          "tap_max": true,
+          "tap_step_percent": true,
+          "tap_step_degree": true,
+          "tap_pos": true,
+          "shift_mv_degree": true,
+          "shift_lv_degree": true,
+          "tap_at_star_point": true
+        }
+      },
+      "power_flow_status": "converged",
+      "max_absolute_differences": {
+        "bus_vm_pu": 0.0,
+        "bus_va_degree": 0.0,
+        "line_p_from_mw": 0.0,
+        "trafo_p_hv_mw": 0.0,
+        "trafo3w_p_hv_mw": 0.0
+      },
+      "power_flow_invariance_tolerance": 1e-08,
+      "status": "pass"
+    },
+    {
+      "network": "ieee30",
+      "two_winding_transformers": 0,
+      "three_winding_transformers": 0,
+      "tap_rows": 0,
+      "phase_shift_rows": 0,
+      "three_winding_scope": "no_three_winding_transformer_in_source_case",
+      "field_preservation": {
+        "trafo": {
+          "tap_side": true,
+          "tap_neutral": true,
+          "tap_min": true,
+          "tap_max": true,
+          "tap_step_percent": true,
+          "tap_step_degree": true,
+          "tap_pos": true,
+          "tap_changer_type": true,
+          "shift_degree": true,
+          "tap_phase_shifter": true
+        },
+        "trafo3w": {
+          "tap_side": true,
+          "tap_neutral": true,
+          "tap_min": true,
+          "tap_max": true,
+          "tap_step_percent": true,
+          "tap_step_degree": true,
+          "tap_pos": true,
+          "shift_mv_degree": true,
+          "shift_lv_degree": true,
+          "tap_at_star_point": true
+        }
+      },
+      "power_flow_status": "converged",
+      "max_absolute_differences": {
+        "bus_vm_pu": 0.0,
+        "bus_va_degree": 0.0,
+        "line_p_from_mw": 0.0,
+        "trafo_p_hv_mw": 0.0,
+        "trafo3w_p_hv_mw": 0.0
+      },
+      "power_flow_invariance_tolerance": 1e-08,
+      "status": "pass"
+    },
+    {
+      "network": "ieee57",
+      "two_winding_transformers": 17,
+      "three_winding_transformers": 0,
+      "tap_rows": 17,
+      "phase_shift_rows": 0,
+      "three_winding_scope": "no_three_winding_transformer_in_source_case",
+      "field_preservation": {
+        "trafo": {
+          "tap_side": true,
+          "tap_neutral": true,
+          "tap_min": true,
+          "tap_max": true,
+          "tap_step_percent": true,
+          "tap_step_degree": true,
+          "tap_pos": true,
+          "tap_changer_type": true,
+          "shift_degree": true
+        },
+        "trafo3w": {
+          "tap_side": true,
+          "tap_neutral": true,
+          "tap_min": true,
+          "tap_max": true,
+          "tap_step_percent": true,
+          "tap_step_degree": true,
+          "tap_pos": true,
+          "shift_mv_degree": true,
+          "shift_lv_degree": true,
+          "tap_at_star_point": true
+        }
+      },
+      "power_flow_status": "converged",
+      "max_absolute_differences": {
+        "bus_vm_pu": 0.0,
+        "bus_va_degree": 0.0,
+        "line_p_from_mw": 0.0,
+        "trafo_p_hv_mw": 0.0,
+        "trafo3w_p_hv_mw": 0.0
+      },
+      "power_flow_invariance_tolerance": 1e-08,
+      "status": "pass"
+    },
+    {
+      "network": "ieee118",
+      "two_winding_transformers": 13,
+      "three_winding_transformers": 0,
+      "tap_rows": 9,
+      "phase_shift_rows": 0,
+      "three_winding_scope": "no_three_winding_transformer_in_source_case",
+      "field_preservation": {
+        "trafo": {
+          "tap_side": true,
+          "tap_neutral": true,
+          "tap_min": true,
+          "tap_max": true,
+          "tap_step_percent": true,
+          "tap_step_degree": true,
+          "tap_pos": true,
+          "tap_changer_type": true,
+          "shift_degree": true
+        },
+        "trafo3w": {
+          "tap_side": true,
+          "tap_neutral": true,
+          "tap_min": true,
+          "tap_max": true,
+          "tap_step_percent": true,
+          "tap_step_degree": true,
+          "tap_pos": true,
+          "shift_mv_degree": true,
+          "shift_lv_degree": true,
+          "tap_at_star_point": true
+        }
+      },
+      "power_flow_status": "converged",
+      "max_absolute_differences": {
+        "bus_vm_pu": 0.0,
+        "bus_va_degree": 0.0,
+        "line_p_from_mw": 0.0,
+        "trafo_p_hv_mw": 0.0,
+        "trafo3w_p_hv_mw": 0.0
+      },
+      "power_flow_invariance_tolerance": 1e-08,
+      "status": "pass"
+    },
+    {
+      "network": "ieee300",
+      "two_winding_transformers": 128,
+      "three_winding_transformers": 0,
+      "tap_rows": 128,
+      "phase_shift_rows": 0,
+      "three_winding_scope": "no_three_winding_transformer_in_source_case",
+      "field_preservation": {
+        "trafo": {
+          "tap_side": true,
+          "tap_neutral": true,
+          "tap_min": true,
+          "tap_max": true,
+          "tap_step_percent": true,
+          "tap_step_degree": true,
+          "tap_pos": true,
+          "tap_changer_type": true,
+          "shift_degree": true
+        },
+        "trafo3w": {
+          "tap_side": true,
+          "tap_neutral": true,
+          "tap_min": true,
+          "tap_max": true,
+          "tap_step_percent": true,
+          "tap_step_degree": true,
+          "tap_pos": true,
+          "shift_mv_degree": true,
+          "shift_lv_degree": true,
+          "tap_at_star_point": true
+        }
+      },
+      "power_flow_status": "converged",
+      "max_absolute_differences": {
+        "bus_vm_pu": 0.0,
+        "bus_va_degree": 0.0,
+        "line_p_from_mw": 0.0,
+        "trafo_p_hv_mw": 0.0,
+        "trafo3w_p_hv_mw": 0.0
+      },
+      "power_flow_invariance_tolerance": 1e-08,
+      "status": "pass"
+    },
+    {
+      "network": "illinois200",
+      "two_winding_transformers": 66,
+      "three_winding_transformers": 0,
+      "tap_rows": 0,
+      "phase_shift_rows": 0,
+      "three_winding_scope": "no_three_winding_transformer_in_source_case",
+      "field_preservation": {
+        "trafo": {
+          "tap_side": true,
+          "tap_neutral": true,
+          "tap_min": true,
+          "tap_max": true,
+          "tap_step_percent": true,
+          "tap_step_degree": true,
+          "tap_pos": true,
+          "tap_changer_type": true,
+          "shift_degree": true
+        },
+        "trafo3w": {
+          "tap_side": true,
+          "tap_neutral": true,
+          "tap_min": true,
+          "tap_max": true,
+          "tap_step_percent": true,
+          "tap_step_degree": true,
+          "tap_pos": true,
+          "shift_mv_degree": true,
+          "shift_lv_degree": true,
+          "tap_at_star_point": true
+        }
+      },
+      "power_flow_status": "converged",
+      "max_absolute_differences": {
+        "bus_vm_pu": 0.0,
+        "bus_va_degree": 0.0,
+        "line_p_from_mw": 0.0,
+        "trafo_p_hv_mw": 0.0,
+        "trafo3w_p_hv_mw": 0.0
+      },
+      "power_flow_invariance_tolerance": 1e-08,
+      "status": "pass"
+    },
+    {
+      "network": "pegase89",
+      "two_winding_transformers": 50,
+      "three_winding_transformers": 0,
+      "tap_rows": 32,
+      "phase_shift_rows": 3,
+      "three_winding_scope": "no_three_winding_transformer_in_source_case",
+      "field_preservation": {
+        "trafo": {
+          "tap_side": true,
+          "tap_neutral": true,
+          "tap_min": true,
+          "tap_max": true,
+          "tap_step_percent": true,
+          "tap_step_degree": true,
+          "tap_pos": true,
+          "tap_changer_type": true,
+          "shift_degree": true
+        },
+        "trafo3w": {
+          "tap_side": true,
+          "tap_neutral": true,
+          "tap_min": true,
+          "tap_max": true,
+          "tap_step_percent": true,
+          "tap_step_degree": true,
+          "tap_pos": true,
+          "shift_mv_degree": true,
+          "shift_lv_degree": true,
+          "tap_at_star_point": true
+        }
+      },
+      "power_flow_status": "converged",
+      "max_absolute_differences": {
+        "bus_vm_pu": 0.0,
+        "bus_va_degree": 0.0,
+        "line_p_from_mw": 0.0,
+        "trafo_p_hv_mw": 0.0,
+        "trafo3w_p_hv_mw": 0.0
+      },
+      "power_flow_invariance_tolerance": 1e-08,
+      "status": "pass"
+    },
+    {
+      "network": "pegase1354",
+      "two_winding_transformers": 240,
+      "three_winding_transformers": 0,
+      "tap_rows": 234,
+      "phase_shift_rows": 6,
+      "three_winding_scope": "no_three_winding_transformer_in_source_case",
+      "field_preservation": {
+        "trafo": {
+          "tap_side": true,
+          "tap_neutral": true,
+          "tap_min": true,
+          "tap_max": true,
+          "tap_step_percent": true,
+          "tap_step_degree": true,
+          "tap_pos": true,
+          "tap_changer_type": true,
+          "shift_degree": true
+        },
+        "trafo3w": {
+          "tap_side": true,
+          "tap_neutral": true,
+          "tap_min": true,
+          "tap_max": true,
+          "tap_step_percent": true,
+          "tap_step_degree": true,
+          "tap_pos": true,
+          "shift_mv_degree": true,
+          "shift_lv_degree": true,
+          "tap_at_star_point": true
+        }
+      },
+      "power_flow_status": "converged",
+      "max_absolute_differences": {
+        "bus_vm_pu": 0.0,
+        "bus_va_degree": 0.0,
+        "line_p_from_mw": 0.0,
+        "trafo_p_hv_mw": 0.0,
+        "trafo3w_p_hv_mw": 0.0
+      },
+      "power_flow_invariance_tolerance": 1e-08,
+      "status": "pass"
+    },
+    {
+      "network": "rte1888",
+      "two_winding_transformers": 555,
+      "three_winding_transformers": 0,
+      "tap_rows": 555,
+      "phase_shift_rows": 4,
+      "three_winding_scope": "no_three_winding_transformer_in_source_case",
+      "field_preservation": {
+        "trafo": {
+          "tap_side": true,
+          "tap_neutral": true,
+          "tap_min": true,
+          "tap_max": true,
+          "tap_step_percent": true,
+          "tap_step_degree": true,
+          "tap_pos": true,
+          "tap_changer_type": true,
+          "shift_degree": true
+        },
+        "trafo3w": {
+          "tap_side": true,
+          "tap_neutral": true,
+          "tap_min": true,
+          "tap_max": true,
+          "tap_step_percent": true,
+          "tap_step_degree": true,
+          "tap_pos": true,
+          "shift_mv_degree": true,
+          "shift_lv_degree": true,
+          "tap_at_star_point": true
+        }
+      },
+      "power_flow_status": "converged",
+      "max_absolute_differences": {
+        "bus_vm_pu": 0.0,
+        "bus_va_degree": 0.0,
+        "line_p_from_mw": 0.0,
+        "trafo_p_hv_mw": 0.0,
+        "trafo3w_p_hv_mw": 0.0
+      },
+      "power_flow_invariance_tolerance": 1e-08,
+      "status": "pass"
+    },
+    {
+      "network": "rte2848",
+      "two_winding_transformers": 783,
+      "three_winding_transformers": 0,
+      "tap_rows": 783,
+      "phase_shift_rows": 6,
+      "three_winding_scope": "no_three_winding_transformer_in_source_case",
+      "field_preservation": {
+        "trafo": {
+          "tap_side": true,
+          "tap_neutral": true,
+          "tap_min": true,
+          "tap_max": true,
+          "tap_step_percent": true,
+          "tap_step_degree": true,
+          "tap_pos": true,
+          "tap_changer_type": true,
+          "shift_degree": true
+        },
+        "trafo3w": {
+          "tap_side": true,
+          "tap_neutral": true,
+          "tap_min": true,
+          "tap_max": true,
+          "tap_step_percent": true,
+          "tap_step_degree": true,
+          "tap_pos": true,
+          "shift_mv_degree": true,
+          "shift_lv_degree": true,
+          "tap_at_star_point": true
+        }
+      },
+      "power_flow_status": "converged",
+      "max_absolute_differences": {
+        "bus_vm_pu": 0.0,
+        "bus_va_degree": 0.0,
+        "line_p_from_mw": 0.0,
+        "trafo_p_hv_mw": 0.0,
+        "trafo3w_p_hv_mw": 0.0
+      },
+      "power_flow_invariance_tolerance": 1e-08,
+      "status": "pass"
+    },
+    {
+      "network": "pegase2869",
+      "two_winding_transformers": 531,
+      "three_winding_transformers": 0,
+      "tap_rows": 496,
+      "phase_shift_rows": 12,
+      "three_winding_scope": "no_three_winding_transformer_in_source_case",
+      "field_preservation": {
+        "trafo": {
+          "tap_side": true,
+          "tap_neutral": true,
+          "tap_min": true,
+          "tap_max": true,
+          "tap_step_percent": true,
+          "tap_step_degree": true,
+          "tap_pos": true,
+          "tap_changer_type": true,
+          "shift_degree": true
+        },
+        "trafo3w": {
+          "tap_side": true,
+          "tap_neutral": true,
+          "tap_min": true,
+          "tap_max": true,
+          "tap_step_percent": true,
+          "tap_step_degree": true,
+          "tap_pos": true,
+          "shift_mv_degree": true,
+          "shift_lv_degree": true,
+          "tap_at_star_point": true
+        }
+      },
+      "power_flow_status": "converged",
+      "max_absolute_differences": {
+        "bus_vm_pu": 0.0,
+        "bus_va_degree": 0.0,
+        "line_p_from_mw": 0.0,
+        "trafo_p_hv_mw": 0.0,
+        "trafo3w_p_hv_mw": 0.0
+      },
+      "power_flow_invariance_tolerance": 1e-08,
+      "status": "pass"
+    }
+  ],
+  "pglib_repository": {
+    "repository": "https://github.com/power-grid-lib/pglib-opf",
+    "commit": "dc6be4b2f85ca0e776952ec22cbd4c22396ea5a3",
+    "license": "CC-BY-4.0 for data; MIT for software",
+    "license_path": "third_party/pglib-opf-v23.07/LICENSE",
+    "license_sha256": "95b1cd9fee1676221d74f7c0cbba622d98ac098e9b317b3848113ef4356ab4fd"
+  },
+  "pglib_source_contracts": [
+    {
+      "network": "ieee14",
+      "source": {
+        "document_id": "pglib_opf_case14_ieee.m",
+        "document_sha256": "bd5c568621de65e4b0922317010868bc7fa94173807faa10ea8fdbbe77c28106",
+        "locator": "mpc.branch transformer rows",
+        "repository": "https://github.com/power-grid-lib/pglib-opf",
+        "repository_commit": "dc6be4b2f85ca0e776952ec22cbd4c22396ea5a3",
+        "license": "CC-BY-4.0 for data; MIT for software",
+        "license_sha256": "95b1cd9fee1676221d74f7c0cbba622d98ac098e9b317b3848113ef4356ab4fd"
+      },
+      "transformer_rows": 3,
+      "nonzero_tap_rows": 3,
+      "nonzero_phase_shift_rows": 0,
+      "three_winding_representation": "MATPOWER branch schema is two-terminal; the separately hard-gated synthetic three-winding fixture validates conversion semantics",
+      "all_tap_phase_rating_fields_finite": true,
+      "pandapower_branch_mapping_status": "pass",
+      "source_bound_branch_ratings_mapped": 20,
+      "status": "pass"
+    },
+    {
+      "network": "ieee30",
+      "source": {
+        "document_id": "pglib_opf_case30_ieee.m",
+        "document_sha256": "cae3290639d989731d32428aacf30c0b918bc91db73bc54791f3aa62d3f76c70",
+        "locator": "mpc.branch transformer rows",
+        "repository": "https://github.com/power-grid-lib/pglib-opf",
+        "repository_commit": "dc6be4b2f85ca0e776952ec22cbd4c22396ea5a3",
+        "license": "CC-BY-4.0 for data; MIT for software",
+        "license_sha256": "95b1cd9fee1676221d74f7c0cbba622d98ac098e9b317b3848113ef4356ab4fd"
+      },
+      "transformer_rows": 7,
+      "nonzero_tap_rows": 7,
+      "nonzero_phase_shift_rows": 0,
+      "three_winding_representation": "MATPOWER branch schema is two-terminal; the separately hard-gated synthetic three-winding fixture validates conversion semantics",
+      "all_tap_phase_rating_fields_finite": true,
+      "pandapower_branch_mapping_status": "pass",
+      "source_bound_branch_ratings_mapped": 41,
+      "status": "pass"
+    },
+    {
+      "network": "ieee57",
+      "source": {
+        "document_id": "pglib_opf_case57_ieee.m",
+        "document_sha256": "aa3b48f7cbaade2afd69cb3790ef72be981db8494dcef9277bee460f754bdb22",
+        "locator": "mpc.branch transformer rows",
+        "repository": "https://github.com/power-grid-lib/pglib-opf",
+        "repository_commit": "dc6be4b2f85ca0e776952ec22cbd4c22396ea5a3",
+        "license": "CC-BY-4.0 for data; MIT for software",
+        "license_sha256": "95b1cd9fee1676221d74f7c0cbba622d98ac098e9b317b3848113ef4356ab4fd"
+      },
+      "transformer_rows": 17,
+      "nonzero_tap_rows": 17,
+      "nonzero_phase_shift_rows": 0,
+      "three_winding_representation": "MATPOWER branch schema is two-terminal; the separately hard-gated synthetic three-winding fixture validates conversion semantics",
+      "all_tap_phase_rating_fields_finite": true,
+      "pandapower_branch_mapping_status": "pass",
+      "source_bound_branch_ratings_mapped": 80,
+      "status": "pass"
+    },
+    {
+      "network": "ieee118",
+      "source": {
+        "document_id": "pglib_opf_case118_ieee.m",
+        "document_sha256": "b1af0833849040c04babc3700631cff0d9afa66b79c5d3e13ae79bdf516cec78",
+        "locator": "mpc.branch transformer rows",
+        "repository": "https://github.com/power-grid-lib/pglib-opf",
+        "repository_commit": "dc6be4b2f85ca0e776952ec22cbd4c22396ea5a3",
+        "license": "CC-BY-4.0 for data; MIT for software",
+        "license_sha256": "95b1cd9fee1676221d74f7c0cbba622d98ac098e9b317b3848113ef4356ab4fd"
+      },
+      "transformer_rows": 11,
+      "nonzero_tap_rows": 11,
+      "nonzero_phase_shift_rows": 0,
+      "three_winding_representation": "MATPOWER branch schema is two-terminal; the separately hard-gated synthetic three-winding fixture validates conversion semantics",
+      "all_tap_phase_rating_fields_finite": true,
+      "pandapower_branch_mapping_status": "pass",
+      "source_bound_branch_ratings_mapped": 186,
+      "status": "pass"
+    },
+    {
+      "network": "ieee300",
+      "source": {
+        "document_id": "pglib_opf_case300_ieee.m",
+        "document_sha256": "7ecf056d5942135765200ad7ae8791c28f0d35fb1dc888ba2c32dfc950f3c2f5",
+        "locator": "mpc.branch transformer rows",
+        "repository": "https://github.com/power-grid-lib/pglib-opf",
+        "repository_commit": "dc6be4b2f85ca0e776952ec22cbd4c22396ea5a3",
+        "license": "CC-BY-4.0 for data; MIT for software",
+        "license_sha256": "95b1cd9fee1676221d74f7c0cbba622d98ac098e9b317b3848113ef4356ab4fd"
+      },
+      "transformer_rows": 129,
+      "nonzero_tap_rows": 129,
+      "nonzero_phase_shift_rows": 1,
+      "three_winding_representation": "MATPOWER branch schema is two-terminal; the separately hard-gated synthetic three-winding fixture validates conversion semantics",
+      "all_tap_phase_rating_fields_finite": true,
+      "pandapower_branch_mapping_status": "pass",
+      "source_bound_branch_ratings_mapped": 411,
+      "status": "pass"
+    },
+    {
+      "network": "illinois200",
+      "source": {
+        "document_id": "pglib_opf_case200_activ.m",
+        "document_sha256": "676e6f54a3b6726b199b531e7758ad8bf75ba2b076ea3fee86dc3f5cf5846f6b",
+        "locator": "mpc.branch transformer rows",
+        "repository": "https://github.com/power-grid-lib/pglib-opf",
+        "repository_commit": "dc6be4b2f85ca0e776952ec22cbd4c22396ea5a3",
+        "license": "CC-BY-4.0 for data; MIT for software",
+        "license_sha256": "95b1cd9fee1676221d74f7c0cbba622d98ac098e9b317b3848113ef4356ab4fd"
+      },
+      "transformer_rows": 66,
+      "nonzero_tap_rows": 66,
+      "nonzero_phase_shift_rows": 0,
+      "three_winding_representation": "MATPOWER branch schema is two-terminal; the separately hard-gated synthetic three-winding fixture validates conversion semantics",
+      "all_tap_phase_rating_fields_finite": true,
+      "pandapower_branch_mapping_status": "pass",
+      "source_bound_branch_ratings_mapped": 245,
+      "status": "pass"
+    },
+    {
+      "network": "pegase89",
+      "source": {
+        "document_id": "pglib_opf_case89_pegase.m",
+        "document_sha256": "0c2ca484db566e587df8565141dbbf053c275e9246968391cc2f560fb4e995ca",
+        "locator": "mpc.branch transformer rows",
+        "repository": "https://github.com/power-grid-lib/pglib-opf",
+        "repository_commit": "dc6be4b2f85ca0e776952ec22cbd4c22396ea5a3",
+        "license": "CC-BY-4.0 for data; MIT for software",
+        "license_sha256": "95b1cd9fee1676221d74f7c0cbba622d98ac098e9b317b3848113ef4356ab4fd"
+      },
+      "transformer_rows": 50,
+      "nonzero_tap_rows": 50,
+      "nonzero_phase_shift_rows": 3,
+      "three_winding_representation": "MATPOWER branch schema is two-terminal; the separately hard-gated synthetic three-winding fixture validates conversion semantics",
+      "all_tap_phase_rating_fields_finite": true,
+      "pandapower_branch_mapping_status": "pass",
+      "source_bound_branch_ratings_mapped": 210,
+      "status": "pass"
+    },
+    {
+      "network": "pegase1354",
+      "source": {
+        "document_id": "pglib_opf_case1354_pegase.m",
+        "document_sha256": "cd6d27dff4a56684f1e4f82cfa346b36d84c4e90733228aa88331cd550e17652",
+        "locator": "mpc.branch transformer rows",
+        "repository": "https://github.com/power-grid-lib/pglib-opf",
+        "repository_commit": "dc6be4b2f85ca0e776952ec22cbd4c22396ea5a3",
+        "license": "CC-BY-4.0 for data; MIT for software",
+        "license_sha256": "95b1cd9fee1676221d74f7c0cbba622d98ac098e9b317b3848113ef4356ab4fd"
+      },
+      "transformer_rows": 240,
+      "nonzero_tap_rows": 240,
+      "nonzero_phase_shift_rows": 6,
+      "three_winding_representation": "MATPOWER branch schema is two-terminal; the separately hard-gated synthetic three-winding fixture validates conversion semantics",
+      "all_tap_phase_rating_fields_finite": true,
+      "pandapower_branch_mapping_status": "pass",
+      "source_bound_branch_ratings_mapped": 1991,
+      "status": "pass"
+    },
+    {
+      "network": "rte1888",
+      "source": {
+        "document_id": "pglib_opf_case1888_rte.m",
+        "document_sha256": "f4bc237298ed7c2e9291070f3c3a0983319565c12b801114a1e29641d0b5bff0",
+        "locator": "mpc.branch transformer rows",
+        "repository": "https://github.com/power-grid-lib/pglib-opf",
+        "repository_commit": "dc6be4b2f85ca0e776952ec22cbd4c22396ea5a3",
+        "license": "CC-BY-4.0 for data; MIT for software",
+        "license_sha256": "95b1cd9fee1676221d74f7c0cbba622d98ac098e9b317b3848113ef4356ab4fd"
+      },
+      "transformer_rows": 555,
+      "nonzero_tap_rows": 555,
+      "nonzero_phase_shift_rows": 4,
+      "three_winding_representation": "MATPOWER branch schema is two-terminal; the separately hard-gated synthetic three-winding fixture validates conversion semantics",
+      "all_tap_phase_rating_fields_finite": true,
+      "pandapower_branch_mapping_status": "pass",
+      "source_bound_branch_ratings_mapped": 2531,
+      "status": "pass"
+    },
+    {
+      "network": "rte2848",
+      "source": {
+        "document_id": "pglib_opf_case2848_rte.m",
+        "document_sha256": "9d1ec26a6aef3e47bc23707a6c81db8d0528ff6ad90068b2f92df3d6e76ef591",
+        "locator": "mpc.branch transformer rows",
+        "repository": "https://github.com/power-grid-lib/pglib-opf",
+        "repository_commit": "dc6be4b2f85ca0e776952ec22cbd4c22396ea5a3",
+        "license": "CC-BY-4.0 for data; MIT for software",
+        "license_sha256": "95b1cd9fee1676221d74f7c0cbba622d98ac098e9b317b3848113ef4356ab4fd"
+      },
+      "transformer_rows": 783,
+      "nonzero_tap_rows": 783,
+      "nonzero_phase_shift_rows": 6,
+      "three_winding_representation": "MATPOWER branch schema is two-terminal; the separately hard-gated synthetic three-winding fixture validates conversion semantics",
+      "all_tap_phase_rating_fields_finite": true,
+      "pandapower_branch_mapping_status": "pass",
+      "source_bound_branch_ratings_mapped": 3776,
+      "status": "pass"
+    },
+    {
+      "network": "pegase2869",
+      "source": {
+        "document_id": "pglib_opf_case2869_pegase.m",
+        "document_sha256": "6c8e80fba6fc2fa78d65fce64cf4801425b01a0aa093661caf581b6551d4a7ac",
+        "locator": "mpc.branch transformer rows",
+        "repository": "https://github.com/power-grid-lib/pglib-opf",
+        "repository_commit": "dc6be4b2f85ca0e776952ec22cbd4c22396ea5a3",
+        "license": "CC-BY-4.0 for data; MIT for software",
+        "license_sha256": "95b1cd9fee1676221d74f7c0cbba622d98ac098e9b317b3848113ef4356ab4fd"
+      },
+      "transformer_rows": 531,
+      "nonzero_tap_rows": 531,
+      "nonzero_phase_shift_rows": 12,
+      "three_winding_representation": "MATPOWER branch schema is two-terminal; the separately hard-gated synthetic three-winding fixture validates conversion semantics",
+      "all_tap_phase_rating_fields_finite": true,
+      "pandapower_branch_mapping_status": "pass",
+      "source_bound_branch_ratings_mapped": 4582,
+      "status": "pass"
+    }
+  ],
+  "synthetic_three_winding_fixture": {
+    "status": "pass",
+    "tap_voltage_response_pu": 0.012778974164559642,
+    "tap_angle_response_degree": 0.05971971439160839,
+    "shift_mv_degree": 5.0,
+    "shift_lv_degree": -5.0,
+    "tap_dependency_table_explicit": true
+  },
+  "hard_gates": {
+    "all_requested_networks_regressed": true,
+    "all_source_tap_and_phase_fields_preserved": true,
+    "all_base_power_flows_invariant": true,
+    "three_winding_tap_and_phase_fixture_pass": true,
+    "all_pglib_tap_phase_fields_finite": true
+  }
+}

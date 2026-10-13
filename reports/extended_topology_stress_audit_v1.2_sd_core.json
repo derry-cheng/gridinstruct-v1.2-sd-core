@@ -1,0 +1,673 @@
+{
+  "generated_at": "2026-07-31T08:05:43.869967+00:00",
+  "status": "pass",
+  "systems": [
+    "ieee300",
+    "illinois200",
+    "pegase89",
+    "pegase1354",
+    "rte1888",
+    "rte2848",
+    "pegase2869"
+  ],
+  "config": {
+    "seed": 20260710,
+    "load_levels": [
+      0.95,
+      1.0,
+      1.05
+    ],
+    "system_load_levels": {
+      "ieee300": [
+        0.95,
+        0.955
+      ],
+      "illinois200": [
+        0.5,
+        0.6,
+        0.68,
+        0.72,
+        0.76,
+        0.8,
+        0.82,
+        0.84,
+        0.86,
+        0.88,
+        0.92,
+        0.96,
+        0.98,
+        1.0
+      ],
+      "pegase89": [
+        0.75,
+        0.85,
+        0.95,
+        1.0,
+        1.05
+      ],
+      "pegase1354": [
+        0.85,
+        0.95,
+        1.0
+      ],
+      "rte1888": [
+        0.95,
+        1.0
+      ],
+      "rte2848": [
+        0.95,
+        1.0,
+        1.05
+      ],
+      "pegase2869": [
+        0.9,
+        0.95,
+        1.0
+      ]
+    },
+    "max_lines_per_system": 12,
+    "max_attempts_per_stratum": 512,
+    "required_envelope_counts": {
+      "normal-envelope": 80,
+      "operational-stress": 40,
+      "emergency-stress": 20,
+      "extreme-stress": 13
+    },
+    "scenario_namespace": "sdv2",
+    "scale_generation_with_load": false,
+    "generator_voltage_factors": [
+      1.0
+    ],
+    "dispatch_policy": "fixed_power_flow"
+  },
+  "publication_transaction": {
+    "output_path": "simulation_outputs/topology_stress/extended_topology_scenarios.json",
+    "output_written_by_this_run": true,
+    "output_sha256": "5341c7850889358eff243b6dcaabb9cdea6e1f95825b37874e8a8b856fca7c19",
+    "prior_output_sha256": "5341c7850889358eff243b6dcaabb9cdea6e1f95825b37874e8a8b856fca7c19",
+    "attempt_ledger_path": "reports/extended_topology_stress_attempts_v1.2_sd_core.json",
+    "attempt_ledger_sha256": "a7b2013527278bd03190fbc5f666b6730c7dbd5cd693c236d6ec213cd1cbf169"
+  },
+  "scenario_record_count": 416,
+  "converged_record_count": 416,
+  "convergence_rate": 1.0,
+  "solver_status_counts": {
+    "converged": 416
+  },
+  "candidate_attempt_count": 534,
+  "candidate_attempt_status_counts": {
+    "converged": 416,
+    "failed": 118
+  },
+  "candidate_attempt_failure_class_counts": {
+    "unsupplied_island": 113,
+    "numerical_nonconvergence": 5
+  },
+  "envelope_counts": {
+    "extreme-stress": 105,
+    "emergency-stress": 71,
+    "operational-stress": 112,
+    "normal-envelope": 128
+  },
+  "stratum_coverage": {
+    "ieee300|base_power_flow|load=95|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 1,
+      "accepted": 1,
+      "failed": 0,
+      "required_accepted": 1,
+      "acceptance_quota_met": true
+    },
+    "ieee300|base_power_flow|load=0p955|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 1,
+      "accepted": 1,
+      "failed": 0,
+      "required_accepted": 1,
+      "acceptance_quota_met": true
+    },
+    "ieee300|n1_branch_outage|load=95|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 17,
+      "accepted": 12,
+      "failed": 5,
+      "required_accepted": 12,
+      "acceptance_quota_met": true
+    },
+    "ieee300|n1_branch_outage|load=0p955|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 16,
+      "accepted": 12,
+      "failed": 4,
+      "required_accepted": 12,
+      "acceptance_quota_met": true
+    },
+    "illinois200|base_power_flow|load=50|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 1,
+      "accepted": 1,
+      "failed": 0,
+      "required_accepted": 1,
+      "acceptance_quota_met": true
+    },
+    "illinois200|base_power_flow|load=60|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 1,
+      "accepted": 1,
+      "failed": 0,
+      "required_accepted": 1,
+      "acceptance_quota_met": true
+    },
+    "illinois200|base_power_flow|load=68|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 1,
+      "accepted": 1,
+      "failed": 0,
+      "required_accepted": 1,
+      "acceptance_quota_met": true
+    },
+    "illinois200|base_power_flow|load=72|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 1,
+      "accepted": 1,
+      "failed": 0,
+      "required_accepted": 1,
+      "acceptance_quota_met": true
+    },
+    "illinois200|base_power_flow|load=76|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 1,
+      "accepted": 1,
+      "failed": 0,
+      "required_accepted": 1,
+      "acceptance_quota_met": true
+    },
+    "illinois200|base_power_flow|load=80|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 1,
+      "accepted": 1,
+      "failed": 0,
+      "required_accepted": 1,
+      "acceptance_quota_met": true
+    },
+    "illinois200|base_power_flow|load=82|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 1,
+      "accepted": 1,
+      "failed": 0,
+      "required_accepted": 1,
+      "acceptance_quota_met": true
+    },
+    "illinois200|base_power_flow|load=84|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 1,
+      "accepted": 1,
+      "failed": 0,
+      "required_accepted": 1,
+      "acceptance_quota_met": true
+    },
+    "illinois200|base_power_flow|load=86|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 1,
+      "accepted": 1,
+      "failed": 0,
+      "required_accepted": 1,
+      "acceptance_quota_met": true
+    },
+    "illinois200|base_power_flow|load=88|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 1,
+      "accepted": 1,
+      "failed": 0,
+      "required_accepted": 1,
+      "acceptance_quota_met": true
+    },
+    "illinois200|base_power_flow|load=92|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 1,
+      "accepted": 1,
+      "failed": 0,
+      "required_accepted": 1,
+      "acceptance_quota_met": true
+    },
+    "illinois200|base_power_flow|load=96|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 1,
+      "accepted": 1,
+      "failed": 0,
+      "required_accepted": 1,
+      "acceptance_quota_met": true
+    },
+    "illinois200|base_power_flow|load=98|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 1,
+      "accepted": 1,
+      "failed": 0,
+      "required_accepted": 1,
+      "acceptance_quota_met": true
+    },
+    "illinois200|base_power_flow|load=100|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 1,
+      "accepted": 1,
+      "failed": 0,
+      "required_accepted": 1,
+      "acceptance_quota_met": true
+    },
+    "illinois200|n1_branch_outage|load=50|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 14,
+      "accepted": 12,
+      "failed": 2,
+      "required_accepted": 12,
+      "acceptance_quota_met": true
+    },
+    "illinois200|n1_branch_outage|load=60|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 14,
+      "accepted": 12,
+      "failed": 2,
+      "required_accepted": 12,
+      "acceptance_quota_met": true
+    },
+    "illinois200|n1_branch_outage|load=68|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 14,
+      "accepted": 12,
+      "failed": 2,
+      "required_accepted": 12,
+      "acceptance_quota_met": true
+    },
+    "illinois200|n1_branch_outage|load=72|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 14,
+      "accepted": 12,
+      "failed": 2,
+      "required_accepted": 12,
+      "acceptance_quota_met": true
+    },
+    "illinois200|n1_branch_outage|load=76|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 15,
+      "accepted": 12,
+      "failed": 3,
+      "required_accepted": 12,
+      "acceptance_quota_met": true
+    },
+    "illinois200|n1_branch_outage|load=80|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 14,
+      "accepted": 12,
+      "failed": 2,
+      "required_accepted": 12,
+      "acceptance_quota_met": true
+    },
+    "illinois200|n1_branch_outage|load=82|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 14,
+      "accepted": 12,
+      "failed": 2,
+      "required_accepted": 12,
+      "acceptance_quota_met": true
+    },
+    "illinois200|n1_branch_outage|load=84|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 13,
+      "accepted": 12,
+      "failed": 1,
+      "required_accepted": 12,
+      "acceptance_quota_met": true
+    },
+    "illinois200|n1_branch_outage|load=86|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 13,
+      "accepted": 12,
+      "failed": 1,
+      "required_accepted": 12,
+      "acceptance_quota_met": true
+    },
+    "illinois200|n1_branch_outage|load=88|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 13,
+      "accepted": 12,
+      "failed": 1,
+      "required_accepted": 12,
+      "acceptance_quota_met": true
+    },
+    "illinois200|n1_branch_outage|load=92|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 14,
+      "accepted": 12,
+      "failed": 2,
+      "required_accepted": 12,
+      "acceptance_quota_met": true
+    },
+    "illinois200|n1_branch_outage|load=96|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 14,
+      "accepted": 12,
+      "failed": 2,
+      "required_accepted": 12,
+      "acceptance_quota_met": true
+    },
+    "illinois200|n1_branch_outage|load=98|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 14,
+      "accepted": 12,
+      "failed": 2,
+      "required_accepted": 12,
+      "acceptance_quota_met": true
+    },
+    "illinois200|n1_branch_outage|load=100|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 13,
+      "accepted": 12,
+      "failed": 1,
+      "required_accepted": 12,
+      "acceptance_quota_met": true
+    },
+    "pegase89|base_power_flow|load=75|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 1,
+      "accepted": 1,
+      "failed": 0,
+      "required_accepted": 1,
+      "acceptance_quota_met": true
+    },
+    "pegase89|base_power_flow|load=85|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 1,
+      "accepted": 1,
+      "failed": 0,
+      "required_accepted": 1,
+      "acceptance_quota_met": true
+    },
+    "pegase89|base_power_flow|load=95|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 1,
+      "accepted": 1,
+      "failed": 0,
+      "required_accepted": 1,
+      "acceptance_quota_met": true
+    },
+    "pegase89|base_power_flow|load=100|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 1,
+      "accepted": 1,
+      "failed": 0,
+      "required_accepted": 1,
+      "acceptance_quota_met": true
+    },
+    "pegase89|base_power_flow|load=105|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 1,
+      "accepted": 1,
+      "failed": 0,
+      "required_accepted": 1,
+      "acceptance_quota_met": true
+    },
+    "pegase89|n1_branch_outage|load=75|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 15,
+      "accepted": 12,
+      "failed": 3,
+      "required_accepted": 12,
+      "acceptance_quota_met": true
+    },
+    "pegase89|n1_branch_outage|load=85|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 14,
+      "accepted": 12,
+      "failed": 2,
+      "required_accepted": 12,
+      "acceptance_quota_met": true
+    },
+    "pegase89|n1_branch_outage|load=95|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 13,
+      "accepted": 12,
+      "failed": 1,
+      "required_accepted": 12,
+      "acceptance_quota_met": true
+    },
+    "pegase89|n1_branch_outage|load=100|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 13,
+      "accepted": 12,
+      "failed": 1,
+      "required_accepted": 12,
+      "acceptance_quota_met": true
+    },
+    "pegase89|n1_branch_outage|load=105|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 13,
+      "accepted": 12,
+      "failed": 1,
+      "required_accepted": 12,
+      "acceptance_quota_met": true
+    },
+    "pegase1354|base_power_flow|load=85|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 1,
+      "accepted": 1,
+      "failed": 0,
+      "required_accepted": 1,
+      "acceptance_quota_met": true
+    },
+    "pegase1354|base_power_flow|load=95|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 1,
+      "accepted": 1,
+      "failed": 0,
+      "required_accepted": 1,
+      "acceptance_quota_met": true
+    },
+    "pegase1354|base_power_flow|load=100|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 1,
+      "accepted": 1,
+      "failed": 0,
+      "required_accepted": 1,
+      "acceptance_quota_met": true
+    },
+    "pegase1354|n1_branch_outage|load=85|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 16,
+      "accepted": 12,
+      "failed": 4,
+      "required_accepted": 12,
+      "acceptance_quota_met": true
+    },
+    "pegase1354|n1_branch_outage|load=95|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 21,
+      "accepted": 12,
+      "failed": 9,
+      "required_accepted": 12,
+      "acceptance_quota_met": true
+    },
+    "pegase1354|n1_branch_outage|load=100|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 15,
+      "accepted": 12,
+      "failed": 3,
+      "required_accepted": 12,
+      "acceptance_quota_met": true
+    },
+    "rte1888|base_power_flow|load=95|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 1,
+      "accepted": 1,
+      "failed": 0,
+      "required_accepted": 1,
+      "acceptance_quota_met": true
+    },
+    "rte1888|base_power_flow|load=100|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 1,
+      "accepted": 1,
+      "failed": 0,
+      "required_accepted": 1,
+      "acceptance_quota_met": true
+    },
+    "rte1888|n1_branch_outage|load=95|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 20,
+      "accepted": 12,
+      "failed": 8,
+      "required_accepted": 12,
+      "acceptance_quota_met": true
+    },
+    "rte1888|n1_branch_outage|load=100|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 26,
+      "accepted": 12,
+      "failed": 14,
+      "required_accepted": 12,
+      "acceptance_quota_met": true
+    },
+    "rte2848|base_power_flow|load=95|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 1,
+      "accepted": 1,
+      "failed": 0,
+      "required_accepted": 1,
+      "acceptance_quota_met": true
+    },
+    "rte2848|base_power_flow|load=100|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 1,
+      "accepted": 1,
+      "failed": 0,
+      "required_accepted": 1,
+      "acceptance_quota_met": true
+    },
+    "rte2848|base_power_flow|load=105|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 1,
+      "accepted": 1,
+      "failed": 0,
+      "required_accepted": 1,
+      "acceptance_quota_met": true
+    },
+    "rte2848|n1_branch_outage|load=95|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 19,
+      "accepted": 12,
+      "failed": 7,
+      "required_accepted": 12,
+      "acceptance_quota_met": true
+    },
+    "rte2848|n1_branch_outage|load=100|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 22,
+      "accepted": 12,
+      "failed": 10,
+      "required_accepted": 12,
+      "acceptance_quota_met": true
+    },
+    "rte2848|n1_branch_outage|load=105|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 20,
+      "accepted": 12,
+      "failed": 8,
+      "required_accepted": 12,
+      "acceptance_quota_met": true
+    },
+    "pegase2869|base_power_flow|load=90|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 1,
+      "accepted": 1,
+      "failed": 0,
+      "required_accepted": 1,
+      "acceptance_quota_met": true
+    },
+    "pegase2869|base_power_flow|load=95|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 1,
+      "accepted": 1,
+      "failed": 0,
+      "required_accepted": 1,
+      "acceptance_quota_met": true
+    },
+    "pegase2869|base_power_flow|load=100|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 1,
+      "accepted": 1,
+      "failed": 0,
+      "required_accepted": 1,
+      "acceptance_quota_met": true
+    },
+    "pegase2869|n1_branch_outage|load=90|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 17,
+      "accepted": 12,
+      "failed": 5,
+      "required_accepted": 12,
+      "acceptance_quota_met": true
+    },
+    "pegase2869|n1_branch_outage|load=95|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 15,
+      "accepted": 12,
+      "failed": 3,
+      "required_accepted": 12,
+      "acceptance_quota_met": true
+    },
+    "pegase2869|n1_branch_outage|load=100|vm=100|dispatch=fixed_power_flow": {
+      "attempted": 17,
+      "accepted": 12,
+      "failed": 5,
+      "required_accepted": 12,
+      "acceptance_quota_met": true
+    }
+  },
+  "hard_gates": {
+    "scenario_ids_unique": true,
+    "all_base_strata_filled": true,
+    "all_n1_strata_filled": true,
+    "all_published_scenarios_converged": true,
+    "all_systems_have_convergence": true,
+    "required_envelope_coverage": true,
+    "all_published_states_complete_and_finite": true,
+    "all_published_power_balance_residuals_within_1e_minus_3_mw": true,
+    "all_failed_attempts_classified": true
+  },
+  "network_summaries": [
+    {
+      "system": "ieee300",
+      "bus_count": 300,
+      "line_count": 283,
+      "scenario_count": 26,
+      "converged_count": 26,
+      "max_loading": 152.43262048253092,
+      "min_voltage": 0.701534,
+      "max_voltage": 1.0735,
+      "envelope_counts": {
+        "extreme-stress": 26
+      }
+    },
+    {
+      "system": "illinois200",
+      "bus_count": 200,
+      "line_count": 179,
+      "scenario_count": 182,
+      "converged_count": 182,
+      "max_loading": 183.26958492558612,
+      "min_voltage": 0.936386,
+      "max_voltage": 1.025951,
+      "envelope_counts": {
+        "emergency-stress": 17,
+        "operational-stress": 37,
+        "normal-envelope": 128
+      }
+    },
+    {
+      "system": "pegase89",
+      "bus_count": 89,
+      "line_count": 160,
+      "scenario_count": 65,
+      "converged_count": 65,
+      "max_loading": 103.38794332879694,
+      "min_voltage": 0.756972,
+      "max_voltage": 1.082645,
+      "envelope_counts": {
+        "operational-stress": 63,
+        "emergency-stress": 1,
+        "extreme-stress": 1
+      }
+    },
+    {
+      "system": "pegase1354",
+      "bus_count": 1354,
+      "line_count": 1751,
+      "scenario_count": 39,
+      "converged_count": 39,
+      "max_loading": 165.83232224429068,
+      "min_voltage": 0.884266,
+      "max_voltage": 1.057783,
+      "envelope_counts": {
+        "emergency-stress": 27,
+        "operational-stress": 12
+      }
+    },
+    {
+      "system": "rte1888",
+      "bus_count": 1888,
+      "line_count": 1976,
+      "scenario_count": 26,
+      "converged_count": 26,
+      "max_loading": 537.5645910613642,
+      "min_voltage": 0.960445,
+      "max_voltage": 1.377312,
+      "envelope_counts": {
+        "extreme-stress": 26
+      }
+    },
+    {
+      "system": "rte2848",
+      "bus_count": 2848,
+      "line_count": 2993,
+      "scenario_count": 39,
+      "converged_count": 39,
+      "max_loading": 590.2447590953198,
+      "min_voltage": 0.694597,
+      "max_voltage": 1.253706,
+      "envelope_counts": {
+        "extreme-stress": 39
+      }
+    },
+    {
+      "system": "pegase2869",
+      "bus_count": 2869,
+      "line_count": 4051,
+      "scenario_count": 39,
+      "converged_count": 39,
+      "max_loading": 158.13569135430947,
+      "min_voltage": 0.773132,
+      "max_voltage": 1.071348,
+      "envelope_counts": {
+        "emergency-stress": 26,
+        "extreme-stress": 13
+      }
+    }
+  ],
+  "scope": "external topology validation and candidate source for formal OOD instruction records; envelope quotas are global and per-network envelope counts are reported without implying every network covers every envelope"
+}

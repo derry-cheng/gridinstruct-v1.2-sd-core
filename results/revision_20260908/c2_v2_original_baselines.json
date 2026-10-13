@@ -1,0 +1,108 @@
+{
+  "records": 2880,
+  "changed_records": 256,
+  "duration_changed_records": 16,
+  "split_and_labels_preserved": true,
+  "old_data_preserved": true,
+  "rule": "Assigned duration max(0, required+margin); strictly positive required duration preserves noncompliance. Removed redundant At prefix before phase phrase in template family 10.",
+  "tasks": {
+    "dispatcher_intent_tool_call": {
+      "full_tfidf": {
+        "model": "character_tfidf_3_5_linear_svc",
+        "input_profile": "full_instruction",
+        "n_train": 960,
+        "n_test": 240,
+        "vocabulary_size": 9821,
+        "accuracy": 0.8791666666666667,
+        "balanced_accuracy": 0.8791666666666668,
+        "macro_f1": 0.8793718169148009,
+        "gold_counts": {
+          "diagnose_and_dispatch": 80,
+          "mitigate_violations": 80,
+          "security_check_and_redispatch": 80
+        },
+        "prediction_counts": {
+          "diagnose_and_dispatch": 83,
+          "mitigate_violations": 80,
+          "security_check_and_redispatch": 77
+        }
+      },
+      "masked_tfidf": {
+        "model": "character_tfidf_3_5_linear_svc",
+        "input_profile": "value_masked_surface",
+        "n_train": 960,
+        "n_test": 240,
+        "vocabulary_size": 3944,
+        "accuracy": 0.35833333333333334,
+        "balanced_accuracy": 0.35833333333333334,
+        "macro_f1": 0.3516989465270825,
+        "gold_counts": {
+          "diagnose_and_dispatch": 80,
+          "mitigate_violations": 80,
+          "security_check_and_redispatch": 80
+        },
+        "prediction_counts": {
+          "diagnose_and_dispatch": 101,
+          "mitigate_violations": 69,
+          "security_check_and_redispatch": 70
+        }
+      },
+      "generator_contract_self_check": {
+        "model": "typed_relation_contract_evaluator",
+        "n": 240,
+        "accuracy": 1.0,
+        "balanced_accuracy": 1.0,
+        "macro_f1": 1.0
+      }
+    },
+    "operation_ticket_check": {
+      "full_tfidf": {
+        "model": "character_tfidf_3_5_linear_svc",
+        "input_profile": "full_instruction",
+        "n_train": 960,
+        "n_test": 240,
+        "vocabulary_size": 14206,
+        "accuracy": 0.275,
+        "balanced_accuracy": 0.27499999999999997,
+        "macro_f1": 0.2619541680242085,
+        "gold_counts": {
+          "compliant": 80,
+          "compliant_with_monitoring": 80,
+          "non_compliant": 80
+        },
+        "prediction_counts": {
+          "compliant": 57,
+          "compliant_with_monitoring": 121,
+          "non_compliant": 62
+        }
+      },
+      "masked_tfidf": {
+        "model": "character_tfidf_3_5_linear_svc",
+        "input_profile": "value_masked_surface",
+        "n_train": 960,
+        "n_test": 240,
+        "vocabulary_size": 3995,
+        "accuracy": 0.35833333333333334,
+        "balanced_accuracy": 0.35833333333333334,
+        "macro_f1": 0.36049523068911826,
+        "gold_counts": {
+          "compliant": 80,
+          "compliant_with_monitoring": 80,
+          "non_compliant": 80
+        },
+        "prediction_counts": {
+          "compliant": 73,
+          "compliant_with_monitoring": 68,
+          "non_compliant": 99
+        }
+      },
+      "generator_contract_self_check": {
+        "model": "typed_relation_contract_evaluator",
+        "n": 240,
+        "accuracy": 1.0,
+        "balanced_accuracy": 1.0,
+        "macro_f1": 1.0
+      }
+    }
+  }
+}

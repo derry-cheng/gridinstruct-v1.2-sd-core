@@ -1,0 +1,25 @@
+{
+  "status": "pass",
+  "committed": true,
+  "input": "data/gridinstruct_v1.2_sd_core.jsonl",
+  "english_output": "data/gridinstruct_v1.2_sd_core_en.jsonl",
+  "records": 95479,
+  "changed_rule_link_rows": 50247,
+  "before_prompt_input_profile": {
+    "duplicate_groups": 2089,
+    "duplicate_rows": 4209,
+    "duplicate_extra_rows": 2120,
+    "conflicting_output_groups": 936,
+    "cross_split_duplicate_groups": 17
+  },
+  "after_prompt_input_profile": {
+    "duplicate_groups": 990,
+    "duplicate_rows": 1980,
+    "duplicate_extra_rows": 990,
+    "conflicting_output_groups": 0,
+    "cross_split_duplicate_groups": 0
+  },
+  "scope": "all canonical rows retained; dispatcher request semantics and rule-evidence receipts regenerated from typed fields",
+  "canonical_sha256": "18a4d36153f9d77ae9b26744978a7bea27138aee048d1b12906335797e908013",
+  "english_sha256": "18a4d36153f9d77ae9b26744978a7bea27138aee048d1b12906335797e908013"
+}

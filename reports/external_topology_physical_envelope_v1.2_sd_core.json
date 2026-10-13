@@ -1,0 +1,97 @@
+{
+  "generated_at": "2026-07-09T16:48:19.034177+00:00",
+  "status": "pass",
+  "scenario_source": "simulation_outputs/topology_stress/extended_topology_scenarios.json",
+  "dataset": "data/gridinstruct_v1.2_sd_core_en.jsonl",
+  "scenario_count": 126,
+  "converged_count": 117,
+  "envelope_counts": {
+    "emergency-stress": 62,
+    "solver-not-converged": 9,
+    "operational-stress": 15,
+    "extreme-stress": 40
+  },
+  "by_network": {
+    "IEEE300": {
+      "scenario_count": 21,
+      "converged_count": 14,
+      "envelope_counts": {
+        "emergency-stress": 14,
+        "solver-not-converged": 7
+      },
+      "min_voltage_min": 0.811476,
+      "max_voltage_max": 1.132971,
+      "max_loading_max": 10.714603,
+      "formal_instruction_records": 304,
+      "formal_scenarios": 19
+    },
+    "PEGASE89": {
+      "scenario_count": 21,
+      "converged_count": 21,
+      "envelope_counts": {
+        "operational-stress": 15,
+        "emergency-stress": 6
+      },
+      "min_voltage_min": 0.929921,
+      "max_voltage_max": 1.131496,
+      "max_loading_max": 161.325492,
+      "formal_instruction_records": 704,
+      "formal_scenarios": 44
+    },
+    "PEGASE1354": {
+      "scenario_count": 21,
+      "converged_count": 21,
+      "envelope_counts": {
+        "emergency-stress": 21
+      },
+      "min_voltage_min": 0.967078,
+      "max_voltage_max": 1.108028,
+      "max_loading_max": 127.772884,
+      "formal_instruction_records": 704,
+      "formal_scenarios": 44
+    },
+    "RTE1888": {
+      "scenario_count": 21,
+      "converged_count": 19,
+      "envelope_counts": {
+        "extreme-stress": 19,
+        "solver-not-converged": 2
+      },
+      "min_voltage_min": 0.276911,
+      "max_voltage_max": 1.30182,
+      "max_loading_max": 1582.438507,
+      "formal_instruction_records": 384,
+      "formal_scenarios": 24
+    },
+    "RTE2848": {
+      "scenario_count": 21,
+      "converged_count": 21,
+      "envelope_counts": {
+        "extreme-stress": 21
+      },
+      "min_voltage_min": 0.891673,
+      "max_voltage_max": 1.202191,
+      "max_loading_max": 760.178492,
+      "formal_instruction_records": 336,
+      "formal_scenarios": 21
+    },
+    "PEGASE2869": {
+      "scenario_count": 21,
+      "converged_count": 21,
+      "envelope_counts": {
+        "emergency-stress": 21
+      },
+      "min_voltage_min": 0.960907,
+      "max_voltage_max": 1.141159,
+      "max_loading_max": 185.449374,
+      "formal_instruction_records": 336,
+      "formal_scenarios": 21
+    }
+  },
+  "formal_external_instruction_records": 2768,
+  "formal_external_scenarios": 173,
+  "current_stress_source_formal_instruction_records": 1872,
+  "current_stress_source_formal_scenarios": 117,
+  "figure": "figures/sd_core_publication/fig_external_topology_physical_envelope.png",
+  "claim_use": "Use this audit to separate typical operating-envelope evidence from emergency and extreme stress-test evidence for external topologies."
+}

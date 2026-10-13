@@ -1,0 +1,261 @@
+{
+  "generated_at": "2026-08-28T21:17:57.886316+00:00",
+  "status": "pass",
+  "contract": "official_exact_content_single_split_v1",
+  "input_paths": {
+    "train": "data/v1.2_sd_core_strict_train.jsonl",
+    "validation": "data/v1.2_sd_core_strict_validation.jsonl",
+    "test": "data/v1.2_sd_core_strict_test.jsonl"
+  },
+  "source_paths": {
+    "train": "data/v1.2_sd_core_strict_train.jsonl",
+    "validation": "data/v1.2_sd_core_strict_validation.jsonl",
+    "test": "data/v1.2_sd_core_strict_test.jsonl"
+  },
+  "input_sha256": {
+    "train": "00f084c5f80d6a7fb6496f4058edaaf11dacf234f1d987201645f7d360c030a9",
+    "validation": "f4a7a5734bda810f4af3ae2474ca631123d63be70936dec5c7695d76dfbcb33b",
+    "test": "4683a56f451eeca179c73c3766fc505617c3f0be245a600328f203413acd0d49"
+  },
+  "output_sha256": {
+    "train": "4ea2d05b59ff253fd44c00f8f69a978159b7548b72a5016822c0fcc7520f0153",
+    "validation": "52f5da72bf071c27bc8d842de55f8a46d2ed5cb4d33f567b9e4ce3d597cc7152",
+    "test": "753734fe89bf899592591cf863b56bfcbc6219b5735aaadd4c5980dbcb2458ed"
+  },
+  "source_output_sha256": {
+    "train": "4ea2d05b59ff253fd44c00f8f69a978159b7548b72a5016822c0fcc7520f0153",
+    "validation": "52f5da72bf071c27bc8d842de55f8a46d2ed5cb4d33f567b9e4ce3d597cc7152",
+    "test": "753734fe89bf899592591cf863b56bfcbc6219b5735aaadd4c5980dbcb2458ed"
+  },
+  "before_cross_split_exact_signature_overlap": {
+    "train_validation": 11,
+    "train_test": 26,
+    "validation_test": 5
+  },
+  "after_cross_split_exact_signature_overlap": {
+    "train_validation": 0,
+    "train_test": 0,
+    "validation_test": 0
+  },
+  "groups_reassigned": 42,
+  "moved_record_count": 42,
+  "moved_records": [
+    {
+      "id": "gridinstruct_v01_regqa_00621",
+      "from": "test",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_00775",
+      "from": "test",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_00784",
+      "from": "test",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_00908",
+      "from": "test",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_01097",
+      "from": "test",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_01380",
+      "from": "test",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_01421",
+      "from": "test",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_01709",
+      "from": "test",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_01748",
+      "from": "test",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_01832",
+      "from": "test",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_01868",
+      "from": "test",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_01925",
+      "from": "test",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_02016",
+      "from": "test",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_02217",
+      "from": "test",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_02273",
+      "from": "test",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_02618",
+      "from": "test",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_02640",
+      "from": "test",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_02808",
+      "from": "test",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_03003",
+      "from": "test",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_03256",
+      "from": "test",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_03274",
+      "from": "test",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_03423",
+      "from": "test",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_03445",
+      "from": "test",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_03463",
+      "from": "test",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_03834",
+      "from": "test",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_03989",
+      "from": "test",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_00364",
+      "from": "validation",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_00434",
+      "from": "validation",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_00909",
+      "from": "validation",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_01540",
+      "from": "validation",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_01713",
+      "from": "validation",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_02274",
+      "from": "validation",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_02351",
+      "from": "validation",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_03060",
+      "from": "validation",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_03437",
+      "from": "validation",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_03701",
+      "from": "validation",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_03927",
+      "from": "validation",
+      "to": "train"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_00147",
+      "from": "test",
+      "to": "validation"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_00335",
+      "from": "test",
+      "to": "validation"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_02000",
+      "from": "test",
+      "to": "validation"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_02773",
+      "from": "test",
+      "to": "validation"
+    },
+    {
+      "id": "gridinstruct_v01_regqa_03290",
+      "from": "test",
+      "to": "validation"
+    }
+  ],
+  "split_counts": {
+    "train": 76378,
+    "validation": 9558,
+    "test": 9543
+  },
+  "ood_unchanged": true,
+  "interpretation": "All canonical records are retained. Exact normalized task/instruction/input/output signatures are assigned to the earliest official development split; OOD is unchanged and no semantic similarity claim is made."
+}

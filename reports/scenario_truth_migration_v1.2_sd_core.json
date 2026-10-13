@@ -1,0 +1,31 @@
+{
+  "generated_at": "2026-07-10T10:11:11.777821+00:00",
+  "status": "pass",
+  "input": "backups/20260710_174200_pre_sd_rebuild/simulation_outputs/scenarios_converged.json",
+  "output": "simulation_outputs/contingency/scenarios_converged.json",
+  "input_sha256": "f05d5c6277589d098a195108528ecf0e698c8be014ddada12ee9d8955ecacee5",
+  "output_sha256": "bb2cb78a758d3d10b4a6aa8a2f0f2f8b41964b4583f9baf54230c90bc18aa508",
+  "input_scenarios": 2588,
+  "recomputed_scenarios": 2588,
+  "error_count": 0,
+  "errors": [],
+  "previously_truncated_scenarios": 2471,
+  "complete_output_scenarios": 2588,
+  "by_system": {
+    "ieee14": 208,
+    "ieee30": 394,
+    "ieee57": 495,
+    "ieee118": 1318,
+    "ieee300": 19,
+    "pegase1354": 44,
+    "pegase89": 44,
+    "rte1888": 24,
+    "pegase2869": 21,
+    "rte2848": 21
+  },
+  "truth_invariants": {
+    "overloaded_branch_count_equals_list_length": true,
+    "overloaded_transformer_count_equals_list_length": true,
+    "voltage_violation_count_equals_list_length": true
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "status": "warn",
+  "records": 2822,
+  "query_truth_complete": 2821,
+  "query_truth_incomplete": 1,
+  "incomplete_examples": [
+    {
+      "scenario_id": "ieee30_n1_transformer_outage_load100_trafoidx_2",
+      "reason": "solver_not_converged"
+    }
+  ],
+  "solver_status_counts": {
+    "converged": 2821,
+    "unsupplied_island": 1
+  },
+  "scenario_path": "simulation_outputs/contingency/scenarios_converged.json"
+}

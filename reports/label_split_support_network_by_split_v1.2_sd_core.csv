@@ -1,0 +1,13 @@
+network_model,train,validation,test,ood_test,challenge_train,challenge_validation,challenge_test,strict_train,strict_validation,strict_test,proxyreduced_train,proxyreduced_validation,proxyreduced_test,strict_proxyreduced_train,strict_proxyreduced_validation,strict_proxyreduced_test
+IEEE118,0,0,0,38159,19728,296,832,30222,4362,3575,0,0,0,0,0,0
+IEEE14,2494,411,229,3567,3572,42,127,5411,529,761,0,0,0,0,0,0
+IEEE30,6121,811,1043,4430,6941,142,165,10084,1187,1134,0,0,0,0,0,0
+IEEE300,0,0,0,560,280,0,0,464,64,32,0,0,0,0,0,0
+IEEE57,8028,860,808,5640,8362,94,343,12219,1271,1846,0,0,0,0,0,0
+ILLINOIS200,0,0,0,2912,1456,0,0,2304,272,336,0,0,0,0,0,0
+PEGASE1354,0,0,0,1056,528,0,0,832,80,144,0,0,0,0,0,0
+PEGASE2869,0,0,0,624,312,0,0,544,48,32,0,0,0,0,0,0
+PEGASE89,0,0,0,1472,736,0,0,1264,112,96,0,0,0,0,0,0
+RTE1888,0,0,0,544,272,0,0,464,32,48,0,0,0,0,0,0
+RTE2848,0,0,0,624,312,0,0,512,80,32,0,0,0,0,0,0
+rule_or_procedure,12041,1516,1529,0,1840,5171,3870,12030,1533,1523,18240,2293,2305,44300,5566,5555

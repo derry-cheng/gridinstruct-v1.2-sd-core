@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:gridinstruct:schema:independent-solver-evidence-v1",
+  "title": "GridInstruct independent solver evidence",
+  "type": "object",
+  "required": [
+    "contract_version",
+    "solver",
+    "case_manifest",
+    "tolerances",
+    "cases"
+  ],
+  "properties": {
+    "contract_version": {
+      "const": "gridinstruct-independent-solver-evidence-v1"
+    },
+    "solver": {
+      "type": "object",
+      "required": [
+        "name",
+        "version",
+        "implementation_repository",
+        "independence_class",
+        "input_import_path"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "implementation_repository": {
+          "type": "string"
+        },
+        "independence_class": {
+          "enum": [
+            "native_source_case",
+            "independent_data_model"
+          ]
+        },
+        "input_import_path": {
+          "type": "string"
+        },
+        "conversion_chain": {
+          "type": "string"
+        },
+        "case_origin": {
+          "type": "string"
+        }
+      }
+    },
+    "case_manifest": {
+      "type": "object",
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "tolerances": {
+      "type": "object",
+      "required": [
+        "voltage_pu",
+        "active_power_mw",
+        "reactive_power_mvar",
+        "power_balance_mw"
+      ]
+    },
+    "cases": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "case_id",
+          "source_case",
+          "independent_result",
+          "comparison"
+        ]
+      }
+    }
+  }
+}

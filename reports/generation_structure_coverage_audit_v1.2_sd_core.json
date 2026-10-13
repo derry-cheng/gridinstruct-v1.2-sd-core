@@ -1,0 +1,507 @@
+{
+  "generated_at": "2026-08-04T04:11:04.336919+00:00",
+  "status": "pass",
+  "runs": [
+    {
+      "report": "benchmark/v1.2_sd_core_seq2seq_regqa_report.json",
+      "predictions": {
+        "path": "benchmark/v1.2_sd_core_seq2seq_regqa_test_predictions.jsonl",
+        "records": 419,
+        "task_counts": {
+          "regulation_qa": 419
+        },
+        "token_f1_mean": 0.8072746532282358,
+        "char_f1_mean": null,
+        "exact_match_rate": 0.0,
+        "prediction_length_mean": 404.708830548926,
+        "gold_length_mean": 406.6968973747017,
+        "prediction_is_json_rate": null,
+        "structured_query_field_accuracy_mean": null,
+        "tool_set_jaccard_mean": null,
+        "gold_key_counts": {},
+        "filter_counts": {},
+        "tool_counts": {}
+      },
+      "task_types": [
+        "regulation_qa"
+      ],
+      "target_mode": "full",
+      "prompt_mode": "fielded",
+      "test_evaluation": {
+        "exact_match": 0.0,
+        "token_f1": 0.8072746532282353,
+        "selection_f1": 0.8072746532282353,
+        "n": 419
+      },
+      "metric_definition": "whitespace-token F1 for natural-language QA; character F1 is separately named for structured JSON and accompanied by canonical JSON, schema-validity, and typed required-field metrics"
+    },
+    {
+      "report": "benchmark/v1.2_sd_core_seq2seq_auxiliary_decision_report.json",
+      "predictions": {
+        "path": "benchmark/v1.2_sd_core_seq2seq_auxiliary_decision_test_predictions.jsonl",
+        "records": 448,
+        "task_counts": {
+          "auxiliary_decision": 448
+        },
+        "token_f1_mean": null,
+        "char_f1_mean": 0.9255203565884279,
+        "exact_match_rate": 0.0,
+        "prediction_length_mean": 434.8861607142857,
+        "gold_length_mean": 431.5669642857143,
+        "prediction_is_json_rate": 0.0,
+        "structured_query_field_accuracy_mean": null,
+        "tool_set_jaccard_mean": null,
+        "gold_key_counts": {
+          "response": 448,
+          "tools": 448
+        },
+        "filter_counts": {},
+        "tool_counts": {}
+      },
+      "task_types": [
+        "auxiliary_decision"
+      ],
+      "target_mode": "full",
+      "prompt_mode": "compact",
+      "test_evaluation": {
+        "exact_match": 0.0,
+        "char_f1": 0.9255203565884278,
+        "selection_f1": 0.9255203565884278,
+        "n": 448,
+        "prediction_is_json": 0.0
+      },
+      "metric_definition": "whitespace-token F1 for natural-language QA; character F1 is separately named for structured JSON and accompanied by canonical JSON, schema-validity, and typed required-field metrics"
+    },
+    {
+      "report": "benchmark/v1.2_sd_core_seq2seq_intelligent_data_query_report.json",
+      "predictions": {
+        "path": "benchmark/v1.2_sd_core_seq2seq_intelligent_data_query_test_predictions.jsonl",
+        "records": 437,
+        "task_counts": {
+          "intelligent_data_query": 437
+        },
+        "token_f1_mean": null,
+        "char_f1_mean": 0.9870428247973696,
+        "exact_match_rate": 0.0,
+        "prediction_length_mean": 190.67505720823797,
+        "gold_length_mean": 194.98398169336383,
+        "prediction_is_json_rate": 0.0,
+        "structured_query_field_accuracy_mean": null,
+        "tool_set_jaccard_mean": null,
+        "gold_key_counts": {
+          "structured_query": 437,
+          "structured_query.filter": 437,
+          "structured_query.scenario_id": 437,
+          "structured_query.source": 437,
+          "structured_query.aggregation": 167,
+          "structured_query.contract_version": 167,
+          "structured_query.equipment_scope": 167
+        },
+        "filter_counts": {
+          "violation_type != none": 135,
+          "vm_pu < 0.95": 135,
+          "loading_percent > 100": 167
+        },
+        "tool_counts": {}
+      },
+      "task_types": [
+        "intelligent_data_query"
+      ],
+      "target_mode": "actionable",
+      "prompt_mode": "compact",
+      "test_evaluation": {
+        "exact_match": 0.0,
+        "char_f1": 0.9870428247973714,
+        "selection_f1": 0.9870428247973714,
+        "n": 437,
+        "prediction_is_json": 0.0
+      },
+      "metric_definition": "whitespace-token F1 for natural-language QA; character F1 is separately named for structured JSON and accompanied by canonical JSON, schema-validity, and typed required-field metrics"
+    }
+  ],
+  "normalization": {
+    "generated_at": "2026-07-09T15:13:02.987057+00:00",
+    "overall_status": "pass",
+    "tasks": {
+      "intelligent_data_query": {
+        "records": 412,
+        "raw_prediction_is_json": 1.0,
+        "normalized_prediction_is_json": 1.0,
+        "prediction_trailing_garbage_rate": 0.0,
+        "normalized_exact": 1.0,
+        "structured_query_exact": 1.0,
+        "structured_query_field_accuracy": 1.0,
+        "scenario_id_exact": 1.0,
+        "filter_exact": 1.0,
+        "source_exact": 1.0,
+        "tool_set_exact": 0.0,
+        "tool_set_jaccard": 0.0,
+        "examples": [
+          {
+            "id": "gridinstruct_v01_query_12846",
+            "task_type": "intelligent_data_query",
+            "raw_prediction": "{\"structured_query\": {\"filter\": \"vm_pu < 0.95\", \"scenario_id\": \"ieee57_n1_branch_outage_load90_branchidx_26_17_18\", \"source\": \"simulation_outputs\"}}",
+            "normalized_prediction": "{\"structured_query\":{\"filter\":\"vm_pu < 0.95\",\"scenario_id\":\"ieee57_n1_branch_outage_load90_branchidx_26_17_18\",\"source\":\"simulation_outputs\"}}",
+            "canonical_prediction_preview": "{\"structured_query\": {\"filter\": \"vm_pu < 0.95\", \"scenario_id\": \"ieee57_n1_branch_outage_load90_branchidx_26_17_18\", \"source\": \"simulation_outputs\"}}"
+          },
+          {
+            "id": "gridinstruct_v01_query_07448",
+            "task_type": "intelligent_data_query",
+            "raw_prediction": "{\"structured_query\": {\"filter\": \"violation_type != none\", \"scenario_id\": \"ieee30_generator_perturbation_load70_gen90\", \"source\": \"simulation_outputs\"}}",
+            "normalized_prediction": "{\"structured_query\":{\"filter\":\"violation_type != none\",\"scenario_id\":\"ieee30_generator_perturbation_load70_gen90\",\"source\":\"simulation_outputs\"}}",
+            "canonical_prediction_preview": "{\"structured_query\": {\"filter\": \"violation_type != none\", \"scenario_id\": \"ieee30_generator_perturbation_load70_gen90\", \"source\": \"simulation_outputs\"}}"
+          },
+          {
+            "id": "gridinstruct_v01_query_09488",
+            "task_type": "intelligent_data_query",
+            "raw_prediction": "{\"structured_query\": {\"filter\": \"violation_type != none\", \"scenario_id\": \"ieee57_n1_branch_outage_load80_branchidx_46_40_42\", \"source\": \"simulation_outputs\"}}",
+            "normalized_prediction": "{\"structured_query\":{\"filter\":\"violation_type != none\",\"scenario_id\":\"ieee57_n1_branch_outage_load80_branchidx_46_40_42\",\"source\":\"simulation_outputs\"}}",
+            "canonical_prediction_preview": "{\"structured_query\": {\"filter\": \"violation_type != none\", \"scenario_id\": \"ieee57_n1_branch_outage_load80_branchidx_46_40_42\", \"source\": \"simulation_outputs\"}}"
+          },
+          {
+            "id": "gridinstruct_v01_query_10866",
+            "task_type": "intelligent_data_query",
+            "raw_prediction": "{\"structured_query\": {\"filter\": \"violation_type != none\", \"scenario_id\": \"ieee57_n1_branch_outage_load90_branchidx_16_0_16\", \"source\": \"simulation_outputs\"}}",
+            "normalized_prediction": "{\"structured_query\":{\"filter\":\"violation_type != none\",\"scenario_id\":\"ieee57_n1_branch_outage_load90_branchidx_16_0_16\",\"source\":\"simulation_outputs\"}}",
+            "canonical_prediction_preview": "{\"structured_query\": {\"filter\": \"violation_type != none\", \"scenario_id\": \"ieee57_n1_branch_outage_load90_branchidx_16_0_16\", \"source\": \"simulation_outputs\"}}"
+          },
+          {
+            "id": "gridinstruct_v01_query_08209",
+            "task_type": "intelligent_data_query",
+            "raw_prediction": "{\"structured_query\": {\"filter\": \"vm_pu < 0.95\", \"scenario_id\": \"ieee57_n1_branch_outage_load90_branchidx_17_2_14\", \"source\": \"simulation_outputs\"}}",
+            "normalized_prediction": "{\"structured_query\":{\"filter\":\"vm_pu < 0.95\",\"scenario_id\":\"ieee57_n1_branch_outage_load90_branchidx_17_2_14\",\"source\":\"simulation_outputs\"}}",
+            "canonical_prediction_preview": "{\"structured_query\": {\"filter\": \"vm_pu < 0.95\", \"scenario_id\": \"ieee57_n1_branch_outage_load90_branchidx_17_2_14\", \"source\": \"simulation_outputs\"}}"
+          },
+          {
+            "id": "gridinstruct_v01_query_03828",
+            "task_type": "intelligent_data_query",
+            "raw_prediction": "{\"structured_query\": {\"filter\": \"violation_type != none\", \"scenario_id\": \"ieee57_n1_branch_outage_load100_branchidx_33_27_28\", \"source\": \"simulation_outputs\"}}",
+            "normalized_prediction": "{\"structured_query\":{\"filter\":\"violation_type != none\",\"scenario_id\":\"ieee57_n1_branch_outage_load100_branchidx_33_27_28\",\"source\":\"simulation_outputs\"}}",
+            "canonical_prediction_preview": "{\"structured_query\": {\"filter\": \"violation_type != none\", \"scenario_id\": \"ieee57_n1_branch_outage_load100_branchidx_33_27_28\", \"source\": \"simulation_outputs\"}}"
+          },
+          {
+            "id": "gridinstruct_v01_query_03968",
+            "task_type": "intelligent_data_query",
+            "raw_prediction": "{\"structured_query\": {\"filter\": \"vm_pu < 0.95\", \"scenario_id\": \"ieee57_n1_branch_outage_load110_branchidx_12_12_13\", \"source\": \"simulation_outputs\"}}",
+            "normalized_prediction": "{\"structured_query\":{\"filter\":\"vm_pu < 0.95\",\"scenario_id\":\"ieee57_n1_branch_outage_load110_branchidx_12_12_13\",\"source\":\"simulation_outputs\"}}",
+            "canonical_prediction_preview": "{\"structured_query\": {\"filter\": \"vm_pu < 0.95\", \"scenario_id\": \"ieee57_n1_branch_outage_load110_branchidx_12_12_13\", \"source\": \"simulation_outputs\"}}"
+          },
+          {
+            "id": "gridinstruct_v01_query_04270",
+            "task_type": "intelligent_data_query",
+            "raw_prediction": "{\"structured_query\": {\"filter\": \"loading_percent > 100\", \"scenario_id\": \"ieee30_n1_branch_outage_load70_branchidx_12_8_10\", \"source\": \"simulation_outputs\"}}",
+            "normalized_prediction": "{\"structured_query\":{\"filter\":\"loading_percent > 100\",\"scenario_id\":\"ieee30_n1_branch_outage_load70_branchidx_12_8_10\",\"source\":\"simulation_outputs\"}}",
+            "canonical_prediction_preview": "{\"structured_query\": {\"filter\": \"loading_percent > 100\", \"scenario_id\": \"ieee30_n1_branch_outage_load70_branchidx_12_8_10\", \"source\": \"simulation_outputs\"}}"
+          },
+          {
+            "id": "gridinstruct_v01_query_05658",
+            "task_type": "intelligent_data_query",
+            "raw_prediction": "{\"structured_query\": {\"filter\": \"vm_pu < 0.95\", \"scenario_id\": \"ieee30_n1_branch_outage_load100_branchidx_19_13_14\", \"source\": \"simulation_outputs\"}}",
+            "normalized_prediction": "{\"structured_query\":{\"filter\":\"vm_pu < 0.95\",\"scenario_id\":\"ieee30_n1_branch_outage_load100_branchidx_19_13_14\",\"source\":\"simulation_outputs\"}}",
+            "canonical_prediction_preview": "{\"structured_query\": {\"filter\": \"vm_pu < 0.95\", \"scenario_id\": \"ieee30_n1_branch_outage_load100_branchidx_19_13_14\", \"source\": \"simulation_outputs\"}}"
+          },
+          {
+            "id": "gridinstruct_v01_query_15374",
+            "task_type": "intelligent_data_query",
+            "raw_prediction": "{\"structured_query\": {\"filter\": \"violation_type != none\", \"scenario_id\": \"ieee14_n1_branch_outage_load110_branchidx_13_11_12\", \"source\": \"simulation_outputs\"}}",
+            "normalized_prediction": "{\"structured_query\":{\"filter\":\"violation_type != none\",\"scenario_id\":\"ieee14_n1_branch_outage_load110_branchidx_13_11_12\",\"source\":\"simulation_outputs\"}}",
+            "canonical_prediction_preview": "{\"structured_query\": {\"filter\": \"violation_type != none\", \"scenario_id\": \"ieee14_n1_branch_outage_load110_branchidx_13_11_12\", \"source\": \"simulation_outputs\"}}"
+          },
+          {
+            "id": "gridinstruct_v01_query_02242",
+            "task_type": "intelligent_data_query",
+            "raw_prediction": "{\"structured_query\": {\"filter\": \"vm_pu < 0.95\", \"scenario_id\": \"ieee57_n1_branch_outage_load80_branchidx_38_33_34\", \"source\": \"simulation_outputs\"}}",
+            "normalized_prediction": "{\"structured_query\":{\"filter\":\"vm_pu < 0.95\",\"scenario_id\":\"ieee57_n1_branch_outage_load80_branchidx_38_33_34\",\"source\":\"simulation_outputs\"}}",
+            "canonical_prediction_preview": "{\"structured_query\": {\"filter\": \"vm_pu < 0.95\", \"scenario_id\": \"ieee57_n1_branch_outage_load80_branchidx_38_33_34\", \"source\": \"simulation_outputs\"}}"
+          },
+          {
+            "id": "gridinstruct_v01_query_01026",
+            "task_type": "intelligent_data_query",
+            "raw_prediction": "{\"structured_query\": {\"filter\": \"loading_percent > 100\", \"scenario_id\": \"ieee57_n1_branch_outage_load110_branchidx_14_0_14\", \"source\": \"simulation_outputs\"}}",
+            "normalized_prediction": "{\"structured_query\":{\"filter\":\"loading_percent > 100\",\"scenario_id\":\"ieee57_n1_branch_outage_load110_branchidx_14_0_14\",\"source\":\"simulation_outputs\"}}",
+            "canonical_prediction_preview": "{\"structured_query\": {\"filter\": \"loading_percent > 100\", \"scenario_id\": \"ieee57_n1_branch_outage_load110_branchidx_14_0_14\", \"source\": \"simulation_outputs\"}}"
+          },
+          {
+            "id": "gridinstruct_v01_query_15335",
+            "task_type": "intelligent_data_query",
+            "raw_prediction": "{\"structured_query\": {\"filter\": \"violation_type != none\", \"scenario_id\": \"ieee14_base_power_flow_load100\", \"source\": \"simulation_outputs\"}}",
+            "normalized_prediction": "{\"structured_query\":{\"filter\":\"violation_type != none\",\"scenario_id\":\"ieee14_base_power_flow_load100\",\"source\":\"simulation_outputs\"}}",
+            "canonical_prediction_preview": "{\"structured_query\": {\"filter\": \"violation_type != none\", \"scenario_id\": \"ieee14_base_power_flow_load100\", \"source\": \"simulation_outputs\"}}"
+          },
+          {
+            "id": "gridinstruct_v01_query_15243",
+            "task_type": "intelligent_data_query",
+            "raw_prediction": "{\"structured_query\": {\"filter\": \"loading_percent > 100\", \"scenario_id\": \"ieee30_generator_perturbation_load110_gen85\", \"source\": \"simulation_outputs\"}}",
+            "normalized_prediction": "{\"structured_query\":{\"filter\":\"loading_percent > 100\",\"scenario_id\":\"ieee30_generator_perturbation_load110_gen85\",\"source\":\"simulation_outputs\"}}",
+            "canonical_prediction_preview": "{\"structured_query\": {\"filter\": \"loading_percent > 100\", \"scenario_id\": \"ieee30_generator_perturbation_load110_gen85\", \"source\": \"simulation_outputs\"}}"
+          },
+          {
+            "id": "gridinstruct_v01_query_04342",
+            "task_type": "intelligent_data_query",
+            "raw_prediction": "{\"structured_query\": {\"filter\": \"loading_percent > 100\", \"scenario_id\": \"ieee30_n1_branch_outage_load80_branchidx_26_9_20\", \"source\": \"simulation_outputs\"}}",
+            "normalized_prediction": "{\"structured_query\":{\"filter\":\"loading_percent > 100\",\"scenario_id\":\"ieee30_n1_branch_outage_load80_branchidx_26_9_20\",\"source\":\"simulation_outputs\"}}",
+            "canonical_prediction_preview": "{\"structured_query\": {\"filter\": \"loading_percent > 100\", \"scenario_id\": \"ieee30_n1_branch_outage_load80_branchidx_26_9_20\", \"source\": \"simulation_outputs\"}}"
+          },
+          {
+            "id": "gridinstruct_v01_query_03320",
+            "task_type": "intelligent_data_query",
+            "raw_prediction": "{\"structured_query\": {\"filter\": \"vm_pu < 0.95\", \"scenario_id\": \"ieee57_n1_branch_outage_load110_branchidx_10_8_11\", \"source\": \"simulation_outputs\"}}",
+            "normalized_prediction": "{\"structured_query\":{\"filter\":\"vm_pu < 0.95\",\"scenario_id\":\"ieee57_n1_branch_outage_load110_branchidx_10_8_11\",\"source\":\"simulation_outputs\"}}",
+            "canonical_prediction_preview": "{\"structured_query\": {\"filter\": \"vm_pu < 0.95\", \"scenario_id\": \"ieee57_n1_branch_outage_load110_branchidx_10_8_11\", \"source\": \"simulation_outputs\"}}"
+          },
+          {
+            "id": "gridinstruct_v01_query_06685",
+            "task_type": "intelligent_data_query",
+            "raw_prediction": "{\"structured_query\": {\"filter\": \"violation_type != none\", \"scenario_id\": \"ieee30_n1_branch_outage_load70_branchidx_12_8_10\", \"source\": \"simulation_outputs\"}}",
+            "normalized_prediction": "{\"structured_query\":{\"filter\":\"violation_type != none\",\"scenario_id\":\"ieee30_n1_branch_outage_load70_branchidx_12_8_10\",\"source\":\"simulation_outputs\"}}",
+            "canonical_prediction_preview": "{\"structured_query\": {\"filter\": \"violation_type != none\", \"scenario_id\": \"ieee30_n1_branch_outage_load70_branchidx_12_8_10\", \"source\": \"simulation_outputs\"}}"
+          },
+          {
+            "id": "gridinstruct_v01_query_05275",
+            "task_type": "intelligent_data_query",
+            "raw_prediction": "{\"structured_query\": {\"filter\": \"violation_type != none\", \"scenario_id\": \"ieee57_n1_branch_outage_load100_branchidx_55_52_53\", \"source\": \"simulation_outputs\"}}",
+            "normalized_prediction": "{\"structured_query\":{\"filter\":\"violation_type != none\",\"scenario_id\":\"ieee57_n1_branch_outage_load100_branchidx_55_52_53\",\"source\":\"simulation_outputs\"}}",
+            "canonical_prediction_preview": "{\"structured_query\": {\"filter\": \"violation_type != none\", \"scenario_id\": \"ieee57_n1_branch_outage_load100_branchidx_55_52_53\", \"source\": \"simulation_outputs\"}}"
+          },
+          {
+            "id": "gridinstruct_v01_query_05033",
+            "task_type": "intelligent_data_query",
+            "raw_prediction": "{\"structured_query\": {\"filter\": \"loading_percent > 100\", \"scenario_id\": \"ieee30_generator_perturbation_load70_gen90\", \"source\": \"simulation_outputs\"}}",
+            "normalized_prediction": "{\"structured_query\":{\"filter\":\"loading_percent > 100\",\"scenario_id\":\"ieee30_generator_perturbation_load70_gen90\",\"source\":\"simulation_outputs\"}}",
+            "canonical_prediction_preview": "{\"structured_query\": {\"filter\": \"loading_percent > 100\", \"scenario_id\": \"ieee30_generator_perturbation_load70_gen90\", \"source\": \"simulation_outputs\"}}"
+          },
+          {
+            "id": "gridinstruct_v01_query_05675",
+            "task_type": "intelligent_data_query",
+            "raw_prediction": "{\"structured_query\": {\"filter\": \"loading_percent > 100\", \"scenario_id\": \"ieee14_base_power_flow_load100\", \"source\": \"simulation_outputs\"}}",
+            "normalized_prediction": "{\"structured_query\":{\"filter\":\"loading_percent > 100\",\"scenario_id\":\"ieee14_base_power_flow_load100\",\"source\":\"simulation_outputs\"}}",
+            "canonical_prediction_preview": "{\"structured_query\": {\"filter\": \"loading_percent > 100\", \"scenario_id\": \"ieee14_base_power_flow_load100\", \"source\": \"simulation_outputs\"}}"
+          }
+        ],
+        "gate": {
+          "status": "pass",
+          "checks": {
+            "normalized_json_rate_min_0_99": true,
+            "field_accuracy_min_0_85": true,
+            "scenario_id_exact_min_0_85": true,
+            "filter_exact_min_0_60": true
+          },
+          "failed_checks": []
+        }
+      },
+      "auxiliary_decision": {
+        "records": 416,
+        "raw_prediction_is_json": 1.0,
+        "normalized_prediction_is_json": 1.0,
+        "prediction_trailing_garbage_rate": 0.0,
+        "normalized_exact": 0.78125,
+        "structured_query_exact": 0.0,
+        "structured_query_field_accuracy": 0.0,
+        "scenario_id_exact": 0.0,
+        "filter_exact": 0.0,
+        "source_exact": 0.0,
+        "tool_set_exact": 1.0,
+        "tool_set_jaccard": 1.0,
+        "examples": [
+          {
+            "id": "gridinstruct_v01_aux_09488",
+            "task_type": "auxiliary_decision",
+            "raw_prediction": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}",
+            "normalized_prediction": "{\"tools\":[\"run_power_flow\",\"run_opf_redispatch\"]}",
+            "canonical_prediction_preview": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}"
+          },
+          {
+            "id": "gridinstruct_v01_aux_05642",
+            "task_type": "auxiliary_decision",
+            "raw_prediction": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}",
+            "normalized_prediction": "{\"tools\":[\"run_power_flow\",\"run_opf_redispatch\"]}",
+            "canonical_prediction_preview": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}"
+          },
+          {
+            "id": "gridinstruct_v01_aux_13264",
+            "task_type": "auxiliary_decision",
+            "raw_prediction": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}",
+            "normalized_prediction": "{\"tools\":[\"run_power_flow\",\"run_opf_redispatch\"]}",
+            "canonical_prediction_preview": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}"
+          },
+          {
+            "id": "gridinstruct_v01_aux_06046",
+            "task_type": "auxiliary_decision",
+            "raw_prediction": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}",
+            "normalized_prediction": "{\"tools\":[\"run_power_flow\",\"run_opf_redispatch\"]}",
+            "canonical_prediction_preview": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}"
+          },
+          {
+            "id": "gridinstruct_v01_aux_00973",
+            "task_type": "auxiliary_decision",
+            "raw_prediction": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}",
+            "normalized_prediction": "{\"tools\":[\"run_power_flow\",\"run_opf_redispatch\"]}",
+            "canonical_prediction_preview": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}"
+          },
+          {
+            "id": "gridinstruct_v01_aux_10867",
+            "task_type": "auxiliary_decision",
+            "raw_prediction": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}",
+            "normalized_prediction": "{\"tools\":[\"run_power_flow\",\"run_opf_redispatch\"]}",
+            "canonical_prediction_preview": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}"
+          },
+          {
+            "id": "gridinstruct_v01_aux_11440",
+            "task_type": "auxiliary_decision",
+            "raw_prediction": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}",
+            "normalized_prediction": "{\"tools\":[\"run_power_flow\",\"run_opf_redispatch\"]}",
+            "canonical_prediction_preview": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}"
+          },
+          {
+            "id": "gridinstruct_v01_aux_07791",
+            "task_type": "auxiliary_decision",
+            "raw_prediction": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}",
+            "normalized_prediction": "{\"tools\":[\"run_power_flow\",\"run_opf_redispatch\"]}",
+            "canonical_prediction_preview": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}"
+          },
+          {
+            "id": "gridinstruct_v01_aux_10747",
+            "task_type": "auxiliary_decision",
+            "raw_prediction": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}",
+            "normalized_prediction": "{\"tools\":[\"run_power_flow\",\"run_opf_redispatch\"]}",
+            "canonical_prediction_preview": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}"
+          },
+          {
+            "id": "gridinstruct_v01_aux_09758",
+            "task_type": "auxiliary_decision",
+            "raw_prediction": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}",
+            "normalized_prediction": "{\"tools\":[\"run_power_flow\",\"run_opf_redispatch\"]}",
+            "canonical_prediction_preview": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}"
+          },
+          {
+            "id": "gridinstruct_v12_opf_aux_ieee14_base_power_flow_load100_fe930a3190d5_v01",
+            "task_type": "auxiliary_decision",
+            "raw_prediction": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\", \"run_power_flow\"]}",
+            "normalized_prediction": "{\"tools\":[\"run_power_flow\",\"run_opf_redispatch\",\"run_power_flow\"]}",
+            "canonical_prediction_preview": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\", \"run_power_flow\"]}"
+          },
+          {
+            "id": "gridinstruct_v01_aux_13746",
+            "task_type": "auxiliary_decision",
+            "raw_prediction": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}",
+            "normalized_prediction": "{\"tools\":[\"run_power_flow\",\"run_opf_redispatch\"]}",
+            "canonical_prediction_preview": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}"
+          },
+          {
+            "id": "gridinstruct_v01_aux_08621",
+            "task_type": "auxiliary_decision",
+            "raw_prediction": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}",
+            "normalized_prediction": "{\"tools\":[\"run_power_flow\",\"run_opf_redispatch\"]}",
+            "canonical_prediction_preview": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}"
+          },
+          {
+            "id": "gridinstruct_v12_opf_aux_ieee14_base_power_flow_load110_7171ab4c0e69_v01",
+            "task_type": "auxiliary_decision",
+            "raw_prediction": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\", \"run_power_flow\"]}",
+            "normalized_prediction": "{\"tools\":[\"run_power_flow\",\"run_opf_redispatch\",\"run_power_flow\"]}",
+            "canonical_prediction_preview": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\", \"run_power_flow\"]}"
+          },
+          {
+            "id": "gridinstruct_v01_aux_03109",
+            "task_type": "auxiliary_decision",
+            "raw_prediction": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\", \"run_power_flow\"]}",
+            "normalized_prediction": "{\"tools\":[\"run_power_flow\",\"run_opf_redispatch\",\"run_power_flow\"]}",
+            "canonical_prediction_preview": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\", \"run_power_flow\"]}"
+          },
+          {
+            "id": "gridinstruct_v01_aux_05543",
+            "task_type": "auxiliary_decision",
+            "raw_prediction": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}",
+            "normalized_prediction": "{\"tools\":[\"run_power_flow\",\"run_opf_redispatch\"]}",
+            "canonical_prediction_preview": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}"
+          },
+          {
+            "id": "gridinstruct_v01_aux_08553",
+            "task_type": "auxiliary_decision",
+            "raw_prediction": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}",
+            "normalized_prediction": "{\"tools\":[\"run_power_flow\",\"run_opf_redispatch\"]}",
+            "canonical_prediction_preview": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}"
+          },
+          {
+            "id": "gridinstruct_v01_aux_07073",
+            "task_type": "auxiliary_decision",
+            "raw_prediction": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}",
+            "normalized_prediction": "{\"tools\":[\"run_power_flow\",\"run_opf_redispatch\"]}",
+            "canonical_prediction_preview": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}"
+          },
+          {
+            "id": "gridinstruct_v01_aux_07924",
+            "task_type": "auxiliary_decision",
+            "raw_prediction": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}",
+            "normalized_prediction": "{\"tools\":[\"run_power_flow\",\"run_opf_redispatch\"]}",
+            "canonical_prediction_preview": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}"
+          },
+          {
+            "id": "gridinstruct_v01_aux_15491",
+            "task_type": "auxiliary_decision",
+            "raw_prediction": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}",
+            "normalized_prediction": "{\"tools\":[\"run_power_flow\",\"run_opf_redispatch\"]}",
+            "canonical_prediction_preview": "{\"tools\": [\"run_power_flow\", \"run_opf_redispatch\"]}"
+          }
+        ],
+        "gate": {
+          "status": "pass",
+          "checks": {
+            "normalized_json_rate_min_0_99": true,
+            "tool_set_exact_min_0_95": true,
+            "tool_set_jaccard_min_0_95": true
+          },
+          "failed_checks": []
+        }
+      }
+    },
+    "input_files": {
+      "intelligent_data_query": "benchmark/v1.2_sd_core_structured_query_filter_test_predictions.jsonl",
+      "auxiliary_decision": "benchmark/v1.2_sd_core_structured_auxiliary_tool_test_predictions.jsonl"
+    }
+  },
+  "metric_applicability": [
+    {
+      "task_type": "regulation_qa",
+      "metric": "token_f1",
+      "applicability": "primary text-overlap metric",
+      "value": null
+    },
+    {
+      "task_type": "auxiliary_decision",
+      "metric": "char_f1/canonical_json_exact/schema_valid/tool_set_exact/tool_set_jaccard",
+      "applicability": "applies to tool-plan style auxiliary targets",
+      "value": null
+    },
+    {
+      "task_type": "intelligent_data_query",
+      "metric": "char_f1/canonical_json_exact/schema_valid/structured_query_exact/field_accuracy",
+      "applicability": "applies to structured query targets",
+      "value": null
+    },
+    {
+      "task_type": "intelligent_data_query",
+      "metric": "tool_set_exact/tool_set_jaccard",
+      "applicability": "not a tool-plan target; reported as not applicable for query claims",
+      "value": 0.0
+    },
+    {
+      "task_type": "auxiliary_decision",
+      "metric": "structured_query_exact/field_accuracy",
+      "applicability": "not a structured-query target; reported as not applicable for auxiliary claims",
+      "value": 0.0
+    }
+  ],
+  "missing": [],
+  "hard_gates": {
+    "all_formal_generation_reports_present": true,
+    "prediction_counts_match_reports": true,
+    "normalization_report_passed": true,
+    "metric_applicability_documented": true,
+    "no_empty_prediction_files": true
+  },
+  "interpretation": "Token-F1, structured-query metrics, and tool-plan metrics have task-specific applicability; non-applicable zero fields are excluded from task claims.",
+  "figures": {
+    "generation_structure_coverage": "figures/sd_core/fig_generation_structure_coverage.png"
+  }
+}

@@ -1,0 +1,317 @@
+{
+  "generated_at": "2026-07-31T10:42:05.227675+00:00",
+  "status": "pass",
+  "dataset": "data/gridinstruct_v1.2_sd_core.jsonl",
+  "dataset_sha256": "425449c0feaba3dfde0f3b79cd2304c10f499b7ace7d345be7c23de12cf4ea7c",
+  "output_dir": "data/proxy_stress",
+  "seed": 2041,
+  "test_ratio": 0.2,
+  "validation_ratio": 0.12,
+  "builder": "scripts/create_proxy_stress_splits.py",
+  "builder_sha256": "3ce916b79fb6dd63532895d760f3256eef1ee059ce2155f7f60a41d032ec64db",
+  "tasks": {
+    "regulation_compliance_check": {
+      "train": "data/proxy_stress/regulation_compliance_check/train.jsonl",
+      "validation": "data/proxy_stress/regulation_compliance_check/validation.jsonl",
+      "test": "data/proxy_stress/regulation_compliance_check/test.jsonl",
+      "sha256": {
+        "train": "c153fcdaea11a1f289e6a2814bffc41e490a17a5f75ff6606980688f9c5e4b92",
+        "validation": "918ad8faf8d4308740eb8ea1ea3f08f3cdfeb25703ab8633c01bc5c01335ad43",
+        "test": "6913cdf0a57a8da16c292c4acc76b4159516562e8a3fdbe050a2ed81194bc3af"
+      },
+      "records": {
+        "train": 15822,
+        "validation": 2953,
+        "test": 5992
+      },
+      "group_counts": {
+        "train": 133,
+        "validation": 5,
+        "test": 5
+      },
+      "group_overlap": {
+        "train_validation": 0,
+        "train_test": 0,
+        "validation_test": 0
+      },
+      "label_counts": {
+        "train": {
+          "non_compliant": 9850,
+          "compliant_with_monitoring": 4981,
+          "compliant": 991
+        },
+        "validation": {
+          "compliant_with_monitoring": 1423,
+          "non_compliant": 1493,
+          "compliant": 37
+        },
+        "test": {
+          "non_compliant": 1698,
+          "compliant_with_monitoring": 4293,
+          "compliant": 1
+        }
+      },
+      "stress_summary": {
+        "records": 24767,
+        "groups": 143,
+        "train_records": 18775,
+        "test_records": 5992,
+        "train_groups": 138,
+        "test_groups": 5,
+        "group_overlap": 0,
+        "test_group_examples": [
+          "action_category:corrective_redispatch|surface:调整邻近机组出力降低断面负载|issue:combined",
+          "action_category:corrective_topology|surface:局部倒换供电路径后检查安全裕度|issue:thermal",
+          "action_category:corrective_topology|surface:执行分阶段负荷转供并继续监视|issue:combined",
+          "action_category:corrective_voltage|surface:先执行无功支撑后复核潮流|issue:combined",
+          "action_category:risky_increase|surface:继续增加受限断面潮流|issue:combined"
+        ],
+        "label_counts": {
+          "non_compliant": 13041,
+          "compliant_with_monitoring": 10697,
+          "compliant": 1029
+        },
+        "train_label_counts": {
+          "compliant_with_monitoring": 6404,
+          "non_compliant": 11343,
+          "compliant": 1028
+        },
+        "test_label_counts": {
+          "non_compliant": 1698,
+          "compliant_with_monitoring": 4293,
+          "compliant": 1
+        },
+        "mean_test_group_purity": 1.0
+      },
+      "validation_summary": {
+        "train_records": 15822,
+        "validation_records": 2953,
+        "train_groups": 133,
+        "validation_groups": 5,
+        "group_overlap": 0,
+        "train_label_counts": {
+          "non_compliant": 9850,
+          "compliant_with_monitoring": 4981,
+          "compliant": 991
+        },
+        "validation_label_counts": {
+          "compliant_with_monitoring": 1423,
+          "non_compliant": 1493,
+          "compliant": 37
+        }
+      }
+    },
+    "operation_ticket_check": {
+      "train": "data/proxy_stress/operation_ticket_check/train.jsonl",
+      "validation": "data/proxy_stress/operation_ticket_check/validation.jsonl",
+      "test": "data/proxy_stress/operation_ticket_check/test.jsonl",
+      "sha256": {
+        "train": "4e79207dda613e94a72dde92bfad83a521600d5198730ca62a69320fc447ccd4",
+        "validation": "d197bb86e6c1158bb6f93443c6f99bf097043332de051acfc0a23291e1ea19b4",
+        "test": "d28c4c4ed986da8c1b79e252b4af8edb7390e74168383e961eb8d7b3ea9d63df"
+      },
+      "records": {
+        "train": 7647,
+        "validation": 1056,
+        "test": 2178
+      },
+      "group_counts": {
+        "train": 1334,
+        "validation": 169,
+        "test": 43
+      },
+      "group_overlap": {
+        "train_validation": 0,
+        "train_test": 0,
+        "validation_test": 0
+      },
+      "label_counts": {
+        "train": {
+          "compliant": 409,
+          "compliant_with_monitoring": 4383,
+          "non_compliant": 2855
+        },
+        "validation": {
+          "compliant_with_monitoring": 565,
+          "non_compliant": 305,
+          "compliant": 186
+        },
+        "test": {
+          "compliant": 2176,
+          "compliant_with_monitoring": 1,
+          "non_compliant": 1
+        }
+      },
+      "stress_summary": {
+        "records": 10881,
+        "groups": 1546,
+        "train_records": 8703,
+        "test_records": 2178,
+        "train_groups": 1503,
+        "test_groups": 43,
+        "group_overlap": 0,
+        "test_group_examples": [
+          "operation_context:事故处理后的临时方式调整|object:主变隔离开关|defect:已确认并回填|监护人在位且已复诵|一致",
+          "operation_context:事故处理后的临时方式调整|object:旁路开关|defect:已确认并回填|监护人在位且已复诵|一致",
+          "operation_context:事故处理后的临时方式调整|object:母线刀闸|defect:已确认并回填|监护人在位且已复诵|一致",
+          "operation_context:事故处理后的临时方式调整|object:母联开关|defect:已确认并回填|监护人在位且已复诵|一致",
+          "operation_context:事故处理后的临时方式调整|object:电容器开关|defect:已确认并回填|监护人在位且已复诵|一致",
+          "operation_context:保电方式下的谨慎操作|object:旁路开关|defect:已确认并回填|监护人在位且已复诵|一致",
+          "operation_context:保电方式下的谨慎操作|object:母线刀闸|defect:已确认并回填|监护人在位且已复诵|一致",
+          "operation_context:保电方式下的谨慎操作|object:电容器开关|defect:已确认并回填|监护人在位且已复诵|一致",
+          "operation_context:保电方式下的谨慎操作|object:线路开关|defect:已确认并回填|监护人在位且已复诵|一致",
+          "operation_context:夜班单人监护操作|object:主变隔离开关|defect:已确认并回填|监护人在位且已复诵|一致",
+          "operation_context:夜班单人监护操作|object:旁路开关|defect:已确认并回填|监护人在位且已复诵|一致",
+          "operation_context:夜班单人监护操作|object:母线刀闸|defect:已确认并回填|监护人在位且已复诵|一致",
+          "operation_context:夜班单人监护操作|object:母联开关|defect:post_exec_dispatch_receipt|implicit_compliant_with_monitoring|已确认并回填|执行前可放行，执行后仍需按票面跟踪指定证据|一致|post_exec_dispatch_receipt|按票面依据处置",
+          "operation_context:夜班单人监护操作|object:母联开关|defect:unclosed_permit_trace|implicit_non_compliant|发令前闭环证据不足|执行前关键责任链条未形成可追溯闭环|一致|unclosed_permit_trace|按票面依据处置",
+          "operation_context:夜班单人监护操作|object:母联开关|defect:已确认并回填|监护人在位且已复诵|一致",
+          "operation_context:夜班单人监护操作|object:电容器开关|defect:已确认并回填|监护人在位且已复诵|一致",
+          "operation_context:夜班单人监护操作|object:线路开关|defect:已确认并回填|监护人在位且已复诵|一致",
+          "operation_context:新能源大发期间的方式微调|object:主变隔离开关|defect:已确认并回填|监护人在位且已复诵|一致",
+          "operation_context:新能源大发期间的方式微调|object:旁路开关|defect:已确认并回填|监护人在位且已复诵|一致",
+          "operation_context:新能源大发期间的方式微调|object:母线刀闸|defect:已确认并回填|监护人在位且已复诵|一致"
+        ],
+        "label_counts": {
+          "non_compliant": 3161,
+          "compliant_with_monitoring": 4949,
+          "compliant": 2771
+        },
+        "train_label_counts": {
+          "compliant": 595,
+          "compliant_with_monitoring": 4948,
+          "non_compliant": 3160
+        },
+        "test_label_counts": {
+          "compliant": 2176,
+          "compliant_with_monitoring": 1,
+          "non_compliant": 1
+        },
+        "mean_test_group_purity": 1.0
+      },
+      "validation_summary": {
+        "train_records": 7647,
+        "validation_records": 1056,
+        "train_groups": 1334,
+        "validation_groups": 169,
+        "group_overlap": 0,
+        "train_label_counts": {
+          "compliant": 409,
+          "compliant_with_monitoring": 4383,
+          "non_compliant": 2855
+        },
+        "validation_label_counts": {
+          "compliant_with_monitoring": 565,
+          "non_compliant": 305,
+          "compliant": 186
+        }
+      }
+    },
+    "dispatcher_intent_tool_call": {
+      "train": "data/proxy_stress/dispatcher_intent_tool_call/train.jsonl",
+      "validation": "data/proxy_stress/dispatcher_intent_tool_call/validation.jsonl",
+      "test": "data/proxy_stress/dispatcher_intent_tool_call/test.jsonl",
+      "sha256": {
+        "train": "3b650a94a3f1b3db221357a96333ab445276eb17199f25c893bfc672e43a0d12",
+        "validation": "1fb9b94611b6dc53cb25907030f9ca5c688ca6a4110278f5770e796247c972f3",
+        "test": "3bf7a817cf120bad0f8b9ca94dc211258528200a1ec579b16c1b596895ae063f"
+      },
+      "records": {
+        "train": 13762,
+        "validation": 1905,
+        "test": 4106
+      },
+      "group_counts": {
+        "train": 905,
+        "validation": 139,
+        "test": 22
+      },
+      "group_overlap": {
+        "train_validation": 0,
+        "train_test": 0,
+        "validation_test": 0
+      },
+      "label_counts": {
+        "train": {
+          "mitigate_violations": 4533,
+          "diagnose_and_dispatch": 4523,
+          "security_check_and_redispatch": 4706
+        },
+        "validation": {
+          "diagnose_and_dispatch": 618,
+          "mitigate_violations": 738,
+          "security_check_and_redispatch": 549
+        },
+        "test": {
+          "mitigate_violations": 1318,
+          "diagnose_and_dispatch": 1472,
+          "security_check_and_redispatch": 1316
+        }
+      },
+      "stress_summary": {
+        "records": 19773,
+        "groups": 1066,
+        "train_records": 15667,
+        "test_records": 4106,
+        "train_groups": 1044,
+        "test_groups": 22,
+        "group_overlap": 0,
+        "test_group_examples": [
+          "dispatcher_surface:utterance:优先把支路过载和低电压问题先压下来，再复算潮流确认动作后状态。|policy:|priority:|issue:combined",
+          "dispatcher_surface:utterance:先判断支路过载和低电压问题是怎么触发的，再生成后续调度操作。|policy:|priority:|issue:combined",
+          "dispatcher_surface:utterance:先处理支路过载和低电压问题，随后复核潮流和电压边界。|policy:|priority:|issue:combined",
+          "dispatcher_surface:utterance:先把支路过载和低电压问题的来源查清，再给我一版可执行的调度处置方案。|policy:|priority:|issue:combined",
+          "dispatcher_surface:utterance:在场景 {scenario} 下，先把支路过载和低电压问题的来源查清，再给我一版可执行的调度处置方案。|policy:|priority:|issue:combined",
+          "dispatcher_surface:utterance:在场景 {scenario} 下，围绕支路过载和低电压问题跑一遍安全校核，并输出再调度方案。|policy:|priority:|issue:combined",
+          "dispatcher_surface:utterance:在场景 {scenario} 下，请先定位支路过载和低电压问题对应的关键异常点，再安排调度动作。|policy:|priority:|issue:combined",
+          "dispatcher_surface:utterance:结合 {network} 当前方式，围绕支路过载和低电压问题做一次诊断，然后给出处置建议。|policy:|priority:|issue:combined",
+          "dispatcher_surface:utterance:结合 {network} 当前方式，围绕支路过载和低电压问题跑一遍安全校核，并输出再调度方案。|policy:|priority:|issue:combined",
+          "dispatcher_surface:utterance:结合 {network} 当前方式，请围绕支路过载和低电压问题先给出处置动作，完成后再回传安全校核结果。|policy:|priority:|issue:combined",
+          "dispatcher_surface:utterance:结合 {network} 当前方式，针对支路过载和低电压问题先做纠偏处置，再检查调后是否仍有风险。|policy:|priority:|issue:combined",
+          "dispatcher_surface:utterance:请先对支路过载和低电压问题做安全校核，再给出机组再调度建议。|policy:|priority:|issue:combined",
+          "dispatcher_surface:utterance:请对这条支路过载和低电压问题场景执行安全校核和再调度分析。|policy:|priority:|issue:combined",
+          "dispatcher_surface:utterance:针对场景 {scenario}，请按同一条调度链路处理：先诊断、再处置、后复核。当前值长要求先完成安全校核，再输出机组再调度建议。请给出应路由的意图。|policy:先做安全校核，再输出再调度建议。|priority:当前值长要求先完成安全校核，再输出机组再调度建议。|issue:voltage",
+          "dispatcher_surface:utterance:针对场景 {scenario}，请按同一条调度链路处理：先诊断、再处置、后复核。当前值长要求先定位异常来源和关键设备，再安排后续动作。请给出应路由的意图。|policy:先定位异常来源，再形成可执行调度动作。|priority:当前值长要求先定位异常来源和关键设备，再安排后续动作。|issue:voltage",
+          "dispatcher_surface:utterance:针对场景 {scenario}，请按同一条调度链路处理：先诊断、再处置、后复核。当前值长要求先形成压降越限的处置动作，再复算动作后状态。请给出应路由的意图。|policy:先按越限压降目标生成处置动作，再复算动作后潮流。|priority:当前值长要求先形成压降越限的处置动作，再复算动作后状态。|issue:voltage",
+          "dispatcher_surface:utterance:针对这条 紧急 等级场景，先判断支路过载和低电压问题是怎么触发的，再生成后续调度操作。|policy:|priority:|issue:combined",
+          "dispatcher_surface:utterance:针对这条 紧急 等级场景，先处理支路过载和低电压问题，随后复核潮流和电压边界。|policy:|priority:|issue:combined",
+          "dispatcher_surface:utterance:针对这条 紧急 等级场景，先校核当前状态下的支路过载和低电压问题风险，再做出力重分配建议。|policy:|priority:|issue:combined",
+          "dispatcher_surface:utterance:针对这条 紧急 等级场景，围绕支路过载和低电压问题做一次诊断，然后给出处置建议。|policy:|priority:|issue:combined"
+        ],
+        "label_counts": {
+          "mitigate_violations": 6589,
+          "diagnose_and_dispatch": 6613,
+          "security_check_and_redispatch": 6571
+        },
+        "train_label_counts": {
+          "mitigate_violations": 5271,
+          "diagnose_and_dispatch": 5141,
+          "security_check_and_redispatch": 5255
+        },
+        "test_label_counts": {
+          "mitigate_violations": 1318,
+          "diagnose_and_dispatch": 1472,
+          "security_check_and_redispatch": 1316
+        },
+        "mean_test_group_purity": 1.0
+      },
+      "validation_summary": {
+        "train_records": 13762,
+        "validation_records": 1905,
+        "train_groups": 905,
+        "validation_groups": 139,
+        "group_overlap": 0,
+        "train_label_counts": {
+          "mitigate_violations": 4533,
+          "diagnose_and_dispatch": 4523,
+          "security_check_and_redispatch": 4706
+        },
+        "validation_label_counts": {
+          "diagnose_and_dispatch": 618,
+          "mitigate_violations": 738,
+          "security_check_and_redispatch": 549
+        }
+      }
+    }
+  }
+}
